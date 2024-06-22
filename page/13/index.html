@@ -2070,12 +2070,12 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
 		</div>
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/redis-distributed-lock-space.html">
+			<a href="/java-mian-ba/2024/0120/redis-distributed-lock.html">
 				<h2 class="index-title">
-					10 分布式锁的应用场景
+					09 redis分布式锁有用过吗？
 				</h2>
 				<div class="index-brief">
-					我们知道，对于单机的多线程情况下的线程安全问题我们可以用使用JDK自带的锁来保证线程安全，但是集群环境下的线程安全怎么保证呢？客户A调用一个接口修改数据，客户B同时调用这一个接口修改数据，负载到不同的机器上，怎么保证同一时间这笔数据只能一个人操作呢？那就需要用到分布式锁，我说个我们项目中用到的分布式
+					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
 					...
 				</div>
 			</a>
@@ -2096,12 +2096,12 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
 		</div>
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/redis-distributed-lock.html">
+			<a href="/java-mian-ba/2024/0120/redis-distributed-lock-space.html">
 				<h2 class="index-title">
-					09 redis分布式锁有用过吗？
+					10 分布式锁的应用场景
 				</h2>
 				<div class="index-brief">
-					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
+					我们知道，对于单机的多线程情况下的线程安全问题我们可以用使用JDK自带的锁来保证线程安全，但是集群环境下的线程安全怎么保证呢？客户A调用一个接口修改数据，客户B同时调用这一个接口修改数据，负载到不同的机器上，怎么保证同一时间这笔数据只能一个人操作呢？那就需要用到分布式锁，我说个我们项目中用到的分布式
 					...
 				</div>
 			</a>

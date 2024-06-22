@@ -2015,32 +2015,6 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/rocketmq-msg-order.html">
-				<h2 class="index-title">
-					05 rocketMq如何保证消息顺序消费？
-				</h2>
-				<div class="index-brief">
-					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/java-mian-ba/categories/11-rocketMq/">11 rocketMq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
 			<a href="/java-mian-ba/2024/0120/rocketmq-msg-not-repeat.html">
 				<h2 class="index-title">
 					04 rocketMq怎么避免消息不重复消费
@@ -2067,12 +2041,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/rocketmq-find-msg.html">
+			<a href="/java-mian-ba/2024/0120/rocketmq-msg-order.html">
 				<h2 class="index-title">
-					02 rocketMq怎么查找到对应的消息的？
+					05 rocketMq如何保证消息顺序消费？
 				</h2>
 				<div class="index-brief">
-					我们知道，RocketMQ 核心的数据文件有 3 个：CommitLog、ConsumeQueue 和 Index。其中Index 文件就是一个索引文件，查找消息时，首先根据消息 key 的 hashcode 计算出 Hash 槽的位置，然后读取 Hash 槽的值计算 Index 条目的位置，从In
+					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
 					...
 				</div>
 			</a>
@@ -2099,6 +2073,32 @@
 				</h2>
 				<div class="index-brief">
 					RocketMq的架构包含一个发送消息的生产者Producer,消息存储接收的broker,消息消费的一个Consumer,还有一个消息状态管理的NameServer无状态服务器，然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/java-mian-ba/categories/11-rocketMq/">11 rocketMq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/java-mian-ba/2024/0120/rocketmq-find-msg.html">
+				<h2 class="index-title">
+					02 rocketMq怎么查找到对应的消息的？
+				</h2>
+				<div class="index-brief">
+					我们知道，RocketMQ 核心的数据文件有 3 个：CommitLog、ConsumeQueue 和 Index。其中Index 文件就是一个索引文件，查找消息时，首先根据消息 key 的 hashcode 计算出 Hash 槽的位置，然后读取 Hash 槽的值计算 Index 条目的位置，从In
 					...
 				</div>
 			</a>
