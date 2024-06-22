@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		华润面试(22.6) | 
+	 
+	java面霸养成计划
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+		<meta name="description" content="--我为我喜欢的东西大费周章,所以我才能快乐如斯" />
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/java-mian-ba/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.baidu.com/s?wd=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/java-mian-ba/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/java-mian-ba/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/java-mian-ba/" class="logo">java面霸养成计划</a>
+	<ul id="menu">
+    <!-- <li class="menu-item">
+        <a href='/java-mian-ba' class="menu-item-link">Home</a>
+    </li> -->
+    
+        <li class="menu-item">
+          <a href='/java-mian-ba/categories' class="menu-item-link">Categories</a>
+        </li>
+      
+    
+      <li class="menu-item">
+        <a href='/java-mian-ba/tags' class="menu-item-link">Tags</a>
+      </li>
+    
+    
+        <li class="menu-item">
+          <a href='/java-mian-ba/about' class="menu-item-link">About</a>
+        </li>
+    
+    
+        
+        
+            <li class="menu-item">
+            <a target="_blank" rel="noopener" href='https://www.sysfzy.site' class="menu-item-link">
+                Sysfzy
+            </a>
+            </li>
+        
+    
+    
+        <li class="menu-item">
+          <a target="_blank" rel="noopener" href='https://github.com/vvEcho' class="menu-item-link">
+            <i class="fa fa-github fa-2x"></i>
+          </a>
+        </li>
+      
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 自我介绍
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/self-introduction.html">
+                     
+										    1.自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 java基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/jdk-and-jre.html">
+                     
+										    01 jdk和jre有什么不同
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/hashcode.html">
+                     
+										    02 hashCode的使用场景
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/generic-extends-super.html">
+                     
+										    03 泛型中extends和super的区别是什么
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/arrayList-linkedList.html">
+                     
+										    04 ArrayList和LinkedList的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/hashMap-concurrentHashMap.html">
+                     
+										    05 ConcurrentHashMap和HashMap的扩容机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/head-tail-cycle.html">
+                     
+										    06 为什么头插法容易形成死循环而尾插法不会
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/red-blank-tree.html">
+                     
+										    07 谈谈你对链表-数组-红黑树-B+-平衡二叉树的理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/hashMap-put-analysize.html">
+                     
+										    08 说一下HashMap的put方法的底层实现原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/copy-on-write-arrayList.html">
+                     
+										    09 CopyOnWriteArrayList是线程安全的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/exception-error-different.html">
+                     
+										    10 exception和error有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/string-stringBuild-stringBuffer.html">
+                     
+										    11 String,stringBuild,StringBuffer的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/hashMap-hashTable-different.html">
+                     
+										    12 hashMap hashTable的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/strong-soft-weak-phantom-ref.html">
+                     
+										    13 强引用，软引用，弱引用，虚引用的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/memory-leak-out.html">
+                     
+										    14 内存泄漏和内存溢出
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/overwrite-overload-different.html">
+                     
+										    15 重写和重载的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/qps-tps-different.html">
+                     
+										    16 Qps和Tps的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0124/io-different.html">
+                     
+										    17 BIO,NIO,AIO的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0124/arraylist-kuo-rong.html">
+                     
+										    18 arrayList扩容时扩容多少
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0124/hash-clash-solve.html">
+                     
+										    19 hash冲突怎么解决
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03 jvm
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/jvm-memory-model.html">
+                     
+										    01 说说jvm内存模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/heap-stack-different.html">
+                     
+										    02 堆和栈的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/base-data-type-all-in-stack.html">
+                     
+										    03 java中的基本数据类型都是存储在栈中的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/object-in-jvm-build-process.html">
+                     
+										    04 对象在jvm中的创建过程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/jvm-constant-pool.html">
+                     
+										    05 谈谈jvm常量池
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/garbage-collection-algorithm.html">
+                     
+										    06 常见的垃圾回收算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/jvm-error-in-project.html">
+                     
+										    07 你在实际项目中有排查过JVM方面的问题吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/how-to-resolve-pro-cup-high.html">
+                     
+										    08 生产环境CPU占用过高，如何解决？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/how-handle-pro-server-slow.html">
+                     
+										    09 生产环境服务嚣变慢,如何诊断处理?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/jvm-config-params.html">
+                     
+										    10 工作中常用的JVM配置参教有哪些?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/one-class-build-process.html">
+                     
+										    11 简述一个类的创建过程？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/parental-ji-zhi.html">
+                     
+										    12 谈谈对双亲委派机制的理解？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/new-survive-old-gc.html">
+                     
+										    13 谈谈新生代，幸存区，老年代对应的垃圾回收是怎样的(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04 并发编程
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/synchronized-valatial-understand.html">
+                     
+										    01 synchronized和volatial关键字理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/lock-upgradation.html">
+                     
+										    02 锁升级的过程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/cas-principle.html">
+                     
+										    03 CAS原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/wait-sleep-yield-join.html">
+                     
+										    04 wait 和sleep区别,yield和join的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/how-to-start-one-thread.html">
+                     
+										    05 怎么开启一个线程？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/thread-pool-setting.html">
+                     
+										    06 线程池怎么用，7大参数理解？如何配置？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/semaphore-sample.html">
+                     
+										    07 信号量Semaphore(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/pessimistic-optimistic-lock.html">
+                     
+										    08 悲观锁和乐观锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/deadlock-occurs-reason.html">
+                     
+										    09 死锁出现的原因以及怎么解决？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										05 spring
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/ioc-understand.html">
+                     
+										    01 谈谈你对IOC的理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/aop-understand.html">
+                     
+										    02 谈谈你对Aop的理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/spring-transcation-jizhi.html">
+                     
+										    03 Spring事务传播机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0226/transcation-geli-level.html">
+                     
+										    04 事务隔离级别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0124/translation-principle.html">
+                     
+										    05 spring事务的底层原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/spring-she-ji-mo-shi.html">
+                     
+										    06 spring框架中的设计模式有哪些(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/spring-transcation-fail.html">
+                     
+										    07 spring事务失效的场景
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/apo-impl-code.html">
+                     
+										    08 说看过AOP相关源码,说下具体实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/ioc-impl-code.html">
+                     
+										    09 说看过IOC相关源码,说下具体实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/aop-jdk-cglib.html">
+                     
+										    10 aop实现到默认是使用jdk动态代理还是cglib
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/pointcut-order-sure.html">
+                     
+										    11 切面解析的顺序怎么确定？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/solve-spring-cycle-depency.html">
+                     
+										    12 spring怎么解决循环依赖的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/bean-life-understand.html">
+                     
+										    13 bean的生命周期
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0124/springmvc-understand.html">
+                     
+										    14 说说你对mspringMvc流程的理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0226/beanfactory-applicationcontext.html">
+                     
+										    15 BeanFactory和applicationContext有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0124/beanfactory-factoryBean.html">
+                     
+										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										06 springBoot
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/auto-assemble-principle.html">
+                     
+										    01 自动装配原理？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/springboot-annotation.html">
+                     
+										    02 springBoot常用注解？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/interceptor-filter-different.html">
+                     
+										    03 拦截器和过滤器(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										07 springCloud
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/springcloud-used-component.html">
+                     
+										    01 springCloud中组件常用的有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/springcloud-eureka-understand.html">
+                     
+										    02 Eureka注册中心
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0201/springcloud-zookeeper.html">
+                     
+										    03 zookeeper注册中心
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/dubbo-inject-center.html">
+                     
+										    04 nacos注册中心
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/springcloud-hystrix.html">
+                     
+										    03 服务熔断和降级怎么做的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/springcloud-openfigne-net.html">
+                     
+										    04 OpenFigne是怎么实现微服务间通信的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/dubbo-rpc-net.html">
+                     
+										    07 dubbo微服务间怎么通信？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0201/sentinel-liu-kong.html">
+                     
+										    08 Sentinel阿里流控组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0201/seata-principle.html">
+                     
+										    09 seata分布式事务原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0201/springcloud-bus.html">
+                     
+										    10 springcloud消息总线
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										11 rocketMQ
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/rocket-framewokr.html">
+                     
+										    01 rocketMq架构是怎样的,说说心跳机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/rocketmq-find-msg.html">
+                     
+										    02 rocketMq怎么查找到对应的消息的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/rocketmq-msg-not-lost.html">
+                     
+										    03 rocketMq怎么避免消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/rocketmq-msg-not-repeat.html">
+                     
+										    04 rocketMq怎么避免消息不重复消费
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/rocketmq-msg-order.html">
+                     
+										    05 rocketMq如何保证消息顺序消费？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/rocketmq-pull-push.html">
+                     
+										    06 rocketMq是pull模式还是push模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/rocketmq-msg-heaped.html">
+                     
+										    07 rocketMq消息堆积怎么解决
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/rocketmq-dead-letter-queue.html">
+                     
+										    08 说说rocketmq死信队列
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/rocketmq-distributed-transaction.html">
+                     
+										    09 rocketMq实现分布式事务了解吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/rocketmq-consume-mode.html">
+                     
+										    10 rocketMq有哪些消费模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										12 kafka
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/kafka-msg-not-lost.html">
+                     
+										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/kafka-msg-not-repeat.html">
+                     
+										    02 kafka如何避免消息的重复消费？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/kafka-msg-order.html">
+                     
+										    03 kafka如何保证消息的顺序消费
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/kafka-transcation.html">
+                     
+										    04 kafka怎么做分布式事务？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/kafka-rebalance.html">
+                     
+										    05 kafka的rebalance机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0226/kafka-high-throughput.html">
+                     
+										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										13 redis
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-base-data-structure.html">
+                     
+										    01 redis数据结构
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-fast-reason.html">
+                     
+										    02 redis性能好的原因？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-io.html">
+                     
+										    03 说说IO多路复用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-rdb-aof.html">
+                     
+										    04 rdb和aof
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-cache-question.html">
+                     
+										    05 缓存击穿，缓存穿透，缓存雪崩
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-identify-hot-key.html">
+                     
+										    06 怎么监控热key
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-bloom-filter.html">
+                     
+										    07 说说布隆过滤器的原理？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-used-data-structure.html">
+                     
+										    08 redis常用数据结构
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-distributed-lock.html">
+                     
+										    09 redis分布式锁有用过吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-distributed-lock-space.html">
+                     
+										    10 分布式锁的应用场景
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-lua-principle.html">
+                     
+										    11 redis lua表达式为什么能保证原子性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/redis-cluster.html">
+                     
+										    12 redis你们用的是什么集群(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0201/redis-big-key.html">
+                     
+										    13 redis大key问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0219/redis-listen-key-expire.html">
+                     
+										    14 如何监听key过期时间并触发后置逻辑
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/redis-page-query.html">
+                     
+										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										14 mysql
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/mysql-transcation-geli-level.html">
+                     
+										    01 数据库事务的隔离级别？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/mysql-false-reading.html">
+                     
+										    02 怎么解决幻读
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/mysql-mvcc-ji-zhi.html">
+                     
+										    03 mvcc机制？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/mysql-re-in-undo-log.html">
+                     
+										    04 redolog和binlog,undolog
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/mysql-b-jia-tree.html">
+                     
+										    05 B+树索引(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/mysql-optimize-query.html">
+                     
+										    06 mysql怎么优化数据库查询(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/mysql-dividing-dbs-tables.html">
+                     
+										    07 分库分表怎么做的
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/mysql-dividing-dbs-tables-query.html">
+                     
+										    08 分库分表后怎么做范围查找
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/mysql-count-query-sample.html">
+                     
+										    09 统计sql例子
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0219/mysql-suo-yin.html">
+                     
+										    10 mysql中如何添加索引
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/mysql-groupby-suoyin.html">
+                     
+										    11 groupby语句后有索引查询和无索引查询有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0219/mysql-groupby-suoyin.html">
+                     
+										    12 聚簇索引和非聚簇索引的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0227/mysql-zhujian-suoyin-diff-normal-suoyin.html">
+                     
+										    13 主键索引和普通索引的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										15 xxl-job
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/undefined.html">
+                     
+										    15.xxl-job面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										16 seata
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/seata-principle.html">
+                     
+										    01 seata的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										20 数据结构
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0227/undefined.html">
+                     
+										    01 数组
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0227/undefined.html">
+                     
+										    02 链表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0227/undefined.html">
+                     
+										    03 跳表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0227/undefined.html">
+                     
+										    04 红黑树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0227/undefined.html">
+                     
+										    05 B+树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0227/undefined.html">
+                     
+										    06 平衡二叉树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										21 设计模式
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/proxy-mode.html">
+                     
+										    01 代理模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/singleton-mode.html">
+                     
+										    02 单例模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/factory-mode.html">
+                     
+										    03 工厂模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/builder-mode.html">
+                     
+										    04 建造者模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/observer-mode.html">
+                     
+										    05 观察者模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/strategy-mode.html">
+                     
+										    06 策略模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/template-mode.html">
+                     
+										    07 模板模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/decorator-mode.html">
+                     
+										    08 装饰器模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/facade-mode.html">
+                     
+										    09 门面模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/undefined.html">
+                     
+										    21.设计模式面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0220/chain-responsibility-mode.html">
+                     
+										    10 责任链模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										22 网络协议
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/undefined.html">
+                     
+										    22.网络协议面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										23 算法
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/undefined.html">
+                     
+										    23.算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										24 linux
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/undefined.html">
+                     
+										    24.linux面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										25 docker
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/undefined.html">
+                     
+										    24.linux面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										26 vue
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0204/vue-life-cycle.html">
+                     
+										    01 vue的生命周期
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										31 项目亮点
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/undefined.html">
+                     
+										    31.项目亮点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										32 项目难点
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/undefined.html">
+                     
+										    32.项目难点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										33 面经
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										个人
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/self-audition-pingan.html">
+                     
+										    平安面试(22.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/java-mian-ba/2024/0120/self-audition-huarun.html">
+                     
+										    华润面试(22.6)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/java-mian-ba/2024/0120/self-audition-jindong.html">
+                     
+										    京东(23.2)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	华润面试(22.6)
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>vvEcho</span>
+	<span>2024-01-20 14:08:37</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/java-mian-ba/categories/33-面经/">33 面经</a>
+                  </i>
+                
+                  >
+                
+              </span>
+          
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/java-mian-ba/categories/33-面经/个人/">个人</a>
+                  </i>
+                
+              </span>
+          
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/java-mian-ba/tags/面经/">面经</a>
+                    </i>
+                </span>
+            
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="ed5c19e807337f2c3e5ebd2bbcfd86539012e1a58a34d07a7402db0e7ef297ad">ed41842a09392afe98737fb11dbdb69e30c07fe470afd171d3efebc4d11bed419f3a70e08f0c69af99dec4a0efbc89894004f43aa63add89bc2bf05a67db67e6a875c6ce61ce4bee192bccefd9e90151c902fd19c50a850b06f6700c2a8e52929a54a0db5f05fc9fa110a70dd62f54090db19cf8a3181316f7f4fca1e135d17a7a4f5d5c4a915761e309f0d6a436d5d8b609a1fe166d3546759245e1eed90ad940c7e8479a0151bf8cd7583e86a22d1c9344d8f44467f360d19ea88dbb376a7f11e3abe4d513835035d26755c663ab3baf24cf435f06ca85681561da024c9786c2b7112fcc86145c2917e069ce47e0b3059a81dfeeaf04c088790b132ba187a2f0a763d72e616f0d651558b3950d1b4cfc171cda2c5b8c8eb8331097a05dcd06b6a2a0fac048aa217a0ed76081fd1462b35a53a7f440233d2751c68755717f1a0a2b05d2e5aba4a42f41b70f0f76bb97fedcd54eec96039a9f3a2188e8d410c6bccec4eec576cd9d718f2d94654fcf7d51093500a1334622b14e16edfd1d44cd8af5cf12ff5ac785fdd08bcf49026b439037907c79b215b47acfc51ab0233d89fe8574920c3d27b968f665bf9a356a4c44ac29d7d0b7bdc0e749465ed3b3e65655d46721b62c8a153785c44b86fdf09e71fcdbaff5124c492c0c3eb3796d5577c5653c7a8322d0ddac06012621baa1923542ab373f64dc04e9d0fe04128802766d25872b4a596400c78d8c2de6a02a4ddd4a156cbb10ab57f828fb8668953948ceeca668aaa7f2bce07db4b5c3831f0641d47f8bf8b9ce74d2814b2dcafbd94fd2db413f9722c0917c701abf45bbd21a99990decd54d1ebab032d7d3f1e61d9848933ebafb48994fa1faa3dbe7ddaf2b6805e7c24c4b6b6e243d6e627f44ee678f566534b5cb1efacd3ea7f92b29d614b23fac6db62ab229a44a29bbd0d9b644c3763fbe7fe5874185a9f233b3871bfa50d6ffd5b5ffda2fff539222f7e39afad994aba2a3e313ae87757fb0a9cab878ee008fb160bc41e5cacdaec1794c665aca3ef59b96727d2ca525fab02b54dda27c215f6d2e655eb6f3413353b5f2d5a7b56bf99e644339ffd65a90fcd19ee1bd9f3af23be5da5a70321aa9dc5ff53f126015651e30b3704bd9fed868e92b4e4391070dc75fd05523018aa16d6881556115e226eadc4be7e081d861e1b20ec583f81e3415c91c18d11d28d6a0b15db594592a7f6b8befa02eeb181693a6f32c140f483de9369c99fdb6dff5c38be568a4d9b163e07bef8a9b82468ed5a043f46fe678719caaa6ac033dcfab0fcf7d8265ba5a7572f8d0e747e8803436f3768df9e1049d9f03b7550823b4751589554bfed63896bb770b1d8dce8bb6ab263b24a9a9fe063f41fe6f71287c429a4efde397e76f3a889156ec942ca58383d0d319a90dd7432bebdd38fc9db7664b1a43483f628c391579b32b2cf0b8f0af50a5c6e9f69ae3319894b76008e60652726987f93b1cc39a8eabcc49d7d624a344f4d5d2a6842a78a0e96a783de5f322153283662daa789070ae9d00d38f4fb724092884a0b6ed74238eef2d727feb09641e2ec33589c96f48ccd145dc5fbe3825cc4c443365b7c35ea8ad81835809a0b390ff023b152a1a40515fa8a8899afd9fa79a399228889b3bed183ca9a51e260380a984efe281839d1a60c6f01f1bbdca63f7f67eac897ed11ffe355b6578ac9f33cf8ceee3282252b459f84046e071635e12cf2fe0298b7e6cb5b6531edfa2cbbc5edd396792fad7493361a718585ae7aa782d5acd2fc80373939a8954107de436de52a42d95fc6a9c45295c0001a313a3bcc5ac75e6632aa276399994774449943e9a1ce6fbd9842567e8afc75f265cca24a67b394bc5c2bbd3f50357888a46fad8120e8e350505604326951070d38a515f23594aed3359241ea11101f6f4e020c93d86fa087f5c9d5af3996735a26a20c0a38f7445f4598e8351e6c55a9858c6081d175aa74cd5778ee3cb13d3e00473b5f76a4241aa47afb300fefef56de01c031606a51691b9885599fd4304482e5ee32ce8c065e16dfc35b849a6d536c2601ee4e35ce43b4c65a2c65db211117ac145a5748fccf3caf7bd6ac03294e65ebf0f64122cfe1e3d3d9ceb5894d85e792098bfc91673fcce458de8f78e3626333bb5b414e2f5bc7ef4d125fd181428b3c25a9fa8ca748db82bd9d5a69b1334ecfffd62b408a1755a165a8cbee6b2b095457fd1a49eabb4bb7e6fb786a6569f14a7811786bf66546df3b54b4310fbdc73e8d0960f52003520022f24f03be11ac62475f51a95ce74f40f6bb8198c8b758c9ba3860ed3707cf06a1da96abf1640ec554ff83df90b098141e7b2576b5428380adebcc63f742afa145dc8a1eb942c79d92445b8bb8cfd83718f06470f3c1cd967e312be0632f9e73834af7915b5ec139adcc507f14aa672cfc03567301ca00e40037ddb870b428e4871ee6cee3a512860f859da97440286a0032f10b5f4ad8471f3c3f1a0c8d5101d054ba42f3091d3efc8d27ad52292d833dcb5673f403d8a8780b50f6a2362f8dd5fe54fc05484590d92ba949a7bb5bd67174e17ddce005f882f3b462a956b1e0741a4106c3937f6f5f0bb03810af7e3d381c4a82eaf573d11efde4427e97a0cb713b34a3732de1a478cc1599ddf6a92d56d4d6cfbfae72efe5f303f5d578e9e86cd79dbb32f7e75eab5dd2ae39812253061767ef36f7e7b63114587c31623f6aa773533621c6ba4786a1effd2d36f3ecfb0cf27cb0148ee05b50b58e78716866d025ccb108fac6ab904eddefc1e04b1d8e71d4bcd627cdc4a22c6bbae0f62ec32cc418239cf07974b937b80691fc0cb2b1397e8c55904d4fba4fbf08807ca1e15f1b1ad351b6ceac9fadcb746a248843866aa314b44a8e8803a7f7dd57cd0d88dcd943538afc742613cf86ab3f6d6f230bd08eda5bd3948c023efbe7b928f3e5144abedda5337b8402dead4830c054546d7eeb121ea28e2380cba765df15cf4676bea2d482ee2a0c9e33a420fe1c0fddbc553acc5903f24eef648e03bad58c9b5564cd93aa821b205a8802bc9c8da9e49846f211e016c94d77bf8e29b011af79792c1f0a004a3319acaad00c17cbd4c2a518019f346bd0b370fcf867e09b2081d2ee8e120faccd26a02887e7d599d0fa765208d37df411e6a9ee1f6e708b64cfd9c36b5ed1a690d317fb27ef04914ed332e02dbe53a5d0842e3010e813a4100df9211e314e7f278740f8ed6b9a88d73e8e70fa4e1e9e7f2a903abbea0c06a2d11c9e6430c0192058e5c4e262cc375fb44ad6f63d7cac581ce668d70b356ba05ea275d55e094e09942ba4916901edfe93a49381959234e8db67a6d5f47f16d61f679e3608882dd516c0e8542730e6b94215bb280cf62359c7bdbfb70c98db57c319bdd70fe8317dc38cd99786e8de79b532cec2f641ced79b287ccd37ba4544a056c37e1cf84e80de7321d79b21d7fa23b2b9179676153499864d322b37bc5f31927f1fd81d8fcc36e403d957611ce7f1084a5f7de107c1c428c81</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/java-mian-ba/lib/hbe.js"></script><link href="/java-mian-ba/css/hbe.style.css" rel="stylesheet" type="text/css">
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/java-mian-ba/2024/0120/self-audition-jindong.html">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  京东(23.2)
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/java-mian-ba/2024/0120/self-audition-pingan.html">
+                平安面试(22.3)
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+	<div id="vcomments"></div>
+
+
+<script>
+	
+		// 评论
+		new Valine({
+			el: '#vcomments',
+			appId: 'qY15MkA9mHIGfX5em0QpPHDs-MdYXbMMI',
+			appKey: 'csu4x9hAAb5u7jBOmDc6BaW5',
+			placeholder: 'Please enter a comment',
+			path: window.location.pathname,
+			avatar: 'retro',
+			highlight: false,
+      recordIP: true,
+      enableQQ: true,
+			requiredFields: ['nick','mail']
+		})
+	
+	
+</script>
+
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">vvEcho</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+<script src="/java-mian-ba/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/java-mian-ba/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":65},"mobile":{"show":false},"rect":"opacity:0.6","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
