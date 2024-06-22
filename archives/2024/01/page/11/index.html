@@ -2096,14 +2096,14 @@ dubbo的服务注册与发现的流程容器启动后，提供方向注
 		</div>
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/springcloud-hystrix.html">
+			<a href="/java-mian-ba/2024/0120/springcloud-openfigne-net.html">
 				<h2 class="index-title">
-					03 服务熔断和降级怎么做的？
+					04 OpenFigne是怎么实现微服务间通信的？
 				</h2>
 				<div class="index-brief">
-					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
-Hystrix的主要原理是用了断路器模式和线程池隔离技术；
-通过断路器的故障监控，想服务调用方返回一个符合预
+					Openfeign是Spring Cloud 对Feign 也进行了增强，直接支持Hystrix 和 Ribbon，也支持SpringMVC 的注解。这样使得Feign 的使用非常方便。
+
+1、在使用Openfeign时首先会在springboot的启动类上添加@EnableFeignClients
 					...
 				</div>
 			</a>
@@ -2137,7 +2137,7 @@ Hystrix的主要原理是用了断路器模式和线程池隔离技术；
 	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
 
 	
-	    <a href="/">vvEcho</a>
+	    <a href="/">viEcho</a>
 	
 	
 	
