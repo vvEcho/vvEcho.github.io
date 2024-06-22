@@ -1987,12 +1987,12 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/rocket-framewokr.html">
+			<a href="/java-mian-ba/2024/0120/rocketmq-find-msg.html">
 				<h2 class="index-title">
-					01 rocketMq架构是怎样的,说说心跳机制
+					02 rocketMq怎么查找到对应的消息的？
 				</h2>
 				<div class="index-brief">
-					RocketMq的架构包含一个发送消息的生产者Producer,消息存储接收的broker,消息消费的一个Consumer,还有一个消息状态管理的NameServer无状态服务器，然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳
+					我们知道，RocketMQ 核心的数据文件有 3 个：CommitLog、ConsumeQueue 和 Index。其中Index 文件就是一个索引文件，查找消息时，首先根据消息 key 的 hashcode 计算出 Hash 槽的位置，然后读取 Hash 槽的值计算 Index 条目的位置，从In
 					...
 				</div>
 			</a>
@@ -2013,12 +2013,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/rocketmq-find-msg.html">
+			<a href="/java-mian-ba/2024/0120/rocket-framewokr.html">
 				<h2 class="index-title">
-					02 rocketMq怎么查找到对应的消息的？
+					01 rocketMq架构是怎样的,说说心跳机制
 				</h2>
 				<div class="index-brief">
-					我们知道，RocketMQ 核心的数据文件有 3 个：CommitLog、ConsumeQueue 和 Index。其中Index 文件就是一个索引文件，查找消息时，首先根据消息 key 的 hashcode 计算出 Hash 槽的位置，然后读取 Hash 槽的值计算 Index 条目的位置，从In
+					RocketMq的架构包含一个发送消息的生产者Producer,消息存储接收的broker,消息消费的一个Consumer,还有一个消息状态管理的NameServer无状态服务器，然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳
 					...
 				</div>
 			</a>
@@ -2096,14 +2096,14 @@ dubbo的服务注册与发现的流程容器启动后，提供方向注
 		</div>
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/springcloud-openfigne-net.html">
+			<a href="/java-mian-ba/2024/0120/springcloud-hystrix.html">
 				<h2 class="index-title">
-					04 OpenFigne是怎么实现微服务间通信的？
+					03 服务熔断和降级怎么做的？
 				</h2>
 				<div class="index-brief">
-					Openfeign是Spring Cloud 对Feign 也进行了增强，直接支持Hystrix 和 Ribbon，也支持SpringMVC 的注解。这样使得Feign 的使用非常方便。
-
-1、在使用Openfeign时首先会在springboot的启动类上添加@EnableFeignClients
+					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
+Hystrix的主要原理是用了断路器模式和线程池隔离技术；
+通过断路器的故障监控，想服务调用方返回一个符合预
 					...
 				</div>
 			</a>

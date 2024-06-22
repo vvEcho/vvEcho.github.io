@@ -2068,12 +2068,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/rocketmq-msg-not-repeat.html">
+			<a href="/java-mian-ba/2024/0120/rocketmq-msg-order.html">
 				<h2 class="index-title">
-					04 rocketMq怎么避免消息不重复消费
+					05 rocketMq如何保证消息顺序消费？
 				</h2>
 				<div class="index-brief">
-					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作，若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重，
+					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
 					...
 				</div>
 			</a>
@@ -2094,12 +2094,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/java-mian-ba/2024/0120/rocketmq-msg-order.html">
+			<a href="/java-mian-ba/2024/0120/rocketmq-msg-not-repeat.html">
 				<h2 class="index-title">
-					05 rocketMq如何保证消息顺序消费？
+					04 rocketMq怎么避免消息不重复消费
 				</h2>
 				<div class="index-brief">
-					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
+					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作，若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重，
 					...
 				</div>
 			</a>
