@@ -2093,12 +2093,15 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/mysql-mvcc-ji-zhi.html">
+			<a href="/2024/0120/mysql-re-in-undo-log.html">
 				<h2 class="index-title">
-					03 mvcc机制？
+					04 redolog和binlog,undolog
 				</h2>
 				<div class="index-brief">
-					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的变化提交之前，对于其他的读事务来说都是不可见的；当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC 并发
+					binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；
+
+binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；
+redolog-重做日志的作用，在于提高mysql
 					...
 				</div>
 			</a>

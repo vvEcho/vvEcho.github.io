@@ -2041,15 +2041,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-used-data-structure.html">
+			<a href="/2024/0120/redis-distributed-lock.html">
 				<h2 class="index-title">
-					08 redis常用数据结构
+					09 redis分布式锁有用过吗？
 				</h2>
 				<div class="index-brief">
-					String，list,set,zset,hash
-
-String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key
-list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpu
+					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
 					...
 				</div>
 			</a>
@@ -2070,12 +2067,15 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock.html">
+			<a href="/2024/0120/redis-used-data-structure.html">
 				<h2 class="index-title">
-					09 redis分布式锁有用过吗？
+					08 redis常用数据结构
 				</h2>
 				<div class="index-brief">
-					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
+					String，list,set,zset,hash
+
+String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key
+list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpu
 					...
 				</div>
 			</a>
