@@ -1987,13 +1987,12 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/exception-error-different.html">
+			<a href="/2024/0120/copy-on-write-arrayList.html">
 				<h2 class="index-title">
-					10 exception和error有啥区别
+					09 CopyOnWriteArrayList是线程安全的吗
 				</h2>
 				<div class="index-brief">
-					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
-
+					copyOnWriteArrayList是线程安全的，它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；最后，待元素写入新数组后再把
 					...
 				</div>
 			</a>
@@ -2014,12 +2013,13 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/copy-on-write-arrayList.html">
+			<a href="/2024/0120/exception-error-different.html">
 				<h2 class="index-title">
-					09 CopyOnWriteArrayList是线程安全的吗
+					10 exception和error有啥区别
 				</h2>
 				<div class="index-brief">
-					copyOnWriteArrayList是线程安全的，它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；最后，待元素写入新数组后再把
+					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
+
 					...
 				</div>
 			</a>

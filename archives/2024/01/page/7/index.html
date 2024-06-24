@@ -2067,12 +2067,13 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-identify-hot-key.html">
+			<a href="/2024/0120/redis-bloom-filter.html">
 				<h2 class="index-title">
-					06 怎么监控热key
+					07 说说布隆过滤器的原理？
 				</h2>
 				<div class="index-brief">
-					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为
+					布隆过滤器的原理是，当一个元素被加入集合时，通过散列函数将这个元素映射成一个位数组中的多个点（offset)并把它们置为 1。检索时，我们只要看看这些点是不是都是1就知道集合中有没有它了：如果这些点有任何一个为0，则被检元素一定不存在；如果都是1，则被检元素很可能存在；
+
 					...
 				</div>
 			</a>
@@ -2093,13 +2094,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-bloom-filter.html">
+			<a href="/2024/0120/redis-identify-hot-key.html">
 				<h2 class="index-title">
-					07 说说布隆过滤器的原理？
+					06 怎么监控热key
 				</h2>
 				<div class="index-brief">
-					布隆过滤器的原理是，当一个元素被加入集合时，通过散列函数将这个元素映射成一个位数组中的多个点（offset)并把它们置为 1。检索时，我们只要看看这些点是不是都是1就知道集合中有没有它了：如果这些点有任何一个为0，则被检元素一定不存在；如果都是1，则被检元素很可能存在；
-
+					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为
 					...
 				</div>
 			</a>
