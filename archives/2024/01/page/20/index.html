@@ -2046,13 +2046,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/string-stringBuild-stringBuffer.html">
+			<a href="/2024/0120/hashMap-hashTable-different.html">
 				<h2 class="index-title">
-					11 String,stringBuild,StringBuffer的区别
+					12 hashMap hashTable的区别
 				</h2>
 				<div class="index-brief">
-					string是一个常量，他存在于常量池中；StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；其中StringBuffer 相比较于StringBuffer他在append方法中加了同步锁synchronized，所以是线程安全的
-
+					hashMap集成字AbstractMap,hashTable集成自Dictionary类；hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常hashTable在put,get,contains等方法都加了synchronize
 					...
 				</div>
 			</a>
@@ -2073,12 +2072,13 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/hashMap-hashTable-different.html">
+			<a href="/2024/0120/string-stringBuild-stringBuffer.html">
 				<h2 class="index-title">
-					12 hashMap hashTable的区别
+					11 String,stringBuild,StringBuffer的区别
 				</h2>
 				<div class="index-brief">
-					hashMap集成字AbstractMap,hashTable集成自Dictionary类；hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常hashTable在put,get,contains等方法都加了synchronize
+					string是一个常量，他存在于常量池中；StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；其中StringBuffer 相比较于StringBuffer他在append方法中加了同步锁synchronized，所以是线程安全的
+
 					...
 				</div>
 			</a>

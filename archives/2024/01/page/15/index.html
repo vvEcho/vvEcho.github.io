@@ -2073,12 +2073,12 @@ MANDATORY级别，要求SQL操作强制在事务
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/thread-pool-setting.html">
+			<a href="/2024/0120/semaphore-sample.html">
 				<h2 class="index-title">
-					06 线程池怎么用，7大参数理解？如何配置？
+					07 信号量Semaphore(待完善)
 				</h2>
 				<div class="index-brief">
-					12345678910ThreadPoolExecutor(    int corePoolSize, // 核心池线程数大小 (常用)    int maximumPoolSize,  // 最大的线程数大小 (常用)    long keepAliveTime, // 超时等待时间 (常用)  
+					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
 					...
 				</div>
 			</a>
@@ -2099,12 +2099,12 @@ MANDATORY级别，要求SQL操作强制在事务
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/semaphore-sample.html">
+			<a href="/2024/0120/thread-pool-setting.html">
 				<h2 class="index-title">
-					07 信号量Semaphore(待完善)
+					06 线程池怎么用，7大参数理解？如何配置？
 				</h2>
 				<div class="index-brief">
-					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
+					12345678910ThreadPoolExecutor(    int corePoolSize, // 核心池线程数大小 (常用)    int maximumPoolSize,  // 最大的线程数大小 (常用)    long keepAliveTime, // 超时等待时间 (常用)  
 					...
 				</div>
 			</a>
