@@ -1528,7 +1528,7 @@
 								<li class="file">
 									<a href="/2024/0120/undefined.html">
                      
-										    15.xxl-job面试题
+										    01 xxl-job面试题
                      
 									</a>
 								</li>
@@ -2042,32 +2042,6 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/jvm-error-in-project.html">
-				<h2 class="index-title">
-					07 你在实际项目中有排查过JVM方面的问题吗？
-				</h2>
-				<div class="index-brief">
-					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-jvm/">03 jvm</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
 			<a href="/2024/0120/how-to-resolve-pro-cup-high.html">
 				<h2 class="index-title">
 					08 生产环境CPU占用过高，如何解决？
@@ -2098,13 +2072,38 @@ jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/jvm-constant-pool.html">
+			<a href="/2024/0120/jvm-error-in-project.html">
 				<h2 class="index-title">
-					05 谈谈jvm常量池
+					07 你在实际项目中有排查过JVM方面的问题吗？
 				</h2>
 				<div class="index-brief">
-					jdk1.8开始字符串常量池：存放在堆中运行时常量池：存放在方法区，属于元空间
-
+					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-jvm/">03 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/object-in-jvm-build-process.html">
+				<h2 class="index-title">
+					04 对象在jvm中的创建过程
+				</h2>
+				<div class="index-brief">
+					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区在创建类的对象时，首先会先去堆内存中分配空间然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化所有的非静态成员默认初始化完成后，调用相应的构造方法到栈中在栈
 					...
 				</div>
 			</a>

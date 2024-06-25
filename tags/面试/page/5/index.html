@@ -1528,7 +1528,7 @@
 								<li class="file">
 									<a href="/2024/0120/undefined.html">
                      
-										    15.xxl-job面试题
+										    01 xxl-job面试题
                      
 									</a>
 								</li>
@@ -1988,32 +1988,6 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/head-tail-cycle.html">
-				<h2 class="index-title">
-					06 为什么头插法容易形成死循环而尾插法不会
-				</h2>
-				<div class="index-brief">
-					其实这个问题是jdk1.7版本下的hashMap 多线程情况下发生的，hashMap扩容时采用头插法链表的顺序可能发生变化，导致线程1中链表指针原本由A指向B，在线程2中链表指针由B指向A,由于彼此都不可见；那么循环指向就产生了；而jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新来的元素
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
 			<a href="/2024/0120/red-blank-tree.html">
 				<h2 class="index-title">
 					07 谈谈你对链表-数组-红黑树-B+-平衡二叉树的理解
@@ -2099,6 +2073,39 @@
 				</h2>
 				<div class="index-brief">
 					先说不同吧，java1.7相比较java1.8，concurrentHashMap和hashMap都有一定的改动，其中concurrentHashMap在1.8版本后就不在基于Segement分段锁的实现了，并且锁的粒度改为了链表的head节点，锁的粒度更细效率更高；而hashMap在1.8版本后由
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/hashcode.html">
+				<h2 class="index-title">
+					02 hashCode的使用场景
+				</h2>
+				<div class="index-brief">
+					
+hashcode()方法是获取一个对象值的hash值，通常我们用来比较两个值是否相等来使用的；
+
+int i&#x3D;1 和Integer &#x3D; 1他们hash值相等吗？int i&#x3D;1和Integer &#x3D;1 调用hashcode方法，hash值相等;
+
+
+
+面试官这里
 					...
 				</div>
 			</a>
