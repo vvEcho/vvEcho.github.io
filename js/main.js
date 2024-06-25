@@ -10,6 +10,7 @@ $(document).ready(function () {
   wrapImageWithFancyBox();
 });
 
+
 // 页面滚动
 function pageScroll() {
   var start_hight = 0;
@@ -54,7 +55,7 @@ function switchTreeOrIndex() {
       }
     }
   });
-  if (window.matchMedia("(min-width: 1100px)").matches) {
+  if (window.matchMedia("(min-width: 768px)").matches) {
     scrollOn();
   } else {
     scrollOff();
@@ -369,3 +370,13 @@ function wrapImageWithFancyBox() {
     }
   });
 }
+
+
+// //判断是手机端还是pc端
+// function s(){
+//     if(window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
+//       return true; // 移动端
+//     }else{
+//       return false; // PC端
+//     }
+// }

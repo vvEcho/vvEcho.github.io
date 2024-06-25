@@ -4,14 +4,14 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-	
+
 	<!-- title -->
 	
 	<title>
-	 
+	
 	java面霸养成计划
 	</title>
-	
+
 	<!-- keywords,description -->
 	
 	
@@ -81,6 +81,7 @@
 <body>
 	<header id="header">
     <a id="title" href="/" class="logo">java面霸养成计划</a>
+    <!-- <a id="title" href="/" class="logo">java面霸养成计划</a> -->
 	<ul id="menu">
     <!-- <li class="menu-item">
         <a href='' class="menu-item-link">Home</a>
@@ -1987,13 +1988,12 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/jvm-constant-pool.html">
+			<a href="/2024/0120/object-in-jvm-build-process.html">
 				<h2 class="index-title">
-					05 谈谈jvm常量池
+					04 对象在jvm中的创建过程
 				</h2>
 				<div class="index-brief">
-					jdk1.8开始字符串常量池：存放在堆中运行时常量池：存放在方法区，属于元空间
-
+					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区在创建类的对象时，首先会先去堆内存中分配空间然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化所有的非静态成员默认初始化完成后，调用相应的构造方法到栈中在栈
 					...
 				</div>
 			</a>
@@ -2133,7 +2133,7 @@ TPS：是Transactions Per Second的缩写，也就是事务数&#x2F;秒。它是
 	</div>
 	<div id="footer">
 	<p>
-	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+	©<span id="footerYear-start">2023</span>-<span id="footerYear-end"></span>
 
 	
 	    <a href="/">viEcho</a>
@@ -2147,10 +2147,6 @@ TPS：是Transactions Per Second的缩写，也就是事务数&#x2F;秒。它是
 	</p>
 </div>
 
-
-<script type="text/javascript">
-	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
-</script>
 
 <script type="text/javascript">
 	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';

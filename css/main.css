@@ -47,6 +47,13 @@ a {
 	color: #b0ddce;
 	padding: 10px 15px;
 }
+/* 移动端样式 */
+@media screen and (max-width: 768px) {
+    #title {
+        display: none;
+    }
+}
+
 #menu {
 	position:fixed;
 	padding-right: 20px;
@@ -345,7 +352,7 @@ table {
   background: transparent;
   border-collapse: collapse;
   border-spacing: 0;
-  text-align: left; 
+  text-align: left;
   border: 1px solid black;
 }
 table th {
@@ -354,7 +361,7 @@ table th {
 	border: 1px solid black;
 }
 table td {
-	padding: 5px 10px; 
+	padding: 5px 10px;
 	border: 1px solid black;
 }
 
