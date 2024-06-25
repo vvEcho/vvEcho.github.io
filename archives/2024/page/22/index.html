@@ -2041,12 +2041,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/semaphore-sample.html">
+			<a href="/2024/0120/pessimistic-optimistic-lock.html">
 				<h2 class="index-title">
-					07 信号量Semaphore(待完善)
+					08 悲观锁和乐观锁
 				</h2>
 				<div class="index-brief">
-					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
+					悲观锁，按字面意思就是很悲观，每次获得去修改数据时总算悲观的认为数据已经被修改了，因此每次在获取到数据时都先给数据加锁，在操作数据的整个过程中一直上锁，等操作结束才会释放锁乐观锁，按字面意思就是很乐观，每次获得数据后总算乐观的认为数据没有被修改，只有在执行更新操作时才会判断数据是否被修改，如果数据被
 					...
 				</div>
 			</a>
@@ -2067,12 +2067,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/pessimistic-optimistic-lock.html">
+			<a href="/2024/0120/semaphore-sample.html">
 				<h2 class="index-title">
-					08 悲观锁和乐观锁
+					07 信号量Semaphore(待完善)
 				</h2>
 				<div class="index-brief">
-					悲观锁，按字面意思就是很悲观，每次获得去修改数据时总算悲观的认为数据已经被修改了，因此每次在获取到数据时都先给数据加锁，在操作数据的整个过程中一直上锁，等操作结束才会释放锁乐观锁，按字面意思就是很乐观，每次获得数据后总算乐观的认为数据没有被修改，只有在执行更新操作时才会判断数据是否被修改，如果数据被
+					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
 					...
 				</div>
 			</a>

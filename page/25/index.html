@@ -1988,16 +1988,12 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/how-to-resolve-pro-cup-high.html">
+			<a href="/2024/0120/jvm-error-in-project.html">
 				<h2 class="index-title">
-					08 生产环境CPU占用过高，如何解决？
+					07 你在实际项目中有排查过JVM方面的问题吗？
 				</h2>
 				<div class="index-brief">
-					
-top + H 指令找出占用 CPU 最高的进程的 pid
-top - H - p 否该进程中找到，哪些线程占用的 CPU 最高的线程,记录下 tid
-jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出出现异常的话,加上一 F 参教
-将 tid 转换为十六
+					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
 					...
 				</div>
 			</a>
@@ -2018,12 +2014,16 @@ jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/jvm-error-in-project.html">
+			<a href="/2024/0120/how-to-resolve-pro-cup-high.html">
 				<h2 class="index-title">
-					07 你在实际项目中有排查过JVM方面的问题吗？
+					08 生产环境CPU占用过高，如何解决？
 				</h2>
 				<div class="index-brief">
-					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
+					
+top + H 指令找出占用 CPU 最高的进程的 pid
+top - H - p 否该进程中找到，哪些线程占用的 CPU 最高的线程,记录下 tid
+jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出出现异常的话,加上一 F 参教
+将 tid 转换为十六
 					...
 				</div>
 			</a>
