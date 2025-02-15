@@ -14,7 +14,10 @@ a {
     text-decoration: none;
 }
 .content-on{
-	padding: 14px 14px 14px 250px
+	/* padding: 14px 14px 14px 250px */
+    padding: 14px 14px 14px 112px;
+    font-size: larger;
+
 }
 .content-off{
  	padding: 14px;
