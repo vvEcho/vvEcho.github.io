@@ -1557,6 +1557,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/hive-and-presto.html">
+                     
+										    14.presto为何能加速查询？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1863,7 +1874,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0219/kafka-exactly-once.html">
+									<a href="/2025/0219/export-full-GC.html">
                      
 										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
@@ -1876,7 +1887,40 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    11
+										    09.设计一个强一致性方案保障故障转移时会话共享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/atom-and-end-complete.html">
+                     
+										    10.订单系统如何保证原子性和最终一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/redis-same-to-db.html">
+                     
+										    11.如何保证缓存和数据库的一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/.html">
+                     
+										    es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -1955,6 +1999,113 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/0120/seata-principle.html">
+				<h2 class="index-title">
+					01 seata的原理
+				</h2>
+				<div class="index-brief">
+					在 Seata 中主要有以下三种角色，其中 TM 和 RM 是作为 Seata 的客户端与业务系统集成在一起，TC 作为 Seata 的服务端独立部署：
+事务协调器（TC）：维护全局事务的运行状态，负责协调并驱动全局提交或回滚事务管理器（TM）：事务发起方，控制全局事务的范围，负责开启一个全局事务，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/16-seata/">16 seata</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/undefined.html">
+				<h2 class="index-title">
+					01 xxl-job面试题
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/mysql-dividing-dbs-tables.html">
+				<h2 class="index-title">
+					07 分库分表怎么做的
+				</h2>
+				<div class="index-brief">
+					分库这个简单就是，分不同的sheam;一般是按业务来拆分
+分表一般有两种分法，一般有水平分表和垂直分表两种；水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表。。。而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不长变动的放一张表，变动多的放一张表；或者根据业务含
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/mysql-dividing-dbs-tables-query.html">
+				<h2 class="index-title">
+					08 分库分表后怎么做范围查找
+				</h2>
+				<div class="index-brief">
+					分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
 			<a href="/2024/0120/mysql-count-query-sample.html">
 				<h2 class="index-title">
 					09 统计sql例子
@@ -1962,113 +2113,6 @@
 				<div class="index-brief">
 					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
 1234select user_name ,bug_count from (select count(bug_id) as bug_c
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/mysql-b-jia-tree.html">
-				<h2 class="index-title">
-					05 B+树索引(待完善)
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/mysql-optimize-query.html">
-				<h2 class="index-title">
-					06 mysql怎么优化数据库查询(待完善)
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/mysql-mvcc-ji-zhi.html">
-				<h2 class="index-title">
-					03 mvcc机制？
-				</h2>
-				<div class="index-brief">
-					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的变化提交之前，对于其他的读事务来说都是不可见的；当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC 并发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/mysql-re-in-undo-log.html">
-				<h2 class="index-title">
-					04 redolog和binlog,undolog
-				</h2>
-				<div class="index-brief">
-					binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；
-
-binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；
-redolog-重做日志的作用，在于提高mysql
 					...
 				</div>
 			</a>

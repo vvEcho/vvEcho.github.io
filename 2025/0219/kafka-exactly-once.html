@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		08.导出频繁FullGC如何定位泄漏点，你是如何优化的 |
+		6.结合kafka的exactly-once说明如何实现一个无锁的幂等方案 |
 	
 	java面霸养成计划
 	</title>
@@ -1559,6 +1559,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/hive-and-presto.html">
+                     
+										    14.presto为何能加速查询？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1842,7 +1853,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
 										    6.结合kafka的exactly-once说明如何实现一个无锁的幂等方案
@@ -1864,8 +1875,8 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
-									<a href="/2025/0219/kafka-exactly-once.html">
+								<li class="file">
+									<a href="/2025/0219/export-full-GC.html">
                      
 										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
@@ -1878,7 +1889,40 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    11
+										    09.设计一个强一致性方案保障故障转移时会话共享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/atom-and-end-complete.html">
+                     
+										    10.订单系统如何保证原子性和最终一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/redis-same-to-db.html">
+                     
+										    11.如何保证缓存和数据库的一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/.html">
+                     
+										    es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -1955,7 +1999,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	08.导出频繁FullGC如何定位泄漏点，你是如何优化的
+	6.结合kafka的exactly-once说明如何实现一个无锁的幂等方案
 </h1>
 
 <!-- meta -->
@@ -1963,7 +2007,7 @@
 	
 
 	<span>viEcho</span>
-	<span>2025-02-19 18:36:37</span>
+	<span>2025-02-19 18:36:44</span>
 
   <div id="article-categories">
     
@@ -2009,18 +2053,24 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="假设导出百万级数据到Excel时出现频繁Full-GC，如何定位内存泄漏点？如果发现是POI的SXSSFWorkbook未正确释放资源，除了调用dispose-，还有哪些优化手段？请结合JVM参数调优和代码规范说明"><a href="#假设导出百万级数据到Excel时出现频繁Full-GC，如何定位内存泄漏点？如果发现是POI的SXSSFWorkbook未正确释放资源，除了调用dispose-，还有哪些优化手段？请结合JVM参数调优和代码规范说明" class="headerlink" title="假设导出百万级数据到Excel时出现频繁Full GC，如何定位内存泄漏点？如果发现是POI的SXSSFWorkbook未正确释放资源，除了调用dispose()，还有哪些优化手段？请结合JVM参数调优和代码规范说明"></a>假设导出百万级数据到Excel时出现频繁Full GC，如何定位内存泄漏点？如果发现是POI的SXSSFWorkbook未正确释放资源，除了调用dispose()，还有哪些优化手段？请结合JVM参数调优和代码规范说明</h3><p>可通过JVisualVM 分析工具，分析堆栈内存</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动参数添加GC日志和堆转储</span></span><br><span class="line">java -Xmx4g -Xms4g \</span><br><span class="line">-XX:+UseG1GC \</span><br><span class="line">-XX:+PrintGCDetails -XX:+PrintGCDateStamps \</span><br><span class="line">-XX:+HeapDumpOnOutOfMemoryError \</span><br><span class="line">-XX:HeapDumpPath=/path/to/dump.hprof \</span><br><span class="line">-jar data-export.jar</span><br></pre></td></tr></table></figure>
-<p>打开dump.hprof，查看Dominator Tree，找到占用内存最大的对象。<br>若发现大量SXSSFWorkbook或Row&#x2F;Cell对象未被回收，说明存在资源未释放</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Full GC (Allocation Failure) ...</span><br><span class="line">[PSOldGen: 3670016K-&gt;3670016K/3670016K] ...</span><br></pre></td></tr></table></figure>
-<p>现象：老年代内存几乎无回收，表明存在长期存活的大对象</p>
-<p>除了dispose()外，需结合以下措施：</p>
+	<h3 id="在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？"><a href="#在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？" class="headerlink" title="在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？"></a>在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？</h3><p>无锁幂等方案设计</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> message_processed (</span><br><span class="line">    id <span class="type">BIGINT</span> AUTO_INCREMENT,</span><br><span class="line">    biz_id <span class="type">VARCHAR</span>(<span class="number">64</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;订单ID+操作类型&#x27;</span>, <span class="comment">-- 如 &quot;ORDER_12345_APPLY_PRICE_PROTECTION&quot;</span></span><br><span class="line">    msg_id <span class="type">VARCHAR</span>(<span class="number">64</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">UNIQUE</span> KEY uk_biz_msg (biz_id, msg_id) <span class="comment">-- 联合唯一索引</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>java操作流程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">processMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">bizId</span> <span class="operator">=</span> msg.getOrderId() + <span class="string">&quot;_&quot;</span> + msg.getActionType();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 插入成功即表示未处理</span></span><br><span class="line">        jdbcTemplate.update(<span class="string">&quot;INSERT INTO message_processed (biz_id, msg_id) VALUES (?, ?)&quot;</span>,</span><br><span class="line">                           bizId, msg.getId());</span><br><span class="line">        <span class="comment">// 执行实际业务逻辑</span></span><br><span class="line">        applyPriceProtection(msg.getOrderId());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (DuplicateKeyException e) &#123;</span><br><span class="line">        <span class="comment">// 唯一键冲突，直接跳过</span></span><br><span class="line">        log.info(<span class="string">&quot;Message already processed: &#123;&#125;&quot;</span>, msg.getId());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>优势：</p>
 <ul>
-<li>1.分页写入与流式处理<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 分页查询数据（避免一次性加载百万数据到内存）</span></span><br><span class="line"><span class="type">int</span> <span class="variable">pageSize</span> <span class="operator">=</span> <span class="number">10000</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">page</span> <span class="operator">=</span> <span class="number">0</span>; ; page++) &#123;</span><br><span class="line">    List&lt;Data&gt; batch = queryData(page, pageSize);</span><br><span class="line">    <span class="keyword">if</span> (batch.isEmpty()) <span class="keyword">break</span>;</span><br><span class="line">    writeBatchToExcel(batch);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用SXSSFWorkbook的滑动窗口机制</span></span><br><span class="line"><span class="type">SXSSFWorkbook</span> <span class="variable">workbook</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SXSSFWorkbook</span>(<span class="number">100</span>); <span class="comment">// 保留100行在内存</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="type">Sheet</span> <span class="variable">sheet</span> <span class="operator">=</span> workbook.createSheet(<span class="string">&quot;Data&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (Data data : batch) &#123;</span><br><span class="line">        <span class="type">Row</span> <span class="variable">row</span> <span class="operator">=</span> sheet.createRow(currentRow++);</span><br><span class="line">        <span class="comment">// 填充单元格...</span></span><br><span class="line">        <span class="keyword">if</span> (currentRow % <span class="number">100</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            ((SXSSFSheet) sheet).flushRows(<span class="number">100</span>); <span class="comment">// 强制刷新到磁盘</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    workbook.dispose();</span><br><span class="line">    workbook.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-分页加载：减少单次内存占用（参考您简历中的分页查询优化）。<br>滑动窗口：通过flushRows()及时释放内存中的行数据</li>
-<li>2.及时清空大对象，帮助GC回收<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Data&gt; batch = queryData(page, pageSize);</span><br><span class="line">writeBatchToExcel(batch);</span><br><span class="line">batch.clear(); <span class="comment">// 帮助GC回收</span></span><br></pre></td></tr></table></figure></li>
-<li>3.文件流强制释放<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (<span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;report.xlsx&quot;</span>)) &#123;</span><br><span class="line">    workbook.write(fos);</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    <span class="comment">// 异常处理</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    Files.delete(workbook.getTempFile()); <span class="comment">// 删除临时文件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>4.JVM调优建议<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">总堆大小（根据物理内存调整）</span></span><br><span class="line">-Xmx8g -Xms8g</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">年轻代占比（增大Survivor区避免过早晋升）</span></span><br><span class="line">-XX:NewRatio=1          # 年轻代:老年代=1:1</span><br><span class="line">-XX:SurvivorRatio=6     # Eden:Survivor=6:1:1</span><br><span class="line">-XX:MaxTenuringThreshold=15</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">G1垃圾回收器优化</span></span><br><span class="line">-XX:+UseG1GC</span><br><span class="line">-XX:MaxGCPauseMillis=200    # 目标停顿时间</span><br><span class="line">-XX:G1ReservePercent=20     # 预留内存防晋升失败</span><br><span class="line">-XX:InitiatingHeapOccupancyPercent=45  # 更早启动并发标记</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">监控与诊断</span></span><br><span class="line">-XX:+G1PrintHeapRegions    # 跟踪Region分配</span><br><span class="line">-XX:+PrintAdaptiveSizePolicy # 查看G1自动调整策略</span><br></pre></td></tr></table></figure></li>
+<li>无锁：依赖数据库唯一约束，天然幂等。</li>
+<li>业务语义明确：biz_id可结合订单ID和操作类型（如”价保申请”），避免不同业务动作的ID冲突</li>
+</ul>
+<p>Kafka的exactly-once语义为消息不会丢失，也不会重复，只会被处理一次；<br>借助kafka的事务机制来实现<br>前提条件，配置如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 生产者配置</span><br><span class="line">props.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, <span class="string">&quot;true&quot;</span>); <span class="comment">// 开启幂等</span></span><br><span class="line">props.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, <span class="string">&quot;price-protection-producer&quot;</span>); <span class="comment">// 事务ID</span></span><br><span class="line"># 消费者配置</span><br><span class="line">props.put(ConsumerConfig.ISOLATION_LEVEL_CONFIG, <span class="string">&quot;read_committed&quot;</span>); <span class="comment">// 只读取已提交的消息</span></span><br></pre></td></tr></table></figure>
+<p>然后业务代码中，在业务处理代码前需要先开启事务，业务处理后再提交偏移量，最后再提交事务</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">KafkaConsumer</span> <span class="variable">consumer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">KafkaConsumer</span>&lt;&gt;(props);</span><br><span class="line">consumer.subscribe(Collections.singleton(<span class="string">&quot;price-protection-topic&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启事务</span></span><br><span class="line"><span class="type">KafkaProducer</span> <span class="variable">producer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">KafkaProducer</span>&lt;&gt;(props);</span><br><span class="line">producer.initTransactions();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="type">ConsumerRecords</span> <span class="variable">records</span> <span class="operator">=</span> consumer.poll(Duration.ofMillis(<span class="number">100</span>));</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        producer.beginTransaction();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (ConsumerRecord record : records) &#123;</span><br><span class="line">            <span class="comment">// 业务处理（幂等）</span></span><br><span class="line">            applyPriceProtection(record.key());</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将处理结果发送到下游Topic（如佣金计算完成通知）</span></span><br><span class="line">            ProducerRecord&lt;String, String&gt; outputRecord =</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">ProducerRecord</span>&lt;&gt;(<span class="string">&quot;commission-result-topic&quot;</span>, record.key(), <span class="string">&quot;SUCCESS&quot;</span>);</span><br><span class="line">            producer.send(outputRecord);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 提交事务（同时提交消费位移）</span></span><br><span class="line">        producer.sendOffsetsToTransaction(offsets, <span class="string">&quot;price-protection-consumer-group&quot;</span>);</span><br><span class="line">        producer.commitTransaction();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        producer.abortTransaction(); <span class="comment">// 回滚事务，消费位移不提交</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>核心机制：</p>
+<ul>
+<li>生产者幂等性：通过transactional.id保证单个生产者发送的消息Exactly-Once。</li>
+<li>事务性跨分区写：业务处理与消息发送到下游Topic的原子性。</li>
+<li>消费者位移事务提交：消费位移的提交与业务处理结果绑定，避免重复消费。</li>
 </ul>
 
 </div>
@@ -2030,16 +2080,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2025/0219/10w-QPS-desigen.html">
+              <a href="/2025/0219/kafka-exactly-once.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  07.如何设计一个支持10万QPS的库存扣减系统
+                  09.设计一个强一致性方案保障故障转移时会话共享
               </a>
             
         </div>
         <div class="item right">
             
               <a href="/2025/0219/ddd-interface-abstract-diff.html">
-                1.结合DDD说明抽象类和接口的区别
+                5.请分析RR可能导致锁范围扩大的原因和解决思路
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

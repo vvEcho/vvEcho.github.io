@@ -1557,6 +1557,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/hive-and-presto.html">
+                     
+										    14.presto为何能加速查询？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1863,7 +1874,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0219/kafka-exactly-once.html">
+									<a href="/2025/0219/export-full-GC.html">
                      
 										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
@@ -1876,7 +1887,40 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    11
+										    09.设计一个强一致性方案保障故障转移时会话共享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/atom-and-end-complete.html">
+                     
+										    10.订单系统如何保证原子性和最终一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/redis-same-to-db.html">
+                     
+										    11.如何保证缓存和数据库的一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/.html">
+                     
+										    es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -1955,130 +1999,123 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/0120/spring-transcation-jizhi.html">
+				<h2 class="index-title">
+					03 Spring事务传播机制
+				</h2>
+				<div class="index-brief">
+					Spring默认有7种事务机制，如下：
+
+REQUIRED-默认的事务隔离级别，会自动加入当前的事务，如果不存在则新建事务
+
+SUPPORT级别，跟REQUIRED类似，也是会自动加入当前的事务，但两者区别在于，若当前无事务，则按照无事务的方式执行
+
+MANDATORY级别，要求SQL操作强制在事务
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/deadlock-occurs-reason.html">
+				<h2 class="index-title">
+					09 死锁出现的原因以及怎么解决？
+				</h2>
+				<div class="index-brief">
+					出现死锁的原因是因为两个线程出现持有对方想要的资源，导致这两个线程一直处在等待对方释放锁的状态；破坏竞态条件既可以解除死锁，例如：当一个线程持有锁时，没有释放锁时不能再去尝试获取另一个锁；
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/thread-pool-setting.html">
+				<h2 class="index-title">
+					06 线程池怎么用，7大参数理解？如何配置？
+				</h2>
+				<div class="index-brief">
+					12345678910ThreadPoolExecutor(    int corePoolSize, // 核心池线程数大小 (常用)    int maximumPoolSize,  // 最大的线程数大小 (常用)    long keepAliveTime, // 超时等待时间 (常用)  
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/semaphore-sample.html">
+				<h2 class="index-title">
+					07 信号量Semaphore(待完善)
+				</h2>
+				<div class="index-brief">
+					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
 			<a href="/2024/0120/pessimistic-optimistic-lock.html">
 				<h2 class="index-title">
 					08 悲观锁和乐观锁
 				</h2>
 				<div class="index-brief">
 					悲观锁，按字面意思就是很悲观，每次获得去修改数据时总算悲观的认为数据已经被修改了，因此每次在获取到数据时都先给数据加锁，在操作数据的整个过程中一直上锁，等操作结束才会释放锁乐观锁，按字面意思就是很乐观，每次获得数据后总算乐观的认为数据没有被修改，只有在执行更新操作时才会判断数据是否被修改，如果数据被
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/wait-sleep-yield-join.html">
-				<h2 class="index-title">
-					04 wait 和sleep区别,yield和join的区别
-				</h2>
-				<div class="index-brief">
-					
-1.wait：Object类的方法(notify()、notifyAll()  也是Object对象)，必须放在循环体和同步代码块中，执行该方法的线程会释放锁，进入线程等待池中等待被再次唤醒(notify随机唤醒，notifyAll全部唤醒，线程结束自动唤醒)即放入锁池中竞争同步锁
-2.sleep
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/how-to-start-one-thread.html">
-				<h2 class="index-title">
-					05 怎么开启一个线程？
-				</h2>
-				<div class="index-brief">
-					
-直接new一个Thread
-继承Thread，重写run方法
-实现Runnable，重写run方法
-实现Callable，重写call方法
-ThreadPoolExecutor手动配置线程池
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/synchronized-valatial-understand.html">
-				<h2 class="index-title">
-					01 synchronized和volatial关键字理解
-				</h2>
-				<div class="index-brief">
-					synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥就内存的可见性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：
-
-①获得互斥锁
-②从主内存拷贝变量的最新副
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/lock-upgradation.html">
-				<h2 class="index-title">
-					02 锁升级的过程
-				</h2>
-				<div class="index-brief">
-					
-无锁​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
-偏向锁​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的测试一下
 					...
 				</div>
 			</a>

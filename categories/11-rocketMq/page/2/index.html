@@ -1557,6 +1557,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/hive-and-presto.html">
+                     
+										    14.presto为何能加速查询？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1863,7 +1874,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0219/kafka-exactly-once.html">
+									<a href="/2025/0219/export-full-GC.html">
                      
 										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
@@ -1876,7 +1887,40 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    11
+										    09.设计一个强一致性方案保障故障转移时会话共享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/atom-and-end-complete.html">
+                     
+										    10.订单系统如何保证原子性和最终一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/redis-same-to-db.html">
+                     
+										    11.如何保证缓存和数据库的一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/.html">
+                     
+										    es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -1983,12 +2027,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-order.html">
+			<a href="/2024/0120/rocketmq-msg-not-repeat.html">
 				<h2 class="index-title">
-					05 rocketMq如何保证消息顺序消费？
+					04 rocketMq怎么避免消息不重复消费
 				</h2>
 				<div class="index-brief">
-					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
+					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作，若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重，
 					...
 				</div>
 			</a>
@@ -2009,12 +2053,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-not-repeat.html">
+			<a href="/2024/0120/rocketmq-msg-order.html">
 				<h2 class="index-title">
-					04 rocketMq怎么避免消息不重复消费
+					05 rocketMq如何保证消息顺序消费？
 				</h2>
 				<div class="index-brief">
-					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作，若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重，
+					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
 					...
 				</div>
 			</a>

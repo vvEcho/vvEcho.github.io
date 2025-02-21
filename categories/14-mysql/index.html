@@ -1557,6 +1557,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/hive-and-presto.html">
+                     
+										    14.presto为何能加速查询？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1863,7 +1874,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0219/kafka-exactly-once.html">
+									<a href="/2025/0219/export-full-GC.html">
                      
 										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
@@ -1876,7 +1887,40 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    11
+										    09.设计一个强一致性方案保障故障转移时会话共享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/atom-and-end-complete.html">
+                     
+										    10.订单系统如何保证原子性和最终一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/redis-same-to-db.html">
+                     
+										    11.如何保证缓存和数据库的一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/.html">
+                     
+										    es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -1953,6 +1997,35 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		<div class="index-li">
+			<a href="/2025/0220/hive-and-presto.html">
+				<h2 class="index-title">
+					14.presto为何能加速查询？
+				</h2>
+				<div class="index-brief">
+					
+执行引擎的革新Hive 的局限性：Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入 HDFS 磁盘,导致高 I&#x2F;O 开销和高延迟(适合批量处理,但无法满足交互式查询)
+
+Presto 的优势：Presto
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		<div class="index-li">
 			<a href="/2024/0227/mysql-zhujian-suoyin-diff-normal-suoyin.html">
@@ -2046,33 +2119,6 @@
 			</a>
                 <div class="article-meta">
 				    <span>2024-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/mysql-dividing-dbs-tables.html">
-				<h2 class="index-title">
-					07 分库分表怎么做的
-				</h2>
-				<div class="index-brief">
-					分库这个简单就是，分不同的sheam;一般是按业务来拆分
-分表一般有两种分法，一般有水平分表和垂直分表两种；水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表。。。而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不长变动的放一张表，变动多的放一张表；或者根据业务含
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
                     
                             
                                 

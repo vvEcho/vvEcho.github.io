@@ -1557,6 +1557,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/hive-and-presto.html">
+                     
+										    14.presto为何能加速查询？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1863,7 +1874,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0219/kafka-exactly-once.html">
+									<a href="/2025/0219/export-full-GC.html">
                      
 										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
@@ -1876,7 +1887,40 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    11
+										    09.设计一个强一致性方案保障故障转移时会话共享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/atom-and-end-complete.html">
+                     
+										    10.订单系统如何保证原子性和最终一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/redis-same-to-db.html">
+                     
+										    11.如何保证缓存和数据库的一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/.html">
+                     
+										    es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -1955,6 +1999,118 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/0120/jvm-memory-model.html">
+				<h2 class="index-title">
+					01 说说jvm内存模型
+				</h2>
+				<div class="index-brief">
+					jvm由类装载器、运行时数据区、执行引擎、本地方法接口还有垃圾回收器构成;其中垃圾回收器作用在整个jvm内存中（主要作用在堆和方法区）其中运行时数据区分我线程共享区和线程独占区，线程共享区包含方法区和堆，线程独占区分为虚拟机，本地方法栈，程序计数器（也叫PC寄存器）
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/heap-stack-different.html">
+				<h2 class="index-title">
+					02 堆和栈的区别
+				</h2>
+				<div class="index-brief">
+					1.堆是不连续的，所以分配的内存是在运行期确认的，因此大小不固定；堆对于整个应用程序都是共享、可见的；堆内存存储的是实体；堆内存存放的实体会被垃圾回收机制不定时的回收
+2.栈是连续的，所以分配的内存大小要在编译期就确认，大小是固定的；栈对于线程是可见的，所以也是线程私有，他的生命周期和线程相同（所以
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/base-data-type-all-in-stack.html">
+				<h2 class="index-title">
+					03 java中的基本数据类型都是存储在栈中的吗？
+				</h2>
+				<div class="index-brief">
+					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题答：不是一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而结束
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/qps-tps-different.html">
+				<h2 class="index-title">
+					11 Qps和Tps的区别
+				</h2>
+				<div class="index-brief">
+					
+定义
+
+
+QPS（Queries Per Second）：表示系统每秒处理的查询请求数。通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
+
+TPS（Transactions Per Second）：表示系统
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
 			<a href="/2024/0120/memory-leak-out.html">
 				<h2 class="index-title">
 					09 内存泄漏和内存溢出
@@ -1974,130 +2130,6 @@
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/overwrite-overload-different.html">
-				<h2 class="index-title">
-					10 重写和重载的区别
-				</h2>
-				<div class="index-brief">
-					
-重载是定义相同的方法名、只是参数不同，重写是子类重写父类的方法
-重载是在一个类中，重写是子类与父类之间的
-重载是编译时的多态性，重写是运行时的多态性
-重载的参数个数、参数类型、参数的顺序可以不同，重写父类子方法参数必须相同
-重载对修饰范围没有要求，重写要求重写方法的修饰范围大于被重写方法的修饰范围
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/strong-soft-weak-phantom-ref.html">
-				<h2 class="index-title">
-					08 强引用，软引用，弱引用，虚引用的区别
-				</h2>
-				<div class="index-brief">
-					
-强引用强引用一般指我们new的对象存在的引用
-
-软引用软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
-
-弱引用弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
-
-虚引用虚引用，是一种形同虚设的引用，主要用来跟踪对象被
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/string-stringBuild-stringBuffer.html">
-				<h2 class="index-title">
-					01 String,stringBuild,StringBuffer的区别
-				</h2>
-				<div class="index-brief">
-					string是一个常量，他存在于常量池中；
-StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
-其中StringBuffer 相比较于StringBuffer他在append方法中加了同步锁synchronized，所以是线程安全的
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/hashMap-hashTable-different.html">
-				<h2 class="index-title">
-					07 hashMap hashTable的区别
-				</h2>
-				<div class="index-brief">
-					
-hashMap继承自AbstractMap,hashTable集成自Dictionary类；
-
-hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
-
-hashTable在put,get,contains等方法都加了synchr
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
 										
                                     </span>
                                 
