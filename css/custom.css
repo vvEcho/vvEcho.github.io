@@ -1,0 +1,25 @@
+/* CSS样式 */
+.heightlight {
+    position: relative;
+    background: #f8f8f8;
+    border-radius: 6px;
+    margin: 1rem 0;
+    overflow-x: auto;
+    padding: 2.5rem 1rem 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+pre {
+    margin: 0;
+    white-space: pre;
+    min-width: fit-content;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* 语法高亮颜色示例（可根据需要调整） */
+.token.keyword { color: #d73a49; }
+.token.comment { color: #6a737d; }
+.token.string { color: #032f62; }

@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-
+    <link href="https://fonts.loli.net/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 	<!-- title -->
 	
 	<title>
@@ -40,6 +40,9 @@
 	
 <link rel="stylesheet" href="/css/main.css">
 
+    
+<link rel="stylesheet" href="/css/custom.css">
+
 	
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -65,6 +68,9 @@
 	
 <script src="/js/main.js"></script>
 
+    <!-- 
+<script src="/js/code-copy.js"></script>
+ -->
 
 	
 		
@@ -1865,7 +1871,7 @@
 								<li class="file">
 									<a href="/2025/0219/10w-QPS-desigen.html">
                      
-										    07.如何设计一个支持10万QPS的库存扣减系统
+										    7.如何设计一个支持10万QPS的库存扣减系统
                      
 									</a>
 								</li>
@@ -1876,7 +1882,7 @@
 								<li class="file">
 									<a href="/2025/0219/export-full-GC.html">
                      
-										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
+										    8.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
 									</a>
 								</li>
@@ -1887,7 +1893,7 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    09.设计一个强一致性方案保障故障转移时会话共享
+										    9.设计一个强一致性方案保障故障转移时会话共享
                      
 									</a>
 								</li>
@@ -1918,9 +1924,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0220/.html">
+									<a href="/2025/0220/es-deep-page-query.html">
                      
-										    es怎么解决深分页的问题及索引优化有哪些方法
+										    12.es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -1999,6 +2005,34 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2024/0120/wait-sleep-yield-join.html">
+				<h2 class="index-title">
+					04 wait 和sleep区别,yield和join的区别
+				</h2>
+				<div class="index-brief">
+					
+1.wait：Object类的方法(notify()、notifyAll()  也是Object对象)，必须放在循环体和同步代码块中，执行该方法的线程会释放锁，进入线程等待池中等待被再次唤醒(notify随机唤醒，notifyAll全部唤醒，线程结束自动唤醒)即放入锁池中竞争同步锁
+2.sleep
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
 			<a href="/2024/0120/how-to-start-one-thread.html">
 				<h2 class="index-title">
 					05 怎么开启一个线程？
@@ -2032,14 +2066,15 @@ ThreadPoolExecutor手动配置线程池
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/wait-sleep-yield-join.html">
+			<a href="/2024/0120/synchronized-valatial-understand.html">
 				<h2 class="index-title">
-					04 wait 和sleep区别,yield和join的区别
+					01 synchronized和volatial关键字理解
 				</h2>
 				<div class="index-brief">
-					
-1.wait：Object类的方法(notify()、notifyAll()  也是Object对象)，必须放在循环体和同步代码块中，执行该方法的线程会释放锁，进入线程等待池中等待被再次唤醒(notify随机唤醒，notifyAll全部唤醒，线程结束自动唤醒)即放入锁池中竞争同步锁
-2.sleep
+					synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥就内存的可见性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：
+
+①获得互斥锁
+②从主内存拷贝变量的最新副
 					...
 				</div>
 			</a>
@@ -2068,35 +2103,6 @@ ThreadPoolExecutor手动配置线程池
 					
 无锁​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
 偏向锁​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的测试一下
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/synchronized-valatial-understand.html">
-				<h2 class="index-title">
-					01 synchronized和volatial关键字理解
-				</h2>
-				<div class="index-brief">
-					synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥就内存的可见性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：
-
-①获得互斥锁
-②从主内存拷贝变量的最新副
 					...
 				</div>
 			</a>

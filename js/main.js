@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  hljs.initHighlightingOnLoad();
+//   hljs.initHighlightingOnLoad();
   clickTreeDirectory();
   serachTree();
   // pjaxLoad();

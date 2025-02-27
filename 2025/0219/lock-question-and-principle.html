@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-
+    <link href="https://fonts.loli.net/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 	<!-- title -->
 	
 	<title>
@@ -42,6 +42,9 @@
 	
 <link rel="stylesheet" href="/css/main.css">
 
+    
+<link rel="stylesheet" href="/css/custom.css">
+
 	
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -67,6 +70,9 @@
 	
 <script src="/js/main.js"></script>
 
+    <!-- 
+<script src="/js/code-copy.js"></script>
+ -->
 
 	
 		
@@ -1867,7 +1873,7 @@
 								<li class="file">
 									<a href="/2025/0219/10w-QPS-desigen.html">
                      
-										    07.如何设计一个支持10万QPS的库存扣减系统
+										    7.如何设计一个支持10万QPS的库存扣减系统
                      
 									</a>
 								</li>
@@ -1878,7 +1884,7 @@
 								<li class="file">
 									<a href="/2025/0219/export-full-GC.html">
                      
-										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
+										    8.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
 									</a>
 								</li>
@@ -1889,7 +1895,7 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    09.设计一个强一致性方案保障故障转移时会话共享
+										    9.设计一个强一致性方案保障故障转移时会话共享
                      
 									</a>
 								</li>
@@ -1920,9 +1926,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0220/.html">
+									<a href="/2025/0220/es-deep-page-query.html">
                      
-										    es怎么解决深分页的问题及索引优化有哪些方法
+										    12.es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -2053,7 +2059,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？"><a href="#在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？" class="headerlink" title="在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？"></a>在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？</h3><p>Redis分布式锁的隐患<br>热key问题导致单节点压力（可通过分片或分区锁缓解）。<br>锁超时与业务执行冲突：若业务执行时间超过锁超时时间（TTL），导致锁自动释放后其他线程获取锁，可能引发数据竞态。<br>客户端故障导致死锁：若客户端崩溃未释放锁，需依赖TTL自动过期（Redisson通过看门狗解决）。<br>锁误删风险：非原子操作释放锁（如先get再del）可能导致删除其他客户端的锁，应使用Lua脚本保证原子性。<br>集群脑裂问题：主从切换时可能导致多个客户端持有锁（需用RedLock等算法缓解）。</p>
+	<h4 id="在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？"><a href="#在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？" class="headerlink" title="在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？"></a>在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？</h4><p>Redis分布式锁的隐患<br>热key问题导致单节点压力（可通过分片或分区锁缓解）。<br>锁超时与业务执行冲突：若业务执行时间超过锁超时时间（TTL），导致锁自动释放后其他线程获取锁，可能引发数据竞态。<br>客户端故障导致死锁：若客户端崩溃未释放锁，需依赖TTL自动过期（Redisson通过看门狗解决）。<br>锁误删风险：非原子操作释放锁（如先get再del）可能导致删除其他客户端的锁，应使用Lua脚本保证原子性。<br>集群脑裂问题：主从切换时可能导致多个客户端持有锁（需用RedLock等算法缓解）。</p>
 <p>自动续期实现<br>✅ 正确：Redisson通过看门狗机制自动续期。<br>🔧 实现细节：<br>当获取锁不指定leaseTime时，看门狗生效（默认TTL 30秒）。<br>续期间隔为TTL的1&#x2F;3（即10秒），通过internalLockLeaseTime参数控制。<br>续期逻辑在org.redisson.RedissonLock#renewExpiration中实现，使用Timeout定时任务。</p>
 <p>看门狗机制原理<br>❌ 修正：非时间轮算法，而是基于Netty的HashedWheelTimer（时间轮的一种实现）调度定时任务。<br>🔍 核心流程：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">renewExpiration</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">Timeout</span> <span class="variable">task</span> <span class="operator">=</span> commandExecutor.getConnectionManager().newTimeout(<span class="keyword">new</span> <span class="title class_">TimerTask</span>() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">(Timeout timeout)</span> &#123;</span><br><span class="line">            <span class="comment">// 异步续期操作</span></span><br><span class="line">            RFuture&lt;Boolean&gt; future = renewExpirationAsync(threadId);</span><br><span class="line">            future.onComplete((res, e) -&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (e != <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// 异常处理</span></span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (res) &#123;</span><br><span class="line">                    <span class="comment">// 递归调用继续续期</span></span><br><span class="line">                    renewExpiration();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, internalLockLeaseTime / <span class="number">3</span>, TimeUnit.MILLISECONDS); <span class="comment">// 10秒后执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2085,7 +2091,7 @@
         <div class="item right">
             
               <a href="/2025/0219/10w-QPS-desigen.html">
-                07.如何设计一个支持10万QPS的库存扣减系统
+                7.如何设计一个支持10万QPS的库存扣减系统
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

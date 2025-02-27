@@ -4,12 +4,12 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-
+    <link href="https://fonts.loli.net/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 	<!-- title -->
 	
 	<title>
 	
-		07.如何设计一个支持10万QPS的库存扣减系统 |
+		7.如何设计一个支持10万QPS的库存扣减系统 |
 	
 	java面霸养成计划
 	</title>
@@ -42,6 +42,9 @@
 	
 <link rel="stylesheet" href="/css/main.css">
 
+    
+<link rel="stylesheet" href="/css/custom.css">
+
 	
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -67,6 +70,9 @@
 	
 <script src="/js/main.js"></script>
 
+    <!-- 
+<script src="/js/code-copy.js"></script>
+ -->
 
 	
 		
@@ -1867,7 +1873,7 @@
 								<li class="file active">
 									<a href="/2025/0219/10w-QPS-desigen.html">
                      
-										    07.如何设计一个支持10万QPS的库存扣减系统
+										    7.如何设计一个支持10万QPS的库存扣减系统
                      
 									</a>
 								</li>
@@ -1878,7 +1884,7 @@
 								<li class="file">
 									<a href="/2025/0219/export-full-GC.html">
                      
-										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
+										    8.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
 									</a>
 								</li>
@@ -1889,7 +1895,7 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    09.设计一个强一致性方案保障故障转移时会话共享
+										    9.设计一个强一致性方案保障故障转移时会话共享
                      
 									</a>
 								</li>
@@ -1920,9 +1926,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0220/.html">
+									<a href="/2025/0220/es-deep-page-query.html">
                      
-										    es怎么解决深分页的问题及索引优化有哪些方法
+										    12.es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -1999,7 +2005,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	07.如何设计一个支持10万QPS的库存扣减系统
+	7.如何设计一个支持10万QPS的库存扣减系统
 </h1>
 
 <!-- meta -->
@@ -2053,7 +2059,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis-Lua脚本、分布式锁-数据库扣减、以及Redis-MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明"><a href="#假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis-Lua脚本、分布式锁-数据库扣减、以及Redis-MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明" class="headerlink" title="假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明"></a>假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明</h3><table>
+	<h4 id="假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis-Lua脚本、分布式锁-数据库扣减、以及Redis-MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明"><a href="#假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis-Lua脚本、分布式锁-数据库扣减、以及Redis-MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明" class="headerlink" title="假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明"></a>假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明</h4><table>
 <thead>
 <tr>
 <th>方案</th>
@@ -2082,7 +2088,7 @@
 </tr>
 </tbody></table>
 <p>推荐redis+MQ异步方案<br>架构图：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[用户请求] → [API网关] → [Redis库存预扣减] → [MQ] → [DB最终扣减+订单创建]</span><br><span class="line">          ↑           ↓ (返回预扣结果)      ↓ (异步保证最终一致性)</span><br><span class="line">          └─[响应前端]   [库存回滚机制]       [监控报警]</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[用户请求]</span> → <span class="selector-attr">[API网关]</span> → <span class="selector-attr">[Redis库存预扣减]</span> → <span class="selector-attr">[MQ]</span> → <span class="selector-attr">[DB最终扣减+订单创建]</span></span><br><span class="line">          ↑           ↓ (返回预扣结果)      ↓ (异步保证最终一致性)</span><br><span class="line">          └─<span class="selector-attr">[响应前端]</span>   <span class="selector-attr">[库存回滚机制]</span>       <span class="selector-attr">[监控报警]</span></span><br></pre></td></tr></table></figure>
 <p>实现步骤：</p>
 <h4 id="1-库存预热"><a href="#1-库存预热" class="headerlink" title="1.库存预热"></a>1.库存预热</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将10000件库存拆分为100个桶（避免单个key过热）</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">    redisTemplate.opsForValue().set(<span class="string">&quot;stock:sku_123:bucket_&quot;</span> + i, <span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>优势：分散热key压力（参考您简历中Redis集群经验）。<br>路由算法：bucketId &#x3D; userId.hashCode() % 100（相同用户始终访问同一桶，避免重复扣减）</p>
@@ -2130,7 +2136,7 @@
         <div class="item right">
             
               <a href="/2025/0219/export-full-GC.html">
-                08.导出频繁FullGC如何定位泄漏点，你是如何优化的
+                8.导出频繁FullGC如何定位泄漏点，你是如何优化的
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

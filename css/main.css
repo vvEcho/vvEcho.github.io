@@ -287,7 +287,7 @@ a {
 }
 #article-content ol,
 #article-content ul {
-	padding-left: 40px;
+	padding-left: 15px;
 }
 #article-content li {
 	margin: 5px 0;
@@ -328,8 +328,8 @@ a {
 	height: auto;
 }
 #article-content pre {
-	font-size: 14px;
-	margin: 20px 0 15px;
+	font-size: 12px;
+	/* margin: 20px 0 15px; */
 }
 #article-content blockquote{
 	padding: 0 1em;
@@ -356,17 +356,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   text-align: left;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 table th {
 	font-weight: bold;
 	padding: 5px 10px;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 }
-table td {
-	padding: 5px 10px;
-	border: 1px solid black;
-}
+/* table td { */
+	/* padding: 5px 10px; */
+	/* border: 1px solid black; */
+    /* border: 1px solid #e0e0e0; */
+/* } */
 
 figure{
     overflow:auto
@@ -429,3 +430,23 @@ figure{
 		opacity: 0.95;
 	}
 }
+#article-content {
+    font-size: 14px;
+}
+
+#article-content .highlight pre {
+    padding: 10px 1px 6px 10px !important;
+    background: #ececec;  /* 更柔和的灰底 */
+    /* border-radius: 0 0 8px 8px !important; */
+}
+.highlight .gutter{
+    width: 34px;
+}
+.highlight .gutter pre{
+    border-right: 2px solid #e0e0e0;
+    border-radius: 8px 0px 0px 8px !important;
+}
+.highlight .code pre{
+    border-radius: 0px 8px 8px 0px !important;
+}
+

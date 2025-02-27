@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-
+    <link href="https://fonts.loli.net/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 	<!-- title -->
 	
 	<title>
@@ -42,6 +42,9 @@
 	
 <link rel="stylesheet" href="/css/main.css">
 
+    
+<link rel="stylesheet" href="/css/custom.css">
+
 	
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -67,6 +70,9 @@
 	
 <script src="/js/main.js"></script>
 
+    <!-- 
+<script src="/js/code-copy.js"></script>
+ -->
 
 	
 		
@@ -1867,7 +1873,7 @@
 								<li class="file">
 									<a href="/2025/0219/10w-QPS-desigen.html">
                      
-										    07.如何设计一个支持10万QPS的库存扣减系统
+										    7.如何设计一个支持10万QPS的库存扣减系统
                      
 									</a>
 								</li>
@@ -1878,7 +1884,7 @@
 								<li class="file">
 									<a href="/2025/0219/export-full-GC.html">
                      
-										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
+										    8.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
 									</a>
 								</li>
@@ -1889,7 +1895,7 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    09.设计一个强一致性方案保障故障转移时会话共享
+										    9.设计一个强一致性方案保障故障转移时会话共享
                      
 									</a>
 								</li>
@@ -1920,9 +1926,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0220/.html">
+									<a href="/2025/0220/es-deep-page-query.html">
                      
-										    es怎么解决深分页的问题及索引优化有哪些方法
+										    12.es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -2053,7 +2059,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息-本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题"><a href="#在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息-本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题" class="headerlink" title="在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题"></a>在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题</h3><p>1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？<br>2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布式锁方案不同的实现方式。<br>3.当遇到网络分区（CAP中的P）时，该方案可能面临什么风险？如何通过设计补偿机制确保数据最终一致？</p>
+	<h4 id="在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息-本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题"><a href="#在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息-本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题" class="headerlink" title="在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题"></a>在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题</h4><p>1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？<br>2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布式锁方案不同的实现方式。<br>3.当遇到网络分区（CAP中的P）时，该方案可能面临什么风险？如何通过设计补偿机制确保数据最终一致？</p>
 <ol>
 <li><p>消息生产端的原子性保障<br>订单创建与消息发送必须保持原子性，避免出现订单创建成功但消息未发送的情况</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 订单服务本地事务表方案</span></span><br><span class="line"><span class="meta">@Transactional</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createOrder</span><span class="params">(OrderDTO order)</span> &#123;</span><br><span class="line">    <span class="comment">// 1. 写入订单表</span></span><br><span class="line">    orderMapper.insert(order);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 写入本地消息表（原子操作）</span></span><br><span class="line">    <span class="type">LocalMessage</span> <span class="variable">message</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LocalMessage</span>();</span><br><span class="line">    message.setBizId(order.getOrderNo());</span><br><span class="line">    message.setContent(JSON.toJSONString(order.getItems()));</span><br><span class="line">    message.setStatus(MessageStatus.UNSENT);</span><br><span class="line">    localMessageMapper.insert(message);  <span class="comment">// 与订单表同库事务</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 异步发送消息（非事务内）</span></span><br><span class="line">    CompletableFuture.runAsync(() -&gt; &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            jcqTemplate.send(<span class="string">&quot;stock_reduce_topic&quot;</span>, message.getContent());</span><br><span class="line">            localMessageMapper.updateStatus(message.getId(), MessageStatus.SENT);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.error(<span class="string">&quot;消息发送失败&quot;</span>, e);</span><br><span class="line">            <span class="comment">// 触发补偿任务</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2080,9 +2086,9 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2025/0220/.html">
+              <a href="/2025/0220/es-deep-page-query.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  es怎么解决深分页的问题及索引优化有哪些方法
+                  12.es怎么解决深分页的问题及索引优化有哪些方法
               </a>
             
         </div>

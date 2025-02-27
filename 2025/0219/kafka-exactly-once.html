@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-
+    <link href="https://fonts.loli.net/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 	<!-- title -->
 	
 	<title>
@@ -42,6 +42,9 @@
 	
 <link rel="stylesheet" href="/css/main.css">
 
+    
+<link rel="stylesheet" href="/css/custom.css">
+
 	
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -67,6 +70,9 @@
 	
 <script src="/js/main.js"></script>
 
+    <!-- 
+<script src="/js/code-copy.js"></script>
+ -->
 
 	
 		
@@ -1867,7 +1873,7 @@
 								<li class="file">
 									<a href="/2025/0219/10w-QPS-desigen.html">
                      
-										    07.如何设计一个支持10万QPS的库存扣减系统
+										    7.如何设计一个支持10万QPS的库存扣减系统
                      
 									</a>
 								</li>
@@ -1878,7 +1884,7 @@
 								<li class="file">
 									<a href="/2025/0219/export-full-GC.html">
                      
-										    08.导出频繁FullGC如何定位泄漏点，你是如何优化的
+										    8.导出频繁FullGC如何定位泄漏点，你是如何优化的
                      
 									</a>
 								</li>
@@ -1889,7 +1895,7 @@
 								<li class="file">
 									<a href="/2025/0219/kafka-exactly-once.html">
                      
-										    09.设计一个强一致性方案保障故障转移时会话共享
+										    9.设计一个强一致性方案保障故障转移时会话共享
                      
 									</a>
 								</li>
@@ -1920,9 +1926,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0220/.html">
+									<a href="/2025/0220/es-deep-page-query.html">
                      
-										    es怎么解决深分页的问题及索引优化有哪些方法
+										    12.es怎么解决深分页的问题及索引优化有哪些方法
                      
 									</a>
 								</li>
@@ -2053,7 +2059,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？"><a href="#在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？" class="headerlink" title="在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？"></a>在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？</h3><p>无锁幂等方案设计</p>
+	<h4 id="在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？"><a href="#在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？" class="headerlink" title="在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？"></a>在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？</h4><p>无锁幂等方案设计</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> message_processed (</span><br><span class="line">    id <span class="type">BIGINT</span> AUTO_INCREMENT,</span><br><span class="line">    biz_id <span class="type">VARCHAR</span>(<span class="number">64</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;订单ID+操作类型&#x27;</span>, <span class="comment">-- 如 &quot;ORDER_12345_APPLY_PRICE_PROTECTION&quot;</span></span><br><span class="line">    msg_id <span class="type">VARCHAR</span>(<span class="number">64</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">UNIQUE</span> KEY uk_biz_msg (biz_id, msg_id) <span class="comment">-- 联合唯一索引</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>java操作流程</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">processMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">bizId</span> <span class="operator">=</span> msg.getOrderId() + <span class="string">&quot;_&quot;</span> + msg.getActionType();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 插入成功即表示未处理</span></span><br><span class="line">        jdbcTemplate.update(<span class="string">&quot;INSERT INTO message_processed (biz_id, msg_id) VALUES (?, ?)&quot;</span>,</span><br><span class="line">                           bizId, msg.getId());</span><br><span class="line">        <span class="comment">// 执行实际业务逻辑</span></span><br><span class="line">        applyPriceProtection(msg.getOrderId());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (DuplicateKeyException e) &#123;</span><br><span class="line">        <span class="comment">// 唯一键冲突，直接跳过</span></span><br><span class="line">        log.info(<span class="string">&quot;Message already processed: &#123;&#125;&quot;</span>, msg.getId());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2082,7 +2088,7 @@
             
               <a href="/2025/0219/kafka-exactly-once.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  09.设计一个强一致性方案保障故障转移时会话共享
+                  9.设计一个强一致性方案保障故障转移时会话共享
               </a>
             
         </div>
