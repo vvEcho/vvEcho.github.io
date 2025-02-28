@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,137 +2071,127 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/overwrite-overload-different.html">
+			<a href="/2024/0120/jvm-constant-pool.html">
 				<h2 class="index-title">
-					10 重写和重载的区别
+					05 谈谈jvm常量池
+				</h2>
+				<div class="index-brief">
+					jdk1.8开始字符串常量池：存放在堆中运行时常量池：存放在方法区，属于元空间
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/jvm-memory-model.html">
+				<h2 class="index-title">
+					01.说说jvm内存模型
+				</h2>
+				<div class="index-brief">
+					jvm由类装载器、运行时数据区、执行引擎、本地方法接口还有垃圾回收器构成;其中垃圾回收器作用在整个jvm内存中（主要作用在堆和方法区）其中运行时数据区分为：线程共享区和线程独占区
+线程共享区包含方法区和堆
+线程独占区分为：虚拟机，本地方法栈，程序计数器（也叫PC寄存器）
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/heap-stack-different.html">
+				<h2 class="index-title">
+					02 堆和栈的区别
+				</h2>
+				<div class="index-brief">
+					1.堆是不连续的，所以分配的内存是在运行期确认的，因此大小不固定；堆对于整个应用程序都是共享、可见的；堆内存存储的是对象的实体；堆内存放的对象会被垃圾回收机制不定时的回收
+2.栈是连续的，所以分配的内存大小要在编译期就确认，大小是固定的；栈对于线程是可见的，所以也是线程私有，他的生命周期和线程相同（
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/base-data-type-all-in-stack.html">
+				<h2 class="index-title">
+					03 java中的基本数据类型都是存储在栈中的吗？
+				</h2>
+				<div class="index-brief">
+					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题答：不是一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而结束
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/qps-tps-different.html">
+				<h2 class="index-title">
+					11 Qps和Tps的区别
 				</h2>
 				<div class="index-brief">
 					
-重载是定义相同的方法名、只是参数不同，重写是子类重写父类的方法
-重载是在一个类中，重写是子类与父类之间的
-重载是编译时的多态性，重写是运行时的多态性
-重载的参数个数、参数类型、参数的顺序可以不同，重写父类子方法参数必须相同
-重载对修饰范围没有要求，重写要求重写方法的修饰范围大于被重写方法的修饰范围
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/strong-soft-weak-phantom-ref.html">
-				<h2 class="index-title">
-					08 强引用，软引用，弱引用，虚引用的区别
-				</h2>
-				<div class="index-brief">
-					
-强引用强引用一般指我们new的对象存在的引用
+定义
 
-软引用软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
 
-弱引用弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
+QPS（Queries Per Second）：表示系统每秒处理的查询请求数。通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
 
-虚引用虚引用，是一种形同虚设的引用，主要用来跟踪对象被
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/string-stringBuild-stringBuffer.html">
-				<h2 class="index-title">
-					01 String,stringBuild,StringBuffer的区别
-				</h2>
-				<div class="index-brief">
-					string是一个常量，他存在于常量池中；
-StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
-其中StringBuffer 相比较于StringBuffer他在append方法中加了同步锁synchronized，所以是线程安全的
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/hashMap-hashTable-different.html">
-				<h2 class="index-title">
-					07 hashMap hashTable的区别
-				</h2>
-				<div class="index-brief">
-					
-hashMap继承自AbstractMap,hashTable集成自Dictionary类；
-
-hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
-
-hashTable在put,get,contains等方法都加了synchr
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/exception-error-different.html">
-				<h2 class="index-title">
-					07 exception和error有啥区别
-				</h2>
-				<div class="index-brief">
-					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
-
+TPS（Transactions Per Second）：表示系统
 					...
 				</div>
 			</a>
@@ -2158,7 +2214,7 @@ hashTable在put,get,contains等方法都加了synchr
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/26/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/28/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/26/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/28/">&gt;</a>
 		
 	</div>
 </div>

@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,12 +2071,12 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/rocketmq-find-msg.html">
+			<a href="/2024/0120/rocketmq-msg-heaped.html">
 				<h2 class="index-title">
-					02 rocketMq怎么查找到对应的消息的？
+					07 rocketMq消息堆积怎么解决
 				</h2>
 				<div class="index-brief">
-					我们知道，RocketMQ 核心的数据文件有 3 个：CommitLog、ConsumeQueue 和 Index。其中Index 文件就是一个索引文件，查找消息时，首先根据消息 key 的 hashcode 计算出 Hash 槽的位置，然后读取 Hash 槽的值计算 Index 条目的位置，从In
+					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的topic,对于临时的topic 可以多配置一点MessageQuean,
 					...
 				</div>
 			</a>
@@ -2031,15 +2097,13 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/dubbo-inject-center.html">
+			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
 				<h2 class="index-title">
-					04 nacos注册中心
+					08 说说rocketmq死信队列
 				</h2>
 				<div class="index-brief">
-					Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
-Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
+					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。rocketMq 会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
 
-服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注册。服务消费者可以
 					...
 				</div>
 			</a>
@@ -2050,7 +2114,7 @@ Nacos是一个为云原生应用设计的动态服务发现和配置服务平台
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springCloud/">08 springCloud</a>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
 										
                                     </span>
                                 
@@ -2060,70 +2124,14 @@ Nacos是一个为云原生应用设计的动态服务发现和配置服务平台
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/dubbo-rpc-net.html">
+			<a href="/2024/0120/rocketmq-msg-not-lost.html">
 				<h2 class="index-title">
-					07 dubbo微服务间怎么通信？
+					03 rocketMq怎么避免消息不丢失？
 				</h2>
 				<div class="index-brief">
-					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
-使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
-dubbo的服务注册与发现的流程容器启动后，提供方向注
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/springcloud-hystrix.html">
-				<h2 class="index-title">
-					05 服务熔断和降级怎么做的？
-				</h2>
-				<div class="index-brief">
-					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
-Hystrix的主要原理是用了断路器模式和线程池隔离技术；
-通过断路器的故障监控，想服务调用方返回一个符合预
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springCloud/">08 springCloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/springcloud-openfigne-net.html">
-				<h2 class="index-title">
-					06 OpenFigne是怎么实现微服务间通信的？
-				</h2>
-				<div class="index-brief">
-					Openfeign是Spring Cloud 对Feign 也进行了增强，直接支持Hystrix 和 Ribbon，也支持SpringMVC 的注解。这样使得Feign 的使用非常方便。
+					那问这个问题，我们需要知道rocketMq哪些场景会导致消息丢失；
 
-1、在使用Openfeign时首先会在springboot的启动类上添加@EnableFeignClients
+生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了
 					...
 				</div>
 			</a>
@@ -2134,7 +2142,59 @@ Hystrix的主要原理是用了断路器模式和线程池隔离技术；
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springCloud/">08 springCloud</a>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-not-repeat.html">
+				<h2 class="index-title">
+					04 rocketMq怎么避免消息不重复消费
+				</h2>
+				<div class="index-brief">
+					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作，若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-order.html">
+				<h2 class="index-title">
+					05 rocketMq如何保证消息顺序消费？
+				</h2>
+				<div class="index-brief">
+					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
 										
                                     </span>
                                 
@@ -2146,7 +2206,7 @@ Hystrix的主要原理是用了断路器模式和线程池隔离技术；
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/17/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/19/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/17/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/19/">&gt;</a>
 		
 	</div>
 </div>

@@ -436,7 +436,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -799,7 +799,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -866,6 +866,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1589,9 +1622,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2049,6 +2115,21 @@
 <!-- content -->
 <div id="article-content">
 	<p>IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的<br>我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最后再放到BeanFactory的单例池中，底层是一个ConcurrentHashMap的实现；</p>
+<p>IoC 的核心流程</p>
+<ul>
+<li><p>1.配置解析：将 XML&#x2F;注解转换为 BeanDefinition和beanFactory</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化容器</span></span><br><span class="line"><span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;applicationContext.xml&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanFactory</span> &#123;</span><br><span class="line">    <span class="comment">//获取 判断bean类型 是否存在 单例等方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>2.实例化：反射创建对象，处理作用域（单例&#x2F;多例）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">createBean</span><span class="params">(String beanName, RootBeanDefinition mbd, Object[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 实例化对象（通过反射或无参构造器）</span></span><br><span class="line">    <span class="type">BeanWrapper</span> <span class="variable">instanceWrapper</span> <span class="operator">=</span> createBeanInstance(beanName, mbd, args);</span><br><span class="line">    <span class="comment">// 属性注入（依赖注入）</span></span><br><span class="line">    populateBean(beanName, mbd, instanceWrapper);</span><br><span class="line">    <span class="comment">// 初始化（调用 init-method）</span></span><br><span class="line">    initializeBean(beanName, instanceWrapper.getWrappedInstance(), mbd);</span><br><span class="line">    <span class="keyword">return</span> instanceWrapper.getWrappedInstance();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>反射实例化：通过 BeanUtils.instantiateClass() 反射创建对象。</p>
+</li>
+<li><p>3.依赖注入：通过 Setter 或构造函数注入属性值。<br>Setter 注入：调用 populateBean()，解析 <property> 标签，通过反射设置属性值。<br>构造函数注入：解析 <constructor-arg>，匹配参数类型并调用构造器</p>
+</li>
+<li><p>4.生命周期管理：调用初始化方法及扩展点（如 BeanPostProcessor）。</p>
+</li>
+<li><p>5.代理生成：按需创建动态代理对象（AOP 场景）</p>
+</li>
+</ul>
 
 </div>
 

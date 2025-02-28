@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,13 +2071,67 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/springcloud-used-component.html">
+			<a href="/2024/0120/rocket-framewokr.html">
 				<h2 class="index-title">
-					01 springCloud中组件常用的有哪些？
+					01 rocketMq架构是怎样的,说说心跳机制
 				</h2>
 				<div class="index-brief">
-					eureka-注册中心config-配置中心Zuul、Gateway-网关Ribbon-负载均衡Feign-服务调用Hystrix或Resilience4j-熔断器
+					RocketMq的架构包含一个发送消息的生产者Producer,消息存储接收的broker,消息消费的一个Consumer,还有一个消息状态管理的NameServer无状态服务器，然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/rocketmq-find-msg.html">
+				<h2 class="index-title">
+					02 rocketMq怎么查找到对应的消息的？
+				</h2>
+				<div class="index-brief">
+					我们知道，RocketMQ 核心的数据文件有 3 个：CommitLog、ConsumeQueue 和 Index。其中Index 文件就是一个索引文件，查找消息时，首先根据消息 key 的 hashcode 计算出 Hash 槽的位置，然后读取 Hash 槽的值计算 Index 条目的位置，从In
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/dubbo-inject-center.html">
+				<h2 class="index-title">
+					04 nacos注册中心
+				</h2>
+				<div class="index-brief">
+					Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
+Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
 
+服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注册。服务消费者可以
 					...
 				</div>
 			</a>
@@ -2032,12 +2152,42 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/springcloud-eureka-understand.html">
+			<a href="/2024/0120/dubbo-rpc-net.html">
 				<h2 class="index-title">
-					02 Eureka注册中心
+					07 dubbo微服务间怎么通信？
 				</h2>
 				<div class="index-brief">
-					服务端如何保存客户端注册信息?客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.客户端通过Jersey框架，将自己的注册信息发送
+					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
+使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
+dubbo的服务注册与发现的流程容器启动后，提供方向注
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/springcloud-hystrix.html">
+				<h2 class="index-title">
+					05 服务熔断和降级怎么做的？
+				</h2>
+				<div class="index-brief">
+					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
+Hystrix的主要原理是用了断路器模式和线程池隔离技术；
+通过断路器的故障监控，想服务调用方返回一个符合预
 					...
 				</div>
 			</a>
@@ -2049,86 +2199,6 @@
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/08-springCloud/">08 springCloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/springboot-annotation.html">
-				<h2 class="index-title">
-					02 springBoot常用注解？
-				</h2>
-				<div class="index-brief">
-					@SpringBootApplication spring启动类上的注解@EnableAutoConfiguration 自动配置类@SpringBootConfiguration spring配置类@ImportResource 将资源导入容器
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-springBoot/">02 springBoot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/interceptor-filter-different.html">
-				<h2 class="index-title">
-					03 拦截器和过滤器的区别
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springBoot/">07 springBoot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/solve-spring-cycle-depency.html">
-				<h2 class="index-title">
-					12 spring怎么解决循环依赖的？
-				</h2>
-				<div class="index-brief">
-					为什么会出现循环依赖这个问题呢？
-其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2140,7 +2210,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/18/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="extend next" rel="next" href="/archives/page/20/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/18/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="extend next" rel="next" href="/archives/page/20/">&gt;</a>
 		
 	</div>
 </div>

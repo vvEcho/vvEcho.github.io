@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,12 +2071,13 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/ioc-impl-code.html">
+			<a href="/2024/0120/solve-spring-cycle-depency.html">
 				<h2 class="index-title">
-					09 说看过IOC相关源码,说下具体实现
+					12 spring怎么解决循环依赖的？
 				</h2>
 				<div class="index-brief">
-					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最后
+					首先需要探讨为什么会出现循环依赖这个问题呢？
+其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被
 					...
 				</div>
 			</a>
@@ -2031,18 +2098,65 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/spring-transcation-fail.html">
+			<a href="/2024/0120/auto-assemble-principle.html">
 				<h2 class="index-title">
-					07 spring事务失效的场景
+					01 自动装配原理？
 				</h2>
 				<div class="index-brief">
-					
-1.不是代理类的调用，例如类A 中有方法B 和方法C 此时B种调用了tiis.c方法，这种事务是不会生效的
-2.方法不是pulic的
-3.没有被Spring事务管理
-4.异常被捕获没有抛出来，这种事务不会回滚也相当于失效了
+					springboot的自动装配其实是他约定大于配置这一核心思想的具体体现，例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；springboot的自动装配是依赖于java的sp
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springBoot/">07 springBoot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/aop-jdk-cglib.html">
+				<h2 class="index-title">
+					10 aop的实现默认是使用jdk动态代理还是cglib
+				</h2>
+				<div class="index-brief">
+					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/pointcut-order-sure.html">
+				<h2 class="index-title">
+					11 切面解析的顺序怎么确定？
+				</h2>
+				<div class="index-brief">
+					使用 @order(number) 注解，number 越小，优先级越高
 
-
 					...
 				</div>
 			</a>
@@ -2063,67 +2177,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/bean-life-understand.html">
+			<a href="/2024/0120/spring-she-ji-mo-shi.html">
 				<h2 class="index-title">
-					13 bean的生命周期
+					06 spring框架中的设计模式有哪些(待完善)
 				</h2>
 				<div class="index-brief">
-					这里我说下我个人的理解，bean的生命周期指的是：被spring管理的一个bean从创建到销毁的过程，一般分为以下几步当我们启动项目时，spring框架扫描所有的配置类，生成对应的BeanDefinition，筛选出单例的beanDefinition，推断出对应的构造方法，填充属性也就是开始依赖注入
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/ioc-understand.html">
-				<h2 class="index-title">
-					01 谈谈你对IOC的理解
-				</h2>
-				<div class="index-brief">
-					IOC是Spring两大思想的中一点，为控制反转；
-所谓的控制反转就是控制了对象的创建过程，反转了对象的注入形式；
-一般而言，我们创建对象为new 或者用调用对象的构造方法;
-用了spring框架后，在spring启动时对象被封装为一个个Bean保存在spring容器中，我们需要使用的时候，直接注入
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/aop-understand.html">
-				<h2 class="index-title">
-					02 谈谈你对Aop的理解
-				</h2>
-				<div class="index-brief">
-					AOP是Spring两大思想的中一点，为切面编程；在spring中可以通过定义切面注解的形式来对方法或类作一定的增强
+					工厂模式-BeanFactory代理模式-BeanProxy
 
 					...
 				</div>
@@ -2147,7 +2206,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/20/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="page-number" href="/archives/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/archives/page/22/">22</a><a class="page-number" href="/archives/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="extend next" rel="next" href="/archives/page/22/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/20/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="page-number" href="/archives/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/archives/page/22/">22</a><a class="page-number" href="/archives/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="extend next" rel="next" href="/archives/page/22/">&gt;</a>
 		
 	</div>
 </div>

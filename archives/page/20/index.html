@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,12 +2071,120 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/auto-assemble-principle.html">
+			<a href="/2024/0120/springcloud-openfigne-net.html">
 				<h2 class="index-title">
-					01 自动装配原理？
+					06 OpenFigne是怎么实现微服务间通信的？
 				</h2>
 				<div class="index-brief">
-					springboot的自动装配其实是他约定大于配置这一核心思想的具体体现，例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；springboot的自动装配是依赖于java的sp
+					Openfeign是Spring Cloud 对Feign 也进行了增强，直接支持Hystrix 和 Ribbon，也支持SpringMVC 的注解。这样使得Feign 的使用非常方便。
+
+1、在使用Openfeign时首先会在springboot的启动类上添加@EnableFeignClients
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springCloud/">08 springCloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/springcloud-used-component.html">
+				<h2 class="index-title">
+					01 springCloud中组件常用的有哪些？
+				</h2>
+				<div class="index-brief">
+					eureka-注册中心config-配置中心Zuul、Gateway-网关Ribbon-负载均衡Feign-服务调用Hystrix或Resilience4j-熔断器
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springCloud/">08 springCloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/springcloud-eureka-understand.html">
+				<h2 class="index-title">
+					02 Eureka注册中心
+				</h2>
+				<div class="index-brief">
+					服务端如何保存客户端注册信息?客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.客户端通过Jersey框架，将自己的注册信息发送
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springCloud/">08 springCloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/springboot-annotation.html">
+				<h2 class="index-title">
+					02 springBoot常用注解？
+				</h2>
+				<div class="index-brief">
+					@SpringBootApplication spring启动类上的注解@EnableAutoConfiguration 自动配置类@SpringBootConfiguration spring配置类@ImportResource 将资源导入容器
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-springBoot/">02 springBoot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/interceptor-filter-different.html">
+				<h2 class="index-title">
+					03 拦截器和过滤器的区别
+				</h2>
+				<div class="index-brief">
+					
 					...
 				</div>
 			</a>
@@ -2030,116 +2204,10 @@
                 </div>
 		</div>
 	
-		<div class="index-li">
-			<a href="/2024/0120/aop-jdk-cglib.html">
-				<h2 class="index-title">
-					10 aop实现到默认是使用jdk动态代理还是cglib
-				</h2>
-				<div class="index-brief">
-					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/pointcut-order-sure.html">
-				<h2 class="index-title">
-					11 切面解析的顺序怎么确定？
-				</h2>
-				<div class="index-brief">
-					使用 @order(number) 注解，number 越小，优先级越高
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/spring-she-ji-mo-shi.html">
-				<h2 class="index-title">
-					06 spring框架中的设计模式有哪些(待完善)
-				</h2>
-				<div class="index-brief">
-					工厂模式-BeanFactory代理模式-BeanProxy
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/apo-impl-code.html">
-				<h2 class="index-title">
-					08 说看过AOP相关源码,说下具体实现
-				</h2>
-				<div class="index-brief">
-					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator 的 Bean
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/19/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/18/">18</a><a class="page-number" href="/archives/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/archives/page/21/">21</a><a class="page-number" href="/archives/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="extend next" rel="next" href="/archives/page/21/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/19/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/18/">18</a><a class="page-number" href="/archives/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/archives/page/21/">21</a><a class="page-number" href="/archives/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="extend next" rel="next" href="/archives/page/21/">&gt;</a>
 		
 	</div>
 </div>

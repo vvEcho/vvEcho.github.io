@@ -436,7 +436,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -799,7 +799,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -866,6 +866,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1589,9 +1622,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2048,8 +2114,9 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>1.堆是不连续的，所以分配的内存是在运行期确认的，因此大小不固定；堆对于整个应用程序都是共享、可见的；堆内存存储的是实体；堆内存存放的实体会被垃圾回收机制不定时的回收</p>
-<p>2.栈是连续的，所以分配的内存大小要在编译期就确认，大小是固定的；栈对于线程是可见的，所以也是线程私有，他的生命周期和线程相同（所以说，栈里面是一定不会存在垃圾回收的问题）；栈内存存储一些基本类型的值，对象的引用，方法等；栈内存的更新速度要快于堆内存（仅次于寄存器），因为局部变量的生命周期很短；栈内存放的变量生命周期一旦结束就会被释放</p>
+	<p>1.堆是不连续的，所以分配的内存是在运行期确认的，因此大小不固定；堆对于整个应用程序都是共享、可见的；堆内存存储的是对象的实体；堆内存放的对象会被垃圾回收机制不定时的回收</p>
+<p>2.栈是连续的，所以分配的内存大小要在编译期就确认，大小是固定的；栈对于线程是可见的，所以也是线程私有，他的生命周期和线程相同（所以说，栈里面是一定不会存在垃圾回收的问题）；</p>
+<p>3.栈内存存储一些基本类型的值，对象的引用，方法等；栈内存的更新速度要快于堆内存（仅次于寄存器），因为局部变量的生命周期很短；栈内存放的变量生命周期一旦结束就会被释放</p>
 
 </div>
 
@@ -2060,7 +2127,7 @@
             
               <a href="/2024/0120/jvm-memory-model.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  01 说说jvm内存模型
+                  01.说说jvm内存模型
               </a>
             
         </div>

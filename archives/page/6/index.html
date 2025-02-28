@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,9 +2071,37 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0219/redis-listen-key-expire.html">
+			<a href="/2024/0226/transcation-geli-level.html">
 				<h2 class="index-title">
-					14 如何监听key过期时间并触发后置逻辑
+					04 事务隔离级别
+				</h2>
+				<div class="index-brief">
+					事务隔离级别就是为了解决脏读、幻读、不可重复读着这几个问题而产生的，但是事务隔离级别不同，产生的问题也不同，因此很多时候必须在并发性一个权衡，所以设立了几种事务隔离级别，以便让不同的项目可以根据自己项目的并发情况选择合适的事务隔离级别。事务隔离级别默认又四种，不过种：
+
+DEFAULT：默认隔离级别
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-26</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-spring/">04 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0226/kafka-high-throughput.html">
+				<h2 class="index-title">
+					06 kafka吞吐量高的原因
 				</h2>
 				<div class="index-brief">
 					
@@ -2015,7 +2109,34 @@
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-19</span>
+				    <span>2024-02-26</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-kafka/">12 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0220/redis-page-query.html">
+				<h2 class="index-title">
+					15 redis如何做分页查询
+				</h2>
+				<div class="index-brief">
+					拓展-ZREVRANGEZREVRANGE是Redis中的一个命令，它的全称是Zset Reverse Range，意思是有序集合反向范围。
+ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中成员的位置按分数值递减（从大到小）来排列。具有相同分数值的成员按字典序的逆序（reverse 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-20</span>
                     
                             
                                 
@@ -2031,111 +2152,50 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0219/mysql-groupby-suoyin.html">
+			<a href="/2024/0220/rocketmq-consume-mode.html">
 				<h2 class="index-title">
-					12 聚簇索引和非聚簇索引的区别
+					10 rocketMq有哪些消费模式
 				</h2>
 				<div class="index-brief">
-					
-聚簇索引:是一种特殊的索引类型，它将数据行的物理存储位置与索引的逻辑顺序相匹配。这意味着，当聚簇索引的叶节点被访问时，它同时也包含了该行的数据。聚簇索引的这种设计可以减少数据访问的磁盘I&#x2F;O操作，因为数据行与索引紧密地关联在一起，通常位于同一数据页中。聚簇索引的一个关键特点是，每个表只能
+					rocketMq有两种消费模式，集群消费(默认)和广播消费
+集群模式：一个ConsumerGroup中的Consumer实例根据队列分配策略算法为Consumer分配队列，平均分摊（默认）消费消息。例如Topic是Test的消息发送到该主题的不同队列中，发送了有100条消息，其中一个Consumer
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-19</span>
+				    <span>2024-02-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0220/mysql-groupby-suoyin.html">
+				<h2 class="index-title">
+					11 groupby语句后有索引查询和无索引查询有啥区别
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-20</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/14-mysql/">14 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0219/mysql-suo-yin.html">
-				<h2 class="index-title">
-					10 mysql中如何添加索引
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0204/vue-life-cycle.html">
-				<h2 class="index-title">
-					01 vue的生命周期
-				</h2>
-				<div class="index-brief">
-					Vue的生命周期是指Vue实例对象从创建之初到销毁的过程，这个过程包括多个阶段，每个阶段都有对应的钩子函数，用于控制组件的数据管理和DOM渲染。Vue的生命周期可以分为以下几个阶段：
-
-beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得DO
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/36-vue/">36 vue</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0201/redis-big-key.html">
-				<h2 class="index-title">
-					13 redis大key问题
-				</h2>
-				<div class="index-brief">
-					大key可能存在的场景
-配送范围特别大的门店
-促销活动特别多的门店、商家等
-高频用户下的订单列表
-
-大key会导致什么问题
-如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
-如果是hash,list,set,zset等类型key 删除key会严重阻
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
 										
                                     </span>
                                 
@@ -2147,7 +2207,7 @@ beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/5/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="extend next" rel="next" href="/archives/page/7/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/5/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="extend next" rel="next" href="/archives/page/7/">&gt;</a>
 		
 	</div>
 </div>

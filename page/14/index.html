@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,12 +2071,15 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock-space.html">
+			<a href="/2024/0120/mysql-false-reading.html">
 				<h2 class="index-title">
-					10 分布式锁的应用场景
+					02 怎么解决幻读
 				</h2>
 				<div class="index-brief">
-					我们知道，对于单机的多线程情况下的线程安全问题我们可以用使用JDK自带的锁来保证线程安全，但是集群环境下的线程安全怎么保证呢？客户A调用一个接口修改数据，客户B同时调用这一个接口修改数据，负载到不同的机器上，怎么保证同一时间这笔数据只能一个人操作呢？那就需要用到分布式锁，我说个我们项目中用到的分布式
+					只有序列化级别解决了幻读，其他的都没有解决了幻读；因为序列化是串行化执行的，第一个事务执行完后才能执行第二个事务幻读出现的根本原因是，如果所有的读都是快照读就不会有幻读的问题，如果有快照读也有当前读才会产生幻读的问题
+
+快照读：mysql 中针对不加锁的读操作，称为快照读；
+当前读：对于加锁的读，插
 					...
 				</div>
 			</a>
@@ -2021,7 +2090,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
 										
                                     </span>
                                 
@@ -2031,14 +2100,14 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-cache-question.html">
+			<a href="/2024/0120/mysql-transcation-geli-level.html">
 				<h2 class="index-title">
-					05 缓存击穿，缓存穿透，缓存雪崩
+					01 数据库事务的隔离级别？
 				</h2>
 				<div class="index-brief">
 					
-缓存击穿-redis中一个热点key过期（大量用户访问该热点key，但是热点key过期);监控哪些数据是热门数据，实时的调整key的过期时长；
-缓存穿透-大量请求根本不存在的key；设置空值,设置白名单,使用布隆过滤器，对请求做校验(比如请求一个查询一个id为-1000的数据，这种直接可以判定为不
+读未提交：一个事务还没有提交变更的时候，就被其他的事务读到了（这就产生了脏读，同时也产生了不可重复读，幻读的问题）
+读提交：一个事务提交后，才能被别的事务读到。（它解决了脏读，但依旧避免不了不可重复读和幻读，为什么呢？比如A事务先读到数据，接着B事务提交了变更，这个时候A再去做变更时就，原先的数据
 					...
 				</div>
 			</a>
@@ -2049,7 +2118,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
 										
                                     </span>
                                 
@@ -2059,38 +2128,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-identify-hot-key.html">
+			<a href="/2024/0120/redis-lua-principle.html">
 				<h2 class="index-title">
-					06 怎么监控热key
+					11 redis lua表达式为什么能保证原子性
 				</h2>
 				<div class="index-brief">
-					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/redis-bloom-filter.html">
-				<h2 class="index-title">
-					07 说说布隆过滤器的原理？
-				</h2>
-				<div class="index-brief">
-					布隆过滤器的原理是，当一个元素被加入集合时，通过散列函数将这个元素映射成一个位数组中的多个点（offset)并把它们置为 1。检索时，我们只要看看这些点是不是都是1就知道集合中有没有它了：如果这些点有任何一个为0，则被检元素一定不存在；如果都是1，则被检元素很可能存在；
+					redis 的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
 
 					...
 				</div>
@@ -2112,13 +2155,42 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-io.html">
+			<a href="/2024/0120/redis-cluster.html">
 				<h2 class="index-title">
-					03 说说IO多路复用
+					12 redis你们用的是什么集群(待完善)
 				</h2>
 				<div class="index-brief">
-					回答这个问题我们可以拆分来看，IO实际就是指数据或文件的读写流，多路实际指的是redis的底层的多路复用程序监听了每个读写请求的socket套接字，复用就是指监听哪些socket上有消息达到，从而避免用户线程等待；
+					redis我用的是主从架构的这种集群，哨兵的话自己有研究过，但是项目中目前还没有用到；Redis的哨兵模式的特点是：
 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-redis/">13 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/redis-used-data-structure.html">
+				<h2 class="index-title">
+					08 redis常用数据结构
+				</h2>
+				<div class="index-brief">
+					String，list,set,zset,hash
+
+String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key
+list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpu
 					...
 				</div>
 			</a>
@@ -2141,7 +2213,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/13/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/15/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/13/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/15/">&gt;</a>
 		
 	</div>
 </div>

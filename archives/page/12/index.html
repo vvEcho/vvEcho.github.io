@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,12 +2071,13 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/mysql-b-jia-tree.html">
+			<a href="/2024/0120/sheji-mode.html">
 				<h2 class="index-title">
-					05 B+树索引(待完善)
+					01.设计模式面试题
 				</h2>
 				<div class="index-brief">
-					
+					1.mybaits 用了哪些设计模式？2.spring 用了哪些设计模式？3.单例模式有哪几种？懒汉，饿汉式，线程安全的懒汉式，匿名内部类
+4.说下你对责任链模式的理解及应用场景？5.说说代理模式
 					...
 				</div>
 			</a>
@@ -2021,7 +2088,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
+                                        <a href="/categories/31-设计模式/">31 设计模式</a>
 										
                                     </span>
                                 
@@ -2031,12 +2098,13 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/mysql-optimize-query.html">
+			<a href="/2024/0120/seata-principle.html">
 				<h2 class="index-title">
-					06 mysql怎么优化数据库查询(待完善)
+					01 seata的原理
 				</h2>
 				<div class="index-brief">
-					
+					在 Seata 中主要有以下三种角色，其中 TM 和 RM 是作为 Seata 的客户端与业务系统集成在一起，TC 作为 Seata 的服务端独立部署：
+事务协调器（TC）：维护全局事务的运行状态，负责协调并驱动全局提交或回滚事务管理器（TM）：事务发起方，控制全局事务的范围，负责开启一个全局事务，
 					...
 				</div>
 			</a>
@@ -2047,7 +2115,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
+                                        <a href="/categories/16-seata/">16 seata</a>
 										
                                     </span>
                                 
@@ -2057,41 +2125,41 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/mysql-mvcc-ji-zhi.html">
+			<a href="/2024/0120/xxl-job-quartz.html">
 				<h2 class="index-title">
-					03 mvcc机制？
+					02 xxl-jo和Quartz有啥区别
 				</h2>
 				<div class="index-brief">
-					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的变化提交之前，对于其他的读事务来说都是不可见的；当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC 并发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/mysql-re-in-undo-log.html">
-				<h2 class="index-title">
-					04 redolog和binlog,undolog
-				</h2>
-				<div class="index-brief">
-					binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；
+					xxl-job 是在 Quartz 基础上进行的封装和扩展，拥有更简单的任务调度方式、更灵活的任务管理和更强大的任务监控功能。
+xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分布式任务协调和高可用调度中心的能力
 
-binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；
-redolog-重做日志的作用，在于提高mysql
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/mysql-dividing-dbs-tables.html">
+				<h2 class="index-title">
+					07 分库分表怎么做的
+				</h2>
+				<div class="index-brief">
+					分库这个简单就是，分不同的sheam;一般是按业务来拆分
+分表一般有两种分法，一般有水平分表和垂直分表两种；水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表。。。而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不长变动的放一张表，变动多的放一张表；或者根据业务含
 					...
 				</div>
 			</a>
@@ -2112,15 +2180,13 @@ redolog-重做日志的作用，在于提高mysql
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/mysql-false-reading.html">
+			<a href="/2024/0120/mysql-dividing-dbs-tables-query.html">
 				<h2 class="index-title">
-					02 怎么解决幻读
+					08 分库分表后怎么做范围查找
 				</h2>
 				<div class="index-brief">
-					只有序列化级别解决了幻读，其他的都没有解决了幻读；因为序列化是串行化执行的，第一个事务执行完后才能执行第二个事务幻读出现的根本原因是，如果所有的读都是快照读就不会有幻读的问题，如果有快照读也有当前读才会产生幻读的问题
+					分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es
 
-快照读：mysql 中针对不加锁的读操作，称为快照读；
-当前读：对于加锁的读，插
 					...
 				</div>
 			</a>
@@ -2143,7 +2209,7 @@ redolog-重做日志的作用，在于提高mysql
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/11/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="extend next" rel="next" href="/archives/page/13/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/11/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="extend next" rel="next" href="/archives/page/13/">&gt;</a>
 		
 	</div>
 </div>

@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,18 +2071,12 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/spring-transcation-jizhi.html">
+			<a href="/2024/0120/apo-impl-code.html">
 				<h2 class="index-title">
-					03 Spring事务传播机制
+					08 说看过AOP相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					Spring默认有7种事务机制，如下：
-
-REQUIRED-默认的事务隔离级别，会自动加入当前的事务，如果不存在则新建事务
-
-SUPPORT级别，跟REQUIRED类似，也是会自动加入当前的事务，但两者区别在于，若当前无事务，则按照无事务的方式执行
-
-MANDATORY级别，要求SQL操作强制在事务
+					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
 					...
 				</div>
 			</a>
@@ -2037,12 +2097,43 @@ MANDATORY级别，要求SQL操作强制在事务
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/deadlock-occurs-reason.html">
+			<a href="/2024/0120/ioc-impl-code.html">
 				<h2 class="index-title">
-					09 死锁出现的原因以及怎么解决？
+					09 说看过IOC相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					出现死锁的原因是因为两个线程出现持有对方想要的资源，导致这两个线程一直处在等待对方释放锁的状态；破坏竞态条件既可以解除死锁，例如：当一个线程持有锁时，没有释放锁时不能再去尝试获取另一个锁；
+					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最后
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/spring-transcation-fail.html">
+				<h2 class="index-title">
+					07 spring事务失效的场景
+				</h2>
+				<div class="index-brief">
+					
+1.不是代理类的调用，例如类A 中有方法B 和方法C 此时B种调用了tiis.c方法，这种事务是不会生效的
+2.方法不是pulic的
+3.没有被Spring事务管理
+4.异常被捕获没有抛出来，这种事务不会回滚也相当于失效了
+
 
 					...
 				</div>
@@ -2054,7 +2145,7 @@ MANDATORY级别，要求SQL操作强制在事务
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2064,12 +2155,12 @@ MANDATORY级别，要求SQL操作强制在事务
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/thread-pool-setting.html">
+			<a href="/2024/0120/bean-life-understand.html">
 				<h2 class="index-title">
-					06 线程池怎么用，7大参数理解？如何配置？
+					13 bean的生命周期
 				</h2>
 				<div class="index-brief">
-					12345678910ThreadPoolExecutor(    int corePoolSize, // 核心池线程数大小 (常用)    int maximumPoolSize,  // 最大的线程数大小 (常用)    long keepAliveTime, // 超时等待时间 (常用)  
+					这里我说下我个人的理解，bean的生命周期指的是：被spring管理的一个bean从创建到销毁的过程，一般分为以下几步当我们启动项目时，spring框架扫描所有的配置类，生成对应的BeanDefinition，筛选出单例的beanDefinition，推断出对应的构造方法，填充属性也就是开始依赖注入
 					...
 				</div>
 			</a>
@@ -2080,7 +2171,7 @@ MANDATORY级别，要求SQL操作强制在事务
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2090,12 +2181,15 @@ MANDATORY级别，要求SQL操作强制在事务
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/semaphore-sample.html">
+			<a href="/2024/0120/ioc-understand.html">
 				<h2 class="index-title">
-					07 信号量Semaphore(待完善)
+					01 谈谈你对IOC的理解
 				</h2>
 				<div class="index-brief">
-					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
+					IOC是Spring两大思想的中一点，为控制反转；
+所谓的控制反转就是控制了对象的创建过程，反转了对象的注入形式；
+一般而言，我们创建对象为new 或者用调用对象的构造方法;
+用了spring框架后，在spring启动时对象被封装为一个个Bean保存在spring容器中，我们需要使用的时候，直接注入
 					...
 				</div>
 			</a>
@@ -2106,33 +2200,7 @@ MANDATORY级别，要求SQL操作强制在事务
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/pessimistic-optimistic-lock.html">
-				<h2 class="index-title">
-					08 悲观锁和乐观锁
-				</h2>
-				<div class="index-brief">
-					悲观锁，按字面意思就是很悲观，每次获得去修改数据时总算悲观的认为数据已经被修改了，因此每次在获取到数据时都先给数据加锁，在操作数据的整个过程中一直上锁，等操作结束才会释放锁乐观锁，按字面意思就是很乐观，每次获得数据后总算乐观的认为数据没有被修改，只有在执行更新操作时才会判断数据是否被修改，如果数据被
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2144,7 +2212,7 @@ MANDATORY级别，要求SQL操作强制在事务
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/21/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="extend next" rel="next" href="/archives/page/23/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/21/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="extend next" rel="next" href="/archives/page/23/">&gt;</a>
 		
 	</div>
 </div>

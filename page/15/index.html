@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,12 +2071,12 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-rdb-aof.html">
+			<a href="/2024/0120/redis-distributed-lock.html">
 				<h2 class="index-title">
-					04 rdb和aof
+					09 redis分布式锁有用过吗？
 				</h2>
 				<div class="index-brief">
-					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；rdb是一种二进制快照文件的方式某个时刻redis中的数据到硬盘中的，aof是以日志的的方式存储redis的写命令;rdb的好处是适合数据全量备份，容灾好，恢复数据速度快,确点是数据可能丢失；aof的好处是实时性好，因为记录日志是
+					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
 					...
 				</div>
 			</a>
@@ -2031,13 +2097,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-base-data-structure.html">
+			<a href="/2024/0120/redis-distributed-lock-space.html">
 				<h2 class="index-title">
-					01 redis数据结构
+					10 分布式锁的应用场景
 				</h2>
 				<div class="index-brief">
-					redis是一种基于键值对的来存储数据的nosql数据库，其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
-
+					我们知道，对于单机的多线程情况下的线程安全问题我们可以用使用JDK自带的锁来保证线程安全，但是集群环境下的线程安全怎么保证呢？客户A调用一个接口修改数据，客户B同时调用这一个接口修改数据，负载到不同的机器上，怎么保证同一时间这笔数据只能一个人操作呢？那就需要用到分布式锁，我说个我们项目中用到的分布式
 					...
 				</div>
 			</a>
@@ -2058,18 +2123,14 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-fast-reason.html">
+			<a href="/2024/0120/redis-cache-question.html">
 				<h2 class="index-title">
-					02 redis性能好的原因？
+					05 缓存击穿，缓存穿透，缓存雪崩
 				</h2>
 				<div class="index-brief">
 					
-基于内存的读写
-单线程，避免了线程的切换及竞争产生的消耗
-基于非阻塞的IO多路复用
-C实现的，更利于和底层进行交互
-
-
+缓存击穿-redis中一个热点key过期（大量用户访问该热点key，但是热点key过期);监控哪些数据是热门数据，实时的调整key的过期时长；
+缓存穿透-大量请求根本不存在的key；设置空值,设置白名单,使用布隆过滤器，对请求做校验(比如请求一个查询一个id为-1000的数据，这种直接可以判定为不
 					...
 				</div>
 			</a>
@@ -2090,12 +2151,38 @@ C实现的，更利于和底层进行交互
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-repeat.html">
+			<a href="/2024/0120/redis-identify-hot-key.html">
 				<h2 class="index-title">
-					02 kafka如何避免消息的重复消费？
+					06 怎么监控热key
 				</h2>
 				<div class="index-brief">
-					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
+					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-redis/">13 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/redis-bloom-filter.html">
+				<h2 class="index-title">
+					07 说说布隆过滤器的原理？
+				</h2>
+				<div class="index-brief">
+					布隆过滤器的原理是，当一个元素被加入集合时，通过散列函数将这个元素映射成一个位数组中的多个点（offset)并把它们置为 1。检索时，我们只要看看这些点是不是都是1就知道集合中有没有它了：如果这些点有任何一个为0，则被检元素一定不存在；如果都是1，则被检元素很可能存在；
 
 					...
 				</div>
@@ -2107,33 +2194,7 @@ C实现的，更利于和底层进行交互
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-kafka/">12 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/kafka-msg-order.html">
-				<h2 class="index-title">
-					03 kafka如何保证消息的顺序消费
-				</h2>
-				<div class="index-brief">
-					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的，因为是多个分区，消费的时候通过
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-kafka/">12 kafka</a>
+                                        <a href="/categories/13-redis/">13 redis</a>
 										
                                     </span>
                                 
@@ -2145,7 +2206,7 @@ C实现的，更利于和底层进行交互
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/14/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/16/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/14/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/16/">&gt;</a>
 		
 	</div>
 </div>

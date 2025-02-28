@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,14 +2071,13 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/mysql-transcation-geli-level.html">
+			<a href="/2024/0120/mysql-count-query-sample.html">
 				<h2 class="index-title">
-					01 数据库事务的隔离级别？
+					09 统计sql例子
 				</h2>
 				<div class="index-brief">
-					
-读未提交：一个事务还没有提交变更的时候，就被其他的事务读到了（这就产生了脏读，同时也产生了不可重复读，幻读的问题）
-读提交：一个事务提交后，才能被别的事务读到。（它解决了脏读，但依旧避免不了不可重复读和幻读，为什么呢？比如A事务先读到数据，接着B事务提交了变更，这个时候A再去做变更时就，原先的数据
+					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
+1234select user_name ,bug_count from (select count(bug_id) as bug_c
 					...
 				</div>
 			</a>
@@ -2033,13 +2098,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-lua-principle.html">
+			<a href="/2024/0120/mysql-b-jia-tree.html">
 				<h2 class="index-title">
-					11 redis lua表达式为什么能保证原子性
+					05 B+树索引(待完善)
 				</h2>
 				<div class="index-brief">
-					redis 的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
-
+					
 					...
 				</div>
 			</a>
@@ -2050,7 +2114,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
 										
                                     </span>
                                 
@@ -2060,13 +2124,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-cluster.html">
+			<a href="/2024/0120/mysql-optimize-query.html">
 				<h2 class="index-title">
-					12 redis你们用的是什么集群(待完善)
+					06 mysql怎么优化数据库查询(待完善)
 				</h2>
 				<div class="index-brief">
-					redis我用的是主从架构的这种集群，哨兵的话自己有研究过，但是项目中目前还没有用到；Redis的哨兵模式的特点是：
-
+					
 					...
 				</div>
 			</a>
@@ -2077,7 +2140,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
 										
                                     </span>
                                 
@@ -2087,15 +2150,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-used-data-structure.html">
+			<a href="/2024/0120/mysql-mvcc-ji-zhi.html">
 				<h2 class="index-title">
-					08 redis常用数据结构
+					03 mvcc机制？
 				</h2>
 				<div class="index-brief">
-					String，list,set,zset,hash
-
-String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key
-list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpu
+					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的变化提交之前，对于其他的读事务来说都是不可见的；当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC 并发
 					...
 				</div>
 			</a>
@@ -2106,7 +2166,7 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
 										
                                     </span>
                                 
@@ -2116,12 +2176,15 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock.html">
+			<a href="/2024/0120/mysql-re-in-undo-log.html">
 				<h2 class="index-title">
-					09 redis分布式锁有用过吗？
+					04 redolog和binlog,undolog
 				</h2>
 				<div class="index-brief">
-					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
+					binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；
+
+binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；
+redolog-重做日志的作用，在于提高mysql
 					...
 				</div>
 			</a>
@@ -2132,7 +2195,7 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
 										
                                     </span>
                                 
@@ -2144,7 +2207,7 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/12/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="extend next" rel="next" href="/archives/page/14/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/12/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="extend next" rel="next" href="/archives/page/14/">&gt;</a>
 		
 	</div>
 </div>

@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,41 +2071,125 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/kafka-rebalance.html">
+			<a href="/2024/0120/redis-io.html">
 				<h2 class="index-title">
-					05 kafka的rebalance机制
+					03 说说IO多路复用
 				</h2>
 				<div class="index-brief">
-					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
-当kafka感知到存在让分
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-kafka/">12 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-lost.html">
-				<h2 class="index-title">
-					01 kafkar如何保证消息不丢失？
-				</h2>
-				<div class="index-brief">
-					回答这个问题可以分三个方面，首先第一点要保证producer消息能达到broker,其次broker收到对应的消息要确保持久化磁盘，最后需要确保consumer能成功消费这条消息；
+					回答这个问题我们可以拆分来看，IO实际就是指数据或文件的读写流，多路实际指的是redis的底层的多路复用程序监听了每个读写请求的socket套接字，复用就是指监听哪些socket上有消息达到，从而避免用户线程等待；
 
-针对producer:我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消息
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-redis/">13 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/redis-rdb-aof.html">
+				<h2 class="index-title">
+					04 rdb和aof
+				</h2>
+				<div class="index-brief">
+					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；rdb是一种二进制快照文件的方式某个时刻redis中的数据到硬盘中的，aof是以日志的的方式存储redis的写命令;rdb的好处是适合数据全量备份，容灾好，恢复数据速度快,确点是数据可能丢失；aof的好处是实时性好，因为记录日志是
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-redis/">13 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/redis-base-data-structure.html">
+				<h2 class="index-title">
+					01 redis数据结构
+				</h2>
+				<div class="index-brief">
+					redis是一种基于键值对的来存储数据的nosql数据库，其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-redis/">13 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/redis-fast-reason.html">
+				<h2 class="index-title">
+					02 redis性能好的原因？
+				</h2>
+				<div class="index-brief">
+					
+基于内存的读写
+单线程，避免了线程的切换及竞争产生的消耗
+基于非阻塞的IO多路复用
+C实现的，更利于和底层进行交互
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-redis/">13 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/kafka-msg-not-repeat.html">
+				<h2 class="index-title">
+					02 kafka如何避免消息的重复消费？
+				</h2>
+				<div class="index-brief">
+					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
+
 					...
 				</div>
 			</a>
@@ -2051,84 +2201,6 @@
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/12-kafka/">12 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/rocketmq-distributed-transaction.html">
-				<h2 class="index-title">
-					09 rocketMq实现分布式事务了解吗？
-				</h2>
-				<div class="index-brief">
-					rocketMq实现分布式事务是通过rocketMq的消息最终一致性来保证的流程如下：生产者发送一个半消息到MQServer,因为是半消息所以消费者还不能消费，broker收到半消息后返回ack给生产者，表明半消息发送成功；这时候生产者开始执行本地事务，业务层面我们可以增加一张流水表，以便Broke
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/rocketmq-pull-push.html">
-				<h2 class="index-title">
-					06 rocketMq是pull模式还是push模式
-				</h2>
-				<div class="index-brief">
-					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式，在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类。Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-heaped.html">
-				<h2 class="index-title">
-					07 rocketMq消息堆积怎么解决
-				</h2>
-				<div class="index-brief">
-					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的topic,对于临时的topic 可以多配置一点MessageQuean,
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
 										
                                     </span>
                                 
@@ -2140,7 +2212,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/15/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="extend next" rel="next" href="/archives/page/17/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/15/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="extend next" rel="next" href="/archives/page/17/">&gt;</a>
 		
 	</div>
 </div>

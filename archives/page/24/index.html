@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,12 +2071,12 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/one-class-build-process.html">
+			<a href="/2024/0120/pessimistic-optimistic-lock.html">
 				<h2 class="index-title">
-					11 简述一个类的创建过程？
+					08 悲观锁和乐观锁
 				</h2>
 				<div class="index-brief">
-					1.首先jvm虚拟机在方法区加载检查这个类是否被加载了？如果已经被加载了，直接就创建对象2.没被加载过，就开始用类加载器加载类信息，加载的过程中用到的是双亲委派机制3.然后，加载了类信息后，虚拟机开始为对象分配内存4.内存分配完后，虚拟机需要将分配好的内存的空间初始化为零，不包括对象头5.初始化类，
+					悲观锁，按字面意思就是很悲观，每次获得去修改数据时总算悲观的认为数据已经被修改了，因此每次在获取到数据时都先给数据加锁，在操作数据的整个过程中一直上锁，等操作结束才会释放锁乐观锁，按字面意思就是很乐观，每次获得数据后总算乐观的认为数据没有被修改，只有在执行更新操作时才会判断数据是否被修改，如果数据被
 					...
 				</div>
 			</a>
@@ -2021,7 +2087,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -2031,12 +2097,14 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/parental-ji-zhi.html">
+			<a href="/2024/0120/wait-sleep-yield-join.html">
 				<h2 class="index-title">
-					12 谈谈对双亲委派机制的理解？
+					04 wait 和sleep区别,yield和join的区别
 				</h2>
 				<div class="index-brief">
-					首先判断该类是否已经被加载，当一个类加载器收到了类加载的请求的时候，他不会直接去加载指定的类，而是把这个请求委托给自己的父加载器去加载。只有父加载器无法加载这个类的时候，才会由当前这个加载器来负责类的加载。Java中提供如下四种类型的加载器，每一种加载器都有指定的加载对象，具体如下Bootstrap
+					
+1.wait：Object类的方法(notify()、notifyAll()  也是Object对象)，必须放在循环体和同步代码块中，执行该方法的线程会释放锁，进入线程等待池中等待被再次唤醒(notify随机唤醒，notifyAll全部唤醒，线程结束自动唤醒)即放入锁池中竞争同步锁
+2.sleep
 					...
 				</div>
 			</a>
@@ -2047,7 +2115,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -2057,16 +2125,19 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/new-survive-old-gc.html">
+			<a href="/2024/0120/how-to-start-one-thread.html">
 				<h2 class="index-title">
-					13 谈谈新生代，幸存区，老年代对应的垃圾回收是怎样的(待完善)
+					05 怎么开启一个线程？
 				</h2>
 				<div class="index-brief">
-					jdk1.7前堆主要分为：新生区，养老区，永久区jdk1.8后堆主要分为：新生区，养老区，元空间
+					
+直接new一个Thread
+继承Thread，重写run方法
+实现Runnable，重写run方法
+实现Callable，重写call方法
+ThreadPoolExecutor手动配置线程池
 
-对象优先在 Eden 区分配​ 一般情况下，对象都优先在新生代的 Eden 区中分配，当 Eden 内存不足时将会发起一次 Minor GC。
 
-大对象直接进入老年代​所谓大对象就是需要大量连续空间的
 					...
 				</div>
 			</a>
@@ -2077,7 +2148,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -2087,12 +2158,15 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/how-handle-pro-server-slow.html">
+			<a href="/2024/0120/synchronized-valatial-understand.html">
 				<h2 class="index-title">
-					09 生产环境服务嚣变慢,如何诊断处理?
+					01 synchronized和volatial关键字理解
 				</h2>
 				<div class="index-brief">
-					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
+					synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥就内存的可见性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：
+
+①获得互斥锁
+②从主内存拷贝变量的最新副
 					...
 				</div>
 			</a>
@@ -2103,7 +2177,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -2113,14 +2187,14 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/jvm-config-params.html">
+			<a href="/2024/0120/lock-upgradation.html">
 				<h2 class="index-title">
-					10 工作中常用的JVM配置参教有哪些?
+					02 锁升级的过程
 				</h2>
 				<div class="index-brief">
-					Java8为例
-
-日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
+					
+无锁​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
+偏向锁​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的测试一下
 					...
 				</div>
 			</a>
@@ -2131,7 +2205,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -2143,7 +2217,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/23/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/22/">22</a><a class="page-number" href="/archives/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/archives/page/25/">25</a><a class="page-number" href="/archives/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="extend next" rel="next" href="/archives/page/25/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/23/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/22/">22</a><a class="page-number" href="/archives/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/archives/page/25/">25</a><a class="page-number" href="/archives/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="extend next" rel="next" href="/archives/page/25/">&gt;</a>
 		
 	</div>
 </div>

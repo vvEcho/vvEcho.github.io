@@ -434,7 +434,7 @@
 								<li class="file">
 									<a href="/2024/0120/jvm-memory-model.html">
                      
-										    01 说说jvm内存模型
+										    01.说说jvm内存模型
                      
 									</a>
 								</li>
@@ -797,7 +797,7 @@
 								<li class="file">
 									<a href="/2024/0120/aop-jdk-cglib.html">
                      
-										    10 aop实现到默认是使用jdk动态代理还是cglib
+										    10 aop的实现默认是使用jdk动态代理还是cglib
                      
 									</a>
 								</li>
@@ -864,6 +864,39 @@
 									<a href="/2024/0124/beanfactory-factoryBean.html">
                      
 										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
                      
 									</a>
 								</li>
@@ -1587,9 +1620,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/undefined.html">
+									<a href="/2025/0227/xxl-job-principle.html">
                      
-										    01 xxl-job面试题
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
                      
 									</a>
 								</li>
@@ -2005,13 +2071,93 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
+			<a href="/2024/0120/kafka-msg-order.html">
 				<h2 class="index-title">
-					08 说说rocketmq死信队列
+					03 kafka如何保证消息的顺序消费
 				</h2>
 				<div class="index-brief">
-					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。rocketMq 会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
+					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的，因为是多个分区，消费的时候通过
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-kafka/">12 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/kafka-rebalance.html">
+				<h2 class="index-title">
+					05 kafka的rebalance机制
+				</h2>
+				<div class="index-brief">
+					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
+当kafka感知到存在让分
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-kafka/">12 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/rocketmq-distributed-transaction.html">
+				<h2 class="index-title">
+					09 rocketMq实现分布式事务了解吗？
+				</h2>
+				<div class="index-brief">
+					rocketMq实现分布式事务是通过rocketMq的消息最终一致性来保证的流程如下：生产者发送一个半消息到MQServer,因为是半消息所以消费者还不能消费，broker收到半消息后返回ack给生产者，表明半消息发送成功；这时候生产者开始执行本地事务，业务层面我们可以增加一张流水表，以便Broke
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		<div class="index-li">
+			<a href="/2024/0120/kafka-msg-not-lost.html">
+				<h2 class="index-title">
+					01 kafkar如何保证消息不丢失？
+				</h2>
+				<div class="index-brief">
+					回答这个问题可以分三个方面，首先第一点要保证producer消息能达到broker,其次broker收到对应的消息要确保持久化磁盘，最后需要确保consumer能成功消费这条消息；
 
+针对producer:我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消息
 					...
 				</div>
 			</a>
@@ -2022,7 +2168,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
+                                        <a href="/categories/12-kafka/">12 kafka</a>
 										
                                     </span>
                                 
@@ -2032,92 +2178,12 @@
 		</div>
 	
 		<div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-not-lost.html">
+			<a href="/2024/0120/rocketmq-pull-push.html">
 				<h2 class="index-title">
-					03 rocketMq怎么避免消息不丢失？
+					06 rocketMq是pull模式还是push模式
 				</h2>
 				<div class="index-brief">
-					那问这个问题，我们需要知道rocketMq哪些场景会导致消息丢失；
-
-生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-not-repeat.html">
-				<h2 class="index-title">
-					04 rocketMq怎么避免消息不重复消费
-				</h2>
-				<div class="index-brief">
-					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作，若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重，
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-order.html">
-				<h2 class="index-title">
-					05 rocketMq如何保证消息顺序消费？
-				</h2>
-				<div class="index-brief">
-					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		<div class="index-li">
-			<a href="/2024/0120/rocket-framewokr.html">
-				<h2 class="index-title">
-					01 rocketMq架构是怎样的,说说心跳机制
-				</h2>
-				<div class="index-brief">
-					RocketMq的架构包含一个发送消息的生产者Producer,消息存储接收的broker,消息消费的一个Consumer,还有一个消息状态管理的NameServer无状态服务器，然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳
+					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式，在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类。Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
 					...
 				</div>
 			</a>
@@ -2140,7 +2206,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/16/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/18/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/16/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/18/">&gt;</a>
 		
 	</div>
 </div>
