@@ -2428,10 +2428,9 @@
 					21 spring为何针对接口用jdk动态代理
 				</h2>
 				<div class="index-brief">
-					jdk为什么不能针对没有实现接口的类生成代理？
-JDK动态代理的机制要求代理类必须基于接口的方法签名生成代理方法。若目标类未实现接口，则无法通过接口定义这些方法签名，导致代理类无法生成对应方法
+					jdk为什么不能针对没有实现接口的类生成代理？JDK动态代理的机制要求代理类必须基于接口的方法签名生成代理方法。若目标类未实现接口，则无法通过接口定义这些方法签名，导致代理类无法生成对应方法
 JDK动态代理中代理类直接实现目标接口，并通过反射调用目标对象的方法；
-另外由于Java不支持多继承，若J
+另外由于Java不支持多继承，若JD
 					...
 				</div>
 			</a>
@@ -2484,12 +2483,8 @@ JDK动态代理中代理类直接实现目标接口，并通过反射调用目�
 					17 CAP及BASE理论
 				</h2>
 				<div class="index-brief">
-					CAP理论
-CAP理论是分布式领域中非常重要的一个指导理论
-C(Consistenc)表示强一致性,
-A(Availability)表示可用性,
-P(Partition Tolerance)表示分区容错性
-CAP理论指出在目前的硬件条件下，一个分布式系统是须要保证分区容错性的，而在这个前提下，分布式
+					CAP理论CAP理论是分布式领域中非常重要的一个指导理论C(Consistenc)表示强一致性,A(Availability)表示可用性,P(Partition Tolerance)表示分区容错性
+CAP理论指出在目前的硬件条件下，一个分布式系统是须要保证分区容错性的，而在这个前提下，分布式系统要么
 					...
 				</div>
 			</a>
@@ -2548,11 +2543,9 @@ CAP理论指出在目前的硬件条件下，一个分布式系统是须要保�
 
 
 
-
 姓名
 角色
 年龄
-
 
 
 
@@ -2564,7 +2557,6 @@ CAP理论指出在目前的硬件条件下，一个分布式系统是须要保�
 李四
 老师
 20
-
 
 
 
@@ -2593,9 +2585,8 @@ CAP理论指出在目前的硬件条件下，一个分布式系统是须要保�
 					07 谈谈springboot的SPI机制
 				</h2>
 				<div class="index-brief">
-					pring Boot的SPI机制通过META-INF/spring.factories文件和SpringFactoriesLoader实现了比 Java SPI 更强大的扩展能力，成为其自动配置与生态集成的核心技术。
-开发者可通过自定义 Starter 和扩展点，灵活构建高内聚、低耦合的模块化系统
-
+					pring Boot的SPI机制通过META-INF/spring.factories文件和SpringFactoriesLoader实现了比 Java SPI 更强大的扩展能力，成为其自动配置与生态集成的核心技术。开发者可通过自定义 Starter 和扩展点，灵活构建高内聚、低耦合的模块化系统
+服
 					...
 				</div>
 			</a>
@@ -2648,7 +2639,6 @@ CAP理论指出在目前的硬件条件下，一个分布式系统是须要保�
 				</h2>
 				<div class="index-brief">
 					Gate
-
 					...
 				</div>
 			</a>
@@ -2674,12 +2664,11 @@ CAP理论指出在目前的硬件条件下，一个分布式系统是须要保�
 					02.1 Gateway网关
 				</h2>
 				<div class="index-brief">
-					1.Gateway网关的作用
-请求路由：根据请求的内容，如URL路径或头信息，将请求路由到正确的微服务。
+					1.Gateway网关的作用请求路由：根据请求的内容，如URL路径或头信息，将请求路由到正确的微服务。
 请求聚合：将多个微服务的响应集合成一个统一的客户端响应。
 身份认证与授权：在转发请求给后端服务之前进行用户身份验证和授权。
 负载均衡：在多个实例之间分配请求负载，增加系统的可用性和可靠性。
-限流
+限流和
 					...
 				</div>
 			</a>
@@ -2837,9 +2826,8 @@ CAP理论指出在目前的硬件条件下，一个分布式系统是须要保�
 					02.3 Gateway和Zuul的区别
 				</h2>
 				<div class="index-brief">
-					Spring Cloud Gateway和Zuul有什么区别？
-Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
-以下是Spring Clo
+					Spring Cloud Gateway和Zuul有什么区别？Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
+以下是Spring Clou
 					...
 				</div>
 			</a>
@@ -2865,10 +2853,8 @@ Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构
 					06 如何自定义一个starter
 				</h2>
 				<div class="index-brief">
-					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：
-1.创建一个工程引入自动配置注解
-2.定义配置属性类
-12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperti
+					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：1.创建一个工程引入自动配置注解2.定义配置属性类
+12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperties
 					...
 				</div>
 			</a>
@@ -2980,9 +2966,7 @@ Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构
 					20 springmvc的底层工作流程
 				</h2>
 				<div class="index-brief">
-					1.用户发送请求至前端控制器DispatcherServlet。
-2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.
-3.Di
+					1.用户发送请求至前端控制器DispatcherServlet。2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.3.Disp
 					...
 				</div>
 			</a>
@@ -3008,11 +2992,9 @@ Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构
 					15 ==和equals的区别
 				</h2>
 				<div class="index-brief">
-					1.==是一个操作符，eqauls是object类的方法
-2.对于基本数据类型，==比较的是两个对象的值是否相等，对于引用数据类型，==比较的是两个对象的地址是否相等
-3.equal比较的是对象的值是否相等
+					1.&#x3D;&#x3D;是一个操作符，eqauls是object类的方法2.对于基本数据类型，&#x3D;&#x3D;比较的是两个对象的值是否相等，对于引用数据类型，&#x3D;&#x3D;比较的是两个对象的地址是否相等3.equal比较的是对象的值是否相等
 代码示例：
-1234567891011121314151617181920212223242
+123456789101
 					...
 				</div>
 			</a>
@@ -3064,9 +3046,8 @@ Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构
 					13 锁消除和锁膨胀
 				</h2>
 				<div class="index-brief">
-					锁消除
-在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
-1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchr
+					锁消除在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
+1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchro
 					...
 				</div>
 			</a>
@@ -3094,8 +3075,7 @@ Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构
 				<div class="index-brief">
 					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
 Java中提供的CAS操作，就是乐观锁的一种实现。
-悲观锁
-获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，
+悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
 					...
 				</div>
 			</a>
@@ -3123,10 +3103,8 @@ Java中提供的CAS操作，就是乐观锁的一种实现。
 				<div class="index-brief">
 					Java中提供的synchronized、ReentrantLock是互斥锁。
 Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
-互斥锁
-互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
-共享锁
-共享锁：同一时间点，当前共享锁可以被多个线程同时持有
+互斥锁互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
+共享锁共享锁：同一时间点，当前共享锁可以被多个线程同时持有
 
 					...
 				</div>
@@ -3183,11 +3161,9 @@ Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
 
 
 
-
 姓名
 角色
 年龄
-
 
 
 
@@ -3199,7 +3175,6 @@ Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
 李四
 老师
 20
-
 
 
 
@@ -3221,10 +3196,8 @@ Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
 				</h2>
 				<div class="index-brief">
 					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是可重入锁
-不可重入锁
-只判断这个锁有没有被锁上，只要被锁上，申请锁的线程都会被要求等待。
-可重入锁
-不仅判断锁有没有被锁上，还会判断锁是哪个线程锁上的，当判断为当前锁上的时候，那么他
+不可重入锁只判断这个锁有没有被锁上，只要被锁上，申请锁的线程都会被要求等待。
+可重入锁不仅判断锁有没有被锁上，还会判断锁是哪个线程锁上的，当判断为当前锁上的时候，那么他依旧
 					...
 				</div>
 			</a>
@@ -3252,9 +3225,8 @@ Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
 				<div class="index-brief">
 					Java中提供的synchronized只能是非公平锁。
 Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和非公平锁
-公平锁
-公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。
-优点：每个线程等待
+公平锁公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。
+优点：每个线程等待一
 					...
 				</div>
 			</a>
@@ -3281,9 +3253,8 @@ Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和�
 				</h2>
 				<div class="index-brief">
 					Seata 包含以下 4种分布式事务的处理模式
-1.XA 模式
-它的性能相比其他事务模式要差一点，但能保证最严格的数据一致性。XA 模式需要设置为串行化隔离级别，相当于对数据添加了读写锁。另外连接资源需要在整个事务期间保持，这样可能会导致资源锁定问题，从而影响并发事务吞吐。
-a.优点:实现简单、无业
+1.XA 模式它的性能相比其他事务模式要差一点，但能保证最严格的数据一致性。XA 模式需要设置为串行化隔离级别，相当于对数据添加了读写锁。另外连接资源需要在整个事务期间保持，这样可能会导致资源锁定问题，从而影响并发事务吞吐。
+a.优点:实现简单、无业务
 					...
 				</div>
 			</a>
@@ -3309,11 +3280,9 @@ a.优点:实现简单、无业
 					05.2 sentinel限流及熔断的原理
 				</h2>
 				<div class="index-brief">
-					什么是Sentinel
-Sentinel是阿里开源的项目，提供了流量控制、熔断降级、系统负载保护等多个维度来保障服务之间的稳定性
-Sentinel vs Hystrix
-Hystrix 的关注点在于以隔离和熔断为主的容错机制，超时或被熔断的调用将会快速失败，并可以提供 fallback 机制。
-Se
+					什么是SentinelSentinel是阿里开源的项目，提供了流量控制、熔断降级、系统负载保护等多个维度来保障服务之间的稳定性
+Sentinel vs HystrixHystrix 的关注点在于以隔离和熔断为主的容错机制，超时或被熔断的调用将会快速失败，并可以提供 fallback 机制。
+Sent
 					...
 				</div>
 			</a>
@@ -3357,10 +3326,8 @@ Se
 					15 什么叫索引下推，回表？
 				</h2>
 				<div class="index-brief">
-					索引下推
-索引下推简称ICP(index condition push),是mysql5.6后新增的功能，主要的核心点在于把数据筛选的过程放在了存储引擎层面，减少了返回的数据量和回表的次数，从而提高查询效率。
-回表
-数据库查询使用普通字段时，因为索引中只存了索引键值和主键值，无法通过索引键值查询到数
+					索引下推索引下推简称ICP(index condition push),是mysql5.6后新增的功能，主要的核心点在于把数据筛选的过程放在了存储引擎层面，减少了返回的数据量和回表的次数，从而提高查询效率。
+回表数据库查询使用普通字段时，因为索引中只存了索引键值和主键值，无法通过索引键值查询到数据，
 					...
 				</div>
 			</a>
@@ -3387,12 +3354,11 @@ Se
 				</h2>
 				<div class="index-brief">
 					
-jwt的认证流程说明：
-前端发起请求登陆，用户携带用户名和密码等
+jwt的认证流程说明：前端发起请求登陆，用户携带用户名和密码等
 后端验证身份（用户名，密码，验证码等），根据算法，将用户标识符打包生成 Token，
 后端返回JWT信息给浏览器，JWT不包含敏感信息
 前端发起回调请求获取用户资料，把刚刚拿到的Token放到请求头中一起发送给服务器
-后端根据请求数
+后端根据请求数据
 					...
 				</div>
 			</a>
@@ -3418,10 +3384,7 @@ jwt的认证流程说明：
 					04 xxl-job如何实现任务的分片
 				</h2>
 				<div class="index-brief">
-					xxl-job 实现了分片任务的功能，可以将一个任务分片执行，每个执行器运行其中的一片任务。
-实现分片任务的原理是：任务注册时，可以设置分片参数，指定任务分片的总数和当前执行器的分片序号。
-在任务执行器获取任务时，通过判断当前执行器的分片序号来决定是否执行该任务。
-执行器只会执行当前分片序号符合的任
+					xxl-job 实现了分片任务的功能，可以将一个任务分片执行，每个执行器运行其中的一片任务。实现分片任务的原理是：任务注册时，可以设置分片参数，指定任务分片的总数和当前执行器的分片序号。在任务执行器获取任务时，通过判断当前执行器的分片序号来决定是否执行该任务。执行器只会执行当前分片序号符合的任务片段
 					...
 				</div>
 			</a>
@@ -3447,13 +3410,7 @@ jwt的认证流程说明：
 					03 xxl-job服务注册与发现的原理是啥？
 				</h2>
 				<div class="index-brief">
-					执行器的注册流程
-(1) 启动时主动注册
-触发时机：执行器启动时，通过 XxlJobExecutor 初始化 Netty 服务端，并调用 startRegistry 方法向调度中心发送注册请求。
-注册内容：
-执行器名称（appname）
-执行器地址（address，格式为 IP:PORT）
-注册类型
+					执行器的注册流程(1) 启动时主动注册触发时机：执行器启动时，通过 XxlJobExecutor 初始化 Netty 服务端，并调用 startRegistry 方法向调度中心发送注册请求。注册内容：执行器名称（appname）执行器地址（address，格式为 IP:PORT）注册类型（固定为 E
 					...
 				</div>
 			</a>
@@ -3479,13 +3436,12 @@ jwt的认证流程说明：
 					01 xxl-job的原理
 				</h2>
 				<div class="index-brief">
-					xxl-job 的原理是通过一个任务调度中心和多个任务执行器实现任务的分布式调度和执行。
-其工作流程如下：
+					xxl-job 的原理是通过一个任务调度中心和多个任务执行器实现任务的分布式调度和执行。其工作流程如下：
 
 调度中心通过任务注册接口将任务信息注册到注册中心。
 执行器从注册中心获取任务信息，并在指定的时间点执行任务。
 执行器执行任务后，将执行结果上报给任务调度中心。
-调度中心根据执行结果进行任务状
+调度中心根据执行结果进行任务状态
 					...
 				</div>
 			</a>
@@ -3512,9 +3468,7 @@ jwt的认证流程说明：
 				</h2>
 				<div class="index-brief">
 					spring是通过三级缓存与双重检测锁的协作来保证bean是单例的
-一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。
-二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。
-三级缓存（singleton
+一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。三级缓存（singletonFa
 					...
 				</div>
 			</a>
@@ -3570,10 +3524,7 @@ jwt的认证流程说明：
 					17 spring中bean是线程安全的吗？
 				</h2>
 				<div class="index-brief">
-					spring中bean不是线程安全的
-Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。
-在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。
-在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确
+					spring中bean不是线程安全的Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确赋值。
 					...
 				</div>
 			</a>
@@ -3600,12 +3551,9 @@ Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是�
 				</h2>
 				<div class="index-brief">
 					
-执行引擎的革新
-Hive 的局限性：
-Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入 HDFS 磁盘,导致高 I/O 开销和高延迟(适合批量处理,但无法满足交互式查询)
+执行引擎的革新Hive 的局限性：Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入 HDFS 磁盘,导致高 I&#x2F;O 开销和高延迟(适合批量处理,但无法满足交互式查询)
 
-Presto 的优势：
-Presto 采
+Presto 的优势：Presto
 					...
 				</div>
 			</a>
@@ -3631,9 +3579,8 @@ Presto 采
 					12.es怎么解决深分页的问题及索引优化有哪些方法
 				</h2>
 				<div class="index-brief">
-					1.Elasticsearch深分页问题解决方案
-方案1：Search After（游标分页）
-1234567891011121314151617181920// 首次查询（按时间倒序）GET /order_index/_search&#123;  &quot;size&quot;: 20,  &q
+					1.Elasticsearch深分页问题解决方案方案1：Search After（游标分页）
+1234567891011121314151617181920// 首次查询（按时间倒序）GET /order_index/_search&#123;  &quot;size&quot;: 20,  &qu
 					...
 				</div>
 			</a>
@@ -3669,9 +3616,7 @@ Presto 采
 					10.订单系统如何保证原子性和最终一致性
 				</h2>
 				<div class="index-brief">
-					在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题
-1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？
-2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布
+					在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布式锁
 					...
 				</div>
 			</a>
@@ -3708,9 +3653,7 @@ Presto 采
 				</h2>
 				<div class="index-brief">
 					
-先删除缓存，再更新数据库
-问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生
-解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取
+先删除缓存，再更新数据库问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取最新
 					...
 				</div>
 			</a>
@@ -3746,9 +3689,8 @@ Presto 采
 					9.设计一个强一致性方案保障故障转移时会话共享
 				</h2>
 				<div class="index-brief">
-					基于Redis的会话共享实现
-方案核心：Redis Cluster + 同步写策略
-12345678# Redis节点配置（6节点示例：3主3从）redis-cluster:  master1: 192.168.1.1:6379  slave1:  192.168.1.2:6380  master2
+					基于Redis的会话共享实现方案核心：Redis Cluster + 同步写策略
+12345678# Redis节点配置（6节点示例：3主3从）redis-cluster:  master1: 192.168.1.1:6379  slave1:  192.168.1.2:6380  master2:
 					...
 				</div>
 			</a>
@@ -3784,9 +3726,8 @@ Presto 采
 					6.结合kafka的exactly-once说明如何实现一个无锁的幂等方案
 				</h2>
 				<div class="index-brief">
-					在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？
-无锁幂等方案设计
-123456CREATE TABLE
+					在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？无锁幂等方案设计
+123456CREATE TABLE 
 					...
 				</div>
 			</a>
@@ -3822,7 +3763,7 @@ Presto 采
 					5.请分析RR可能导致锁范围扩大的原因和解决思路
 				</h2>
 				<div class="index-brief">
-					假设查询涉及SELECT … FOR UPDATE锁，请分析在RR（可重复读）隔离级别下可能导致的锁范围扩大问题。如何通过索引设计避免锁全表？请结合SELECT * FROM commission WHERE merchant_id=? AND month=‘2025-02’ FOR UPDATE示
+					假设查询涉及SELECT … FOR UPDATE锁，请分析在RR（可重复读）隔离级别下可能导致的锁范围扩大问题。如何通过索引设计避免锁全表？请结合SELECT * FROM commission WHERE merchant_id&#x3D;? AND month&#x3D;’2025-02’ F
 					...
 				</div>
 			</a>
@@ -3859,10 +3800,7 @@ Presto 采
 				</h2>
 				<div class="index-brief">
 					在领域驱动设计中，聚合根（Aggregate Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明
-
-聚合根（Aggregate Root）设计原则
-您的回答正确但需补充完整，核心原则包括：
-✅ 强一致性边界：聚合根内的所有
+聚合根（Aggregate Root）设计原则您的回答正确但需补充完整，核心原则包括：✅ 强一致性边界：聚合根内的所有实体&
 					...
 				</div>
 			</a>
@@ -3898,8 +3836,7 @@ Presto 采
 					3.Promotion Failed的原因及解决思路
 				</h2>
 				<div class="index-brief">
-					在平安科技的分红子系统中，您提到使用Java 8的Supplier优化PageHelper查询。假设系统出现Full GC频繁（约1次/小时），且GC日志显示Promotion Failed，请分析可能的原因及解决思路。如何通过G1垃圾回收器参数优化此场景？
-Promotion Failed‌是指在
+					在平安科技的分红子系统中，您提到使用Java 8的Supplier优化PageHelper查询。假设系统出现Full GC频繁（约1次&#x2F;小时），且GC日志显示Promotion Failed，请分析可能的原因及解决思路。如何通过G1垃圾回收器参数优化此场景？Promotion Failed
 					...
 				</div>
 			</a>
@@ -3935,10 +3872,7 @@ Promotion Failed‌是指在
 					2.分布式锁隐患及锁续期原理
 				</h2>
 				<div class="index-brief">
-					在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？
-Redis分布式锁的隐患
-热key问题导致单节点压力（可通过分片或分区锁缓解）。
-锁超时与业务执行冲突：若业务执行时间超过锁超时时间（TTL），导致锁自动释
+					在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？Redis分布式锁的隐患热key问题导致单节点压力（可通过分片或分区锁缓解）。锁超时与业务执行冲突：若业务执行时间超过锁超时时间（TTL），导致锁自动释放后其
 					...
 				</div>
 			</a>
@@ -3977,7 +3911,6 @@ Redis分布式锁的隐患
 					假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明
 
 
-
 方案
 优势
 劣势
@@ -3985,9 +3918,8 @@ Redis分布式锁的隐患
 
 
 
-
 Redis Lua脚本
-
+原子
 					...
 				</div>
 			</a>
@@ -4023,9 +3955,8 @@ Redis Lua脚本
 					8.导出频繁FullGC如何定位泄漏点，你是如何优化的
 				</h2>
 				<div class="index-brief">
-					假设导出百万级数据到Excel时出现频繁Full GC，如何定位内存泄漏点？如果发现是POI的SXSSFWorkbook未正确释放资源，除了调用dispose()，还有哪些优化手段？请结合JVM参数调优和代码规范说明
-可通过JVisualVM 分析工具，分析堆栈内存
-1234567# 启动参数添加G
+					假设导出百万级数据到Excel时出现频繁Full GC，如何定位内存泄漏点？如果发现是POI的SXSSFWorkbook未正确释放资源，除了调用dispose()，还有哪些优化手段？请结合JVM参数调优和代码规范说明可通过JVisualVM 分析工具，分析堆栈内存
+1234567# 启动参数添加GC
 					...
 				</div>
 			</a>
@@ -4061,9 +3992,7 @@ Redis Lua脚本
 					1.结合DDD说明抽象类和接口的区别
 				</h2>
 				<div class="index-brief">
-					Java接口和抽象类的核心区别是什么？在DDD架构设计中，接口通常承担什么角色？请结合您订单管理系统中Shiro权限模块的设计举例说明
-接口：定义行为契约，支持多实现，无状态，Java 8+支持默认方法，适合跨层次的能力抽象（如权限校验接口）。
-抽象类：提供部分实现，单继承，可包含成员变量，适合同类
+					Java接口和抽象类的核心区别是什么？在DDD架构设计中，接口通常承担什么角色？请结合您订单管理系统中Shiro权限模块的设计举例说明接口：定义行为契约，支持多实现，无状态，Java 8+支持默认方法，适合跨层次的能力抽象（如权限校验接口）。抽象类：提供部分实现，单继承，可包含成员变量，适合同类事物
 					...
 				</div>
 			</a>
@@ -4136,12 +4065,7 @@ Redis Lua脚本
 				</h2>
 				<div class="index-brief">
 					
-基本数据类型（值传递）特点：
-传递的是变量的值的副本。
-函数内部对参数的修改不会影响原始变量。
-示例：
-
-123456789101112public class Main &#123;    public static void modifyValue(int x) &#123;        x
+基本数据类型（值传递）特点：传递的是变量的值的副本。函数内部对参数的修改不会影响原始变量。示例：123456789101112public class Main &#123;    public static void modifyValue(int x) &#123;        x = 10
 					...
 				</div>
 			</a>
@@ -4168,9 +4092,8 @@ Redis Lua脚本
 				</h2>
 				<div class="index-brief">
 					java有8大基本数据类型，为什么每个都要再弄个包装类，这样的意义在哪里？
-
 首先java是一门面向对象的语言，对象是java程序操作的基本单元，所以对象都会是封装类型的；
-基础数据类型，只能满足常见的计数场景，不能满足对这些基本对象的一些复杂操作，java提供对应的包装类里面封装了一些方法和属性，
+基础数据类型，只能满足常见的计数场景，不能满足对这些基本对象的一些复杂操作，java提供对应的包装类里面封装了一些方法和属性，且
 					...
 				</div>
 			</a>
@@ -4223,12 +4146,7 @@ Redis Lua脚本
 					01 基础知识
 				</h2>
 				<div class="index-brief">
-					数组
-链表
-跳表
-红黑树
-B树 &amp; B+树 &amp; 平衡二叉树 &amp; 红黑树
-
+					数组链表跳表红黑树B树 &amp; B+树 &amp; 平衡二叉树 &amp; 红黑树
 					...
 				</div>
 			</a>
@@ -4284,8 +4202,7 @@ BeanFactory属于基础的IOC容器，applicationCon
 				<div class="index-brief">
 					事务隔离级别就是为了解决脏读、幻读、不可重复读着这几个问题而产生的，但是事务隔离级别不同，产生的问题也不同，因此很多时候必须在并发性一个权衡，所以设立了几种事务隔离级别，以便让不同的项目可以根据自己项目的并发情况选择合适的事务隔离级别。事务隔离级别有四种，不过种：
 
-
-DEFAULT：默认隔离级别，
+DEFAULT：默认隔离级别，意
 					...
 				</div>
 			</a>
@@ -4337,9 +4254,8 @@ DEFAULT：默认隔离级别，
 					15 redis如何做分页查询
 				</h2>
 				<div class="index-brief">
-					拓展-ZREVRANGE
-ZREVRANGE是Redis中的一个命令，它的全称是Zset Reverse Range，意思是有序集合反向范围。
-ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中成员的位置按分数值递减（从大到小）来排列。具有相同分数值的成员按字典序的逆序（reverse
+					拓展-ZREVRANGEZREVRANGE是Redis中的一个命令，它的全称是Zset Reverse Range，意思是有序集合反向范围。
+ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中成员的位置按分数值递减（从大到小）来排列。具有相同分数值的成员按字典序的逆序（reverse 
 					...
 				</div>
 			</a>
@@ -4418,8 +4334,7 @@ ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中�
 					04 kafka怎么做分布式事务？
 				</h2>
 				<div class="index-brief">
-					kafka的优势其实在于副本机制以及在消息的吞吐量上，它本身的机制并不能用来做分布式事务；
-如果非得要用它来做事务管理的话，我们需要自己业务层面自己来确保消息的幂等性
+					kafka的优势其实在于副本机制以及在消息的吞吐量上，它本身的机制并不能用来做分布式事务；如果非得要用它来做事务管理的话，我们需要自己业务层面自己来确保消息的幂等性
 
 					...
 				</div>
@@ -4473,8 +4388,7 @@ ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中�
 				</h2>
 				<div class="index-brief">
 					
-
-聚簇索引:是一种特殊的索引类型，它将数据行的物理存储位置与索引的逻辑顺序相匹配。这意味着，当聚簇索引的叶节点被访问时，它同时也包含了该行的数据。聚簇索引的这种设计可以减少数据访问的磁盘I/O操作，因为数据行与索引紧密地关联在一起，通常位于同一数据页中。聚簇索引的一个关键特点是，每个表只能有一个聚
+聚簇索引:是一种特殊的索引类型，它将数据行的物理存储位置与索引的逻辑顺序相匹配。这意味着，当聚簇索引的叶节点被访问时，它同时也包含了该行的数据。聚簇索引的这种设计可以减少数据访问的磁盘I&#x2F;O操作，因为数据行与索引紧密地关联在一起，通常位于同一数据页中。聚簇索引的一个关键特点是，每个表只能
 					...
 				</div>
 			</a>
@@ -4528,8 +4442,7 @@ ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中�
 				<div class="index-brief">
 					Vue的生命周期是指Vue实例对象从创建之初到销毁的过程，这个过程包括多个阶段，每个阶段都有对应的钩子函数，用于控制组件的数据管理和DOM渲染。Vue的生命周期可以分为以下几个阶段：
 
-
-beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得D
+beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得DO
 					...
 				</div>
 			</a>
@@ -4556,15 +4469,13 @@ beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数�
 				</h2>
 				<div class="index-brief">
 					大key可能存在的场景
-
 配送范围特别大的门店
 促销活动特别多的门店、商家等
 高频用户下的订单列表
 
 大key会导致什么问题
-
 如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
-如果是hash,list,set,zset等类型key 删除key会严
+如果是hash,list,set,zset等类型key 删除key会严重阻
 					...
 				</div>
 			</a>
@@ -4618,8 +4529,7 @@ ConfigClient实例都监听MQ中
 					05.3 hystricl和sentinel的对比
 				</h2>
 				<div class="index-brief">
-					Sentinel vs Hystrix
-Hystrix 的关注点在于以隔离和熔断为主的容错机制，超时或被熔断的调用将会快速失败，并可以提供 fallback 机制。
+					Sentinel vs HystrixHystrix 的关注点在于以隔离和熔断为主的容错机制，超时或被熔断的调用将会快速失败，并可以提供 fallback 机制。
 Sentinel 的侧重点在于：
 
 多样化的流量控制
@@ -4653,10 +4563,9 @@ Sentinel 的侧重点在于：
 					03.2 zookeeper注册中心
 				</h2>
 				<div class="index-brief">
-					1.Zookeeper的服务注册与发现
-Zookeeper的服务注册与发现,主要应用的是Zookeeper的Znode数据模型和Watcher机制
+					1.Zookeeper的服务注册与发现Zookeeper的服务注册与发现,主要应用的是Zookeeper的Znode数据模型和Watcher机制
 服务注册：服务提供者会向Zookeeper服务端注册服务信息，即创建一个服务节点，并在节点上存储服务的相关数据（如服务提供者的ip地址、端口等):
-服务
+服务发
 					...
 				</div>
 			</a>
@@ -4712,8 +4621,7 @@ DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器 ，
 					16 BeanFactory和FactoryBean有什么区别
 				</h2>
 				<div class="index-brief">
-					区别
-BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonOb
+					区别BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObj
 					...
 				</div>
 			</a>
@@ -4740,12 +4648,9 @@ BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器�
 				</h2>
 				<div class="index-brief">
 					
+链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
 
-链地址法（Separate Chaining）：
-当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
-
-
-开放寻址法（
+开放寻址法（Ope
 					...
 				</div>
 			</a>
@@ -4772,8 +4677,7 @@ BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器�
 				</h2>
 				<div class="index-brief">
 					事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。
-当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。
-spri
+当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。sprin
 					...
 				</div>
 			</a>
@@ -4826,12 +4730,9 @@ spri
 					12 BIO,NIO,AIO的区别
 				</h2>
 				<div class="index-brief">
-					BIO、NIO、AIO 是Java中处理I/O操作的不同方式，它们的区别如下：
+					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
 
-BIO（Blocking I/O）：阻塞式I/O，即在执行I/O操作时，当前线程会被阻塞，直到I/O操作完成。这种方式适用于简单的I/O操作，但当有大量的并发请求时，性能较差。
-
-核心机制：
-每个连接对应一个独立线程，
+BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
 					...
 				</div>
 			</a>
@@ -4991,12 +4892,8 @@ BIO（Blocking I/O）：阻塞式I/O，即在执行I/O操作时，当前线程�
 					02 项目难点
 				</h2>
 				<div class="index-brief">
-					1.项目中遇到的技术难点？
-mq消费满导致拥堵
-多线程环境下大数据量导致内存泄漏
-连接池的配置导致查询缓慢
-2.说一个你做项目为止最难忘的一件事？
-最难忘的事，我想应该是上线出问题吧；我记得在平安产品线智慧薪酬项目时，当时每个季度末27号就要跑财务核算，当时是三个定时任务，并且这三个定时任务都是有先
+					1.项目中遇到的技术难点？mq消费满导致拥堵多线程环境下大数据量导致内存泄漏连接池的配置导致查询缓慢
+2.说一个你做项目为止最难忘的一件事？最难忘的事，我想应该是上线出问题吧；我记得在平安产品线智慧薪酬项目时，当时每个季度末27号就要跑财务核算，当时是三个定时任务，并且这三个定时任务都是有先后顺序的
 					...
 				</div>
 			</a>
@@ -5023,12 +4920,9 @@ mq消费满导致拥堵
 				</h2>
 				<div class="index-brief">
 					
-linux常用查看日志命令？
-cd到对应的日志目录文件
-查看实时日志：tail -f xxx.log
-根据关键字查询：cat -n xxx.log|grep ‘occurs error’
+linux常用查看日志命令？cd到对应的日志目录文件查看实时日志：tail -f xxx.log根据关键字查询：cat -n xxx.log|grep ‘occurs error’
 
-123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat 
+123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat err
 					...
 				</div>
 			</a>
@@ -5055,11 +4949,8 @@ cd到对应的日志目录文件
 				</h2>
 				<div class="index-brief">
 					如何构建dockerfile
-
 将jar包上传到服务器
-执行下述命令构建dockerfile
-
-1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 
+执行下述命令构建dockerfile1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 构建 
 					...
 				</div>
 			</a>
@@ -5111,8 +5002,7 @@ cd到对应的日志目录文件
 					01 三次握手及四次挥手
 				</h2>
 				<div class="index-brief">
-					1.http通信为甚么要三次握手，四次挥手；
-当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认
+					1.http通信为甚么要三次握手，四次挥手；当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认报
 					...
 				</div>
 			</a>
@@ -5138,13 +5028,8 @@ cd到对应的日志目录文件
 					01.设计模式面试题
 				</h2>
 				<div class="index-brief">
-					1.mybaits 用了哪些设计模式？
-2.spring 用了哪些设计模式？
-3.单例模式有哪几种？
-懒汉，饿汉式，线程安全的懒汉式，匿名内部类
-4.说下你对责任链模式的理解及应用场景？
-5.说说代理模式
-
+					1.mybaits 用了哪些设计模式？2.spring 用了哪些设计模式？3.单例模式有哪几种？懒汉，饿汉式，线程安全的懒汉式，匿名内部类
+4.说下你对责任链模式的理解及应用场景？5.说说代理模式
 					...
 				</div>
 			</a>
@@ -5171,8 +5056,7 @@ cd到对应的日志目录文件
 				</h2>
 				<div class="index-brief">
 					在 Seata 中主要有以下三种角色，其中TM和RM是作为 Seata 的客户端与业务系统集成在一起，TC 作为 Seata 的服务端独立部署：
-事务协调器（TC）：维护全局事务的运行状态，负责协调并驱动全局提交或回滚
-事务管理器（TM）：事务发起方，控制全局事务的范围，负责开启一个全局事务，并最终
+事务协调器（TC）：维护全局事务的运行状态，负责协调并驱动全局提交或回滚事务管理器（TM）：事务发起方，控制全局事务的范围，负责开启一个全局事务，并最终发
 					...
 				</div>
 			</a>
@@ -5227,36 +5111,7 @@ xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分
 				</h2>
 				<div class="index-brief">
 					分库这个简单就是，分不同的sheam;一般是按业务来拆分
-分表一般有两种分法，一般有水平分表和垂直分表两种；
-水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表。。。
-而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不长变动的放一张表，变动多的放一张表；或者根据业
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-mysql/">14 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/mysql-count-query-sample.html">
-				<h2 class="index-title">
-					09 统计sql例子
-				</h2>
-				<div class="index-brief">
-					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
-1234select user_name ,bug_count from (select count(bug_id) as bug_c
+分表一般有两种分法，一般有水平分表和垂直分表两种；水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表。。。而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不长变动的放一张表，变动多的放一张表；或者根据业务含
 					...
 				</div>
 			</a>
@@ -5284,6 +5139,33 @@ xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分
 				<div class="index-brief">
 					分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es
 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-mysql/">14 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/mysql-count-query-sample.html">
+				<h2 class="index-title">
+					09 统计sql例子
+				</h2>
+				<div class="index-brief">
+					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
+1234select user_name ,bug_count from (select count(bug_id) as bug_c
 					...
 				</div>
 			</a>
@@ -5361,8 +5243,7 @@ xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分
 					03 mvcc机制？
 				</h2>
 				<div class="index-brief">
-					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的变化提交之前，对于其他的读事务来说都是不可见的；
-当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC 并
+					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的变化提交之前，对于其他的读事务来说都是不可见的；当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC 并发
 					...
 				</div>
 			</a>
@@ -5417,11 +5298,10 @@ redolog-重做日志的作用，在于提高mysql
 					02 怎么解决幻读
 				</h2>
 				<div class="index-brief">
-					只有序列化级别解决了幻读，其他的都没有解决了幻读；因为序列化是串行化执行的，第一个事务执行完后才能执行第二个事务
-幻读出现的根本原因是，如果所有的读都是快照读就不会有幻读的问题，如果有快照读也有当前读才会产生幻读的问题
+					只有序列化级别解决了幻读，其他的都没有解决了幻读；因为序列化是串行化执行的，第一个事务执行完后才能执行第二个事务幻读出现的根本原因是，如果所有的读都是快照读就不会有幻读的问题，如果有快照读也有当前读才会产生幻读的问题
 
 快照读：mysql 中针对不加锁的读操作，称为快照读；
-当前读：对于加锁的读，
+当前读：对于加锁的读，插
 					...
 				</div>
 			</a>
@@ -5502,9 +5382,34 @@ redolog-重做日志的作用，在于提高mysql
 					12 redis你们用的是什么集群(待完善)
 				</h2>
 				<div class="index-brief">
-					redis我用的是主从架构的这种集群，哨兵的话自己有研究过，但是项目中目前还没有用到；
-Redis的哨兵模式的特点是：
+					redis我用的是主从架构的这种集群，哨兵的话自己有研究过，但是项目中目前还没有用到；Redis的哨兵模式的特点是：
 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-redis/">13 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-distributed-lock.html">
+				<h2 class="index-title">
+					09 redis分布式锁有用过吗？
+				</h2>
+				<div class="index-brief">
+					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
 					...
 				</div>
 			</a>
@@ -5534,33 +5439,6 @@ Redis的哨兵模式的特点是：
 
 String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key
 list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpu
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock.html">
-				<h2 class="index-title">
-					09 redis分布式锁有用过吗？
-				</h2>
-				<div class="index-brief">
-					redis分布式锁我们用的是Redisson，它的实现原理是：
-我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释
 					...
 				</div>
 			</a>
@@ -5640,8 +5518,7 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
 					06 怎么监控热key
 				</h2>
 				<div class="index-brief">
-					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key
-或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认
+					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为
 					...
 				</div>
 			</a>
@@ -5689,6 +5566,32 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
 		</div>
 	
 		 <div class="index-li">
+			<a href="/2024/0120/redis-rdb-aof.html">
+				<h2 class="index-title">
+					04 rdb和aof
+				</h2>
+				<div class="index-brief">
+					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；rdb是一种二进制快照文件的方式某个时刻redis中的数据到硬盘中的，aof是以日志的的方式存储redis的写命令;rdb的好处是适合数据全量备份，容灾好，恢复数据速度快,确点是数据可能丢失；aof的好处是实时性好，因为记录日志是
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-redis/">13 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/redis-io.html">
 				<h2 class="index-title">
 					03 说说IO多路复用
@@ -5716,13 +5619,13 @@ list是一种数据结构(链表)，可以将list当成栈，也可以当成队�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-rdb-aof.html">
+			<a href="/2024/0120/redis-base-data-structure.html">
 				<h2 class="index-title">
-					04 rdb和aof
+					01 redis数据结构
 				</h2>
 				<div class="index-brief">
-					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；
-rdb是一种二进制快照文件的方式某个时刻redis中的数据到硬盘中的，aof是以日志的的方式存储redis的写命令;rdb的好处是适合数据全量备份，容灾好，恢复数据速度快,确点是数据可能丢失；aof的好处是实时性好，因为记录日志
+					redis是一种基于键值对的来存储数据的nosql数据库，其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
+
 					...
 				</div>
 			</a>
@@ -5775,40 +5678,12 @@ C实现的，更利于和底层进行交互
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-base-data-structure.html">
-				<h2 class="index-title">
-					01 redis数据结构
-				</h2>
-				<div class="index-brief">
-					redis是一种基于键值对的来存储数据的nosql数据库，其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
 			<a href="/2024/0120/kafka-msg-not-repeat.html">
 				<h2 class="index-title">
 					02 kafka如何避免消息的重复消费？
 				</h2>
 				<div class="index-brief">
-					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；
-例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
+					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
 
 					...
 				</div>
@@ -5883,33 +5758,6 @@ C实现的，更利于和底层进行交互
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-distributed-transaction.html">
-				<h2 class="index-title">
-					09 rocketMq实现分布式事务了解吗？
-				</h2>
-				<div class="index-brief">
-					rocketMq实现分布式事务是通过rocketMq的消息最终一致性来保证的
-流程如下：生产者发送一个半消息到MQServer,因为是半消息所以消费者还不能消费，broker收到半消息后返回ack给生产者，表明半消息发送成功；这时候生产者开始执行本地事务，业务层面我们可以增加一张流水表，以便Brok
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
 			<a href="/2024/0120/kafka-msg-not-lost.html">
 				<h2 class="index-title">
 					01 kafkar如何保证消息不丢失？
@@ -5917,8 +5765,7 @@ C实现的，更利于和底层进行交互
 				<div class="index-brief">
 					回答这个问题可以分三个方面，首先第一点要保证producer消息能达到broker,其次broker收到对应的消息要确保持久化磁盘，最后需要确保consumer能成功消费这条消息；
 
-针对producer:
-我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消
+针对producer:我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消息
 					...
 				</div>
 			</a>
@@ -5930,6 +5777,32 @@ C实现的，更利于和底层进行交互
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/12-kafka/">12 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-distributed-transaction.html">
+				<h2 class="index-title">
+					09 rocketMq实现分布式事务了解吗？
+				</h2>
+				<div class="index-brief">
+					rocketMq实现分布式事务是通过rocketMq的消息最终一致性来保证的流程如下：生产者发送一个半消息到MQServer,因为是半消息所以消费者还不能消费，broker收到半消息后返回ack给生产者，表明半消息发送成功；这时候生产者开始执行本地事务，业务层面我们可以增加一张流水表，以便Broke
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
 										
                                     </span>
                                 
@@ -5970,8 +5843,7 @@ C实现的，更利于和底层进行交互
 					07 rocketMq消息堆积怎么解决
 				</h2>
 				<div class="index-brief">
-					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
-还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的topic,对于临时的topic 可以多配置一点MessageQuean
+					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的topic,对于临时的topic 可以多配置一点MessageQuean,
 					...
 				</div>
 			</a>
@@ -6026,9 +5898,7 @@ C实现的，更利于和底层进行交互
 				<div class="index-brief">
 					那问这个问题，我们需要知道rocketMq哪些场景会导致消息丢失；
 
-生产者在发送消息的时候，如果断网了就会导致消息发送失败
-这种极端情况下，我们可以采用rocketMq的事务机制来解决；
-首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失
+生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了
 					...
 				</div>
 			</a>
@@ -6153,18 +6023,14 @@ C实现的，更利于和底层进行交互
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/nacos-konw.html">
+			<a href="/2024/0120/dubbo-rpc-net.html">
 				<h2 class="index-title">
-					03.3 nacos注册中心
+					07 dubbo微服务间怎么通信？
 				</h2>
 				<div class="index-brief">
-					1.nacos简介
-Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
-Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
-
-
-服务发现和注册：
-Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时
+					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
+使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
+dubbo的服务注册与发现的流程容器启动后，提供方向注
 					...
 				</div>
 			</a>
@@ -6185,16 +6051,15 @@ Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/dubbo-rpc-net.html">
+			<a href="/2024/0120/nacos-konw.html">
 				<h2 class="index-title">
-					07 dubbo微服务间怎么通信？
+					03.3 nacos注册中心
 				</h2>
 				<div class="index-brief">
-					dubbo的特定
-dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
-使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
-dubbo的服务注册与发现的流程
-容器启动后，提供方
+					1.nacos简介Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
+Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
+
+服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注
 					...
 				</div>
 			</a>
@@ -6282,9 +6147,7 @@ shiro-权限组件
 					03.1 Eureka注册中心
 				</h2>
 				<div class="index-brief">
-					1.服务端如何保存客户端注册信息?
-客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.
-客户端通过Jersey框架，将自己的注册
+					1.服务端如何保存客户端注册信息?客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.客户端通过Jersey框架，将自己的注册信息
 					...
 				</div>
 			</a>
@@ -6311,8 +6174,7 @@ shiro-权限组件
 				</h2>
 				<div class="index-brief">
 					@SpringBootApplication spring启动类上的注解（实际是由三个注解组成：@SpringBootConfiguration @EnableAutoConfiguration @ComponentScan）
-@EnableAutoConfiguration 自动配置类
-@Spri
+@EnableAutoConfiguration 自动配置类@Sprin
 					...
 				</div>
 			</a>
@@ -6364,9 +6226,8 @@ shiro-权限组件
 					12 spring怎么解决循环依赖的？
 				</h2>
 				<div class="index-brief">
-					为什么会出现循环依赖
-其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
-这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被
+					为什么会出现循环依赖其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
+这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被实
 					...
 				</div>
 			</a>
@@ -6420,9 +6281,7 @@ springboot的自动装配是依赖于java的s
 					10 aop的实现默认是使用jdk动态代理还是cglib
 				</h2>
 				<div class="index-brief">
-					aop没有默认使用哪个代理，都是根据条件判断的。
-注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。
-注解是 @EnableAspectJAutoProxy(proxyTargetClass = tru
+					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
 					...
 				</div>
 			</a>
@@ -6508,8 +6367,7 @@ springboot的自动装配是依赖于java的s
 					08 说看过AOP相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；
-bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核
+					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
 					...
 				</div>
 			</a>
@@ -6535,8 +6393,7 @@ bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 
 					09 说看过IOC相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的
-我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最
+					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最后
 					...
 				</div>
 			</a>
@@ -6680,14 +6537,11 @@ bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 
 				<div class="index-brief">
 					Spring默认有7种事务机制，如下：
 
-
 REQUIRED-默认的事务隔离级别，会自动加入当前的事务，如果不存在则新建事务
-
 
 SUPPORT级别，跟REQUIRED类似，也是会自动加入当前的事务，但两者区别在于，若当前无事务，则按照无事务的方式执行
 
-
-MANDATORY级别，要求SQL操作强制
+MANDATORY级别，要求SQL操作强制在事务
 					...
 				</div>
 			</a>
@@ -6768,8 +6622,7 @@ MANDATORY级别，要求SQL操作强制
 					07 信号量Semaphore(待完善)
 				</h2>
 				<div class="index-brief">
-					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源
-在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方
+					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
 					...
 				</div>
 			</a>
@@ -6822,10 +6675,8 @@ MANDATORY级别，要求SQL操作强制
 					04 04 wait,sleep,yield,join,notify的区别
 				</h2>
 				<div class="index-brief">
-					1.wait
-来自object类的方法，调用wait方法会释放锁，进入线程等待池，等待被唤醒。
-2.sleep
-Thread类的方法，必须带一个时间参数。会让当前线程休眠进入阻塞状态并释放CPU（阿里面试题 Sleep释放CPU，wait 也会释放cpu，因为cpu资源太宝贵了，只有在线程runni
+					1.wait来自object类的方法，调用wait方法会释放锁，进入线程等待池，等待被唤醒。
+2.sleepThread类的方法，必须带一个时间参数。会让当前线程休眠进入阻塞状态并释放CPU（阿里面试题 Sleep释放CPU，wait 也会释放cpu，因为cpu资源太宝贵了，只有在线程running
 					...
 				</div>
 			</a>
@@ -6884,11 +6735,10 @@ ThreadPoolExecutor手动配置线程池
 					01 synchronized和volatial关键字理解
 				</h2>
 				<div class="index-brief">
-					synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥就内存的可见性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；
-synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：
+					synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥就内存的可见性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：
 
 ①获得互斥锁
-②从主内存拷贝变量的最新
+②从主内存拷贝变量的最新副
 					...
 				</div>
 			</a>
@@ -6914,11 +6764,8 @@ synchronized 能够及时的刷新内存，保证了内存的可见性。 具体
 					02 锁升级的过程
 				</h2>
 				<div class="index-brief">
-					无锁
-​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
-偏向锁
-​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；
-以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的比对
+					无锁​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
+偏向锁​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的比对一下啊
 					...
 				</div>
 			</a>
@@ -6944,8 +6791,7 @@ synchronized 能够及时的刷新内存，保证了内存的可见性。 具体
 					03 CAS原理
 				</h2>
 				<div class="index-brief">
-					CAS为比较并交换，它的实现是用一个旧的预期的值和内存值进行比较，如果两个值相等，就用新的值替换内存值，并返回 true。否则，返回 false;
-CAS 利用 CPU 指令保证了操作的原子性，以达到锁的效果，至于自旋呢，看字面意思也很明白，自己旋转，翻译成人话就是循环，一般是用一个无限循环实现。这
+					CAS为比较并交换，它的实现是用一个旧的预期的值和内存值进行比较，如果两个值相等，就用新的值替换内存值，并返回 true。否则，返回 false;CAS 利用 CPU 指令保证了操作的原子性，以达到锁的效果，至于自旋呢，看字面意思也很明白，自己旋转，翻译成人话就是循环，一般是用一个无限循环实现。这样
 					...
 				</div>
 			</a>
@@ -6971,11 +6817,7 @@ CAS 利用 CPU 指令保证了操作的原子性，以达到锁的效果，至�
 					11 简述一个类的创建过程？
 				</h2>
 				<div class="index-brief">
-					1.首先jvm虚拟机在方法区加载检查这个类是否被加载了？如果已经被加载了，直接就创建对象
-2.没被加载过，就开始用类加载器加载类信息，加载的过程中用到的是双亲委派机制
-3.然后，加载了类信息后，虚拟机开始为对象分配内存
-4.内存分配完后，虚拟机需要将分配好的内存的空间初始化为零，不包括对象头
-5.初
+					1.首先jvm虚拟机在方法区加载检查这个类是否被加载了？如果已经被加载了，直接就创建对象2.没被加载过，就开始用类加载器加载类信息，加载的过程中用到的是双亲委派机制3.然后，加载了类信息后，虚拟机开始为对象分配内存4.内存分配完后，虚拟机需要将分配好的内存的空间初始化为零，不包括对象头5.初始化类，
 					...
 				</div>
 			</a>
@@ -7003,8 +6845,7 @@ CAS 利用 CPU 指令保证了操作的原子性，以达到锁的效果，至�
 				<div class="index-brief">
 					首先判断该类是否已经被加载，当一个类加载器收到了类加载的请求的时候，他不会直接去加载指定的类，而是把这个请求委托给自己的父加载器去加载。
 只有父加载器无法加载这个类的时候，才会由当前这个加载器来负责类的加载
-Java中提供如下四种类型的加载器，每一种加载器都有指定的加载对象，具体如下
-Bootstr
+Java中提供如下四种类型的加载器，每一种加载器都有指定的加载对象，具体如下Bootstra
 					...
 				</div>
 			</a>
@@ -7030,16 +6871,11 @@ Bootstr
 					13 谈谈新生代，幸存区，老年代对应的垃圾回收是怎样的(待完善)
 				</h2>
 				<div class="index-brief">
-					jdk1.7前堆主要分为：新生区，养老区，永久区
-jdk1.8后堆主要分为：新生区，养老区，元空间
+					jdk1.7前堆主要分为：新生区，养老区，永久区jdk1.8后堆主要分为：新生区，养老区，元空间
 
+对象优先在 Eden 区分配​ 一般情况下，对象都优先在新生代的 Eden 区中分配，当 Eden 内存不足时将会发起一次 Minor GC。
 
-对象优先在 Eden 区分配
-​ 一般情况下，对象都优先在新生代的 Eden 区中分配，当 Eden 内存不足时将会发起一次 Minor GC。
-
-
-大对象直接进入老年代
-​所谓大对象就是需要大量
+大对象直接进入老年代​所谓大对象就是需要大量连续空间的
 					...
 				</div>
 			</a>
@@ -7065,8 +6901,7 @@ jdk1.8后堆主要分为：新生区，养老区，元空间
 					09 生产环境服务嚣变慢,如何诊断处理?
 				</h2>
 				<div class="index-brief">
-					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。
-如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程
+					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
 					...
 				</div>
 			</a>
@@ -7094,12 +6929,7 @@ jdk1.8后堆主要分为：新生区，养老区，元空间
 				<div class="index-brief">
 					Java8为例
 
-日志
--XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值
--XX :+ PrintGC ，打印 GC 信息
--XX :+ PrintGcDetails ,打印 GC 详细信息
--XX :+ PrintGCTimestamps ,打印 GC 的时间戳
--Xlo
+日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
 					...
 				</div>
 			</a>
@@ -7125,10 +6955,7 @@ jdk1.8后堆主要分为：新生区，养老区，元空间
 					06 常见的垃圾回收算法
 				</h2>
 				<div class="index-brief">
-					引用计数法：记录了一个变量的引用次数，引用一次就加1，引用失效就减1，效率低
-可达性分析算法：判断一个变量是否根据当前引用地址是否可达，效率高
-标记清除算法：标记需清除的对象，统一回收；但是容易产生内存碎片，导致无法分配大对象；大量对象需要标记时效率低
-标记复制算法：将内存分成了两块，一块用来标记需
+					引用计数法：记录了一个变量的引用次数，引用一次就加1，引用失效就减1，效率低可达性分析算法：判断一个变量是否根据当前引用地址是否可达，效率高标记清除算法：标记需清除的对象，统一回收；但是容易产生内存碎片，导致无法分配大对象；大量对象需要标记时效率低标记复制算法：将内存分成了两块，一块用来标记需要复制
 					...
 				</div>
 			</a>
@@ -7210,10 +7037,7 @@ jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出
 					04 对象在jvm中的创建过程
 				</h2>
 				<div class="index-brief">
-					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区
-在创建类的对象时，首先会先去堆内存中分配空间
-然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化
-所有的非静态成员默认初始化完成后，调用相应的构造方法到栈
+					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区在创建类的对象时，首先会先去堆内存中分配空间然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化所有的非静态成员默认初始化完成后，调用相应的构造方法到栈中在栈
 					...
 				</div>
 			</a>
@@ -7239,9 +7063,7 @@ jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出
 					05 谈谈jvm常量池
 				</h2>
 				<div class="index-brief">
-					jdk1.8开始
-字符串常量池：存放在堆中
-运行时常量池：存放在方法区，属于元空间
+					jdk1.8开始字符串常量池：存放在堆中运行时常量池：存放在方法区，属于元空间
 
 					...
 				</div>
@@ -7268,10 +7090,8 @@ jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出
 					01.说说对JVM和JMM的理解
 				</h2>
 				<div class="index-brief">
-					JVM
-JVM 是 Java 虚拟机，是Java程序运行的执行引擎和内存管理平台。
-它定义了Java程序如何与操作系统交互，负责字节码的加载、解释/编译、内存分配、垃圾回收等核心功能。JVM 的具体实现包括内存区域划分（如堆、栈、方法区）和运行机制（如类加载、即时编译）.
-jvm由类装载器、运行时数
+					JVMJVM 是 Java 虚拟机，是Java程序运行的执行引擎和内存管理平台。它定义了Java程序如何与操作系统交互，负责字节码的加载、解释&#x2F;编译、内存分配、垃圾回收等核心功能。JVM 的具体实现包括内存区域划分（如堆、栈、方法区）和运行机制（如类加载、即时编译）.
+jvm由类装载器、运
 					...
 				</div>
 			</a>
@@ -7325,9 +7145,7 @@ jvm由类装载器、运行时数
 					03 java中的基本数据类型都是存储在栈中的吗？
 				</h2>
 				<div class="index-brief">
-					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题
-答：不是
-一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而
+					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题答：不是一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而结束
 					...
 				</div>
 			</a>
@@ -7357,14 +7175,9 @@ jvm由类装载器、运行时数
 定义
 
 
+QPS（Queries Per Second）：表示系统每秒处理的查询请求数。通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
 
-QPS（Queries Per Second）：
-表示系统每秒处理的查询请求数。
-通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。
-例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
-
-
-TPS（Transactions Per Second）
+TPS（Transactions Per Second）：表示系统
 					...
 				</div>
 			</a>
@@ -7450,21 +7263,13 @@ TPS（Transactions Per Second）
 				</h2>
 				<div class="index-brief">
 					
+强引用强引用一般指我们new的对象存在的引用
 
-强引用
-强引用一般指我们new的对象存在的引用
+软引用软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
 
+弱引用弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
 
-软引用
-软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
-
-
-弱引用
-弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
-
-
-虚引用
-虚引用，是一种形同虚设的引用，主
+虚引用虚引用，是一种形同虚设的引用，主要用来跟踪对象被
 					...
 				</div>
 			</a>
@@ -7520,14 +7325,11 @@ StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
 				</h2>
 				<div class="index-brief">
 					
-
 hashMap继承自AbstractMap,hashTable集成自Dictionary类；
-
 
 hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
 
-
-hashTable在put,get,contains等方法都加了syn
+hashTable在put,get,contains等方法都加了synchr
 					...
 				</div>
 			</a>
@@ -7553,9 +7355,7 @@ hashTable在put,get,contains等方法都加了syn
 					07 exception和error有啥区别
 				</h2>
 				<div class="index-brief">
-					在java中，Error 和 Exception 都是Throwable的子类；
-error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等
-exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
+					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
 
 					...
 				</div>
@@ -7582,10 +7382,9 @@ exception代表程序运行过程中可以预料或者说可以用来捕获的�
 					06 CopyOnWriteArrayList是线程安全的吗
 				</h2>
 				<div class="index-brief">
-					copyOnWriteArrayList是线程安全的
-它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；
+					copyOnWriteArrayList是线程安全的它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；
 并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；
-最后，待元素写入新数组后
+最后，待元素写入新数组后再
 					...
 				</div>
 			</a>
@@ -7639,13 +7438,9 @@ jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新�
 				</h2>
 				<div class="index-brief">
 					
+链表链表是一个存储上不连续，也没有顺序的数据结构；它的每一个节点都包含数据和引用指向组成；其中含有前后引用指向的是双向链表，只含有一个引用指向的是单向链表；它的优点是插入删除只需要改变相连元素的前后指向，所以效率较高；对于查询来说，只能通过遍历找到对应的节点，效率较低
 
-链表
-链表是一个存储上不连续，也没有顺序的数据结构；它的每一个节点都包含数据和引用指向组成；其中含有前后引用指向的是双向链表，只含有一个引用指向的是单向链表；它的优点是插入删除只需要改变相连元素的前后指向，所以效率较高；对于查询来说，只能通过遍历找到对应的节点，效率较低
-
-
-数组
-数组是一种存储
+数组数组是一种存储相同数据
 					...
 				</div>
 			</a>
@@ -7703,14 +7498,9 @@ jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新�
 				</h2>
 				<div class="index-brief">
 					
+底层数据结构ArrayList：ArrayList是基于动态数组实现的，内部维护一个Object数组，默认初始容量为10，当元素数量超过当前容量时会自动扩容。LinkedList：LinkedList是基于双向链表实现的，每个节点包含数据元素和指向前后节点的引用。
 
-底层数据结构
-ArrayList：ArrayList是基于动态数组实现的，内部维护一个Object数组，默认初始容量为10，当元素数量超过当前容量时会自动扩容。
-LinkedList：LinkedList是基于双向链表实现的，每个节点包含数据元素和指向前后节点的引用。
-
-
-随机访问效率
-Arra
+随机访问效率ArrayList
 					...
 				</div>
 			</a>
@@ -7763,9 +7553,8 @@ Arra
 				</h2>
 				<div class="index-brief">
 					
+extends &amp; superextends是继承的意思用在子类继承父类，可以理解为一个关键字，而super是子类构造方法继承父类构造方法的一个方法；还有在泛型的应用中，他们针对泛型的边界问题代表的含义完全相反，extends T表示泛型的上边界是T,super T代表泛型的下边界是T;
 
-extends &amp; super
-extends是继承的意思用在子类继承父类，可以理解为一个关键字，而super是子类构造方法继承父类构造方法的一个方法；还有在泛型的应用中，他们针对泛型的边界问题代表的含义完全相反，extends T表示泛型的上边界是T,super T代表泛型的下边界是T
 					...
 				</div>
 			</a>
@@ -7792,16 +7581,13 @@ extends是继承的意思用在子类继承父类，可以理解为一个关键�
 				</h2>
 				<div class="index-brief">
 					
-
 hashcode()方法是获取一个对象值的hash值，通常我们用来比较两个值是否相等来使用的；
 
-
-int i=1 和Integer = 1他们hash值相等吗？
-int i=1和Integer =1 调用hashcode方法，hash值相等;
+int i&#x3D;1 和Integer &#x3D; 1他们hash值相等吗？int i&#x3D;1和Integer &#x3D;1 调用hashcode方法，hash值相等;
 
 
 
-面试官这里可能真正想问的是==和equals
+面试官这里
 					...
 				</div>
 			</a>
@@ -7828,13 +7614,9 @@ int i=1和Integer =1 调用hashcode方法，hash值相等;
 				</h2>
 				<div class="index-brief">
 					
+jdkJDK 是 Java Development Kit，它提供java运行的环境jre并且包含java基本的工具类。使用它能够编译和运行java程序；
 
-jdk
-JDK 是 Java Development Kit，它提供java运行的环境jre并且包含java基本的工具类。使用它能够编译和运行java程序；
-
-
-jre
-JRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有内容的集合，包括 Java 虚拟机（JVM），Jav
+jreJRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有内容的集合，包括 Java 虚拟机（JVM），Java 类库
 					...
 				</div>
 			</a>

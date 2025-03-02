@@ -2423,13 +2423,13 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-dividing-dbs-tables-query.html">
+			<a href="/2024/0120/mysql-count-query-sample.html">
 				<h2 class="index-title">
-					08 分库分表后怎么做范围查找
+					09 统计sql例子
 				</h2>
 				<div class="index-brief">
-					分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es
-
+					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
+1234select user_name ,bug_count from (select count(bug_id) as bug_c
 					...
 				</div>
 			</a>
@@ -2507,8 +2507,7 @@
 					03 mvcc机制？
 				</h2>
 				<div class="index-brief">
-					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的变化提交之前，对于其他的读事务来说都是不可见的；
-当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC 并
+					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的变化提交之前，对于其他的读事务来说都是不可见的；当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC 并发
 					...
 				</div>
 			</a>

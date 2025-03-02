@@ -2428,9 +2428,7 @@
 					03.1 Eureka注册中心
 				</h2>
 				<div class="index-brief">
-					1.服务端如何保存客户端注册信息?
-客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.
-客户端通过Jersey框架，将自己的注册
+					1.服务端如何保存客户端注册信息?客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.客户端通过Jersey框架，将自己的注册信息
 					...
 				</div>
 			</a>
@@ -2457,8 +2455,7 @@
 				</h2>
 				<div class="index-brief">
 					@SpringBootApplication spring启动类上的注解（实际是由三个注解组成：@SpringBootConfiguration @EnableAutoConfiguration @ComponentScan）
-@EnableAutoConfiguration 自动配置类
-@Spri
+@EnableAutoConfiguration 自动配置类@Sprin
 					...
 				</div>
 			</a>
@@ -2510,9 +2507,8 @@
 					12 spring怎么解决循环依赖的？
 				</h2>
 				<div class="index-brief">
-					为什么会出现循环依赖
-其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
-这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被
+					为什么会出现循环依赖其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
+这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被实
 					...
 				</div>
 			</a>

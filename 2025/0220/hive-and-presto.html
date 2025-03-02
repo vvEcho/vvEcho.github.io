@@ -2467,42 +2467,24 @@
 <!-- content -->
 <div id="article-content">
 	<ol>
-<li>执行引擎的革新<br>
-Hive 的局限性：<br>
-Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入 HDFS 磁盘,导致高 I/O 开销和高延迟(适合批量处理,但无法满足交互式查询)</li>
+<li>执行引擎的革新<br>Hive 的局限性：<br>Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入 HDFS 磁盘,导致高 I&#x2F;O 开销和高延迟(适合批量处理,但无法满足交互式查询)</li>
 </ol>
-<p>Presto 的优势：<br>
-Presto 采用 内存计算 + 流水线处理 模型：<br>
-内存计算：数据在处理过程中尽可能保留在内存中,减少磁盘读写(例如 JOIN 操作无需落盘)。<br>
-流水线执行：任务按流水线方式并行执行,前一步的输出直接作为下一步的输入,避免批处理阶段的等待</p>
+<p>Presto 的优势：<br>Presto 采用 内存计算 + 流水线处理 模型：<br>内存计算：数据在处理过程中尽可能保留在内存中,减少磁盘读写(例如 JOIN 操作无需落盘)。<br>流水线执行：任务按流水线方式并行执行,前一步的输出直接作为下一步的输入,避免批处理阶段的等待</p>
 <ol start="2">
-<li>查询优化策略<br>
-动态代码生成(DCE):<br>
-Presto 在运行时生成高效代码(如针对特定查询生成优化的字节码),避免 Hive 中通用的解释器开销。</li>
+<li>查询优化策略<br>动态代码生成(DCE):<br>Presto 在运行时生成高效代码(如针对特定查询生成优化的字节码),避免 Hive 中通用的解释器开销。</li>
 </ol>
-<p>谓词下推(Predicate Pushdown):<br>
-将过滤条件(如WHERE子句)下推到数据源层(如HDFS),减少数据扫描量。</p>
-<p>分区裁剪(Partition Pruning):<br>
-直接跳过不相关的数据分区(如时间分区),提升查询效率</p>
+<p>谓词下推(Predicate Pushdown):<br>将过滤条件(如WHERE子句)下推到数据源层(如HDFS),减少数据扫描量。</p>
+<p>分区裁剪(Partition Pruning):<br>直接跳过不相关的数据分区(如时间分区),提升查询效率</p>
 <ol start="3">
-<li>并行化与资源利用<br>
-多线程模型：<br>
-Presto 将查询拆分为多个Split,每个 Split 由独立线程处理,充分利用多核 CPU 资源。</li>
+<li>并行化与资源利用<br>多线程模型：<br>Presto 将查询拆分为多个Split,每个 Split 由独立线程处理,充分利用多核 CPU 资源。</li>
 </ol>
-<p>分布式执行：<br>
-Presto 集群中多个节点协同工作,支持横向扩展。例如,用户可能通过增加 Worker 节点提升并发处理能力</p>
+<p>分布式执行：<br>Presto 集群中多个节点协同工作,支持横向扩展。例如,用户可能通过增加 Worker 节点提升并发处理能力</p>
 <ol start="4">
-<li>与 Hive 的无缝集成<br>
-元数据直接访问：<br>
-Presto 通过 Hive Connector 直接读取 Hive Metastore 的元数据(如表结构、分区信息),无需数据迁移即可查询 Hive 表。</li>
+<li>与 Hive 的无缝集成<br>元数据直接访问：<br>Presto 通过 Hive Connector 直接读取 Hive Metastore 的元数据(如表结构、分区信息),无需数据迁移即可查询 Hive 表。</li>
 </ol>
-<p>高效数据读取：<br>
-Presto 针对 HDFS 上的 ORC/Parquet 列式存储格式进行优化(如谓词下推、列裁剪),减少 I/O 开销。<br>
-在大数据项目中,Hive存储原始数据,Presto 直接查询并生成清洗后的业务数据,无需额外 ETL。</p>
+<p>高效数据读取：<br>Presto 针对 HDFS 上的 ORC&#x2F;Parquet 列式存储格式进行优化(如谓词下推、列裁剪),减少 I&#x2F;O 开销。<br>在大数据项目中,Hive存储原始数据,Presto 直接查询并生成清洗后的业务数据,无需额外 ETL。</p>
 <p>Presto + Hive 的组合解决了以下痛点：</p>
-<p>交互式查询：用户配置数据清洗规则时，Presto 提供秒级响应的预览功能（Hive 无法实现）。<br>
-复杂分析：如多表关联（JOIN）和聚合（GROUP BY），Presto 比 Hive 快 10 倍以上。<br>
-资源隔离：Presto 支持按队列分配资源，避免长查询阻塞短查询（用户项目中可能用于实时数据清洗与批量任务隔离）。</p>
+<p>交互式查询：用户配置数据清洗规则时，Presto 提供秒级响应的预览功能（Hive 无法实现）。<br>复杂分析：如多表关联（JOIN）和聚合（GROUP BY），Presto 比 Hive 快 10 倍以上。<br>资源隔离：Presto 支持按队列分配资源，避免长查询阻塞短查询（用户项目中可能用于实时数据清洗与批量任务隔离）。</p>
 
 </div>
 

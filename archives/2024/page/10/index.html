@@ -2483,9 +2483,34 @@
 					12 redis你们用的是什么集群(待完善)
 				</h2>
 				<div class="index-brief">
-					redis我用的是主从架构的这种集群，哨兵的话自己有研究过，但是项目中目前还没有用到；
-Redis的哨兵模式的特点是：
+					redis我用的是主从架构的这种集群，哨兵的话自己有研究过，但是项目中目前还没有用到；Redis的哨兵模式的特点是：
 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-redis/">13 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-distributed-lock.html">
+				<h2 class="index-title">
+					09 redis分布式锁有用过吗？
+				</h2>
+				<div class="index-brief">
+					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
 					...
 				</div>
 			</a>
@@ -2515,33 +2540,6 @@ Redis的哨兵模式的特点是：
 
 String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key
 list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpu
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-redis/">13 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock.html">
-				<h2 class="index-title">
-					09 redis分布式锁有用过吗？
-				</h2>
-				<div class="index-brief">
-					redis分布式锁我们用的是Redisson，它的实现原理是：
-我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释
 					...
 				</div>
 			</a>

@@ -2428,9 +2428,8 @@
 					15 redis如何做分页查询
 				</h2>
 				<div class="index-brief">
-					拓展-ZREVRANGE
-ZREVRANGE是Redis中的一个命令，它的全称是Zset Reverse Range，意思是有序集合反向范围。
-ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中成员的位置按分数值递减（从大到小）来排列。具有相同分数值的成员按字典序的逆序（reverse
+					拓展-ZREVRANGEZREVRANGE是Redis中的一个命令，它的全称是Zset Reverse Range，意思是有序集合反向范围。
+ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中成员的位置按分数值递减（从大到小）来排列。具有相同分数值的成员按字典序的逆序（reverse 
 					...
 				</div>
 			</a>
@@ -2483,15 +2482,13 @@ ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中�
 				</h2>
 				<div class="index-brief">
 					大key可能存在的场景
-
 配送范围特别大的门店
 促销活动特别多的门店、商家等
 高频用户下的订单列表
 
 大key会导致什么问题
-
 如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
-如果是hash,list,set,zset等类型key 删除key会严
+如果是hash,list,set,zset等类型key 删除key会严重阻
 					...
 				</div>
 			</a>
@@ -2544,8 +2541,7 @@ ZREVRANGE命令用于返回有序集合中，指定区间内的成员，其中�
 					12 redis你们用的是什么集群(待完善)
 				</h2>
 				<div class="index-brief">
-					redis我用的是主从架构的这种集群，哨兵的话自己有研究过，但是项目中目前还没有用到；
-Redis的哨兵模式的特点是：
+					redis我用的是主从架构的这种集群，哨兵的话自己有研究过，但是项目中目前还没有用到；Redis的哨兵模式的特点是：
 
 					...
 				</div>

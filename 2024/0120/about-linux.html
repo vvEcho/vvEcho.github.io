@@ -2467,16 +2467,15 @@
 <!-- content -->
 <div id="article-content">
 	<ol>
-<li>linux常用查看日志命令？<br>
-cd到对应的日志目录文件<br>
-查看实时日志：tail -f xxx.log<br>
-根据关键字查询：cat -n xxx.log|grep ‘occurs error’</li>
+<li>linux常用查看日志命令？<br>cd到对应的日志目录文件<br>查看实时日志：tail -f xxx.log<br>根据关键字查询：cat -n xxx.log|grep ‘occurs error’</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat error.log | grep -B 5 ‘nick’ #显示nick及前5行</span><br><span class="line">cat error.log | grep -A 5 ‘nick’ #显示nick及后5行</span><br><span class="line">cat error.log | grep -C 5 ‘nick’ #显示file文件里匹配nick字串那行以及上下5行</span><br><span class="line">cat error.log | grep -n -B10 -A10 5 ‘nick’ #显示file文件里匹配nick字串前后10行</span><br><span class="line">cat -n test.log | grep &quot;debug&quot;  &gt;debug.txt #使用 &gt;xxx.txt 将其保存到文件中,到时可以拉下这个文件分析</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">根据时间范围查询日志</span></span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>用什么命令查看进程的状态？</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看进程状态</span></span><br><span class="line">ps -ef | grep + 进程名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
 </div>
 

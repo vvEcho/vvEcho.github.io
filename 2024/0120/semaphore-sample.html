@@ -2466,8 +2466,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源<br>
-在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法对应着底层的acquire()和release()</p>
+	<p>信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源<br>在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法对应着底层的acquire()和release()</p>
 <p>当线程要访问共享资源时，需要先通过acquire()方法获取许可。获取到之后许可就被当前线程占用了，在归还许可之前其他线程不能获取这个许可。</p>
 <p>调用acquire()方法时，如果没有许可可用了，就将线程阻塞，等待有许可被归还了再执行。</p>
 <p>当执行完业务功能后，需要通过release()方法将许可证归还，以便其他线程能够获得许可证继续执行</p>

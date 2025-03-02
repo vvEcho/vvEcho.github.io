@@ -2468,7 +2468,7 @@
 <div id="article-content">
 	<p>springboot的自动装配其实是他约定大于配置这一核心思想的具体体现</p>
 <p>例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；</p>
-<p>springboot的自动装配是依赖于java的spi机制来实现的，我们打开对应的jar后，可以看到在resources/META-INF/spring.factories文件可以看到对应的类路径，我们在启动spring容器时会根据的spring.factories里的依赖路径去加载对应的类，从而实现自动装配</p>
+<p>springboot的自动装配是依赖于java的spi机制来实现的，我们打开对应的jar后，可以看到在resources&#x2F;META-INF&#x2F;spring.factories文件可以看到对应的类路径，我们在启动spring容器时会根据的spring.factories里的依赖路径去加载对应的类，从而实现自动装配</p>
 
 </div>
 

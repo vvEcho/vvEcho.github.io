@@ -2466,20 +2466,13 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="1-wait">1.wait</h4>
-<p>来自object类的方法，调用wait方法会释放锁，进入线程等待池，等待被唤醒。</p>
-<h4 id="2-sleep">2.sleep</h4>
-<p>Thread类的方法，必须带一个时间参数。会让当前线程休眠进入阻塞状态并释放CPU（阿里面试题 Sleep释放CPU，wait 也会释放cpu，因为cpu资源太宝贵了，只有在线程running的时候，才会获取cpu片段），提供其他线程运行的机会且不考虑优先级，但如果有同步锁则sleep不会释放锁即其他线程无法获得同步锁,可通过调用interrupt()方法来唤醒休眠线程。</p>
-<h4 id="3-yield">3.yield</h4>
-<p>让出CPU调度，Thread类的方法，类似sleep只是不能由用户指定暂停多长时间 ，并且yield()方法只能让同优先级的线程有执行的机会。 yield()只是使当前线程重新回到可执行状态，所以执行yield()的线程有可能在进入到可执行状态后马上又被执行。调用yield方法只是一个建议，告诉线程调度器我的工作已经做的差不多了，可以让别的相同优先级的线程使用CPU了，没有任何机制保证采纳。</p>
-<h4 id="4-join">4.join</h4>
-<p>一种特殊的wait，当前运行线程调用另一个线程的join方法，当前线程进入阻塞状态直到另一个线程运行结束等待该线程终止。 注意该方法也需要捕捉异常</p>
-<h4 id="5-notify">5.notify</h4>
-<p>Object类的方法(notify()、notifyAll()  也是Object对象)，必须放在循环体和同步代码块中，执行该方法的线程会释放锁，进入线程等待池中等待被再次唤醒(notify随机唤醒，notifyAll全部唤醒，线程结束自动唤醒)即放入锁池中竞争同步锁</p>
+	<h4 id="1-wait"><a href="#1-wait" class="headerlink" title="1.wait"></a>1.wait</h4><p>来自object类的方法，调用wait方法会释放锁，进入线程等待池，等待被唤醒。</p>
+<h4 id="2-sleep"><a href="#2-sleep" class="headerlink" title="2.sleep"></a>2.sleep</h4><p>Thread类的方法，必须带一个时间参数。会让当前线程休眠进入阻塞状态并释放CPU（阿里面试题 Sleep释放CPU，wait 也会释放cpu，因为cpu资源太宝贵了，只有在线程running的时候，才会获取cpu片段），提供其他线程运行的机会且不考虑优先级，但如果有同步锁则sleep不会释放锁即其他线程无法获得同步锁,可通过调用interrupt()方法来唤醒休眠线程。</p>
+<h4 id="3-yield"><a href="#3-yield" class="headerlink" title="3.yield"></a>3.yield</h4><p>让出CPU调度，Thread类的方法，类似sleep只是不能由用户指定暂停多长时间 ，并且yield()方法只能让同优先级的线程有执行的机会。 yield()只是使当前线程重新回到可执行状态，所以执行yield()的线程有可能在进入到可执行状态后马上又被执行。调用yield方法只是一个建议，告诉线程调度器我的工作已经做的差不多了，可以让别的相同优先级的线程使用CPU了，没有任何机制保证采纳。</p>
+<h4 id="4-join"><a href="#4-join" class="headerlink" title="4.join"></a>4.join</h4><p>一种特殊的wait，当前运行线程调用另一个线程的join方法，当前线程进入阻塞状态直到另一个线程运行结束等待该线程终止。 注意该方法也需要捕捉异常</p>
+<h4 id="5-notify"><a href="#5-notify" class="headerlink" title="5.notify"></a>5.notify</h4><p>Object类的方法(notify()、notifyAll()  也是Object对象)，必须放在循环体和同步代码块中，执行该方法的线程会释放锁，进入线程等待池中等待被再次唤醒(notify随机唤醒，notifyAll全部唤醒，线程结束自动唤醒)即放入锁池中竞争同步锁</p>
 <blockquote>
-<p>扩展知识<br>
-Object是java中的根类，所有类都隐式继承了Object类，Object类中有一个wait和notify方法。<br>
-wait() 和notify()用于线程间通信，依赖于对象的监视器机制;所以把这两个重要的方法放到object中t’中，这样所有对象都可以使用wait()和notify()方法。</p>
+<p>扩展知识<br>Object是java中的根类，所有类都隐式继承了Object类，Object类中有一个wait和notify方法。<br>wait() 和notify()用于线程间通信，依赖于对象的监视器机制;所以把这两个重要的方法放到object中t’中，这样所有对象都可以使用wait()和notify()方法。</p>
 </blockquote>
 
 </div>

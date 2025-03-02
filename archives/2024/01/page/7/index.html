@@ -2423,13 +2423,15 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock.html">
+			<a href="/2024/0120/redis-used-data-structure.html">
 				<h2 class="index-title">
-					09 redis分布式锁有用过吗？
+					08 redis常用数据结构
 				</h2>
 				<div class="index-brief">
-					redis分布式锁我们用的是Redisson，它的实现原理是：
-我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释
+					String，list,set,zset,hash
+
+String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key
+list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpu
 					...
 				</div>
 			</a>
@@ -2509,8 +2511,7 @@
 					06 怎么监控热key
 				</h2>
 				<div class="index-brief">
-					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key
-或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认
+					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为
 					...
 				</div>
 			</a>

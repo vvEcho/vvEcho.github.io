@@ -2466,44 +2466,49 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；<br>
-bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心代理创建器）的BeanPostProcessor，是它将 bean 变成了对应的代理类；</p>
+	<p>Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；<br>bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心代理创建器）的BeanPostProcessor，是它将 bean 变成了对应的代理类；</p>
 <p>步骤如下：</p>
 <ol>
-<li>aop的解析与初始化<br>
-通过 @EnableAspectJAutoProxy 注解触发 AOP 框架的初始化。该注解通过 @Import 引入 AspectJAutoProxyRegistrar，向 Spring 容器注册 AnnotationAwareAspectJAutoProxyCreator 类</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// spring 核心代理类的创建器</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AnnotationAwareAspectJAutoProxyCreator</span> <span class="keyword">extends</span> <span class="title class_">AspectJAwareAdvisorAutoProxyCreator</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// BeanPostProcessor 是 Spring 扩展机制的核心接口，通过拦截 Bean 的初始化过程，允许开发者插入自定义逻辑。其典型应用包括 AOP 代理生成、属性增强等</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanPostProcessor</span> &#123;</span><br><span class="line">    <span class="comment">//在 Bean 的初始化方法（如 @PostConstruct）之前执行。</span></span><br><span class="line">    Object <span class="title function_">postProcessBeforeInitialization</span><span class="params">(Object bean, String beanName)</span>;</span><br><span class="line">    <span class="comment">//在 Bean 的初始化方法（如 @PostConstruct）之前执行。</span></span><br><span class="line">    Object <span class="title function_">postProcessAfterInitialization</span><span class="params">(Object bean, String beanName)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>创建代理对象<br>
-在 Bean 初始化完成后，AbstractAutoProxyCreator 的 postProcessAfterInitialization 方法被调用，判断是否需要为当前 Bean 创建代理</li>
-</ol>
+<li><p>aop的解析与初始化<br>通过 @EnableAspectJAutoProxy 注解触发 AOP 框架的初始化。该注解通过 @Import 引入 AspectJAutoProxyRegistrar，向 Spring 容器注册 AnnotationAwareAspectJAutoProxyCreator 类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// spring 核心代理类的创建器</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AnnotationAwareAspectJAutoProxyCreator</span> <span class="keyword">extends</span> <span class="title class_">AspectJAwareAdvisorAutoProxyCreator</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// BeanPostProcessor 是 Spring 扩展机制的核心接口，通过拦截 Bean 的初始化过程，允许开发者插入自定义逻辑。其典型应用包括 AOP 代理生成、属性增强等</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanPostProcessor</span> &#123;</span><br><span class="line">    <span class="comment">//在 Bean 的初始化方法（如 @PostConstruct）之前执行。</span></span><br><span class="line">    Object <span class="title function_">postProcessBeforeInitialization</span><span class="params">(Object bean, String beanName)</span>;</span><br><span class="line">    <span class="comment">//在 Bean 的初始化方法（如 @PostConstruct）之前执行。</span></span><br><span class="line">    Object <span class="title function_">postProcessAfterInitialization</span><span class="params">(Object bean, String beanName)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>创建代理对象<br>在 Bean 初始化完成后，AbstractAutoProxyCreator 的 postProcessAfterInitialization 方法被调用，判断是否需要为当前 Bean 创建代理</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DefaultAopProxyFactory 选择代理类型</span></span><br><span class="line"><span class="keyword">if</span> (targetClass.isInterface() || Proxy.isProxyClass(targetClass)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">JdkDynamicAopProxy</span>(config);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ObjenesisCglibAopProxy</span>(config);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>JDK 动态代理：若目标类实现了接口，则通过 JdkDynamicAopProxy 生成代理。<br>
-CGLIB 代理：若未实现接口或强制使用类代理（proxyTargetClass=true），则通过 CglibAopProxy 生成子类代理</p>
-<ol start="3">
-<li>扫描标注@Aspect 的类构建拦截器链<br>
-通过 BeanFactoryAspectJAdvisorsBuilder 扫描所有标注 @Aspect 的类，解析 @Pointcut 和 @Around 等注解，生成 Advisor集合<br>
-将 Advisor 转换为 MethodInterceptor 链，代理对象的方法调用时触发链式执行</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DefaultAdvisorChainFactory 构建拦截器链</span></span><br><span class="line">List&lt;Object&gt; interceptors = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(advisors.length);</span><br><span class="line"><span class="keyword">for</span> (Advisor advisor : advisors) &#123;</span><br><span class="line">    <span class="keyword">if</span> (advisor <span class="keyword">instanceof</span> MethodInterceptor) &#123;</span><br><span class="line">        interceptors.add((MethodInterceptor) advisor);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>
-<p>方法调用与增强逻辑执行<br>
-方法调用被封装为 ReflectiveMethodInvocation 对象，通过 proceed() 方法依次执行拦截器链<br>
-前置通知：在目标方法执行前调用 MethodBeforeAdvice.before()。<br>
-后置通知：在目标方法执行后调用 AfterReturningAdvice.afterReturning()。<br>
-环绕通知：通过 MethodInterceptor 的 invoke() 方法实现全流程控制</p>
+<p>JDK 动态代理：若目标类实现了接口，则通过 JdkDynamicAopProxy 生成代理。<br>CGLIB 代理：若未实现接口或强制使用类代理（proxyTargetClass&#x3D;true），则通过 CglibAopProxy 生成子类代理</p>
 </li>
-<li>
-<p>关键源码类与接口<br>
-| 类/接口                                | 作用                                   |<br>
-|----------------------------------------|----------------------------------------|<br>
-| AnnotationAwareAspectJAutoProxyCreator | 代理对象创建器，解析切面并生成代理     |<br>
-| AbstractAutoProxyCreator               | 代理创建的基类，实现 Bean 后置处理逻辑 |<br>
-| JdkDynamicAopProxy / CglibAopProxy     | JDK 动态代理和 CGLIB 代理的具体实现类  |<br>
-| ReflectiveMethodInvocation             | 方法调用的核心执行逻辑，管理拦截器链   |<br>
-| Advisor / Advice                       | 定义切面增强的规则和逻辑               |</p>
+<li><p>扫描标注@Aspect 的类构建拦截器链<br>通过 BeanFactoryAspectJAdvisorsBuilder 扫描所有标注 @Aspect 的类，解析 @Pointcut 和 @Around 等注解，生成 Advisor集合<br>将 Advisor 转换为 MethodInterceptor 链，代理对象的方法调用时触发链式执行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DefaultAdvisorChainFactory 构建拦截器链</span></span><br><span class="line">List&lt;Object&gt; interceptors = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(advisors.length);</span><br><span class="line"><span class="keyword">for</span> (Advisor advisor : advisors) &#123;</span><br><span class="line">    <span class="keyword">if</span> (advisor <span class="keyword">instanceof</span> MethodInterceptor) &#123;</span><br><span class="line">        interceptors.add((MethodInterceptor) advisor);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法调用与增强逻辑执行<br>方法调用被封装为 ReflectiveMethodInvocation 对象，通过 proceed() 方法依次执行拦截器链<br>前置通知：在目标方法执行前调用 MethodBeforeAdvice.before()。<br>后置通知：在目标方法执行后调用 AfterReturningAdvice.afterReturning()。<br>环绕通知：通过 MethodInterceptor 的 invoke() 方法实现全流程控制</p>
+</li>
+<li><p>关键源码类与接口</p>
+<table>
+<thead>
+<tr>
+<th>类&#x2F;接口</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AnnotationAwareAspectJAutoProxyCreator</td>
+<td>代理对象创建器，解析切面并生成代理</td>
+</tr>
+<tr>
+<td>AbstractAutoProxyCreator</td>
+<td>代理创建的基类，实现 Bean 后置处理逻辑</td>
+</tr>
+<tr>
+<td>JdkDynamicAopProxy &#x2F; CglibAopProxy</td>
+<td>JDK 动态代理和 CGLIB 代理的具体实现类</td>
+</tr>
+<tr>
+<td>ReflectiveMethodInvocation</td>
+<td>方法调用的核心执行逻辑，管理拦截器链</td>
+</tr>
+<tr>
+<td>Advisor &#x2F; Advice</td>
+<td>定义切面增强的规则和逻辑</td>
+</tr>
+</tbody></table>
 </li>
 </ol>
 

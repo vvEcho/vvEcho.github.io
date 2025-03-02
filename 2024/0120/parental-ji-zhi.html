@@ -2468,8 +2468,7 @@
 <div id="article-content">
 	<p>首先判断该类是否已经被加载，当一个类加载器收到了类加载的请求的时候，他不会直接去加载指定的类，而是把这个请求委托给自己的父加载器去加载。</p>
 <p>只有父加载器无法加载这个类的时候，才会由当前这个加载器来负责类的加载</p>
-<p>Java中提供如下四种类型的加载器，每一种加载器都有指定的加载对象，具体如下<br>
-Bootstrap ClassLoader（启动类加载器） ：主要负责加载Java核心类库，%JRE_HOME%\lib下的rt.jar、resources.jar、charsets.jar和class等。</p>
+<p>Java中提供如下四种类型的加载器，每一种加载器都有指定的加载对象，具体如下<br>Bootstrap ClassLoader（启动类加载器） ：主要负责加载Java核心类库，%JRE_HOME%\lib下的rt.jar、resources.jar、charsets.jar和class等。</p>
 <p>Extention ClassLoader（扩展类加载器）：主要负责加载目录%JRE_HOME%\lib\ext目录下的jar包和class文件。</p>
 <p>Application ClassLoader（应用程序类加载器） ：主要负责加载当前应用的classpath下的所有类</p>
 <p>User ClassLoader（用户自定义类加载器） ： 用户自定义的类加载器,可加载指定路径的class文件</p>

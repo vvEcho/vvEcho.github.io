@@ -2428,9 +2428,7 @@
 					07 exception和error有啥区别
 				</h2>
 				<div class="index-brief">
-					在java中，Error 和 Exception 都是Throwable的子类；
-error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等
-exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
+					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
 
 					...
 				</div>
@@ -2485,9 +2483,8 @@ jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新�
 				</h2>
 				<div class="index-brief">
 					
+extends &amp; superextends是继承的意思用在子类继承父类，可以理解为一个关键字，而super是子类构造方法继承父类构造方法的一个方法；还有在泛型的应用中，他们针对泛型的边界问题代表的含义完全相反，extends T表示泛型的上边界是T,super T代表泛型的下边界是T;
 
-extends &amp; super
-extends是继承的意思用在子类继承父类，可以理解为一个关键字，而super是子类构造方法继承父类构造方法的一个方法；还有在泛型的应用中，他们针对泛型的边界问题代表的含义完全相反，extends T表示泛型的上边界是T,super T代表泛型的下边界是T
 					...
 				</div>
 			</a>
@@ -2514,16 +2511,13 @@ extends是继承的意思用在子类继承父类，可以理解为一个关键�
 				</h2>
 				<div class="index-brief">
 					
-
 hashcode()方法是获取一个对象值的hash值，通常我们用来比较两个值是否相等来使用的；
 
-
-int i=1 和Integer = 1他们hash值相等吗？
-int i=1和Integer =1 调用hashcode方法，hash值相等;
+int i&#x3D;1 和Integer &#x3D; 1他们hash值相等吗？int i&#x3D;1和Integer &#x3D;1 调用hashcode方法，hash值相等;
 
 
 
-面试官这里可能真正想问的是==和equals
+面试官这里
 					...
 				</div>
 			</a>
@@ -2550,13 +2544,9 @@ int i=1和Integer =1 调用hashcode方法，hash值相等;
 				</h2>
 				<div class="index-brief">
 					
+jdkJDK 是 Java Development Kit，它提供java运行的环境jre并且包含java基本的工具类。使用它能够编译和运行java程序；
 
-jdk
-JDK 是 Java Development Kit，它提供java运行的环境jre并且包含java基本的工具类。使用它能够编译和运行java程序；
-
-
-jre
-JRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有内容的集合，包括 Java 虚拟机（JVM），Jav
+jreJRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有内容的集合，包括 Java 虚拟机（JVM），Java 类库
 					...
 				</div>
 			</a>

@@ -2458,8 +2458,7 @@ DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器 ，
 					16 BeanFactory和FactoryBean有什么区别
 				</h2>
 				<div class="index-brief">
-					区别
-BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonOb
+					区别BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObj
 					...
 				</div>
 			</a>
@@ -2486,12 +2485,9 @@ BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器�
 				</h2>
 				<div class="index-brief">
 					
+链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
 
-链地址法（Separate Chaining）：
-当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
-
-
-开放寻址法（
+开放寻址法（Ope
 					...
 				</div>
 			</a>
@@ -2518,8 +2514,7 @@ BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器�
 				</h2>
 				<div class="index-brief">
 					事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。
-当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。
-spri
+当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。sprin
 					...
 				</div>
 			</a>

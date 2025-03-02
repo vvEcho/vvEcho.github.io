@@ -2460,13 +2460,8 @@
 <div id="article-content">
 	<p>Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。</p>
 <p>Java中提供的CAS操作，就是乐观锁的一种实现。</p>
-<h4 id="悲观锁">悲观锁</h4>
-<p>获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而这种切换是比较消耗资源的。<br>
-用户态：JVM可以自行执行的指令，不需要借助操作系统执行。<br>
-内核态：JVM不可以自行执行，需要操作系统才可以执行。</p>
-<h4 id="乐观锁">乐观锁</h4>
-<p>获取不到锁资源，可以再次让CPU调度，重新尝试获取锁资源。<br>
-Atomic原子性类中，就是基于CAS乐观锁实现的</p>
+<h4 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h4><p>获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而这种切换是比较消耗资源的。<br>用户态：JVM可以自行执行的指令，不需要借助操作系统执行。<br>内核态：JVM不可以自行执行，需要操作系统才可以执行。</p>
+<h4 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h4><p>获取不到锁资源，可以再次让CPU调度，重新尝试获取锁资源。<br>Atomic原子性类中，就是基于CAS乐观锁实现的</p>
 
 </div>
 

@@ -2466,8 +2466,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>redis分布式锁我们用的是Redisson，它的实现原理是：<br>
-我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放；如果锁被释放则删除key;底层是lua脚本执行的，所以能保证执行过程的原子性；</p>
+	<p>redis分布式锁我们用的是Redisson，它的实现原理是：<br>我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放；如果锁被释放则删除key;底层是lua脚本执行的，所以能保证执行过程的原子性；</p>
 
 </div>
 
@@ -2476,16 +2475,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/0120/redis-used-data-structure.html">
+              <a href="/2024/0120/redis-cluster.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  08 redis常用数据结构
+                  12 redis你们用的是什么集群(待完善)
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/0120/redis-distributed-lock-space.html">
-                10 分布式锁的应用场景
+              <a href="/2024/0120/redis-used-data-structure.html">
+                08 redis常用数据结构
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
