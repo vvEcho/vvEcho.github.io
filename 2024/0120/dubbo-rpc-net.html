@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2411,10 +2466,14 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="dubbo的特定"><a href="#dubbo的特定" class="headerlink" title="dubbo的特定"></a>dubbo的特定</h3><p>dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。</p>
+	<h3 id="dubbo的特定">dubbo的特定</h3>
+<p>dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。</p>
 <p>使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。</p>
-<h3 id="dubbo的服务注册与发现的流程"><a href="#dubbo的服务注册与发现的流程" class="headerlink" title="dubbo的服务注册与发现的流程"></a>dubbo的服务注册与发现的流程</h3><p>容器启动后，提供方向注册中心注册服务，消费方订阅了某个服务，向注册中心请求对应的服务，注册中心根据消费者请求所匹配的提供者列表发送至消费者应用缓存，consumer在发起远程调用时根据负载策略选择其一发起调用；<br>并且provider状态的变更会实时通知注册中心，再由注册中心实时推送至消费者</p>
-<h3 id="Dubbo服务之间的调用是阻塞的吗？"><a href="#Dubbo服务之间的调用是阻塞的吗？" class="headerlink" title="Dubbo服务之间的调用是阻塞的吗？"></a>Dubbo服务之间的调用是阻塞的吗？</h3><p>默认是同步等待结果阻塞的，支持异步调用。</p>
+<h3 id="dubbo的服务注册与发现的流程">dubbo的服务注册与发现的流程</h3>
+<p>容器启动后，提供方向注册中心注册服务，消费方订阅了某个服务，向注册中心请求对应的服务，注册中心根据消费者请求所匹配的提供者列表发送至消费者应用缓存，consumer在发起远程调用时根据负载策略选择其一发起调用；<br>
+并且provider状态的变更会实时通知注册中心，再由注册中心实时推送至消费者</p>
+<h3 id="Dubbo服务之间的调用是阻塞的吗？">Dubbo服务之间的调用是阻塞的吗？</h3>
+<p>默认是同步等待结果阻塞的，支持异步调用。</p>
 <p>Dubbo 是基于 NIO 的非阻塞实现并行调用，客户端不需要启动多线程即可完成并行调用多个远程服务，相对多线程开销较小，异步调用会返回一个 Future 对象</p>
 
 </div>
@@ -2424,16 +2483,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/0120/rocketmq-find-msg.html">
+              <a href="/2024/0120/nacos-konw.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  02 rocketMq怎么查找到对应的消息的？
+                  03.3 nacos注册中心
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/0120/nacos-konw.html">
-                03.3 nacos注册中心
+              <a href="/2024/0120/springcloud-hystrix.html">
+                05.1 hystrix服务熔断和降级
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2373,7 +2428,7 @@
 					5.请分析RR可能导致锁范围扩大的原因和解决思路
 				</h2>
 				<div class="index-brief">
-					假设查询涉及SELECT … FOR UPDATE锁，请分析在RR（可重复读）隔离级别下可能导致的锁范围扩大问题。如何通过索引设计避免锁全表？请结合SELECT * FROM commission WHERE merchant_id&#x3D;? AND month&#x3D;’2025-02’ F
+					假设查询涉及SELECT … FOR UPDATE锁，请分析在RR（可重复读）隔离级别下可能导致的锁范围扩大问题。如何通过索引设计避免锁全表？请结合SELECT * FROM commission WHERE merchant_id=? AND month=‘2025-02’ FOR UPDATE示
 					...
 				</div>
 			</a>
@@ -2410,7 +2465,10 @@
 				</h2>
 				<div class="index-brief">
 					在领域驱动设计中，聚合根（Aggregate Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明
-聚合根（Aggregate Root）设计原则您的回答正确但需补充完整，核心原则包括：✅ 强一致性边界：聚合根内的所有实体&
+
+聚合根（Aggregate Root）设计原则
+您的回答正确但需补充完整，核心原则包括：
+✅ 强一致性边界：聚合根内的所有
 					...
 				</div>
 			</a>
@@ -2446,7 +2504,8 @@
 					3.Promotion Failed的原因及解决思路
 				</h2>
 				<div class="index-brief">
-					在平安科技的分红子系统中，您提到使用Java 8的Supplier优化PageHelper查询。假设系统出现Full GC频繁（约1次&#x2F;小时），且GC日志显示Promotion Failed，请分析可能的原因及解决思路。如何通过G1垃圾回收器参数优化此场景？Promotion Failed
+					在平安科技的分红子系统中，您提到使用Java 8的Supplier优化PageHelper查询。假设系统出现Full GC频繁（约1次/小时），且GC日志显示Promotion Failed，请分析可能的原因及解决思路。如何通过G1垃圾回收器参数优化此场景？
+Promotion Failed‌是指在
 					...
 				</div>
 			</a>
@@ -2482,7 +2541,10 @@
 					2.分布式锁隐患及锁续期原理
 				</h2>
 				<div class="index-brief">
-					在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？Redis分布式锁的隐患热key问题导致单节点压力（可通过分片或分区锁缓解）。锁超时与业务执行冲突：若业务执行时间超过锁超时时间（TTL），导致锁自动释放后其
+					在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？
+Redis分布式锁的隐患
+热key问题导致单节点压力（可通过分片或分区锁缓解）。
+锁超时与业务执行冲突：若业务执行时间超过锁超时时间（TTL），导致锁自动释
 					...
 				</div>
 			</a>
@@ -2521,6 +2583,7 @@
 					假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明
 
 
+
 方案
 优势
 劣势
@@ -2528,8 +2591,9 @@
 
 
 
+
 Redis Lua脚本
-原子
+
 					...
 				</div>
 			</a>

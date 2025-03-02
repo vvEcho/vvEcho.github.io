@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2373,7 +2428,8 @@
 					16 BeanFactory和FactoryBean有什么区别
 				</h2>
 				<div class="index-brief">
-					区别BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObj
+					区别
+BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonOb
 					...
 				</div>
 			</a>
@@ -2400,9 +2456,12 @@
 				</h2>
 				<div class="index-brief">
 					
-链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
 
-开放寻址法（Ope
+链地址法（Separate Chaining）：
+当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
+
+
+开放寻址法（
 					...
 				</div>
 			</a>
@@ -2429,7 +2488,8 @@
 				</h2>
 				<div class="index-brief">
 					事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。
-当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。sprin
+当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。
+spri
 					...
 				</div>
 			</a>
@@ -2482,9 +2542,12 @@
 					12 BIO,NIO,AIO的区别
 				</h2>
 				<div class="index-brief">
-					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
+					BIO、NIO、AIO 是Java中处理I/O操作的不同方式，它们的区别如下：
 
-BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
+BIO（Blocking I/O）：阻塞式I/O，即在执行I/O操作时，当前线程会被阻塞，直到I/O操作完成。这种方式适用于简单的I/O操作，但当有大量的并发请求时，性能较差。
+
+核心机制：
+每个连接对应一个独立线程，
 					...
 				</div>
 			</a>

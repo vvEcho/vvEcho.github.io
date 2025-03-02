@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2423,15 +2478,25 @@
 <!-- content -->
 <div id="article-content">
 	<ol>
-<li>先删除缓存，再更新数据库<br>问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生<br>解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取最新的数据，然后更新到缓存中</li>
-<li>先更新数据库，再更新缓存<br>这里存在三种情况</li>
+<li>先删除缓存，再更新数据库<br>
+问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生<br>
+解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取最新的数据，然后更新到缓存中</li>
+<li>先更新数据库，再更新缓存<br>
+这里存在三种情况</li>
 </ol>
 <ul>
 <li>1.请求A先写数据库，卡了没来得及删除缓存，请求B读到旧缓存，请求A删除缓存</li>
-<li>2.请求B先查缓存，返回旧缓存；请求A写数据库，然后删除了缓存<br>以上两种情况都会延时双删一样，都会有可能有一次不一致；后续再有请求就会一致</li>
+<li>2.请求B先查缓存，返回旧缓存；请求A写数据库，然后删除了缓存<br>
+以上两种情况都会延时双删一样，都会有可能有一次不一致；后续再有请求就会一致</li>
 </ul>
-<p>失效场景：<br>这里唯一要担心的就是缓存失效，如下场景：<br>请求A查询缓存，缓存失效去查数据库查到旧值，然后更新旧值到缓存是卡住了<br>这时候请求B写数据库，写完数据库后删除了缓存，这时候请求A更新了旧值到缓存中；这时候就会造成缓存不一致<br>所以这里的过期时间设置需要特别注意，这种场景一般会比较少；因为是请求A查询缓存时，缓存正好失效且查数据库然后更新缓存比请求B写数据库删除缓存的时间还长</p>
-<p>这里最核心的问题是：删除缓存失败<br>方案1：借助mq的消息最终一致性来保障<br>方案2：订阅mysql的binlog实现缓存的同步写操作</p>
+<p>失效场景：<br>
+这里唯一要担心的就是缓存失效，如下场景：<br>
+请求A查询缓存，缓存失效去查数据库查到旧值，然后更新旧值到缓存是卡住了<br>
+这时候请求B写数据库，写完数据库后删除了缓存，这时候请求A更新了旧值到缓存中；这时候就会造成缓存不一致<br>
+所以这里的过期时间设置需要特别注意，这种场景一般会比较少；因为是请求A查询缓存时，缓存正好失效且查数据库然后更新缓存比请求B写数据库删除缓存的时间还长</p>
+<p>这里最核心的问题是：删除缓存失败<br>
+方案1：借助mq的消息最终一致性来保障<br>
+方案2：订阅mysql的binlog实现缓存的同步写操作</p>
 
 </div>
 

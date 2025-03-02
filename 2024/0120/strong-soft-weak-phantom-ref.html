@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2412,13 +2467,22 @@
 <!-- content -->
 <div id="article-content">
 	<ol>
-<li><p>强引用<br>强引用一般指我们new的对象存在的引用</p>
+<li>
+<p>强引用<br>
+强引用一般指我们new的对象存在的引用</p>
 </li>
-<li><p>软引用<br>软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；</p>
+<li>
+<p>软引用<br>
+软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；</p>
 </li>
-<li><p>弱引用<br>弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；</p>
+<li>
+<p>弱引用<br>
+弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；</p>
 </li>
-<li><p>虚引用<br>虚引用，是一种形同虚设的引用，主要用来跟踪对象被垃圾回收的活动<br>ThreadLocal 底层用的是ThreadLocalMap,其中threadLocalMap key存的是当前线程对象的虚拟引用，value存的是对应的值；因为是虚引用，所以一定会被回收掉，但是对于threadMap现在存的就是key为null，value不为null的entry项，这个value对象的值是一个强引用，不会被回收，所以需要我们使用完threadLocl后及时remove掉，避免内存泄漏的情况；</p>
+<li>
+<p>虚引用<br>
+虚引用，是一种形同虚设的引用，主要用来跟踪对象被垃圾回收的活动<br>
+ThreadLocal 底层用的是ThreadLocalMap,其中threadLocalMap key存的是当前线程对象的虚拟引用，value存的是对应的值；因为是虚引用，所以一定会被回收掉，但是对于threadMap现在存的就是key为null，value不为null的entry项，这个value对象的值是一个强引用，不会被回收，所以需要我们使用完threadLocl后及时remove掉，避免内存泄漏的情况；</p>
 </li>
 </ol>
 

@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,26 +2423,25 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0124/hash-clash-solve.html">
+			<a href="/2024/0201/springcloud-bus.html">
 				<h2 class="index-title">
-					13 hash冲突怎么解决
+					07 springcloud消息总线
 				</h2>
 				<div class="index-brief">
-					
-链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
-
-开放寻址法（Ope
+					Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
+Spring Cloud Bus配合Spring Cloud Config使用可以实现分布式自动刷新配置功能
+ConfigClient实例都监听MQ中
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-01-24</span>
+				    <span>2024-02-01</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2397,13 +2451,80 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0124/translation-principle.html">
+			<a href="/2024/0201/sentinel-liu-kong.html">
 				<h2 class="index-title">
-					05 spring事务的底层原理
+					05.3 hystricl和sentinel的对比
 				</h2>
 				<div class="index-brief">
-					事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。
-当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。sprin
+					Sentinel vs Hystrix
+Hystrix 的关注点在于以隔离和熔断为主的容错机制，超时或被熔断的调用将会快速失败，并可以提供 fallback 机制。
+Sentinel 的侧重点在于：
+
+多样化的流量控制
+熔断降级
+系统负载保护
+实时监控和控制台
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/springcloud-zookeeper.html">
+				<h2 class="index-title">
+					03.2 zookeeper注册中心
+				</h2>
+				<div class="index-brief">
+					1.Zookeeper的服务注册与发现
+Zookeeper的服务注册与发现,主要应用的是Zookeeper的Znode数据模型和Watcher机制
+服务注册：服务提供者会向Zookeeper服务端注册服务信息，即创建一个服务节点，并在节点上存储服务的相关数据（如服务提供者的ip地址、端口等):
+服务
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/springmvc-understand.html">
+				<h2 class="index-title">
+					14 说说你对mspringMvc流程的理解
+				</h2>
+				<div class="index-brief">
+					
+
+用户发送请求至前端控制器 DispatcherServlet ；
+DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器 ，请求获取 Handler ；
+处理器映射器 根据请求 url 找到具体的处理器 Handler ，生成处理器对象及处理器拦截器（如
 					...
 				</div>
 			</a>
@@ -2424,13 +2545,13 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0124/arraylist-kuo-rong.html">
+			<a href="/2024/0124/beanfactory-factoryBean.html">
 				<h2 class="index-title">
-					08 arrayList扩容时扩容多少
+					16 BeanFactory和FactoryBean有什么区别
 				</h2>
 				<div class="index-brief">
-					相关源码如下：
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//默认容量大小private static final int DEFAULT_CAPACITY
+					区别
+BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonOb
 					...
 				</div>
 			</a>
@@ -2441,71 +2562,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0124/io-different.html">
-				<h2 class="index-title">
-					12 BIO,NIO,AIO的区别
-				</h2>
-				<div class="index-brief">
-					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
-
-BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/self-audition-jindong.html">
-				<h2 class="index-title">
-					京东(23.2)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/">42 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/个人/">个人</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2517,7 +2574,7 @@ BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/14/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/archives/page/16/">16</a><a class="page-number" href="/archives/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/36/">36</a><a class="extend next" rel="next" href="/archives/page/16/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/14/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/archives/page/16/">16</a><a class="page-number" href="/archives/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/37/">37</a><a class="extend next" rel="next" href="/archives/page/16/">&gt;</a>
 		
 	</div>
 </div>

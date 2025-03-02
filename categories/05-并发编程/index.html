@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,6 +2423,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0302/lock-impl-ways.html">
+				<h2 class="index-title">
+					17 分布式锁的实现方式有哪些
+				</h2>
+				<div class="index-brief">
+					在单体架构中，多个线程都是属于同一个进程的，所以在线程并发执行时，遇到资源竞争时，可以利用Reentrantlock、synchronized等技术来作为锁，来控制共享资源的使用。
+而在分布式架构中，多个线程是可能处于不同进程中的，而这些线程并发执行遇到资源竞争时，利用Reentrantlock、s
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0301/aqs-principle.html">
 				<h2 class="index-title">
 					16 AQS的实现原理
@@ -2399,8 +2481,9 @@
 					13 锁消除和锁膨胀
 				</h2>
 				<div class="index-brief">
-					锁消除在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
-1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchro
+					锁消除
+在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
+1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchr
 					...
 				</div>
 			</a>
@@ -2428,7 +2511,8 @@
 				<div class="index-brief">
 					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
 Java中提供的CAS操作，就是乐观锁的一种实现。
-悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
+悲观锁
+获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，
 					...
 				</div>
 			</a>
@@ -2456,35 +2540,11 @@ Java中提供的CAS操作，就是乐观锁的一种实现。
 				<div class="index-brief">
 					Java中提供的synchronized、ReentrantLock是互斥锁。
 Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
-互斥锁互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
-共享锁共享锁：同一时间点，当前共享锁可以被多个线程同时持有
+互斥锁
+互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
+共享锁
+共享锁：同一时间点，当前共享锁可以被多个线程同时持有
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0301/cyclicBarrier-principle.html">
-				<h2 class="index-title">
-					15 CyclicBarrier实现原理
-				</h2>
-				<div class="index-brief">
-					
 					...
 				</div>
 			</a>

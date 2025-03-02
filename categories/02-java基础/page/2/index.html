@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,6 +2423,37 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0124/io-different.html">
+				<h2 class="index-title">
+					12 BIO,NIO,AIO的区别
+				</h2>
+				<div class="index-brief">
+					BIO、NIO、AIO 是Java中处理I/O操作的不同方式，它们的区别如下：
+
+BIO（Blocking I/O）：阻塞式I/O，即在执行I/O操作时，当前线程会被阻塞，直到I/O操作完成。这种方式适用于简单的I/O操作，但当有大量的并发请求时，性能较差。
+
+核心机制：
+每个连接对应一个独立线程，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/qps-tps-different.html">
 				<h2 class="index-title">
 					11 Qps和Tps的区别
@@ -2377,9 +2463,14 @@
 定义
 
 
-QPS（Queries Per Second）：表示系统每秒处理的查询请求数。通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
 
-TPS（Transactions Per Second）：表示系统
+QPS（Queries Per Second）：
+表示系统每秒处理的查询请求数。
+通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。
+例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
+
+
+TPS（Transactions Per Second）
 					...
 				</div>
 			</a>
@@ -2465,40 +2556,21 @@ TPS（Transactions Per Second）：表示系统
 				</h2>
 				<div class="index-brief">
 					
-强引用强引用一般指我们new的对象存在的引用
 
-软引用软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
+强引用
+强引用一般指我们new的对象存在的引用
 
-弱引用弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
 
-虚引用虚引用，是一种形同虚设的引用，主要用来跟踪对象被
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/exception-error-different.html">
-				<h2 class="index-title">
-					07 exception和error有啥区别
-				</h2>
-				<div class="index-brief">
-					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
+软引用
+软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
 
+
+弱引用
+弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
+
+
+虚引用
+虚引用，是一种形同虚设的引用，主
 					...
 				</div>
 			</a>

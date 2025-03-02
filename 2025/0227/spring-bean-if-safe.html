@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2403,9 +2458,13 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="spring中bean不是线程安全的"><a href="#spring中bean不是线程安全的" class="headerlink" title="spring中bean不是线程安全的"></a>spring中bean不是线程安全的</h4><p>Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。<br>在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。<br>在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确赋值。在这个过程中，Spring 会使用双重检查锁（Double-Check Locking）的机制来确保 Bean 的单例模式，从而避免多个线程同时创建同一个 Bean 实例。</p>
+	<h4 id="spring中bean不是线程安全的">spring中bean不是线程安全的</h4>
+<p>Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。<br>
+在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。<br>
+在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确赋值。在这个过程中，Spring 会使用双重检查锁（Double-Check Locking）的机制来确保 Bean 的单例模式，从而避免多个线程同时创建同一个 Bean 实例。</p>
 <p>但是，并不是所有 Bean 都是线程安全的。如果 Bean 中包含可变状态（如实例变量、静态变量等），那么在多线程环境下使用这些 Bean 可能会导致线程不安全的问题。</p>
-<p>因此，如果一个 Bean 包含可变状态，那么在多线程环境下使用这个 Bean 需要手动进行同步操作，以避免线程不安全的问题。<br>总之，Spring 中的 Bean 默认是线程安全的，但是如果 Bean 包含可变状态，那么在多线程环境下使用这个 Bean 需要手动进行同步操作，以避免线程不安全的问题</p>
+<p>因此，如果一个 Bean 包含可变状态，那么在多线程环境下使用这个 Bean 需要手动进行同步操作，以避免线程不安全的问题。<br>
+总之，Spring 中的 Bean 默认是线程安全的，但是如果 Bean 包含可变状态，那么在多线程环境下使用这个 Bean 需要手动进行同步操作，以避免线程不安全的问题</p>
 
 </div>
 

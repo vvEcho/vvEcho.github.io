@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,36 +2423,9 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0302/springboot-custom-starter.html">
+			<a href="/2025/0302/rpc-know.html">
 				<h2 class="index-title">
-					06 如何自定义一个starter
-				</h2>
-				<div class="index-brief">
-					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：1.创建一个工程引入自动配置注解2.定义配置属性类
-12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperties
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/springcloud-shiro.html">
-				<h2 class="index-title">
-					06.1 shiro权限组件
+					04.2 rpc原理
 				</h2>
 				<div class="index-brief">
 					
@@ -2421,16 +2449,40 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0302/springboot-characteristic.html">
+			<a href="/2025/0302/apploo-know.html">
 				<h2 class="index-title">
-					05 springboot有哪些特点
+					03.4 apploo注册中心
 				</h2>
 				<div class="index-brief">
-					springBoot的优点是什么？‌
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/springcloud-openfigne-principle.html">
+				<h2 class="index-title">
+					04.1 OpenFeign的原理
+				</h2>
+				<div class="index-brief">
+					Openfeign是Spring Cloud 对Feign 也进行了增强，直接支持Hystrix 和 Ribbon，也支持SpringMVC 的注解。这样使得Feign 的使用非常方便。
 
-快速开发‌：SpringBoot简化了配置，减少了开发、测试时间和努力。
-独立运行‌：内嵌了servlet容器，如Tomcat、Jetty等，无需部署WAR文件。
-自动配置‌：根据类路径下的类、jar包自动配置bean，如添加spring-boot-start
+1、在使用Openfeign时首先会在springboot的启动类上添加@EnableFeignClients
 					...
 				</div>
 			</a>
@@ -2441,7 +2493,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2451,16 +2503,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0302/sprngboot-properties-order.html">
+			<a href="/2025/0302/register-vs.html">
 				<h2 class="index-title">
-					04 springBoot中配置优先级是怎样的?
+					03.5 注册中心横向对比
 				</h2>
 				<div class="index-brief">
-					优先级从高到低，高优先级的配置覆盖低优先级的配置，所有配置会形成互补配置。
-1.命令行参数。所有的配置都可以在命令行上进行指定
-2.Java系统属性(System.getProperties());
-3.操作系统环境变量;
-4.jar包,外部的application-{profile}.proper
+					
 					...
 				</div>
 			</a>
@@ -2471,7 +2519,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2481,12 +2529,14 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0302/spring-mvc-flow.html">
+			<a href="/2025/0302/gateway-vs-zuul.html">
 				<h2 class="index-title">
-					20 springmvc的底层工作流程
+					02.3 Gateway和Zuul的区别
 				</h2>
 				<div class="index-brief">
-					1.用户发送请求至前端控制器DispatcherServlet。2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.3.Disp
+					Spring Cloud Gateway和Zuul有什么区别？
+Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
+以下是Spring Clo
 					...
 				</div>
 			</a>
@@ -2497,7 +2547,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2509,7 +2559,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/page/2/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><a class="page-number" href="/archives/2025/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2025/page/4/">4</a><a class="page-number" href="/archives/2025/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/10/">10</a><a class="extend next" rel="next" href="/archives/2025/page/4/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/page/2/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><a class="page-number" href="/archives/2025/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2025/page/4/">4</a><a class="page-number" href="/archives/2025/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/11/">11</a><a class="extend next" rel="next" href="/archives/2025/page/4/">&gt;</a>
 		
 	</div>
 </div>

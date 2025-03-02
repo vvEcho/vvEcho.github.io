@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,69 +2423,12 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/bean-life-understand.html">
+			<a href="/2024/0120/pointcut-order-sure.html">
 				<h2 class="index-title">
-					13 bean的生命周期
+					11 切面解析的顺序怎么确定？
 				</h2>
 				<div class="index-brief">
-					面试中若问道spring的启动流程，其实和问bean的生命周期是差不多的意思
-这里我说下我个人的理解，bean的生命周期指的是：
-被spring管理的一个bean从创建到销毁的过程，一般分为:实例化→属性注入→初始化→使用→销毁五大阶段，初始化阶段再细分为 Aware、前置处理、自定义初始化、后置处
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/ioc-understand.html">
-				<h2 class="index-title">
-					01 谈谈你对IOC的理解
-				</h2>
-				<div class="index-brief">
-					IOC是Spring两大思想的中一点，为控制反转；
-所谓的控制反转就是控制了对象的创建过程，反转了对象的注入形式；
-一般而言，我们创建对象为new 或者用调用对象的构造方法;
-用了spring框架后，在spring启动时对象被封装为一个个Bean保存在spring容器中，我们需要使用的时候，直接注入
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/aop-understand.html">
-				<h2 class="index-title">
-					02 谈谈你对Aop的理解
-				</h2>
-				<div class="index-brief">
-					AOP是Spring两大思想的中一点，为切面编程；在spring中可以通过定义切面注解的形式来对方法或类作一定的增强
+					使用 @order(number) 注解，number 越小，优先级越高
 
 					...
 				</div>
@@ -2452,18 +2450,19 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/spring-transcation-jizhi.html">
+			<a href="/2024/0120/spring-she-ji-mo-shi.html">
 				<h2 class="index-title">
-					03 Spring事务传播机制
+					07 spring框架中的设计模式有哪些(待完善)
 				</h2>
 				<div class="index-brief">
-					Spring默认有7种事务机制，如下：
+					工厂模式-BeanFactory
+模板模式-JdbcTemplate
+策略模式-InstantionStrategy
+代理模式-BeanProxy
+装饰器模式-BeanWapper
+责任链模式-BeanPostProcessor
+观察者模式-事件监听机制
 
-REQUIRED-默认的事务隔离级别，会自动加入当前的事务，如果不存在则新建事务
-
-SUPPORT级别，跟REQUIRED类似，也是会自动加入当前的事务，但两者区别在于，若当前无事务，则按照无事务的方式执行
-
-MANDATORY级别，要求SQL操作强制在事务
 					...
 				</div>
 			</a>
@@ -2484,15 +2483,13 @@ MANDATORY级别，要求SQL操作强制在事务
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/deadlock-occurs-reason.html">
+			<a href="/2024/0120/apo-impl-code.html">
 				<h2 class="index-title">
-					09 死锁出现的原因以及怎么解决？
+					08 说看过AOP相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					出现死锁的原因是因为两个线程出现持有对方想要的资源，导致这两个线程一直处在等待对方释放锁的状态；
-破坏竞态条件既可以解除死锁，例如：当一个线程持有锁时，自己没有释放锁时不能再去尝试获取另一个锁；
-代码示例：
-1234567891011121314151617181920212223242526272
+					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；
+bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核
 					...
 				</div>
 			</a>
@@ -2503,7 +2500,66 @@ MANDATORY级别，要求SQL操作强制在事务
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/ioc-impl-code.html">
+				<h2 class="index-title">
+					09 说看过IOC相关源码,说下具体实现
+				</h2>
+				<div class="index-brief">
+					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的
+我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/spring-transcation-fail.html">
+				<h2 class="index-title">
+					06 spring事务失效的场景
+				</h2>
+				<div class="index-brief">
+					
+1.不是代理类的调用，例如类A 中有方法B 和方法C 此时B种调用了tiis.c方法，这种事务是不会生效的
+2.方法不是pulic的
+3.没有被Spring事务管理
+4.异常被捕获没有抛出来，这种事务不会回滚也相当于失效了
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2515,7 +2571,7 @@ MANDATORY级别，要求SQL操作强制在事务
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/27/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/archives/page/29/">29</a><a class="page-number" href="/archives/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/36/">36</a><a class="extend next" rel="next" href="/archives/page/29/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/27/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/archives/page/29/">29</a><a class="page-number" href="/archives/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/37/">37</a><a class="extend next" rel="next" href="/archives/page/29/">&gt;</a>
 		
 	</div>
 </div>

@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,43 +2423,16 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/dubbo-rpc-net.html">
+			<a href="/2024/0120/rocketmq-msg-not-lost.html">
 				<h2 class="index-title">
-					07 dubbo微服务间怎么通信？
+					03 rocketMq怎么避免消息不丢失？
 				</h2>
 				<div class="index-brief">
-					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
-使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
-dubbo的服务注册与发现的流程容器启动后，提供方向注
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/nacos-konw.html">
-				<h2 class="index-title">
-					03.3 nacos注册中心
-				</h2>
-				<div class="index-brief">
-					1.nacos简介Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
-Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
+					那问这个问题，我们需要知道rocketMq哪些场景会导致消息丢失；
 
-服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注
+生产者在发送消息的时候，如果断网了就会导致消息发送失败
+这种极端情况下，我们可以采用rocketMq的事务机制来解决；
+首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失
 					...
 				</div>
 			</a>
@@ -2415,7 +2443,7 @@ Nacos是一个为云原生应用设计的动态服务发现和配置服务平台
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
 										
                                     </span>
                                 
@@ -2425,14 +2453,12 @@ Nacos是一个为云原生应用设计的动态服务发现和配置服务平台
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/springcloud-hystrix.html">
+			<a href="/2024/0120/rocketmq-msg-not-repeat.html">
 				<h2 class="index-title">
-					05.1 hystrix服务熔断和降级
+					04 rocketMq怎么避免消息不重复消费
 				</h2>
 				<div class="index-brief">
-					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
-Hystrix的主要原理是用了断路器模式和线程池隔离技术；
-通过断路器的故障监控，向服务调用方返回一个符合预
+					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作，若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重，
 					...
 				</div>
 			</a>
@@ -2443,7 +2469,7 @@ Hystrix的主要原理是用了断路器模式和线程池隔离技术；
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
 										
                                     </span>
                                 
@@ -2453,20 +2479,12 @@ Hystrix的主要原理是用了断路器模式和线程池隔离技术；
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/springcloud-used-component.html">
+			<a href="/2024/0120/rocketmq-msg-order.html">
 				<h2 class="index-title">
-					01 springCloud中组件常用的有哪些？
+					05 rocketMq如何保证消息顺序消费？
 				</h2>
 				<div class="index-brief">
-					Zuul、Gateway-网关
-eureka-注册中心
-config-配置中心
-Ribbon-负载均衡
-Feign-服务调用
-Hystrix或Resilience4j-熔断器
-security-安全权限组件
-shiro-权限组件
-
+					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
 					...
 				</div>
 			</a>
@@ -2477,7 +2495,7 @@ shiro-权限组件
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
 										
                                     </span>
                                 
@@ -2487,12 +2505,12 @@ shiro-权限组件
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/springcloud-eureka.html">
+			<a href="/2024/0120/rocket-framewokr.html">
 				<h2 class="index-title">
-					03.1 Eureka注册中心
+					01 rocketMq架构是怎样的,说说心跳机制
 				</h2>
 				<div class="index-brief">
-					1.服务端如何保存客户端注册信息?客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.客户端通过Jersey框架，将自己的注册信息
+					RocketMq的架构包含一个发送消息的生产者Producer,消息存储接收的broker,消息消费的一个Consumer,还有一个消息状态管理的NameServer无状态服务器，然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳
 					...
 				</div>
 			</a>
@@ -2503,7 +2521,33 @@ shiro-权限组件
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-find-msg.html">
+				<h2 class="index-title">
+					02 rocketMq怎么查找到对应的消息的？
+				</h2>
+				<div class="index-brief">
+					我们知道，RocketMQ 核心的数据文件有 3 个：CommitLog、ConsumeQueue 和 Index。其中Index 文件就是一个索引文件，查找消息时，首先根据消息 key 的 hashcode 计算出 Hash 槽的位置，然后读取 Hash 槽的值计算 Index 条目的位置，从In
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-rocketMq/">11 rocketMq</a>
 										
                                     </span>
                                 
@@ -2515,7 +2559,7 @@ shiro-权限组件
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/24/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/36/">36</a><a class="extend next" rel="next" href="/archives/page/26/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/24/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/37/">37</a><a class="extend next" rel="next" href="/archives/page/26/">&gt;</a>
 		
 	</div>
 </div>

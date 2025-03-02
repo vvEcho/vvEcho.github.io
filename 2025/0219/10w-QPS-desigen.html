@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2422,7 +2477,8 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis-Lua脚本、分布式锁-数据库扣减、以及Redis-MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明"><a href="#假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis-Lua脚本、分布式锁-数据库扣减、以及Redis-MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明" class="headerlink" title="假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明"></a>假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明</h4><table>
+	<h4 id="假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis-Lua脚本、分布式锁-数据库扣减、以及Redis-MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明">假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明</h4>
+<table>
 <thead>
 <tr>
 <th>方案</th>
@@ -2431,7 +2487,8 @@
 <th>适用场景</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Redis Lua脚本</td>
 <td>原子性保证，无竞态条件；毫秒级响应（内存操作）</td>
 <td>集群热key压力大，数据持久化风险（宕机丢数据），无异步流程扩展性</td>
@@ -2449,38 +2506,63 @@
 <td>最终一致性（短暂超卖风险），架构复杂度高，需处理消息堆积</td>
 <td>大规模秒杀（如双11，库存百万级）</td>
 </tr>
-</tbody></table>
-<p>推荐redis+MQ异步方案<br>架构图：</p>
+</tbody>
+</table>
+<p>推荐redis+MQ异步方案<br>
+架构图：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[用户请求]</span> → <span class="selector-attr">[API网关]</span> → <span class="selector-attr">[Redis库存预扣减]</span> → <span class="selector-attr">[MQ]</span> → <span class="selector-attr">[DB最终扣减+订单创建]</span></span><br><span class="line">          ↑           ↓ (返回预扣结果)      ↓ (异步保证最终一致性)</span><br><span class="line">          └─<span class="selector-attr">[响应前端]</span>   <span class="selector-attr">[库存回滚机制]</span>       <span class="selector-attr">[监控报警]</span></span><br></pre></td></tr></table></figure>
 <p>实现步骤：</p>
-<h4 id="1-库存预热"><a href="#1-库存预热" class="headerlink" title="1.库存预热"></a>1.库存预热</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将10000件库存拆分为100个桶（避免单个key过热）</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">    redisTemplate.opsForValue().set(<span class="string">&quot;stock:sku_123:bucket_&quot;</span> + i, <span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>优势：分散热key压力（参考您简历中Redis集群经验）。<br>路由算法：bucketId &#x3D; userId.hashCode() % 100（相同用户始终访问同一桶，避免重复扣减）</p>
-<h4 id="2-Lua脚本原子扣减"><a href="#2-Lua脚本原子扣减" class="headerlink" title="2.Lua脚本原子扣减"></a>2.Lua脚本原子扣减</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- KEYS=bucket_key, ARGV=扣减数量</span><br><span class="line">local stock = tonumber(redis.call(&#x27;get&#x27;, KEYS))</span><br><span class="line">if stock &gt;= tonumber(ARGV) then</span><br><span class="line">    redis.call(&#x27;decrby&#x27;, KEYS, ARGV)</span><br><span class="line">    return 1 -- 成功</span><br><span class="line">else</span><br><span class="line">    return 0 -- 库存不足</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h4 id="1-库存预热">1.库存预热</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将10000件库存拆分为100个桶（避免单个key过热）</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">    redisTemplate.opsForValue().set(<span class="string">&quot;stock:sku_123:bucket_&quot;</span> + i, <span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>优势：分散热key压力（参考您简历中Redis集群经验）。<br>
+路由算法：bucketId = userId.hashCode() % 100（相同用户始终访问同一桶，避免重复扣减）</p>
+<h4 id="2-Lua脚本原子扣减">2.Lua脚本原子扣减</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- KEYS=bucket_key, ARGV=扣减数量</span><br><span class="line">local stock = tonumber(redis.call(&#x27;get&#x27;, KEYS))</span><br><span class="line">if stock &gt;= tonumber(ARGV) then</span><br><span class="line">    redis.call(&#x27;decrby&#x27;, KEYS, ARGV)</span><br><span class="line">    return 1 -- 成功</span><br><span class="line">else</span><br><span class="line">    return 0 -- 库存不足</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 <p>性能优化：每个分桶支撑约1000 QPS，100个分桶总QPS可达10万</p>
-<h4 id="3-MQ异步写库"><a href="#3-MQ异步写库" class="headerlink" title="3.MQ异步写库"></a>3.MQ异步写库</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//mq消息结构</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;messageId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;skuId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;123&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;userId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;456&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;bucketId&quot;</span><span class="punctuation">:</span> <span class="number">78</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;preReduceAmount&quot;</span><span class="punctuation">:</span> <span class="number">1</span> <span class="comment">// 预扣数量</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-MQ异步写库">3.MQ异步写库</h4>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//mq消息结构</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;messageId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;skuId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;123&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;userId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;456&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;bucketId&quot;</span><span class="punctuation">:</span> <span class="number">78</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;preReduceAmount&quot;</span><span class="punctuation">:</span> <span class="number">1</span> <span class="comment">// 预扣数量</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> stock <span class="keyword">SET</span> available <span class="operator">=</span> available <span class="operator">-</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">WHERE</span> sku_id <span class="operator">=</span> <span class="number">123</span> <span class="keyword">AND</span> available <span class="operator">&gt;=</span> <span class="number">1</span>;</span><br><span class="line"><span class="comment">-- 通过影响行数判断是否成功</span></span><br></pre></td></tr></table></figure>
-<p>异常处理：<br>DB扣减失败：通过messageId幂等重试，3次失败后触发Redis库存回补（INCRBY）。<br>消息堆积：动态扩容Consumer实例（参考您简历中的水平分库经验）。</p>
-<h4 id="4-一致性机制保障"><a href="#4-一致性机制保障" class="headerlink" title="4.一致性机制保障"></a>4.一致性机制保障</h4><p>定时对账：</p>
+<p>异常处理：<br>
+DB扣减失败：通过messageId幂等重试，3次失败后触发Redis库存回补（INCRBY）。<br>
+消息堆积：动态扩容Consumer实例（参考您简历中的水平分库经验）。</p>
+<h4 id="4-一致性机制保障">4.一致性机制保障</h4>
+<p>定时对账：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 每小时检查Redis预扣总量与DB实际扣减量</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(pre_reduced) <span class="keyword">FROM</span> mq_message <span class="keyword">WHERE</span> status <span class="operator">=</span> <span class="string">&#x27;SUCCESS&#x27;</span>; <span class="comment">-- Redis侧</span></span><br><span class="line"><span class="keyword">SELECT</span> (total_stock <span class="operator">-</span> available) <span class="keyword">FROM</span> stock <span class="keyword">WHERE</span> sku_id <span class="operator">=</span> <span class="number">123</span>;   <span class="comment">-- DB侧</span></span><br></pre></td></tr></table></figure>
-<p>异常补偿：<br>若Redis预扣总量 &gt; DB实际扣减量：自动回补差额（如网络分区导致MQ消息丢失）。<br>若Redis预扣总量 &lt; DB实际扣减量：触发人工审核（可能发生超卖）。</p>
+<p>异常补偿：<br>
+若Redis预扣总量 &gt; DB实际扣减量：自动回补差额（如网络分区导致MQ消息丢失）。<br>
+若Redis预扣总量 &lt; DB实际扣减量：触发人工审核（可能发生超卖）。</p>
 <p>接着探讨下超卖的根本原因</p>
-<h4 id="1-MQ消息重复消费"><a href="#1-MQ消息重复消费" class="headerlink" title="1.MQ消息重复消费"></a>1.MQ消息重复消费</h4><p>消费者处理消息后redis打标失败，导致消息被重复消费<br>解决办法,数据库一致性校验</p>
+<h4 id="1-MQ消息重复消费">1.MQ消息重复消费</h4>
+<p>消费者处理消息后redis打标失败，导致消息被重复消费<br>
+解决办法,数据库一致性校验</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据库幂等检查（原子操作）</span></span><br><span class="line"><span class="meta">@Transactional</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">    <span class="comment">// 尝试插入处理记录（唯一约束）</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        jdbcTemplate.update(</span><br><span class="line">            <span class="string">&quot;INSERT INTO mq_processed (id, status) VALUES (?, &#x27;PROCESSING&#x27;)&quot;</span>,</span><br><span class="line">            msg.getId()</span><br><span class="line">        );</span><br><span class="line">    &#125; <span class="keyword">catch</span> (DuplicateKeyException e) &#123;</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 已处理</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 业务处理</span></span><br><span class="line">    reduceDBStock(msg.getSkuId(), msg.getAmount());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 更新状态</span></span><br><span class="line">    jdbcTemplate.update(</span><br><span class="line">        <span class="string">&quot;UPDATE mq_processed SET status=&#x27;SUCCESS&#x27; WHERE id=?&quot;</span>,</span><br><span class="line">        msg.getId()</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-异步消息丢失"><a href="#2-异步消息丢失" class="headerlink" title="2.异步消息丢失"></a>2.异步消息丢失</h4><p>Redis扣减成功后，MQ消息未成功发送（如网络闪断）。此时Redis库存已减，但DB未扣减，导致后续请求继续扣减Redis（实际DB库存已不足）<br>解决办法，本地事务表+定时补偿</p>
+<h4 id="2-异步消息丢失">2.异步消息丢失</h4>
+<p>Redis扣减成功后，MQ消息未成功发送（如网络闪断）。此时Redis库存已减，但DB未扣减，导致后续请求继续扣减Redis（实际DB库存已不足）<br>
+解决办法，本地事务表+定时补偿</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Redis扣减与消息发送原子化</span></span><br><span class="line"><span class="meta">@Transactional(rollbackFor = Exception.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">preReduceStock</span><span class="params">(String skuId, <span class="type">int</span> amount)</span> &#123;</span><br><span class="line">    <span class="comment">// 1. Redis扣减</span></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">success</span> <span class="operator">=</span> redisLuaReduce(skuId, amount);</span><br><span class="line">    <span class="keyword">if</span> (!success) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;库存不足&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 写入本地消息表</span></span><br><span class="line">    jdbcTemplate.update(</span><br><span class="line">        <span class="string">&quot;INSERT INTO local_message (id, sku_id, amount, status) VALUES (?, ?, ?, &#x27;UNSENT&#x27;)&quot;</span>,</span><br><span class="line">        UUID.randomUUID().toString(), skuId, amount</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定时任务扫描本地消息表并发送到MQ</span></span><br><span class="line"><span class="meta">@Scheduled(fixedDelay = 5000)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">compensateMessages</span><span class="params">()</span> &#123;</span><br><span class="line">    List&lt;Message&gt; messages = jdbcTemplate.query(</span><br><span class="line">        <span class="string">&quot;SELECT * FROM local_message WHERE status=&#x27;UNSENT&#x27;&quot;</span>,</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">MessageRowMapper</span>()</span><br><span class="line">    );</span><br><span class="line">    messages.forEach(msg -&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (sendToMQ(msg)) &#123;</span><br><span class="line">            jdbcTemplate.update(</span><br><span class="line">                <span class="string">&quot;UPDATE local_message SET status=&#x27;SENT&#x27; WHERE id=?&quot;</span>,</span><br><span class="line">                msg.getId()</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-对账延迟及补偿失效"><a href="#3-对账延迟及补偿失效" class="headerlink" title="3.对账延迟及补偿失效"></a>3.对账延迟及补偿失效</h4><p>定时对账任务每小时运行一次，但在此期间若Redis预扣量 &lt; DB实际量（如消息重复消费导致DB多扣），系统未能及时回补Redis库存，导致后续请求继续扣减已超卖的库存<br>解决方法，实时对账+动态限流</p>
+<h4 id="3-对账延迟及补偿失效">3.对账延迟及补偿失效</h4>
+<p>定时对账任务每小时运行一次，但在此期间若Redis预扣量 &lt; DB实际量（如消息重复消费导致DB多扣），系统未能及时回补Redis库存，导致后续请求继续扣减已超卖的库存<br>
+解决方法，实时对账+动态限流</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在每次扣减请求时触发实时对账</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">preReduceStock</span><span class="params">(String skuId, <span class="type">int</span> amount)</span> &#123;</span><br><span class="line">    <span class="comment">// Redis预扣</span></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">success</span> <span class="operator">=</span> redisLuaReduce(skuId, amount);</span><br><span class="line">    <span class="keyword">if</span> (!success) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;库存不足&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 实时检查DB库存</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">dbStock</span> <span class="operator">=</span> getDBStock(skuId);</span><br><span class="line">    <span class="keyword">if</span> (dbStock &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 触发报警并回补Redis</span></span><br><span class="line">        redis.incrBy(skuId, amount);</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;库存超卖，已回补&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案加固"><a href="#方案加固" class="headerlink" title="方案加固"></a>方案加固</h3><h4 id="1-链路追踪"><a href="#1-链路追踪" class="headerlink" title="1.链路追踪"></a>1.链路追踪</h4><p>在消息体中增加全链路追踪ID，记录Redis扣减、MQ发送、DB处理的各阶段状态。</p>
+<h3 id="方案加固">方案加固</h3>
+<h4 id="1-链路追踪">1.链路追踪</h4>
+<p>在消息体中增加全链路追踪ID，记录Redis扣减、MQ发送、DB处理的各阶段状态。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;messageId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;msg_123&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;traceId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;trace_456&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;skuId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;789&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;amount&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;steps&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span><span class="attr">&quot;stage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;redis_pre_reduce&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;time&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-02-19T20:00:00Z&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span><span class="attr">&quot;stage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;mq_sent&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;time&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-02-19T20:00:01Z&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-多级库存水位"><a href="#2-多级库存水位" class="headerlink" title="2.多级库存水位"></a>2.多级库存水位</h4><ul>
-<li>展示层库存：前端展示的库存 &#x3D; Redis预扣库存 - 已发送MQ但未完成DB扣减的库存。</li>
-<li>DB真实库存：实际可售库存<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getDisplayStock</span><span class="params">(String skuId)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">redisStock</span> <span class="operator">=</span> redis.get(skuId);</span><br><span class="line">    <span class="type">int</span> <span class="variable">mqPending</span> <span class="operator">=</span> mqService.getPendingCount(skuId); <span class="comment">// 统计MQ中未消费的消息数</span></span><br><span class="line">    <span class="keyword">return</span> Math.max(redisStock - mqPending, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<h4 id="2-多级库存水位">2.多级库存水位</h4>
+<ul>
+<li>展示层库存：前端展示的库存 = Redis预扣库存 - 已发送MQ但未完成DB扣减的库存。</li>
+<li>DB真实库存：实际可售库存</li>
 </ul>
-<h4 id="3-快速熔断"><a href="#3-快速熔断" class="headerlink" title="3.快速熔断"></a>3.快速熔断</h4><p>当DB实际库存 &lt; 0时，自动熔断，拒绝所有扣减请求。<br>当MQ堆积超过阈值（如10万条），触发降级，直接写数据库（借助Sentinel限流至1万QPS）</p>
-<h4 id="4-监控告警"><a href="#4-监控告警" class="headerlink" title="4.监控告警"></a>4.监控告警</h4><p>Drift &#x3D; |redis与扣减库存量 -（初始库存量-DB最终库存量）|<br>阈值：Drift &gt; 0时触发告警，人工介入修复</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getDisplayStock</span><span class="params">(String skuId)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">redisStock</span> <span class="operator">=</span> redis.get(skuId);</span><br><span class="line">    <span class="type">int</span> <span class="variable">mqPending</span> <span class="operator">=</span> mqService.getPendingCount(skuId); <span class="comment">// 统计MQ中未消费的消息数</span></span><br><span class="line">    <span class="keyword">return</span> Math.max(redisStock - mqPending, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-快速熔断">3.快速熔断</h4>
+<p>当DB实际库存 &lt; 0时，自动熔断，拒绝所有扣减请求。<br>
+当MQ堆积超过阈值（如10万条），触发降级，直接写数据库（借助Sentinel限流至1万QPS）</p>
+<h4 id="4-监控告警">4.监控告警</h4>
+<p>Drift = |redis与扣减库存量 -（初始库存量-DB最终库存量）|<br>
+阈值：Drift &gt; 0时触发告警，人工介入修复</p>
 <blockquote>
-<p>总结:即使采用Redis+MQ方案，超卖风险仍存在于消息可靠性、幂等性、对账延迟等环节。通过本地事务表、实时对账、<br>多级库存水位等组合策略，可将超卖概率降至0.001%以下，满足绝大多数电商场景需求</p>
+<p>总结:即使采用Redis+MQ方案，超卖风险仍存在于消息可靠性、幂等性、对账延迟等环节。通过本地事务表、实时对账、<br>
+多级库存水位等组合策略，可将超卖概率降至0.001%以下，满足绝大多数电商场景需求</p>
 </blockquote>
 
 </div>

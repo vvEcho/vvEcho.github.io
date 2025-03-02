@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2411,7 +2466,8 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="java有8大基本数据类型，为什么每个都要再弄个包装类，这样的意义在哪里？"><a href="#java有8大基本数据类型，为什么每个都要再弄个包装类，这样的意义在哪里？" class="headerlink" title="java有8大基本数据类型，为什么每个都要再弄个包装类，这样的意义在哪里？"></a>java有8大基本数据类型，为什么每个都要再弄个包装类，这样的意义在哪里？</h3><ol>
+	<h3 id="java有8大基本数据类型，为什么每个都要再弄个包装类，这样的意义在哪里？">java有8大基本数据类型，为什么每个都要再弄个包装类，这样的意义在哪里？</h3>
+<ol>
 <li>首先java是一门面向对象的语言，对象是java程序操作的基本单元，所以对象都会是封装类型的；</li>
 <li>基础数据类型，只能满足常见的计数场景，不能满足对这些基本对象的一些复杂操作，java提供对应的包装类里面封装了一些方法和属性，且包装类和基本数据类型可以自动拆装包，我们可以利用这一特点和包装类中的方法来更便捷的操作数据；</li>
 <li>还有举一个很常见的例子，我们一般定义实体中的属性，我们都会优先选择为包装类，包装类的默认值为null；例如Integer和int，integer可以为null，而int声明时就有了默认值0；这个时候就会有歧义，是代表实际的值是0还是没有值是0？</li>

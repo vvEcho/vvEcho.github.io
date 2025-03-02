@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,13 +2423,18 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/springboot-annotation.html">
+			<a href="/2024/0120/nacos-konw.html">
 				<h2 class="index-title">
-					02 springBoot常用注解？
+					03.3 nacos注册中心
 				</h2>
 				<div class="index-brief">
-					@SpringBootApplication spring启动类上的注解（实际是由三个注解组成：@SpringBootConfiguration @EnableAutoConfiguration @ComponentScan）
-@EnableAutoConfiguration 自动配置类@Sprin
+					1.nacos简介
+Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
+Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
+
+
+服务发现和注册：
+Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时
 					...
 				</div>
 			</a>
@@ -2385,7 +2445,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-springboot/">02 springboot</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2395,12 +2455,16 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/interceptor-filter-different.html">
+			<a href="/2024/0120/dubbo-rpc-net.html">
 				<h2 class="index-title">
-					03 拦截器和过滤器的区别
+					07 dubbo微服务间怎么通信？
 				</h2>
 				<div class="index-brief">
-					
+					dubbo的特定
+dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
+使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
+dubbo的服务注册与发现的流程
+容器启动后，提供方
 					...
 				</div>
 			</a>
@@ -2411,7 +2475,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2421,13 +2485,14 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/solve-spring-cycle-depency.html">
+			<a href="/2024/0120/springcloud-hystrix.html">
 				<h2 class="index-title">
-					12 spring怎么解决循环依赖的？
+					05.1 hystrix服务熔断和降级
 				</h2>
 				<div class="index-brief">
-					为什么会出现循环依赖其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
-这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被实
+					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
+Hystrix的主要原理是用了断路器模式和线程池隔离技术；
+通过断路器的故障监控，向服务调用方返回一个符合预
 					...
 				</div>
 			</a>
@@ -2438,7 +2503,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2448,14 +2513,20 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/auto-assemble-principle.html">
+			<a href="/2024/0120/springcloud-used-component.html">
 				<h2 class="index-title">
-					01 自动装配原理？
+					01 springCloud中组件常用的有哪些？
 				</h2>
 				<div class="index-brief">
-					springboot的自动装配其实是他约定大于配置这一核心思想的具体体现
-例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；
-springboot的自动装配是依赖于java的s
+					Zuul、Gateway-网关
+eureka-注册中心
+config-配置中心
+Ribbon-负载均衡
+Feign-服务调用
+Hystrix或Resilience4j-熔断器
+security-安全权限组件
+shiro-权限组件
+
 					...
 				</div>
 			</a>
@@ -2466,7 +2537,7 @@ springboot的自动装配是依赖于java的s
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2476,12 +2547,14 @@ springboot的自动装配是依赖于java的s
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/aop-jdk-cglib.html">
+			<a href="/2024/0120/springcloud-eureka.html">
 				<h2 class="index-title">
-					10 aop的实现默认是使用jdk动态代理还是cglib
+					03.1 Eureka注册中心
 				</h2>
 				<div class="index-brief">
-					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
+					1.服务端如何保存客户端注册信息?
+客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.
+客户端通过Jersey框架，将自己的注册
 					...
 				</div>
 			</a>
@@ -2492,7 +2565,7 @@ springboot的自动装配是依赖于java的s
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2504,7 +2577,7 @@ springboot的自动装配是依赖于java的s
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/25/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/24/">24</a><a class="page-number" href="/archives/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/archives/page/27/">27</a><a class="page-number" href="/archives/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/36/">36</a><a class="extend next" rel="next" href="/archives/page/27/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/25/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/24/">24</a><a class="page-number" href="/archives/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/archives/page/27/">27</a><a class="page-number" href="/archives/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/37/">37</a><a class="extend next" rel="next" href="/archives/page/27/">&gt;</a>
 		
 	</div>
 </div>

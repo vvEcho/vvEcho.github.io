@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2411,14 +2466,34 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="1-Zookeeper的服务注册与发现"><a href="#1-Zookeeper的服务注册与发现" class="headerlink" title="1.Zookeeper的服务注册与发现"></a>1.Zookeeper的服务注册与发现</h4><p>Zookeeper的服务注册与发现,主要应用的是Zookeeper的Znode数据模型和Watcher机制</p>
+	<h4 id="1-Zookeeper的服务注册与发现">1.Zookeeper的服务注册与发现</h4>
+<p>Zookeeper的服务注册与发现,主要应用的是Zookeeper的Znode数据模型和Watcher机制</p>
 <p>服务注册：服务提供者会向Zookeeper服务端注册服务信息，即创建一个服务节点，并在节点上存储服务的相关数据（如服务提供者的ip地址、端口等):</p>
 <p>服务发现：服务消费者会根据本身依赖的服务信息，向Zookeeper服务端获取注册的服务信息并设置Watch，获取到注册的服务信息之后将服务提供者信息缓存在本地，调用服务时直接根据从Zookeeper注册中心获取到的服务注册信息调用服务。</p>
 <p>服务通知：当服务提供者因为某种原因宕机或不提供服务之后，Zookeeper服务注册中心的对应服务节点会被删除，因为服务消费者在获取服务信息的时候在对应节点上设置了Watch，因此节点删除之后会触发对应的Watcher，Zookeeper注册中心会异步向服务所关联的所有服务消费者发出节点删除的通知，服务消费者根据收到的通知更新缓存的服务列表。</p>
-<h4 id="2-Zookeeper的Watch机制"><a href="#2-Zookeeper的Watch机制" class="headerlink" title="2.Zookeeper的Watch机制"></a>2.Zookeeper的Watch机制</h4><p>我们可以将Watch理解成是一个和指定Znode所绑定的监听器，当这个Znode发生变化，也就是在这个Znode上进行了数据的写操作（create、delete、setData），这个监听器监听到这些写操作之后会异步向请求Watch的客户端发送通知。</p>
+<h4 id="2-Zookeeper的Watch机制">2.Zookeeper的Watch机制</h4>
+<p>我们可以将Watch理解成是一个和指定Znode所绑定的监听器，当这个Znode发生变化，也就是在这个Znode上进行了数据的写操作（create、delete、setData），这个监听器监听到这些写操作之后会异步向请求Watch的客户端发送通知。</p>
 <p>具体交互流程大致如下：</p>
 <p>客户端调用getData方法向服务器获取某个Znode节点的数据时，设置watch为true。服务端接到请求后，返回节点的数据，并在维护的WatchTable中插入被Watch的Znode路径以及Watcher（watch该Znode的客户端）；</p>
 <p>当被Watch的Znode被删除或者更新之后，Zookeeper服务器会查找Watch Table，找到在Znode上对应的所有Watcher，异步通知对应的客户端，并且删除Watch Table中对应的Key：Value</p>
+<h4 id="3-zookeeper的ZAB协议">3.zookeeper的ZAB协议</h4>
+<p>ZAB 协议是专门为 Zookeeper 设计的，用于实现分布式系统中的高可用性和一致性。它主要包括两个阶段：Leader 选举和消息广播。</p>
+<p>Leader 选举：</p>
+<p>在集群启动或 Leader 失效时，所有节点会进行 Leader 选举。<br>
+通过投票机制，选出一个新的 Leader。</p>
+<p>消息广播：</p>
+<p>Leader 负责处理所有的写请求，并将这些请求广播给所有的 Follower。<br>
+Follower 接收到消息后，进行确认（ack）。<br>
+当 Leader 收到多数派 Follower 的确认后，提交该请求，并通知所有 Follower 提交</p>
+<h4 id="4-Zookeeper中的领导者选举的流程是怎样的">4.Zookeeper中的领导者选举的流程是怎样的?</h4>
+<p>对于Zookeeper集群，整个集群需要从集群节点中选出一个节点作为Leader，大体流程如下:</p>
+<p>1.集群中各个节点首先都是观望状态(LOOKING)，一开始都会投票给自己，认为自己比较适合作为leader</p>
+<p>2.然后相互交互投票，每个节点会收到其他节点发过来的选票，然后pk，先比较zxid，zxid大者获胜，zxid如果相等则比较myid，myid大者获胜；（zxid-文件id,myid-服务器id）</p>
+<p>3.一个节点收到其他节点发过来的选票，，经过PK后，如果PK输了，此节点就会投给zxid或myid更大的节点，并将选票放入自己的投票箱中，并将新的选票发送给其他节点</p>
+<p>4.如果pk是平局则将接收到的选票放入自己的投票箱中</p>
+<p>5.如果pk赢了，则忽略所接收到的选票</p>
+<p>6.当然一个节点将一张选票放入到自己的投票箱之后，就会从投票箱中统计票数，看是否超过一半的节点都和自己所投的节点是一样的，如果超过半数，那么则认为当前自己所投的节点是leader</p>
+<p>7.集群中每个节点都会经过同样的流程，pk的规则也是一样的，一旦改票就会告诉给其他服务器，所以最终各个节点中的投票箱中的选票也将是一样的，所以各个节点最终选出来的leader也是一样的，这样集群的leader就选举出来了</p>
 
 </div>
 

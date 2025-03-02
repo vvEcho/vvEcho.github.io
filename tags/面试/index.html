@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2374,9 +2429,12 @@
 				</h2>
 				<div class="index-brief">
 					
-链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
 
-开放寻址法（Ope
+链地址法（Separate Chaining）：
+当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
+
+
+开放寻址法（
 					...
 				</div>
 			</a>
@@ -2402,9 +2460,12 @@
 					12 BIO,NIO,AIO的区别
 				</h2>
 				<div class="index-brief">
-					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
+					BIO、NIO、AIO 是Java中处理I/O操作的不同方式，它们的区别如下：
 
-BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
+BIO（Blocking I/O）：阻塞式I/O，即在执行I/O操作时，当前线程会被阻塞，直到I/O操作完成。这种方式适用于简单的I/O操作，但当有大量的并发请求时，性能较差。
+
+核心机制：
+每个连接对应一个独立线程，
 					...
 				</div>
 			</a>
@@ -2456,8 +2517,12 @@ BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时�
 					02 项目难点
 				</h2>
 				<div class="index-brief">
-					1.项目中遇到的技术难点？mq消费满导致拥堵多线程环境下大数据量导致内存泄漏连接池的配置导致查询缓慢
-2.说一个你做项目为止最难忘的一件事？最难忘的事，我想应该是上线出问题吧；我记得在平安产品线智慧薪酬项目时，当时每个季度末27号就要跑财务核算，当时是三个定时任务，并且这三个定时任务都是有先后顺序的
+					1.项目中遇到的技术难点？
+mq消费满导致拥堵
+多线程环境下大数据量导致内存泄漏
+连接池的配置导致查询缓慢
+2.说一个你做项目为止最难忘的一件事？
+最难忘的事，我想应该是上线出问题吧；我记得在平安产品线智慧薪酬项目时，当时每个季度末27号就要跑财务核算，当时是三个定时任务，并且这三个定时任务都是有先
 					...
 				</div>
 			</a>
@@ -2478,14 +2543,18 @@ BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
+			<a href="/2024/0120/about-linux.html">
 				<h2 class="index-title">
-					01 docker面试题
+					01 linux面试题
 				</h2>
 				<div class="index-brief">
-					如何构建dockerfile
-将jar包上传到服务器
-执行下述命令构建dockerfile1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 构建 
+					
+linux常用查看日志命令？
+cd到对应的日志目录文件
+查看实时日志：tail -f xxx.log
+根据关键字查询：cat -n xxx.log|grep ‘occurs error’
+
+123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat 
 					...
 				</div>
 			</a>
@@ -2496,7 +2565,7 @@ BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/35-docker/">35 docker</a>
+                                        <a href="/categories/34-linux/">34 linux</a>
 										
                                     </span>
                                 

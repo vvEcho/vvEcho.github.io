@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,43 +2423,18 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
-				<h2 class="index-title">
-					01 docker面试题
-				</h2>
-				<div class="index-brief">
-					如何构建dockerfile
-将jar包上传到服务器
-执行下述命令构建dockerfile1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 构建 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/35-docker/">35 docker</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
 			<a href="/2024/0120/about-linux.html">
 				<h2 class="index-title">
 					01 linux面试题
 				</h2>
 				<div class="index-brief">
 					
-linux常用查看日志命令？cd到对应的日志目录文件查看实时日志：tail -f xxx.log根据关键字查询：cat -n xxx.log|grep ‘occurs error’
+linux常用查看日志命令？
+cd到对应的日志目录文件
+查看实时日志：tail -f xxx.log
+根据关键字查询：cat -n xxx.log|grep ‘occurs error’
 
-123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat err
+123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat 
 					...
 				</div>
 			</a>
@@ -2416,6 +2446,37 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/34-linux/">34 linux</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/undefined.html">
+				<h2 class="index-title">
+					01 docker面试题
+				</h2>
+				<div class="index-brief">
+					如何构建dockerfile
+
+将jar包上传到服务器
+执行下述命令构建dockerfile
+
+1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/35-docker/">35 docker</a>
 										
                                     </span>
                                 
@@ -2456,7 +2517,8 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 					01 三次握手及四次挥手
 				</h2>
 				<div class="index-brief">
-					1.http通信为甚么要三次握手，四次挥手；当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认报
+					1.http通信为甚么要三次握手，四次挥手；
+当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认
 					...
 				</div>
 			</a>
@@ -2482,8 +2544,13 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 					01.设计模式面试题
 				</h2>
 				<div class="index-brief">
-					1.mybaits 用了哪些设计模式？2.spring 用了哪些设计模式？3.单例模式有哪几种？懒汉，饿汉式，线程安全的懒汉式，匿名内部类
-4.说下你对责任链模式的理解及应用场景？5.说说代理模式
+					1.mybaits 用了哪些设计模式？
+2.spring 用了哪些设计模式？
+3.单例模式有哪几种？
+懒汉，饿汉式，线程安全的懒汉式，匿名内部类
+4.说下你对责任链模式的理解及应用场景？
+5.说说代理模式
+
 					...
 				</div>
 			</a>

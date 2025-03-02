@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,15 +2423,17 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/about-linux.html">
+			<a href="/2024/0120/undefined.html">
 				<h2 class="index-title">
-					01 linux面试题
+					01 docker面试题
 				</h2>
 				<div class="index-brief">
-					
-linux常用查看日志命令？cd到对应的日志目录文件查看实时日志：tail -f xxx.log根据关键字查询：cat -n xxx.log|grep ‘occurs error’
+					如何构建dockerfile
 
-123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat err
+将jar包上传到服务器
+执行下述命令构建dockerfile
+
+1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 
 					...
 				</div>
 			</a>
@@ -2387,7 +2444,7 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/34-linux/">34 linux</a>
+                                        <a href="/categories/35-docker/">35 docker</a>
 										
                                     </span>
                                 
@@ -2428,7 +2485,8 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 					01 三次握手及四次挥手
 				</h2>
 				<div class="index-brief">
-					1.http通信为甚么要三次握手，四次挥手；当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认报
+					1.http通信为甚么要三次握手，四次挥手；
+当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认
 					...
 				</div>
 			</a>
@@ -2454,7 +2512,11 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 					11 简述一个类的创建过程？
 				</h2>
 				<div class="index-brief">
-					1.首先jvm虚拟机在方法区加载检查这个类是否被加载了？如果已经被加载了，直接就创建对象2.没被加载过，就开始用类加载器加载类信息，加载的过程中用到的是双亲委派机制3.然后，加载了类信息后，虚拟机开始为对象分配内存4.内存分配完后，虚拟机需要将分配好的内存的空间初始化为零，不包括对象头5.初始化类，
+					1.首先jvm虚拟机在方法区加载检查这个类是否被加载了？如果已经被加载了，直接就创建对象
+2.没被加载过，就开始用类加载器加载类信息，加载的过程中用到的是双亲委派机制
+3.然后，加载了类信息后，虚拟机开始为对象分配内存
+4.内存分配完后，虚拟机需要将分配好的内存的空间初始化为零，不包括对象头
+5.初
 					...
 				</div>
 			</a>
@@ -2484,9 +2546,14 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 定义
 
 
-QPS（Queries Per Second）：表示系统每秒处理的查询请求数。通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
 
-TPS（Transactions Per Second）：表示系统
+QPS（Queries Per Second）：
+表示系统每秒处理的查询请求数。
+通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。
+例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
+
+
+TPS（Transactions Per Second）
 					...
 				</div>
 			</a>

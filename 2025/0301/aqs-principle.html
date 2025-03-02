@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2406,11 +2461,13 @@
 	<p>AQS就是AbstractQueuedSynchronizer抽象类，AQS其实就是JUC包下的一个基类，JUC下的很多内容都是基于AQS实现了部分功能，比如ReentrantLock，ThreadPoolExecutor，阻塞队列，CountDownLatch，Semaphore，CyclicBarrier等等都是基于AQS实现。</p>
 <p>首先AQS中提供了一个由volatile修饰，并且采用CAS方式修改的int类型的state变量。</p>
 <p>其次AQS中维护了一个双向链表，有head，有tail，并且每个节点都是Node对象</p>
-<h4 id="AQS中为什么要有一个虚拟的head节点"><a href="#AQS中为什么要有一个虚拟的head节点" class="headerlink" title="AQS中为什么要有一个虚拟的head节点"></a>AQS中为什么要有一个虚拟的head节点</h4><p>因为AQS提供了ReentrantLock的基本实现，而在ReentrantLock释放锁资源时，需要去考虑是否需要执行unparkSuccessor方法，去唤醒后继节点。</p>
+<h4 id="AQS中为什么要有一个虚拟的head节点">AQS中为什么要有一个虚拟的head节点</h4>
+<p>因为AQS提供了ReentrantLock的基本实现，而在ReentrantLock释放锁资源时，需要去考虑是否需要执行unparkSuccessor方法，去唤醒后继节点。</p>
 <p>因为Node中存在waitStatus的状态，默认情况下状态为0，如果当前节点的后继节点线程挂起了，那么就将当前节点的状态设置为-1。这个-1状态的出现是为了避免重复唤醒或者释放资源的问题。</p>
 <p>因为AQS中排队的Node中的线程如果挂起了，是无法自动唤醒的。需要释放锁或者释放资源后，再被释放的线程去唤醒挂起的线程。 因为唤醒节点需要从整个AQS双向链表中找到离head最近的有效节点去唤醒。而这个找离head最近的Node可能需要遍历整个双向链表。如果AQS中，没有挂起的线程，代表不需要去遍历AQS双向链表去找离head最近的有效节点。</p>
 <p>为了避免出现不必要的循环链表操作，提供了一个-1的状态。如果只有一个Node进入到AQS中排队，所以发现如果是第一个Node进来，他必须先初始化一个虚拟的head节点作为头，来监控后继节点中是否有挂起的线程。</p>
-<h4 id="AQS中为什么选择使用双向链表，而不是单向链表"><a href="#AQS中为什么选择使用双向链表，而不是单向链表" class="headerlink" title="AQS中为什么选择使用双向链表，而不是单向链表"></a>AQS中为什么选择使用双向链表，而不是单向链表</h4><p>首先AQS中一般是存放没有获取到资源的Node，而在竞争锁资源时，ReentrantLock提供了一个方法，lockInterruptibly方法，也就是线程在竞争锁资源的排队途中，允许中断。</p>
+<h4 id="AQS中为什么选择使用双向链表，而不是单向链表">AQS中为什么选择使用双向链表，而不是单向链表</h4>
+<p>首先AQS中一般是存放没有获取到资源的Node，而在竞争锁资源时，ReentrantLock提供了一个方法，lockInterruptibly方法，也就是线程在竞争锁资源的排队途中，允许中断。</p>
 <p>中断后会执行cancelAcquire方法，从而将当前节点状态置为1，并且从AQS队列中移除掉。如果采用单向链表，当前节点只能放到后继或者前继节点，这样是无法将前继节点指向后继节点的，需要遍历整个AQS从头或者从尾去找。单向链表在移除AQS中排队的Node时，成本很高。</p>
 <p>当前在唤醒后继节点时，如果是单向链表也会出问题，因为节点插入方式的问题，导致只能单向的去找有效节点去唤醒，从而造成很多次无效的遍历操作，如果是双向链表就可以解决这个问题</p>
 

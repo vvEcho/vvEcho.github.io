@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2403,8 +2458,15 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>1.用户发送请求至前端控制器DispatcherServlet。<br>2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.<br>3.DispatcherServlet调用HandlerAdapter处理器适配器,HandlerAdapter经过适配调用具体的处理器(Controller，也叫后端控制器)<br>4.Controller处理完后返回对应的视图ModelAndview.<br>5.HandlerAdapter视图ModelAndView返回给前端控制器，再由前端控制器返回给视图解析器ViewReslover<br>6.ViewReslover解析后返回具体View,DispatcherServlet 根据View进行渲染视图(即将模型数据填充至视图中)。<br>7.DispatcherServlet 响应用户。</p>
-<p>流程图如下：<br>请求-》DispatcherServlet-》HandlerMapping-》HandlerAdapter-》Controller-》ViewResolver-》View-》DispatcherServlet-》Response</p>
+	<p>1.用户发送请求至前端控制器DispatcherServlet。<br>
+2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.<br>
+3.DispatcherServlet调用HandlerAdapter处理器适配器,HandlerAdapter经过适配调用具体的处理器(Controller，也叫后端控制器)<br>
+4.Controller处理完后返回对应的视图ModelAndview.<br>
+5.HandlerAdapter视图ModelAndView返回给前端控制器，再由前端控制器返回给视图解析器ViewReslover<br>
+6.ViewReslover解析后返回具体View,DispatcherServlet 根据View进行渲染视图(即将模型数据填充至视图中)。<br>
+7.DispatcherServlet 响应用户。</p>
+<p>流程图如下：<br>
+请求-》DispatcherServlet-》HandlerMapping-》HandlerAdapter-》Controller-》ViewResolver-》View-》DispatcherServlet-》Response</p>
 
 </div>
 

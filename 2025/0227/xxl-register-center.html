@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2411,8 +2466,24 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="执行器的注册流程"><a href="#执行器的注册流程" class="headerlink" title="执行器的注册流程"></a>执行器的注册流程</h4><p>(1) 启动时主动注册<br>触发时机：执行器启动时，通过 XxlJobExecutor 初始化 Netty 服务端，并调用 startRegistry 方法向调度中心发送注册请求。<br>注册内容：<br>执行器名称（appname）<br>执行器地址（address，格式为 IP:PORT）<br>注册类型（固定为 EXECUTOR。<br>存储方式：调度中心将注册信息写入数据库表 xxl_job_registry，记录执行器的地址和心跳时间。<br>(2) 周期性心跳维护<br>心跳机制：执行器启动后，每 30 秒向调度中心发送一次注册请求（兼具心跳功能），调度中心更新 xxl_job_registry 中的 update_time 字段，标记执行器活跃状态 3 6。<br>失效清理：调度中心的 JobRegistryMonitorHelper 线程每30秒扫描xxl_job_registry，清理超过90秒（3倍心跳间隔）未更新的记录，视为“死亡节点”。</p>
-<h4 id="调度中心的服务发现"><a href="#调度中心的服务发现" class="headerlink" title="调度中心的服务发现"></a>调度中心的服务发现</h4><p>(1) 动态更新执行器列表<br>注册表同步：调度中心通过xxl_job_group表维护可用执行器列表。JobRegistryMonitorHelper线程定期从xxl_job_registry中提取活跃执行器地址，合并为逗号分隔的字符串（如 “192.168.1.1:9999,192.168.1.2:9999”），更新到 xxl_job_group 的 address_list 字段。<br>路由策略支持：任务触发时，调度中心根据 xxl_job_group中的地址列表和配置的路由策略（如轮询、随机、故障转移）选择目标执行器。<br>(2) 高可用保障<br>注册重试：若执行器首次注册失败，会持续重试直至成功，避免因网络抖动导致服务不可用。<br>容错机制：调度中心通过数据库事务保证注册操作的原子性，防止脏数据；执行器断线后，调度中心自动剔除无效地址，确保任务仅路由至健康节点</p>
+	<h4 id="执行器的注册流程">执行器的注册流程</h4>
+<p>(1) 启动时主动注册<br>
+触发时机：执行器启动时，通过 XxlJobExecutor 初始化 Netty 服务端，并调用 startRegistry 方法向调度中心发送注册请求。<br>
+注册内容：<br>
+执行器名称（appname）<br>
+执行器地址（address，格式为 IP:PORT）<br>
+注册类型（固定为 EXECUTOR。<br>
+存储方式：调度中心将注册信息写入数据库表 xxl_job_registry，记录执行器的地址和心跳时间。<br>
+(2) 周期性心跳维护<br>
+心跳机制：执行器启动后，每 30 秒向调度中心发送一次注册请求（兼具心跳功能），调度中心更新 xxl_job_registry 中的 update_time 字段，标记执行器活跃状态 3 6。<br>
+失效清理：调度中心的 JobRegistryMonitorHelper 线程每30秒扫描xxl_job_registry，清理超过90秒（3倍心跳间隔）未更新的记录，视为“死亡节点”。</p>
+<h4 id="调度中心的服务发现">调度中心的服务发现</h4>
+<p>(1) 动态更新执行器列表<br>
+注册表同步：调度中心通过xxl_job_group表维护可用执行器列表。JobRegistryMonitorHelper线程定期从xxl_job_registry中提取活跃执行器地址，合并为逗号分隔的字符串（如 “192.168.1.1:9999,192.168.1.2:9999”），更新到 xxl_job_group 的 address_list 字段。<br>
+路由策略支持：任务触发时，调度中心根据 xxl_job_group中的地址列表和配置的路由策略（如轮询、随机、故障转移）选择目标执行器。<br>
+(2) 高可用保障<br>
+注册重试：若执行器首次注册失败，会持续重试直至成功，避免因网络抖动导致服务不可用。<br>
+容错机制：调度中心通过数据库事务保证注册操作的原子性，防止脏数据；执行器断线后，调度中心自动剔除无效地址，确保任务仅路由至健康节点</p>
 
 </div>
 

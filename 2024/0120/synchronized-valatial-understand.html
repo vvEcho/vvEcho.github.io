@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2411,15 +2466,20 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥就内存的可见性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；<br>synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：</p>
+	<p>synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥就内存的可见性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；<br>
+synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：</p>
 <ul>
 <li>①获得互斥锁</li>
 <li>②从主内存拷贝变量的最新副本到工作内存</li>
 <li>③执行代码</li>
 <li>④将更改后的共享变量的值刷新到主内存</li>
-<li>⑤释放互斥锁<br>另外Synchronized允许一个线程针对同一把锁连续加锁多次（可重入），所以不会出现死锁这样的情况。<br>这是因为：可重入锁的内部维护了 “线程持有者” 和 “计数器” 这两个属性。<br>如果某个线程加锁的时候, 发现锁已经被人占用, 但是恰好占用的正是自己, 那么仍然可以继续获取到锁, 并让计数器自增。解锁的时候计数器递减为 0 的时候, 才真正释放锁 (才能被别的线程获取到)</li>
+<li>⑤释放互斥锁<br>
+另外Synchronized允许一个线程针对同一把锁连续加锁多次（可重入），所以不会出现死锁这样的情况。<br>
+这是因为：可重入锁的内部维护了 “线程持有者” 和 “计数器” 这两个属性。<br>
+如果某个线程加锁的时候, 发现锁已经被人占用, 但是恰好占用的正是自己, 那么仍然可以继续获取到锁, 并让计数器自增。解锁的时候计数器递减为 0 的时候, 才真正释放锁 (才能被别的线程获取到)</li>
 </ul>
-<p>在JMM中，每个线程都有自己独立的工作内存，即一组寄存器&#x2F;cache高速缓冲区；在CPU和内存交互的时候，会先把内存中内容拷贝到工作内存，操作完之后在写回内存，这个过程非常容易出现数据不一致的情况，在编译器开启优化时特别严重<br>volatile 关键字用来修饰共享变量，保证共享变量的可见性，底层是在共享变量的两边增加内存屏障，禁止了指令重排；</p>
+<p>在JMM中，每个线程都有自己独立的工作内存，即一组寄存器/cache高速缓冲区；在CPU和内存交互的时候，会先把内存中内容拷贝到工作内存，操作完之后在写回内存，这个过程非常容易出现数据不一致的情况，在编译器开启优化时特别严重<br>
+volatile 关键字用来修饰共享变量，保证共享变量的可见性，底层是在共享变量的两边增加内存屏障，禁止了指令重排；</p>
 <ul>
 <li>① volatile能够保证内存的可见性，但是不能保证原子性。synchronized既能保证内存可见性，又能保证原子性。这是它们最本质的区别！</li>
 <li>② volatile仅能使用在 变量 级别；synchronized则可以使用在变量、方法、和类级别的。</li>

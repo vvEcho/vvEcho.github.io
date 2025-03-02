@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2413,9 +2468,15 @@
 <div id="article-content">
 	<p>java1.7相比较java1.8，concurrentHashMap和hashMap都有一定的改动，其中concurrentHashMap在1.8版本后就不在基于Segement分段锁的实现了，并且锁的粒度改为了链表的head节点，锁的粒度更细效率更高；而hashMap在1.8版本后由于存储结构加了红黑树，以前是数组加链表，现在是数组加链表加红黑树，针对原有存储结构多线程情况下容易形成死循环链表的情况，1.8改用了尾插法避免了此情况；</p>
 <blockquote>
-<p>hashMap扩容过程如下：<br>当链表节点的长度大于8，且数组的长度小于64时，对数组扩容；<br>当链表节点长度大于8，数组长度大于64时，链表转换为红黑树；<br>扩容的过程是，数组放在原有的索引处，链表放在原有的索引加上原有的数组长度的地方；<br>扩容后如果树节点小于6，就将树还原成链表；<br>而concurrentHashMap和hashMap扩容类似，只是对应的方法加了锁，保证了线程安全；</p>
+<p>hashMap扩容过程如下：<br>
+当链表节点的长度大于8，且数组的长度小于64时，对数组扩容；<br>
+当链表节点长度大于8，数组长度大于64时，链表转换为红黑树；<br>
+扩容的过程是，数组放在原有的索引处，链表放在原有的索引加上原有的数组长度的地方；<br>
+扩容后如果树节点小于6，就将树还原成链表；<br>
+而concurrentHashMap和hashMap扩容类似，只是对应的方法加了锁，保证了线程安全；</p>
 </blockquote>
-<h3 id="负载因子为啥是0-75"><a href="#负载因子为啥是0-75" class="headerlink" title="负载因子为啥是0.75"></a>负载因子为啥是0.75</h3><p>基于时间和空间成本的考虑设定为0.75；假设配置为1，虽然空间利用率提高了但是Hash碰撞的概率就高了，我们知道hash冲突后；相同hash值的元素会以链表的形式加到链表的尾部，而链表查询效率是很低的</p>
+<h3 id="负载因子为啥是0-75">负载因子为啥是0.75</h3>
+<p>基于时间和空间成本的考虑设定为0.75；假设配置为1，虽然空间利用率提高了但是Hash碰撞的概率就高了，我们知道hash冲突后；相同hash值的元素会以链表的形式加到链表的尾部，而链表查询效率是很低的</p>
 <p>假设配置为0.5那么至少就会有一半的空间浪费，</p>
 
 </div>

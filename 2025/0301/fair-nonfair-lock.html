@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2405,15 +2460,19 @@
 <div id="article-content">
 	<p>Java中提供的synchronized只能是非公平锁。</p>
 <p>Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和非公平锁</p>
-<h4 id="公平锁"><a href="#公平锁" class="headerlink" title="公平锁"></a>公平锁</h4><p>公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。</p>
-<p>优点：每个线程等待一段时间后，都有执行的机会，不至于出现某个线程饿死在队列中。<br>缺点：是队列里面除了第一个线程，其他的线程都会阻塞，cpu 唤醒阻塞线程的开销会很大</p>
-<h4 id="非公平锁"><a href="#非公平锁" class="headerlink" title="非公平锁"></a>非公平锁</h4><p>多个线程（不管是不是队列首位）去获取锁时会尝试直接获取锁，能获取到就执行任务，否则乖乖排队。代表实现是CAS比较并交换;</p>
-<p>优点：获取锁更加灵活、吞吐量大、减少CPU唤醒线程的开销。<br>缺点：会出现某些线程永远获取不到锁，饿死在队列中，最终由 JVM 回收</p>
+<h4 id="公平锁">公平锁</h4>
+<p>公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。</p>
+<p>优点：每个线程等待一段时间后，都有执行的机会，不至于出现某个线程饿死在队列中。<br>
+缺点：是队列里面除了第一个线程，其他的线程都会阻塞，cpu 唤醒阻塞线程的开销会很大</p>
+<h4 id="非公平锁">非公平锁</h4>
+<p>多个线程（不管是不是队列首位）去获取锁时会尝试直接获取锁，能获取到就执行任务，否则乖乖排队。代表实现是CAS比较并交换;</p>
+<p>优点：获取锁更加灵活、吞吐量大、减少CPU唤醒线程的开销。<br>
+缺点：会出现某些线程永远获取不到锁，饿死在队列中，最终由 JVM 回收</p>
 <blockquote>
-<p>注意锁的获取有三个条件：看状态state是否是0，当前线程是否为null; 是否排在队首<br><strong>公平锁跟非公平锁加锁的逻辑差不多，唯一就是公平加锁的 if 判断中多了 hasQueuedPredecessors 是否队首</strong></p>
+<p>注意锁的获取有三个条件：看状态state是否是0，当前线程是否为null; 是否排在队首<br>
+<strong>公平锁跟非公平锁加锁的逻辑差不多，唯一就是公平加锁的 if 判断中多了 hasQueuedPredecessors 是否队首</strong></p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">final</span> <span class="type">boolean</span> <span class="title function_">tryAcquire</span><span class="params">(<span class="type">int</span> acquires)</span> &#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="type">Thread</span> <span class="variable">current</span> <span class="operator">=</span> Thread.currentThread();</span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> getState();</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 多了 hasQueuedPredecessors 是否队首判断</span></span><br><span class="line">            <span class="keyword">if</span> (!hasQueuedPredecessors() &amp;&amp;</span><br><span class="line">                compareAndSetState(<span class="number">0</span>, acquires)) &#123;</span><br><span class="line">                setExclusiveOwnerThread(current);</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (current == getExclusiveOwnerThread()) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">nextc</span> <span class="operator">=</span> c + acquires;</span><br><span class="line">            <span class="keyword">if</span> (nextc &lt; <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Maximum lock count exceeded&quot;</span>);</span><br><span class="line">            setState(nextc);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
 <p>推荐博客：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1762251">公平锁和非公平锁</a></p>
 
 </div>

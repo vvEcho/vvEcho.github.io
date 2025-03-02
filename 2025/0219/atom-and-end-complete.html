@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2422,24 +2477,36 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息-本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题"><a href="#在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息-本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题" class="headerlink" title="在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题"></a>在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题</h4><p>1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？<br>2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布式锁方案不同的实现方式。<br>3.当遇到网络分区（CAP中的P）时，该方案可能面临什么风险？如何通过设计补偿机制确保数据最终一致？</p>
+	<h4 id="在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息-本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题">在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题</h4>
+<p>1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？<br>
+2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布式锁方案不同的实现方式。<br>
+3.当遇到网络分区（CAP中的P）时，该方案可能面临什么风险？如何通过设计补偿机制确保数据最终一致？</p>
 <ol>
-<li><p>消息生产端的原子性保障<br>订单创建与消息发送必须保持原子性，避免出现订单创建成功但消息未发送的情况</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 订单服务本地事务表方案</span></span><br><span class="line"><span class="meta">@Transactional</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createOrder</span><span class="params">(OrderDTO order)</span> &#123;</span><br><span class="line">    <span class="comment">// 1. 写入订单表</span></span><br><span class="line">    orderMapper.insert(order);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 写入本地消息表（原子操作）</span></span><br><span class="line">    <span class="type">LocalMessage</span> <span class="variable">message</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LocalMessage</span>();</span><br><span class="line">    message.setBizId(order.getOrderNo());</span><br><span class="line">    message.setContent(JSON.toJSONString(order.getItems()));</span><br><span class="line">    message.setStatus(MessageStatus.UNSENT);</span><br><span class="line">    localMessageMapper.insert(message);  <span class="comment">// 与订单表同库事务</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 异步发送消息（非事务内）</span></span><br><span class="line">    CompletableFuture.runAsync(() -&gt; &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            jcqTemplate.send(<span class="string">&quot;stock_reduce_topic&quot;</span>, message.getContent());</span><br><span class="line">            localMessageMapper.updateStatus(message.getId(), MessageStatus.SENT);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.error(<span class="string">&quot;消息发送失败&quot;</span>, e);</span><br><span class="line">            <span class="comment">// 触发补偿任务</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>关键设计：<br>事务边界：订单创建与本地消息写入在同一个数据库事务中，确保原子性。<br>异步发送：消息发送与业务事务解耦，避免因MQ不可用导致事务阻塞<br>补偿机制：定时扫描status&#x3D;UNSENT的消息重试发送（类似您项目中的数据对账机制）</p>
-</li>
-<li><p>消费端幂等性控制<br>利用数据的唯一主键这一特性保障幂等，天然支持分布式环境</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 库存服务消费逻辑</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleStockReduce</span><span class="params">(String message)</span> &#123;</span><br><span class="line">    <span class="type">StockReduceEvent</span> <span class="variable">event</span> <span class="operator">=</span> parseMessage(message);</span><br><span class="line">    <span class="comment">// 基于订单号+商品ID+操作版本号构建唯一键</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">uniqueKey</span> <span class="operator">=</span> event.getOrderNo() + <span class="string">&quot;_&quot;</span> + event.getSkuId() + <span class="string">&quot;_v&quot;</span> + event.getVersion();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 数据库唯一约束实现幂等</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        processedEventMapper.insert(uniqueKey);  <span class="comment">// 唯一索引约束</span></span><br><span class="line">        stockMapper.reduceStock(event.getSkuId(), event.getQuantity());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (DuplicateKeyException e) &#123;</span><br><span class="line">        log.info(<span class="string">&quot;消息已处理: &#123;&#125;&quot;</span>, uniqueKey);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>或者消息体都携带版本号，根据乐观锁+状态机的来保障只消费一遍</p>
-</li>
-<li><p>网络分区风险与补偿机制<br>风险场景：<br>生产端分区：订单服务与MQ集群失联，导致本地消息表积压无法发送<br>消费端分区：库存服务无法消费消息，导致库存未扣减但订单已创建</p>
-</li>
+<li>消息生产端的原子性保障<br>
+订单创建与消息发送必须保持原子性，避免出现订单创建成功但消息未发送的情况</li>
 </ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 订单服务本地事务表方案</span></span><br><span class="line"><span class="meta">@Transactional</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createOrder</span><span class="params">(OrderDTO order)</span> &#123;</span><br><span class="line">    <span class="comment">// 1. 写入订单表</span></span><br><span class="line">    orderMapper.insert(order);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 写入本地消息表（原子操作）</span></span><br><span class="line">    <span class="type">LocalMessage</span> <span class="variable">message</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LocalMessage</span>();</span><br><span class="line">    message.setBizId(order.getOrderNo());</span><br><span class="line">    message.setContent(JSON.toJSONString(order.getItems()));</span><br><span class="line">    message.setStatus(MessageStatus.UNSENT);</span><br><span class="line">    localMessageMapper.insert(message);  <span class="comment">// 与订单表同库事务</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 异步发送消息（非事务内）</span></span><br><span class="line">    CompletableFuture.runAsync(() -&gt; &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            jcqTemplate.send(<span class="string">&quot;stock_reduce_topic&quot;</span>, message.getContent());</span><br><span class="line">            localMessageMapper.updateStatus(message.getId(), MessageStatus.SENT);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.error(<span class="string">&quot;消息发送失败&quot;</span>, e);</span><br><span class="line">            <span class="comment">// 触发补偿任务</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关键设计：<br>
+事务边界：订单创建与本地消息写入在同一个数据库事务中，确保原子性。<br>
+异步发送：消息发送与业务事务解耦，避免因MQ不可用导致事务阻塞<br>
+补偿机制：定时扫描status=UNSENT的消息重试发送（类似您项目中的数据对账机制）</p>
+<ol start="2">
+<li>消费端幂等性控制<br>
+利用数据的唯一主键这一特性保障幂等，天然支持分布式环境</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 库存服务消费逻辑</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleStockReduce</span><span class="params">(String message)</span> &#123;</span><br><span class="line">    <span class="type">StockReduceEvent</span> <span class="variable">event</span> <span class="operator">=</span> parseMessage(message);</span><br><span class="line">    <span class="comment">// 基于订单号+商品ID+操作版本号构建唯一键</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">uniqueKey</span> <span class="operator">=</span> event.getOrderNo() + <span class="string">&quot;_&quot;</span> + event.getSkuId() + <span class="string">&quot;_v&quot;</span> + event.getVersion();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 数据库唯一约束实现幂等</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        processedEventMapper.insert(uniqueKey);  <span class="comment">// 唯一索引约束</span></span><br><span class="line">        stockMapper.reduceStock(event.getSkuId(), event.getQuantity());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (DuplicateKeyException e) &#123;</span><br><span class="line">        log.info(<span class="string">&quot;消息已处理: &#123;&#125;&quot;</span>, uniqueKey);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者消息体都携带版本号，根据乐观锁+状态机的来保障只消费一遍<br>
+3. 网络分区风险与补偿机制<br>
+风险场景：<br>
+生产端分区：订单服务与MQ集群失联，导致本地消息表积压无法发送<br>
+消费端分区：库存服务无法消费消息，导致库存未扣减但订单已创建</p>
 <p>补偿方案设计</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 生产端补偿任务 生产端消息未发送</span></span><br><span class="line"><span class="meta">@XxlJob(&quot;retryUnsendedMessages&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">retryMessages</span><span class="params">()</span> &#123;</span><br><span class="line">    List&lt;LocalMessage&gt; messages = localMessageMapper.selectUnsended(<span class="number">1000</span>);</span><br><span class="line">    messages.forEach(msg -&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (jcqTemplate.send(msg.getContent())) &#123;</span><br><span class="line">            localMessageMapper.updateStatus(msg.getId(), MessageStatus.SENT);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 消费端对账服务 消费端消费失败，客户已支付但库存未扣减</span></span><br><span class="line"><span class="meta">@Scheduled(cron = &quot;0 0/5 * * * ?&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reconcileStock</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 1. 查询订单表已支付未扣减库存的订单（状态为已支付但库存未扣减）</span></span><br><span class="line">    List&lt;Order&gt; orders = orderMapper.selectUnprocessedOrders();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 对比库存流水表</span></span><br><span class="line">    orders.forEach(order -&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (!stockFlowMapper.exists(order.getOrderNo())) &#123;</span><br><span class="line">            <span class="comment">// 3. 触发补偿扣减</span></span><br><span class="line">            stockService.forceReduceStock(order);</span><br><span class="line">            <span class="comment">// 4. 记录补偿日志</span></span><br><span class="line">            alarmService.send(<span class="string">&quot;发现库存不一致订单:&quot;</span> + order.getOrderNo());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>容灾策略：<br>熔断降级：当分区持续时间超过阈值（如30分钟），暂停新订单创建<br>人工干预：通过您开发的运维工具生成修复脚本</p>
+<p>容灾策略：<br>
+熔断降级：当分区持续时间超过阈值（如30分钟），暂停新订单创建<br>
+人工干预：通过您开发的运维工具生成修复脚本</p>
 <blockquote>
-<p>总结:通过本地事务表+异步消息实现生产端原子性，结合唯一约束&#x2F;乐观锁保障消费端幂等性，配合定时对账+熔断降级应对网络分区，可构建高可用的最终一致性方案</p>
+<p>总结:通过本地事务表+异步消息实现生产端原子性，结合唯一约束/乐观锁保障消费端幂等性，配合定时对账+熔断降级应对网络分区，可构建高可用的最终一致性方案</p>
 </blockquote>
 
 </div>

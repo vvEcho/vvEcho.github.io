@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2412,12 +2467,14 @@
 <!-- content -->
 <div id="article-content">
 	<p>事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。</p>
-<p>当使用了<code>@Transactional</code>注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。<br>spring的事务管理是通过AOP代理实现，对被代理对象的每个方法进行拦截，在方法执行前启动事务，在方法执行完成后根据是否有异常及异常的类型进行提交或回滚。</p>
+<p>当使用了<code>@Transactional</code>注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。<br>
+spring的事务管理是通过AOP代理实现，对被代理对象的每个方法进行拦截，在方法执行前启动事务，在方法执行完成后根据是否有异常及异常的类型进行提交或回滚。</p>
 <p>当某个类或方法上使用<code>@Transactional</code>注解后，spring会基于该类生成一个代理对象，并将这个代理对象作为bean。</p>
 <p>当调用这个代理对象的方法时，如果有事务处理，则会关闭事务的自动功能，然后执行方法的具体业务逻辑.</p>
 <p>如果业务逻辑没有异常，那么代理逻辑就会直接提交</p>
 <p>如果出现任何异常，那么直接进行回滚。我们也可以控制对哪些异常进行回滚操作。</p>
-<h4 id="如何控制对哪些异常进行回滚？"><a href="#如何控制对哪些异常进行回滚？" class="headerlink" title="如何控制对哪些异常进行回滚？"></a>如何控制对哪些异常进行回滚？</h4><p>我们可以编写事务拦截器，对特定路径下的包进行事务切入，然后设置事务回滚规则参数中设置回滚参数属性即异常类型，即会对特定异常实现拦截；</p>
+<h4 id="如何控制对哪些异常进行回滚？">如何控制对哪些异常进行回滚？</h4>
+<p>我们可以编写事务拦截器，对特定路径下的包进行事务切入，然后设置事务回滚规则参数中设置回滚参数属性即异常类型，即会对特定异常实现拦截；</p>
 <blockquote>
 <p>事务拦截器代码示例见：<code>/Users/echo/Documents/sCloud/LocalDemo/src/main/java/com/local/demo/config/TransactionManagerConfig</code></p>
 </blockquote>

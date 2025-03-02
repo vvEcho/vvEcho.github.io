@@ -331,6 +331,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -793,6 +815,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1024,6 +1057,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1103,7 +1147,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1304,6 +1348,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2368,12 +2423,42 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0301/cyclicBarrier-principle.html">
+			<a href="/2025/0302/dengdeng-equals.html">
 				<h2 class="index-title">
-					15 CyclicBarrier实现原理
+					15 ==和equals的区别
 				</h2>
 				<div class="index-brief">
-					
+					1.==是一个操作符，eqauls是object类的方法
+2.对于基本数据类型，==比较的是两个对象的值是否相等，对于引用数据类型，==比较的是两个对象的地址是否相等
+3.equal比较的是对象的值是否相等
+代码示例：
+1234567891011121314151617181920212223242
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/aqs-principle.html">
+				<h2 class="index-title">
+					16 AQS的实现原理
+				</h2>
+				<div class="index-brief">
+					AQS就是AbstractQueuedSynchronizer抽象类，AQS其实就是JUC包下的一个基类，JUC下的很多内容都是基于AQS实现了部分功能，比如ReentrantLock，ThreadPoolExecutor，阻塞队列，CountDownLatch，Semaphore，CyclicBa
 					...
 				</div>
 			</a>
@@ -2394,52 +2479,14 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/null.html">
+			<a href="/2025/0301/lock-move-and-strong.html">
 				<h2 class="index-title">
-					14 countDownlanch实现原理
+					13 锁消除和锁膨胀
 				</h2>
 				<div class="index-brief">
-					问题标题
-
-
-
-姓名
-角色
-年龄
-
-
-
-张三
-学生
-18
-
-
-李四
-老师
-20
-
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0301/can-notcan-enter-lock.html">
-				<h2 class="index-title">
-					11 什么叫可重入锁和不可重入锁
-				</h2>
-				<div class="index-brief">
-					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是可重入锁
-不可重入锁只判断这个锁有没有被锁上，只要被锁上，申请锁的线程都会被要求等待。
-可重入锁不仅判断锁有没有被锁上，还会判断锁是哪个线程锁上的，当判断为当前锁上的时候，那么他依旧
+					锁消除
+在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
+1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchr
 					...
 				</div>
 			</a>
@@ -2460,15 +2507,15 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/fair-nonfair-lock.html">
+			<a href="/2025/0301/happy-unhappy-lock.html">
 				<h2 class="index-title">
-					10 公平锁和非公平锁
+					13 乐观锁和悲观锁
 				</h2>
 				<div class="index-brief">
-					Java中提供的synchronized只能是非公平锁。
-Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和非公平锁
-公平锁公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。
-优点：每个线程等待一
+					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
+Java中提供的CAS操作，就是乐观锁的一种实现。
+悲观锁
+获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，
 					...
 				</div>
 			</a>
@@ -2489,25 +2536,29 @@ Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0228/seata-4-mode.html">
+			<a href="/2025/0301/hu-chi-and-share-lock.html">
 				<h2 class="index-title">
-					12 seata事务有哪几种模式？
+					12 互斥锁和共享锁
 				</h2>
 				<div class="index-brief">
-					Seata 包含以下 4种分布式事务的处理模式
-1.XA 模式它的性能相比其他事务模式要差一点，但能保证最严格的数据一致性。XA 模式需要设置为串行化隔离级别，相当于对数据添加了读写锁。另外连接资源需要在整个事务期间保持，这样可能会导致资源锁定问题，从而影响并发事务吞吐。
-a.优点:实现简单、无业务
+					Java中提供的synchronized、ReentrantLock是互斥锁。
+Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
+互斥锁
+互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
+共享锁
+共享锁：同一时间点，当前共享锁可以被多个线程同时持有
+
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-02-28</span>
+				    <span>2025-03-01</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/16-seata/">16 seata</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -2519,7 +2570,7 @@ a.优点:实现简单、无业务
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/4/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/36/">36</a><a class="extend next" rel="next" href="/archives/page/6/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/4/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/37/">37</a><a class="extend next" rel="next" href="/archives/page/6/">&gt;</a>
 		
 	</div>
 </div>

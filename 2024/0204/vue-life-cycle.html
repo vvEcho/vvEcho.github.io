@@ -333,6 +333,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -795,6 +817,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1026,6 +1059,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1105,7 +1149,7 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0302/null.html">
+									<a href="/2025/0302/springboot-spi.html">
                      
 										    07 谈谈springboot的SPI机制
                      
@@ -1306,6 +1350,17 @@
 									<a href="/2025/0302/springcloud-security.html">
                      
 										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
                      
 									</a>
 								</li>
@@ -2413,19 +2468,27 @@
 <div id="article-content">
 	<p>Vue的生命周期是指Vue实例对象从创建之初到销毁的过程，这个过程包括多个阶段，每个阶段都有对应的钩子函数，用于控制组件的数据管理和DOM渲染。Vue的生命周期可以分为以下几个阶段：</p>
 <ul>
-<li><p>beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得DOM节点，也不能调用methods中定义的函数。<br>created（创建后）：在这个阶段，Vue实例已经创建，数据和事件机制已经形成，但DOM元素还未渲染。</p>
+<li>
+<p>beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得DOM节点，也不能调用methods中定义的函数。<br>
+created（创建后）：在这个阶段，Vue实例已经创建，数据和事件机制已经形成，但DOM元素还未渲染。</p>
 </li>
-<li><p>beforeMount（载入前）：在这个阶段，虽然还不能访问到DOM元素，但Vue挂载的根节点已经创建，DOM操作将围绕这个根元素进行。</p>
+<li>
+<p>beforeMount（载入前）：在这个阶段，虽然还不能访问到DOM元素，但Vue挂载的根节点已经创建，DOM操作将围绕这个根元素进行。</p>
 </li>
-<li><p>mounted（载入后）：在这个阶段，数据和DOM都已经渲染出来，可以执行异步请求等操作。</p>
+<li>
+<p>mounted（载入后）：在这个阶段，数据和DOM都已经渲染出来，可以执行异步请求等操作。</p>
 </li>
-<li><p>beforeUpdate（更新前）：在这个阶段，数据即将发生变化，但DOM还未更新。</p>
+<li>
+<p>beforeUpdate（更新前）：在这个阶段，数据即将发生变化，但DOM还未更新。</p>
 </li>
-<li><p>updated（更新后）：在这个阶段，数据已经更新，DOM也会相应更新。</p>
+<li>
+<p>updated（更新后）：在这个阶段，数据已经更新，DOM也会相应更新。</p>
 </li>
-<li><p>beforeDestroy（销毁前）：在这个阶段，Vue实例正在销毁，但还可以执行一些清理操作。</p>
+<li>
+<p>beforeDestroy（销毁前）：在这个阶段，Vue实例正在销毁，但还可以执行一些清理操作。</p>
 </li>
-<li><p>destroyed（销毁后）：在这个阶段，Vue实例已经销毁，所有的数据和事件监听都已经解除。</p>
+<li>
+<p>destroyed（销毁后）：在这个阶段，Vue实例已经销毁，所有的数据和事件监听都已经解除。</p>
 </li>
 </ul>
 
