@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2467,6 +2500,88 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/sheji-mode.html">
+				<h2 class="index-title">
+					01.设计模式面试题
+				</h2>
+				<div class="index-brief">
+					1.mybaits 用了哪些设计模式？2.spring 用了哪些设计模式？3.单例模式有哪几种？懒汉，饿汉式，线程安全的懒汉式，匿名内部类
+4.说下你对责任链模式的理解及应用场景？5.说说代理模式
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/31-设计模式/">31 设计模式</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/seata-principle.html">
+				<h2 class="index-title">
+					11 seata的原理
+				</h2>
+				<div class="index-brief">
+					在 Seata 中主要有以下三种角色，其中TM和RM是作为 Seata 的客户端与业务系统集成在一起，TC 作为 Seata 的服务端独立部署：
+事务协调器（TC）：维护全局事务的运行状态，负责协调并驱动全局提交或回滚事务管理器（TM）：事务发起方，控制全局事务的范围，负责开启一个全局事务，并最终发
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/16-seata/">16 seata</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/xxl-job-quartz.html">
+				<h2 class="index-title">
+					02 xxl-jo和Quartz有啥区别
+				</h2>
+				<div class="index-brief">
+					xxl-job 是在 Quartz 基础上进行的封装和扩展，拥有更简单的任务调度方式、更灵活的任务管理和更强大的任务监控功能。
+xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分布式任务协调和高可用调度中心的能力
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/mysql-dividing-dbs-tables.html">
 				<h2 class="index-title">
 					07 分库分表怎么做的
@@ -2501,85 +2616,6 @@
 				<div class="index-brief">
 					分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/mysql-count-query-sample.html">
-				<h2 class="index-title">
-					09 统计sql例子
-				</h2>
-				<div class="index-brief">
-					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
-1234select user_name ,bug_count from (select count(bug_id) as bug_c
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/mysql-b-jia-tree.html">
-				<h2 class="index-title">
-					05 B+树索引(待完善)
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/mysql-optimize-query.html">
-				<h2 class="index-title">
-					06 mysql怎么优化数据库查询(待完善)
-				</h2>
-				<div class="index-brief">
-					
 					...
 				</div>
 			</a>

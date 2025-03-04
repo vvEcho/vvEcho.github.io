@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2529,7 +2562,8 @@
 					11 redis lua表达式为什么能保证原子性
 				</h2>
 				<div class="index-brief">
-					redis 的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
+					redis的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。
+但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
 
 					...
 				</div>
@@ -2553,7 +2587,7 @@
 		 <div class="index-li">
 			<a href="/2024/0120/redis-cluster.html">
 				<h2 class="index-title">
-					12 redis你们用的是什么集群(待完善)
+					12 redis你们用的是什么集群
 				</h2>
 				<div class="index-brief">
 					redis我用的是主从架构的这种集群，哨兵的话自己有研究过，但是项目中目前还没有用到；Redis的哨兵模式的特点是：
@@ -2578,15 +2612,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-used-data-structure.html">
+			<a href="/2024/0120/redis-used-too-much.html">
 				<h2 class="index-title">
-					08 redis常用数据结构
+					08 redis内存占用过高怎么办
 				</h2>
 				<div class="index-brief">
-					String，list,set,zset,hash
-
-String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key
-list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpu
+					
 					...
 				</div>
 			</a>

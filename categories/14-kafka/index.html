@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2520,13 +2553,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-repeat.html">
+			<a href="/2024/0120/kafka-msg-order.html">
 				<h2 class="index-title">
-					02 kafka如何避免消息的重复消费？
+					03 kafka如何保证消息的顺序消费
 				</h2>
 				<div class="index-brief">
-					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
-
+					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的，因为是多个分区，消费的时候通过
 					...
 				</div>
 			</a>
@@ -2547,12 +2579,13 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-order.html">
+			<a href="/2024/0120/kafka-msg-not-repeat.html">
 				<h2 class="index-title">
-					03 kafka如何保证消息的顺序消费
+					02 kafka如何避免消息的重复消费？
 				</h2>
 				<div class="index-brief">
-					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的，因为是多个分区，消费的时候通过
+					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
+
 					...
 				</div>
 			</a>

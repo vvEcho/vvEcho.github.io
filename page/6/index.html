@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2467,6 +2500,117 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0219/redis-same-to-db.html">
+				<h2 class="index-title">
+					11.如何保证缓存和数据库的一致性
+				</h2>
+				<div class="index-brief">
+					
+先删除缓存，再更新数据库问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取最新
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/">42 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0219/kafka-exactly-once.html">
+				<h2 class="index-title">
+					9.设计一个强一致性方案保障故障转移时会话共享
+				</h2>
+				<div class="index-brief">
+					基于Redis的会话共享实现方案核心：Redis Cluster + 同步写策略
+12345678# Redis节点配置（6节点示例：3主3从）redis-cluster:  master1: 192.168.1.1:6379  slave1:  192.168.1.2:6380  master2:
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/">42 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0219/kafka-exactly-once.html">
+				<h2 class="index-title">
+					6.结合kafka的exactly-once说明如何实现一个无锁的幂等方案
+				</h2>
+				<div class="index-brief">
+					在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？无锁幂等方案设计
+123456CREATE TABLE 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/">42 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0219/ddd-interface-abstract-diff.html">
 				<h2 class="index-title">
 					5.请分析RR可能导致锁范围扩大的原因和解决思路
@@ -2723,97 +2867,6 @@ Redis Lua脚本
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/42-面经/ai模拟面试/">ai模拟面试</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0219/self-audition-pingan.html">
-				<h2 class="index-title">
-					平安面试(24.3)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/">42 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0716/value-and-ref.html">
-				<h2 class="index-title">
-					03 值传递和引用传递的不同
-				</h2>
-				<div class="index-brief">
-					
-基本数据类型（值传递）特点：传递的是变量的值的副本。函数内部对参数的修改不会影响原始变量。示例：123456789101112public class Main &#123;    public static void modifyValue(int x) &#123;        x = 10
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-07-16</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0716/int-to-integer.html">
-				<h2 class="index-title">
-					02 封装类型的意义
-				</h2>
-				<div class="index-brief">
-					java有8大基本数据类型，为什么每个都要再弄个包装类，这样的意义在哪里？
-首先java是一门面向对象的语言，对象是java程序操作的基本单元，所以对象都会是封装类型的；
-基础数据类型，只能满足常见的计数场景，不能满足对这些基本对象的一些复杂操作，java提供对应的包装类里面封装了一些方法和属性，且
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-07-16</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
 										
                                     </span>
                                 

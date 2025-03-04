@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2467,6 +2500,108 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0302/cap-and-base.html">
+				<h2 class="index-title">
+					17 CAP及BASE理论
+				</h2>
+				<div class="index-brief">
+					CAP理论CAP理论是分布式领域中非常重要的一个指导理论C(Consistenc)表示强一致性,A(Availability)表示可用性,P(Partition Tolerance)表示分区容错性
+CAP理论指出在目前的硬件条件下，一个分布式系统是须要保证分区容错性的，而在这个前提下，分布式系统要么
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/mybatis-#$-difference.html">
+				<h2 class="index-title">
+					16 mybatis中#{}和${}有啥区别
+				</h2>
+				<div class="index-brief">
+					1.#{}是预编译处理、是占位符，${}是字符串替换、是拼接符
+2.Mybatis在处理#{}时，会将sql中的#{}替换为?号，调用Preparedstatement来赋值
+3.Mybatis在处理${}时，就是把${}替换成变量的值，调用Statement来赋值
+4.使用#{}可以有效的防止SQ
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02java基础/">02java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/shiro-vs-security.html">
+				<h2 class="index-title">
+					06.3 shiro和security权限上的区别
+				</h2>
+				<div class="index-brief">
+					问题标题
+
+
+
+姓名
+角色
+年龄
+
+
+
+张三
+学生
+18
+
+
+李四
+老师
+20
+
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0302/springboot-spi.html">
 				<h2 class="index-title">
 					07 谈谈springboot的SPI机制
@@ -2645,108 +2780,6 @@ ConfigService
 提供配置管理接口
 提供配置修改发布接口
 服务于管理
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/springcloud-openfigne-principle.html">
-				<h2 class="index-title">
-					04.1OpenFeign的原理
-				</h2>
-				<div class="index-brief">
-					Openfeign是SpringCloud对Feign也进行了增强，直接支持Hystrix和Ribbon，也支持SpringMVC的注解。这样使得Feign的使用非常方便。
-1、在使用Openfeign时首先会在springboot的启动类上添加@EnableFeignClients注解，该注解会导
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08springcloud/">08springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/register-vs.html">
-				<h2 class="index-title">
-					03.5 注册中心横向对比
-				</h2>
-				<div class="index-brief">
-					核心特性对比
-
-
-特性
-Eureka
-Zookeeper
-Nacos
-Apollo
-
-
-
-CAP模型
-AP
-CP
-AP&#x2F;CP
-CP（强一致性优先）
-
-
-健康检查
-客户端心跳检测
-会话心跳检测
-TCP&#x2F;HTTP&#x2F;MySQL&#x2F;客户端心跳
-客户端主动上报+服务端轮询
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/gateway-vs-zuul.html">
-				<h2 class="index-title">
-					02.3 Gateway和Zuul的区别
-				</h2>
-				<div class="index-brief">
-					Spring Cloud Gateway和Zuul有什么区别？Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
-以下是Spring Clou
 					...
 				</div>
 			</a>

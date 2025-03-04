@@ -9,8 +9,6 @@
 	
 	<title>
 	
-		08 redis常用数据结构 |
-	
 	java面试题
 	</title>
 
@@ -1709,10 +1707,10 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
-									<a href="/2024/0120/redis-used-data-structure.html">
+								<li class="file">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1756,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1790,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2466,109 +2497,51 @@
 
 	<!-- 引入正文 -->
 	<div id="content" class="content">
-		<h1 id="article-title">
-	08 redis常用数据结构
-</h1>
-
-<!-- meta -->
-<div class="article-meta">
+		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2025/0219/self-audition-pingan.html">
+				<h2 class="index-title">
+					平安面试(24.3)
+				</h2>
+				<div class="index-brief">
+					Here's something encrypted, password is required to continue reading.
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/">42 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/个人/">个人</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 
-	<span>vvEcho</span>
-	<span>2024-01-20 14:08:37</span>
-
-  <div id="article-categories">
-    
-		  <span>Categories：</span>
-      
-          
-              <span>
-                  <i class="fa fa-folder" aria-hidden="true">
-                  <a href="/categories/12-redis/">12 redis</a>
-                  </i>
-                
-              </span>
-          
-      
-    
-
-    
-		    <span>Tags：</span>
-        
-            
-                <span>
-                    <i class="fa fa-tag" aria-hidden="true">
-                    <a href="/tags/dataStructure/">dataStructure</a>
-                    </i>
-                </span>
-            
-        
-    
-  </div>
-
+	<div id="index-paginator">
+		
+			<a class="extend prev" rel="prev" href="/archives/2025/page/12/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/11/">11</a><a class="page-number" href="/archives/2025/page/12/">12</a><span class="page-number current">13</span>
+		
+	</div>
 </div>
-
-<!-- content -->
-<div id="article-content">
-	<p>String，list,set,zset,hash</p>
-<ul>
-<li>String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key</li>
-<li>list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpush ,rpush</li>
-<li>set类型的数据类型与List数据类型对最大的不同就是不允许存在相同的元素（无序，不重复集合）,常用指令sadd，sdiff set2 set3（求set2和set的差集），sinter set2 set3（求set2和set3的交集），sunion set2 set3（求set2和set3的并集）</li>
-<li>Hash表类型可以理解成一个Map集合，即Value是一个Map集合；常用指令hset map1 name zhangsan（添加一个元素）,批量添加（hmset map1 age 15 gender male）</li>
-<li>zset类型在set的基础上增加了一个值（这个值可以用来排序），可以把Zset看成是有序set；常用指令zadd zset1 1 zhangsan（增加一个排序score）</li>
-</ul>
-
-</div>
-
-<!-- post-guide -->
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2024/0120/redis-cluster.html">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  12 redis你们用的是什么集群(待完善)
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2024/0120/redis-distributed-lock.html">
-                09 redis分布式锁有用过吗？
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
-    </div>
-
-
-<!-- comment - giscus -->
-
-
-<!-- comment - valine -->
-
-	<div id="vcomments"></div>
-
-
-<script>
-	
-		// 评论
-		new Valine({
-			el: '#vcomments',
-			appId: 'qY15MkA9mHIGfX5em0QpPHDs-MdYXbMMI',
-			appKey: 'csu4x9hAAb5u7jBOmDc6BaW5',
-			placeholder: 'Please enter a comment',
-			path: window.location.pathname,
-			avatar: 'retro',
-			highlight: false,
-      recordIP: true,
-      enableQQ: true,
-			requiredFields: ['nick','mail']
-		})
-	
-	
-</script>
 
 	</div>
 	<div id="footer">

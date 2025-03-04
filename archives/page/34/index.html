@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2467,6 +2500,88 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/garbage-collection-algorithm.html">
+				<h2 class="index-title">
+					06 常见的垃圾回收算法
+				</h2>
+				<div class="index-brief">
+					引用计数法：记录了一个变量的引用次数，引用一次就加1，引用失效就减1，效率低可达性分析算法：判断一个变量是否根据当前引用地址是否可达，效率高标记清除算法：标记需清除的对象，统一回收；但是容易产生内存碎片，导致无法分配大对象；大量对象需要标记时效率低标记复制算法：将内存分成了两块，一块用来标记需要复制
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/jvm-error-in-project.html">
+				<h2 class="index-title">
+					07 你在实际项目中有排查过JVM方面的问题吗？
+				</h2>
+				<div class="index-brief">
+					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/how-to-resolve-pro-cup-high.html">
+				<h2 class="index-title">
+					08 生产环境CPU占用过高，如何解决？
+				</h2>
+				<div class="index-brief">
+					
+top + H 指令找出占用 CPU 最高的进程的 pid
+top - H - p 否该进程中找到，哪些线程占用的 CPU 最高的线程,记录下 tid
+jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出出现异常的话,加上一 F 参教
+将 tid 转换为十六
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/object-in-jvm-build-process.html">
 				<h2 class="index-title">
 					04 对象在jvm中的创建过程
@@ -2500,87 +2615,6 @@
 				<div class="index-brief">
 					jdk1.8开始字符串常量池：存放在堆中运行时常量池：存放在方法区，属于元空间
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/jvm-jmm-understand.html">
-				<h2 class="index-title">
-					01.说说对JVM和JMM的理解
-				</h2>
-				<div class="index-brief">
-					JVMJVM 是 Java 虚拟机，是Java程序运行的执行引擎和内存管理平台。它定义了Java程序如何与操作系统交互，负责字节码的加载、解释&#x2F;编译、内存分配、垃圾回收等核心功能。JVM 的具体实现包括内存区域划分（如堆、栈、方法区）和运行机制（如类加载、即时编译）.
-jvm由类装载器、运
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/heap-stack-different.html">
-				<h2 class="index-title">
-					02 堆和栈的区别
-				</h2>
-				<div class="index-brief">
-					1.堆是不连续的，所以分配的内存是在运行期确认的，因此大小不固定；堆对于整个应用程序都是共享、可见的；
-2.栈是连续的，所以分配的内存大小要在编译期就确认，大小是固定的；栈对于线程是可见的，所以也是线程私有，他的生命周期和线程相同（所以说，栈里面是一定不会存在垃圾回收的问题）；
-3.栈内存存储一些基
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/base-data-type-all-in-stack.html">
-				<h2 class="index-title">
-					03 java中的基本数据类型都是存储在栈中的吗？
-				</h2>
-				<div class="index-brief">
-					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题答：不是一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而结束
 					...
 				</div>
 			</a>

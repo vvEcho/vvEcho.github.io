@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2467,12 +2500,93 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/redis-distributed-lock.html">
+				<h2 class="index-title">
+					09 redis分布式锁有用过吗？
+				</h2>
+				<div class="index-brief">
+					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-distributed-lock-space.html">
+				<h2 class="index-title">
+					10 分布式锁的应用场景
+				</h2>
+				<div class="index-brief">
+					我们知道，对于单机的多线程情况下的线程安全问题我们可以用使用JDK自带的锁来保证线程安全，但是集群环境下的线程安全怎么保证呢？客户A调用一个接口修改数据，客户B同时调用这一个接口修改数据，负载到不同的机器上，怎么保证同一时间这笔数据只能一个人操作呢？那就需要用到分布式锁，我说个我们项目中用到的分布式
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-cache-question.html">
+				<h2 class="index-title">
+					05 缓存击穿，缓存穿透，缓存雪崩
+				</h2>
+				<div class="index-brief">
+					
+缓存击穿-redis中一个热点key过期（大量用户访问该热点key，但是热点key过期);监控哪些数据是热门数据，实时的调整key的过期时长；
+
+缓存穿透-大量请求根本不存在的key；设置空值,设置白名单,使用布隆过滤器，对请求做校验(比如请求一个查询一个id为-1000的数据，这种直接可以判定为
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/redis-identify-hot-key.html">
 				<h2 class="index-title">
 					06 怎么监控热key
 				</h2>
 				<div class="index-brief">
-					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为
+					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可。可以定时在节点中使用该命令来发现对应热点key,或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为这些key事热点key,可以将热点key对应的数
 					...
 				</div>
 			</a>
@@ -2525,7 +2639,10 @@
 					03 说说IO多路复用
 				</h2>
 				<div class="index-brief">
-					回答这个问题我们可以拆分来看，IO实际就是指数据或文件的读写流，多路实际指的是redis的底层的多路复用程序监听了每个读写请求的socket套接字，复用就是指监听哪些socket上有消息达到，从而避免用户线程等待；
+					回答这个问题我们可以拆分来看：
+IO实际就是指数据或文件的读写流
+多路实际指的是redis的底层的多路复用程序监听了每个读写请求的socket套接字
+复用就是指监听哪些socket上有消息达到，从而避免用户线程等待；
 
 					...
 				</div>
@@ -2552,7 +2669,11 @@
 					04 rdb和aof
 				</h2>
 				<div class="index-brief">
-					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；rdb是一种二进制快照文件的方式某个时刻redis中的数据到硬盘中的，aof是以日志的的方式存储redis的写命令;rdb的好处是适合数据全量备份，容灾好，恢复数据速度快,确点是数据可能丢失；aof的好处是实时性好，因为记录日志是
+					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；
+rdb是一种二进制快照文件的方式某个时刻redis中的数据到硬盘中的
+aof是以日志的的方式存储redis的写命令;
+rdb的好处是适合数据全量备份，容灾好，恢复数据速度快,确点是数据可能丢失；
+aof的好处是实时性好，因为记录
 					...
 				</div>
 			</a>
@@ -2578,8 +2699,11 @@
 					01 redis数据结构
 				</h2>
 				<div class="index-brief">
-					redis是一种基于键值对的来存储数据的nosql数据库，其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
+					redis是一种基于键值对的来存储数据的nosql数据库
+其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
+常用的有String，list,set,zset,hash
 
+String类型是redis最基本类型之一，其存储数据
 					...
 				</div>
 			</a>
@@ -2632,33 +2756,6 @@ C实现的，更利于和底层进行交互
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-repeat.html">
-				<h2 class="index-title">
-					02 kafka如何避免消息的重复消费？
-				</h2>
-				<div class="index-brief">
-					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
 			<a href="/2024/0120/kafka-msg-order.html">
 				<h2 class="index-title">
 					03 kafka如何保证消息的顺序消费
@@ -2676,59 +2773,6 @@ C实现的，更利于和底层进行交互
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-rebalance.html">
-				<h2 class="index-title">
-					05 kafka的rebalance机制
-				</h2>
-				<div class="index-brief">
-					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
-当kafka感知到存在让分
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-distributed-transaction.html">
-				<h2 class="index-title">
-					09 rocketMq实现分布式事务了解吗？
-				</h2>
-				<div class="index-brief">
-					rocketMq实现分布式事务是通过rocketMq的消息最终一致性来保证的流程如下：生产者发送一个半消息到MQServer,因为是半消息所以消费者还不能消费，broker收到半消息后返回ack给生产者，表明半消息发送成功；这时候生产者开始执行本地事务，业务层面我们可以增加一张流水表，以便Broke
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
 										
                                     </span>
                                 

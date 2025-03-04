@@ -1710,9 +1710,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1756,7 +1756,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1790,6 +1790,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2510,7 +2543,11 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；<br>rdb是一种二进制快照文件的方式某个时刻redis中的数据到硬盘中的，aof是以日志的的方式存储redis的写命令;rdb的好处是适合数据全量备份，容灾好，恢复数据速度快,确点是数据可能丢失；aof的好处是实时性好，因为记录日志是秒级的，所以数据丢失最多也是这一秒的数据，同样因为秒级记录导致数据量的量级增长很快，从而导致文件很大，那么数据恢复时耗时会很久</p>
+	<p>rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；</p>
+<p>rdb是一种二进制快照文件的方式某个时刻redis中的数据到硬盘中的</p>
+<p>aof是以日志的的方式存储redis的写命令;</p>
+<p>rdb的好处是适合数据全量备份，容灾好，恢复数据速度快,确点是数据可能丢失；</p>
+<p>aof的好处是实时性好，因为记录日志是秒级的，所以数据丢失最多也是这一秒的数据，同样因为秒级记录导致数据量的量级增长很快，从而导致文件很大，那么数据恢复时耗时会很久</p>
 
 </div>
 

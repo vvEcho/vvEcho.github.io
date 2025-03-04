@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2467,6 +2500,108 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0302/springcloud-openfigne-principle.html">
+				<h2 class="index-title">
+					04.1OpenFeign的原理
+				</h2>
+				<div class="index-brief">
+					Openfeign是SpringCloud对Feign也进行了增强，直接支持Hystrix和Ribbon，也支持SpringMVC的注解。这样使得Feign的使用非常方便。
+1、在使用Openfeign时首先会在springboot的启动类上添加@EnableFeignClients注解，该注解会导
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08springcloud/">08springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/register-vs.html">
+				<h2 class="index-title">
+					03.5 注册中心横向对比
+				</h2>
+				<div class="index-brief">
+					核心特性对比
+
+
+特性
+Eureka
+Zookeeper
+Nacos
+Apollo
+
+
+
+CAP模型
+AP
+CP
+AP&#x2F;CP
+CP（强一致性优先）
+
+
+健康检查
+客户端心跳检测
+会话心跳检测
+TCP&#x2F;HTTP&#x2F;MySQL&#x2F;客户端心跳
+客户端主动上报+服务端轮询
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/gateway-vs-zuul.html">
+				<h2 class="index-title">
+					02.3 Gateway和Zuul的区别
+				</h2>
+				<div class="index-brief">
+					Spring Cloud Gateway和Zuul有什么区别？Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
+以下是Spring Clou
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0302/springboot-custom-starter.html">
 				<h2 class="index-title">
 					06 如何自定义一个starter
@@ -2640,91 +2775,6 @@
 				</h2>
 				<div class="index-brief">
 					AQS就是AbstractQueuedSynchronizer抽象类，AQS其实就是JUC包下的一个基类，JUC下的很多内容都是基于AQS实现了部分功能，比如ReentrantLock，ThreadPoolExecutor，阻塞队列，CountDownLatch，Semaphore，CyclicBa
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0301/lock-move-and-strong.html">
-				<h2 class="index-title">
-					13 锁消除和锁膨胀
-				</h2>
-				<div class="index-brief">
-					锁消除在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
-1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchro
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0301/happy-unhappy-lock.html">
-				<h2 class="index-title">
-					13 乐观锁和悲观锁
-				</h2>
-				<div class="index-brief">
-					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
-Java中提供的CAS操作，就是乐观锁的一种实现。
-悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0301/hu-chi-and-share-lock.html">
-				<h2 class="index-title">
-					12 互斥锁和共享锁
-				</h2>
-				<div class="index-brief">
-					Java中提供的synchronized、ReentrantLock是互斥锁。
-Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
-互斥锁互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
-共享锁共享锁：同一时间点，当前共享锁可以被多个线程同时持有
-
 					...
 				</div>
 			</a>

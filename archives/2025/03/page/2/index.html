@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2467,6 +2500,87 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0304/hash-conflict.html">
+				<h2 class="index-title">
+					11 hashmap中hash冲突了会怎么处理
+				</h2>
+				<div class="index-brief">
+					hashmap通过put方法往里面添加数据的时候，hashmap会根据key的hash值做一个取模的运算通过取模的值将元素放到数组的某个位置上去，这个时候有可能会有两个不同元素的hash值相同，这个时候就会发生hash冲突了，hashmap会通过链表来解决hash冲突，也就是如果hash值相同，就会
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0304/hashmap-how-to-expand.html">
+				<h2 class="index-title">
+					10 hashmap如何扩容的？
+				</h2>
+				<div class="index-brief">
+					hashmap的扩容方式在jdk1.7和jdk1.8中不同,以下来分别说明
+在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75&#x3D;12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0304/fu-zhai-yin-zi.html">
+				<h2 class="index-title">
+					09 hashmap的负载因子为何是0.75
+				</h2>
+				<div class="index-brief">
+					hashMap将负载因子设置为0.75是一个性能兼顾的考虑
+假设负载因子设置为0.5则；hash表在填充到一半的时候就会触发扩容，减少了hash冲突，查询效率也提高了；但是空间利用率下降了，且频繁的扩容会导致内存开销大且重新hash的成本很高；
+如果设置为1，则hash表完全满了才会扩容，虽然空间利
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0302/spring-jdk-springboot-cglib.html">
 				<h2 class="index-title">
 					21 spring为何针对接口用jdk动态代理
@@ -2521,112 +2635,10 @@ JDK动态代理中代理类直接实现目标接口，并通过反射调用目�
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0302/cap-and-base.html">
-				<h2 class="index-title">
-					17 CAP及BASE理论
-				</h2>
-				<div class="index-brief">
-					CAP理论CAP理论是分布式领域中非常重要的一个指导理论C(Consistenc)表示强一致性,A(Availability)表示可用性,P(Partition Tolerance)表示分区容错性
-CAP理论指出在目前的硬件条件下，一个分布式系统是须要保证分区容错性的，而在这个前提下，分布式系统要么
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/mybatis-#$-difference.html">
-				<h2 class="index-title">
-					16 mybatis中#{}和${}有啥区别
-				</h2>
-				<div class="index-brief">
-					1.#{}是预编译处理、是占位符，${}是字符串替换、是拼接符
-2.Mybatis在处理#{}时，会将sql中的#{}替换为?号，调用Preparedstatement来赋值
-3.Mybatis在处理${}时，就是把${}替换成变量的值，调用Statement来赋值
-4.使用#{}可以有效的防止SQ
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02java基础/">02java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/shiro-vs-security.html">
-				<h2 class="index-title">
-					06.3 shiro和security权限上的区别
-				</h2>
-				<div class="index-brief">
-					问题标题
-
-
-
-姓名
-角色
-年龄
-
-
-
-张三
-学生
-18
-
-
-李四
-老师
-20
-
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/03/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2025/03/page/3/">3</a><a class="page-number" href="/archives/2025/03/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/7/">7</a><a class="extend next" rel="next" href="/archives/2025/03/page/3/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/03/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2025/03/page/3/">3</a><a class="page-number" href="/archives/2025/03/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/8/">8</a><a class="extend next" rel="next" href="/archives/2025/03/page/3/">&gt;</a>
 		
 	</div>
 </div>

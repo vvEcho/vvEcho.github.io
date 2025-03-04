@@ -1708,9 +1708,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/redis-used-data-structure.html">
+									<a href="/2024/0120/redis-used-too-much.html">
                      
-										    08 redis常用数据结构
+										    08 redis内存占用过高怎么办
                      
 									</a>
 								</li>
@@ -1754,7 +1754,7 @@
 								<li class="file">
 									<a href="/2024/0120/redis-cluster.html">
                      
-										    12 redis你们用的是什么集群(待完善)
+										    12 redis你们用的是什么集群
                      
 									</a>
 								</li>
@@ -1788,6 +1788,39 @@
 									<a href="/2024/0220/redis-page-query.html">
                      
 										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/query-redis-db.html">
+                     
+										    16 redis如何查询指定库的数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-pre-hotKey.html">
+                     
+										    17 缓存预热怎么做
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/redis-same-db.html">
+                     
+										    18 如何保证redis中缓存和数据库的一致性
                      
 									</a>
 								</li>
@@ -2467,6 +2500,92 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0302/springboot-characteristic.html">
+				<h2 class="index-title">
+					05 springboot有哪些特点
+				</h2>
+				<div class="index-brief">
+					springBoot的优点是什么？‌
+
+快速开发‌：SpringBoot简化了配置，减少了开发、测试时间和努力。
+独立运行‌：内嵌了servlet容器，如Tomcat、Jetty等，无需部署WAR文件。
+自动配置‌：根据类路径下的类、jar包自动配置bean，如添加spring-boot-start
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/sprngboot-properties-order.html">
+				<h2 class="index-title">
+					04 springBoot中配置优先级是怎样的?
+				</h2>
+				<div class="index-brief">
+					优先级从高到低，高优先级的配置覆盖低优先级的配置，所有配置会形成互补配置。
+1.命令行参数。所有的配置都可以在命令行上进行指定
+2.Java系统属性(System.getProperties());
+3.操作系统环境变量;
+4.jar包,外部的application-{profile}.proper
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/spring-mvc-flow.html">
+				<h2 class="index-title">
+					20 springmvc的底层工作流程
+				</h2>
+				<div class="index-brief">
+					1.用户发送请求至前端控制器DispatcherServlet。2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.3.Disp
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0302/dengdeng-equals.html">
 				<h2 class="index-title">
 					15 ==和equals的区别
@@ -2520,95 +2639,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0301/lock-move-and-strong.html">
-				<h2 class="index-title">
-					13 锁消除和锁膨胀
-				</h2>
-				<div class="index-brief">
-					锁消除在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
-1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchro
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0301/happy-unhappy-lock.html">
-				<h2 class="index-title">
-					13 乐观锁和悲观锁
-				</h2>
-				<div class="index-brief">
-					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
-Java中提供的CAS操作，就是乐观锁的一种实现。
-悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0301/hu-chi-and-share-lock.html">
-				<h2 class="index-title">
-					12 互斥锁和共享锁
-				</h2>
-				<div class="index-brief">
-					Java中提供的synchronized、ReentrantLock是互斥锁。
-Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
-互斥锁互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
-共享锁共享锁：同一时间点，当前共享锁可以被多个线程同时持有
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/03/page/5/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/4/">4</a><a class="page-number" href="/archives/2025/03/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2025/03/page/7/">7</a><a class="extend next" rel="next" href="/archives/2025/03/page/7/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/03/page/5/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/4/">4</a><a class="page-number" href="/archives/2025/03/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2025/03/page/7/">7</a><a class="page-number" href="/archives/2025/03/page/8/">8</a><a class="extend next" rel="next" href="/archives/2025/03/page/7/">&gt;</a>
 		
 	</div>
 </div>
