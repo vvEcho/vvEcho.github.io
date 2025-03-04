@@ -1,0 +1,2636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link href="https://fonts.loli.net/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+	<!-- title -->
+	
+	<title>
+	
+	java面试题
+	</title>
+
+	<!-- keywords,description -->
+	
+	
+		<meta name="description" content="--我为我喜欢的东西大费周章,所以我才能快乐如斯" />
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.baidu.com/s?wd=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+    
+<link rel="stylesheet" href="/css/custom.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+    <!-- 
+<script src="/js/code-copy.js"></script>
+ -->
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">java面试题</a>
+    <!-- <a id="title" href="/" class="logo">java面试题</a> -->
+	<ul id="menu">
+    <!-- <li class="menu-item">
+        <a href='' class="menu-item-link">Home</a>
+    </li> -->
+    
+        <li class="menu-item">
+          <a href='/categories' class="menu-item-link">Categories</a>
+        </li>
+      
+    
+      <li class="menu-item">
+        <a href='/tags' class="menu-item-link">Tags</a>
+      </li>
+    
+    
+        <li class="menu-item">
+          <a href='/about' class="menu-item-link">About</a>
+        </li>
+    
+    
+        
+        
+            <li class="menu-item">
+            <a target="_blank" rel="noopener" href='https://www.sysfzy.site' class="menu-item-link">
+                Sysfzy
+            </a>
+            </li>
+        
+    
+    
+        <li class="menu-item">
+          <a target="_blank" rel="noopener" href='https://github.com/vvEcho' class="menu-item-link">
+            <i class="fa fa-github fa-2x"></i>
+          </a>
+        </li>
+      
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 自我介绍
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/self-introduction.html">
+                     
+										    1.自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 java基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/jdk-and-jre.html">
+                     
+										    01 jdk和jre有什么不同
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0716/int-to-integer.html">
+                     
+										    02 封装类型的意义
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0716/value-and-ref.html">
+                     
+										    03 值传递和引用传递的不同
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/generic-extends-super.html">
+                     
+										    04 泛型中extends和super的区别是什么
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/hashcode.html">
+                     
+										    05 hashCode的使用场景
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/head-tail-cycle.html">
+                     
+										    06 为什么头插法容易形成死循环而尾插法不会
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/exception-error-different.html">
+                     
+										    07 exception和error有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/strong-soft-weak-phantom-ref.html">
+                     
+										    08 强引用，软引用，弱引用，虚引用的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/memory-leak-out.html">
+                     
+										    09 内存泄漏和内存溢出
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/overwrite-overload-different.html">
+                     
+										    10 重写和重载的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/qps-tps-different.html">
+                     
+										    11 Qps和Tps的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0124/io-different.html">
+                     
+										    12 BIO,NIO,AIO的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0124/hash-clash-solve.html">
+                     
+										    13 hash冲突怎么解决
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/string-stringBuild-stringBuffer.html">
+                     
+										    14 String,stringBuild,StringBuffer的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/dengdeng-equals.html">
+                     
+										    15 ==和equals的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/mybatis-#$-difference.html">
+                     
+										    16 mybatis中#{}和${}有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/cap-and-base.html">
+                     
+										    17 CAP及BASE理论
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03 数据结构
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0227/math-base.html">
+                     
+										    01 数组+链表+跳表+二叉树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/arrayList-linkedList.html">
+                     
+										    02 ArrayList和LinkedList的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/hashMap-concurrentHashMap.html">
+                     
+										    03 ConcurrentHashMap和HashMap的扩容机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/hashmap-linkedhashmap.html">
+                     
+										    04 HashMap和LinkedHashMap有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/hashMap-put-analysize.html">
+                     
+										    05 说一下HashMap的put方法的底层实现原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/copy-on-write-arrayList.html">
+                     
+										    06 CopyOnWriteArrayList是线程安全的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/hashMap-hashTable-different.html">
+                     
+										    07 hashMap hashTable的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0124/arraylist-kuo-rong.html">
+                     
+										    08 arrayList扩容时扩容多少
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/fu-zhai-yin-zi.html">
+                     
+										    09 hashmap的负载因子为何是0.75
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/hashmap-how-to-expand.html">
+                     
+										    10 hashmap如何扩容的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/hash-conflict.html">
+                     
+										    11 hashmap中hash冲突了会怎么处理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04 jvm
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/jvm-jmm-understand.html">
+                     
+										    01.说说对JVM和JMM的理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/heap-stack-different.html">
+                     
+										    02 堆和栈的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/base-data-type-all-in-stack.html">
+                     
+										    03 java中的基本数据类型都是存储在栈中的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/object-in-jvm-build-process.html">
+                     
+										    04 对象在jvm中的创建过程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/jvm-constant-pool.html">
+                     
+										    05 谈谈jvm常量池
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/garbage-collection-algorithm.html">
+                     
+										    06 常见的垃圾回收算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/jvm-error-in-project.html">
+                     
+										    07 你在实际项目中有排查过JVM方面的问题吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/how-to-resolve-pro-cup-high.html">
+                     
+										    08 生产环境CPU占用过高，如何解决？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/how-handle-pro-server-slow.html">
+                     
+										    09 生产环境服务嚣变慢,如何诊断处理?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/jvm-config-params.html">
+                     
+										    10 工作中常用的JVM配置参教有哪些?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/one-class-build-process.html">
+                     
+										    11 简述一个类的创建过程？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/parental-ji-zhi.html">
+                     
+										    12 谈谈对双亲委派机制的理解？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/new-survive-old-gc.html">
+                     
+										    13 谈谈新生代，幸存区，老年代对应的垃圾回收是怎样的(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										05 并发编程
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/synchronized-valatial-understand.html">
+                     
+										    01 synchronized和volatial关键字理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/lock-upgradation.html">
+                     
+										    02 锁升级的过程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/cas-principle.html">
+                     
+										    03 CAS原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/wait-sleep-yield-join.html">
+                     
+										    04 04 wait,sleep,yield,join,notify的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/how-to-start-one-thread.html">
+                     
+										    05 怎么开启一个线程？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/thread-pool-setting.html">
+                     
+										    06 线程池怎么用，7大参数理解？如何配置？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/semaphore-sample.html">
+                     
+										    07 信号量Semaphore(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+                     
+										    08 悲观锁和乐观锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
+                     
+										    09 死锁出现的原因以及怎么解决？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0301/fair-nonfair-lock.html">
+                     
+										    10 公平锁和非公平锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0301/can-notcan-enter-lock.html">
+                     
+										    11 什么叫可重入锁和不可重入锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0301/hu-chi-and-share-lock.html">
+                     
+										    12 互斥锁和共享锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0301/happy-unhappy-lock.html">
+                     
+										    13 乐观锁和悲观锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0301/lock-move-and-strong.html">
+                     
+										    13 锁消除和锁膨胀
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0301/null.html">
+                     
+										    14 countDownlanch实现原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0301/cyclicBarrier-principle.html">
+                     
+										    15 CyclicBarrier实现原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0301/aqs-principle.html">
+                     
+										    16 AQS的实现原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/lock-impl-ways.html">
+                     
+										    17 分布式锁的实现方式有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										06 spring
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/ioc-understand.html">
+                     
+										    01 谈谈你对IOC的理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/aop-understand.html">
+                     
+										    02 谈谈你对Aop的理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/spring-transcation-jizhi.html">
+                     
+										    03 Spring事务传播机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0226/transcation-geli-level.html">
+                     
+										    04 事务隔离级别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0124/translation-principle.html">
+                     
+										    05 spring事务的底层原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/spring-transcation-fail.html">
+                     
+										    06 spring事务失效的场景
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/spring-she-ji-mo-shi.html">
+                     
+										    07 spring框架中的设计模式有哪些(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/apo-impl-code.html">
+                     
+										    08 说看过AOP相关源码,说下具体实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/ioc-impl-code.html">
+                     
+										    09 说看过IOC相关源码,说下具体实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/aop-jdk-cglib.html">
+                     
+										    10 aop的实现默认是使用jdk动态代理还是cglib
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/pointcut-order-sure.html">
+                     
+										    11 切面解析的顺序怎么确定？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/solve-spring-cycle-depency.html">
+                     
+										    12 spring怎么解决循环依赖的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/bean-life-understand.html">
+                     
+										    13 bean的生命周期
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0124/springmvc-understand.html">
+                     
+										    14 说说你对mspringMvc流程的理解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0226/beanfactory-applicationcontext.html">
+                     
+										    15 BeanFactory和applicationContext有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0124/beanfactory-factoryBean.html">
+                     
+										    16 BeanFactory和FactoryBean有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-if-safe.html">
+                     
+										    17 spring中bean是线程安全的吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-founction-area.html">
+                     
+										    18 spring中支持的bean的作用域有哪几种？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/spring-bean-singleton.html">
+                     
+										    19 spring是如何保证bean是单例的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-mvc-flow.html">
+                     
+										    20 springmvc的底层工作流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+                     
+										    21 spring为何针对接口用jdk动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										07 springboot
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/auto-assemble-principle.html">
+                     
+										    01 自动装配原理？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/springboot-annotation.html">
+                     
+										    02 springBoot常用注解？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/interceptor-filter-different.html">
+                     
+										    03 拦截器和过滤器的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/sprngboot-properties-order.html">
+                     
+										    04 springBoot中配置优先级是怎样的?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/springboot-characteristic.html">
+                     
+										    05 springboot有哪些特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/springboot-custom-starter.html">
+                     
+										    06 如何自定义一个starter
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/springboot-spi.html">
+                     
+										    07 谈谈springboot的SPI机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										08 springcloud
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/springcloud-used-component.html">
+                     
+										    01 springCloud中组件常用的有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/springcloud-gateway.html">
+                     
+										    02.1 Gateway网关
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/springcloud-zuul.html">
+                     
+										    02.2 Zuul网关
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/gateway-vs-zuul.html">
+                     
+										    02.3 Gateway和Zuul的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/springcloud-eureka.html">
+                     
+										    03.1 Eureka注册中心
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0201/springcloud-zookeeper.html">
+                     
+										    03.2 zookeeper注册中心
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/nacos-konw.html">
+                     
+										    03.3 nacos注册中心
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/apploo-know.html">
+                     
+										    03.4 apploo注册中心
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/register-vs.html">
+                     
+										    03.5 注册中心横向对比
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/springcloud-openfigne-principle.html">
+                     
+										    04.1OpenFeign的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/rpc-know.html">
+                     
+										    04.2 rpc原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/openFigne-vs-rpc.html">
+                     
+										    04.3 openfigne和rpc的对比
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/springcloud-hystrix.html">
+                     
+										    05.1 hystrix服务熔断和降级
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0228/undefined.html">
+                     
+										    05.2 sentinel限流及熔断的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0201/sentinel-liu-kong.html">
+                     
+										    05.3 hystricl和sentinel的对比
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/springcloud-shiro.html">
+                     
+										    06.1 shiro权限组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/springcloud-security.html">
+                     
+										    06.2 security安全组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0302/shiro-vs-security.html">
+                     
+										    06.3 shiro和security权限上的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0201/springcloud-bus.html">
+                     
+										    07 springcloud消息总线
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/seata-principle.html">
+                     
+										    11 seata的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0228/seata-4-mode.html">
+                     
+										    12 seata事务有哪几种模式？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										09 dubbo
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/dubbo-rpc-net.html">
+                     
+										    07 dubbo微服务间怎么通信？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										11 mysql
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/mysql-transcation-geli-level.html">
+                     
+										    01 数据库事务的隔离级别？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/mysql-false-reading.html">
+                     
+										    02 怎么解决幻读
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/mysql-mvcc-ji-zhi.html">
+                     
+										    03 mvcc机制？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/mysql-re-in-undo-log.html">
+                     
+										    04 redolog和binlog,undolog
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/mysql-b-jia-tree.html">
+                     
+										    05 B+树索引(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/mysql-optimize-query.html">
+                     
+										    06 mysql怎么优化数据库查询(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/mysql-dividing-dbs-tables.html">
+                     
+										    07 分库分表怎么做的
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/mysql-dividing-dbs-tables-query.html">
+                     
+										    08 分库分表后怎么做范围查找
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/mysql-count-query-sample.html">
+                     
+										    09 统计sql例子
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0219/mysql-suo-yin.html">
+                     
+										    10 mysql中如何添加索引
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0220/mysql-groupby-suoyin.html">
+                     
+										    11 groupby语句后有索引查询和无索引查询有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0219/mysql-groupby-suoyin.html">
+                     
+										    12 聚簇索引和非聚簇索引的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0227/mysql-zhujian-suoyin-diff-normal-suoyin.html">
+                     
+										    13 主键索引和普通索引的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/hive-and-presto.html">
+                     
+										    14.presto为何能加速查询？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0228/index-down-push.html">
+                     
+										    15 什么叫索引下推，回表？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										12 redis
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-base-data-structure.html">
+                     
+										    01 redis数据结构
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-fast-reason.html">
+                     
+										    02 redis性能好的原因？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-io.html">
+                     
+										    03 说说IO多路复用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-rdb-aof.html">
+                     
+										    04 rdb和aof
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-cache-question.html">
+                     
+										    05 缓存击穿，缓存穿透，缓存雪崩
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-identify-hot-key.html">
+                     
+										    06 怎么监控热key
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-bloom-filter.html">
+                     
+										    07 说说布隆过滤器的原理？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-used-data-structure.html">
+                     
+										    08 redis常用数据结构
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-distributed-lock.html">
+                     
+										    09 redis分布式锁有用过吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-distributed-lock-space.html">
+                     
+										    10 分布式锁的应用场景
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-lua-principle.html">
+                     
+										    11 redis lua表达式为什么能保证原子性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/redis-cluster.html">
+                     
+										    12 redis你们用的是什么集群(待完善)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0201/redis-big-key.html">
+                     
+										    12 redis大key问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0219/redis-listen-key-expire.html">
+                     
+										    14 如何监听key过期时间并触发后置逻辑
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0220/redis-page-query.html">
+                     
+										    15 redis如何做分页查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										13 rocketmq
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/rocket-framewokr.html">
+                     
+										    01 rocketMq架构是怎样的,说说心跳机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/rocketmq-find-msg.html">
+                     
+										    02 rocketMq怎么查找到对应的消息的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/rocketmq-msg-not-lost.html">
+                     
+										    03 rocketMq怎么避免消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/rocketmq-msg-not-repeat.html">
+                     
+										    04 rocketMq怎么避免消息不重复消费
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/rocketmq-msg-order.html">
+                     
+										    05 rocketMq如何保证消息顺序消费？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/rocketmq-pull-push.html">
+                     
+										    06 rocketMq是pull模式还是push模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/rocketmq-msg-heaped.html">
+                     
+										    07 rocketMq消息堆积怎么解决
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/rocketmq-dead-letter-queue.html">
+                     
+										    08 说说rocketmq死信队列
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/rocketmq-distributed-transaction.html">
+                     
+										    09 rocketMq实现分布式事务了解吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0220/rocketmq-consume-mode.html">
+                     
+										    10 rocketMq有哪些消费模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										14 kafka
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/kafka-msg-not-lost.html">
+                     
+										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/kafka-msg-not-repeat.html">
+                     
+										    02 kafka如何避免消息的重复消费？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/kafka-msg-order.html">
+                     
+										    03 kafka如何保证消息的顺序消费
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0220/kafka-transcation.html">
+                     
+										    04 kafka怎么做分布式事务？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/kafka-rebalance.html">
+                     
+										    05 kafka的rebalance机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0226/kafka-high-throughput.html">
+                     
+										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										15 xxl-job
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-principle.html">
+                     
+										    01 xxl-job的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/xxl-job-quartz.html">
+                     
+										    02 xxl-jo和Quartz有啥区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-register-center.html">
+                     
+										    03 xxl-job服务注册与发现的原理是啥？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0227/xxl-job-fenpian.html">
+                     
+										    04 xxl-job如何实现任务的分片
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										31 设计模式
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/sheji-mode.html">
+                     
+										    01.设计模式面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										32 算法
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/math-method.html">
+                     
+										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										33 网络协议
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/net-xiyi.html">
+                     
+										    01 三次握手及四次挥手
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0228/net-jwt-authorization.html">
+                     
+										    02 说一下jwt的认证流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										34 linux
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/about-linux.html">
+                     
+										    01 linux面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										35 docker
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/undefined.html">
+                     
+										    01 docker面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										36 vue
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0204/vue-life-cycle.html">
+                     
+										    01 vue的生命周期
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										40 场景题
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/0304/openfigne-different-timeout.html">
+                     
+										    01 openFeign使用过程中如何差异化配置超时时间
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										41 项目相关
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/undefined.html">
+                     
+										    01 项目亮点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/undefined.html">
+                     
+										    02 项目难点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										42 面经
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										ai模拟面试
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/ddd-interface-abstract-diff.html">
+                     
+										    1.结合DDD说明抽象类和接口的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/lock-question-and-principle.html">
+                     
+										    2.分布式锁隐患及锁续期原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/promotion-failed.html">
+                     
+										    3.Promotion Failed的原因及解决思路
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/ddd-ju-he-gen.html">
+                     
+										    4.DDD领域驱动中聚合根的概念
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/ddd-interface-abstract-diff.html">
+                     
+										    5.请分析RR可能导致锁范围扩大的原因和解决思路
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/kafka-exactly-once.html">
+                     
+										    6.结合kafka的exactly-once说明如何实现一个无锁的幂等方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/10w-QPS-desigen.html">
+                     
+										    7.如何设计一个支持10万QPS的库存扣减系统
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/export-full-GC.html">
+                     
+										    8.导出频繁FullGC如何定位泄漏点，你是如何优化的
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/kafka-exactly-once.html">
+                     
+										    9.设计一个强一致性方案保障故障转移时会话共享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/atom-and-end-complete.html">
+                     
+										    10.订单系统如何保证原子性和最终一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/redis-same-to-db.html">
+                     
+										    11.如何保证缓存和数据库的一致性
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0220/es-deep-page-query.html">
+                     
+										    12.es怎么解决深分页的问题及索引优化有哪些方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										个人
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/self-audition-pingan.html">
+                     
+										    平安面试(22.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/self-audition-huarun.html">
+                     
+										    华润面试(22.6)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/0120/self-audition-jindong.html">
+                     
+										    京东(23.2)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0219/self-audition-pingan.html">
+                     
+										    平安面试(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-used-data-structure.html">
+				<h2 class="index-title">
+					08 redis常用数据结构
+				</h2>
+				<div class="index-brief">
+					String，list,set,zset,hash
+
+String类型是redis最基本类型之一，其存储数据方式为key和value的方式，其中value即为String类型，常用方式get set获取对应的key
+list是一种数据结构(链表)，可以将list当成栈，也可以当成队列,常用指令lpu
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-distributed-lock.html">
+				<h2 class="index-title">
+					09 redis分布式锁有用过吗？
+				</h2>
+				<div class="index-brief">
+					redis分布式锁我们用的是Redisson，它的实现原理是：我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在，如果不存在则新增key并设置过期时间默认30s，然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果存在就续期；直到不存在后证明锁已被释放
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-distributed-lock-space.html">
+				<h2 class="index-title">
+					10 分布式锁的应用场景
+				</h2>
+				<div class="index-brief">
+					我们知道，对于单机的多线程情况下的线程安全问题我们可以用使用JDK自带的锁来保证线程安全，但是集群环境下的线程安全怎么保证呢？客户A调用一个接口修改数据，客户B同时调用这一个接口修改数据，负载到不同的机器上，怎么保证同一时间这笔数据只能一个人操作呢？那就需要用到分布式锁，我说个我们项目中用到的分布式
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-cache-question.html">
+				<h2 class="index-title">
+					05 缓存击穿，缓存穿透，缓存雪崩
+				</h2>
+				<div class="index-brief">
+					
+缓存击穿-redis中一个热点key过期（大量用户访问该热点key，但是热点key过期);监控哪些数据是热门数据，实时的调整key的过期时长；
+缓存穿透-大量请求根本不存在的key；设置空值,设置白名单,使用布隆过滤器，对请求做校验(比如请求一个查询一个id为-1000的数据，这种直接可以判定为不
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-identify-hot-key.html">
+				<h2 class="index-title">
+					06 怎么监控热key
+				</h2>
+				<div class="index-brief">
+					redis 4.0以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可，执行redis-cli时加上–hotkeys选项。可以定时在节点中使用该命令来发现对应热点key或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+
+	<div id="index-paginator">
+		
+			<a class="extend prev" rel="prev" href="/categories/12-redis/">&lt;</a><a class="page-number" href="/categories/12-redis/">1</a><span class="page-number current">2</span><a class="page-number" href="/categories/12-redis/page/3/">3</a><a class="extend next" rel="next" href="/categories/12-redis/page/3/">&gt;</a>
+		
+	</div>
+</div>
+
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start">2023</span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">vvEcho</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":65},"mobile":{"show":false},"rect":"opacity:0.6","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
