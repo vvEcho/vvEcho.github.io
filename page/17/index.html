@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,32 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/apo-impl-code.html">
+				<h2 class="index-title">
+					08 说看过AOP相关源码,说下具体实现
+				</h2>
+				<div class="index-brief">
+					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/ioc-impl-code.html">
 				<h2 class="index-title">
 					09 说看过IOC相关源码,说下具体实现
@@ -2900,33 +2937,6 @@ MANDATORY级别，要求SQL操作强制在事务
 				</h2>
 				<div class="index-brief">
 					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/pessimistic-optimistic-lock.html">
-				<h2 class="index-title">
-					08 悲观锁和乐观锁
-				</h2>
-				<div class="index-brief">
-					悲观锁，按字面意思就是很悲观，每次获得去修改数据时总算悲观的认为数据已经被修改了，因此每次在获取到数据时都先给数据加锁，在操作数据的整个过程中一直上锁，等操作结束才会释放锁
-乐观锁，按字面意思就是很乐观，每次获得数据后总算乐观的认为数据没有被修改，只有在执行更新操作时才会判断数据是否被修改，如果数据
 					...
 				</div>
 			</a>

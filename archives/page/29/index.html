@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,34 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-pull-push.html">
+				<h2 class="index-title">
+					06 rocketMq是pull模式还是push模式
+				</h2>
+				<div class="index-brief">
+					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式
+在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类
+Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/rocketmq-msg-heaped.html">
 				<h2 class="index-title">
 					07 rocketMq消息堆积怎么解决
@@ -2757,35 +2796,6 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
 					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；
 对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作
 若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-order.html">
-				<h2 class="index-title">
-					05 rocketMq如何保证消息顺序消费？
-				</h2>
-				<div class="index-brief">
-					这个问题其实可以分为三点
-第一点生产者要保证消息的顺序生产 第二点broker要保证消息的顺序保存 第三点消费者要保证消息的顺序消费 
-一、生产者端：确保同一业务消息进入同一队列定义业务路由键（Message Group）
-选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，确保同
 					...
 				</div>
 			</a>

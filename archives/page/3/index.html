@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,35 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0305/rocketmq-delay-message.html">
+				<h2 class="index-title">
+					11 rocketMq的延迟消息
+				</h2>
+				<div class="index-brief">
+					RocketMQ默认提供18个固定延迟级别，对应不同时间间隔（如1s、5s、10s、1h、2h等）。
+每个级别对应一个内部队列，消息根据延迟级别暂存至对应的队列中，到期后由Broker重新投递到目标Topic
+延迟消息的实现原理：生产者生产消息时，设置延迟级别；
+broker根据延迟级别，将消息暂存
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0305/redis-redlock-brain-split.html">
 				<h2 class="index-title">
 					23 RedLock算法如何解决Redis集群脑裂问题
@@ -2760,52 +2800,6 @@ RedLock通过以下机制规避此类风险：
 			</a>
                 <div class="article-meta">
 				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/redis-cache-eviction-strategy.html">
-				<h2 class="index-title">
-					19 redis的缓存淘汰策略
-				</h2>
-				<div class="index-brief">
-					
-
-
-策略名称
-淘汰逻辑
-适用场景
-
-
-
-noeviction（默认）
-内存满时拒绝所有写操作，返回错误
-数据不可丢失的敏感场景（如金融交易）
-
-
-LRU（最近最少使用）
-根据键的最后访问时间，淘汰最久未访问的数据
-有明显冷热数据区分的场景（如新闻热点）
-
-
-LFU（最不频繁使用）
-根据键的访问频率
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
                     
                             
                                 

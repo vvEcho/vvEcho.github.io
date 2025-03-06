@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,52 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0304/redis-cache-eviction-strategy.html">
+				<h2 class="index-title">
+					19 redis的缓存淘汰策略
+				</h2>
+				<div class="index-brief">
+					
+
+
+策略名称
+淘汰逻辑
+适用场景
+
+
+
+noeviction（默认）
+内存满时拒绝所有写操作，返回错误
+数据不可丢失的敏感场景（如金融交易）
+
+
+LRU（最近最少使用）
+根据键的最后访问时间，淘汰最久未访问的数据
+有明显冷热数据区分的场景（如新闻热点）
+
+
+LFU（最不频繁使用）
+根据键的访问频率
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0304/redis-same-db.html">
 				<h2 class="index-title">
 					18 如何保证redis中缓存和数据库的一致性
@@ -2765,35 +2822,6 @@
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/40-场景题/">40 场景题</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/hashmap-linkedhashmap.html">
-				<h2 class="index-title">
-					04 HashMap和LinkedHashMap有啥区别
-				</h2>
-				<div class="index-brief">
-					首先LinkedHashMap继承于HashMap，所以LinkedHashMap也是HashMap的子类。
-
-hashmap的数据结构是数组+单向链表+红黑树，而linkedhashmap的数据结构是数组+双向链表。
-HashMap的迭代顺序是随机的，LinkedHashMap的迭代顺序是插入顺序
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
 										
                                     </span>
                                 

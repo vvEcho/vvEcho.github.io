@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+				<h2 class="index-title">
+					12 threadLocal的应用场景及问题
+				</h2>
+				<div class="index-brief">
+					场景1，用于保存用户信息例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。
+场景2，SimpleDateFormat线程不安全因为SimpleDateFormat不是线程安全的，所以
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
 				<h2 class="index-title">
 					09 kafka消息丢失的场景及解决方案
@@ -2900,35 +2938,6 @@ kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0305/rocketmq-delay-message.html">
-				<h2 class="index-title">
-					11 rocketMq的延迟消息
-				</h2>
-				<div class="index-brief">
-					RocketMQ默认提供18个固定延迟级别，对应不同时间间隔（如1s、5s、10s、1h、2h等）。
-每个级别对应一个内部队列，消息根据延迟级别暂存至对应的队列中，到期后由Broker重新投递到目标Topic
-延迟消息的实现原理：生产者生产消息时，设置延迟级别；
-broker根据延迟级别，将消息暂存
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
 										
                                     </span>
                                 

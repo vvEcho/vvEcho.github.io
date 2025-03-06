@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,34 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/springcloud-hystrix.html">
+				<h2 class="index-title">
+					05.1 hystrix服务熔断和降级
+				</h2>
+				<div class="index-brief">
+					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
+Hystrix的主要原理是用了断路器模式和线程池隔离技术；
+通过断路器的故障监控，向服务调用方返回一个符合预
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/springcloud-used-component.html">
 				<h2 class="index-title">
 					01 springCloud中组件常用的有哪些？
@@ -2904,32 +2943,6 @@ springboot的自动装配是依赖于java的s
 责任链模式-BeanPostProcessor
 观察者模式-事件监听机制
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/apo-impl-code.html">
-				<h2 class="index-title">
-					08 说看过AOP相关源码,说下具体实现
-				</h2>
-				<div class="index-brief">
-					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
 					...
 				</div>
 			</a>

@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,12 +2676,14 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/jvm-error-in-project.html">
+			<a href="/2024/0120/jvm-config-params.html">
 				<h2 class="index-title">
-					07 你在实际项目中有排查过JVM方面的问题吗？
+					10 工作中常用的JVM配置参教有哪些?
 				</h2>
 				<div class="index-brief">
-					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
+					Java8为例
+
+日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
 					...
 				</div>
 			</a>
@@ -2697,6 +2710,32 @@
 				</h2>
 				<div class="index-brief">
 					引用计数法：记录了一个变量的引用次数，引用一次就加1，引用失效就减1，效率低可达性分析算法：判断一个变量是否根据当前引用地址是否可达，效率高标记清除算法：标记需清除的对象，统一回收；但是容易产生内存碎片，导致无法分配大对象；大量对象需要标记时效率低标记复制算法：将内存分成了两块，一块用来标记需要复制
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/jvm-error-in-project.html">
+				<h2 class="index-title">
+					07 你在实际项目中有排查过JVM方面的问题吗？
+				</h2>
+				<div class="index-brief">
+					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
 					...
 				</div>
 			</a>
@@ -2753,33 +2792,6 @@ jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出
 				</h2>
 				<div class="index-brief">
 					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区在创建类的对象时，首先会先去堆内存中分配空间然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化所有的非静态成员默认初始化完成后，调用相应的构造方法到栈中在栈
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/jvm-constant-pool.html">
-				<h2 class="index-title">
-					05 谈谈jvm常量池
-				</h2>
-				<div class="index-brief">
-					jdk1.8开始字符串常量池：存放在堆中运行时常量池：存放在方法区，属于元空间
-
 					...
 				</div>
 			</a>

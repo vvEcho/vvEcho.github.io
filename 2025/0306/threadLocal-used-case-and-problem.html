@@ -9,6 +9,8 @@
 	
 	<title>
 	
+		12 threadLocal的应用场景及问题 |
+	
 	java面试题
 	</title>
 
@@ -486,7 +488,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
                      
 										    12 threadLocal的应用场景及问题
@@ -2673,177 +2675,98 @@
 
 	<!-- 引入正文 -->
 	<div id="content" class="content">
-		<div id="index">
-	
-		 <div class="index-li">
-			<a href="/2024/0124/io-different.html">
-				<h2 class="index-title">
-					12 BIO,NIO,AIO的区别
-				</h2>
-				<div class="index-brief">
-					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
+		<h1 id="article-title">
+	12 threadLocal的应用场景及问题
+</h1>
 
-BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/self-audition-jindong.html">
-				<h2 class="index-title">
-					京东(23.2)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/">42 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/self-audition-huarun.html">
-				<h2 class="index-title">
-					华润面试(22.6)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/">42 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/self-audition-pingan.html">
-				<h2 class="index-title">
-					平安面试(22.3)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/">42 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
-				<h2 class="index-title">
-					01 项目亮点
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/41-项目相关/">41 项目相关</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
+<!-- meta -->
+<div class="article-meta">
 	
 
-	<div id="index-paginator">
-		
-			<a class="extend prev" rel="prev" href="/archives/2024/01/">&lt;</a><a class="page-number" href="/archives/2024/01/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2024/01/page/3/">3</a><a class="page-number" href="/archives/2024/01/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2024/01/page/22/">22</a><a class="extend next" rel="next" href="/archives/2024/01/page/3/">&gt;</a>
-		
-	</div>
+	<span>vvEcho</span>
+	<span>2025-03-06 17:15:44</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/03-数据结构/">03 数据结构</a>
+                  </i>
+                
+              </span>
+          
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
 </div>
+
+<!-- content -->
+<div id="article-content">
+	<h4 id="场景1，用于保存用户信息"><a href="#场景1，用于保存用户信息" class="headerlink" title="场景1，用于保存用户信息"></a>场景1，用于保存用户信息</h4><p>例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。</p>
+<h4 id="场景2，SimpleDateFormat线程不安全"><a href="#场景2，SimpleDateFormat线程不安全" class="headerlink" title="场景2，SimpleDateFormat线程不安全"></a>场景2，SimpleDateFormat线程不安全</h4><p>因为SimpleDateFormat不是线程安全的，所以如果多个线程同时使用SimpleDateFormat，可能会出现日期格式化错误。<br>根本原因在于SimpleDateFormat 内部通过一个Calendar对象维护格式化&#x2F;解析的中间状态。</p>
+<p>当多个线程同时调用 format() 或 parse() 时，Calendar的状态会被覆盖，导致：<br>数据错乱：输出字符串包含其他线程的时间片段（如秒数被覆盖）。<br>解析异常：生成非法时间字符串（如 “3030.3030”），无法转换回 Date。<br>校验失败：格式化前后的字符串不一致</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ThreadLocal&lt;SimpleDateFormat&gt; dateFormat = ThreadLocal.withInitial(() -&gt; <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<h4 id="threadLocal的问题"><a href="#threadLocal的问题" class="headerlink" title="threadLocal的问题"></a>threadLocal的问题</h4><p>threadLocal是一个线程级别的容器，它有里面有一个静态变量threadLocalMap,threadLocalMap它内部是一个Entry数组，每个Entry是一个键值对，键是ThreadLocal对象，值是线程私有的变量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Entry</span> <span class="keyword">extends</span> <span class="title class_">WeakReference</span>&lt;ThreadLocal&lt;?&gt;&gt; &#123;</span><br><span class="line">    <span class="comment">/** The value associated with this ThreadLocal. */</span></span><br><span class="line">    Object value;</span><br><span class="line"></span><br><span class="line">    Entry(ThreadLocal&lt;?&gt; k, Object v) &#123;</span><br><span class="line">        <span class="built_in">super</span>(k);</span><br><span class="line">        value = v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WeakReference</span>&lt;T&gt; <span class="keyword">extends</span> <span class="title class_">Reference</span>&lt;T&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Creates a new weak reference that refers to the given object.  The new</span></span><br><span class="line"><span class="comment">     * reference is not registered with any queue.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> referent object the new weak reference will refer to</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">WeakReference</span><span class="params">(T referent)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(referent);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Creates a new weak reference that refers to the given object and is</span></span><br><span class="line"><span class="comment">     * registered with the given queue.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> referent object the new weak reference will refer to</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> q the queue with which the reference is to be registered,</span></span><br><span class="line"><span class="comment">     *          or &lt;tt&gt;null&lt;/tt&gt; if registration is not required</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">WeakReference</span><span class="params">(T referent, ReferenceQueue&lt;? <span class="built_in">super</span> T&gt; q)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(referent, q);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>问题出在它的key是弱引用，但value是强引用。若未调用remove()，线程池中复用的线程会导致value无法回收</p>
+<p>被动清理触发条件：<br>ThreadLocalMap在调用set()、get()、remove()时，会被动扫描并清理key为null的Entry。若线程长期未执行这些操作，残留的value无法被回收</p>
+<p>ThreadLocal对象因无外部强引用被回收（key变为null），value仍被Entry强引用，由于key变为null,后续线程无法获取对应的value，而这个value一直占用这块内存，导致内存泄漏</p>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                09 kafka消息丢失的场景及解决方案
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+	<div id="vcomments"></div>
+
+
+<script>
+	
+		// 评论
+		new Valine({
+			el: '#vcomments',
+			appId: 'qY15MkA9mHIGfX5em0QpPHDs-MdYXbMMI',
+			appKey: 'csu4x9hAAb5u7jBOmDc6BaW5',
+			placeholder: 'Please enter a comment',
+			path: window.location.pathname,
+			avatar: 'retro',
+			highlight: false,
+      recordIP: true,
+      enableQQ: true,
+			requiredFields: ['nick','mail']
+		})
+	
+	
+</script>
 
 	</div>
 	<div id="footer">

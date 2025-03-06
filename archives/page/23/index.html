@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,32 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/net-xiyi.html">
+				<h2 class="index-title">
+					01 三次握手及四次挥手
+				</h2>
+				<div class="index-brief">
+					1.http通信为甚么要三次握手，四次挥手；当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认报
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/33-网络协议/">33 网络协议</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/sheji-mode.html">
 				<h2 class="index-title">
 					01.设计模式面试题
@@ -2754,33 +2791,6 @@ xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分
 				<div class="index-brief">
 					分库这个简单就是，分不同的sheam;一般是按业务来拆分
 分表一般有两种分法，一般有水平分表和垂直分表两种；水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表。。。而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不长变动的放一张表，变动多的放一张表；或者根据业务含
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/mysql-dividing-dbs-tables-query.html">
-				<h2 class="index-title">
-					08 分库分表后怎么做范围查找
-				</h2>
-				<div class="index-brief">
-					分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es
-
 					...
 				</div>
 			</a>

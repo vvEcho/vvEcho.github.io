@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/exception-error-different.html">
+				<h2 class="index-title">
+					07 exception和error有啥区别
+				</h2>
+				<div class="index-brief">
+					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/copy-on-write-arrayList.html">
 				<h2 class="index-title">
 					06 CopyOnWriteArrayList是线程安全的吗
@@ -2755,32 +2793,6 @@ jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新�
 底层数据结构ArrayList：ArrayList是基于动态数组实现的，内部维护一个Object数组，默认初始容量为10，当元素数量超过当前容量时会自动扩容。LinkedList：LinkedList是基于双向链表实现的，每个节点包含数据元素和指向前后节点的引用。
 
 随机访问效率ArrayList
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/hashMap-concurrentHashMap.html">
-				<h2 class="index-title">
-					03 ConcurrentHashMap和HashMap的扩容机制
-				</h2>
-				<div class="index-brief">
-					java1.7相比较java1.8，concurrentHashMap和hashMap都有一定的改动，其中concurrentHashMap在1.8版本后就不在基于Segement分段锁的实现了，并且锁的粒度改为了链表的head节点，锁的粒度更细效率更高；而hashMap在1.8版本后由于存储结构加
 					...
 				</div>
 			</a>

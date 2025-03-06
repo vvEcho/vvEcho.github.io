@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/mysql-dividing-dbs-tables-query.html">
+				<h2 class="index-title">
+					08 分库分表后怎么做范围查找
+				</h2>
+				<div class="index-brief">
+					分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/mysql-count-query-sample.html">
 				<h2 class="index-title">
 					09 统计sql例子
@@ -2750,35 +2788,6 @@
 				</h2>
 				<div class="index-brief">
 					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的变化提交之前，对于其他的读事务来说都是不可见的；当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC 并发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/mysql-re-in-undo-log.html">
-				<h2 class="index-title">
-					04 redolog和binlog,undolog
-				</h2>
-				<div class="index-brief">
-					binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；
-
-binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；
-redolog-重做日志的作用，在于提高mysql
 					...
 				</div>
 			</a>

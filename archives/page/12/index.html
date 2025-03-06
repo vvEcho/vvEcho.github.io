@@ -485,6 +485,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+                     
+										    12 threadLocal的应用场景及问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2665,6 +2676,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0228/index-down-push.html">
+				<h2 class="index-title">
+					15 什么叫索引下推，回表？
+				</h2>
+				<div class="index-brief">
+					索引下推索引下推简称ICP(index condition push),是mysql5.6后新增的功能，主要的核心点在于把数据筛选的过程放在了存储引擎层面，减少了返回的数据量和回表的次数，从而提高查询效率。
+回表数据库查询使用普通字段时，因为索引中只存了索引键值和主键值，无法通过索引键值查询到数据，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-28</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0228/net-jwt-authorization.html">
 				<h2 class="index-title">
 					02 说一下jwt的认证流程
@@ -2770,33 +2808,6 @@ jwt的认证流程说明：前端发起请求登陆，用户携带用户名和�
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/15-xxl-job/">15 xxl-job</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0227/spring-bean-singleton.html">
-				<h2 class="index-title">
-					19 spring是如何保证bean是单例的？
-				</h2>
-				<div class="index-brief">
-					spring是通过三级缓存与双重检测锁的协作来保证bean是单例的
-一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。三级缓存（singletonFa
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
