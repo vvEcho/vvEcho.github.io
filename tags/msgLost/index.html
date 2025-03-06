@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2588,9 +2698,9 @@
 					03 rocketMq怎么避免消息不丢失？
 				</h2>
 				<div class="index-brief">
-					那问这个问题，我们需要知道rocketMq哪些场景会导致消息丢失；
+					我们需要知道rocketMq哪些场景会导致消息丢失；
 
-生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了
+生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了则执行回滚逻辑
 					...
 				</div>
 			</a>

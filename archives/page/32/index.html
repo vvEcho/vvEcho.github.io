@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,18 +2665,40 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/spring-transcation-jizhi.html">
+			<a href="/2024/0120/auto-assemble-principle.html">
 				<h2 class="index-title">
-					03 Spring事务传播机制
+					01 自动装配原理？
 				</h2>
 				<div class="index-brief">
-					Spring默认有7种事务机制，如下：
-
-REQUIRED-默认的事务隔离级别，会自动加入当前的事务，如果不存在则新建事务
-
-SUPPORT级别，跟REQUIRED类似，也是会自动加入当前的事务，但两者区别在于，若当前无事务，则按照无事务的方式执行
-
-MANDATORY级别，要求SQL操作强制在事务
+					springboot的自动装配其实是他约定大于配置这一核心思想的具体体现
+例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；
+springboot的自动装配是依赖于java的s
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/aop-jdk-cglib.html">
+				<h2 class="index-title">
+					10 aop的实现默认是使用jdk动态代理还是cglib
+				</h2>
+				<div class="index-brief">
+					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
 					...
 				</div>
 			</a>
@@ -2587,15 +2719,13 @@ MANDATORY级别，要求SQL操作强制在事务
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/deadlock-occurs-reason.html">
+			<a href="/2024/0120/pointcut-order-sure.html">
 				<h2 class="index-title">
-					09 死锁出现的原因以及怎么解决？
+					11 切面解析的顺序怎么确定？
 				</h2>
 				<div class="index-brief">
-					出现死锁的原因是因为两个线程出现持有对方想要的资源，导致这两个线程一直处在等待对方释放锁的状态；
-破坏竞态条件既可以解除死锁，例如：当一个线程持有锁时，自己没有释放锁时不能再去尝试获取另一个锁；
-代码示例：
-1234567891011121314151617181920212223242526272
+					使用 @order(number) 注解，number 越小，优先级越高
+
 					...
 				</div>
 			</a>
@@ -2606,7 +2736,7 @@ MANDATORY级别，要求SQL操作强制在事务
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2616,12 +2746,19 @@ MANDATORY级别，要求SQL操作强制在事务
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/thread-pool-setting.html">
+			<a href="/2024/0120/spring-she-ji-mo-shi.html">
 				<h2 class="index-title">
-					06 线程池怎么用，7大参数理解？如何配置？
+					07 spring框架中的设计模式有哪些(待完善)
 				</h2>
 				<div class="index-brief">
-					12345678910ThreadPoolExecutor(    int corePoolSize, // 核心池线程数大小 (常用)    int maximumPoolSize,  // 最大的线程数大小 (常用)    long keepAliveTime, // 超时等待时间 (常用)  
+					工厂模式-BeanFactory
+模板模式-JdbcTemplate
+策略模式-InstantionStrategy
+代理模式-BeanProxy
+装饰器模式-BeanWapper
+责任链模式-BeanPostProcessor
+观察者模式-事件监听机制
+
 					...
 				</div>
 			</a>
@@ -2632,7 +2769,7 @@ MANDATORY级别，要求SQL操作强制在事务
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2642,12 +2779,12 @@ MANDATORY级别，要求SQL操作强制在事务
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/semaphore-sample.html">
+			<a href="/2024/0120/apo-impl-code.html">
 				<h2 class="index-title">
-					07 信号量Semaphore(待完善)
+					08 说看过AOP相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
+					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
 					...
 				</div>
 			</a>
@@ -2658,34 +2795,7 @@ MANDATORY级别，要求SQL操作强制在事务
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/pessimistic-optimistic-lock.html">
-				<h2 class="index-title">
-					08 悲观锁和乐观锁
-				</h2>
-				<div class="index-brief">
-					悲观锁，按字面意思就是很悲观，每次获得去修改数据时总算悲观的认为数据已经被修改了，因此每次在获取到数据时都先给数据加锁，在操作数据的整个过程中一直上锁，等操作结束才会释放锁
-乐观锁，按字面意思就是很乐观，每次获得数据后总算乐观的认为数据没有被修改，只有在执行更新操作时才会判断数据是否被修改，如果数据
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2697,7 +2807,7 @@ MANDATORY级别，要求SQL操作强制在事务
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/31/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/30/">30</a><a class="page-number" href="/archives/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/archives/page/33/">33</a><a class="page-number" href="/archives/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/39/">39</a><a class="extend next" rel="next" href="/archives/page/33/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/31/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/30/">30</a><a class="page-number" href="/archives/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/archives/page/33/">33</a><a class="page-number" href="/archives/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/41/">41</a><a class="extend next" rel="next" href="/archives/page/33/">&gt;</a>
 		
 	</div>
 </div>

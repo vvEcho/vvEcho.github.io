@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2560,7 +2670,9 @@
 					03 kafka如何保证消息的顺序消费
 				</h2>
 				<div class="index-brief">
-					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的，因为是多个分区，消费的时候通过
+					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；
+而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的
+因为是多个分区，消费的时候通
 					...
 				</div>
 			</a>
@@ -2586,7 +2698,10 @@
 					05 rocketMq如何保证消息顺序消费？
 				</h2>
 				<div class="index-brief">
-					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
+					这个问题其实可以分为三点
+第一点生产者要保证消息的顺序生产 第二点broker要保证消息的顺序保存 第三点消费者要保证消息的顺序消费 
+一、生产者端：确保同一业务消息进入同一队列定义业务路由键（Message Group）
+选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，确保同
 					...
 				</div>
 			</a>

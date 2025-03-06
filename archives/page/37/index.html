@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,17 +2665,68 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/overwrite-overload-different.html">
+			<a href="/2024/0120/jvm-error-in-project.html">
 				<h2 class="index-title">
-					10 重写和重载的区别
+					07 你在实际项目中有排查过JVM方面的问题吗？
+				</h2>
+				<div class="index-brief">
+					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/garbage-collection-algorithm.html">
+				<h2 class="index-title">
+					06 常见的垃圾回收算法
+				</h2>
+				<div class="index-brief">
+					引用计数法：记录了一个变量的引用次数，引用一次就加1，引用失效就减1，效率低可达性分析算法：判断一个变量是否根据当前引用地址是否可达，效率高标记清除算法：标记需清除的对象，统一回收；但是容易产生内存碎片，导致无法分配大对象；大量对象需要标记时效率低标记复制算法：将内存分成了两块，一块用来标记需要复制
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/how-to-resolve-pro-cup-high.html">
+				<h2 class="index-title">
+					08 生产环境CPU占用过高，如何解决？
 				</h2>
 				<div class="index-brief">
 					
-重载是定义相同的方法名、只是参数不同，重写是子类重写父类的方法
-重载是在一个类中，重写是子类与父类之间的
-重载是编译时的多态性，重写是运行时的多态性
-重载的参数个数、参数类型、参数的顺序可以不同，重写父类子方法参数必须相同
-重载对修饰范围没有要求，重写要求重写方法的修饰范围大于被重写方法的修饰范围
+top + H 指令找出占用 CPU 最高的进程的 pid
+top - H - p 否该进程中找到，哪些线程占用的 CPU 最高的线程,记录下 tid
+jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出出现异常的话,加上一 F 参教
+将 tid 转换为十六
 					...
 				</div>
 			</a>
@@ -2576,7 +2737,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
 										
                                     </span>
                                 
@@ -2586,17 +2747,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/hashMap-hashTable-different.html">
+			<a href="/2024/0120/object-in-jvm-build-process.html">
 				<h2 class="index-title">
-					07 hashMap hashTable的区别
+					04 对象在jvm中的创建过程
 				</h2>
 				<div class="index-brief">
-					
-hashMap继承自AbstractMap,hashTable继承自Dictionary类；
-
-hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
-
-hashTable在put,get,contains等方法都加了synchr
+					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区在创建类的对象时，首先会先去堆内存中分配空间然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化所有的非静态成员默认初始化完成后，调用相应的构造方法到栈中在栈
 					...
 				</div>
 			</a>
@@ -2607,7 +2763,7 @@ hashTable在put,get,contains等方法都加了synchr
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
 										
                                     </span>
                                 
@@ -2617,47 +2773,12 @@ hashTable在put,get,contains等方法都加了synchr
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/strong-soft-weak-phantom-ref.html">
+			<a href="/2024/0120/jvm-constant-pool.html">
 				<h2 class="index-title">
-					08 强引用，软引用，弱引用，虚引用的区别
+					05 谈谈jvm常量池
 				</h2>
 				<div class="index-brief">
-					
-强引用强引用一般指我们new的对象存在的引用
-
-软引用软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
-
-弱引用弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
-
-虚引用虚引用，是一种形同虚设的引用，主要用来跟踪对象被
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/string-stringBuild-stringBuffer.html">
-				<h2 class="index-title">
-					14 String,stringBuild,StringBuffer的区别
-				</h2>
-				<div class="index-brief">
-					string是一个常量，他存在于常量池中；
-StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
-其中StringBuffer 相比较于StringBuffer他在append方法中加了同步锁synchronized，所以是线程安全的
+					jdk1.8开始字符串常量池：存放在堆中运行时常量池：存放在方法区，属于元空间
 
 					...
 				</div>
@@ -2669,35 +2790,7 @@ StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/copy-on-write-arrayList.html">
-				<h2 class="index-title">
-					06 CopyOnWriteArrayList是线程安全的吗
-				</h2>
-				<div class="index-brief">
-					copyOnWriteArrayList是线程安全的它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；
-并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；
-最后，待元素写入新数组后再
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
 										
                                     </span>
                                 
@@ -2709,7 +2802,7 @@ StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/36/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/35/">35</a><a class="page-number" href="/archives/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/archives/page/38/">38</a><a class="page-number" href="/archives/page/39/">39</a><a class="extend next" rel="next" href="/archives/page/38/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/36/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/35/">35</a><a class="page-number" href="/archives/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/archives/page/38/">38</a><a class="page-number" href="/archives/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/41/">41</a><a class="extend next" rel="next" href="/archives/page/38/">&gt;</a>
 		
 	</div>
 </div>

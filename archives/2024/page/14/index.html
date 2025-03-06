@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2560,7 +2670,8 @@
 					08 说说rocketmq死信队列
 				</h2>
 				<div class="index-brief">
-					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。rocketMq 会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
+					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
+rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
 
 					...
 				</div>
@@ -2587,35 +2698,9 @@
 					03 rocketMq怎么避免消息不丢失？
 				</h2>
 				<div class="index-brief">
-					那问这个问题，我们需要知道rocketMq哪些场景会导致消息丢失；
+					我们需要知道rocketMq哪些场景会导致消息丢失；
 
-生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-order.html">
-				<h2 class="index-title">
-					05 rocketMq如何保证消息顺序消费？
-				</h2>
-				<div class="index-brief">
-					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
+生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了则执行回滚逻辑
 					...
 				</div>
 			</a>
@@ -2641,7 +2726,38 @@
 					04 rocketMq怎么避免消息不重复消费
 				</h2>
 				<div class="index-brief">
-					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作，若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重，
+					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；
+对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作
+若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-order.html">
+				<h2 class="index-title">
+					05 rocketMq如何保证消息顺序消费？
+				</h2>
+				<div class="index-brief">
+					这个问题其实可以分为三点
+第一点生产者要保证消息的顺序生产 第二点broker要保证消息的顺序保存 第三点消费者要保证消息的顺序消费 
+一、生产者端：确保同一业务消息进入同一队列定义业务路由键（Message Group）
+选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，确保同
 					...
 				</div>
 			</a>
@@ -2667,7 +2783,12 @@
 					01 rocketMq架构是怎样的,说说心跳机制
 				</h2>
 				<div class="index-brief">
-					RocketMq的架构包含一个发送消息的生产者Producer,消息存储接收的broker,消息消费的一个Consumer,还有一个消息状态管理的NameServer无状态服务器，然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳
+					RocketMq的架构包含:
+发送消息的生产者Producer
+消息存储接收的broker
+消息消费的一个Consumer
+管理消息状态的NameServer无状态服务器
+然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳的时间戳
 					...
 				</div>
 			</a>

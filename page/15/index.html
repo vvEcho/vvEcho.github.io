@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,20 +2665,215 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/springcloud-used-component.html">
+			<a href="/2024/0120/rocketmq-msg-heaped.html">
 				<h2 class="index-title">
-					01 springCloud中组件常用的有哪些？
+					07 rocketMq消息堆积怎么解决
 				</h2>
 				<div class="index-brief">
-					Zuul、Gateway-网关
-eureka-注册中心
-config-配置中心
-Ribbon-负载均衡
-Feign-服务调用
-Hystrix或Resilience4j-熔断器
-security-安全权限组件
-shiro-权限组件
+					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
+检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
+还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
+				<h2 class="index-title">
+					08 说说rocketmq死信队列
+				</h2>
+				<div class="index-brief">
+					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
+rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-not-lost.html">
+				<h2 class="index-title">
+					03 rocketMq怎么避免消息不丢失？
+				</h2>
+				<div class="index-brief">
+					我们需要知道rocketMq哪些场景会导致消息丢失；
+
+生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了则执行回滚逻辑
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-not-repeat.html">
+				<h2 class="index-title">
+					04 rocketMq怎么避免消息不重复消费
+				</h2>
+				<div class="index-brief">
+					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；
+对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作
+若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-order.html">
+				<h2 class="index-title">
+					05 rocketMq如何保证消息顺序消费？
+				</h2>
+				<div class="index-brief">
+					这个问题其实可以分为三点
+第一点生产者要保证消息的顺序生产 第二点broker要保证消息的顺序保存 第三点消费者要保证消息的顺序消费 
+一、生产者端：确保同一业务消息进入同一队列定义业务路由键（Message Group）
+选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，确保同
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocket-framewokr.html">
+				<h2 class="index-title">
+					01 rocketMq架构是怎样的,说说心跳机制
+				</h2>
+				<div class="index-brief">
+					RocketMq的架构包含:
+发送消息的生产者Producer
+消息存储接收的broker
+消息消费的一个Consumer
+管理消息状态的NameServer无状态服务器
+然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳的时间戳
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-find-msg.html">
+				<h2 class="index-title">
+					02 rocketMq怎么查找到对应的消息的？
+				</h2>
+				<div class="index-brief">
+					我们知道，RocketMQ核心的数据文件有3个：CommitLog、ConsumeQueue和Index。
+其中Index文件就是一个索引文件，查找消息时，首先根据消息key的hashcode计算出Hash槽的位置，然后读取Hash槽的值计算Index条目的位置
+从Index条目位置读取到消息在Co
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13rocketmq/">13rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/nacos-konw.html">
+				<h2 class="index-title">
+					03.3 nacos注册中心
+				</h2>
+				<div class="index-brief">
+					1.nacos简介Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
+Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
+
+服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注
 					...
 				</div>
 			</a>
@@ -2589,12 +2894,14 @@ shiro-权限组件
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/springcloud-eureka.html">
+			<a href="/2024/0120/dubbo-rpc-net.html">
 				<h2 class="index-title">
-					03.1 Eureka注册中心
+					07 dubbo微服务间怎么通信？
 				</h2>
 				<div class="index-brief">
-					1.服务端如何保存客户端注册信息?客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.客户端通过Jersey框架，将自己的注册信息
+					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
+使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
+dubbo的服务注册与发现的流程容器启动后，提供方向注
 					...
 				</div>
 			</a>
@@ -2615,13 +2922,14 @@ shiro-权限组件
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/springboot-annotation.html">
+			<a href="/2024/0120/springcloud-hystrix.html">
 				<h2 class="index-title">
-					02 springBoot常用注解？
+					05.1 hystrix服务熔断和降级
 				</h2>
 				<div class="index-brief">
-					@SpringBootApplication spring启动类上的注解（实际是由三个注解组成：@SpringBootConfiguration @EnableAutoConfiguration @ComponentScan）
-@EnableAutoConfiguration 自动配置类@Sprin
+					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
+Hystrix的主要原理是用了断路器模式和线程池隔离技术；
+通过断路器的故障监控，向服务调用方返回一个符合预
 					...
 				</div>
 			</a>
@@ -2632,205 +2940,7 @@ shiro-权限组件
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-springboot/">02 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/interceptor-filter-different.html">
-				<h2 class="index-title">
-					03 拦截器和过滤器的区别
-				</h2>
-				<div class="index-brief">
-					区别：
-
-拦截器是SpringMVC提供的，过滤器是Servlet提供的。
-过滤器与servlet是绑定的，仅限于web应用。而拦截器可作用于其他的应用，例如swing应用
-对所有请求生效（包括静态资源、Servlet、JSP等），可修改请求&#x2F;响应内容（如编码、敏感词过滤）
-拦截器仅拦截S
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/solve-spring-cycle-depency.html">
-				<h2 class="index-title">
-					12 spring怎么解决循环依赖的？
-				</h2>
-				<div class="index-brief">
-					为什么会出现循环依赖其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
-这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被实
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/auto-assemble-principle.html">
-				<h2 class="index-title">
-					01 自动装配原理？
-				</h2>
-				<div class="index-brief">
-					springboot的自动装配其实是他约定大于配置这一核心思想的具体体现
-例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；
-springboot的自动装配是依赖于java的s
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/aop-jdk-cglib.html">
-				<h2 class="index-title">
-					10 aop的实现默认是使用jdk动态代理还是cglib
-				</h2>
-				<div class="index-brief">
-					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/pointcut-order-sure.html">
-				<h2 class="index-title">
-					11 切面解析的顺序怎么确定？
-				</h2>
-				<div class="index-brief">
-					使用 @order(number) 注解，number 越小，优先级越高
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/spring-she-ji-mo-shi.html">
-				<h2 class="index-title">
-					07 spring框架中的设计模式有哪些(待完善)
-				</h2>
-				<div class="index-brief">
-					工厂模式-BeanFactory
-模板模式-JdbcTemplate
-策略模式-InstantionStrategy
-代理模式-BeanProxy
-装饰器模式-BeanWapper
-责任链模式-BeanPostProcessor
-观察者模式-事件监听机制
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/apo-impl-code.html">
-				<h2 class="index-title">
-					08 说看过AOP相关源码,说下具体实现
-				</h2>
-				<div class="index-brief">
-					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2842,7 +2952,7 @@ springboot的自动装配是依赖于java的s
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/14/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/16/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/14/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/16/">&gt;</a>
 		
 	</div>
 </div>

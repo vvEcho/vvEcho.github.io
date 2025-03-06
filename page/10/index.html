@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,14 +2665,215 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0124/io-different.html">
+			<a href="/2024/0204/vue-life-cycle.html">
 				<h2 class="index-title">
-					12 BIO,NIO,AIO的区别
+					01 vue的生命周期
 				</h2>
 				<div class="index-brief">
-					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
+					Vue的生命周期是指Vue实例对象从创建之初到销毁的过程，这个过程包括多个阶段，每个阶段都有对应的钩子函数，用于控制组件的数据管理和DOM渲染。Vue的生命周期可以分为以下几个阶段：
 
-BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
+beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得DO
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/36-vue/">36 vue</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/redis-big-key.html">
+				<h2 class="index-title">
+					12 redis大key问题
+				</h2>
+				<div class="index-brief">
+					大key可能存在的场景
+配送范围特别大的门店
+促销活动特别多的门店、商家等
+高频用户下的订单列表
+
+大key会导致什么问题
+如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
+如果是hash,list,set,zset等类型key 删除key会严重阻
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/springcloud-bus.html">
+				<h2 class="index-title">
+					07 springcloud消息总线
+				</h2>
+				<div class="index-brief">
+					Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
+Spring Cloud Bus配合Spring Cloud Config使用可以实现分布式自动刷新配置功能
+ConfigClient实例都监听MQ中
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/sentinel-liu-kong.html">
+				<h2 class="index-title">
+					05.3 hystricl和sentinel的对比
+				</h2>
+				<div class="index-brief">
+					Sentinel和Hystrix有哪些不同？Sentinel 和 Hystrix 都是用于管理分布式系统中的服务可靠性和延迟容忍性的工具，它们提供了像熔断器、限流器和服务降级这样的功能。虽然两者的目标类似，但它们在实现和功能上存在一些差异。以下是 Sentinel 和 Hystrix 的主要区别：
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/springcloud-zookeeper.html">
+				<h2 class="index-title">
+					03.2 zookeeper注册中心
+				</h2>
+				<div class="index-brief">
+					1.Zookeeper的服务注册与发现Zookeeper的服务注册与发现,主要应用的是Zookeeper的Znode数据模型和Watcher机制
+服务注册：服务提供者会向Zookeeper服务端注册服务信息，即创建一个服务节点，并在节点上存储服务的相关数据（如服务提供者的ip地址、端口等):
+服务发
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/springmvc-understand.html">
+				<h2 class="index-title">
+					14 说说你对mspringMvc流程的理解
+				</h2>
+				<div class="index-brief">
+					
+
+用户发送请求至前端控制器 DispatcherServlet ；
+DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器 ，请求获取 Handler ；
+处理器映射器 根据请求 url 找到具体的处理器 Handler ，生成处理器对象及处理器拦截器（如
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/beanfactory-factoryBean.html">
+				<h2 class="index-title">
+					16 BeanFactory和FactoryBean有什么区别
+				</h2>
+				<div class="index-brief">
+					区别BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObj
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/hash-clash-solve.html">
+				<h2 class="index-title">
+					13 hash冲突怎么解决
+				</h2>
+				<div class="index-brief">
+					
+链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
+
+开放寻址法（Ope
 					...
 				</div>
 			</a>
@@ -2583,33 +2894,24 @@ BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/self-audition-jindong.html">
+			<a href="/2024/0124/translation-principle.html">
 				<h2 class="index-title">
-					京东(23.2)
+					05 spring事务的底层原理
 				</h2>
 				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
+					事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。
+当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。sprin
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-01-20</span>
+				    <span>2024-01-24</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/">42 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/个人/">个人</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2619,231 +2921,24 @@ BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/self-audition-huarun.html">
+			<a href="/2024/0124/arraylist-kuo-rong.html">
 				<h2 class="index-title">
-					华润面试(22.6)
+					08 arrayList扩容时扩容多少
 				</h2>
 				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
+					相关源码如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//默认容量大小private static final int DEFAULT_CAPACITY
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-01-20</span>
+				    <span>2024-01-24</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/">42 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/self-audition-pingan.html">
-				<h2 class="index-title">
-					平安面试(22.3)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/">42 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
-				<h2 class="index-title">
-					01 项目亮点
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/41-项目相关/">41 项目相关</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
-				<h2 class="index-title">
-					02 项目难点
-				</h2>
-				<div class="index-brief">
-					1.项目中遇到的技术难点？mq消费满导致拥堵多线程环境下大数据量导致内存泄漏连接池的配置导致查询缓慢
-2.说一个你做项目为止最难忘的一件事？最难忘的事，我想应该是上线出问题吧；我记得在平安产品线智慧薪酬项目时，当时每个季度末27号就要跑财务核算，当时是三个定时任务，并且这三个定时任务都是有先后顺序的
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/41-项目相关/">41 项目相关</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/about-linux.html">
-				<h2 class="index-title">
-					01 linux面试题
-				</h2>
-				<div class="index-brief">
-					
-linux常用查看日志命令？cd到对应的日志目录文件查看实时日志：tail -f xxx.log根据关键字查询：cat -n xxx.log|grep ‘occurs error’
-
-123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat err
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/34-linux/">34 linux</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
-				<h2 class="index-title">
-					01 docker面试题
-				</h2>
-				<div class="index-brief">
-					如何构建dockerfile
-将jar包上传到服务器
-执行下述命令构建dockerfile1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 构建 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/35-docker/">35 docker</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/math-method.html">
-				<h2 class="index-title">
-					01 算法面试题
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-算法/">32 算法</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/net-xiyi.html">
-				<h2 class="index-title">
-					01 三次握手及四次挥手
-				</h2>
-				<div class="index-brief">
-					1.http通信为甚么要三次握手，四次挥手；当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认报
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/33-网络协议/">33 网络协议</a>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
 										
                                     </span>
                                 
@@ -2855,7 +2950,7 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/9/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/11/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/9/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/11/">&gt;</a>
 		
 	</div>
 </div>

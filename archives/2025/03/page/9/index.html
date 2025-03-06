@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,25 +2665,27 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0301/can-notcan-enter-lock.html">
+			<a href="/2025/0302/springboot-characteristic.html">
 				<h2 class="index-title">
-					11 什么叫可重入锁和不可重入锁
+					05 springboot有哪些特点
 				</h2>
 				<div class="index-brief">
-					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是可重入锁
-不可重入锁只判断这个锁有没有被锁上，只要被锁上，申请锁的线程都会被要求等待。
-可重入锁不仅判断锁有没有被锁上，还会判断锁是哪个线程锁上的，当判断为当前锁上的时候，那么他依旧
+					springBoot的优点是什么？‌
+
+快速开发‌：SpringBoot简化了配置，减少了开发、测试时间和努力。
+独立运行‌：内嵌了servlet容器，如Tomcat、Jetty等，无需部署WAR文件。
+自动配置‌：根据类路径下的类、jar包自动配置bean，如添加spring-boot-start
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-01</span>
+				    <span>2025-03-02</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
 										
                                     </span>
                                 
@@ -2583,15 +2695,96 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/fair-nonfair-lock.html">
+			<a href="/2025/0302/sprngboot-properties-order.html">
 				<h2 class="index-title">
-					10 公平锁和非公平锁
+					04 springBoot中配置优先级是怎样的?
 				</h2>
 				<div class="index-brief">
-					Java中提供的synchronized只能是非公平锁。
-Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和非公平锁
-公平锁公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。
-优点：每个线程等待一
+					优先级从高到低，高优先级的配置覆盖低优先级的配置，所有配置会形成互补配置。
+1.命令行参数。所有的配置都可以在命令行上进行指定
+2.Java系统属性(System.getProperties());
+3.操作系统环境变量;
+4.jar包,外部的application-{profile}.proper
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/spring-mvc-flow.html">
+				<h2 class="index-title">
+					20 springmvc的底层工作流程
+				</h2>
+				<div class="index-brief">
+					1.用户发送请求至前端控制器DispatcherServlet。2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.3.Disp
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/dengdeng-equals.html">
+				<h2 class="index-title">
+					15 ==和equals的区别
+				</h2>
+				<div class="index-brief">
+					1.&#x3D;&#x3D;是一个操作符，eqauls是object类的方法2.对于基本数据类型，&#x3D;&#x3D;比较的是两个对象的值是否相等，对于引用数据类型，&#x3D;&#x3D;比较的是两个对象的地址是否相等3.equal比较的是对象的值是否相等
+代码示例：
+123456789101
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/aqs-principle.html">
+				<h2 class="index-title">
+					16 AQS的实现原理
+				</h2>
+				<div class="index-brief">
+					AQS就是AbstractQueuedSynchronizer抽象类，AQS其实就是JUC包下的一个基类，JUC下的很多内容都是基于AQS实现了部分功能，比如ReentrantLock，ThreadPoolExecutor，阻塞队列，CountDownLatch，Semaphore，CyclicBa
 					...
 				</div>
 			</a>
@@ -2614,7 +2807,7 @@ Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/03/page/8/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/7/">7</a><a class="page-number" href="/archives/2025/03/page/8/">8</a><span class="page-number current">9</span>
+			<a class="extend prev" rel="prev" href="/archives/2025/03/page/8/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/7/">7</a><a class="page-number" href="/archives/2025/03/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/2025/03/page/10/">10</a><a class="page-number" href="/archives/2025/03/page/11/">11</a><a class="extend next" rel="next" href="/archives/2025/03/page/10/">&gt;</a>
 		
 	</div>
 </div>

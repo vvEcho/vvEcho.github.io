@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,14 +2665,17 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/auto-assemble-principle.html">
+			<a href="/2024/0120/rocket-framewokr.html">
 				<h2 class="index-title">
-					01 自动装配原理？
+					01 rocketMq架构是怎样的,说说心跳机制
 				</h2>
 				<div class="index-brief">
-					springboot的自动装配其实是他约定大于配置这一核心思想的具体体现
-例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；
-springboot的自动装配是依赖于java的s
+					RocketMq的架构包含:
+发送消息的生产者Producer
+消息存储接收的broker
+消息消费的一个Consumer
+管理消息状态的NameServer无状态服务器
+然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳的时间戳
 					...
 				</div>
 			</a>
@@ -2573,7 +2686,7 @@ springboot的自动装配是依赖于java的s
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
 										
                                     </span>
                                 
@@ -2583,12 +2696,14 @@ springboot的自动装配是依赖于java的s
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/aop-jdk-cglib.html">
+			<a href="/2024/0120/rocketmq-find-msg.html">
 				<h2 class="index-title">
-					10 aop的实现默认是使用jdk动态代理还是cglib
+					02 rocketMq怎么查找到对应的消息的？
 				</h2>
 				<div class="index-brief">
-					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
+					我们知道，RocketMQ核心的数据文件有3个：CommitLog、ConsumeQueue和Index。
+其中Index文件就是一个索引文件，查找消息时，首先根据消息key的hashcode计算出Hash槽的位置，然后读取Hash槽的值计算Index条目的位置
+从Index条目位置读取到消息在Co
 					...
 				</div>
 			</a>
@@ -2599,7 +2714,7 @@ springboot的自动装配是依赖于java的s
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/13rocketmq/">13rocketmq</a>
 										
                                     </span>
                                 
@@ -2609,13 +2724,15 @@ springboot的自动装配是依赖于java的s
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/pointcut-order-sure.html">
+			<a href="/2024/0120/nacos-konw.html">
 				<h2 class="index-title">
-					11 切面解析的顺序怎么确定？
+					03.3 nacos注册中心
 				</h2>
 				<div class="index-brief">
-					使用 @order(number) 注解，number 越小，优先级越高
+					1.nacos简介Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
+Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
 
+服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注
 					...
 				</div>
 			</a>
@@ -2626,7 +2743,7 @@ springboot的自动装配是依赖于java的s
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2636,19 +2753,14 @@ springboot的自动装配是依赖于java的s
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/spring-she-ji-mo-shi.html">
+			<a href="/2024/0120/dubbo-rpc-net.html">
 				<h2 class="index-title">
-					07 spring框架中的设计模式有哪些(待完善)
+					07 dubbo微服务间怎么通信？
 				</h2>
 				<div class="index-brief">
-					工厂模式-BeanFactory
-模板模式-JdbcTemplate
-策略模式-InstantionStrategy
-代理模式-BeanProxy
-装饰器模式-BeanWapper
-责任链模式-BeanPostProcessor
-观察者模式-事件监听机制
-
+					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
+使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
+dubbo的服务注册与发现的流程容器启动后，提供方向注
 					...
 				</div>
 			</a>
@@ -2659,7 +2771,7 @@ springboot的自动装配是依赖于java的s
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2669,12 +2781,14 @@ springboot的自动装配是依赖于java的s
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/apo-impl-code.html">
+			<a href="/2024/0120/springcloud-hystrix.html">
 				<h2 class="index-title">
-					08 说看过AOP相关源码,说下具体实现
+					05.1 hystrix服务熔断和降级
 				</h2>
 				<div class="index-brief">
-					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
+					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
+Hystrix的主要原理是用了断路器模式和线程池隔离技术；
+通过断路器的故障监控，向服务调用方返回一个符合预
 					...
 				</div>
 			</a>
@@ -2685,7 +2799,7 @@ springboot的自动装配是依赖于java的s
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2697,7 +2811,7 @@ springboot的自动装配是依赖于java的s
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/29/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/28/">28</a><a class="page-number" href="/archives/page/29/">29</a><span class="page-number current">30</span><a class="page-number" href="/archives/page/31/">31</a><a class="page-number" href="/archives/page/32/">32</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/39/">39</a><a class="extend next" rel="next" href="/archives/page/31/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/29/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/28/">28</a><a class="page-number" href="/archives/page/29/">29</a><span class="page-number current">30</span><a class="page-number" href="/archives/page/31/">31</a><a class="page-number" href="/archives/page/32/">32</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/41/">41</a><a class="extend next" rel="next" href="/archives/page/31/">&gt;</a>
 		
 	</div>
 </div>

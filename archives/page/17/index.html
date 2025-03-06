@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,25 +2665,25 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0204/vue-life-cycle.html">
+			<a href="/2024/0226/beanfactory-applicationcontext.html">
 				<h2 class="index-title">
-					01 vue的生命周期
+					15 BeanFactory和applicationContext有什么区别
 				</h2>
 				<div class="index-brief">
-					Vue的生命周期是指Vue实例对象从创建之初到销毁的过程，这个过程包括多个阶段，每个阶段都有对应的钩子函数，用于控制组件的数据管理和DOM渲染。Vue的生命周期可以分为以下几个阶段：
-
-beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得DO
+					首先他们都是spring容器，applicationContext继承了BeanFactory;
+其次BeanFactory是容器的根节点接口；BeanFactory是bean管理最底层工厂类，负责实例的创建，获取，懒加载等；
+BeanFactory属于基础的IOC容器，applicationCon
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-04</span>
+				    <span>2024-02-26</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/36-vue/">36 vue</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -2583,24 +2693,76 @@ beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0201/redis-big-key.html">
+			<a href="/2024/0226/transcation-geli-level.html">
 				<h2 class="index-title">
-					12 redis大key问题
+					04 事务隔离级别
 				</h2>
 				<div class="index-brief">
-					大key可能存在的场景
-配送范围特别大的门店
-促销活动特别多的门店、商家等
-高频用户下的订单列表
+					事务隔离级别就是为了解决脏读、幻读、不可重复读着这几个问题而产生的，但是事务隔离级别不同，产生的问题也不同，因此很多时候必须在并发性一个权衡，所以设立了几种事务隔离级别，以便让不同的项目可以根据自己项目的并发情况选择合适的事务隔离级别。事务隔离级别有四种，不过种：
 
-大key会导致什么问题
-如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
-如果是hash,list,set,zset等类型key 删除key会严重阻
+DEFAULT：默认隔离级别，意
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-01</span>
+				    <span>2024-02-26</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-spring/">04 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0226/kafka-high-throughput.html">
+				<h2 class="index-title">
+					06 kafka吞吐量高的原因
+				</h2>
+				<div class="index-brief">
+					
+kafka将topic划分为多个分区，每个分区独立读写；生产者负载均衡，避免了单个分区的压力；
+同一个消费组内的多个实例分别处理不同分区，提高了消费的吞吐
+kafka的消息时追加写，避免了随机磁盘寻址，顺序写的速度接近内存的操作
+kafka采用异步刷盘机制，消息和索引的写入先写入操作系统的页缓存，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-26</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0220/redis-page-query.html">
+				<h2 class="index-title">
+					15 redis如何做分页查询
+				</h2>
+				<div class="index-brief">
+					1.使用redis的list（列表）数据结构将需要分页展示的数据的id或者主键作为list中的元素，然后根据用户的分页请求，使用LRANGE命令来获取指定范围的元素，再根据元素来获取具体的数据
+2.使用redis的ZSet（有序集合）数据结构将需要分页展示的数据的id或者主键作为ZSet中的valu
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-20</span>
                     
                             
                                 
@@ -2616,80 +2778,24 @@ beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0201/springcloud-bus.html">
+			<a href="/2024/0220/rocketmq-consume-mode.html">
 				<h2 class="index-title">
-					07 springcloud消息总线
+					10 rocketMq有哪些消费模式
 				</h2>
 				<div class="index-brief">
-					Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
-Spring Cloud Bus配合Spring Cloud Config使用可以实现分布式自动刷新配置功能
-ConfigClient实例都监听MQ中
+					rocketMq有两种消费模式，集群消费(默认)和广播消费
+集群模式：一个ConsumerGroup中的Consumer实例根据队列分配策略算法为Consumer分配队列，平均分摊（默认）消费消息。例如Topic是Test的消息发送到该主题的不同队列中，发送了有100条消息，其中一个Consumer
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-01</span>
+				    <span>2024-02-20</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0201/sentinel-liu-kong.html">
-				<h2 class="index-title">
-					05.3 hystricl和sentinel的对比
-				</h2>
-				<div class="index-brief">
-					Sentinel和Hystrix有哪些不同？Sentinel 和 Hystrix 都是用于管理分布式系统中的服务可靠性和延迟容忍性的工具，它们提供了像熔断器、限流器和服务降级这样的功能。虽然两者的目标类似，但它们在实现和功能上存在一些差异。以下是 Sentinel 和 Hystrix 的主要区别：
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0201/springcloud-zookeeper.html">
-				<h2 class="index-title">
-					03.2 zookeeper注册中心
-				</h2>
-				<div class="index-brief">
-					1.Zookeeper的服务注册与发现Zookeeper的服务注册与发现,主要应用的是Zookeeper的Znode数据模型和Watcher机制
-服务注册：服务提供者会向Zookeeper服务端注册服务信息，即创建一个服务节点，并在节点上存储服务的相关数据（如服务提供者的ip地址、端口等):
-服务发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
 										
                                     </span>
                                 
@@ -2701,7 +2807,7 @@ ConfigClient实例都监听MQ中
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/16/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="page-number" href="/archives/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/archives/page/18/">18</a><a class="page-number" href="/archives/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/39/">39</a><a class="extend next" rel="next" href="/archives/page/18/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/16/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="page-number" href="/archives/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/archives/page/18/">18</a><a class="page-number" href="/archives/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/41/">41</a><a class="extend next" rel="next" href="/archives/page/18/">&gt;</a>
 		
 	</div>
 </div>

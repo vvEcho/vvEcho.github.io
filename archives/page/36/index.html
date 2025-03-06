@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,13 +2665,12 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/jvm-jmm-understand.html">
+			<a href="/2024/0120/one-class-build-process.html">
 				<h2 class="index-title">
-					01.说说对JVM和JMM的理解
+					11 简述一个类的创建过程？
 				</h2>
 				<div class="index-brief">
-					JVMJVM 是 Java 虚拟机，是Java程序运行的执行引擎和内存管理平台。它定义了Java程序如何与操作系统交互，负责字节码的加载、解释&#x2F;编译、内存分配、垃圾回收等核心功能。JVM 的具体实现包括内存区域划分（如堆、栈、方法区）和运行机制（如类加载、即时编译）.
-jvm由类装载器、运
+					1.首先jvm虚拟机在方法区加载检查这个类是否被加载了？如果已经被加载了，直接就创建对象2.没被加载过，就开始用类加载器加载类信息，加载的过程中用到的是双亲委派机制3.然后，加载了类信息后，虚拟机开始为对象分配内存4.内存分配完后，虚拟机需要将分配好的内存的空间初始化为零，不包括对象头5.初始化类，
 					...
 				</div>
 			</a>
@@ -2582,14 +2691,14 @@ jvm由类装载器、运
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/heap-stack-different.html">
+			<a href="/2024/0120/parental-ji-zhi.html">
 				<h2 class="index-title">
-					02 堆和栈的区别
+					12 谈谈对双亲委派机制的理解？
 				</h2>
 				<div class="index-brief">
-					1.堆是不连续的，所以分配的内存是在运行期确认的，因此大小不固定；堆对于整个应用程序都是共享、可见的；
-2.栈是连续的，所以分配的内存大小要在编译期就确认，大小是固定的；栈对于线程是可见的，所以也是线程私有，他的生命周期和线程相同（所以说，栈里面是一定不会存在垃圾回收的问题）；
-3.栈内存存储一些基
+					首先判断该类是否已经被加载，当一个类加载器收到了类加载的请求的时候，他不会直接去加载指定的类，而是把这个请求委托给自己的父加载器去加载。
+只有父加载器无法加载这个类的时候，才会由当前这个加载器来负责类的加载
+Java中提供如下四种类型的加载器，每一种加载器都有指定的加载对象，具体如下Bootstra
 					...
 				</div>
 			</a>
@@ -2610,12 +2719,16 @@ jvm由类装载器、运
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/base-data-type-all-in-stack.html">
+			<a href="/2024/0120/new-survive-old-gc.html">
 				<h2 class="index-title">
-					03 java中的基本数据类型都是存储在栈中的吗？
+					13 谈谈新生代，幸存区，老年代对应的垃圾回收是怎样的(待完善)
 				</h2>
 				<div class="index-brief">
-					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题答：不是一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而结束
+					jdk1.7前堆主要分为：新生区，养老区，永久区jdk1.8后堆主要分为：新生区，养老区，元空间
+
+对象优先在 Eden 区分配​ 一般情况下，对象都优先在新生代的 Eden 区中分配，当 Eden 内存不足时将会发起一次 Minor GC。
+
+大对象直接进入老年代​所谓大对象就是需要大量连续空间的
 					...
 				</div>
 			</a>
@@ -2636,18 +2749,12 @@ jvm由类装载器、运
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/qps-tps-different.html">
+			<a href="/2024/0120/how-handle-pro-server-slow.html">
 				<h2 class="index-title">
-					11 Qps和Tps的区别
+					09 生产环境服务嚣变慢,如何诊断处理?
 				</h2>
 				<div class="index-brief">
-					
-定义
-
-
-QPS（Queries Per Second）：表示系统每秒处理的查询请求数。通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
-
-TPS（Transactions Per Second）：表示系统
+					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
 					...
 				</div>
 			</a>
@@ -2658,7 +2765,7 @@ TPS（Transactions Per Second）：表示系统
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
 										
                                     </span>
                                 
@@ -2668,14 +2775,14 @@ TPS（Transactions Per Second）：表示系统
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/memory-leak-out.html">
+			<a href="/2024/0120/jvm-config-params.html">
 				<h2 class="index-title">
-					09 内存泄漏和内存溢出
+					10 工作中常用的JVM配置参教有哪些?
 				</h2>
 				<div class="index-brief">
-					
-内存泄漏指的是创建对象后，经过多次gc 内存中的某些对象一直还存在强引用，无法被释放那么这些无法被释放的对象一直占有着这块内存对于整个系统来说就是缺失的，形象理解为内存在这些地方漏了个洞；
-内存溢出指的是，原本可以存n个字节的内存现在要存n+1个字节的数据，那么不够存或者内存已经满了存不下新的对象
+					Java8为例
+
+日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
 					...
 				</div>
 			</a>
@@ -2686,7 +2793,7 @@ TPS（Transactions Per Second）：表示系统
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
 										
                                     </span>
                                 
@@ -2698,7 +2805,7 @@ TPS（Transactions Per Second）：表示系统
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/35/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/archives/page/37/">37</a><a class="page-number" href="/archives/page/38/">38</a><a class="page-number" href="/archives/page/39/">39</a><a class="extend next" rel="next" href="/archives/page/37/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/35/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/archives/page/37/">37</a><a class="page-number" href="/archives/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/41/">41</a><a class="extend next" rel="next" href="/archives/page/37/">&gt;</a>
 		
 	</div>
 </div>

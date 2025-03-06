@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,124 +2665,134 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+				<h2 class="index-title">
+					09 kafka消息丢失的场景及解决方案
+				</h2>
+				<div class="index-brief">
+					kafka消息丢失的场景主要在生产端，broker端，消费端
+生产端消息丢失producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
+解决办法：可以改成同步发生，ack&#x3D;all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/kafka-replication-sync.html">
+				<h2 class="index-title">
+					08 kafka副本同步机制
+				</h2>
+				<div class="index-brief">
+					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/kafka-async-flush.html">
+				<h2 class="index-title">
+					07 kafka异步刷盘机制
+				</h2>
+				<div class="index-brief">
+					所谓kafka异步刷盘机制是指kafka的生产者将消息发送到broker时，首先消息会被追加到日志文件segment中，此时数据是暂存到操作系统的页缓存中，并不是直接落盘；（页缓存是内存中的临时存储区域，由操作系统管理，提供低延迟的读写能力）
+kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0305/kafka-architecture.html">
+				<h2 class="index-title">
+					01 kafka架构是怎样的
+				</h2>
+				<div class="index-brief">
+					kafka架构包含：
+发送消息的生产者Producer
+消息存储接收的broker
+消息消费的一个Consumer
+实现消息的同步及选举zookeeper
+其中boker中的消息时分片存储的：即一个topic是以多个partition的形式的方式分布在多个broker上，且互为主从
+其中主从关系由z
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0226/kafka-high-throughput.html">
 				<h2 class="index-title">
 					06 kafka吞吐量高的原因
 				</h2>
 				<div class="index-brief">
 					
+kafka将topic划分为多个分区，每个分区独立读写；生产者负载均衡，避免了单个分区的压力；
+同一个消费组内的多个实例分别处理不同分区，提高了消费的吞吐
+kafka的消息时追加写，避免了随机磁盘寻址，顺序写的速度接近内存的操作
+kafka采用异步刷盘机制，消息和索引的写入先写入操作系统的页缓存，
 					...
 				</div>
 			</a>
                 <div class="article-meta">
 				    <span>2024-02-26</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0220/kafka-transcation.html">
-				<h2 class="index-title">
-					04 kafka怎么做分布式事务？
-				</h2>
-				<div class="index-brief">
-					kafka的优势其实在于副本机制以及在消息的吞吐量上，它本身的机制并不能用来做分布式事务；如果非得要用它来做事务管理的话，我们需要自己业务层面自己来确保消息的幂等性
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-repeat.html">
-				<h2 class="index-title">
-					02 kafka如何避免消息的重复消费？
-				</h2>
-				<div class="index-brief">
-					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-order.html">
-				<h2 class="index-title">
-					03 kafka如何保证消息的顺序消费
-				</h2>
-				<div class="index-brief">
-					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的，因为是多个分区，消费的时候通过
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-rebalance.html">
-				<h2 class="index-title">
-					05 kafka的rebalance机制
-				</h2>
-				<div class="index-brief">
-					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
-当kafka感知到存在让分
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
                     
                             
                                 

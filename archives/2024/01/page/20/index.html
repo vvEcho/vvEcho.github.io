@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2586,37 +2696,6 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/hashMap-hashTable-different.html">
-				<h2 class="index-title">
-					07 hashMap hashTable的区别
-				</h2>
-				<div class="index-brief">
-					
-hashMap继承自AbstractMap,hashTable继承自Dictionary类；
-
-hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
-
-hashTable在put,get,contains等方法都加了synchr
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
 			<a href="/2024/0120/strong-soft-weak-phantom-ref.html">
 				<h2 class="index-title">
 					08 强引用，软引用，弱引用，虚引用的区别
@@ -2679,14 +2758,17 @@ StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/copy-on-write-arrayList.html">
+			<a href="/2024/0120/hashMap-hashTable-different.html">
 				<h2 class="index-title">
-					06 CopyOnWriteArrayList是线程安全的吗
+					07 hashMap hashTable的区别
 				</h2>
 				<div class="index-brief">
-					copyOnWriteArrayList是线程安全的它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；
-并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；
-最后，待元素写入新数组后再
+					
+hashMap继承自AbstractMap,hashTable继承自Dictionary类；
+
+hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
+
+hashTable在put,get,contains等方法都加了synchr
 					...
 				</div>
 			</a>
@@ -2698,6 +2780,33 @@ StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/exception-error-different.html">
+				<h2 class="index-title">
+					07 exception和error有啥区别
+				</h2>
+				<div class="index-brief">
+					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
 										
                                     </span>
                                 

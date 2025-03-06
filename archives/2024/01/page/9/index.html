@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2560,7 +2670,9 @@
 					03 kafka如何保证消息的顺序消费
 				</h2>
 				<div class="index-brief">
-					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的，因为是多个分区，消费的时候通过
+					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；
+而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的
+因为是多个分区，消费的时候通
 					...
 				</div>
 			</a>
@@ -2613,7 +2725,9 @@
 					09 rocketMq实现分布式事务了解吗？
 				</h2>
 				<div class="index-brief">
-					rocketMq实现分布式事务是通过rocketMq的消息最终一致性来保证的流程如下：生产者发送一个半消息到MQServer,因为是半消息所以消费者还不能消费，broker收到半消息后返回ack给生产者，表明半消息发送成功；这时候生产者开始执行本地事务，业务层面我们可以增加一张流水表，以便Broke
+					RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性
+第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见
+12// 发送半消息（事务消息）TransactionSendResult result = p
 					...
 				</div>
 			</a>
@@ -2667,7 +2781,9 @@
 					06 rocketMq是pull模式还是push模式
 				</h2>
 				<div class="index-brief">
-					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式，在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类。Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
+					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式
+在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类
+Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
 					...
 				</div>
 			</a>

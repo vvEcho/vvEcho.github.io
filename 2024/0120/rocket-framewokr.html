@@ -2005,6 +2005,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2021,6 +2043,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2076,6 +2109,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2175,6 +2241,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2598,7 +2708,13 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>RocketMq的架构包含一个发送消息的生产者Producer,消息存储接收的broker,消息消费的一个Consumer,还有一个消息状态管理的NameServer无状态服务器，然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳的时间戳，当nameServer发现时间戳没有更新时，就会认为对应的broker已经下线了（默认10秒检查一次，超过2分钟没有更新时间戳就会把broker从队列中移除）</p>
+	<p><img src="/../../images/rocketmq/25/3/rocketMq.png"><br>RocketMq的架构包含:</p>
+<p>发送消息的生产者Producer</p>
+<p>消息存储接收的broker</p>
+<p>消息消费的一个Consumer</p>
+<p>管理消息状态的NameServer无状态服务器</p>
+<p>然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳的时间戳，当nameServer发现时间戳没有更新时，就会认为对应的broker已经下线了（默认10秒检查一次，超过2分钟没有更新时间戳就会把broker从队列中移除）</p>
+<p>参考:<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48133130/article/details/134126430">RocketMQ分布式消息队列</a></p>
 
 </div>
 
@@ -2607,9 +2723,9 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/0120/rocketmq-msg-not-repeat.html">
+              <a href="/2024/0120/rocketmq-msg-order.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  04 rocketMq怎么避免消息不重复消费
+                  05 rocketMq如何保证消息顺序消费？
               </a>
             
         </div>

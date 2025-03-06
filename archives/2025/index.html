@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,26 +2665,25 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0305/redis-redlock-brain-split.html">
+			<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
 				<h2 class="index-title">
-					23 RedLock算法如何解决Redis集群脑裂问题
+					09 kafka消息丢失的场景及解决方案
 				</h2>
 				<div class="index-brief">
-					脑裂问题的本质是网络分区或主节点假故障导致集群中出现多个主节点，从而引发数据冲突。
-RedLock通过以下机制规避此类风险：
-1.避免单点依赖，降低脑裂触发概率传统Redis主从架构中，哨兵可能因网络抖动误判主节点失效，触发主从切换，导致原主节点和新主节点并存（脑裂）。
-而RedLock不依赖单一主
+					kafka消息丢失的场景主要在生产端，broker端，消费端
+生产端消息丢失producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
+解决办法：可以改成同步发生，ack&#x3D;all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-05</span>
+				    <span>2025-03-06</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
 										
                                     </span>
                                 
@@ -2584,24 +2693,23 @@ RedLock通过以下机制规避此类风险：
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0305/redission-lock-type.html">
+			<a href="/2025/0306/kafka-replication-sync.html">
 				<h2 class="index-title">
-					22 redission都提供了哪些类型的分布式锁
+					08 kafka副本同步机制
 				</h2>
 				<div class="index-brief">
-					1. 可重入锁（Reentrant Lock）功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。使用示例：
-12RLock loc
+					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-05</span>
+				    <span>2025-03-06</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
 										
                                     </span>
                                 
@@ -2611,23 +2719,24 @@ RedLock通过以下机制规避此类风险：
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0305/except-redission-lock-implementation.html">
+			<a href="/2025/0306/kafka-async-flush.html">
 				<h2 class="index-title">
-					21 除了redission你还知道哪些分布式锁的实现
+					07 kafka异步刷盘机制
 				</h2>
 				<div class="index-brief">
-					1. 基于数据库的锁(天然的分布式锁)原理：通过数据库表的唯一约束或乐观锁实现。唯一索引锁：插入一条代表锁的记录，利用唯一索引冲突阻止并发。乐观锁：通过版本号或时间戳字段实现 CAS（Compare and Swap）。缺点：性能低：高并发下数据库压力大。    无自动续期：需手动处理锁超时和死锁。
+					所谓kafka异步刷盘机制是指kafka的生产者将消息发送到broker时，首先消息会被追加到日志文件segment中，此时数据是暂存到操作系统的页缓存中，并不是直接落盘；（页缓存是内存中的临时存储区域，由操作系统管理，提供低延迟的读写能力）
+kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-05</span>
+				    <span>2025-03-06</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
 										
                                     </span>
                                 
@@ -2637,74 +2746,36 @@ RedLock通过以下机制规避此类风险：
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0305/redis-jump-table.html">
+			<a href="/2025/0306/undefined.html">
 				<h2 class="index-title">
-					20 redis为何使用跳表而不是B+树
-				</h2>
-				<div class="index-brief">
-					首先二者的时间复杂度都是O(logN)，选择跳表还是B+树主要是考虑的内存和磁盘硬件特性。
-对于Redis使用跳表来讲，其在“写操作”时相较于B+树的“写操作”，无需考虑自旋平衡的问题，也就是跳表更容易实现写入操作；
-再看“读操作”，Redis是基于内存的，跳表比B+树多读那几下的性能开销微乎其微。
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/redis-cache-eviction-strategy.html">
-				<h2 class="index-title">
-					19 redis的缓存淘汰策略
+					05 令牌桶限流算法
 				</h2>
 				<div class="index-brief">
 					
-
-
-策略名称
-淘汰逻辑
-适用场景
-
-
-
-noeviction（默认）
-内存满时拒绝所有写操作，返回错误
-数据不可丢失的敏感场景（如金融交易）
-
-
-LRU（最近最少使用）
-根据键的最后访问时间，淘汰最久未访问的数据
-有明显冷热数据区分的场景（如新闻热点）
-
-
-LFU（最不频繁使用）
-根据键的访问频率
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-04</span>
+				    <span>2025-03-06</span>
                     
                             
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/undefined.html">
+				<h2 class="index-title">
+					04 漏斗限流算法
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
                             
                     
                 </div>
@@ -2713,7 +2784,7 @@ LFU（最不频繁使用）
 
 	<div id="index-paginator">
 		
-			<span class="page-number current">1</span><a class="page-number" href="/archives/2025/page/2/">2</a><a class="page-number" href="/archives/2025/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/14/">14</a><a class="extend next" rel="next" href="/archives/2025/page/2/">&gt;</a>
+			<span class="page-number current">1</span><a class="page-number" href="/archives/2025/page/2/">2</a><a class="page-number" href="/archives/2025/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/16/">16</a><a class="extend next" rel="next" href="/archives/2025/page/2/">&gt;</a>
 		
 	</div>
 </div>

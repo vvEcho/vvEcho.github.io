@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2560,7 +2670,12 @@
 					01 rocketMq架构是怎样的,说说心跳机制
 				</h2>
 				<div class="index-brief">
-					RocketMq的架构包含一个发送消息的生产者Producer,消息存储接收的broker,消息消费的一个Consumer,还有一个消息状态管理的NameServer无状态服务器，然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳
+					RocketMq的架构包含:
+发送消息的生产者Producer
+消息存储接收的broker
+消息消费的一个Consumer
+管理消息状态的NameServer无状态服务器
+然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳的时间戳
 					...
 				</div>
 			</a>
@@ -2586,7 +2701,9 @@
 					02 rocketMq怎么查找到对应的消息的？
 				</h2>
 				<div class="index-brief">
-					我们知道，RocketMQ 核心的数据文件有 3 个：CommitLog、ConsumeQueue 和 Index。其中Index 文件就是一个索引文件，查找消息时，首先根据消息 key 的 hashcode 计算出 Hash 槽的位置，然后读取 Hash 槽的值计算 Index 条目的位置，从In
+					我们知道，RocketMQ核心的数据文件有3个：CommitLog、ConsumeQueue和Index。
+其中Index文件就是一个索引文件，查找消息时，首先根据消息key的hashcode计算出Hash槽的位置，然后读取Hash槽的值计算Index条目的位置
+从Index条目位置读取到消息在Co
 					...
 				</div>
 			</a>
@@ -2597,7 +2714,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/13rocketmq/">13rocketmq</a>
 										
                                     </span>
                                 
@@ -2607,14 +2724,15 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/dubbo-rpc-net.html">
+			<a href="/2024/0120/nacos-konw.html">
 				<h2 class="index-title">
-					07 dubbo微服务间怎么通信？
+					03.3 nacos注册中心
 				</h2>
 				<div class="index-brief">
-					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
-使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
-dubbo的服务注册与发现的流程容器启动后，提供方向注
+					1.nacos简介Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
+Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
+
+服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注
 					...
 				</div>
 			</a>
@@ -2635,15 +2753,14 @@ dubbo的服务注册与发现的流程容器启动后，提供方向注
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/nacos-konw.html">
+			<a href="/2024/0120/dubbo-rpc-net.html">
 				<h2 class="index-title">
-					03.3 nacos注册中心
+					07 dubbo微服务间怎么通信？
 				</h2>
 				<div class="index-brief">
-					1.nacos简介Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
-Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
-
-服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注
+					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
+使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
+dubbo的服务注册与发现的流程容器启动后，提供方向注
 					...
 				</div>
 			</a>

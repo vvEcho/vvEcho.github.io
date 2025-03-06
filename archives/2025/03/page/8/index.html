@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,24 +2665,24 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0301/lock-move-and-strong.html">
+			<a href="/2025/0302/springcloud-openfigne-principle.html">
 				<h2 class="index-title">
-					13 锁消除和锁膨胀
+					04.1OpenFeign的原理
 				</h2>
 				<div class="index-brief">
-					锁消除在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
-1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchro
+					Openfeign是SpringCloud对Feign也进行了增强，直接支持Hystrix和Ribbon，也支持SpringMVC的注解。这样使得Feign的使用非常方便。
+1、在使用Openfeign时首先会在springboot的启动类上添加@EnableFeignClients注解，该注解会导
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-01</span>
+				    <span>2025-03-02</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/08springcloud/">08springcloud</a>
 										
                                     </span>
                                 
@@ -2582,25 +2692,45 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/happy-unhappy-lock.html">
+			<a href="/2025/0302/register-vs.html">
 				<h2 class="index-title">
-					13 乐观锁和悲观锁
+					03.5 注册中心横向对比
 				</h2>
 				<div class="index-brief">
-					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
-Java中提供的CAS操作，就是乐观锁的一种实现。
-悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
+					核心特性对比
+
+
+特性
+Eureka
+Zookeeper
+Nacos
+Apollo
+
+
+
+CAP模型
+AP
+CP
+AP&#x2F;CP
+CP（强一致性优先）
+
+
+健康检查
+客户端心跳检测
+会话心跳检测
+TCP&#x2F;HTTP&#x2F;MySQL&#x2F;客户端心跳
+客户端主动上报+服务端轮询
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-01</span>
+				    <span>2025-03-02</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2610,27 +2740,24 @@ Java中提供的CAS操作，就是乐观锁的一种实现。
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/hu-chi-and-share-lock.html">
+			<a href="/2025/0302/gateway-vs-zuul.html">
 				<h2 class="index-title">
-					12 互斥锁和共享锁
+					02.3 Gateway和Zuul的区别
 				</h2>
 				<div class="index-brief">
-					Java中提供的synchronized、ReentrantLock是互斥锁。
-Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
-互斥锁互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
-共享锁共享锁：同一时间点，当前共享锁可以被多个线程同时持有
-
+					Spring Cloud Gateway和Zuul有什么区别？Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
+以下是Spring Clou
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-01</span>
+				    <span>2025-03-02</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -2640,23 +2767,24 @@ Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/cyclicBarrier-principle.html">
+			<a href="/2025/0302/springboot-custom-starter.html">
 				<h2 class="index-title">
-					15 CyclicBarrier实现原理
+					06 如何自定义一个starter
 				</h2>
 				<div class="index-brief">
-					
+					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：1.创建一个工程引入自动配置注解2.定义配置属性类
+12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperties
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-01</span>
+				    <span>2025-03-02</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
 										
                                     </span>
                                 
@@ -2666,38 +2794,26 @@ Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/null.html">
+			<a href="/2025/0302/springcloud-shiro.html">
 				<h2 class="index-title">
-					14 countDownlanch实现原理
+					06.1 shiro权限组件
 				</h2>
 				<div class="index-brief">
-					问题标题
-
-
-
-姓名
-角色
-年龄
-
-
-
-张三
-学生
-18
-
-
-李四
-老师
-20
-
-
-
+					shiro权限组件，说说对应的原理
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-01</span>
+				    <span>2025-03-02</span>
                     
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
                             
                     
                 </div>
@@ -2706,7 +2822,7 @@ Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/03/page/7/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/6/">6</a><a class="page-number" href="/archives/2025/03/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/2025/03/page/9/">9</a><a class="extend next" rel="next" href="/archives/2025/03/page/9/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/03/page/7/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/6/">6</a><a class="page-number" href="/archives/2025/03/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/2025/03/page/9/">9</a><a class="page-number" href="/archives/2025/03/page/10/">10</a><a class="page-number" href="/archives/2025/03/page/11/">11</a><a class="extend next" rel="next" href="/archives/2025/03/page/9/">&gt;</a>
 		
 	</div>
 </div>

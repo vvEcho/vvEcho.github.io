@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,38 +2665,15 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-heaped.html">
+			<a href="/2024/0120/redis-io.html">
 				<h2 class="index-title">
-					07 rocketMq消息堆积怎么解决
+					03 说说IO多路复用
 				</h2>
 				<div class="index-brief">
-					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的topic,对于临时的topic 可以多配置一点MessageQuean,
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
-				<h2 class="index-title">
-					08 说说rocketmq死信队列
-				</h2>
-				<div class="index-brief">
-					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。rocketMq 会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
+					回答这个问题我们可以拆分来看：
+IO实际就是指数据或文件的读写流
+多路实际指的是redis的底层的多路复用程序监听了每个读写请求的socket套接字
+复用就是指监听哪些socket上有消息达到，从而避免用户线程等待；
 
 					...
 				</div>
@@ -2598,7 +2685,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -2608,14 +2695,46 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-not-lost.html">
+			<a href="/2024/0120/redis-rdb-aof.html">
 				<h2 class="index-title">
-					03 rocketMq怎么避免消息不丢失？
+					04 rdb和aof
 				</h2>
 				<div class="index-brief">
-					那问这个问题，我们需要知道rocketMq哪些场景会导致消息丢失；
+					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；
+rdb是一种二进制快照文件的方式,快照某个时刻redis中的数据到硬盘中的
+aof是以日志的的方式存储redis的写命令;
+rdb的好处是适合数据全量备份，容灾好，恢复数据速度快, 缺点是数据可能丢失；
+aof的好处是实时性好，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-base-data-structure.html">
+				<h2 class="index-title">
+					01 redis数据结构
+				</h2>
+				<div class="index-brief">
+					redis是一种基于键值对的来存储数据的nosql数据库
+其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
+常用的有String，list,set,zset,hash
 
-生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了
+String类型是redis最基本类型之一，其存储数据
 					...
 				</div>
 			</a>
@@ -2626,7 +2745,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -2636,12 +2755,18 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-order.html">
+			<a href="/2024/0120/redis-fast-reason.html">
 				<h2 class="index-title">
-					05 rocketMq如何保证消息顺序消费？
+					02 redis性能好的原因？
 				</h2>
 				<div class="index-brief">
-					这个问题其实可以分为三点，第一点生产者要保证消息的顺序生产，第二点broker要保证消息的顺序保存，第三点消费者要保证消息的顺序消费；首先第一点rocketMq创建一个topic默认会有8个写队列，8个读队列，为了保证消息消费是按写入的先后顺序来消费的，需要把topic的队列数改为1；消费者收到消息
+					
+基于内存的读写
+单线程，避免了线程的切换及竞争产生的消耗
+基于非阻塞的IO多路复用
+C实现的，更利于和底层进行交互
+
+
 					...
 				</div>
 			</a>
@@ -2652,7 +2777,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -2662,12 +2787,14 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-not-repeat.html">
+			<a href="/2024/0120/kafka-msg-not-repeat.html">
 				<h2 class="index-title">
-					04 rocketMq怎么避免消息不重复消费
+					02 kafka如何避免消息的重复消费？
 				</h2>
 				<div class="index-brief">
-					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作，若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重，
+					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；
+例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
+
 					...
 				</div>
 			</a>
@@ -2678,7 +2805,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
 										
                                     </span>
                                 
@@ -2690,7 +2817,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/26/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/25/">25</a><a class="page-number" href="/archives/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/archives/page/28/">28</a><a class="page-number" href="/archives/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/39/">39</a><a class="extend next" rel="next" href="/archives/page/28/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/26/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/25/">25</a><a class="page-number" href="/archives/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/archives/page/28/">28</a><a class="page-number" href="/archives/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/41/">41</a><a class="extend next" rel="next" href="/archives/page/28/">&gt;</a>
 		
 	</div>
 </div>

@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,16 +2665,15 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-io.html">
+			<a href="/2024/0120/mysql-false-reading.html">
 				<h2 class="index-title">
-					03 说说IO多路复用
+					02 怎么解决幻读
 				</h2>
 				<div class="index-brief">
-					回答这个问题我们可以拆分来看：
-IO实际就是指数据或文件的读写流
-多路实际指的是redis的底层的多路复用程序监听了每个读写请求的socket套接字
-复用就是指监听哪些socket上有消息达到，从而避免用户线程等待；
+					只有序列化级别解决了幻读，其他的都没有解决了幻读；因为序列化是串行化执行的，第一个事务执行完后才能执行第二个事务幻读出现的根本原因是，如果所有的读都是快照读就不会有幻读的问题，如果有快照读也有当前读才会产生幻读的问题
 
+快照读：mysql 中针对不加锁的读操作，称为快照读；
+当前读：对于加锁的读，插
 					...
 				</div>
 			</a>
@@ -2575,7 +2684,7 @@ IO实际就是指数据或文件的读写流
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
 										
                                     </span>
                                 
@@ -2585,77 +2694,41 @@ IO实际就是指数据或文件的读写流
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-rdb-aof.html">
+			<a href="/2024/0120/mysql-transcation-geli-level.html">
 				<h2 class="index-title">
-					04 rdb和aof
-				</h2>
-				<div class="index-brief">
-					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；
-rdb是一种二进制快照文件的方式,快照某个时刻redis中的数据到硬盘中的
-aof是以日志的的方式存储redis的写命令;
-rdb的好处是适合数据全量备份，容灾好，恢复数据速度快, 缺点是数据可能丢失；
-aof的好处是实时性好，
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-base-data-structure.html">
-				<h2 class="index-title">
-					01 redis数据结构
-				</h2>
-				<div class="index-brief">
-					redis是一种基于键值对的来存储数据的nosql数据库
-其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
-常用的有String，list,set,zset,hash
-
-String类型是redis最基本类型之一，其存储数据
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-fast-reason.html">
-				<h2 class="index-title">
-					02 redis性能好的原因？
+					01 数据库事务的隔离级别？
 				</h2>
 				<div class="index-brief">
 					
-基于内存的读写
-单线程，避免了线程的切换及竞争产生的消耗
-基于非阻塞的IO多路复用
-C实现的，更利于和底层进行交互
-
+读未提交：一个事务还没有提交变更的时候，就被其他的事务读到了（这就产生了脏读，同时也产生了不可重复读，幻读的问题）
+读提交：一个事务提交后，才能被别的事务读到。（它解决了脏读，但依旧避免不了不可重复读和幻读，为什么呢？比如A事务先读到数据，接着B事务提交了变更，这个时候A再去做变更时就，原先的数据
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-lua-principle.html">
+				<h2 class="index-title">
+					11 redis lua表达式为什么能保证原子性
+				</h2>
+				<div class="index-brief">
+					redis的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。
+但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
 
 					...
 				</div>
@@ -2677,13 +2750,14 @@ C实现的，更利于和底层进行交互
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-repeat.html">
+			<a href="/2024/0120/redis-cluster.html">
 				<h2 class="index-title">
-					02 kafka如何避免消息的重复消费？
+					12 redis你们用的是什么集群
 				</h2>
 				<div class="index-brief">
-					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
-
+					redis我用的是简单的主从架构的这种集群模式
+Redis主要有三种模式，主从，哨兵，分布式集群
+1.主从复制模式架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离优点：数据冗余：从节点备份主节点数据，提高数据可靠性。读写分离：从节点分担读请求，减轻主节点压力。配置
 					...
 				</div>
 			</a>
@@ -2694,7 +2768,39 @@ C实现的，更利于和底层进行交互
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-used-too-much.html">
+				<h2 class="index-title">
+					08 redis如何做内存优化
+				</h2>
+				<div class="index-brief">
+					redis优化内存分为两个层面大的层面：
+
+合理设置数据过期时间使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
+
+合理设置内存淘汰策略结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
+
+内存碎片优化启用 jemalloc
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -2706,7 +2812,7 @@ C实现的，更利于和底层进行交互
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/24/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/39/">39</a><a class="extend next" rel="next" href="/archives/page/26/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/24/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/41/">41</a><a class="extend next" rel="next" href="/archives/page/26/">&gt;</a>
 		
 	</div>
 </div>

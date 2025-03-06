@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,12 +2665,13 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0219/self-audition-pingan.html">
+			<a href="/2025/0219/redis-same-to-db.html">
 				<h2 class="index-title">
-					平安面试(24.3)
+					11 如何保证缓存和数据库的一致性
 				</h2>
 				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
+					
+先删除缓存，再更新数据库问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取最新
 					...
 				</div>
 			</a>
@@ -2581,7 +2692,154 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/42-面经/个人/">个人</a>
+                                        <a href="/categories/42-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0219/kafka-exactly-once.html">
+				<h2 class="index-title">
+					09 设计一个强一致性方案保障故障转移时会话共享
+				</h2>
+				<div class="index-brief">
+					基于Redis的会话共享实现方案核心：Redis Cluster + 同步写策略
+12345678# Redis节点配置（6节点示例：3主3从）redis-cluster:  master1: 192.168.1.1:6379  slave1:  192.168.1.2:6380  master2:
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/">42 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0219/kafka-exactly-once.html">
+				<h2 class="index-title">
+					06 结合kafka的exactly-once说明如何实现一个无锁的幂等方案
+				</h2>
+				<div class="index-brief">
+					在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？无锁幂等方案设计
+123456CREATE TABLE 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/">42 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0219/ddd-interface-abstract-diff.html">
+				<h2 class="index-title">
+					05 请分析RR可能导致锁范围扩大的原因和解决思路
+				</h2>
+				<div class="index-brief">
+					假设查询涉及SELECT … FOR UPDATE锁，请分析在RR（可重复读）隔离级别下可能导致的锁范围扩大问题。如何通过索引设计避免锁全表？请结合SELECT * FROM commission WHERE merchant_id&#x3D;? AND month&#x3D;’2025-02’ F
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/">42 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0219/ddd-ju-he-gen.html">
+				<h2 class="index-title">
+					04 DDD领域驱动中聚合根的概念
+				</h2>
+				<div class="index-brief">
+					在领域驱动设计中，聚合根（Aggregate Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明
+聚合根（Aggregate Root）设计原则您的回答正确但需补充完整，核心原则包括：✅ 强一致性边界：聚合根内的所有实体&
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/">42 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/42-面经/ai模拟面试/">ai模拟面试</a>
 										
                                     </span>
                                 
@@ -2593,7 +2851,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/page/13/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/12/">12</a><a class="page-number" href="/archives/2025/page/13/">13</a><span class="page-number current">14</span>
+			<a class="extend prev" rel="prev" href="/archives/2025/page/13/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/12/">12</a><a class="page-number" href="/archives/2025/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/2025/page/15/">15</a><a class="page-number" href="/archives/2025/page/16/">16</a><a class="extend next" rel="next" href="/archives/2025/page/15/">&gt;</a>
 		
 	</div>
 </div>

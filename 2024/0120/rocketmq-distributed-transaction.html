@@ -2005,6 +2005,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2021,6 +2043,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2076,6 +2109,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2175,6 +2241,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2598,7 +2708,16 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>rocketMq实现分布式事务是通过rocketMq的消息最终一致性来保证的<br>流程如下：生产者发送一个半消息到MQServer,因为是半消息所以消费者还不能消费，broker收到半消息后返回ack给生产者，表明半消息发送成功；这时候生产者开始执行本地事务，业务层面我们可以增加一张流水表，以便Broker回查确认事务消息状态；假设中途生产者在执行本地事务时出现异常，导致broker没有收到confirm消息，这个时候就可以回查流水表，查看事务执行的状态，然后消费者根据状态确定是否要回滚消息；</p>
+	<p>RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性</p>
+<p>第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 发送半消息（事务消息）</span></span><br><span class="line"><span class="type">TransactionSendResult</span> <span class="variable">result</span> <span class="operator">=</span> producer.sendMessageInTransaction(topic, message, arg);</span><br></pre></td></tr></table></figure>
+<p>第二阶段，本地事务执行与确认<br>Broker收到半消息后，通知生产者执行本地事务（如订单创建）。生产者根据本地事务结果返回COMMIT或ROLLBACK状态</p>
+<p>第三阶段：Broker收到生产者返回ack确认状态后，将半消息标记为COMMIT或ROLLBACK<br><br>COMMIT：Broker将半消息提交到实际Topic，此时半消息变成全消息，消费者可见<br><br>消费者收到消息后，处理后续业务逻辑，处理失败则触发失败重试，若重试16次还失败，则放入死信队列人工介入</p>
+<p>ROLLBACK：Broker删除半消息<br><br>UNKNOWN：触发事务状态回查机制<br></p>
+<h4 id="事务状态回查机制"><a href="#事务状态回查机制" class="headerlink" title="事务状态回查机制"></a>事务状态回查机制</h4><p>若Broker未收到二次确认（如网络超时、服务宕机），会定期向生产者发起回查请求，通过checkLocalTransaction方法确认本地事务最终状态</p>
+<blockquote>
+<p>rocketMq只保证了生产端本地事务和消息投递的原子性，消费端消费失败需要依赖消息重试+业务补偿来确保最终的一致性；若需强一致性需要借助seata这样的中间件来实现</p>
+</blockquote>
 
 </div>
 

@@ -2003,6 +2003,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-delay-message.html">
+                     
+										    11 rocketMq的延迟消息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/rocketmq-cluster-mode.html">
+                     
+										    12 rocketMq有哪些集群模式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2019,6 +2041,17 @@
 									<a href="/2024/0120/kafka-msg-not-lost.html">
                      
 										    01 kafkar如何保证消息不丢失？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0305/kafka-architecture.html">
+                     
+										    01 kafka架构是怎样的
                      
 									</a>
 								</li>
@@ -2074,6 +2107,39 @@
 									<a href="/2024/0226/kafka-high-throughput.html">
                      
 										    06 kafka吞吐量高的原因
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-async-flush.html">
+                     
+										    07 kafka异步刷盘机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-replication-sync.html">
+                     
+										    08 kafka副本同步机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+                     
+										    09 kafka消息丢失的场景及解决方案
                      
 									</a>
 								</li>
@@ -2173,6 +2239,50 @@
 									<a href="/2024/0120/math-method.html">
                      
 										    01 算法面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    02 计数器限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    03 滑动窗口限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    04 漏斗限流算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0306/undefined.html">
+                     
+										    05 令牌桶限流算法
                      
 									</a>
 								</li>
@@ -2555,28 +2665,108 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0228/net-jwt-authorization.html">
+			<a href="/2025/0301/lock-move-and-strong.html">
 				<h2 class="index-title">
-					02 说一下jwt的认证流程
+					13 锁消除和锁膨胀
+				</h2>
+				<div class="index-brief">
+					锁消除在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
+1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchro
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/happy-unhappy-lock.html">
+				<h2 class="index-title">
+					13 乐观锁和悲观锁
+				</h2>
+				<div class="index-brief">
+					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
+Java中提供的CAS操作，就是乐观锁的一种实现。
+悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/hu-chi-and-share-lock.html">
+				<h2 class="index-title">
+					12 互斥锁和共享锁
+				</h2>
+				<div class="index-brief">
+					Java中提供的synchronized、ReentrantLock是互斥锁。
+Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
+互斥锁互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
+共享锁共享锁：同一时间点，当前共享锁可以被多个线程同时持有
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/cyclicBarrier-principle.html">
+				<h2 class="index-title">
+					15 CyclicBarrier实现原理
 				</h2>
 				<div class="index-brief">
 					
-jwt的认证流程说明：前端发起请求登陆，用户携带用户名和密码等
-后端验证身份（用户名，密码，验证码等），根据算法，将用户标识符打包生成 Token，
-后端返回JWT信息给浏览器，JWT不包含敏感信息
-前端发起回调请求获取用户资料，把刚刚拿到的Token放到请求头中一起发送给服务器
-后端根据请求数据
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-02-28</span>
+				    <span>2025-03-01</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/33-网络协议/">33 网络协议</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -2586,110 +2776,38 @@ jwt的认证流程说明：前端发起请求登陆，用户携带用户名和�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0227/xxl-job-fenpian.html">
+			<a href="/2025/0301/null.html">
 				<h2 class="index-title">
-					04 xxl-job如何实现任务的分片
+					14 countDownlanch实现原理
 				</h2>
 				<div class="index-brief">
-					xxl-job 实现了分片任务的功能，可以将一个任务分片执行，每个执行器运行其中的一片任务。实现分片任务的原理是：任务注册时，可以设置分片参数，指定任务分片的总数和当前执行器的分片序号。在任务执行器获取任务时，通过判断当前执行器的分片序号来决定是否执行该任务。执行器只会执行当前分片序号符合的任务片段
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0227/xxl-register-center.html">
-				<h2 class="index-title">
-					03 xxl-job服务注册与发现的原理是啥？
-				</h2>
-				<div class="index-brief">
-					执行器的注册流程(1) 启动时主动注册触发时机：执行器启动时，通过 XxlJobExecutor 初始化 Netty 服务端，并调用 startRegistry 方法向调度中心发送注册请求。注册内容：执行器名称（appname）执行器地址（address，格式为 IP:PORT）注册类型（固定为 E
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0227/xxl-job-principle.html">
-				<h2 class="index-title">
-					01 xxl-job的原理
-				</h2>
-				<div class="index-brief">
-					xxl-job 的原理是通过一个任务调度中心和多个任务执行器实现任务的分布式调度和执行。其工作流程如下：
+					问题标题
 
-调度中心通过任务注册接口将任务信息注册到注册中心。
-执行器从注册中心获取任务信息，并在指定的时间点执行任务。
-执行器执行任务后，将执行结果上报给任务调度中心。
-调度中心根据执行结果进行任务状态
+
+
+姓名
+角色
+年龄
+
+
+
+张三
+学生
+18
+
+
+李四
+老师
+20
+
+
+
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-02-27</span>
+				    <span>2025-03-01</span>
                     
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0227/spring-bean-singleton.html">
-				<h2 class="index-title">
-					19 spring是如何保证bean是单例的？
-				</h2>
-				<div class="index-brief">
-					spring是通过三级缓存与双重检测锁的协作来保证bean是单例的
-一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。三级缓存（singletonFa
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
                             
                     
                 </div>
@@ -2698,7 +2816,7 @@ jwt的认证流程说明：前端发起请求登陆，用户携带用户名和�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/page/9/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/8/">8</a><a class="page-number" href="/archives/2025/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/2025/page/11/">11</a><a class="page-number" href="/archives/2025/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/14/">14</a><a class="extend next" rel="next" href="/archives/2025/page/11/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/page/9/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/8/">8</a><a class="page-number" href="/archives/2025/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/2025/page/11/">11</a><a class="page-number" href="/archives/2025/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/16/">16</a><a class="extend next" rel="next" href="/archives/2025/page/11/">&gt;</a>
 		
 	</div>
 </div>
