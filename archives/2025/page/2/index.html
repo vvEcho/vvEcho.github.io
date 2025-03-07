@@ -2476,6 +2476,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0308/refer-token.html">
+                     
+										    03 refreshToekn如何刷新token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2797,6 +2808,35 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0307/es-cluster-election.html">
+				<h2 class="index-title">
+					03 es中集群怎么实现选举
+				</h2>
+				<div class="index-brief">
+					
+对所有可以成为 Master 的节点（node.master: true）根据 nodeId 排序，每次选举每个节点都把自己所知道节点排一次序，然后选出第一个（第0位）节点，暂且认为它是 Master 节点。
+
+如果对某个节点的投票数达到一定的值（可以成为master节点数n&#x2F;2+1）并
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-07</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0307/es-deep-query-page.html">
 				<h2 class="index-title">
 					02 es深分页问题
@@ -2884,33 +2924,6 @@ es数据是存储在多个分片（Shard）上的，每个分片本质上是一�
 				<div class="index-brief">
 					B+树结构依赖于最左列的值作为比较起点MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下第一层：按 A 列排序；第二层：在 A 相同的情况下按 B 排序；第三层：在 A 和 B 相同的情况下按 C 排序
 A.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-07</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0307/mysql-acid.html">
-				<h2 class="index-title">
-					01 ACID是什么意思？
-				</h2>
-				<div class="index-brief">
-					ACID，是指数据库管理系统（DBMS）在写入或更新资料的过程中，为保证事务（transaction）是正确可靠的，所必须具备的四个特性：原子性（atomicity，或称不可分割性）、一致性（consistency）、隔离性（isolation，又称独立性）、持久性（durability）
-Atom
 					...
 				</div>
 			</a>

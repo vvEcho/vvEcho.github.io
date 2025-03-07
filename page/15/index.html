@@ -2476,6 +2476,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0308/refer-token.html">
+                     
+										    03 refreshToekn如何刷新token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2797,6 +2808,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/redis-identify-hot-key.html">
+				<h2 class="index-title">
+					06 怎么监控热key
+				</h2>
+				<div class="index-brief">
+					redis 6.2以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可。
+可以定时在节点中使用该命令来发现对应热点key,或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为这些key是热点key,可以将热点key对应的
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/redis-bloom-filter.html">
 				<h2 class="index-title">
 					07 说说布隆过滤器的原理？
@@ -3048,34 +3086,6 @@ C实现的，更利于和底层进行交互
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-lost.html">
-				<h2 class="index-title">
-					01 kafkar如何保证消息不丢失？
-				</h2>
-				<div class="index-brief">
-					回答这个问题可以分三个方面，首先第一点要保证producer消息能达到broker,其次broker收到对应的消息要确保持久化磁盘，最后需要确保consumer能成功消费这条消息；
-
-针对producer:我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消息
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
 										
                                     </span>
                                 

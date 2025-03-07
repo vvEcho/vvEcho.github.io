@@ -2478,6 +2478,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0308/refer-token.html">
+                     
+										    03 refreshToekn如何刷新token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2832,26 +2843,21 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="问题标题"><a href="#问题标题" class="headerlink" title="问题标题"></a>问题标题</h4><p><img src="/../../images/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/25/2/jwt.png"></p>
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>角色</th>
-<th>年龄</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>张三</td>
-<td>学生</td>
-<td>18</td>
-</tr>
-<tr>
-<td>李四</td>
-<td>老师</td>
-<td>20</td>
-</tr>
-</tbody></table>
+	<h4 id="Shiro-的优点："><a href="#Shiro-的优点：" class="headerlink" title="Shiro 的优点："></a>Shiro 的优点：</h4><p>首先Shiro较之 Spring Security，Shiro在保持强大功能的同时，还在简单性和灵活性方面拥有巨大优势。</p>
+<p>Shiro是一个强大而灵活的开源安全框架，能够非常清晰的处理认证、授权、管理会话以及密码加密。如下是它所具有的特点：</p>
+<p>1.易于理解的 Java Security API；<br><br>2.简单的身份认证（登录），支持多种数据源（LDAP，JDBC，Kerberos，ActiveDirectory 等）；<br><br>3.对角色的简单的签权（访问控制），支持细粒度的签权；<br><br>4.支持一级缓存，以提升应用程序的性能；<br><br>5.内置的基于 POJO 企业会话管理，适用于 Web 以及非 Web 的环境；<br><br>6.异构客户端会话访问；<br><br>7.非常简单的加密 API；<br><br>8.不跟任何的框架或者容器捆绑，可以独立运行。<br><br>9.Shiro则是一个轻量级的安全管理框架，Shiro概念简单、配置简单，Shiro功能简单， Shiro 比 Spring security 更容易使用，实现和最深入的理解</p>
+<p>10.Apache Shiro在Spring Security处理密码学方面有一个额外的模块<br>11.Shiro 是Apache 下的项目比较可靠，且不跟任何的框架或者容器绑定，可以独立于任何项目运行</p>
+<p>12.从使用情况上看，二者都在逐步提高使用量。shiro的使用量一直高于spring security. shiro可以用于非web环境，不跟任何框架或容器绑定，独立运行shiro入门更加容易，使用起来也非常简单，这也是造成shiro的使用量一直高于Spring Security的主要原因</p>
+<h4 id="Security的优点："><a href="#Security的优点：" class="headerlink" title="Security的优点："></a>Security的优点：</h4><p>Spring Security是一个重量级的安全管理框架，Spring Security更加知名的唯一原因是因为品牌名称， Spring Security功能强大，Spring Security有更好的社区支持</p>
+<p>由于Spring Boot官方提供了大量的非常方便的开箱即用的 Starter，包括 Spring Security 的 Starter，使得在SpringBoot 中使用 Spring Security 变得更加容易，甚至只需要添加一个依赖 就可以保护所有接口，所以如果是SpringBoot项目，一般选择Spring Security。当然这只是 一个建议的组合，单纯从技术上来说，无论怎么组合，都是没有问题的。在没有Spring Boot之前，Spring Security的大部分配置要通过XML实现，配置还是还是非常复杂的。但是有了 Spring Boot之后，这一情况已经得到显著改善。</p>
+<p>Spring Security之所以看上去比shiro更复杂，其实是因为它引入了一些不常用的概念与规则。大家应该都知道2&#x2F;8法则，这在Spring Security里面体现的特别明显，如果你只学Spring Security最重要的那20%，这20%的复杂度和shiro基本是一致的。也就是说，不重要的那80%，恰恰是Spring Security比shiro的“复杂度”。</p>
+<p>也就是说，你把Spring Security最重要的那20%熟练掌握，二者的入门门槛、复杂度其实是差不太多的。</p>
+<p>Spring Security依托于Spring庞大的社区支持，这点自不必多说。shiro属于apache社区，因为它的广泛使用，文档也非常的全面。二者从社区支持来看，几乎不相上下。</p>
+<p>但是从社区发展的角度看，Spring Security明显更占优势，随着Spring Cloud、Spring Boot、Spring Social的长足进步，这种优势会越来越大。因为Spring Security毕竟是Spring的亲儿子，Spring Security未来在于Spring系列框架集成的时候一定会有更好的融合性，前瞻性、兼容性！这也是为什么我们要学Spring Security的主要原因！</p>
+<p>Spring Security因为它的复杂，所以从功能的丰富性的角度更胜一筹。其中比较典型的如：</p>
+<p>Spring Security 默认含有对OAuth2.0的支持，与Spring Social一起使用完成社交媒体登录也比较方便，shiro 则需要自己手动实现，而且 spring security 的权限细粒度更高，除了不能脱离Spring，shiro的功能它都有。而且Spring Security对OpenID也有支持,Shiro则需要自己手动写代码实现。</p>
+<p>Spring Security是一个功能强大且高度可定制的身份验证和访问控制框架。它是用于保护基于Spring的应用程序的实际标准。Spring Security致力于为Java应用程序提供身份验证和授权。与所有Spring项目一样，Spring Security的真正强大之处在于可以轻松扩展以满足自定义要求</p>
+<p>Spring Security在网络安全的方面下的功夫更多，如 会话固定攻击 和 CSRF 攻击 等等，spring security 做了大量防御机制，这是shiro所不具备的</p>
 
 </div>
 

@@ -2476,6 +2476,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0308/refer-token.html">
+                     
+										    03 refreshToekn如何刷新token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2797,6 +2808,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0307/mysql-acid.html">
+				<h2 class="index-title">
+					01 ACID是什么意思？
+				</h2>
+				<div class="index-brief">
+					ACID，是指数据库管理系统（DBMS）在写入或更新资料的过程中，为保证事务（transaction）是正确可靠的，所必须具备的四个特性：原子性（atomicity，或称不可分割性）、一致性（consistency）、隔离性（isolation，又称独立性）、持久性（durability）
+Atom
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-07</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0307/mysql-master-salve-data-format.html">
 				<h2 class="index-title">
 					16 mysql主从的数据物理格式是怎样的？
@@ -2886,33 +2924,6 @@
 				</h2>
 				<div class="index-brief">
 					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-06</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0306/kafka-async-flush.html">
-				<h2 class="index-title">
-					07 kafka异步刷盘机制
-				</h2>
-				<div class="index-brief">
-					所谓kafka异步刷盘机制是指kafka的生产者将消息发送到broker时，首先消息会被追加到日志文件segment中，此时数据是暂存到操作系统的页缓存中，并不是直接落盘；（页缓存是内存中的临时存储区域，由操作系统管理，提供低延迟的读写能力）
-kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
 					...
 				</div>
 			</a>

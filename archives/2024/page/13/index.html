@@ -2476,6 +2476,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0308/refer-token.html">
+                     
+										    03 refreshToekn如何刷新token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2881,14 +2892,14 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-heaped.html">
+			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
 				<h2 class="index-title">
-					07 rocketMq消息堆积怎么解决
+					08 说说rocketmq死信队列
 				</h2>
 				<div class="index-brief">
-					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
-检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
-还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
+					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
+rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
+
 					...
 				</div>
 			</a>
@@ -2909,14 +2920,14 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
+			<a href="/2024/0120/rocketmq-msg-heaped.html">
 				<h2 class="index-title">
-					08 说说rocketmq死信队列
+					07 rocketMq消息堆积怎么解决
 				</h2>
 				<div class="index-brief">
-					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
-rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
-
+					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
+检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
+还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
 					...
 				</div>
 			</a>

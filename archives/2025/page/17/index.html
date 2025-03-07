@@ -2476,6 +2476,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0308/refer-token.html">
+                     
+										    03 refreshToekn如何刷新token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2797,6 +2808,43 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0219/kafka-exactly-once.html">
+				<h2 class="index-title">
+					06 结合kafka的exactly-once说明如何实现一个无锁的幂等方案
+				</h2>
+				<div class="index-brief">
+					在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？无锁幂等方案设计
+123456CREATE TABLE 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0219/ddd-interface-abstract-diff.html">
 				<h2 class="index-title">
 					05 请分析RR可能导致锁范围扩大的原因和解决思路
@@ -2912,53 +2960,6 @@
 				</h2>
 				<div class="index-brief">
 					在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？Redis分布式锁的隐患热key问题导致单节点压力（可通过分片或分区锁缓解）。锁超时与业务执行冲突：若业务执行时间超过锁超时时间（TTL），导致锁自动释放后其
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0219/10w-QPS-desigen.html">
-				<h2 class="index-title">
-					07 如何设计一个支持10万QPS的库存扣减系统
-				</h2>
-				<div class="index-brief">
-					假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明
-
-
-方案
-优势
-劣势
-适用场景
-
-
-
-Redis Lua脚本
-原子
 					...
 				</div>
 			</a>

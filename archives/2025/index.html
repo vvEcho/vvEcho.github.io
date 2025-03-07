@@ -2476,6 +2476,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0308/refer-token.html">
+                     
+										    03 refreshToekn如何刷新token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2797,6 +2808,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0308/refer-token.html">
+				<h2 class="index-title">
+					03 refreshToekn如何刷新token
+				</h2>
+				<div class="index-brief">
+					刷新流程
+客户端发起请求当检测到Access Token过期（通过定时检查或API返回错误码），客户端向授权服务器的Token端点发送POST请求，需包含以下参数：12345678grant_type=refresh_tokenrefresh_token=xxx（已存储的Refresh Token）
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-08</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/21-网络协议/">21 网络协议</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0307/es-thread-safe.html">
 				<h2 class="index-title">
 					07 并发情况下es如何保证读写一致性
@@ -2890,35 +2928,6 @@ query-查询阶段当一个search请求发出的时候，这个query会被广播
 				<div class="index-brief">
 					
 索引文档过程1.客户端向Node 1 发送新建、索引或者删除请求。2.节点使用文档的 _id 确定文档属于分片 0 。请求会被转发到 Node 3，因为分片 0 的主分片目前被分配在 Node 3 上。3.Node 3 在主分片上面执行请求。如果成功了，它将请求并行转发到 Node 1 和 Nod
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-07</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0307/es-cluster-election.html">
-				<h2 class="index-title">
-					03 es中集群怎么实现选举
-				</h2>
-				<div class="index-brief">
-					
-对所有可以成为 Master 的节点（node.master: true）根据 nodeId 排序，每次选举每个节点都把自己所知道节点排一次序，然后选出第一个（第0位）节点，暂且认为它是 Master 节点。
-
-如果对某个节点的投票数达到一定的值（可以成为master节点数n&#x2F;2+1）并
 					...
 				</div>
 			</a>

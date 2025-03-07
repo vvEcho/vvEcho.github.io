@@ -2478,6 +2478,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0308/refer-token.html">
+                     
+										    03 refreshToekn如何刷新token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2832,7 +2843,15 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="shiro权限组件，说说对应的原理"><a href="#shiro权限组件，说说对应的原理" class="headerlink" title="shiro权限组件，说说对应的原理"></a>shiro权限组件，说说对应的原理</h4>
+	<p><img src="/../../images/springcloud/25/3/shiro-flow.png"><br><strong>subject：</strong>主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。</p>
+<p>securityManager：安全管理器，主体进行认证和授权都是通过securityManager进行。它包含下面的认证器和授权器。</p>
+<p>authenticator：认证器，主体进行认证最终通过authenticator进行的。</p>
+<p>authorizer：授权器，主体进行授权最终通过authorizer进行的。</p>
+<p>sessionManager：web应用中一般是用web容器对session进行管理，shiro也提供一套session管理的方式。可以实现单点登录。</p>
+<p>SessionDao：通过SessionDao管理session数据，针对个性化的session数据存储需要使用sessionDao。</p>
+<p>cache Manager：缓存管理器，主要对session和授权数据进行缓存，比如将授权数据通过cacheManager进行缓存管理，和ehcache整合对缓存数据进行管理。</p>
+<p>realm：域，领域，相当于数据源，通过realm存取认证、授权相关数据。（它的主要目的是与数据库打交道，查询数据库中的认证的信息（比如用户名和密码），查询授权的信息（比如权限的code等，所以这里可以理解为调用数据库查询一系列的信息，一般情况下在项目中采用自定义的realm，因为不同的业务需求不一样））</p>
+
 </div>
 
 <!-- post-guide -->

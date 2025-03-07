@@ -2476,6 +2476,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0308/refer-token.html">
+                     
+										    03 refreshToekn如何刷新token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2797,6 +2808,65 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0305/rocketmq-cluster-mode.html">
+				<h2 class="index-title">
+					12 rocketMq有哪些集群模式
+				</h2>
+				<div class="index-brief">
+					
+
+
+模式
+数据安全
+性能
+适用场景
+
+
+
+单Master
+低
+最高
+本地测试、学习环境
+
+
+多Master
+中  （依赖磁盘）
+高
+高性能、允许短暂数据不可用
+
+
+多Master多Slave异步
+中
+较高
+平衡性能与可用性
+
+
+多Master多Slave同步
+高
+中
+强一致性场景（如支付交易）
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0305/kafka-architecture.html">
 				<h2 class="index-title">
 					01 kafka架构是怎样的
@@ -3050,33 +3120,6 @@ LFU（最不频繁使用）
 					1.应用启动时预加载在服务启动阶段（如Spring Boot应用初始化完成时），通过代码自动加载热点数据到缓存。
 适合系统配置，数据量小且确定的情况。
 实现方式：Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执行预热逻辑，例如加载数
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/query-redis-db.html">
-				<h2 class="index-title">
-					16 redis如何查询指定库的数据
-				</h2>
-				<div class="index-brief">
-					Redis 默认提供 16 个数据库（0-15），使用 SELECT 命令切换：
-12345678910111213141516171819202122# 切换到数据库 1SELECT 1代码示例：```java注意：集群模式（如 Redis Cluster）仅支持db0，不支持多数据库import
 					...
 				</div>
 			</a>
