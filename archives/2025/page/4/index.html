@@ -740,9 +740,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -751,9 +751,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1926,6 +1926,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2751,7 +2762,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2762,7 +2773,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2773,7 +2784,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2784,7 +2795,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2806,6 +2828,60 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+				<h2 class="index-title">
+					09 kafka消息丢失的场景及解决方案
+				</h2>
+				<div class="index-brief">
+					kafka消息丢失的场景主要在生产端，broker端，消费端
+生产端消息丢失producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
+解决办法：可以改成同步发生，ack&#x3D;all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/kafka-replication-sync.html">
+				<h2 class="index-title">
+					08 kafka副本同步机制
+				</h2>
+				<div class="index-brief">
+					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2025/0306/kafka-async-flush.html">
@@ -2870,46 +2946,10 @@ kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0306/undefined.html">
-				<h2 class="index-title">
-					03 滑动窗口限流算法
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-06</span>
-                    
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0306/undefined.html">
-				<h2 class="index-title">
-					02 计数器限流算法
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-06</span>
-                    
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/page/3/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><a class="page-number" href="/archives/2025/page/2/">2</a><a class="page-number" href="/archives/2025/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2025/page/5/">5</a><a class="page-number" href="/archives/2025/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/18/">18</a><a class="extend next" rel="next" href="/archives/2025/page/5/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/page/3/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><a class="page-number" href="/archives/2025/page/2/">2</a><a class="page-number" href="/archives/2025/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2025/page/5/">5</a><a class="page-number" href="/archives/2025/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/19/">19</a><a class="extend next" rel="next" href="/archives/2025/page/5/">&gt;</a>
 		
 	</div>
 </div>

@@ -740,9 +740,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -751,9 +751,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1926,6 +1926,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2751,7 +2762,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2762,7 +2773,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2773,7 +2784,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2784,7 +2795,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2808,13 +2830,71 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0304/redis-same-db.html">
+				<h2 class="index-title">
+					18 如何保证redis中缓存和数据库的一致性
+				</h2>
+				<div class="index-brief">
+					可以采用延迟双删+mq的最终一致性来保障redis中缓存和数据库的一致性
+可参考：如何保证缓存和数据库的一致性
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0304/redis-pre-hotKey.html">
+				<h2 class="index-title">
+					17 缓存预热怎么做
+				</h2>
+				<div class="index-brief">
+					1.应用启动时预加载在服务启动阶段（如Spring Boot应用初始化完成时），通过代码自动加载热点数据到缓存。
+适合系统配置，数据量小且确定的情况。
+实现方式：Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执行预热逻辑，例如加载数
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0304/query-redis-db.html">
 				<h2 class="index-title">
 					16 redis如何查询指定库的数据
 				</h2>
 				<div class="index-brief">
 					Redis 默认提供 16 个数据库（0-15），使用 SELECT 命令切换：
-12345678910111213141516171819202122# 切换到数据库 1SELECT 1代码示例：```java注意：集群模式（如 Redis Cluster）仅支持db0，不支持多数据库import
+12# 切换到数据库 1SELECT 1
+代码示例：
+1234567891011121314151617注意：集群模式（如 Redis Cluster）仅支持db0，不支持多数据库import redis.client
 					...
 				</div>
 			</a>
@@ -3018,62 +3098,6 @@ JDK动态代理中代理类直接实现目标接口，并通过反射调用目�
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/cap-and-base.html">
-				<h2 class="index-title">
-					17 CAP及BASE理论
-				</h2>
-				<div class="index-brief">
-					CAP理论CAP理论是分布式领域中非常重要的一个指导理论C(Consistenc)表示强一致性,A(Availability)表示可用性,P(Partition Tolerance)表示分区容错性
-CAP理论指出在目前的硬件条件下，一个分布式系统是须要保证分区容错性的，而在这个前提下，分布式系统要么
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/mybatis-#$-difference.html">
-				<h2 class="index-title">
-					16 mybatis中#{}和${}有啥区别
-				</h2>
-				<div class="index-brief">
-					1.#{}是预编译处理、是占位符，${}是字符串替换、是拼接符
-2.Mybatis在处理#{}时，会将sql中的#{}替换为?号，调用Preparedstatement来赋值
-3.Mybatis在处理${}时，就是把${}替换成变量的值，调用Statement来赋值
-4.使用#{}可以有效的防止SQ
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02java基础/">02java基础</a>
 										
                                     </span>
                                 

@@ -740,9 +740,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -751,9 +751,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1926,6 +1926,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2751,7 +2762,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2762,7 +2773,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2773,7 +2784,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2784,7 +2795,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2806,6 +2828,59 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2025/0304/hash-conflict.html">
+				<h2 class="index-title">
+					11 hashmap中hash冲突了会怎么处理
+				</h2>
+				<div class="index-brief">
+					hashmap通过put方法往里面添加数据的时候，hashmap会根据key的hash值做一个取模的运算通过取模的值将元素放到数组的某个位置上去，这个时候有可能会有两个不同元素的hash值相同，这个时候就会发生hash冲突了，hashmap会通过链表来解决hash冲突，也就是如果hash值相同，就会
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0304/hashmap-how-to-expand.html">
+				<h2 class="index-title">
+					10 hashmap如何扩容的？
+				</h2>
+				<div class="index-brief">
+					hashmap的扩容方式在jdk1.7和jdk1.8中不同,以下来分别说明
+在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75&#x3D;12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2025/0304/fu-zhai-yin-zi.html">
@@ -2890,66 +2965,10 @@ JDK动态代理中代理类直接实现目标接口，并通过反射调用目�
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0302/cap-and-base.html">
-				<h2 class="index-title">
-					17 CAP及BASE理论
-				</h2>
-				<div class="index-brief">
-					CAP理论CAP理论是分布式领域中非常重要的一个指导理论C(Consistenc)表示强一致性,A(Availability)表示可用性,P(Partition Tolerance)表示分区容错性
-CAP理论指出在目前的硬件条件下，一个分布式系统是须要保证分区容错性的，而在这个前提下，分布式系统要么
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/mybatis-#$-difference.html">
-				<h2 class="index-title">
-					16 mybatis中#{}和${}有啥区别
-				</h2>
-				<div class="index-brief">
-					1.#{}是预编译处理、是占位符，${}是字符串替换、是拼接符
-2.Mybatis在处理#{}时，会将sql中的#{}替换为?号，调用Preparedstatement来赋值
-3.Mybatis在处理${}时，就是把${}替换成变量的值，调用Statement来赋值
-4.使用#{}可以有效的防止SQ
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02java基础/">02java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/page/7/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/6/">6</a><a class="page-number" href="/archives/2025/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/2025/page/9/">9</a><a class="page-number" href="/archives/2025/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/18/">18</a><a class="extend next" rel="next" href="/archives/2025/page/9/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/page/7/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/6/">6</a><a class="page-number" href="/archives/2025/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/2025/page/9/">9</a><a class="page-number" href="/archives/2025/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/19/">19</a><a class="extend next" rel="next" href="/archives/2025/page/9/">&gt;</a>
 		
 	</div>
 </div>

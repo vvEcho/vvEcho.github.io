@@ -740,9 +740,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -751,9 +751,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1926,6 +1926,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2751,7 +2762,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2762,7 +2773,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2773,7 +2784,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2784,7 +2795,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2806,6 +2828,61 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2024/0120/kafka-rebalance.html">
+				<h2 class="index-title">
+					05 kafka的rebalance机制
+				</h2>
+				<div class="index-brief">
+					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
+当kafka感知到存在让分
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-distributed-transaction.html">
+				<h2 class="index-title">
+					09 rocketMq实现分布式事务了解吗？
+				</h2>
+				<div class="index-brief">
+					RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性
+第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见
+12// 发送半消息（事务消息）TransactionSendResult result = p
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2024/0120/kafka-msg-not-lost.html">
@@ -2864,14 +2941,14 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
+			<a href="/2024/0120/rocketmq-msg-heaped.html">
 				<h2 class="index-title">
-					08 说说rocketmq死信队列
+					07 rocketMq消息堆积怎么解决
 				</h2>
 				<div class="index-brief">
-					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
-rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
-
+					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
+检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
+还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
 					...
 				</div>
 			</a>
@@ -2892,14 +2969,14 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-heaped.html">
+			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
 				<h2 class="index-title">
-					07 rocketMq消息堆积怎么解决
+					08 说说rocketmq死信队列
 				</h2>
 				<div class="index-brief">
-					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
-检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
-还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
+					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
+rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
+
 					...
 				</div>
 			</a>
@@ -3027,62 +3104,6 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-find-msg.html">
-				<h2 class="index-title">
-					02 rocketMq怎么查找到对应的消息的？
-				</h2>
-				<div class="index-brief">
-					我们知道，RocketMQ核心的数据文件有3个：CommitLog、ConsumeQueue和Index。
-其中Index文件就是一个索引文件，查找消息时，首先根据消息key的hashcode计算出Hash槽的位置，然后读取Hash槽的值计算Index条目的位置
-从Index条目位置读取到消息在Co
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13rocketmq/">13rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/dubbo-rpc-net.html">
-				<h2 class="index-title">
-					07 dubbo微服务间怎么通信？
-				</h2>
-				<div class="index-brief">
-					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
-使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
-dubbo的服务注册与发现的流程容器启动后，提供方向注
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 

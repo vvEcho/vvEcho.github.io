@@ -740,9 +740,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -751,9 +751,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1926,6 +1926,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2751,7 +2762,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2762,7 +2773,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2773,7 +2784,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2784,7 +2795,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2806,6 +2828,66 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-rdb-aof.html">
+				<h2 class="index-title">
+					04 rdb和aof
+				</h2>
+				<div class="index-brief">
+					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；
+rdb是一种二进制快照文件的方式,快照某个时刻redis中的数据到硬盘中的
+aof是以日志的的方式存储redis的写命令;
+rdb的好处是适合数据全量备份，容灾好，恢复数据速度快, 缺点是数据可能丢失；
+aof的好处是实时性好，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-base-data-structure.html">
+				<h2 class="index-title">
+					01 redis数据结构
+				</h2>
+				<div class="index-brief">
+					redis是一种基于键值对的来存储数据的nosql数据库
+其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
+常用的有String，list,set,zset,hash
+
+String类型是redis最基本类型之一，其存储数据
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2024/0120/redis-fast-reason.html">
@@ -2887,61 +2969,6 @@ C实现的，更利于和底层进行交互
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-rebalance.html">
-				<h2 class="index-title">
-					05 kafka的rebalance机制
-				</h2>
-				<div class="index-brief">
-					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
-当kafka感知到存在让分
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-distributed-transaction.html">
-				<h2 class="index-title">
-					09 rocketMq实现分布式事务了解吗？
-				</h2>
-				<div class="index-brief">
-					RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性
-第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见
-12// 发送半消息（事务消息）TransactionSendResult result = p
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
 										
                                     </span>
                                 

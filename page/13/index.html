@@ -740,9 +740,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -751,9 +751,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1926,6 +1926,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2751,7 +2762,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2762,7 +2773,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2773,7 +2784,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2784,7 +2795,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2806,6 +2828,63 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2024/0120/about-linux.html">
+				<h2 class="index-title">
+					01 linux面试题
+				</h2>
+				<div class="index-brief">
+					
+linux常用查看日志命令？cd到对应的日志目录文件查看实时日志：tail -f xxx.log根据关键字查询：cat -n xxx.log|grep ‘occurs error’
+
+123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat err
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/22-linux/">22 linux</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/undefined.html">
+				<h2 class="index-title">
+					01 docker面试题
+				</h2>
+				<div class="index-brief">
+					如何构建dockerfile
+将jar包上传到服务器
+执行下述命令构建dockerfile1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 构建 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/35-docker/">35 docker</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2024/0120/math-method.html">
@@ -2971,33 +3050,6 @@ xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-count-query-sample.html">
-				<h2 class="index-title">
-					10 统计sql例子
-				</h2>
-				<div class="index-brief">
-					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
-1234select user_name ,bug_count from (select count(bug_id) as bug_c
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
 			<a href="/2024/0120/mysql-dividing-dbs-tables.html">
 				<h2 class="index-title">
 					08 分库分表怎么做的
@@ -3028,41 +3080,13 @@ xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-b-jia-tree.html">
+			<a href="/2024/0120/mysql-count-query-sample.html">
 				<h2 class="index-title">
-					06 B+树索引
+					10 统计sql例子
 				</h2>
 				<div class="index-brief">
-					B+树索引是一个多叉平衡树，它的叶子节点是数据节点，非叶子节点是索引节点。
-其中非叶子节点存储了所有的排序号的索引信息，叶子节点存储了所有的数据信息；非叶子节点是一个双向循环链表，这种设计时候范围和顺序访问
-B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持事务，请你尝试说明B
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/mysql-optimize-query.html">
-				<h2 class="index-title">
-					07 mysql怎么优化数据库查询
-				</h2>
-				<div class="index-brief">
-					1.首先看表的数据量级以及sql数据涉及的业务含义A.数据量超2000万，大概率优化空间不大B.数据量级小的情况下，需看查询sql是否合理
-2.看表是否建立合适的索引A.针对高频查询的字段建立索引 B.当查询涉及多列组合条件时（如 WHERE a&#x3D;1 AND b&#x3D;2），使用联合索
+					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
+1234select user_name ,bug_count from (select count(bug_id) as bug_c
 					...
 				</div>
 			</a>

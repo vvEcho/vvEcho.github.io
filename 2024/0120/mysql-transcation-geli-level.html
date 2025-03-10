@@ -742,9 +742,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -753,9 +753,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1928,6 +1928,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2753,7 +2764,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2764,7 +2775,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2775,7 +2786,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2786,7 +2797,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2852,7 +2874,7 @@
 <!-- content -->
 <div id="article-content">
 	<p>数据库的隔离级别分为读未提交，读已提交，可重复度，可重复读，串行化来分别解决脏读，不可重复读，幻读等问题</p>
-<h5 id="脏读（Dirty-Read）"><a href="#脏读（Dirty-Read）" class="headerlink" title="脏读（Dirty Read）"></a>脏读（Dirty Read）</h5><p>概念：一个事务读取了另一个未提交事务修改的数据（当前是读未提交隔离级别）<br>背景：事务A修改数据但未提交，事务B却读到了这个未提交的数据。若事务A最终回滚，事务B的读取结果就是无效的“脏数据”。<br>解决方案：<br><br>读已提交（Read Committed）隔离级别，确保只能读取已提交的数据。</p>
+<h5 id="脏读（Dirty-Read）"><a href="#脏读（Dirty-Read）" class="headerlink" title="脏读（Dirty Read）"></a>脏读（Dirty Read）</h5><p>概念：一个事务读取了另一个未提交事务修改的数据（当前是<strong>读未提交</strong>隔离级别）<br>背景：事务A修改数据但未提交，事务B却读到了这个未提交的数据。若事务A最终回滚，事务B的读取结果就是无效的“脏数据”。<br>解决方案：<br><br>读已提交（Read Committed）隔离级别，确保只能读取已提交的数据。</p>
 <h4 id="不可重复读（Non-repeatable-Read）"><a href="#不可重复读（Non-repeatable-Read）" class="headerlink" title="不可重复读（Non-repeatable Read）"></a>不可重复读（Non-repeatable Read）</h4><p>概念：同一事务中，多次读取同一数据结果不同，因其他事务已提交修改。<br><br>背景：事务A多次读取同一数据，期间事务B修改并提交该数据，导致事务A前后结果不一致。<br><br>解决方案：<br><br>可重复读（Repeatable Read）隔离级别，通过行锁或MVCC快照保证事务内多次读取一致。</p>
 <h4 id="幻读（Phantom-Read）"><a href="#幻读（Phantom-Read）" class="headerlink" title="幻读（Phantom Read）"></a>幻读（Phantom Read）</h4><p>概念：同一事务中，多次按相同条件查询，结果集的行数不同（新增或删除行）。<br><br>背景：事务A读取某个范围的数据，事务B插入或删除符合该范围的数据并提交，导致事务A出现“幻觉”。<br><br>解决方案：<br><br>序列化（Serializable）隔离级别，或通过<strong>间隙锁（Gap Lock）</strong>锁定范围，禁止其他事务插入&#x2F;删除</p>
 

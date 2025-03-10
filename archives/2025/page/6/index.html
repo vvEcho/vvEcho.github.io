@@ -740,9 +740,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -751,9 +751,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1926,6 +1926,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2751,7 +2762,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2762,7 +2773,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2773,7 +2784,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2784,7 +2795,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2806,6 +2828,62 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2025/0305/redis-redlock-brain-split.html">
+				<h2 class="index-title">
+					23 RedLock算法如何解决Redis集群脑裂问题
+				</h2>
+				<div class="index-brief">
+					脑裂问题的本质是网络分区或主节点假故障导致集群中出现多个主节点，从而引发数据冲突。
+RedLock通过以下机制规避此类风险：
+1.避免单点依赖，降低脑裂触发概率传统Redis主从架构中，哨兵可能因网络抖动误判主节点失效，触发主从切换，导致原主节点和新主节点并存（脑裂）。
+而RedLock不依赖单一主
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0305/redission-lock-type.html">
+				<h2 class="index-title">
+					22 redission都提供了哪些类型的分布式锁
+				</h2>
+				<div class="index-brief">
+					1. 可重入锁（Reentrant Lock）功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。使用示例：
+12RLock loc
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2025/0305/except-redission-lock-implementation.html">
@@ -2907,66 +2985,10 @@ LFU（最不频繁使用）
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0304/redis-same-db.html">
-				<h2 class="index-title">
-					18 如何保证redis中缓存和数据库的一致性
-				</h2>
-				<div class="index-brief">
-					可以采用延迟双删+mq的最终一致性来保障redis中缓存和数据库的一致性
-可参考：如何保证缓存和数据库的一致性
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/redis-pre-hotKey.html">
-				<h2 class="index-title">
-					17 缓存预热怎么做
-				</h2>
-				<div class="index-brief">
-					1.应用启动时预加载在服务启动阶段（如Spring Boot应用初始化完成时），通过代码自动加载热点数据到缓存。
-适合系统配置，数据量小且确定的情况。
-实现方式：Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执行预热逻辑，例如加载数
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/page/5/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/4/">4</a><a class="page-number" href="/archives/2025/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2025/page/7/">7</a><a class="page-number" href="/archives/2025/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/18/">18</a><a class="extend next" rel="next" href="/archives/2025/page/7/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/page/5/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/4/">4</a><a class="page-number" href="/archives/2025/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2025/page/7/">7</a><a class="page-number" href="/archives/2025/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/19/">19</a><a class="extend next" rel="next" href="/archives/2025/page/7/">&gt;</a>
 		
 	</div>
 </div>

@@ -742,9 +742,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -753,9 +753,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1928,6 +1928,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2753,7 +2764,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2764,7 +2775,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2775,7 +2786,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2786,7 +2797,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2846,8 +2868,8 @@
 	<p>MySQL 主从复制的数据物理格式主要由两部分构成：</p>
 <p>主库的<strong>二进制日志（Binlog）</strong>和从库的<strong>中继日志（Relay Log）</strong>，其底层存储与 MySQL 的存储引擎（如 InnoDB）密切相关</p>
 <h4 id="主库的二进制日志物理格式"><a href="#主库的二进制日志物理格式" class="headerlink" title="主库的二进制日志物理格式"></a>主库的二进制日志物理格式</h4><p>Binlog 是主库记录所有数据修改操作的二进制文件，其内容按事件（Event）存储，每个事件包含操作类型、时间戳、执行线程、数据变更等信息。<br>存储方式：<br>STATEMENT 格式：记录原始 SQL 语句（如 UPDATE t SET col&#x3D;1），逻辑简单但可能因函数或上下文导致主从不一致</p>
-<p>ROW 格式：记录实际修改的行数据（如修改前后各字段的值），保证数据一致性但日志体积较大</p>
-<p>MIXED 格式：默认模式，根据操作类型动态选择 STATEMENT 或 ROW 格式</p>
+<p>ROW格式：记录实际修改的行数据（如修改前后各字段的值），保证数据一致性但日志体积较大</p>
+<p>MIXED格式：默认模式，根据操作类型动态选择 STATEMENT 或 ROW 格式</p>
 <p>文件结构：由多个 mysql-bin.XXXXXX 文件组成，按顺序滚动生成，默认保存在 MySQL 数据目录下</p>
 <p>InnoDB：数据存储在 .ibd 文件中（每个表对应一个文件），采用 B+树索引结构，支持事务和行级锁<br>MyISAM：数据存储在 .MYD（数据文件）和 .MYI（索引文件）中，不支持事务</p>
 <h4 id="从库的中继日志"><a href="#从库的中继日志" class="headerlink" title="从库的中继日志"></a>从库的中继日志</h4><p>物理格式：与主库的 Binlog 完全一致，从库通过I&#x2F;O线程将主库的Binlog事件原样保存到Relay Log中</p>

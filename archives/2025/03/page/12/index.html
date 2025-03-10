@@ -740,9 +740,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -751,9 +751,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1926,6 +1926,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2751,7 +2762,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2762,7 +2773,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2773,7 +2784,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2784,7 +2795,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2806,6 +2828,66 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2025/0302/springboot-characteristic.html">
+				<h2 class="index-title">
+					05 springboot有哪些特点
+				</h2>
+				<div class="index-brief">
+					springBoot的优点是什么？‌
+
+快速开发‌：SpringBoot简化了配置，减少了开发、测试时间和努力。
+独立运行‌：内嵌了servlet容器，如Tomcat、Jetty等，无需部署WAR文件。
+自动配置‌：根据类路径下的类、jar包自动配置bean，如添加spring-boot-start
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/sprngboot-properties-order.html">
+				<h2 class="index-title">
+					04 springBoot中配置优先级是怎样的?
+				</h2>
+				<div class="index-brief">
+					优先级从高到低，高优先级的配置覆盖低优先级的配置，所有配置会形成互补配置。
+1.命令行参数。所有的配置都可以在命令行上进行指定
+2.Java系统属性(System.getProperties());
+3.操作系统环境变量;
+4.jar包,外部的application-{profile}.proper
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2025/0302/spring-mvc-flow.html">
@@ -2887,65 +2969,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0301/lock-move-and-strong.html">
-				<h2 class="index-title">
-					13 锁消除和锁膨胀
-				</h2>
-				<div class="index-brief">
-					锁消除在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
-1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchro
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0301/happy-unhappy-lock.html">
-				<h2 class="index-title">
-					13 乐观锁和悲观锁
-				</h2>
-				<div class="index-brief">
-					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
-Java中提供的CAS操作，就是乐观锁的一种实现。
-悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/03/page/11/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/10/">10</a><a class="page-number" href="/archives/2025/03/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/2025/03/page/13/">13</a><a class="extend next" rel="next" href="/archives/2025/03/page/13/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/03/page/11/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/10/">10</a><a class="page-number" href="/archives/2025/03/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/2025/03/page/13/">13</a><a class="page-number" href="/archives/2025/03/page/14/">14</a><a class="extend next" rel="next" href="/archives/2025/03/page/13/">&gt;</a>
 		
 	</div>
 </div>

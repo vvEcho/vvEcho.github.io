@@ -740,9 +740,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/pessimistic-optimistic-lock.html">
+									<a href="/2024/0120/deadlock-occurs-reason.html">
                      
-										    08 悲观锁和乐观锁
+										    08 死锁出现的原因以及怎么解决？
                      
 									</a>
 								</li>
@@ -751,9 +751,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/deadlock-occurs-reason.html">
+									<a href="/2024/0120/pessimistic-optimistic-lock.html">
                      
-										    09 死锁出现的原因以及怎么解决？
+										    09 悲观锁和乐观锁
                      
 									</a>
 								</li>
@@ -1926,6 +1926,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/redis-usually-data-structure-shell.html">
+                     
+										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2751,7 +2762,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-pingan.html">
                      
-										    平安面试(22.3)
+										    01 平安面试(22.3)
                      
 									</a>
 								</li>
@@ -2762,7 +2773,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-huarun.html">
                      
-										    华润面试(22.6)
+										    02 华润面试(22.6)
                      
 									</a>
 								</li>
@@ -2773,7 +2784,7 @@
 								<li class="file">
 									<a href="/2024/0120/self-audition-jindong.html">
                      
-										    京东(23.2)
+										    03 京东(23.2)
                      
 									</a>
 								</li>
@@ -2784,7 +2795,18 @@
 								<li class="file">
 									<a href="/2025/0219/self-audition-pingan.html">
                      
-										    平安面试(24.3)
+										    04 微众银行(24.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0310/kua-yue-shippment.html">
+                     
+										    05 跨越速运
                      
 									</a>
 								</li>
@@ -2806,6 +2828,63 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2025/0301/can-notcan-enter-lock.html">
+				<h2 class="index-title">
+					11 什么叫可重入锁和不可重入锁
+				</h2>
+				<div class="index-brief">
+					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是可重入锁
+不可重入锁只判断这个锁有没有被锁上，只要被锁上，申请锁的线程都会被要求等待。
+可重入锁不仅判断锁有没有被锁上，还会判断锁是哪个线程锁上的，当判断为当前锁上的时候，那么他依旧
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/fair-nonfair-lock.html">
+				<h2 class="index-title">
+					10 公平锁和非公平锁
+				</h2>
+				<div class="index-brief">
+					Java中提供的synchronized只能是非公平锁。
+Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和非公平锁
+公平锁公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。
+优点：每个线程等待一
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2025/0228/seata-4-mode.html">
@@ -2891,67 +2970,10 @@ sentinel如何实现限流 熔断 降级
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0228/net-jwt-authorization.html">
-				<h2 class="index-title">
-					02 说一下jwt的认证流程
-				</h2>
-				<div class="index-brief">
-					
-jwt的认证流程说明：前端发起请求登陆，用户携带用户名和密码等
-后端验证身份（用户名，密码，验证码等），根据算法，将用户标识符打包生成 Token，
-后端返回JWT信息给浏览器，JWT不包含敏感信息
-前端发起回调请求获取用户资料，把刚刚拿到的Token放到请求头中一起发送给服务器
-后端根据请求数据
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-28</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/22-网络协议/">22 网络协议</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0227/xxl-job-fenpian.html">
-				<h2 class="index-title">
-					04 xxl-job如何实现任务的分片
-				</h2>
-				<div class="index-brief">
-					xxl-job 实现了分片任务的功能，可以将一个任务分片执行，每个执行器运行其中的一片任务。实现分片任务的原理是：任务注册时，可以设置分片参数，指定任务分片的总数和当前执行器的分片序号。在任务执行器获取任务时，通过判断当前执行器的分片序号来决定是否执行该任务。执行器只会执行当前分片序号符合的任务片段
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/page/13/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/12/">12</a><a class="page-number" href="/archives/2025/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/2025/page/15/">15</a><a class="page-number" href="/archives/2025/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/18/">18</a><a class="extend next" rel="next" href="/archives/2025/page/15/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/page/13/">&lt;</a><a class="page-number" href="/archives/2025/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/12/">12</a><a class="page-number" href="/archives/2025/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/2025/page/15/">15</a><a class="page-number" href="/archives/2025/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/page/19/">19</a><a class="extend next" rel="next" href="/archives/2025/page/15/">&gt;</a>
 		
 	</div>
 </div>
