@@ -2830,39 +2830,14 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/exception-error-different.html">
+			<a href="/2024/0120/copy-on-write-arrayList.html">
 				<h2 class="index-title">
-					07 exception和error有啥区别
+					06 CopyOnWriteArrayList是线程安全的吗
 				</h2>
 				<div class="index-brief">
-					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/hashMap-put-analysize.html">
-				<h2 class="index-title">
-					05 说一下HashMap的put方法的底层实现原理
-				</h2>
-				<div class="index-brief">
-					123456789101112131415161718192021222324252627282930313233343536373839404142434445public V put(K key, V value) &#123;    return putVal(hash(key), key, 
+					copyOnWriteArrayList是线程安全的它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；
+并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；
+最后，待元素写入新数组后再
 					...
 				</div>
 			</a>
@@ -2901,6 +2876,32 @@ jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新�
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/hashMap-put-analysize.html">
+				<h2 class="index-title">
+					05 说一下HashMap的put方法的底层实现原理
+				</h2>
+				<div class="index-brief">
+					123456789101112131415161718192021222324252627282930313233343536373839404142434445public V put(K key, V value) &#123;    return putVal(hash(key), key, 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
 										
                                     </span>
                                 
