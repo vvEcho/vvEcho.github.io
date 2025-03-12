@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,12 +2874,13 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0219/promotion-failed.html">
+			<a href="/2025/0219/kafka-exactly-once.html">
 				<h2 class="index-title">
-					03 Promotion Failed的原因及解决思路
+					09 设计一个强一致性方案保障故障转移时会话共享
 				</h2>
 				<div class="index-brief">
-					在平安科技的分红子系统中，您提到使用Java 8的Supplier优化PageHelper查询。假设系统出现Full GC频繁（约1次&#x2F;小时），且GC日志显示Promotion Failed，请分析可能的原因及解决思路。如何通过G1垃圾回收器参数优化此场景？Promotion Failed
+					基于Redis的会话共享实现方案核心：Redis Cluster + 同步写策略
+12345678# Redis节点配置（6节点示例：3主3从）redis-cluster:  master1: 192.168.1.1:6379  slave1:  192.168.1.2:6380  master2:
 					...
 				</div>
 			</a>
@@ -2866,96 +2911,13 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0219/lock-question-and-principle.html">
+			<a href="/2025/0219/kafka-exactly-once.html">
 				<h2 class="index-title">
-					02 分布式锁隐患及锁续期原理
+					06 结合kafka的exactly-once说明如何实现一个无锁的幂等方案
 				</h2>
 				<div class="index-brief">
-					在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？Redis分布式锁的隐患热key问题导致单节点压力（可通过分片或分区锁缓解）。锁超时与业务执行冲突：若业务执行时间超过锁超时时间（TTL），导致锁自动释放后其
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0219/10w-QPS-desigen.html">
-				<h2 class="index-title">
-					07 如何设计一个支持10万QPS的库存扣减系统
-				</h2>
-				<div class="index-brief">
-					假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明
-
-
-方案
-优势
-劣势
-适用场景
-
-
-
-Redis Lua脚本
-原子
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0219/export-full-GC.html">
-				<h2 class="index-title">
-					08 导出频繁FullGC如何定位泄漏点，你是如何优化的
-				</h2>
-				<div class="index-brief">
-					假设导出百万级数据到Excel时出现频繁Full GC，如何定位内存泄漏点？如果发现是POI的SXSSFWorkbook未正确释放资源，除了调用dispose()，还有哪些优化手段？请结合JVM参数调优和代码规范说明可通过JVisualVM 分析工具，分析堆栈内存
-1234567# 启动参数添加GC
+					在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？无锁幂等方案设计
+123456CREATE TABLE 
 					...
 				</div>
 			</a>
@@ -2988,10 +2950,83 @@ Redis Lua脚本
 		 <div class="index-li">
 			<a href="/2025/0219/ddd-interface-abstract-diff.html">
 				<h2 class="index-title">
-					01 结合DDD说明抽象类和接口的区别
+					05 请分析RR可能导致锁范围扩大的原因和解决思路
 				</h2>
 				<div class="index-brief">
-					Java接口和抽象类的核心区别是什么？在DDD架构设计中，接口通常承担什么角色？请结合您订单管理系统中Shiro权限模块的设计举例说明接口：定义行为契约，支持多实现，无状态，Java8+支持默认方法，适合跨层次的能力抽象（如权限校验接口）。抽象类：提供部分实现，单继承，可包含成员变量，适合同类事物的
+					假设查询涉及SELECT … FOR UPDATE锁，请分析在RR（可重复读）隔离级别下可能导致的锁范围扩大问题。如何通过索引设计避免锁全表？请结合SELECT * FROM commission WHERE merchant_id&#x3D;? AND month&#x3D;’2025-02’ F
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0219/ddd-ju-he-gen.html">
+				<h2 class="index-title">
+					04 DDD领域驱动中聚合根的概念
+				</h2>
+				<div class="index-brief">
+					在领域驱动设计中，聚合根（Aggregate Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明
+聚合根（Aggregate Root）设计原则‌您的回答正确但需补充完整，核心原则包括：‌✅ 强一致性边界：聚合根内的所有实
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0219/promotion-failed.html">
+				<h2 class="index-title">
+					03 Promotion Failed的原因及解决思路
+				</h2>
+				<div class="index-brief">
+					在平安科技的分红子系统中，您提到使用Java 8的Supplier优化PageHelper查询。假设系统出现Full GC频繁（约1次&#x2F;小时），且GC日志显示Promotion Failed，请分析可能的原因及解决思路。如何通过G1垃圾回收器参数优化此场景？Promotion Failed
 					...
 				</div>
 			</a>

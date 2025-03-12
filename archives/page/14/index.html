@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,6 +2874,128 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0301/happy-unhappy-lock.html">
+				<h2 class="index-title">
+					13 乐观锁和悲观锁
+				</h2>
+				<div class="index-brief">
+					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
+Java中提供的CAS操作，就是乐观锁的一种实现。
+悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/hu-chi-and-share-lock.html">
+				<h2 class="index-title">
+					12 互斥锁和共享锁
+				</h2>
+				<div class="index-brief">
+					Java中提供的synchronized、ReentrantLock是互斥锁。
+Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
+互斥锁互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
+共享锁共享锁：同一时间点，当前共享锁可以被多个线程同时持有
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/cyclicBarrier-principle.html">
+				<h2 class="index-title">
+					15 CyclicBarrier实现原理
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/null.html">
+				<h2 class="index-title">
+					14 countDownlanch实现原理
+				</h2>
+				<div class="index-brief">
+					问题标题
+
+
+
+姓名
+角色
+年龄
+
+
+
+张三
+学生
+18
+
+
+李四
+老师
+20
+
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0301/can-notcan-enter-lock.html">
 				<h2 class="index-title">
 					11 什么叫可重入锁和不可重入锁
@@ -2857,123 +3023,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0301/fair-nonfair-lock.html">
-				<h2 class="index-title">
-					10 公平锁和非公平锁
-				</h2>
-				<div class="index-brief">
-					Java中提供的synchronized只能是非公平锁。
-Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和非公平锁
-公平锁公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。
-优点：每个线程等待一
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0228/seata-4-mode.html">
-				<h2 class="index-title">
-					12 seata事务有哪几种模式？
-				</h2>
-				<div class="index-brief">
-					Seata 包含以下 4种分布式事务的处理模式
-1.XA 模式它的性能相比其他事务模式要差一点，但能保证最严格的数据一致性。XA 模式需要设置为串行化隔离级别，相当于对数据添加了读写锁。另外连接资源需要在整个事务期间保持，这样可能会导致资源锁定问题，从而影响并发事务吞吐。
-a.优点:实现简单、无业务
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-28</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/16-seata/">16 seata</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0228/undefined.html">
-				<h2 class="index-title">
-					05.2 sentinel限流及熔断的原理
-				</h2>
-				<div class="index-brief">
-					什么是SentinelSentinel是阿里开源的项目，提供了流量控制、熔断降级、系统负载保护等多个维度来保障服务之间的稳定性
-sentinel如何实现限流 熔断 降级
-定义限流资源通过 @SentinelResource 注解标记需要限流的接口，并指定限流处理逻辑12345678910111213
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-28</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/21-sentinel/">21 sentinel</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0228/index-down-push.html">
-				<h2 class="index-title">
-					15 什么叫索引下推，回表？
-				</h2>
-				<div class="index-brief">
-					索引下推索引下推简称ICP(index condition push),是mysql5.6后新增的功能，主要的核心点在于把数据筛选的过程放在了存储引擎层面，减少了返回的数据量和回表的次数，从而提高查询效率。
-举例说明：
-123456789101112以联合索引（name,age）为例，假设查询条件为
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-28</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/13/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="page-number" href="/archives/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/page/15/">15</a><a class="page-number" href="/archives/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/44/">44</a><a class="extend next" rel="next" href="/archives/page/15/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/13/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="page-number" href="/archives/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/page/15/">15</a><a class="page-number" href="/archives/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="extend next" rel="next" href="/archives/page/15/">&gt;</a>
 		
 	</div>
 </div>

@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,6 +2874,118 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0220/kafka-transcation.html">
+				<h2 class="index-title">
+					04 kafka怎么做分布式事务？
+				</h2>
+				<div class="index-brief">
+					kafka的优势其实在于副本机制以及在消息的吞吐量上，它本身的机制并不能用来做分布式事务；
+如果非得要用它来做事务管理的话，我们需要自己业务层面自己来确保消息的幂等性
+如果非要用kafka实现一个分布式事务，则需要借助一个本地事务状态表来实现，过程如下：
+
+业务操作和消息记录在一个事务中，先标记为待
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0219/redis-listen-key-expire.html">
+				<h2 class="index-title">
+					14 如何监听key过期时间并触发后置逻辑
+				</h2>
+				<div class="index-brief">
+					1. 修改redisp配置，开启过期事件监听1notify-keyspace-events Ex  # 仅监听键过期事件（Ex=Expired events）
+2. springboot配置监听器12345678910111213141516171819202122232425262728@Conf
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0219/mysql-groupby-suoyin.html">
+				<h2 class="index-title">
+					12 聚簇索引和非聚簇索引的区别
+				</h2>
+				<div class="index-brief">
+					
+聚簇索引:是一种特殊的索引类型，它将数据行的物理存储位置与索引的逻辑顺序相匹配。这意味着，当聚簇索引的叶节点被访问时，它同时也包含了该行的数据。聚簇索引的这种设计可以减少数据访问的磁盘I&#x2F;O操作，因为数据行与索引紧密地关联在一起，通常位于同一数据页中。聚簇索引的一个关键特点是，每个表只能
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0204/vue-life-cycle.html">
+				<h2 class="index-title">
+					01 vue的生命周期
+				</h2>
+				<div class="index-brief">
+					Vue的生命周期是指Vue实例对象从创建之初到销毁的过程，这个过程包括多个阶段，每个阶段都有对应的钩子函数，用于控制组件的数据管理和DOM渲染。Vue的生命周期可以分为以下几个阶段：
+
+beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得DO
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/36-vue/">36 vue</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0201/redis-big-key.html">
 				<h2 class="index-title">
 					12 redis大key问题
@@ -2862,123 +3018,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0201/springcloud-bus.html">
-				<h2 class="index-title">
-					07 springcloud消息总线
-				</h2>
-				<div class="index-brief">
-					Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
-Spring Cloud Bus配合Spring Cloud Config使用可以实现分布式自动刷新配置功能
-ConfigClient实例都监听MQ中
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0201/sentinel-liu-kong.html">
-				<h2 class="index-title">
-					05.3 hystricl和sentinel的对比
-				</h2>
-				<div class="index-brief">
-					Sentinel和Hystrix有哪些不同？Sentinel 和 Hystrix 都是用于管理分布式系统中的服务可靠性和延迟容忍性的工具，它们提供了像熔断器、限流器和服务降级这样的功能。虽然两者的目标类似，但它们在实现和功能上存在一些差异。以下是 Sentinel 和 Hystrix 的主要区别：
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0201/springcloud-zookeeper.html">
-				<h2 class="index-title">
-					03.2 zookeeper注册中心
-				</h2>
-				<div class="index-brief">
-					1.Zookeeper的服务注册与发现Zookeeper的服务注册与发现,主要应用的是Zookeeper的Znode数据模型和Watcher机制
-服务注册：服务提供者会向Zookeeper服务端注册服务信息，即创建一个服务节点，并在节点上存储服务的相关数据（如服务提供者的ip地址、端口等):
-服务发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0124/springmvc-understand.html">
-				<h2 class="index-title">
-					14 说说你对mspringMvc流程的理解
-				</h2>
-				<div class="index-brief">
-					
-
-用户发送请求至前端控制器 DispatcherServlet ；
-DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器 ，请求获取 Handler ；
-处理器映射器 根据请求 url 找到具体的处理器 Handler ，生成处理器对象及处理器拦截器（如
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/21/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/44/">44</a><a class="extend next" rel="next" href="/archives/page/23/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/21/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="extend next" rel="next" href="/archives/page/23/">&gt;</a>
 		
 	</div>
 </div>

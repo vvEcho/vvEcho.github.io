@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,6 +2874,119 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0304/redis-pre-hotKey.html">
+				<h2 class="index-title">
+					17 缓存预热怎么做
+				</h2>
+				<div class="index-brief">
+					1.应用启动时预加载在服务启动阶段（如Spring Boot应用初始化完成时），通过代码自动加载热点数据到缓存。
+适合系统配置，数据量小且确定的情况。
+实现方式：Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执行预热逻辑，例如加载数
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0304/query-redis-db.html">
+				<h2 class="index-title">
+					16 redis如何查询指定库的数据
+				</h2>
+				<div class="index-brief">
+					Redis 默认提供 16 个数据库（0-15），使用 SELECT 命令切换：
+12# 切换到数据库 1SELECT 1
+代码示例：
+1234567891011121314151617注意：集群模式（如 Redis Cluster）仅支持db0，不支持多数据库import redis.client
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0304/openfigne-different-timeout.html">
+				<h2 class="index-title">
+					01 openFeign使用过程中如何差异化配置超时时间
+				</h2>
+				<div class="index-brief">
+					全局默认：通过 Feign + Ribbon + Hystrix 的全局配置实现 2秒超时。特定接口：通过 @HystrixCommand 注解或 commandKey 配置覆盖为 30秒。验证关键点：确保 Hystrix 超时覆盖 Ribbon 和 Feign，避免因优先级导致配置失效
+服务消费方
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/30-场景题/">30 场景题</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0304/hashmap-linkedhashmap.html">
+				<h2 class="index-title">
+					04 HashMap和LinkedHashMap有啥区别
+				</h2>
+				<div class="index-brief">
+					首先LinkedHashMap继承于HashMap，所以LinkedHashMap也是HashMap的子类。
+
+hashmap的数据结构是数组+单向链表+红黑树，而linkedhashmap的数据结构是数组+双向链表。
+HashMap的迭代顺序是随机的，LinkedHashMap的迭代顺序是插入顺序
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0304/hash-conflict.html">
 				<h2 class="index-title">
 					11 hashmap中hash冲突了会怎么处理
@@ -2855,120 +3012,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0304/hashmap-how-to-expand.html">
-				<h2 class="index-title">
-					10 hashmap如何扩容的？
-				</h2>
-				<div class="index-brief">
-					hashmap的扩容方式在jdk1.7和jdk1.8中不同,以下来分别说明
-在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75&#x3D;12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/fu-zhai-yin-zi.html">
-				<h2 class="index-title">
-					09 hashmap的负载因子为何是0.75
-				</h2>
-				<div class="index-brief">
-					hashMap将负载因子设置为0.75是一个性能兼顾的考虑
-假设负载因子设置为0.5则；hash表在填充到一半的时候就会触发扩容，减少了hash冲突，查询效率也提高了；但是空间利用率下降了，且频繁的扩容会导致内存开销大且重新hash的成本很高；
-如果设置为1，则hash表完全满了才会扩容，虽然空间利
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/spring-jdk-springboot-cglib.html">
-				<h2 class="index-title">
-					21 spring为何针对接口用jdk动态代理
-				</h2>
-				<div class="index-brief">
-					jdk为什么不能针对没有实现接口的类生成代理？JDK动态代理的机制要求代理类必须基于接口的方法签名生成代理方法。若目标类未实现接口，则无法通过接口定义这些方法签名，导致代理类无法生成对应方法
-JDK动态代理中代理类直接实现目标接口，并通过反射调用目标对象的方法；
-另外由于Java不支持多继承，若JD
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/lock-impl-ways.html">
-				<h2 class="index-title">
-					17 分布式锁的实现方式有哪些
-				</h2>
-				<div class="index-brief">
-					在单体架构中，多个线程都是属于同一个进程的，所以在线程并发执行时，遇到资源竞争时，可以利用Reentrantlock、synchronized等技术来作为锁，来控制共享资源的使用。
-而在分布式架构中，多个线程是可能处于不同进程中的，而这些线程并发执行遇到资源竞争时，利用Reentrantlock、s
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/7/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/44/">44</a><a class="extend next" rel="next" href="/archives/page/9/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/7/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="extend next" rel="next" href="/archives/page/9/">&gt;</a>
 		
 	</div>
 </div>

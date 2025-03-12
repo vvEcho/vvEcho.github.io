@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,6 +2874,121 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/mysql-optimize-query.html">
+				<h2 class="index-title">
+					07 mysql怎么优化数据库查询
+				</h2>
+				<div class="index-brief">
+					1.首先看表的数据量级以及sql数据涉及的业务含义A.数据量超2000万，大概率优化空间不大B.数据量级小的情况下，需看查询sql是否合理
+2.看表是否建立合适的索引A.针对高频查询的字段建立索引 B.当查询涉及多列组合条件时（如 WHERE a&#x3D;1 AND b&#x3D;2），使用联合索
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/mysql-mvcc-ji-zhi.html">
+				<h2 class="index-title">
+					04 mvcc机制？
+				</h2>
+				<div class="index-brief">
+					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的
+变化提交之前，对于其他的读事务来说都是不可见的；
+当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC并
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/mysql-re-in-undo-log.html">
+				<h2 class="index-title">
+					05 redolog和binlog,undolog
+				</h2>
+				<div class="index-brief">
+					binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；
+
+binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；
+
+redolog-事务提交时，先将修改记录到 Re
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/mysql-false-reading.html">
+				<h2 class="index-title">
+					03 怎么解决幻读
+				</h2>
+				<div class="index-brief">
+					只有序列化级别解决了幻读，其他的都没有解决了幻读；因为序列化是串行化执行的，第一个事务执行完后才能执行第二个事务
+幻读出现的根本原因是，如果所有的读都是快照读就不会有幻读的问题，如果有快照读也有当前读才会产生幻读的问题
+
+快照读：mysql中针对不加锁的读操作，称为快照读例如查询
+当前读：对于加锁的
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/mysql-transcation-geli-level.html">
 				<h2 class="index-title">
 					02 数据库事务的隔离级别？
@@ -2856,128 +3015,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-lua-principle.html">
-				<h2 class="index-title">
-					11 redis lua表达式为什么能保证原子性
-				</h2>
-				<div class="index-brief">
-					redis的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。
-但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-cluster.html">
-				<h2 class="index-title">
-					12 redis你们用的是什么集群
-				</h2>
-				<div class="index-brief">
-					redis我用的是简单的主从架构的这种集群模式
-Redis主要有三种模式，主从，哨兵，分布式集群
-1.主从复制模式架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离优点：数据冗余：从节点备份主节点数据，提高数据可靠性。读写分离：从节点分担读请求，减轻主节点压力。配置
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-used-too-much.html">
-				<h2 class="index-title">
-					08 redis如何做内存优化
-				</h2>
-				<div class="index-brief">
-					redis优化内存分为两个层面大的层面：
-
-合理设置数据过期时间使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
-
-合理设置内存淘汰策略结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
-
-内存碎片优化启用 jemalloc
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock.html">
-				<h2 class="index-title">
-					09 redis分布式锁有用过吗？
-				</h2>
-				<div class="index-brief">
-					redis分布式锁我们用的是Redisson，它的实现原理是：
-我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在
-如果不存在则新增key并设置过期时间默认30s
-然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果10秒后加的锁还存在就续期；
-直到不
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/27/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/archives/page/29/">29</a><a class="page-number" href="/archives/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/44/">44</a><a class="extend next" rel="next" href="/archives/page/29/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/27/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/archives/page/29/">29</a><a class="page-number" href="/archives/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="extend next" rel="next" href="/archives/page/29/">&gt;</a>
 		
 	</div>
 </div>

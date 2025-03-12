@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,6 +2874,118 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0227/xxl-job-fenpian.html">
+				<h2 class="index-title">
+					04 xxl-job如何实现任务的分片
+				</h2>
+				<div class="index-brief">
+					xxl-job 实现了分片任务的功能，可以将一个任务分片执行，每个执行器运行其中的一片任务。实现分片任务的原理是：任务注册时，可以设置分片参数，指定任务分片的总数和当前执行器的分片序号。在任务执行器获取任务时，通过判断当前执行器的分片序号来决定是否执行该任务。执行器只会执行当前分片序号符合的任务片段
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0227/xxl-register-center.html">
+				<h2 class="index-title">
+					03 xxl-job服务注册与发现的原理是啥？
+				</h2>
+				<div class="index-brief">
+					执行器的注册流程(1) 启动时主动注册 触发时机：执行器启动时，通过XxlJobExecutor 初始化 Netty 服务端，并调用startRegistry 方法向调度中心发送注册请求。
+注册内容：执行器名称appname,执行器地址（address，格式为 IP:PORT）,注册类型（固定为 E
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0227/xxl-job-principle.html">
+				<h2 class="index-title">
+					01 xxl-job的原理
+				</h2>
+				<div class="index-brief">
+					xxl-job的原理是通过一个任务调度中心和多个任务执行器实现任务的分布式调度和执行。
+其工作流程如下：
+
+调度中心通过任务注册接口将任务信息注册到注册中心。
+执行器从注册中心获取任务信息，并在指定的时间点执行任务。
+执行器执行任务后，将执行结果上报给任务调度中心。
+调度中心根据执行结果进行任务状态
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0227/spring-bean-singleton.html">
+				<h2 class="index-title">
+					19 spring是如何保证bean是单例的？
+				</h2>
+				<div class="index-brief">
+					spring是通过三级缓存与双重检测锁的协作来保证bean是单例的
+一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。三级缓存（singletonFa
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0227/spring-bean-founction-area.html">
 				<h2 class="index-title">
 					18 spring中支持的bean的作用域有哪几种？
@@ -2859,136 +3015,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0227/spring-bean-if-safe.html">
-				<h2 class="index-title">
-					17 spring中bean是线程安全的吗？
-				</h2>
-				<div class="index-brief">
-					spring中bean不是线程安全的Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确赋值。
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0220/hive-and-presto.html">
-				<h2 class="index-title">
-					14.presto为何能加速查询？
-				</h2>
-				<div class="index-brief">
-					1.执行引擎的革新Hive 的局限性：Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入HDFS磁盘,导致高 I&#x2F;O 开销和高延迟(适合批量处理,但无法满足交互式查询)
-Presto 的优势：Presto 采
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0220/es-deep-page-query.html">
-				<h2 class="index-title">
-					12 es怎么解决深分页的问题及索引优化有哪些方法
-				</h2>
-				<div class="index-brief">
-					Elasticsearch深分页问题解决方案
-方案1：Search After（游标分页）1234567891011121314151617181920// 首次查询（按时间倒序）GET /order_index/_search&#123;  &quot;size&quot;: 20,  &quot
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0219/atom-and-end-complete.html">
-				<h2 class="index-title">
-					10 订单系统如何保证原子性和最终一致性
-				</h2>
-				<div class="index-brief">
-					在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布式锁
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/15/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/44/">44</a><a class="extend next" rel="next" href="/archives/page/17/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/15/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="extend next" rel="next" href="/archives/page/17/">&gt;</a>
 		
 	</div>
 </div>

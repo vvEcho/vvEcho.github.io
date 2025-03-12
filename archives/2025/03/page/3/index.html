@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,6 +2874,116 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0307/es-document-process.html">
+				<h2 class="index-title">
+					04 es索引文档的过程
+				</h2>
+				<div class="index-brief">
+					
+索引文档过程1.客户端向Node 1 发送新建、索引或者删除请求。2.节点使用文档的 _id 确定文档属于分片 0 。请求会被转发到 Node 3，因为分片 0 的主分片目前被分配在 Node 3 上。3.Node 3 在主分片上面执行请求。如果成功了，它将请求并行转发到 Node 1 和 Nod
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-07</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0307/es-cluster-election.html">
+				<h2 class="index-title">
+					03 es中集群怎么实现选举
+				</h2>
+				<div class="index-brief">
+					
+对所有可以成为 Master 的节点（node.master: true）根据 nodeId 排序，每次选举每个节点都把自己所知道节点排一次序，然后选出第一个（第0位）节点，暂且认为它是 Master 节点。
+
+如果对某个节点的投票数达到一定的值（可以成为master节点数n&#x2F;2+1）并
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-07</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0307/es-deep-query-page.html">
+				<h2 class="index-title">
+					02 es深分页问题
+				</h2>
+				<div class="index-brief">
+					es查询时会根据from和to两个参数来查询数据，from 参数的值很大时（如 from&#x3D;10000 以上），ElasticSearch 需要跳过大量数据来获取指定页的内容，这种情况称为深度分页
+es数据是存储在多个分片（Shard）上的，每个分片本质上是一个独立的 Lucene 索引。分
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-07</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0307/es-desc-suoyin.html">
+				<h2 class="index-title">
+					01 es倒排索引
+				</h2>
+				<div class="index-brief">
+					倒排索引也就是单词到文档的映射，当然不只是存个文档id这么简单。还包括：词频（TF，Term Frequency）、偏移量（offset）、位置（Posting）
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-07</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0307/how-to-parse-binlog-logs.html">
 				<h2 class="index-title">
 					18 怎么解析binlog日志
@@ -2855,119 +3009,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0307/index-disable-left-match.html">
-				<h2 class="index-title">
-					17 为什么不遵守最左匹配原则索引会失效
-				</h2>
-				<div class="index-brief">
-					B+树结构依赖于最左列的值作为比较起点MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下第一层：按 A 列排序；第二层：在 A 相同的情况下按 B 排序；第三层：在 A 和 B 相同的情况下按 C 排序
-A.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-07</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0307/mysql-acid.html">
-				<h2 class="index-title">
-					01 ACID是什么意思？
-				</h2>
-				<div class="index-brief">
-					ACID，是指数据库管理系统（DBMS）在写入或更新资料的过程中，为保证事务（transaction）是正确可靠的，所必须具备的四个特性：原子性（atomicity，或称不可分割性）、一致性（consistency）、隔离性（isolation，又称独立性）、持久性（durability）
-Atom
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-07</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0307/mysql-master-salve-data-format.html">
-				<h2 class="index-title">
-					16 mysql主从的数据物理格式是怎样的？
-				</h2>
-				<div class="index-brief">
-					MySQL 主从复制的数据物理格式主要由两部分构成：
-主库的二进制日志（Binlog）和从库的中继日志（Relay Log），其底层存储与 MySQL 的存储引擎（如 InnoDB）密切相关
-主库的二进制日志物理格式Binlog 是主库记录所有数据修改操作的二进制文件，其内容按事件（Event）存储
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-07</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0306/threadLocal-used-case-and-problem.html">
-				<h2 class="index-title">
-					12 threadLocal的应用场景及问题
-				</h2>
-				<div class="index-brief">
-					场景1，用于保存用户信息例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。
-场景2，SimpleDateFormat线程不安全因为SimpleDateFormat不是线程安全的，所以
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-06</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2025/03/page/2/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><a class="page-number" href="/archives/2025/03/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2025/03/page/4/">4</a><a class="page-number" href="/archives/2025/03/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/14/">14</a><a class="extend next" rel="next" href="/archives/2025/03/page/4/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2025/03/page/2/">&lt;</a><a class="page-number" href="/archives/2025/03/">1</a><a class="page-number" href="/archives/2025/03/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2025/03/page/4/">4</a><a class="page-number" href="/archives/2025/03/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2025/03/page/15/">15</a><a class="extend next" rel="next" href="/archives/2025/03/page/4/">&gt;</a>
 		
 	</div>
 </div>

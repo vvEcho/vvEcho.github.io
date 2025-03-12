@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,6 +2874,116 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0304/hashmap-how-to-expand.html">
+				<h2 class="index-title">
+					10 hashmap如何扩容的？
+				</h2>
+				<div class="index-brief">
+					hashmap的扩容方式在jdk1.7和jdk1.8中不同,以下来分别说明
+在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75&#x3D;12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0304/fu-zhai-yin-zi.html">
+				<h2 class="index-title">
+					09 hashmap的负载因子为何是0.75
+				</h2>
+				<div class="index-brief">
+					hashMap将负载因子设置为0.75是一个性能兼顾的考虑
+假设负载因子设置为0.5则；hash表在填充到一半的时候就会触发扩容，减少了hash冲突，查询效率也提高了；但是空间利用率下降了，且频繁的扩容会导致内存开销大且重新hash的成本很高；
+如果设置为1，则hash表完全满了才会扩容，虽然空间利
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+				<h2 class="index-title">
+					21 spring为何针对接口用jdk动态代理
+				</h2>
+				<div class="index-brief">
+					jdk为什么不能针对没有实现接口的类生成代理？JDK动态代理的机制要求代理类必须基于接口的方法签名生成代理方法。若目标类未实现接口，则无法通过接口定义这些方法签名，导致代理类无法生成对应方法
+JDK动态代理中代理类直接实现目标接口，并通过反射调用目标对象的方法；
+另外由于Java不支持多继承，若JD
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/lock-impl-ways.html">
+				<h2 class="index-title">
+					17 分布式锁的实现方式有哪些
+				</h2>
+				<div class="index-brief">
+					在单体架构中，多个线程都是属于同一个进程的，所以在线程并发执行时，遇到资源竞争时，可以利用Reentrantlock、synchronized等技术来作为锁，来控制共享资源的使用。
+而在分布式架构中，多个线程是可能处于不同进程中的，而这些线程并发执行遇到资源竞争时，利用Reentrantlock、s
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0302/cap-and-base.html">
 				<h2 class="index-title">
 					17 CAP及BASE理论
@@ -2848,117 +3002,6 @@ CAP理论指出在目前的硬件条件下，一个分布式系统是须要保�
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/mybatis-#$-difference.html">
-				<h2 class="index-title">
-					16 mybatis中#{}和${}有啥区别
-				</h2>
-				<div class="index-brief">
-					1.#{}是预编译处理、是占位符，${}是字符串替换、是拼接符
-2.Mybatis在处理#{}时，会将sql中的#{}替换为?号，调用Preparedstatement来赋值
-3.Mybatis在处理${}时，就是把${}替换成变量的值，调用Statement来赋值
-4.使用#{}可以有效的防止SQ
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02java基础/">02java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/shiro-vs-security.html">
-				<h2 class="index-title">
-					06.3 shiro和security权限上的区别
-				</h2>
-				<div class="index-brief">
-					Shiro 的优点：首先Shiro较之 Spring Security，Shiro在保持强大功能的同时，还在简单性和灵活性方面拥有巨大优势。
-Shiro是一个强大而灵活的开源安全框架，能够非常清晰的处理认证、授权、管理会话以及密码加密。如下是它所具有的特点：
-1.易于理解的 Java Securit
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/springboot-spi.html">
-				<h2 class="index-title">
-					07 谈谈springboot的SPI机制
-				</h2>
-				<div class="index-brief">
-					spring Boot的SPI机制通过META-INF/spring.factories文件和SpringFactoriesLoader实现了比 Java SPI 更强大的扩展能力，成为其自动配置与生态集成的核心技术。开发者可通过自定义 Starter 和扩展点，灵活构建高内聚、低耦合的模块化系统
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/springcloud-security.html">
-				<h2 class="index-title">
-					06.2 security安全组件
-				</h2>
-				<div class="index-brief">
-					security是一个springcloud中一个负责安全认证的组件，核心是一个过滤器链
-1.提交登录请求：当用户通过表单登录时，Spring Security 内置的 UsernamePasswordAuthenticationFilter 过滤器会拦截登录请求（默认拦截 &#x2F;login）
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 

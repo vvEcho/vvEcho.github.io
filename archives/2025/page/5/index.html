@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,118 +2874,17 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0306/undefined.html">
+			<a href="/2025/0306/kafka-replication-sync.html">
 				<h2 class="index-title">
-					03 滑动窗口限流算法
+					08 kafka副本同步机制
 				</h2>
 				<div class="index-brief">
-					
+					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
 					...
 				</div>
 			</a>
                 <div class="article-meta">
 				    <span>2025-03-06</span>
-                    
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0306/undefined.html">
-				<h2 class="index-title">
-					02 计数器限流算法
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-06</span>
-                    
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0305/rocketmq-cluster-mode.html">
-				<h2 class="index-title">
-					12 rocketMq有哪些集群模式
-				</h2>
-				<div class="index-brief">
-					
-
-
-模式
-数据安全
-性能
-适用场景
-
-
-
-单Master
-低
-最高
-本地测试、学习环境
-
-
-多Master
-中  （依赖磁盘）
-高
-高性能、允许短暂数据不可用
-
-
-多Master多Slave异步
-中
-较高
-平衡性能与可用性
-
-
-多Master多Slave同步
-高
-中
-强一致性场景（如支付交易）
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0305/kafka-architecture.html">
-				<h2 class="index-title">
-					01 kafka架构是怎样的
-				</h2>
-				<div class="index-brief">
-					kafka架构包含：
-发送消息的生产者Producer
-消息存储接收的broker
-消息消费的一个Consumer
-实现消息的同步及选举zookeeper
-其中boker中的消息时分片存储的：即一个topic是以多个partition的形式的方式分布在多个broker上，且互为主从
-其中主从关系由z
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
                     
                             
                                 
@@ -2957,29 +2900,81 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0305/rocketmq-delay-message.html">
+			<a href="/2025/0306/kafka-async-flush.html">
 				<h2 class="index-title">
-					11 rocketMq的延迟消息
+					07 kafka异步刷盘机制
 				</h2>
 				<div class="index-brief">
-					RocketMQ默认提供18个固定延迟级别，对应不同时间间隔（如1s、5s、10s、1h、2h等）。
-每个级别对应一个内部队列，消息根据延迟级别暂存至对应的队列中，到期后由Broker重新投递到目标Topic
-延迟消息的实现原理：生产者生产消息时，设置延迟级别；
-broker根据延迟级别，将消息暂存
+					所谓kafka异步刷盘机制是指kafka的生产者将消息发送到broker时，首先消息会被追加到日志文件segment中，此时数据是暂存到操作系统的页缓存中，并不是直接落盘；（页缓存是内存中的临时存储区域，由操作系统管理，提供低延迟的读写能力）
+kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-05</span>
+				    <span>2025-03-06</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
 										
                                     </span>
                                 
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/undefined.html">
+				<h2 class="index-title">
+					05 令牌桶限流算法
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/undefined.html">
+				<h2 class="index-title">
+					04 漏斗限流算法
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/undefined.html">
+				<h2 class="index-title">
+					03 滑动窗口限流算法
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
                             
                     
                 </div>

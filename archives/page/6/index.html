@@ -859,6 +859,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/threadPool-principle.html">
+                     
+										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -1662,6 +1673,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/groupby-sql.html">
+                     
+										    19 分组查询语句有哪些
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/mysql-data-skew.html">
+                     
+										    20 mysql如何解决数据倾斜
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2195,6 +2228,17 @@
 									<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
                      
 										    09 kafka消息丢失的场景及解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0312/undefined.html">
+                     
+										    10 怎么解决kafka性能瓶颈
                      
 									</a>
 								</li>
@@ -2830,6 +2874,144 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0306/undefined.html">
+				<h2 class="index-title">
+					02 计数器限流算法
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0305/rocketmq-cluster-mode.html">
+				<h2 class="index-title">
+					12 rocketMq有哪些集群模式
+				</h2>
+				<div class="index-brief">
+					
+
+
+模式
+数据安全
+性能
+适用场景
+
+
+
+单Master
+低
+最高
+本地测试、学习环境
+
+
+多Master
+中  （依赖磁盘）
+高
+高性能、允许短暂数据不可用
+
+
+多Master多Slave异步
+中
+较高
+平衡性能与可用性
+
+
+多Master多Slave同步
+高
+中
+强一致性场景（如支付交易）
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0305/kafka-architecture.html">
+				<h2 class="index-title">
+					01 kafka架构是怎样的
+				</h2>
+				<div class="index-brief">
+					kafka架构包含：
+发送消息的生产者Producer
+消息存储接收的broker
+消息消费的一个Consumer
+实现消息的同步及选举zookeeper
+其中boker中的消息时分片存储的：即一个topic是以多个partition的形式的方式分布在多个broker上，且互为主从
+其中主从关系由z
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0305/rocketmq-delay-message.html">
+				<h2 class="index-title">
+					11 rocketMq的延迟消息
+				</h2>
+				<div class="index-brief">
+					RocketMQ默认提供18个固定延迟级别，对应不同时间间隔（如1s、5s、10s、1h、2h等）。
+每个级别对应一个内部队列，消息根据延迟级别暂存至对应的队列中，到期后由Broker重新投递到目标Topic
+延迟消息的实现原理：生产者生产消息时，设置延迟级别；
+broker根据延迟级别，将消息暂存
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0305/redis-redlock-brain-split.html">
 				<h2 class="index-title">
 					23 RedLock算法如何解决Redis集群脑裂问题
@@ -2858,137 +3040,10 @@ RedLock通过以下机制规避此类风险：
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0305/redission-lock-type.html">
-				<h2 class="index-title">
-					22 redission都提供了哪些类型的分布式锁
-				</h2>
-				<div class="index-brief">
-					1. 可重入锁（Reentrant Lock）功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。使用示例：
-12RLock loc
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0305/except-redission-lock-implementation.html">
-				<h2 class="index-title">
-					21 除了redission你还知道哪些分布式锁的实现
-				</h2>
-				<div class="index-brief">
-					1. 基于数据库的锁(天然的分布式锁)原理：通过数据库表的唯一约束或乐观锁实现。唯一索引锁：插入一条代表锁的记录，利用唯一索引冲突阻止并发。乐观锁：通过版本号或时间戳字段实现 CAS（Compare and Swap）。缺点：性能低：高并发下数据库压力大。    无自动续期：需手动处理锁超时和死锁。
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0305/redis-jump-table.html">
-				<h2 class="index-title">
-					20 redis为何使用跳表而不是B+树
-				</h2>
-				<div class="index-brief">
-					首先二者的时间复杂度都是O(logN)，选择跳表还是B+树主要是考虑的内存和磁盘硬件特性。
-对于Redis使用跳表来讲，其在“写操作”时相较于B+树的“写操作”，无需考虑自旋平衡的问题，也就是跳表更容易实现写入操作；
-再看“读操作”，Redis是基于内存的，跳表比B+树多读那几下的性能开销微乎其微。
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/redis-cache-eviction-strategy.html">
-				<h2 class="index-title">
-					19 redis的缓存淘汰策略
-				</h2>
-				<div class="index-brief">
-					
-
-
-策略名称
-淘汰逻辑
-适用场景
-
-
-
-noeviction（默认）
-内存满时拒绝所有写操作，返回错误
-数据不可丢失的敏感场景（如金融交易）
-
-
-LRU（最近最少使用）
-根据键的最后访问时间，淘汰最久未访问的数据
-有明显冷热数据区分的场景（如新闻热点）
-
-
-LFU（最不频繁使用）
-根据键的访问频率
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/5/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/44/">44</a><a class="extend next" rel="next" href="/archives/page/7/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/5/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="extend next" rel="next" href="/archives/page/7/">&gt;</a>
 		
 	</div>
 </div>
