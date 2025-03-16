@@ -2974,13 +2974,16 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-count-query-sample.html">
+			<a href="/2024/0120/mysql-dividing-dbs-tables.html">
 				<h2 class="index-title">
-					10 统计sql例子
+					08 分库分表怎么做的
 				</h2>
 				<div class="index-brief">
-					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
-1234select user_name ,bug_count from (select count(bug_id) as bug_c
+					分库这个简单就是，分不同的sheam;一般是按业务来拆分
+分表一般有两种分法，一般有水平分表和垂直分表两种：
+水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表…
+而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不常变动的放一张表，变动多的放一张表；
+或者根据业务
 					...
 				</div>
 			</a>
@@ -3001,16 +3004,13 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-dividing-dbs-tables.html">
+			<a href="/2024/0120/mysql-count-query-sample.html">
 				<h2 class="index-title">
-					08 分库分表怎么做的
+					10 统计sql例子
 				</h2>
 				<div class="index-brief">
-					分库这个简单就是，分不同的sheam;一般是按业务来拆分
-分表一般有两种分法，一般有水平分表和垂直分表两种：
-水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表…
-而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不常变动的放一张表，变动多的放一张表；
-或者根据业务
+					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
+1234select user_name ,bug_count from (select count(bug_id) as bug_c
 					...
 				</div>
 			</a>

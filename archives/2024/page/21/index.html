@@ -2948,12 +2948,14 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/how-handle-pro-server-slow.html">
+			<a href="/2024/0120/jvm-config-params.html">
 				<h2 class="index-title">
-					09 生产环境服务嚣变慢,如何诊断处理?
+					10 工作中常用的JVM配置参教有哪些?
 				</h2>
 				<div class="index-brief">
-					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
+					Java8为例
+
+日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
 					...
 				</div>
 			</a>
@@ -2974,14 +2976,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/jvm-config-params.html">
+			<a href="/2024/0120/how-handle-pro-server-slow.html">
 				<h2 class="index-title">
-					10 工作中常用的JVM配置参教有哪些?
+					09 生产环境服务嚣变慢,如何诊断处理?
 				</h2>
 				<div class="index-brief">
-					Java8为例
-
-日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
+					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
 					...
 				</div>
 			</a>

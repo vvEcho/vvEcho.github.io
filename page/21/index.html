@@ -2918,12 +2918,14 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/how-handle-pro-server-slow.html">
+			<a href="/2024/0120/jvm-config-params.html">
 				<h2 class="index-title">
-					09 生产环境服务嚣变慢,如何诊断处理?
+					10 工作中常用的JVM配置参教有哪些?
 				</h2>
 				<div class="index-brief">
-					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
+					Java8为例
+
+日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
 					...
 				</div>
 			</a>
@@ -2944,14 +2946,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/jvm-config-params.html">
+			<a href="/2024/0120/how-handle-pro-server-slow.html">
 				<h2 class="index-title">
-					10 工作中常用的JVM配置参教有哪些?
+					09 生产环境服务嚣变慢,如何诊断处理?
 				</h2>
 				<div class="index-brief">
-					Java8为例
-
-日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
+					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
 					...
 				</div>
 			</a>
@@ -3134,14 +3134,12 @@ jvm由类装载器、运
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/heap-stack-different.html">
+			<a href="/2024/0120/base-data-type-all-in-stack.html">
 				<h2 class="index-title">
-					02 堆和栈的区别
+					03 java中的基本数据类型都是存储在栈中的吗？
 				</h2>
 				<div class="index-brief">
-					1.堆是不连续的，所以分配的内存是在运行期确认的，因此大小不固定；堆对于整个应用程序都是共享、可见的；
-2.栈是连续的，所以分配的内存大小要在编译期就确认，大小是固定的；栈对于线程是可见的，所以也是线程私有，他的生命周期和线程相同（所以说，栈里面是一定不会存在垃圾回收的问题）；
-3.栈内存存储一些基
+					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题答：不是一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而结束
 					...
 				</div>
 			</a>
@@ -3162,12 +3160,14 @@ jvm由类装载器、运
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/base-data-type-all-in-stack.html">
+			<a href="/2024/0120/heap-stack-different.html">
 				<h2 class="index-title">
-					03 java中的基本数据类型都是存储在栈中的吗？
+					02 堆和栈的区别
 				</h2>
 				<div class="index-brief">
-					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题答：不是一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而结束
+					1.堆是不连续的，所以分配的内存是在运行期确认的，因此大小不固定；堆对于整个应用程序都是共享、可见的；
+2.栈是连续的，所以分配的内存大小要在编译期就确认，大小是固定的；栈对于线程是可见的，所以也是线程私有，他的生命周期和线程相同（所以说，栈里面是一定不会存在垃圾回收的问题）；
+3.栈内存存储一些基
 					...
 				</div>
 			</a>
