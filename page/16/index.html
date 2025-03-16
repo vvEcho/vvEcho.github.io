@@ -2857,6 +2857,50 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/baiwei-sotre.html">
+                     
+										    06 百维存储(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/minyi-mianshi.html">
+                     
+										    07 明懿科技(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/tuowei-mianshi.html">
+                     
+										    08 拓维信息(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/dingyili-mianshi.html">
+                     
+										    09 鼎屹立(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2872,6 +2916,120 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-identify-hot-key.html">
+				<h2 class="index-title">
+					06 怎么监控热key
+				</h2>
+				<div class="index-brief">
+					redis 6.2以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可。
+可以定时在节点中使用该命令来发现对应热点key,或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为这些key是热点key,可以将热点key对应的
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-bloom-filter.html">
+				<h2 class="index-title">
+					07 说说布隆过滤器的原理？
+				</h2>
+				<div class="index-brief">
+					布隆过滤器（Bloom Filter）是一个 probabilistic data structure，用于判断一个元素是否在集合中。它通过使用多个哈希函数和位数组来提高查询效率。布隆过滤器在Redis中应用最广泛，用于解决缓存击穿、缓存穿透等问题。
+常用的布隆过滤器的实现是redission的bl
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-io.html">
+				<h2 class="index-title">
+					03 说说IO多路复用
+				</h2>
+				<div class="index-brief">
+					回答这个问题我们可以拆分来看：
+IO实际就是指数据或文件的读写流
+多路实际指的是redis的底层的多路复用程序监听了每个读写请求的socket套接字
+复用就是指监听哪些socket上有消息达到，从而避免用户线程等待；
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-rdb-aof.html">
+				<h2 class="index-title">
+					04 rdb和aof
+				</h2>
+				<div class="index-brief">
+					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；
+rdb是一种二进制快照文件的方式,快照某个时刻redis中的数据到硬盘中的
+aof是以日志的的方式存储redis的写命令;
+rdb的好处是适合数据全量备份，容灾好，恢复数据速度快, 缺点是数据可能丢失；
+aof的好处是实时性好，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2024/0120/redis-base-data-structure.html">
@@ -3027,118 +3185,6 @@ C实现的，更利于和底层进行交互
 					RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性
 第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见
 12// 发送半消息（事务消息）TransactionSendResult result = p
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-lost.html">
-				<h2 class="index-title">
-					01 kafkar如何保证消息不丢失？
-				</h2>
-				<div class="index-brief">
-					回答这个问题可以分三个方面，首先第一点要保证producer消息能达到broker,其次broker收到对应的消息要确保持久化磁盘，最后需要确保consumer能成功消费这条消息；
-
-针对producer:我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消息
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-pull-push.html">
-				<h2 class="index-title">
-					06 rocketMq是pull模式还是push模式
-				</h2>
-				<div class="index-brief">
-					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式
-在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类
-Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-heaped.html">
-				<h2 class="index-title">
-					07 rocketMq消息堆积怎么解决
-				</h2>
-				<div class="index-brief">
-					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
-检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
-还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
-				<h2 class="index-title">
-					08 说说rocketmq死信队列
-				</h2>
-				<div class="index-brief">
-					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
-rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
-
 					...
 				</div>
 			</a>

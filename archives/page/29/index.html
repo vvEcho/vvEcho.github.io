@@ -2857,6 +2857,50 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/baiwei-sotre.html">
+                     
+										    06 百维存储(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/minyi-mianshi.html">
+                     
+										    07 明懿科技(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/tuowei-mianshi.html">
+                     
+										    08 拓维信息(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/dingyili-mianshi.html">
+                     
+										    09 鼎屹立(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2872,6 +2916,121 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2024/0120/mysql-mvcc-ji-zhi.html">
+				<h2 class="index-title">
+					04 mvcc机制？
+				</h2>
+				<div class="index-brief">
+					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的
+变化提交之前，对于其他的读事务来说都是不可见的；
+当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC并
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/mysql-re-in-undo-log.html">
+				<h2 class="index-title">
+					05 redolog和binlog,undolog
+				</h2>
+				<div class="index-brief">
+					binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；
+
+binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；
+
+redolog-事务提交时，先将修改记录到 Re
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/mysql-false-reading.html">
+				<h2 class="index-title">
+					03 怎么解决幻读
+				</h2>
+				<div class="index-brief">
+					只有序列化级别解决了幻读，其他的都没有解决了幻读；因为序列化是串行化执行的，第一个事务执行完后才能执行第二个事务
+幻读出现的根本原因是，如果所有的读都是快照读就不会有幻读的问题，如果有快照读也有当前读才会产生幻读的问题
+
+快照读：mysql中针对不加锁的读操作，称为快照读例如查询
+当前读：对于加锁的
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/mysql-transcation-geli-level.html">
+				<h2 class="index-title">
+					02 数据库事务的隔离级别？
+				</h2>
+				<div class="index-brief">
+					数据库的隔离级别分为读未提交，读已提交，可重复度，可重复读，串行化来分别解决脏读，不可重复读，幻读等问题
+脏读（Dirty Read）概念：一个事务读取了另一个未提交事务修改的数据（当前是读未提交隔离级别）背景：事务A修改数据但未提交，事务B却读到了这个未提交的数据。若事务A最终回滚，事务B的读取结
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2024/0120/redis-lua-principle.html">
@@ -2901,130 +3060,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-cluster.html">
-				<h2 class="index-title">
-					12 redis你们用的是什么集群
-				</h2>
-				<div class="index-brief">
-					redis我用的是简单的主从架构的这种集群模式
-Redis主要有三种模式，主从，哨兵，分布式集群
-1.主从复制模式架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离优点：数据冗余：从节点备份主节点数据，提高数据可靠性。读写分离：从节点分担读请求，减轻主节点压力。配置
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-used-too-much.html">
-				<h2 class="index-title">
-					08 redis如何做内存优化
-				</h2>
-				<div class="index-brief">
-					redis优化内存分为两个层面大的层面：
-
-合理设置数据过期时间使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
-
-合理设置内存淘汰策略结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
-
-内存碎片优化启用 jemalloc
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock.html">
-				<h2 class="index-title">
-					09 redis分布式锁有用过吗？
-				</h2>
-				<div class="index-brief">
-					redis分布式锁我们用的是Redisson，它的实现原理是：
-我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在
-如果不存在则新增key并设置过期时间默认30s
-然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果10秒后加的锁还存在就续期；
-直到不
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock-space.html">
-				<h2 class="index-title">
-					10 分布式锁的应用场景
-				</h2>
-				<div class="index-brief">
-					我们知道，对于单机的多线程情况下的线程安全问题我们可以用使用JDK自带的锁来保证线程安全
-但是集群环境下的线程安全怎么保证呢？
-客户A调用一个接口修改数据，客户B同时调用这一个接口修改数据，这时候请求负载到不同的机器上
-怎么保证同一时间这笔数据只能一个人操作呢？那就需要用到分布式锁
-我说个我们项目中
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/28/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/27/">27</a><a class="page-number" href="/archives/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/archives/page/30/">30</a><a class="page-number" href="/archives/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="extend next" rel="next" href="/archives/page/30/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/28/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/27/">27</a><a class="page-number" href="/archives/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/archives/page/30/">30</a><a class="page-number" href="/archives/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/46/">46</a><a class="extend next" rel="next" href="/archives/page/30/">&gt;</a>
 		
 	</div>
 </div>

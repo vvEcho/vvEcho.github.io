@@ -2857,6 +2857,50 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/baiwei-sotre.html">
+                     
+										    06 百维存储(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/minyi-mianshi.html">
+                     
+										    07 明懿科技(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/tuowei-mianshi.html">
+                     
+										    08 拓维信息(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/dingyili-mianshi.html">
+                     
+										    09 鼎屹立(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2872,6 +2916,155 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2025/0305/rocketmq-cluster-mode.html">
+				<h2 class="index-title">
+					12 rocketMq有哪些集群模式
+				</h2>
+				<div class="index-brief">
+					
+
+
+模式
+数据安全
+性能
+适用场景
+
+
+
+单Master
+低
+最高
+本地测试、学习环境
+
+
+多Master
+中  （依赖磁盘）
+高
+高性能、允许短暂数据不可用
+
+
+多Master多Slave异步
+中
+较高
+平衡性能与可用性
+
+
+多Master多Slave同步
+高
+中
+强一致性场景（如支付交易）
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0305/kafka-architecture.html">
+				<h2 class="index-title">
+					01 kafka架构是怎样的
+				</h2>
+				<div class="index-brief">
+					kafka架构包含：
+发送消息的生产者Producer
+消息存储接收的broker
+消息消费的一个Consumer
+实现消息的同步及选举zookeeper
+其中boker中的消息时分片存储的：即一个topic是以多个partition的形式的方式分布在多个broker上，且互为主从
+其中主从关系由z
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0305/rocketmq-delay-message.html">
+				<h2 class="index-title">
+					11 rocketMq的延迟消息
+				</h2>
+				<div class="index-brief">
+					RocketMQ默认提供18个固定延迟级别，对应不同时间间隔（如1s、5s、10s、1h、2h等）。
+每个级别对应一个内部队列，消息根据延迟级别暂存至对应的队列中，到期后由Broker重新投递到目标Topic
+延迟消息的实现原理：生产者生产消息时，设置延迟级别；
+broker根据延迟级别，将消息暂存
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0305/redis-redlock-brain-split.html">
+				<h2 class="index-title">
+					23 RedLock算法如何解决Redis集群脑裂问题
+				</h2>
+				<div class="index-brief">
+					脑裂问题的本质是网络分区或主节点假故障导致集群中出现多个主节点，从而引发数据冲突。
+RedLock通过以下机制规避此类风险：
+1.避免单点依赖，降低脑裂触发概率传统Redis主从架构中，哨兵可能因网络抖动误判主节点失效，触发主从切换，导致原主节点和新主节点并存（脑裂）。
+而RedLock不依赖单一主
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2025/0305/redission-lock-type.html">
@@ -3048,117 +3241,6 @@ LFU（最不频繁使用）
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/query-redis-db.html">
-				<h2 class="index-title">
-					16 redis如何查询指定库的数据
-				</h2>
-				<div class="index-brief">
-					Redis 默认提供 16 个数据库（0-15），使用 SELECT 命令切换：
-12# 切换到数据库 1SELECT 1
-代码示例：
-1234567891011121314151617注意：集群模式（如 Redis Cluster）仅支持db0，不支持多数据库import redis.client
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/openfigne-different-timeout.html">
-				<h2 class="index-title">
-					01 openFeign使用过程中如何差异化配置超时时间
-				</h2>
-				<div class="index-brief">
-					全局默认：通过 Feign + Ribbon + Hystrix 的全局配置实现 2秒超时。特定接口：通过 @HystrixCommand 注解或 commandKey 配置覆盖为 30秒。验证关键点：确保 Hystrix 超时覆盖 Ribbon 和 Feign，避免因优先级导致配置失效
-服务消费方
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/30-场景题/">30 场景题</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/hashmap-linkedhashmap.html">
-				<h2 class="index-title">
-					04 HashMap和LinkedHashMap有啥区别
-				</h2>
-				<div class="index-brief">
-					首先LinkedHashMap继承于HashMap，所以LinkedHashMap也是HashMap的子类。
-
-hashmap的数据结构是数组+单向链表+红黑树，而linkedhashmap的数据结构是数组+双向链表。
-HashMap的迭代顺序是随机的，LinkedHashMap的迭代顺序是插入顺序
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0304/hash-conflict.html">
-				<h2 class="index-title">
-					11 hashmap中hash冲突了会怎么处理
-				</h2>
-				<div class="index-brief">
-					hashmap通过put方法往里面添加数据的时候，hashmap会根据key的hash值做一个取模的运算通过取模的值将元素放到数组的某个位置上去，这个时候有可能会有两个不同元素的hash值相同，这个时候就会发生hash冲突了，hashmap会通过链表来解决hash冲突，也就是如果hash值相同，就会
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
 										
                                     </span>
                                 

@@ -2857,6 +2857,50 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/baiwei-sotre.html">
+                     
+										    06 百维存储(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/minyi-mianshi.html">
+                     
+										    07 明懿科技(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/tuowei-mianshi.html">
+                     
+										    08 拓维信息(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/0316/dingyili-mianshi.html">
+                     
+										    09 鼎屹立(25.3)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2872,6 +2916,118 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2024/0120/kafka-msg-not-lost.html">
+				<h2 class="index-title">
+					01 kafkar如何保证消息不丢失？
+				</h2>
+				<div class="index-brief">
+					回答这个问题可以分三个方面，首先第一点要保证producer消息能达到broker,其次broker收到对应的消息要确保持久化磁盘，最后需要确保consumer能成功消费这条消息；
+
+针对producer:我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消息
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-pull-push.html">
+				<h2 class="index-title">
+					06 rocketMq是pull模式还是push模式
+				</h2>
+				<div class="index-brief">
+					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式
+在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类
+Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-heaped.html">
+				<h2 class="index-title">
+					07 rocketMq消息堆积怎么解决
+				</h2>
+				<div class="index-brief">
+					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
+检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
+还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
+				<h2 class="index-title">
+					08 说说rocketmq死信队列
+				</h2>
+				<div class="index-brief">
+					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
+rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2024/0120/rocketmq-msg-not-lost.html">
@@ -2901,126 +3057,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-not-repeat.html">
-				<h2 class="index-title">
-					04 rocketMq怎么避免消息不重复消费
-				</h2>
-				<div class="index-brief">
-					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；
-对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作
-若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-order.html">
-				<h2 class="index-title">
-					05 rocketMq如何保证消息顺序消费？
-				</h2>
-				<div class="index-brief">
-					这个问题其实可以分为三点
-第一点生产者要保证消息的顺序生产 第二点broker要保证消息的顺序保存 第三点消费者要保证消息的顺序消费 
-一、生产者端：确保同一业务消息进入同一队列定义业务路由键（Message Group）
-选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，确保同
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocket-framewokr.html">
-				<h2 class="index-title">
-					01 rocketMq架构是怎样的,说说心跳机制
-				</h2>
-				<div class="index-brief">
-					RocketMq的架构包含:
-发送消息的生产者Producer
-消息存储接收的broker
-消息消费的一个Consumer
-管理消息状态的NameServer无状态服务器
-然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳的时间戳
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-find-msg.html">
-				<h2 class="index-title">
-					02 rocketMq怎么查找到对应的消息的？
-				</h2>
-				<div class="index-brief">
-					我们知道，RocketMQ核心的数据文件有3个：CommitLog、ConsumeQueue和Index。
-其中Index文件就是一个索引文件，查找消息时，首先根据消息key的hashcode计算出Hash槽的位置，然后读取Hash槽的值计算Index条目的位置
-从Index条目位置读取到消息在Co
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13rocketmq/">13rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/32/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="page-number" href="/archives/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="extend next" rel="next" href="/archives/page/34/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/32/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="page-number" href="/archives/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/46/">46</a><a class="extend next" rel="next" href="/archives/page/34/">&gt;</a>
 		
 	</div>
 </div>
