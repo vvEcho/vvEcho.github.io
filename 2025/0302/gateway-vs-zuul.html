@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,16 +3137,28 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="Spring-Cloud-Gateway和Zuul有什么区别？"><a href="#Spring-Cloud-Gateway和Zuul有什么区别？" class="headerlink" title="Spring Cloud Gateway和Zuul有什么区别？"></a>Spring Cloud Gateway和Zuul有什么区别？</h4><p>Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。</p>
+	<h4 id="Spring-Cloud-Gateway和Zuul有什么区别？">Spring Cloud Gateway和Zuul有什么区别？</h4>
+<p>Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。</p>
 <p>以下是Spring Cloud Gateway和Zuul的一些主要区别：</p>
-<h5 id="1-架构设计："><a href="#1-架构设计：" class="headerlink" title="1.架构设计："></a>1.架构设计：</h5><p>Zuul 1.x：它是基于阻塞I&#x2F;O的Servlet 2.5 API构建的，它在Spring Cloud Netflix堆栈中充当网关角色。因为它是基于Servlet API的，所以它不能完全发挥异步非阻塞I&#x2F;O的优势。</p>
+<h5 id="1-架构设计：">1.架构设计：</h5>
+<p>Zuul 1.x：它是基于阻塞I/O的Servlet 2.5 API构建的，它在Spring Cloud Netflix堆栈中充当网关角色。因为它是基于Servlet API的，所以它不能完全发挥异步非阻塞I/O的优势。</p>
 <p>Spring Cloud Gateway：它是基于Project Reactor和Netty服务器，支持异步非阻塞API，使得Spring Cloud Gateway能够处理更多的并发请求和更高的吞吐量。</p>
-<h5 id="2-性能："><a href="#2-性能：" class="headerlink" title="2.性能："></a>2.性能：</h5><p>Zuul 1.x：作为一个基于阻塞I&#x2F;O的网关，它在处理高并发请求时可能表现不如非阻塞网关。</p>
+<h5 id="2-性能：">2.性能：</h5>
+<p>Zuul 1.x：作为一个基于阻塞I/O的网关，它在处理高并发请求时可能表现不如非阻塞网关。</p>
 <p>Spring Cloud Gateway：由于其异步非阻塞的性质，它在性能上优于Zuul 1.x，特别是在高负载条件下。</p>
-<h5 id="3-功能特性："><a href="#3-功能特性：" class="headerlink" title="3.功能特性："></a>3.功能特性：</h5><p>Zuul 1.x：它提供的功能包括路由转发、过滤器、安全集成和弹性，但是对于长连接的支持并不是很好，例如WebSockets。<br>Spring Cloud Gateway：除了提供Zuul所支持的功能外，它还支持WebSockets、限流、重试、断路器等，并且允许对路由、过滤器和断言进行编程式自定义。</p>
-<h5 id="4-编程模型："><a href="#4-编程模型：" class="headerlink" title="4.编程模型："></a>4.编程模型：</h5><p>Zuul 1.x：它提供一套简单的过滤器API，可以实现自定义的逻辑。<br>Spring Cloud Gateway：使用了更现代的函数式编程模型，允许开发者使用Lambda表达式来定义路由和过滤器。</p>
-<h5 id="5-维护和社区支持："><a href="#5-维护和社区支持：" class="headerlink" title="5.维护和社区支持："></a>5.维护和社区支持：</h5><p>Zuul 1.x：虽然Netflix已经发布了Zuul 2.0，但是Spring Cloud Netflix并没有将Zuul 2.0集成到其项目中。此外，Spring Cloud Netflix项目进入了维护模式，意味着不会有新的功能被添加到Zuul 1.x中。<br>Spring Cloud Gateway：作为Spring生态系统的一部分，Spring Cloud Gateway得到了更多的更新和社区支持。</p>
-<h5 id="6-依赖性和版本"><a href="#6-依赖性和版本" class="headerlink" title="6.依赖性和版本"></a>6.依赖性和版本</h5><p>Zuul 1.x：依赖于较老的Spring框架版本和其他Netflix组件，这可能导致依赖性冲突和版本兼容性问题。<br>Spring Cloud Gateway：与Spring Framework 5、Spring Boot 2和其他最新的Spring项目更好地集成。<br>综上所述，Spring Cloud Gateway是一个较新的、更高性能的API网关，专为微服务架构中的现代化应用程序设计，而Zuul 1.x虽然依然可用但是它的功能和性能可能不如Spring Cloud Gateway。对于新项目而言，Spring Cloud Gateway通常是推荐的选择。</p>
+<h5 id="3-功能特性：">3.功能特性：</h5>
+<p>Zuul 1.x：它提供的功能包括路由转发、过滤器、安全集成和弹性，但是对于长连接的支持并不是很好，例如WebSockets。<br>
+Spring Cloud Gateway：除了提供Zuul所支持的功能外，它还支持WebSockets、限流、重试、断路器等，并且允许对路由、过滤器和断言进行编程式自定义。</p>
+<h5 id="4-编程模型：">4.编程模型：</h5>
+<p>Zuul 1.x：它提供一套简单的过滤器API，可以实现自定义的逻辑。<br>
+Spring Cloud Gateway：使用了更现代的函数式编程模型，允许开发者使用Lambda表达式来定义路由和过滤器。</p>
+<h5 id="5-维护和社区支持：">5.维护和社区支持：</h5>
+<p>Zuul 1.x：虽然Netflix已经发布了Zuul 2.0，但是Spring Cloud Netflix并没有将Zuul 2.0集成到其项目中。此外，Spring Cloud Netflix项目进入了维护模式，意味着不会有新的功能被添加到Zuul 1.x中。<br>
+Spring Cloud Gateway：作为Spring生态系统的一部分，Spring Cloud Gateway得到了更多的更新和社区支持。</p>
+<h5 id="6-依赖性和版本">6.依赖性和版本</h5>
+<p>Zuul 1.x：依赖于较老的Spring框架版本和其他Netflix组件，这可能导致依赖性冲突和版本兼容性问题。<br>
+Spring Cloud Gateway：与Spring Framework 5、Spring Boot 2和其他最新的Spring项目更好地集成。<br>
+综上所述，Spring Cloud Gateway是一个较新的、更高性能的API网关，专为微服务架构中的现代化应用程序设计，而Zuul 1.x虽然依然可用但是它的功能和性能可能不如Spring Cloud Gateway。对于新项目而言，Spring Cloud Gateway通常是推荐的选择。</p>
 
 </div>
 

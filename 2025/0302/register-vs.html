@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,7 +3137,8 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="核心特性对比"><a href="#核心特性对比" class="headerlink" title="核心特性对比"></a>核心特性对比</h4><table>
+	<h4 id="核心特性对比">核心特性对比</h4>
+<table>
 <thead>
 <tr>
 <th>特性</th>
@@ -3136,25 +3148,26 @@
 <th>Apollo</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>CAP模型</td>
 <td>AP</td>
 <td>CP</td>
-<td>AP&#x2F;CP</td>
+<td>AP/CP</td>
 <td>CP（强一致性优先）</td>
 </tr>
 <tr>
 <td>健康检查</td>
 <td>客户端心跳检测</td>
 <td>会话心跳检测</td>
-<td>TCP&#x2F;HTTP&#x2F;MySQL&#x2F;客户端心跳</td>
+<td>TCP/HTTP/MySQL/客户端心跳</td>
 <td>客户端主动上报+服务端轮询</td>
 </tr>
 <tr>
 <td>服务发现</td>
 <td>支持</td>
 <td>支持（需手动扩展）</td>
-<td>支持（集成DNS&#x2F;HTTP）</td>
+<td>支持（集成DNS/HTTP）</td>
 <td>支持（依赖Eureka兼容）</td>
 </tr>
 <tr>
@@ -3192,8 +3205,10 @@
 <td>RBAC权限管理</td>
 <td>完整权限流程</td>
 </tr>
-</tbody></table>
-<h4 id="性能与扩展对比"><a href="#性能与扩展对比" class="headerlink" title="性能与扩展对比"></a>性能与扩展对比</h4><table>
+</tbody>
+</table>
+<h4 id="性能与扩展对比">性能与扩展对比</h4>
+<table>
 <thead>
 <tr>
 <th>维度</th>
@@ -3203,7 +3218,8 @@
 <th>Apollo</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>吞吐量</td>
 <td>高（AP模型）</td>
 <td>中（CP模型）</td>
@@ -3231,7 +3247,8 @@
 <td>活跃（阿里支持）</td>
 <td>活跃（携程维护）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 </div>
 

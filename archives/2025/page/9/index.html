@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3134,6 +3145,7 @@
 
 
 
+
 单Master
 低
 最高
@@ -3156,7 +3168,6 @@
 高
 中
 强一致性场景（如支付交易）
-
 
 					...
 				</div>
@@ -3183,13 +3194,14 @@
 					01 kafka架构是怎样的
 				</h2>
 				<div class="index-brief">
-					kafka架构包含：
+					
+kafka架构包含：
 发送消息的生产者Producer
 消息存储接收的broker
 消息消费的一个Consumer
 实现消息的同步及选举zookeeper
 其中boker中的消息时分片存储的：即一个topic是以多个partition的形式的方式分布在多个broker上，且互为主从
-其中主从关系由z
+其中主从关系由
 					...
 				</div>
 			</a>
@@ -3217,8 +3229,9 @@
 				<div class="index-brief">
 					RocketMQ默认提供18个固定延迟级别，对应不同时间间隔（如1s、5s、10s、1h、2h等）。
 每个级别对应一个内部队列，消息根据延迟级别暂存至对应的队列中，到期后由Broker重新投递到目标Topic
-延迟消息的实现原理：生产者生产消息时，设置延迟级别；
-broker根据延迟级别，将消息暂存
+延迟消息的实现原理：
+生产者生产消息时，设置延迟级别；
+broker根据延迟级别，将消息暂
 					...
 				</div>
 			</a>

@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,7 +3137,8 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>布隆过滤器（Bloom Filter）是一个 probabilistic data structure，用于判断一个元素是否在集合中。它通过使用多个哈希函数和位数组来提高查询效率。<br>布隆过滤器在Redis中应用最广泛，用于解决缓存击穿、缓存穿透等问题。</p>
+	<p>布隆过滤器（Bloom Filter）是一个 probabilistic data structure，用于判断一个元素是否在集合中。它通过使用多个哈希函数和位数组来提高查询效率。<br>
+布隆过滤器在Redis中应用最广泛，用于解决缓存击穿、缓存穿透等问题。</p>
 <p>常用的布隆过滤器的实现是redission的bloomfilter。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BloomFilter&lt;String&gt; bloomFilter = BloomFilter.create(Funnels.stringFunnel(Charset.defaultCharset()), <span class="number">1000000</span>, <span class="number">0.01</span>);</span><br></pre></td></tr></table></figure>
 <p>当一个元素被加入集合时，通过多个hash函数将这个元素映射成一个位数组中的多个点（offset）并把它们置为 1。检索时，我们只要看看这些点是不是都是1就知道集合中有没有它了：如果这些点有任何一个为0，则被检元素一定不存在；如果都是1，则被检元素很可能存在；所以存在误判的可能性；</p>
@@ -3147,8 +3159,8 @@
         </div>
         <div class="item right">
             
-              <a href="/2024/0120/redis-rdb-aof.html">
-                04 rdb和aof
+              <a href="/2024/0120/redis-io.html">
+                03 说说IO多路复用
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

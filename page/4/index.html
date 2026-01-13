@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3083,6 +3094,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0307/es-deep-query-page.html">
+				<h2 class="index-title">
+					02 es深分页问题
+				</h2>
+				<div class="index-brief">
+					es查询时会根据from和to两个参数来查询数据，from 参数的值很大时（如 from=10000 以上），ElasticSearch 需要跳过大量数据来获取指定页的内容，这种情况称为深度分页
+es数据是存储在多个分片（Shard）上的，每个分片本质上是一个独立的 Lucene 索引。分页查询会在
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-07</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0307/es-desc-suoyin.html">
 				<h2 class="index-title">
 					01 es倒排索引
@@ -3141,8 +3179,11 @@
 					17 为什么不遵守最左匹配原则索引会失效
 				</h2>
 				<div class="index-brief">
-					B+树结构依赖于最左列的值作为比较起点MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下第一层：按 A 列排序；第二层：在 A 相同的情况下按 B 排序；第三层：在 A 和 B 相同的情况下按 C 排序
-A.
+					B+树结构依赖于最左列的值作为比较起点
+MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下
+第一层：按 A 列排序；
+第二层：在 A 相同的情况下按 B 排序；
+第三层：在 A 和 B 相同的情况下按 C 排
 					...
 				</div>
 			</a>
@@ -3197,7 +3238,8 @@ Atom
 				<div class="index-brief">
 					MySQL 主从复制的数据物理格式主要由两部分构成：
 主库的二进制日志（Binlog）和从库的中继日志（Relay Log），其底层存储与 MySQL 的存储引擎（如 InnoDB）密切相关
-主库的二进制日志物理格式Binlog 是主库记录所有数据修改操作的二进制文件，其内容按事件（Event）存储
+主库的二进制日志物理格式
+Binlog 是主库记录所有数据修改操作的二进制文件，其内容按事件（Event）存
 					...
 				</div>
 			</a>
@@ -3223,8 +3265,10 @@ Atom
 					12 threadLocal的应用场景及问题
 				</h2>
 				<div class="index-brief">
-					场景1，用于保存用户信息例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。
-场景2，SimpleDateFormat线程不安全因为SimpleDateFormat不是线程安全的，所以
+					场景1，用于保存用户信息
+例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。
+场景2，SimpleDateFormat线程不安全
+因为SimpleDateFormat不是线程安全的，
 					...
 				</div>
 			</a>
@@ -3251,8 +3295,10 @@ Atom
 				</h2>
 				<div class="index-brief">
 					kafka消息丢失的场景主要在生产端，broker端，消费端
-生产端消息丢失producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
-解决办法：可以改成同步发生，ack&#x3D;all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息
+生产端消息丢失
+producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
+解决办法：可以改成同步发生，ack=all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息；
+br
 					...
 				</div>
 			</a>
@@ -3278,7 +3324,9 @@ Atom
 					08 kafka副本同步机制
 				</h2>
 				<div class="index-brief">
-					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
+					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。
+broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。
+每个partition的leader在收到producer提交的数据后，都需要向producer发
 					...
 				</div>
 			</a>
@@ -3320,24 +3368,6 @@ kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
 										
                                     </span>
                                 
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0306/undefined.html">
-				<h2 class="index-title">
-					05 令牌桶限流算法
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-06</span>
-                    
                             
                     
                 </div>

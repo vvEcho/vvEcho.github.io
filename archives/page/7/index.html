@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3083,6 +3094,33 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0307/es-deep-query-page.html">
+				<h2 class="index-title">
+					02 es深分页问题
+				</h2>
+				<div class="index-brief">
+					es查询时会根据from和to两个参数来查询数据，from 参数的值很大时（如 from=10000 以上），ElasticSearch 需要跳过大量数据来获取指定页的内容，这种情况称为深度分页
+es数据是存储在多个分片（Shard）上的，每个分片本质上是一个独立的 Lucene 索引。分页查询会在
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-07</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0307/es-desc-suoyin.html">
 				<h2 class="index-title">
 					01 es倒排索引
@@ -3141,8 +3179,11 @@
 					17 为什么不遵守最左匹配原则索引会失效
 				</h2>
 				<div class="index-brief">
-					B+树结构依赖于最左列的值作为比较起点MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下第一层：按 A 列排序；第二层：在 A 相同的情况下按 B 排序；第三层：在 A 和 B 相同的情况下按 C 排序
-A.
+					B+树结构依赖于最左列的值作为比较起点
+MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下
+第一层：按 A 列排序；
+第二层：在 A 相同的情况下按 B 排序；
+第三层：在 A 和 B 相同的情况下按 C 排
 					...
 				</div>
 			</a>
@@ -3170,34 +3211,6 @@ A.
 				<div class="index-brief">
 					ACID，是指数据库管理系统（DBMS）在写入或更新资料的过程中，为保证事务（transaction）是正确可靠的，所必须具备的四个特性：原子性（atomicity，或称不可分割性）、一致性（consistency）、隔离性（isolation，又称独立性）、持久性（durability）
 Atom
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-07</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0307/mysql-master-salve-data-format.html">
-				<h2 class="index-title">
-					16 mysql主从的数据物理格式是怎样的？
-				</h2>
-				<div class="index-brief">
-					MySQL 主从复制的数据物理格式主要由两部分构成：
-主库的二进制日志（Binlog）和从库的中继日志（Relay Log），其底层存储与 MySQL 的存储引擎（如 InnoDB）密切相关
-主库的二进制日志物理格式Binlog 是主库记录所有数据修改操作的二进制文件，其内容按事件（Event）存储
 					...
 				</div>
 			</a>

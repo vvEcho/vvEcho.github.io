@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3118,8 +3129,15 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>1.用户发送请求至前端控制器DispatcherServlet。<br>2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.<br>3.DispatcherServlet调用HandlerAdapter处理器适配器,HandlerAdapter经过适配调用具体的处理器(Controller，也叫后端控制器)<br>4.Controller处理完后返回对应的视图ModelAndview.<br>5.HandlerAdapter视图ModelAndView返回给前端控制器，再由前端控制器返回给视图解析器ViewReslover<br>6.ViewReslover解析后返回具体View,DispatcherServlet 根据View进行渲染视图(即将模型数据填充至视图中)。<br>7.DispatcherServlet 响应用户。</p>
-<p>流程图如下：<br>请求-》DispatcherServlet-》HandlerMapping-》HandlerAdapter-》Controller-》ViewResolver-》View-》DispatcherServlet-》Response</p>
+	<p>1.用户发送请求至前端控制器DispatcherServlet。<br>
+2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.<br>
+3.DispatcherServlet调用HandlerAdapter处理器适配器,HandlerAdapter经过适配调用具体的处理器(Controller，也叫后端控制器)<br>
+4.Controller处理完后返回对应的视图ModelAndview.<br>
+5.HandlerAdapter视图ModelAndView返回给前端控制器，再由前端控制器返回给视图解析器ViewReslover<br>
+6.ViewReslover解析后返回具体View,DispatcherServlet 根据View进行渲染视图(即将模型数据填充至视图中)。<br>
+7.DispatcherServlet 响应用户。</p>
+<p>流程图如下：<br>
+请求-》DispatcherServlet-》HandlerMapping-》HandlerAdapter-》Controller-》ViewResolver-》View-》DispatcherServlet-》Response</p>
 
 </div>
 

@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,15 +3137,32 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="Sentinel和Hystrix有哪些不同？"><a href="#Sentinel和Hystrix有哪些不同？" class="headerlink" title="Sentinel和Hystrix有哪些不同？"></a>Sentinel和Hystrix有哪些不同？</h4><p>Sentinel 和 Hystrix 都是用于管理分布式系统中的服务可靠性和延迟容忍性的工具，它们提供了像熔断器、限流器和服务降级这样的功能。虽然两者的目标类似，但它们在实现和功能上存在一些差异。以下是 Sentinel 和 Hystrix 的主要区别：</p>
-<h5 id="模块化与可扩展性："><a href="#模块化与可扩展性：" class="headerlink" title="模块化与可扩展性："></a>模块化与可扩展性：</h5><p>Sentinel：具有更模块化的设计，提供了更丰富的扩展点，易于个性化和扩展定制。<br>Hystrix：作为Netflix OSS套件的一部分，主要集成到Spring Cloud Netflix中，提供较固定的模式。</p>
-<h5 id="流量控制能力："><a href="#流量控制能力：" class="headerlink" title="流量控制能力："></a>流量控制能力：</h5><p>Sentinel：专注于流量控制，包括限流、熔断、系统过载保护（通过系统负载来保护服务）、以及流量整形（调整流量分配）等。<br>Hystrix：主要是提供熔断器和线程隔离策略，用于隔离和管理故障。</p>
-<h5 id="控制台和监控："><a href="#控制台和监控：" class="headerlink" title="控制台和监控："></a>控制台和监控：</h5><p>Sentinel：提供一个功能丰富的控制台，用于实时监控和操作规则配置调整。<br>Hystrix：提供了Hystrix Dashboard和Turbine，用于聚合和展示服务的指标。</p>
-<h5 id="性能表现："><a href="#性能表现：" class="headerlink" title="性能表现："></a>性能表现：</h5><p>Sentinel：由于其轻量级的设计，对性能影响较小，适用于高并发场景。<br>Hystrix：由于其设计采用线程隔离，在高并发下可能因线程池的限制而对性能产生影响。<br>社区支持和维护状态：</p>
-<p>Sentinel：由阿里巴巴维护，并作为Spring Cloud Alibaba的一部分继续得到更新和支持。<br>Hystrix：自2018年起，进入维护模式，Netflix不再积极开发新特性。Spring Cloud项目也逐渐替换为其他替代方案，如 Resilience4j。</p>
-<h5 id="易用性与配置："><a href="#易用性与配置：" class="headerlink" title="易用性与配置："></a>易用性与配置：</h5><p>Sentinel：配置方式简单直观，容易入门，且规则配置的灵活性较高。<br>Hystrix：虽然与Spring Cloud集成得比较紧密，但学习曲线相对陡峭，配置项相对复杂。</p>
-<h5 id="异步编程模型："><a href="#异步编程模型：" class="headerlink" title="异步编程模型："></a>异步编程模型：</h5><p>Sentinel：它天然支持响应式和异步编程模型。<br>Hystrix：虽然提供了对异步执行的支持，但更多的是以同步方式执行。</p>
-<h5 id="链路追踪与日志："><a href="#链路追踪与日志：" class="headerlink" title="链路追踪与日志："></a>链路追踪与日志：</h5><p>Sentinel：针对链路入口和出口的流量，提供比较细粒度的流量追踪和记录。<br>Hystrix：提供了执行事件的日志功能，但相对较粗。</p>
+	<h4 id="Sentinel和Hystrix有哪些不同？">Sentinel和Hystrix有哪些不同？</h4>
+<p>Sentinel 和 Hystrix 都是用于管理分布式系统中的服务可靠性和延迟容忍性的工具，它们提供了像熔断器、限流器和服务降级这样的功能。虽然两者的目标类似，但它们在实现和功能上存在一些差异。以下是 Sentinel 和 Hystrix 的主要区别：</p>
+<h5 id="模块化与可扩展性：">模块化与可扩展性：</h5>
+<p>Sentinel：具有更模块化的设计，提供了更丰富的扩展点，易于个性化和扩展定制。<br>
+Hystrix：作为Netflix OSS套件的一部分，主要集成到Spring Cloud Netflix中，提供较固定的模式。</p>
+<h5 id="流量控制能力：">流量控制能力：</h5>
+<p>Sentinel：专注于流量控制，包括限流、熔断、系统过载保护（通过系统负载来保护服务）、以及流量整形（调整流量分配）等。<br>
+Hystrix：主要是提供熔断器和线程隔离策略，用于隔离和管理故障。</p>
+<h5 id="控制台和监控：">控制台和监控：</h5>
+<p>Sentinel：提供一个功能丰富的控制台，用于实时监控和操作规则配置调整。<br>
+Hystrix：提供了Hystrix Dashboard和Turbine，用于聚合和展示服务的指标。</p>
+<h5 id="性能表现：">性能表现：</h5>
+<p>Sentinel：由于其轻量级的设计，对性能影响较小，适用于高并发场景。<br>
+Hystrix：由于其设计采用线程隔离，在高并发下可能因线程池的限制而对性能产生影响。<br>
+社区支持和维护状态：</p>
+<p>Sentinel：由阿里巴巴维护，并作为Spring Cloud Alibaba的一部分继续得到更新和支持。<br>
+Hystrix：自2018年起，进入维护模式，Netflix不再积极开发新特性。Spring Cloud项目也逐渐替换为其他替代方案，如 Resilience4j。</p>
+<h5 id="易用性与配置：">易用性与配置：</h5>
+<p>Sentinel：配置方式简单直观，容易入门，且规则配置的灵活性较高。<br>
+Hystrix：虽然与Spring Cloud集成得比较紧密，但学习曲线相对陡峭，配置项相对复杂。</p>
+<h5 id="异步编程模型：">异步编程模型：</h5>
+<p>Sentinel：它天然支持响应式和异步编程模型。<br>
+Hystrix：虽然提供了对异步执行的支持，但更多的是以同步方式执行。</p>
+<h5 id="链路追踪与日志：">链路追踪与日志：</h5>
+<p>Sentinel：针对链路入口和出口的流量，提供比较细粒度的流量追踪和记录。<br>
+Hystrix：提供了执行事件的日志功能，但相对较粗。</p>
 
 </div>
 

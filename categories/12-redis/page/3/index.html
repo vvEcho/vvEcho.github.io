@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,8 +3099,10 @@
 					14 如何监听key过期时间并触发后置逻辑
 				</h2>
 				<div class="index-brief">
-					1. 修改redisp配置，开启过期事件监听1notify-keyspace-events Ex  # 仅监听键过期事件（Ex=Expired events）
-2. springboot配置监听器12345678910111213141516171819202122232425262728@Conf
+					1. 修改redisp配置，开启过期事件监听
+1notify-keyspace-events Ex  # 仅监听键过期事件（Ex=Expired events）
+2. springboot配置监听器
+12345678910111213141516171819202122232425262728@Co
 					...
 				</div>
 			</a>
@@ -3116,13 +3129,15 @@
 				</h2>
 				<div class="index-brief">
 					大key可能存在的场景
+
 配送范围特别大的门店
 促销活动特别多的门店、商家等
 高频用户下的订单列表
 
 大key会导致什么问题
+
 如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
-如果是hash,list,set,zset等类型key 删除key会严重阻
+如果是hash,list,set,zset等类型key 删除key会严
 					...
 				</div>
 			</a>
@@ -3178,7 +3193,11 @@
 				<div class="index-brief">
 					redis我用的是简单的主从架构的这种集群模式
 Redis主要有三种模式，主从，哨兵，分布式集群
-1.主从复制模式架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离优点：数据冗余：从节点备份主节点数据，提高数据可靠性。读写分离：从节点分担读请求，减轻主节点压力。配置
+1.主从复制模式
+架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离
+优点：
+数据冗余：从节点备份主节点数据，提高数据可靠性。
+读写分离：从节点分担读请求，减轻主节点压
 					...
 				</div>
 			</a>
@@ -3204,13 +3223,20 @@ Redis主要有三种模式，主从，哨兵，分布式集群
 					08 redis如何做内存优化
 				</h2>
 				<div class="index-brief">
-					redis优化内存分为两个层面大的层面：
+					redis优化内存分为两个层面
+大的层面：
 
-合理设置数据过期时间使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
 
-合理设置内存淘汰策略结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
+合理设置数据过期时间
+使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
 
-内存碎片优化启用 jemalloc
+
+合理设置内存淘汰策略
+结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
+
+
+内存碎片优化
+启用 j
 					...
 				</div>
 			</a>

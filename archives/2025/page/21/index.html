@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3089,7 +3100,9 @@
 				</h2>
 				<div class="index-brief">
 					
-先删除缓存，再更新数据库问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取最新
+先删除缓存，再更新数据库
+问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生
+解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取
 					...
 				</div>
 			</a>
@@ -3125,8 +3138,9 @@
 					09 设计一个强一致性方案保障故障转移时会话共享
 				</h2>
 				<div class="index-brief">
-					基于Redis的会话共享实现方案核心：Redis Cluster + 同步写策略
-12345678# Redis节点配置（6节点示例：3主3从）redis-cluster:  master1: 192.168.1.1:6379  slave1:  192.168.1.2:6380  master2:
+					基于Redis的会话共享实现
+方案核心：Redis Cluster + 同步写策略
+12345678# Redis节点配置（6节点示例：3主3从）redis-cluster:  master1: 192.168.1.1:6379  slave1:  192.168.1.2:6380  master2
 					...
 				</div>
 			</a>
@@ -3162,8 +3176,9 @@
 					06 结合kafka的exactly-once说明如何实现一个无锁的幂等方案
 				</h2>
 				<div class="index-brief">
-					在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？无锁幂等方案设计
-123456CREATE TABLE 
+					在佣金系统的价保消息改造中，您提到兼容新旧消息并采用Redis分布式锁防重消费。若消费者集群规模扩大到100个节点，Redis锁可能成为性能瓶颈，如何设计无锁的幂等性方案？请结合消息的重复投递机制（如Kafka的exactly-once）说明？
+无锁幂等方案设计
+123456CREATE TABLE
 					...
 				</div>
 			</a>
@@ -3199,7 +3214,7 @@
 					05 请分析RR可能导致锁范围扩大的原因和解决思路
 				</h2>
 				<div class="index-brief">
-					假设查询涉及SELECT … FOR UPDATE锁，请分析在RR（可重复读）隔离级别下可能导致的锁范围扩大问题。如何通过索引设计避免锁全表？请结合SELECT * FROM commission WHERE merchant_id&#x3D;? AND month&#x3D;’2025-02’ F
+					假设查询涉及SELECT … FOR UPDATE锁，请分析在RR（可重复读）隔离级别下可能导致的锁范围扩大问题。如何通过索引设计避免锁全表？请结合SELECT * FROM commission WHERE merchant_id=? AND month=‘2025-02’ FOR UPDATE示
 					...
 				</div>
 			</a>
@@ -3236,7 +3251,10 @@
 				</h2>
 				<div class="index-brief">
 					在领域驱动设计中，聚合根（Aggregate Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明
-聚合根（Aggregate Root）设计原则‌您的回答正确但需补充完整，核心原则包括：‌✅ 强一致性边界：聚合根内的所有实
+
+聚合根（Aggregate Root）设计原则‌
+您的回答正确但需补充完整，核心原则包括：‌
+✅ 强一致性边界：聚合根内的
 					...
 				</div>
 			</a>

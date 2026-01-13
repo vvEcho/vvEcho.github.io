@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3118,13 +3129,18 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="CAP理论"><a href="#CAP理论" class="headerlink" title="CAP理论"></a>CAP理论</h4><p>CAP理论是分布式领域中非常重要的一个指导理论<br>C(Consistenc)表示强一致性,<br>A(Availability)表示可用性,<br>P(Partition Tolerance)表示分区容错性</p>
+	<h4 id="CAP理论">CAP理论</h4>
+<p>CAP理论是分布式领域中非常重要的一个指导理论<br>
+C(Consistenc)表示强一致性,<br>
+A(Availability)表示可用性,<br>
+P(Partition Tolerance)表示分区容错性</p>
 <p>CAP理论指出在目前的硬件条件下，一个分布式系统是须要保证分区容错性的，而在这个前提下，分布式系统要么保证CP，要么保证AP，无法同时保证CAP。</p>
 <p>分区容错性表示，一个系统虽然是分布式的，但是对外看上去应该是个整体，不能由于分布式系统内部的某个结点挂点，或网络出现了故障，而导致系统对外出现异常。所以，对于分布式系统而言是一定要保证分区容错性的。</p>
 <p>强一致性表示，一个分布式系统中各个结点之间能及时的同步数据，在数据同步过程中，是不能对外提供服务的，不然就会造成数据不一致，所以强一致性和可用性是不能同时满足的。</p>
 <p>可用性表示，一个分布式系统对外要保证可用。</p>
-<h4 id="BASE理论"><a href="#BASE理论" class="headerlink" title="BASE理论"></a>BASE理论</h4><p>由于不能同时满足CAP，所以出现了BASE理论:</p>
-<p>1.BA:Basically Available，表示基本可用，表示可以允许一定程度的不可用，比如由于系统故障，请求时间变长，或者由于系统故障导致部分非核心功能不可用，都是允许的</p>
+<h4 id="BASE理论">BASE理论</h4>
+<p>由于不能同时满足CAP，所以出现了BASE理论:</p>
+<p><a target="_blank" rel="noopener" href="http://1.BA">1.BA</a>:Basically Available，表示基本可用，表示可以允许一定程度的不可用，比如由于系统故障，请求时间变长，或者由于系统故障导致部分非核心功能不可用，都是允许的</p>
 <p>2.s:Soft state:表示分布式系统可以处于一种中间状态，比如数据正在同步</p>
 <p>3.E:Eventualy consistent，表示最终一致性，不要求分布式系统数据实时达到一致，允许在经过一段时间后再达到一致，在达到一致过程中，系统也是可用的</p>
 

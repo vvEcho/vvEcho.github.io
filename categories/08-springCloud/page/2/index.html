@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,8 +3099,9 @@
 					04.2 rpc原理
 				</h2>
 				<div class="index-brief">
-					定义RPC也就远程过程调用，是相对于本地过程调用而言的；例如我现在有个单体服务，A类中注入了B类，这时候可以直接在A类中调用B类中的方法，但是当服务改造成分布式服务后，A类和B类可能不在同一个服务下了；这时候该怎么发起调用呢？
-你可能会想到restful接口的方式，那么这需要事先知道B那边的提供的接
+					定义
+RPC也就远程过程调用，是相对于本地过程调用而言的；例如我现在有个单体服务，A类中注入了B类，这时候可以直接在A类中调用B类中的方法，但是当服务改造成分布式服务后，A类和B类可能不在同一个服务下了；这时候该怎么发起调用呢？
+你可能会想到restful接口的方式，那么这需要事先知道B那边的提供的
 					...
 				</div>
 			</a>
@@ -3115,17 +3127,20 @@
 					03.4 apploo注册中心
 				</h2>
 				<div class="index-brief">
-					下面是Apollo的七个模块，其中四个模块是和功能相关的核心模块，另外三个模块是辅助服务发现的模块:四个核心模块及其主要功能
+					
+下面是Apollo的七个模块，其中四个模块是和功能相关的核心模块，另外三个模块是辅助服务发现的模块:
+四个核心模块及其主要功能
 
 ConfigService
 
 
 提供配置获取接口
 提供配置推送接口
-服务于Apollo客户端2.AdminService
+服务于Apollo客户端
+2.AdminService
 提供配置管理接口
 提供配置修改发布接口
-服务于管理
+服务
 					...
 				</div>
 			</a>
@@ -3154,6 +3169,7 @@ ConfigService
 					核心特性对比
 
 
+
 特性
 Eureka
 Zookeeper
@@ -3162,18 +3178,24 @@ Apollo
 
 
 
+
 CAP模型
 AP
 CP
-AP&#x2F;CP
+AP/CP
 CP（强一致性优先）
 
 
 健康检查
 客户端心跳检测
 会话心跳检测
-TCP&#x2F;HTTP&#x2F;MySQL&#x2F;客户端心跳
+TCP/HTTP/MySQL/客户端心跳
 客户端主动上报+服务端轮询
+
+
+服务发现
+支持
+支持（需手动扩
 					...
 				</div>
 			</a>
@@ -3199,8 +3221,9 @@ TCP&#x2F;HTTP&#x2F;MySQL&#x2F;客户端心跳
 					02.3 Gateway和Zuul的区别
 				</h2>
 				<div class="index-brief">
-					Spring Cloud Gateway和Zuul有什么区别？Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
-以下是Spring Clou
+					Spring Cloud Gateway和Zuul有什么区别？
+Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
+以下是Spring Clo
 					...
 				</div>
 			</a>
@@ -3226,9 +3249,10 @@ TCP&#x2F;HTTP&#x2F;MySQL&#x2F;客户端心跳
 					06.1 shiro权限组件
 				</h2>
 				<div class="index-brief">
-					subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
+					
+**subject：**主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
 securityManager：安全管理器，主体进行认证和授权都是通过securityManager进行。它包含下面的认证器和授权器。
-authenticator：认证器，主体进行认证最终通过authent
+authenticator：认证器，主体进行认证最终通过au
 					...
 				</div>
 			</a>

@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3089,8 +3100,10 @@
 				</h2>
 				<div class="index-brief">
 					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是可重入锁
-不可重入锁只判断这个锁有没有被锁上，只要被锁上，申请锁的线程都会被要求等待。
-可重入锁不仅判断锁有没有被锁上，还会判断锁是哪个线程锁上的，当判断为当前锁上的时候，那么他依旧
+不可重入锁
+只判断这个锁有没有被锁上，只要被锁上，申请锁的线程都会被要求等待。
+可重入锁
+不仅判断锁有没有被锁上，还会判断锁是哪个线程锁上的，当判断为当前锁上的时候，那么他
 					...
 				</div>
 			</a>
@@ -3118,8 +3131,9 @@
 				<div class="index-brief">
 					Java中提供的synchronized只能是非公平锁。
 Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和非公平锁
-公平锁公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。
-优点：每个线程等待一
+公平锁
+公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。
+优点：每个线程等待
 					...
 				</div>
 			</a>
@@ -3146,8 +3160,9 @@ Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和�
 				</h2>
 				<div class="index-brief">
 					Seata 包含以下 4种分布式事务的处理模式
-1.XA 模式它的性能相比其他事务模式要差一点，但能保证最严格的数据一致性。XA 模式需要设置为串行化隔离级别，相当于对数据添加了读写锁。另外连接资源需要在整个事务期间保持，这样可能会导致资源锁定问题，从而影响并发事务吞吐。
-a.优点:实现简单、无业务
+1.XA 模式
+它的性能相比其他事务模式要差一点，但能保证最严格的数据一致性。XA 模式需要设置为串行化隔离级别，相当于对数据添加了读写锁。另外连接资源需要在整个事务期间保持，这样可能会导致资源锁定问题，从而影响并发事务吞吐。
+a.优点:实现简单、无业
 					...
 				</div>
 			</a>
@@ -3173,9 +3188,14 @@ a.优点:实现简单、无业务
 					05.2 sentinel限流及熔断的原理
 				</h2>
 				<div class="index-brief">
-					什么是SentinelSentinel是阿里开源的项目，提供了流量控制、熔断降级、系统负载保护等多个维度来保障服务之间的稳定性
+					什么是Sentinel
+Sentinel是阿里开源的项目，提供了流量控制、熔断降级、系统负载保护等多个维度来保障服务之间的稳定性
 sentinel如何实现限流 熔断 降级
-定义限流资源通过 @SentinelResource 注解标记需要限流的接口，并指定限流处理逻辑12345678910111213
+
+定义限流资源
+通过 @SentinelResource 注解标记需要限流的接口，并指定限流处理逻辑
+
+123456789101
 					...
 				</div>
 			</a>
@@ -3201,9 +3221,10 @@ sentinel如何实现限流 熔断 降级
 					15 什么叫索引下推，回表？
 				</h2>
 				<div class="index-brief">
-					索引下推索引下推简称ICP(index condition push),是mysql5.6后新增的功能，主要的核心点在于把数据筛选的过程放在了存储引擎层面，减少了返回的数据量和回表的次数，从而提高查询效率。
+					索引下推
+索引下推简称ICP(index condition push),是mysql5.6后新增的功能，主要的核心点在于把数据筛选的过程放在了存储引擎层面，减少了返回的数据量和回表的次数，从而提高查询效率。
 举例说明：
-123456789101112以联合索引（name,age）为例，假设查询条件为
+123456789101112以联合索引（name,age）为例，假设查询条件
 					...
 				</div>
 			</a>

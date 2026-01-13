@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3127,16 +3138,23 @@
 <!-- content -->
 <div id="article-content">
 	<p>这个问题其实可以分为三点</p>
-<p>第一点生产者要保证消息的顺序生产 <br><br>第二点broker要保证消息的顺序保存 <br><br>第三点消费者要保证消息的顺序消费 <br></p>
-<h4 id="一、生产者端：确保同一业务消息进入同一队列"><a href="#一、生产者端：确保同一业务消息进入同一队列" class="headerlink" title="一、生产者端：确保同一业务消息进入同一队列"></a>一、生产者端：确保同一业务消息进入同一队列</h4><p>定义业务路由键（Message Group）</p>
+<p>第一点生产者要保证消息的顺序生产 <br><br>
+第二点broker要保证消息的顺序保存 <br><br>
+第三点消费者要保证消息的顺序消费 <br></p>
+<h4 id="一、生产者端：确保同一业务消息进入同一队列">一、生产者端：确保同一业务消息进入同一队列</h4>
+<p>定义业务路由键（Message Group）</p>
 <p>选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，确保同一组消息被路由到同一队列。</p>
 <p>自定义队列选择策略,通过MessageQueueSelector接口实现哈希路由，将相同路由键的消息分配至固定队列：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">SendResult</span> <span class="variable">sendResult</span> <span class="operator">=</span> producer.send(msg, (mqs, msg, arg) -&gt; &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">orderId</span> <span class="operator">=</span> (String) arg;</span><br><span class="line">    <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> orderId.hashCode() % mqs.size();  <span class="comment">// 哈希取模</span></span><br><span class="line">    <span class="keyword">return</span> mqs.get(index);</span><br><span class="line">&#125;, orderId);  <span class="comment">// 传入路由键</span></span><br></pre></td></tr></table></figure>
 <p>同步发送消息,必须使用同步发送（send()方法），异步发送无法保证顺序性</p>
-<h4 id="二、Broker端：队列顺序存储"><a href="#二、Broker端：队列顺序存储" class="headerlink" title="二、Broker端：队列顺序存储"></a>二、Broker端：队列顺序存储</h4><p>单队列FIFO存储：同一队列内的消息按发送顺序存储，严格先进先出</p>
-<h4 id="三、消费者端：单线程顺序处理"><a href="#三、消费者端：单线程顺序处理" class="headerlink" title="三、消费者端：单线程顺序处理"></a>三、消费者端：单线程顺序处理</h4><p>注册顺序监听器,使用MessageListenerOrderly接口，RocketMQ自动为每个队列分配单线程处理：</p>
+<h4 id="二、Broker端：队列顺序存储">二、Broker端：队列顺序存储</h4>
+<p>单队列FIFO存储：同一队列内的消息按发送顺序存储，严格先进先出</p>
+<h4 id="三、消费者端：单线程顺序处理">三、消费者端：单线程顺序处理</h4>
+<p>注册顺序监听器,使用MessageListenerOrderly接口，RocketMQ自动为每个队列分配单线程处理：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">consumer.registerMessageListener((MessageListenerOrderly) (msgs, context) -&gt; &#123;</span><br><span class="line">    <span class="keyword">for</span> (MessageExt msg : msgs) &#123;</span><br><span class="line">        <span class="comment">// 业务处理（单线程执行）</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ConsumeOrderlyStatus.SUCCESS;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>自动队列锁机制<br>锁申请：消费者启动时向Broker申请队列锁，同一队列仅允许一个消费者处理<br>锁续期：消费者通过定时任务（默认20秒一次）向Broker续期锁，防止锁过期导致并发消费</p>
+<p>自动队列锁机制<br>
+锁申请：消费者启动时向Broker申请队列锁，同一队列仅允许一个消费者处理<br>
+锁续期：消费者通过定时任务（默认20秒一次）向Broker续期锁，防止锁过期导致并发消费</p>
 
 </div>
 

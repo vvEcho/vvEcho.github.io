@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,8 +3099,11 @@
 					14.presto为何能加速查询？
 				</h2>
 				<div class="index-brief">
-					1.执行引擎的革新Hive 的局限性：Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入HDFS磁盘,导致高 I&#x2F;O 开销和高延迟(适合批量处理,但无法满足交互式查询)
-Presto 的优势：Presto 采
+					1.执行引擎的革新
+Hive 的局限性：
+Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入HDFS磁盘,导致高 I/O 开销和高延迟(适合批量处理,但无法满足交互式查询)
+Presto 的优势：
+Presto 采用 
 					...
 				</div>
 			</a>
@@ -3116,7 +3130,8 @@ Presto 的优势：Presto 采
 				</h2>
 				<div class="index-brief">
 					Elasticsearch深分页问题解决方案
-方案1：Search After（游标分页）1234567891011121314151617181920// 首次查询（按时间倒序）GET /order_index/_search&#123;  &quot;size&quot;: 20,  &quot
+方案1：Search After（游标分页）
+1234567891011121314151617181920// 首次查询（按时间倒序）GET /order_index/_search&#123;  &quot;size&quot;: 20,  &quo
 					...
 				</div>
 			</a>
@@ -3152,7 +3167,9 @@ Presto 的优势：Presto 采
 					10 订单系统如何保证原子性和最终一致性
 				</h2>
 				<div class="index-brief">
-					在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布式锁
+					在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题
+1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？
+2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布
 					...
 				</div>
 			</a>
@@ -3189,7 +3206,9 @@ Presto 的优势：Presto 采
 				</h2>
 				<div class="index-brief">
 					
-先删除缓存，再更新数据库问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取最新
+先删除缓存，再更新数据库
+问题：先删除缓存，数据库还没有更新成功，此时如果读取缓存，缓存不存在，去数据库中读取到的是旧值，然后更新缓存，缓存不一致发生
+解决办法：延迟双删 预估第二次查询时间，删除缓存且更新数据库后延迟一段时间再删一遍缓存，这样如果再有新的请求过来，发现缓存没数据就会去数据库里读取
 					...
 				</div>
 			</a>
@@ -3225,8 +3244,9 @@ Presto 的优势：Presto 采
 					09 设计一个强一致性方案保障故障转移时会话共享
 				</h2>
 				<div class="index-brief">
-					基于Redis的会话共享实现方案核心：Redis Cluster + 同步写策略
-12345678# Redis节点配置（6节点示例：3主3从）redis-cluster:  master1: 192.168.1.1:6379  slave1:  192.168.1.2:6380  master2:
+					基于Redis的会话共享实现
+方案核心：Redis Cluster + 同步写策略
+12345678# Redis节点配置（6节点示例：3主3从）redis-cluster:  master1: 192.168.1.1:6379  slave1:  192.168.1.2:6380  master2
 					...
 				</div>
 			</a>

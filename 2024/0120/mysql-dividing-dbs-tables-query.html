@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3129,15 +3140,20 @@
 	<p>分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es</p>
 <p>如果非得要做范围查询则需要考虑分库分表前如何做数据分片以及分片完后的数据聚合 <br></p>
 <ol>
-<li><p>例如查询经常按时间范围查询，例如每个月的订单数据，那么可以选择数据按月分片存储，这样查询的时候就可以直接根据月份查询了</p>
+<li>
+<p>例如查询经常按时间范围查询，例如每个月的订单数据，那么可以选择数据按月分片存储，这样查询的时候就可以直接根据月份查询了</p>
 </li>
-<li><p>利用一些中间件如sharding-jdbc将sql拆解路由到各个分片库执行，然后再在客户端做聚合；</p>
+<li>
+<p>利用一些中间件如sharding-jdbc将sql拆解路由到各个分片库执行，然后再在客户端做聚合；</p>
 </li>
 </ol>
 <blockquote>
 <p>总结: 分库分表后的范围查询需结合 分片策略设计、中间件能力 和查询优化手段：</p>
 </blockquote>
-<p>按业务需求选择分片规则，优先对齐高频查询条件 <br><br>利用中间件实现智能路由与结果合并，减少跨分片开销 <br><br>通过索引、缓存、预计算等手段优化性能，平衡实时性与计算成本 <br><br>结合分布式数据库或流式处理框架，应对超大规模数据场景 <br></p>
+<p>按业务需求选择分片规则，优先对齐高频查询条件 <br><br>
+利用中间件实现智能路由与结果合并，减少跨分片开销 <br><br>
+通过索引、缓存、预计算等手段优化性能，平衡实时性与计算成本 <br><br>
+结合分布式数据库或流式处理框架，应对超大规模数据场景 <br></p>
 
 </div>
 

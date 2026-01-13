@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3137,13 +3148,23 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="在领域驱动设计中，聚合根（Aggregate-Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明"><a href="#在领域驱动设计中，聚合根（Aggregate-Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明" class="headerlink" title="在领域驱动设计中，聚合根（Aggregate Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明"></a>在领域驱动设计中，聚合根（Aggregate Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明</h4><ol>
-<li>聚合根（Aggregate Root）设计原则‌<br><br>您的回答正确但需补充完整，核心原则包括：‌<br><br>✅ 强一致性边界：聚合根内的所有实体&#x2F;值对象必须保持一致性（如订单总金额与子项金额总和一致）。‌<br><br>✅ 最小化设计：一个聚合根只聚焦一个核心业务目标（如订单聚合根仅关注订单生命周期，价保聚合根聚焦价保规则）。‌<br><br>✅ 事务边界：单次事务仅修改一个聚合根（避免跨聚合根的ACID事务）。‌<br><br>✅ 引用方式：跨聚合根通过ID引用（如订单聚合根不直接持有价保对象，而是记录priceProtectionId）。‌<br><br>✅ 操作入口：外部只能通过聚合根的方法修改内部状态（如调用order.applyPriceProtection()而非直接修改子项价格）。‌<br></li>
-<li>京东佣金系统实例分析‌<br><br>在您改造的订单管理域与价保域拆分场景中，典型设计如下：‌<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 旧代码：订单服务直接调用价保服务（跨服务事务）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OrderService</span> &#123;</span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">applyPriceProtection</span><span class="params">(Order order, PriceProtection policy)</span> &#123;</span><br><span class="line">        <span class="comment">// 1. 修改订单金额</span></span><br><span class="line">        order.updateAmount(policy.getDiscount());</span><br><span class="line">        <span class="comment">// 2. 调用价保服务记录状态</span></span><br><span class="line">        priceProtectionService.lockPolicy(policy.getId());</span><br><span class="line">        <span class="comment">// 若此处价保服务调用失败，需回滚订单修改（分布式事务难题）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-改造后拆分了订单域和价保域‌<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 订单聚合根方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Order</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">applyPriceProtection</span><span class="params">(BigDecimal discount)</span> &#123;</span><br><span class="line">        <span class="comment">// 仅修改订单金额（不依赖外部状态）</span></span><br><span class="line">        <span class="built_in">this</span>.totalAmount = <span class="built_in">this</span>.totalAmount.subtract(discount);</span><br><span class="line">        <span class="comment">// 发布领域事件</span></span><br><span class="line">        DomainEventPublisher.publish(<span class="keyword">new</span> <span class="title class_">PriceProtectionAppliedEvent</span>(<span class="built_in">this</span>.id, discount));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 价保聚合根监听事件</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PriceProtectionEventHandler</span> &#123;</span><br><span class="line">    <span class="meta">@Subscribe</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handle</span><span class="params">(PriceProtectionAppliedEvent event)</span> &#123;</span><br><span class="line">        <span class="type">PriceProtection</span> <span class="variable">policy</span> <span class="operator">=</span> repository.findById(event.getPolicyId());</span><br><span class="line">        policy.markAsUsed(); <span class="comment">// 标记价保规则已使用（最终一致性）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-3.通过ID实现跨聚合引用‌<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 订单聚合根记录价保ID（非直接引用对象）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Order</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line">    <span class="keyword">private</span> List&lt;String&gt; appliedPriceProtectionIds; <span class="comment">// 价保ID列表</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+	<h4 id="在领域驱动设计中，聚合根（Aggregate-Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明">在领域驱动设计中，聚合根（Aggregate Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明</h4>
+<ol>
+<li>聚合根（Aggregate Root）设计原则‌<br><br>
+您的回答正确但需补充完整，核心原则包括：‌<br><br>
+✅ 强一致性边界：聚合根内的所有实体/值对象必须保持一致性（如订单总金额与子项金额总和一致）。‌<br><br>
+✅ 最小化设计：一个聚合根只聚焦一个核心业务目标（如订单聚合根仅关注订单生命周期，价保聚合根聚焦价保规则）。‌<br><br>
+✅ 事务边界：单次事务仅修改一个聚合根（避免跨聚合根的ACID事务）。‌<br><br>
+✅ 引用方式：跨聚合根通过ID引用（如订单聚合根不直接持有价保对象，而是记录priceProtectionId）。‌<br><br>
+✅ 操作入口：外部只能通过聚合根的方法修改内部状态（如调用order.applyPriceProtection()而非直接修改子项价格）。‌<br></li>
+<li>京东佣金系统实例分析‌<br><br>
+在您改造的订单管理域与价保域拆分场景中，典型设计如下：‌</li>
 </ol>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 旧代码：订单服务直接调用价保服务（跨服务事务）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OrderService</span> &#123;</span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">applyPriceProtection</span><span class="params">(Order order, PriceProtection policy)</span> &#123;</span><br><span class="line">        <span class="comment">// 1. 修改订单金额</span></span><br><span class="line">        order.updateAmount(policy.getDiscount());</span><br><span class="line">        <span class="comment">// 2. 调用价保服务记录状态</span></span><br><span class="line">        priceProtectionService.lockPolicy(policy.getId());</span><br><span class="line">        <span class="comment">// 若此处价保服务调用失败，需回滚订单修改（分布式事务难题）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改造后拆分了订单域和价保域‌<br></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 订单聚合根方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Order</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">applyPriceProtection</span><span class="params">(BigDecimal discount)</span> &#123;</span><br><span class="line">        <span class="comment">// 仅修改订单金额（不依赖外部状态）</span></span><br><span class="line">        <span class="built_in">this</span>.totalAmount = <span class="built_in">this</span>.totalAmount.subtract(discount);</span><br><span class="line">        <span class="comment">// 发布领域事件</span></span><br><span class="line">        DomainEventPublisher.publish(<span class="keyword">new</span> <span class="title class_">PriceProtectionAppliedEvent</span>(<span class="built_in">this</span>.id, discount));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 价保聚合根监听事件</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PriceProtectionEventHandler</span> &#123;</span><br><span class="line">    <span class="meta">@Subscribe</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handle</span><span class="params">(PriceProtectionAppliedEvent event)</span> &#123;</span><br><span class="line">        <span class="type">PriceProtection</span> <span class="variable">policy</span> <span class="operator">=</span> repository.findById(event.getPolicyId());</span><br><span class="line">        policy.markAsUsed(); <span class="comment">// 标记价保规则已使用（最终一致性）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.通过ID实现跨聚合引用‌<br></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 订单聚合根记录价保ID（非直接引用对象）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Order</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line">    <span class="keyword">private</span> List&lt;String&gt; appliedPriceProtectionIds; <span class="comment">// 价保ID列表</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </div>
 
 <!-- post-guide -->

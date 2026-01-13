@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3119,11 +3130,14 @@
 <!-- content -->
 <div id="article-content">
 	<ol>
-<li><p>删除和更新也都是写操作，但是 Elasticsearch 中的文档是不可变的，因此不能被删除或者改动以展示其变更；(根本原因是底层lucene的segment段文件不可更新删除)</p>
+<li>
+<p>删除和更新也都是写操作，但是 Elasticsearch 中的文档是不可变的，因此不能被删除或者改动以展示其变更；(根本原因是底层lucene的segment段文件不可更新删除)</p>
 </li>
-<li><p>磁盘上的每个段都有一个相应的 .del 文件。当删除请求发送后，文档并没有真 的被删除，而是在 .del 文件中被标记为删除。该文档依然能匹配查询，但是会在 结果中被过滤掉。当段合并时，在.del 文件中被标记为删除的文档将不会被写入 新段。</p>
+<li>
+<p>磁盘上的每个段都有一个相应的 .del 文件。当删除请求发送后，文档并没有真 的被删除，而是在 .del 文件中被标记为删除。该文档依然能匹配查询，但是会在 结果中被过滤掉。当段合并时，在.del 文件中被标记为删除的文档将不会被写入 新段。</p>
 </li>
-<li><p>在新的文档被创建时，Elasticsearch 会为该文档指定一个版本号，当执行更新 时，旧版本的文档在.del 文件中被标记为删除，新版本的文档被索引到一个新段。</p>
+<li>
+<p>在新的文档被创建时，Elasticsearch 会为该文档指定一个版本号，当执行更新 时，旧版本的文档在.del 文件中被标记为删除，新版本的文档被索引到一个新段。</p>
 </li>
 </ol>
 <p>旧版本的文档依然能匹配查询，但是会在结果中被过滤掉</p>

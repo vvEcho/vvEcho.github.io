@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3083,6 +3094,36 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/mysql-dividing-dbs-tables.html">
+				<h2 class="index-title">
+					08 分库分表怎么做的
+				</h2>
+				<div class="index-brief">
+					分库这个简单就是，分不同的sheam;一般是按业务来拆分
+分表一般有两种分法，一般有水平分表和垂直分表两种：
+水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表…
+而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不常变动的放一张表，变动多的放一张表；
+或者根据业务
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/mysql-count-query-sample.html">
 				<h2 class="index-title">
 					10 统计sql例子
@@ -3143,8 +3184,12 @@ B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持
 					07 mysql怎么优化数据库查询
 				</h2>
 				<div class="index-brief">
-					1.首先看表的数据量级以及sql数据涉及的业务含义A.数据量超2000万，大概率优化空间不大B.数据量级小的情况下，需看查询sql是否合理
-2.看表是否建立合适的索引A.针对高频查询的字段建立索引 B.当查询涉及多列组合条件时（如 WHERE a&#x3D;1 AND b&#x3D;2），使用联合索
+					1.首先看表的数据量级以及sql数据涉及的业务含义
+A.数据量超2000万，大概率优化空间不大
+B.数据量级小的情况下，需看查询sql是否合理
+2.看表是否建立合适的索引
+A.针对高频查询的字段建立索引 
+B.当查询涉及多列组合条件时（如 WHERE a=1 AND b=2），使用联合索引（CREA
 					...
 				</div>
 			</a>
@@ -3200,9 +3245,11 @@ B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持
 				<div class="index-brief">
 					binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；
 
+
 binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；
 
-redolog-事务提交时，先将修改记录到 Re
+
+redolog-事务提交时，先将修改记录到 
 					...
 				</div>
 			</a>
@@ -3259,7 +3306,9 @@ redolog-事务提交时，先将修改记录到 Re
 				</h2>
 				<div class="index-brief">
 					数据库的隔离级别分为读未提交，读已提交，可重复度，可重复读，串行化来分别解决脏读，不可重复读，幻读等问题
-脏读（Dirty Read）概念：一个事务读取了另一个未提交事务修改的数据（当前是读未提交隔离级别）背景：事务A修改数据但未提交，事务B却读到了这个未提交的数据。若事务A最终回滚，事务B的读取结
+脏读（Dirty Read）
+概念：一个事务读取了另一个未提交事务修改的数据（当前是读未提交隔离级别）
+背景：事务A修改数据但未提交，事务B却读到了这个未提交的数据。若事务A最终回滚，事务B的读
 					...
 				</div>
 			</a>
@@ -3315,39 +3364,11 @@ redolog-事务提交时，先将修改记录到 Re
 				<div class="index-brief">
 					redis我用的是简单的主从架构的这种集群模式
 Redis主要有三种模式，主从，哨兵，分布式集群
-1.主从复制模式架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离优点：数据冗余：从节点备份主节点数据，提高数据可靠性。读写分离：从节点分担读请求，减轻主节点压力。配置
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-used-too-much.html">
-				<h2 class="index-title">
-					08 redis如何做内存优化
-				</h2>
-				<div class="index-brief">
-					redis优化内存分为两个层面大的层面：
-
-合理设置数据过期时间使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
-
-合理设置内存淘汰策略结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
-
-内存碎片优化启用 jemalloc
+1.主从复制模式
+架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离
+优点：
+数据冗余：从节点备份主节点数据，提高数据可靠性。
+读写分离：从节点分担读请求，减轻主节点压
 					...
 				</div>
 			</a>

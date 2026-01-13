@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,24 +3137,42 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>redis优化内存分为两个层面<br>大的层面：</p>
+	<p>redis优化内存分为两个层面<br>
+大的层面：</p>
 <ol>
-<li><p>合理设置数据过期时间<br>使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除</p>
+<li>
+<p>合理设置数据过期时间<br>
+使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除</p>
 </li>
-<li><p>合理设置内存淘汰策略<br>结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据</p>
+<li>
+<p>合理设置内存淘汰策略<br>
+结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据</p>
 </li>
-<li><p>内存碎片优化<br>启用 jemalloc 分配器，定期执行 MEMORY PURGE 或重启实例整理碎片<br>监控碎片率（mem_fragmentation_ratio），超过 1.5 时需干预</p>
+<li>
+<p>内存碎片优化<br>
+启用 jemalloc 分配器，定期执行 MEMORY PURGE 或重启实例整理碎片<br>
+监控碎片率（mem_fragmentation_ratio），超过 1.5 时需干预</p>
 </li>
 </ol>
 <p>小的层面：</p>
 <ol>
-<li><p>写入数据时，合理选择数据类型</p>
+<li>
+<p>写入数据时，合理选择数据类型</p>
 </li>
-<li><p>利用高效数据结构<br>Bitmaps：适用于布尔型数据（如用户签到、特征标记），1亿用户仅需 12MB 内存<br>HyperLogLog：统计独立访客（UV）等场景，误差约 0.81%，内存消耗极低<br>Hash 分桶：大对象拆分为多个 Hash 存储（如用户数据按字段分组），减少单Key体积<br>案例：使用 HGETALL 分片存储用户属性，避免单 Key 过大导致的性能瓶颈</p>
+<li>
+<p>利用高效数据结构<br>
+Bitmaps：适用于布尔型数据（如用户签到、特征标记），1亿用户仅需 12MB 内存<br>
+HyperLogLog：统计独立访客（UV）等场景，误差约 0.81%，内存消耗极低<br>
+Hash 分桶：大对象拆分为多个 Hash 存储（如用户数据按字段分组），减少单Key体积<br>
+案例：使用 HGETALL 分片存储用户属性，避免单 Key 过大导致的性能瓶颈</p>
 </li>
-<li><p>利用数据结构压缩<br>对文本数据（如 JSON）启用压缩（Snappy、LZ4），压缩率可达 60% 以上</p>
+<li>
+<p>利用数据结构压缩<br>
+对文本数据（如 JSON）启用压缩（Snappy、LZ4），压缩率可达 60% 以上</p>
 </li>
-<li><p>key和value写入时避免长字符<br>例如：user:123:info可以调整为u:123:info 减少key长度</p>
+<li>
+<p>key和value写入时避免长字符<br>
+例如：user:123:info可以调整为u:123:info 减少key长度</p>
 </li>
 </ol>
 

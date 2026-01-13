@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,7 +3099,8 @@
 					09 生产环境服务嚣变慢,如何诊断处理?
 				</h2>
 				<div class="index-brief">
-					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
+					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。
+如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程
 					...
 				</div>
 			</a>
@@ -3116,7 +3128,12 @@
 				<div class="index-brief">
 					Java8为例
 
-日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
+日志
+-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值
+-XX :+ PrintGC ，打印 GC 信息
+-XX :+ PrintGcDetails ,打印 GC 详细信息
+-XX :+ PrintGCTimestamps ,打印 GC 的时间戳
+-Xlo
 					...
 				</div>
 			</a>
@@ -3168,7 +3185,10 @@
 					04 对象在jvm中的创建过程
 				</h2>
 				<div class="index-brief">
-					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区在创建类的对象时，首先会先去堆内存中分配空间然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化所有的非静态成员默认初始化完成后，调用相应的构造方法到栈中在栈
+					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区
+在创建类的对象时，首先会先去堆内存中分配空间
+然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化
+所有的非静态成员默认初始化完成后，调用相应的构造方法到栈
 					...
 				</div>
 			</a>
@@ -3194,8 +3214,10 @@
 					01.说说对JVM和JMM的理解
 				</h2>
 				<div class="index-brief">
-					JVMJVM 是 Java 虚拟机，是Java程序运行的执行引擎和内存管理平台。它定义了Java程序如何与操作系统交互，负责字节码的加载、解释&#x2F;编译、内存分配、垃圾回收等核心功能。JVM 的具体实现包括内存区域划分（如堆、栈、方法区）和运行机制（如类加载、即时编译）.
-jvm由类装载器、运
+					JVM
+JVM 是 Java 虚拟机，是Java程序运行的执行引擎和内存管理平台。
+它定义了Java程序如何与操作系统交互，负责字节码的加载、解释/编译、内存分配、垃圾回收等核心功能。JVM 的具体实现包括内存区域划分（如堆、栈、方法区）和运行机制（如类加载、即时编译）.
+jvm由类装载器、运行时数
 					...
 				</div>
 			</a>

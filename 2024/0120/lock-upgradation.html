@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,15 +3137,28 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="无锁"><a href="#无锁" class="headerlink" title="无锁"></a>无锁</h4><p>​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态</p>
-<h4 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h4><p>​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；<br>以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的比对一下啊对象头中的线程ID和当前线程是否一致。</p>
-<h4 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h4><p>​在偏向锁的基础上，又有另外一个线程B进来，这时判断对象头中存储的线程A的ID和线程B不一致，就会使用CAS竞争锁并且升级为轻量级锁，会在线程栈中创建一个锁记录(lock Record)<br>然后将Mark Word复制到锁记录中，接着线程将尝试使用CAS将对象头的Mark Word替换成指向锁记录的指针，如果成功，则当前线程获得锁；<br>失败，表示其他线程竞争到锁，当前线程便继续尝试CAS来获取锁。</p>
-<h4 id="重量级锁"><a href="#重量级锁" class="headerlink" title="重量级锁"></a>重量级锁</h4><p>​当线程没有获得轻量级锁时，线程会CAS自旋来获取锁，当一个线程自旋10次之后，仍然未获得锁，那么就会升级成为重量级锁。</p>
+	<h4 id="无锁">无锁</h4>
+<p>​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态</p>
+<h4 id="偏向锁">偏向锁</h4>
+<p>​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；<br>
+以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的比对一下啊对象头中的线程ID和当前线程是否一致。</p>
+<h4 id="轻量级锁">轻量级锁</h4>
+<p>​在偏向锁的基础上，又有另外一个线程B进来，这时判断对象头中存储的线程A的ID和线程B不一致，就会使用CAS竞争锁并且升级为轻量级锁，会在线程栈中创建一个锁记录(lock Record)<br>
+然后将Mark Word复制到锁记录中，接着线程将尝试使用CAS将对象头的Mark Word替换成指向锁记录的指针，如果成功，则当前线程获得锁；<br>
+失败，表示其他线程竞争到锁，当前线程便继续尝试CAS来获取锁。</p>
+<h4 id="重量级锁">重量级锁</h4>
+<p>​当线程没有获得轻量级锁时，线程会CAS自旋来获取锁，当一个线程自旋10次之后，仍然未获得锁，那么就会升级成为重量级锁。</p>
 <blockquote>
-<p>总结:<br>无锁状态：对象未被任何线程锁定。<br>偏向锁：如果只有一个线程访问对象，JVM 会将锁标记为偏向锁，避免同步开销。<br>轻量级锁（自旋锁）：当多个线程竞争锁时，JVM 会将锁升级为轻量级锁，线程通过 CAS 自旋尝试获取锁。<br>重量级锁：如果自旋一定次数后仍未获取锁，JVM 会将锁升级为重量级锁，线程进入阻塞状态，等待操作系统调度</p>
+<p>总结:<br>
+无锁状态：对象未被任何线程锁定。<br>
+偏向锁：如果只有一个线程访问对象，JVM 会将锁标记为偏向锁，避免同步开销。<br>
+轻量级锁（自旋锁）：当多个线程竞争锁时，JVM 会将锁升级为轻量级锁，线程通过 CAS 自旋尝试获取锁。<br>
+重量级锁：如果自旋一定次数后仍未获取锁，JVM 会将锁升级为重量级锁，线程进入阻塞状态，等待操作系统调度</p>
 </blockquote>
 <blockquote>
-<p>扩展：<br>JVM 中，自旋次数的控制是通过以下参数实现的：<br>-XX:PreBlockSpin：在 JDK 6 之前，这个参数用于设置自旋锁的最大自旋次数。默认值为 10。</p>
+<p>扩展：<br>
+JVM 中，自旋次数的控制是通过以下参数实现的：<br>
+-XX:PreBlockSpin：在 JDK 6 之前，这个参数用于设置自旋锁的最大自旋次数。默认值为 10。</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -XX:PreBlockSpin=20 MyApplication</span><br></pre></td></tr></table></figure>
 <p>自适应自旋：从 JDK6开始，JVM 引入了自适应自旋机制，不再使用固定的自旋次数，而是根据运行时情况动态调整</p>

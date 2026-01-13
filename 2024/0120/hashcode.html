@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3127,13 +3138,16 @@
 <!-- content -->
 <div id="article-content">
 	<ol>
-<li><p>hashcode()方法是获取一个对象值的hash值，通常我们用来比较两个值是否相等来使用的；</p>
+<li>
+<p>hashcode()方法是获取一个对象值的hash值，通常我们用来比较两个值是否相等来使用的；</p>
 </li>
-<li><p>int i&#x3D;1 和Integer &#x3D; 1他们hash值相等吗？<br>int i&#x3D;1和Integer &#x3D;1 调用hashcode方法，hash值相等;</p>
+<li>
+<p>int i=1 和Integer = 1他们hash值相等吗？<br>
+int i=1和Integer =1 调用hashcode方法，hash值相等;</p>
 </li>
 </ol>
 <blockquote>
-<p>面试官这里可能真正想问的是&#x3D;&#x3D;和equals方法的区别，其中&#x3D;&#x3D;比较的是值和对象的引用地址，equals方法比较的是对象值是否相等；而int和Integer比较的时候有个拆闭包的过程，其中在-128到127时，Integr值取的是常量池总缓存的值，超过这个范围是new出来的一个Integer对象，用&#x3D;&#x3D;比较时就不再相等；</p>
+<p>面试官这里可能真正想问的是==和equals方法的区别，其中==比较的是值和对象的引用地址，equals方法比较的是对象值是否相等；而int和Integer比较的时候有个拆闭包的过程，其中在-128到127时，Integr值取的是常量池总缓存的值，超过这个范围是new出来的一个Integer对象，用==比较时就不再相等；</p>
 </blockquote>
 
 </div>

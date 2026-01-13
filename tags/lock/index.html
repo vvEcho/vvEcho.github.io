@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3115,8 +3126,11 @@
 					02 锁升级的过程
 				</h2>
 				<div class="index-brief">
-					无锁​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
-偏向锁​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的比对一下啊
+					无锁
+​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
+偏向锁
+​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；
+以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的比对
 					...
 				</div>
 			</a>

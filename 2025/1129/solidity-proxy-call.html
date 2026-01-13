@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,12 +3137,14 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="代理调用代码示例"><a href="#代理调用代码示例" class="headerlink" title="代理调用代码示例"></a>代理调用代码示例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Note:deploy this contract first</span></span><br><span class="line">contract B &#123;</span><br><span class="line">    <span class="comment">// Note: storage layout must be the same sa contract A</span></span><br><span class="line">    <span class="comment">// 状态变量的声明顺序必须和A一致</span></span><br><span class="line">    uint256 public num;</span><br><span class="line">    address public sender;</span><br><span class="line">    uint256 public value;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">setVars</span>(<span class="params">uint256 _num</span>)public payable&#123;</span><br><span class="line">        num = <span class="number">2</span> * _num;</span><br><span class="line">        sender = msg.<span class="property">sender</span>;</span><br><span class="line">        value = msg.<span class="property">value</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">contract A&#123;</span><br><span class="line">    uint256 public num;</span><br><span class="line">    address public sender;</span><br><span class="line">    uint256 public value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//代理调用B的函数</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">setVars</span>(<span class="params">address _contract, uint256 _num</span>) public payable &#123;</span><br><span class="line">        <span class="comment">//  _contract.delegatecall(abi.encodeWithSignature(&quot;setVars(uint256&quot;,_num));</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用函数选择器的好处是，不用写死函数名及参数名在字符串中，只需要B修改后就会同步更新过来</span></span><br><span class="line">        (bool success,bytes memory data) = _contract.<span class="title function_">delegatecall</span>(abi.<span class="title function_">encodeWithSelector</span>(B.<span class="property">setVars</span>.<span class="property">selector</span>, _num));</span><br><span class="line">        <span class="built_in">require</span> (success,<span class="string">&quot;delegatecall failed&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="delegatecall的原理"><a href="#delegatecall的原理" class="headerlink" title="delegatecall的原理"></a>delegatecall的原理</h3><p>如上代码中演示：</p>
+	<h3 id="代理调用代码示例">代理调用代码示例</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Note:deploy this contract first</span></span><br><span class="line">contract B &#123;</span><br><span class="line">    <span class="comment">// Note: storage layout must be the same sa contract A</span></span><br><span class="line">    <span class="comment">// 状态变量的声明顺序必须和A一致</span></span><br><span class="line">    uint256 public num;</span><br><span class="line">    address public sender;</span><br><span class="line">    uint256 public value;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">setVars</span>(<span class="params">uint256 _num</span>)public payable&#123;</span><br><span class="line">        num = <span class="number">2</span> * _num;</span><br><span class="line">        sender = msg.<span class="property">sender</span>;</span><br><span class="line">        value = msg.<span class="property">value</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">contract A&#123;</span><br><span class="line">    uint256 public num;</span><br><span class="line">    address public sender;</span><br><span class="line">    uint256 public value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//代理调用B的函数</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">setVars</span>(<span class="params">address _contract, uint256 _num</span>) public payable &#123;</span><br><span class="line">        <span class="comment">//  _contract.delegatecall(abi.encodeWithSignature(&quot;setVars(uint256&quot;,_num));</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用函数选择器的好处是，不用写死函数名及参数名在字符串中，只需要B修改后就会同步更新过来</span></span><br><span class="line">        (bool success,bytes memory data) = _contract.<span class="title function_">delegatecall</span>(abi.<span class="title function_">encodeWithSelector</span>(B.<span class="property">setVars</span>.<span class="property">selector</span>, _num));</span><br><span class="line">        <span class="built_in">require</span> (success,<span class="string">&quot;delegatecall failed&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="delegatecall的原理">delegatecall的原理</h3>
+<p>如上代码中演示：</p>
 <ul>
 <li>elegatecall 会执行目标合约(B)的代码，但使用调用合约(A)的存储空间</li>
 <li>执行环境(包括 msg.sender 和 msg.value )保持不变</li>
-<li>相当于把B合约的代码”借”到A合约的环境中执行</li>
+<li>相当于把B合约的代码&quot;借&quot;到A合约的环境中执行</li>
 </ul>
 <p>实际执行的过程是：</p>
 <ul>
@@ -3144,7 +3157,8 @@
 <li>两个合约的状态变量声明顺序必须完全一致</li>
 <li>这是因为 delegatecall 通过存储槽位置来访问变量，而不是变量名</li>
 </ul>
-<h3 id="代理调用的实际应用场景"><a href="#代理调用的实际应用场景" class="headerlink" title="代理调用的实际应用场景"></a>代理调用的实际应用场景</h3><p>A. 可升级合约模式(Upgradeable Contracts)</p>
+<h3 id="代理调用的实际应用场景">代理调用的实际应用场景</h3>
+<p>A. 可升级合约模式(Upgradeable Contracts)</p>
 <ul>
 <li>通过代理合约保存状态数据</li>
 <li>逻辑合约可以升级替换而不影响存储数据</li>

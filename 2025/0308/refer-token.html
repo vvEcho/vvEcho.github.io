@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3118,15 +3129,25 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="刷新流程"><a href="#刷新流程" class="headerlink" title="刷新流程"></a>刷新流程</h4><ol>
-<li>客户端发起请求<br>当检测到Access Token过期（通过定时检查或API返回错误码），客户端向授权服务器的Token端点发送POST请求，需包含以下参数：<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">grant_type=refresh_token</span></span><br><span class="line"><span class="string">refresh_token=xxx（已存储的Refresh</span> <span class="string">Token）</span></span><br><span class="line"><span class="string">client_id和client_secret（应用凭证，用于鉴权）</span> <span class="string">示例请求（参考网页11、21）：</span></span><br><span class="line"><span class="string">Http</span></span><br><span class="line"><span class="string">POST</span> <span class="string">/token</span> <span class="string">HTTP/1.1</span></span><br><span class="line"><span class="attr">Host:</span> <span class="string">auth-server.com</span></span><br><span class="line"><span class="attr">Content-Type:</span> <span class="string">application/x-www-form-urlencoded</span></span><br><span class="line"><span class="string">grant_type=refresh_token&amp;refresh_token=WPsGJbvpBjqXz6IJIr1UHKyrdVF&amp;client_id=your_client_id&amp;client_secret=your_client_secret</span></span><br></pre></td></tr></table></figure></li>
-<li>服务端验证<br>验证Refresh Token有效性：检查是否过期、是否被撤销、是否属于当前客户端（通过client_id匹配）</li>
+	<h4 id="刷新流程">刷新流程</h4>
+<ol>
+<li>客户端发起请求<br>
+当检测到Access Token过期（通过定时检查或API返回错误码），客户端向授权服务器的Token端点发送POST请求，需包含以下参数：</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">grant_type=refresh_token</span></span><br><span class="line"><span class="string">refresh_token=xxx（已存储的Refresh</span> <span class="string">Token）</span></span><br><span class="line"><span class="string">client_id和client_secret（应用凭证，用于鉴权）</span> <span class="string">示例请求（参考网页11、21）：</span></span><br><span class="line"><span class="string">Http</span></span><br><span class="line"><span class="string">POST</span> <span class="string">/token</span> <span class="string">HTTP/1.1</span></span><br><span class="line"><span class="attr">Host:</span> <span class="string">auth-server.com</span></span><br><span class="line"><span class="attr">Content-Type:</span> <span class="string">application/x-www-form-urlencoded</span></span><br><span class="line"><span class="string">grant_type=refresh_token&amp;refresh_token=WPsGJbvpBjqXz6IJIr1UHKyrdVF&amp;client_id=your_client_id&amp;client_secret=your_client_secret</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>服务端验证<br>
+验证Refresh Token有效性：检查是否过期、是否被撤销、是否属于当前客户端（通过client_id匹配）</li>
 </ol>
 <p>关联用户与权限：根据Refresh Token绑定的用户身份生成新的Access Token，保持权限范围（scope）不变</p>
 <ol start="3">
-<li>生成新Token<br>新Access Token：生成新的Access Token，通常有效期较短（如1小时）。<br></li>
+<li>生成新Token<br>
+新Access Token：生成新的Access Token，通常有效期较短（如1小时）。<br></li>
 </ol>
-<p>Refresh Token策略：<br><br>单次使用：原Refresh Token失效，返回新的Refresh Token（推荐） <br><br>长期有效：原Refresh Token不变，仅更新Access Token（需配合安全策略）<br><br>示例响应</p>
+<p>Refresh Token策略：<br><br>
+单次使用：原Refresh Token失效，返回新的Refresh Token（推荐） <br><br>
+长期有效：原Refresh Token不变，仅更新Access Token（需配合安全策略）<br><br>
+示例响应</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;access_token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;new_access_token&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;expires_in&quot;</span><span class="punctuation">:</span> <span class="number">3600</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;refresh_token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;new_refresh_token&quot;</span><span class="punctuation">,</span> <span class="comment">// 可选</span></span><br><span class="line">  <span class="attr">&quot;token_type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Bearer&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>客户端更新Token</li>

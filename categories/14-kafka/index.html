@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3089,8 +3100,10 @@
 				</h2>
 				<div class="index-brief">
 					kafka消息丢失的场景主要在生产端，broker端，消费端
-生产端消息丢失producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
-解决办法：可以改成同步发生，ack&#x3D;all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息
+生产端消息丢失
+producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
+解决办法：可以改成同步发生，ack=all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息；
+br
 					...
 				</div>
 			</a>
@@ -3116,7 +3129,9 @@
 					08 kafka副本同步机制
 				</h2>
 				<div class="index-brief">
-					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
+					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。
+broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。
+每个partition的leader在收到producer提交的数据后，都需要向producer发
 					...
 				</div>
 			</a>
@@ -3169,13 +3184,14 @@ kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
 					01 kafka架构是怎样的
 				</h2>
 				<div class="index-brief">
-					kafka架构包含：
+					
+kafka架构包含：
 发送消息的生产者Producer
 消息存储接收的broker
 消息消费的一个Consumer
 实现消息的同步及选举zookeeper
 其中boker中的消息时分片存储的：即一个topic是以多个partition的形式的方式分布在多个broker上，且互为主从
-其中主从关系由z
+其中主从关系由
 					...
 				</div>
 			</a>

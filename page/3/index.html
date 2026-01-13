@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3083,13 +3094,51 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0312/mysql-data-skew.html">
+				<h2 class="index-title">
+					20 mysql如何解决数据倾斜
+				</h2>
+				<div class="index-brief">
+					mysql数据倾斜原因
+
+分库分表策略不合理
+热点数据集中
+空值及特殊值过多
+join关联查询时关联查询字段的值分布不均匀
+group by或聚合操作（例如：聚合字段的某些值占比过高（如性别字段中90%为男性））
+
+mysql数据倾斜解决方案
+
+优化分片策略
+方法：选择均匀分布的字段作为分片键（如哈
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-12</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0312/groupby-sql.html">
 				<h2 class="index-title">
 					19 分组查询语句有哪些
 				</h2>
 				<div class="index-brief">
-					窗口函数（Window Functions）适用场景：需在保留原始行数据的同时进行分组聚合（如计算每个分组内的排名、累计值等）
-12345SELECT    department_id,    salary,    SUM(salary) OVER (PARTITION BY department_
+					窗口函数（Window Functions）
+适用场景：需在保留原始行数据的同时进行分组聚合（如计算每个分组内的排名、累计值等）
+12345SELECT    department_id,    salary,    SUM(salary) OVER (PARTITION BY department
 					...
 				</div>
 			</a>
@@ -3115,7 +3164,8 @@
 					24 redis常用数据结构命令及代码实现
 				</h2>
 				<div class="index-brief">
-					string常用命令及代码操作123456789101112131415SET key value # 设置单个字段SETEX key seconds value # 设置键值及过期时间（秒）SETNX key value  # 原子操作 1：键不存在且设置成功。0：键已存在，未执行操作SET ke
+					string常用命令及代码操作
+123456789101112131415SET key value # 设置单个字段SETEX key seconds value # 设置键值及过期时间（秒）SETNX key value  # 原子操作 1：键不存在且设置成功。0：键已存在，未执行操作SET k
 					...
 				</div>
 			</a>
@@ -3178,7 +3228,11 @@
 				</h2>
 				<div class="index-brief">
 					刷新流程
-客户端发起请求当检测到Access Token过期（通过定时检查或API返回错误码），客户端向授权服务器的Token端点发送POST请求，需包含以下参数：12345678grant_type=refresh_tokenrefresh_token=xxx（已存储的Refresh Token）
+
+客户端发起请求
+当检测到Access Token过期（通过定时检查或API返回错误码），客户端向授权服务器的Token端点发送POST请求，需包含以下参数：
+
+12345678grant_type=refresh_tokenrefresh_token=xxx（已存储的Refresh To
 					...
 				</div>
 			</a>
@@ -3205,9 +3259,11 @@
 				</h2>
 				<div class="index-brief">
 					
+
 可以通过版本号使用乐观并发控制，以确保新版本不会被旧版本覆盖，由应用层来处理具体的冲突；
 
-另外对于写操作，一致性级别支持 quorum&#x2F;one&#x2F;all，默认为 quorum，即只有当大多数分片可用时才允许写操作。但即使大多数可用，也可能存在因为网络等原因导致写入副本失败，这样
+
+另外对于写操作，一致性级别支持 quorum/one/all，默认为 quorum，即只有当大多数分片可用时才允许写操作。但即使大多数可用，也可能存在因为网络等原因导致写入副本失败，这样该副本被认为故障
 					...
 				</div>
 			</a>
@@ -3234,9 +3290,11 @@
 				</h2>
 				<div class="index-brief">
 					
+
 删除和更新也都是写操作，但是 Elasticsearch 中的文档是不可变的，因此不能被删除或者改动以展示其变更；(根本原因是底层lucene的segment段文件不可更新删除)
 
-磁盘上的每个段都有一个相应的 .del 文件。当删除请求发送后，文档并没有真 的被删除，而是在 .del 文件中被标
+
+磁盘上的每个段都有一个相应的 .del 文件。当删除请求发送后，文档并没有真 的被删除，而是在 .del 文件中
 					...
 				</div>
 			</a>
@@ -3264,7 +3322,8 @@
 				<div class="index-brief">
 					es作为一个分布式的存储和检索系统，每个文档根据 _id 字段做路由分发被转发到对应的shard上。
 搜索执行阶段过程分俩个部分，我们称之为 Query Then Fetch
-query-查询阶段当一个search请求发出的时候，这个query会被广播到索引里面的每一个shard（主shard或副本
+query-查询阶段
+当一个search请求发出的时候，这个query会被广播到索引里面的每一个shard（主shard或副
 					...
 				</div>
 			</a>
@@ -3291,7 +3350,10 @@ query-查询阶段当一个search请求发出的时候，这个query会被广播
 				</h2>
 				<div class="index-brief">
 					
-索引文档过程1.客户端向Node 1 发送新建、索引或者删除请求。2.节点使用文档的 _id 确定文档属于分片 0 。请求会被转发到 Node 3，因为分片 0 的主分片目前被分配在 Node 3 上。3.Node 3 在主分片上面执行请求。如果成功了，它将请求并行转发到 Node 1 和 Nod
+索引文档过程
+1.客户端向Node 1 发送新建、索引或者删除请求。
+2.节点使用文档的 _id 确定文档属于分片 0 。请求会被转发到 Node 3，因为分片 0 的主分片目前被分配在 Node 3 上。
+3.Node 3 在主分片上面执行请求。如果成功了，它将请求并行转发到 Node 1 和 
 					...
 				</div>
 			</a>
@@ -3318,36 +3380,11 @@ query-查询阶段当一个search请求发出的时候，这个query会被广播
 				</h2>
 				<div class="index-brief">
 					
+
 对所有可以成为 Master 的节点（node.master: true）根据 nodeId 排序，每次选举每个节点都把自己所知道节点排一次序，然后选出第一个（第0位）节点，暂且认为它是 Master 节点。
 
-如果对某个节点的投票数达到一定的值（可以成为master节点数n&#x2F;2+1）并
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-07</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0307/es-deep-query-page.html">
-				<h2 class="index-title">
-					02 es深分页问题
-				</h2>
-				<div class="index-brief">
-					es查询时会根据from和to两个参数来查询数据，from 参数的值很大时（如 from&#x3D;10000 以上），ElasticSearch 需要跳过大量数据来获取指定页的内容，这种情况称为深度分页
-es数据是存储在多个分片（Shard）上的，每个分片本质上是一个独立的 Lucene 索引。分
+
+如果对某个节点的投票数达到一定的值（可以成为master节点数n/2+1）并且该节
 					...
 				</div>
 			</a>

@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3128,7 +3139,7 @@
 <div id="article-content">
 	<p>springboot的自动装配其实是他约定大于配置这一核心思想的具体体现</p>
 <p>例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；</p>
-<p>springboot的自动装配是依赖于java的spi机制来实现的，我们打开对应的jar后，可以看到在resources&#x2F;META-INF&#x2F;spring.factories文件可以看到对应的类路径，我们在启动spring容器时会根据的spring.factories里的依赖路径去加载对应的类，从而实现自动装配</p>
+<p>springboot的自动装配是依赖于java的spi机制来实现的，我们打开对应的jar后，可以看到在resources/META-INF/spring.factories文件可以看到对应的类路径，我们在启动spring容器时会根据的spring.factories里的依赖路径去加载对应的类，从而实现自动装配</p>
 
 </div>
 
@@ -3137,16 +3148,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/0120/interceptor-filter-different.html">
+              <a href="/2024/0120/solve-spring-cycle-depency.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  03 拦截器和过滤器的区别
+                  12 spring怎么解决循环依赖的？
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/0120/solve-spring-cycle-depency.html">
-                12 spring怎么解决循环依赖的？
+              <a href="/2024/0120/aop-jdk-cglib.html">
+                10 aop的实现默认是使用jdk动态代理还是cglib
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

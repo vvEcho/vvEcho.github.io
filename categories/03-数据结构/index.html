@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,8 +3099,10 @@
 					12 threadLocal的应用场景及问题
 				</h2>
 				<div class="index-brief">
-					场景1，用于保存用户信息例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。
-场景2，SimpleDateFormat线程不安全因为SimpleDateFormat不是线程安全的，所以
+					场景1，用于保存用户信息
+例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。
+场景2，SimpleDateFormat线程不安全
+因为SimpleDateFormat不是线程安全的，
 					...
 				</div>
 			</a>
@@ -3171,7 +3184,7 @@ HashMap的迭代顺序是随机的，LinkedHashMap的迭代顺序是插入顺序
 				</h2>
 				<div class="index-brief">
 					hashmap的扩容方式在jdk1.7和jdk1.8中不同,以下来分别说明
-在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75&#x3D;12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，
+在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75=12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，也就是32
 					...
 				</div>
 			</a>

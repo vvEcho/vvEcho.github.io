@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,8 +3099,11 @@
 					22 redission都提供了哪些类型的分布式锁
 				</h2>
 				<div class="index-brief">
-					1. 可重入锁（Reentrant Lock）功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。使用示例：
-12RLock loc
+					1. 可重入锁（Reentrant Lock）
+功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。
+实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。
+使用示例：
+12RLock 
 					...
 				</div>
 			</a>
@@ -3115,7 +3129,12 @@
 					21 除了redission你还知道哪些分布式锁的实现
 				</h2>
 				<div class="index-brief">
-					1. 基于数据库的锁(天然的分布式锁)原理：通过数据库表的唯一约束或乐观锁实现。唯一索引锁：插入一条代表锁的记录，利用唯一索引冲突阻止并发。乐观锁：通过版本号或时间戳字段实现 CAS（Compare and Swap）。缺点：性能低：高并发下数据库压力大。    无自动续期：需手动处理锁超时和死锁。
+					1. 基于数据库的锁(天然的分布式锁)
+原理：通过数据库表的唯一约束或乐观锁实现。
+唯一索引锁：插入一条代表锁的记录，利用唯一索引冲突阻止并发。
+乐观锁：通过版本号或时间戳字段实现 CAS（Compare and Swap）。
+缺点：性能低：高并发下数据库压力大。
+无自动续期：需手动处理锁超时和死锁
 					...
 				</div>
 			</a>

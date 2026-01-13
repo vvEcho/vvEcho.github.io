@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3136,8 +3147,14 @@
 <li>Hash表类型可以理解成一个Map集合，即Value是一个Map集合；常用指令hset map1 name zhangsan（添加一个元素）,批量添加（hmset map1 age 15 gender male）</li>
 <li>zset类型在set的基础上增加了一个值（这个值可以用来排序），可以把Zset看成是有序set；常用指令zadd zset1 1 zhangsan（增加一个排序score）</li>
 </ul>
-<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><p>string 用来缓存存储一些简单的数据，比如用户名，密码，token，session等；<br>hash键值对存储，hset user:1 name zhangsan age 18 gender male<br>list 存储一些需要按照顺序存储的数据，比如消息队列，日志，缓存等；<br>set 存储一些需要去重且无序的数据，比如用户访问过的页面，用户访问过的商品等（抽奖系统：SADD 添加参与者，SPOP 随机抽取中奖者；标签&#x2F;好友关系：存储用户标签，通过 SINTER 查找共同关注；去重统计：记录用户点赞、签到等唯一行为）；<br>sort set 元素关联分数，按分数排序；如游戏积分，排行榜</p>
-<h4 id="底层数据结构"><a href="#底层数据结构" class="headerlink" title="底层数据结构"></a>底层数据结构</h4><p>hash底层的数据结构是ziplist或hashtable，键值对个数超过512 会由ziplist转换为hashtable</p>
+<h4 id="使用场景">使用场景</h4>
+<p>string 用来缓存存储一些简单的数据，比如用户名，密码，token，session等；<br>
+hash键值对存储，hset user:1 name zhangsan age 18 gender male<br>
+list 存储一些需要按照顺序存储的数据，比如消息队列，日志，缓存等；<br>
+set 存储一些需要去重且无序的数据，比如用户访问过的页面，用户访问过的商品等（抽奖系统：SADD 添加参与者，SPOP 随机抽取中奖者；标签/好友关系：存储用户标签，通过 SINTER 查找共同关注；去重统计：记录用户点赞、签到等唯一行为）；<br>
+sort set 元素关联分数，按分数排序；如游戏积分，排行榜</p>
+<h4 id="底层数据结构">底层数据结构</h4>
+<p>hash底层的数据结构是ziplist或hashtable，键值对个数超过512 会由ziplist转换为hashtable</p>
 <p>set底层的数据结构是intset或hashtable，元素为整数且键值对个数小于512为intset，若超过或不符合则转换为hashtable</p>
 <p>zset底层数据结构为压缩列表ziplist或skiplist+dict(跳表+字典)，元素数量小于128且元素长度小于64；超过此阈值则转换为跳表+字典</p>
 <p>list的底层数据结构为压缩列表ziplist或快速列表quicklist,元素数量小于512且元素长度小于64用ziplist;超过此阈值则转换为quicklist,由多个ziplist节点组成的双向链表，可以平衡内存与性能</p>
@@ -3149,9 +3166,9 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/0120/redis-io.html">
+              <a href="/2024/0120/redis-rdb-aof.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  03 说说IO多路复用
+                  04 rdb和aof
               </a>
             
         </div>

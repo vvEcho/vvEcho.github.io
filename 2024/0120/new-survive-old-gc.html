@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,21 +3137,36 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>jdk1.7前堆主要分为：新生区，养老区，永久区<br>jdk1.8后堆主要分为：新生区，养老区，元空间</p>
+	<p>jdk1.7前堆主要分为：新生区，养老区，永久区<br>
+jdk1.8后堆主要分为：新生区，养老区，元空间</p>
 <ol>
-<li><p>对象优先在 Eden 区分配<br>​ 一般情况下，对象都优先在新生代的 Eden 区中分配，当 Eden 内存不足时将会发起一次 Minor GC。</p>
+<li>
+<p>对象优先在 Eden 区分配<br>
+​ 一般情况下，对象都优先在新生代的 Eden 区中分配，当 Eden 内存不足时将会发起一次 Minor GC。</p>
 </li>
-<li><p>大对象直接进入老年代<br>​所谓大对象就是需要大量连续空间的Java对象，最典型的大对象就是那种很长的字符串及数组。虚拟机提供了一个-XX:PretenureSizeThreshold参数，令大于这些设置值的对象直接在老年代中分配。这样做的目的是在避免Eden区及两个Survivor区之间发生大量的内存拷贝</p>
+<li>
+<p>大对象直接进入老年代<br>
+​所谓大对象就是需要大量连续空间的Java对象，最典型的大对象就是那种很长的字符串及数组。虚拟机提供了一个-XX:PretenureSizeThreshold参数，令大于这些设置值的对象直接在老年代中分配。这样做的目的是在避免Eden区及两个Survivor区之间发生大量的内存拷贝</p>
 </li>
-<li><p>长期存活对象进入老年代<br>​ 对于分代收集来说，判断对象进入老年代的依凭是对象的年龄，在对象头中会有标记对象年龄的计数器，对象每在 Survivor 区中熬过一次垃圾收集则年龄加一，当年龄达到阈值(默认为 15)时会晋升如老年代中，可以通过参数 -XX：MaxTenuringThreshold 来设置年龄阈值。</p>
+<li>
+<p>长期存活对象进入老年代<br>
+​ 对于分代收集来说，判断对象进入老年代的依凭是对象的年龄，在对象头中会有标记对象年龄的计数器，对象每在 Survivor 区中熬过一次垃圾收集则年龄加一，当年龄达到阈值(默认为 15)时会晋升如老年代中，可以通过参数 -XX：MaxTenuringThreshold 来设置年龄阈值。</p>
 </li>
-<li><p>永久区<br>别名Non-Heap（非堆）、永久代（Permanent Generation）、持久代（PermGen），各个线程共享的内存区域，它用于存储已被虚拟机加载的类信息、常量、静态变量、以及编译器编译后的代码等数据（jdk1.7的HotSpot中，已经把原本放在方法区中的静态变量、字符串常量池等移到堆内存中）。</p>
+<li>
+<p>永久区<br>
+别名Non-Heap（非堆）、永久代（Permanent Generation）、持久代（PermGen），各个线程共享的内存区域，它用于存储已被虚拟机加载的类信息、常量、静态变量、以及编译器编译后的代码等数据（jdk1.7的HotSpot中，已经把原本放在方法区中的静态变量、字符串常量池等移到堆内存中）。</p>
 </li>
-<li><p>永久代<br>上面说到，jdk1.8 中，已经不存在永久代（方法区），替代它的一块空间叫做 “ 元空间 ”，和永久代类似，都是 JVM 规范对方法区的实现，但是元空间并不在虚拟机中，而是使用本地内存，元空间的大小仅受本地内存限制，但可以通过 -XX:MetaspaceSize 和 -XX:MaxMetaspaceSize 来指定元空间的大小。</p>
+<li>
+<p>永久代<br>
+上面说到，jdk1.8 中，已经不存在永久代（方法区），替代它的一块空间叫做 “ 元空间 ”，和永久代类似，都是 JVM 规范对方法区的实现，但是元空间并不在虚拟机中，而是使用本地内存，元空间的大小仅受本地内存限制，但可以通过 -XX:MetaspaceSize 和 -XX:MaxMetaspaceSize 来指定元空间的大小。</p>
 </li>
-<li><p>动态对象年龄判定<br>​ 为了适应内存实际情况，如果在 Survivor 中相同年龄所有对象大小的总和大于 Survivor 的一半，则大于或等于该年龄的对象可以直接进入老年代，无需达到阈值要求。</p>
+<li>
+<p>动态对象年龄判定<br>
+​ 为了适应内存实际情况，如果在 Survivor 中相同年龄所有对象大小的总和大于 Survivor 的一半，则大于或等于该年龄的对象可以直接进入老年代，无需达到阈值要求。</p>
 </li>
-<li><p>空间分配担保<br>​在发生Minor GC之前，虚拟机必须先检查老年代最大可用的连续空间是否大于新生代所有对象总空间，如果这个条件成立，那这一次Minor GC可以确保是安全的。如果不成立，则虚拟机会先查看- XX：HandlePromotionFailure参数的设置值是否允许担保失败；如果允许，那会继续检查老年代最大可用的连续空间是否大于历次晋升到老年代对象的平均大小，如果大于，将尝试进行一次Minor GC，尽管这次Minor GC是有风险的；如果小于，或者-XX：HandlePromotionFailure设置不允许冒险，那这时就要改为进行一次Full GC。</p>
+<li>
+<p>空间分配担保<br>
+​在发生Minor GC之前，虚拟机必须先检查老年代最大可用的连续空间是否大于新生代所有对象总空间，如果这个条件成立，那这一次Minor GC可以确保是安全的。如果不成立，则虚拟机会先查看- XX：HandlePromotionFailure参数的设置值是否允许担保失败；如果允许，那会继续检查老年代最大可用的连续空间是否大于历次晋升到老年代对象的平均大小，如果大于，将尝试进行一次Minor GC，尽管这次Minor GC是有风险的；如果小于，或者-XX：HandlePromotionFailure设置不允许冒险，那这时就要改为进行一次Full GC。</p>
 </li>
 </ol>
 

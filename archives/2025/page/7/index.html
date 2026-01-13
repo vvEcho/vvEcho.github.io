@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3114,8 +3125,11 @@
 					17 为什么不遵守最左匹配原则索引会失效
 				</h2>
 				<div class="index-brief">
-					B+树结构依赖于最左列的值作为比较起点MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下第一层：按 A 列排序；第二层：在 A 相同的情况下按 B 排序；第三层：在 A 和 B 相同的情况下按 C 排序
-A.
+					B+树结构依赖于最左列的值作为比较起点
+MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下
+第一层：按 A 列排序；
+第二层：在 A 相同的情况下按 B 排序；
+第三层：在 A 和 B 相同的情况下按 C 排
 					...
 				</div>
 			</a>
@@ -3170,7 +3184,8 @@ Atom
 				<div class="index-brief">
 					MySQL 主从复制的数据物理格式主要由两部分构成：
 主库的二进制日志（Binlog）和从库的中继日志（Relay Log），其底层存储与 MySQL 的存储引擎（如 InnoDB）密切相关
-主库的二进制日志物理格式Binlog 是主库记录所有数据修改操作的二进制文件，其内容按事件（Event）存储
+主库的二进制日志物理格式
+Binlog 是主库记录所有数据修改操作的二进制文件，其内容按事件（Event）存
 					...
 				</div>
 			</a>
@@ -3196,8 +3211,10 @@ Atom
 					12 threadLocal的应用场景及问题
 				</h2>
 				<div class="index-brief">
-					场景1，用于保存用户信息例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。
-场景2，SimpleDateFormat线程不安全因为SimpleDateFormat不是线程安全的，所以
+					场景1，用于保存用户信息
+例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。
+场景2，SimpleDateFormat线程不安全
+因为SimpleDateFormat不是线程安全的，
 					...
 				</div>
 			</a>

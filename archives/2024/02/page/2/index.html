@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,8 +3099,10 @@
 					15 redis如何做分页查询
 				</h2>
 				<div class="index-brief">
-					1.使用redis的list（列表）数据结构将需要分页展示的数据的id或者主键作为list中的元素，然后根据用户的分页请求，使用LRANGE命令来获取指定范围的元素，再根据元素来获取具体的数据
-1234567891011@Servicepublic class RedisPaginationServ
+					1.使用redis的list（列表）数据结构
+将需要分页展示的数据的id或者主键作为list中的元素，然后根据用户的分页请求，
+使用LRANGE命令来获取指定范围的元素，再根据元素来获取具体的数据
+1234567891011@Servicepublic class RedisPaginationSe
 					...
 				</div>
 			</a>
@@ -3144,7 +3157,9 @@
 				<div class="index-brief">
 					groupby 后语句有索引，直接根据索引扫描来分组，且分完组后无须排序
 groupby 后语句无索引，会全表扫描，扫描出来的数据分组完后组成一个临时表，然后对这个临时表的数据进行排序
-针对group by查询的优化建议：A.优先为 GROUP BY 字段创建索引     单字段分组：直接为分组字段
+针对group by查询的优化建议：
+A.优先为 GROUP BY 字段创建索引 
+单字段分组：直接为分组字段建索
 					...
 				</div>
 			</a>
@@ -3200,8 +3215,10 @@ groupby 后语句无索引，会全表扫描，扫描出来的数据分组完后
 					14 如何监听key过期时间并触发后置逻辑
 				</h2>
 				<div class="index-brief">
-					1. 修改redisp配置，开启过期事件监听1notify-keyspace-events Ex  # 仅监听键过期事件（Ex=Expired events）
-2. springboot配置监听器12345678910111213141516171819202122232425262728@Conf
+					1. 修改redisp配置，开启过期事件监听
+1notify-keyspace-events Ex  # 仅监听键过期事件（Ex=Expired events）
+2. springboot配置监听器
+12345678910111213141516171819202122232425262728@Co
 					...
 				</div>
 			</a>

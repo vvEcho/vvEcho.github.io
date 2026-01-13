@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3118,8 +3129,10 @@
 					14 如何监听key过期时间并触发后置逻辑
 				</h2>
 				<div class="index-brief">
-					1. 修改redisp配置，开启过期事件监听1notify-keyspace-events Ex  # 仅监听键过期事件（Ex=Expired events）
-2. springboot配置监听器12345678910111213141516171819202122232425262728@Conf
+					1. 修改redisp配置，开启过期事件监听
+1notify-keyspace-events Ex  # 仅监听键过期事件（Ex=Expired events）
+2. springboot配置监听器
+12345678910111213141516171819202122232425262728@Co
 					...
 				</div>
 			</a>
@@ -3146,7 +3159,8 @@
 				</h2>
 				<div class="index-brief">
 					
-聚簇索引:是一种特殊的索引类型，它将数据行的物理存储位置与索引的逻辑顺序相匹配。这意味着，当聚簇索引的叶节点被访问时，它同时也包含了该行的数据。聚簇索引的这种设计可以减少数据访问的磁盘I&#x2F;O操作，因为数据行与索引紧密地关联在一起，通常位于同一数据页中。聚簇索引的一个关键特点是，每个表只能
+
+聚簇索引:是一种特殊的索引类型，它将数据行的物理存储位置与索引的逻辑顺序相匹配。这意味着，当聚簇索引的叶节点被访问时，它同时也包含了该行的数据。聚簇索引的这种设计可以减少数据访问的磁盘I/O操作，因为数据行与索引紧密地关联在一起，通常位于同一数据页中。聚簇索引的一个关键特点是，每个表只能有一个聚
 					...
 				</div>
 			</a>
@@ -3174,7 +3188,8 @@
 				<div class="index-brief">
 					Vue的生命周期是指Vue实例对象从创建之初到销毁的过程，这个过程包括多个阶段，每个阶段都有对应的钩子函数，用于控制组件的数据管理和DOM渲染。Vue的生命周期可以分为以下几个阶段：
 
-beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得DO
+
+beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得D
 					...
 				</div>
 			</a>
@@ -3201,13 +3216,15 @@ beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数�
 				</h2>
 				<div class="index-brief">
 					大key可能存在的场景
+
 配送范围特别大的门店
 促销活动特别多的门店、商家等
 高频用户下的订单列表
 
 大key会导致什么问题
+
 如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
-如果是hash,list,set,zset等类型key 删除key会严重阻
+如果是hash,list,set,zset等类型key 删除key会严
 					...
 				</div>
 			</a>

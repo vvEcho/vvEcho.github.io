@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,7 +3137,8 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="为什么会出现循环依赖"><a href="#为什么会出现循环依赖" class="headerlink" title="为什么会出现循环依赖"></a>为什么会出现循环依赖</h4><p>其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；</p>
+	<h4 id="为什么会出现循环依赖">为什么会出现循环依赖</h4>
+<p>其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；</p>
 <p>这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被实例化就要去实例化B,这时候的B是一个半成品的BeanDefinition；</p>
 <p>然后接着B的属性注入，发现又依赖了A这个时候注入的是半成品的A;然后就完成了B的属性注入，接着实例化了B对象</p>
 <p>紧接着再注入A中，A类再完成属性注入，实例化出A对象；其实Spring解决循环依赖，用了三级缓存；</p>
@@ -3135,11 +3147,13 @@
 <li>二级缓存（earlySingletonObjects）存放已经经过实例化或者经过aop的半成品的bean</li>
 <li>三级缓存（singletonFactories）存放的是一个工厂，主要用于将Bean提前aop;</li>
 </ul>
-<h4 id="没有三级缓存可以解决循环依赖吗？"><a href="#没有三级缓存可以解决循环依赖吗？" class="headerlink" title="没有三级缓存可以解决循环依赖吗？"></a>没有三级缓存可以解决循环依赖吗？</h4><p>组合一：一级缓存 + 二级缓存</p>
+<h4 id="没有三级缓存可以解决循环依赖吗？">没有三级缓存可以解决循环依赖吗？</h4>
+<p>组合一：一级缓存 + 二级缓存</p>
 <p>singletonObjects + earlySingletonObjects 理论可以解决依赖注入，也可以解决代理，但需要每次加入二级缓存都要是代理对象，如果没有代理就完全没有必要，同时也不符合 Spring 对 Bean 生命周期的定义。(对象都应该在创建之后再进行动态代理而不是单纯的实例化以后就急着进行代理，如果循环依赖就是没办法的事)</p>
 <p>组合二：一级缓存 + 三级缓存</p>
 <p>singletonObjects + singletonFactories 可以解决依赖注入的问题，但是没法解决代理的问题，若要进行代理从 ObjectFactory 中获取对象实例进行代理，但是这样每次获取对象都不是同一个</p>
-<h4 id="解决循环依赖的流程"><a href="#解决循环依赖的流程" class="headerlink" title="解决循环依赖的流程"></a>解决循环依赖的流程</h4><p>创建A-&gt;实例化A</p>
+<h4 id="解决循环依赖的流程">解决循环依赖的流程</h4>
+<p>创建A-&gt;实例化A</p>
 
 </div>
 
@@ -3148,16 +3162,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/0120/auto-assemble-principle.html">
+              <a href="/2024/0120/interceptor-filter-different.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  01 自动装配原理？
+                  03 拦截器和过滤器的区别
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/0120/aop-jdk-cglib.html">
-                10 aop的实现默认是使用jdk动态代理还是cglib
+              <a href="/2024/0120/auto-assemble-principle.html">
+                01 自动装配原理？
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

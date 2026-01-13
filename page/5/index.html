@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3085,6 +3096,24 @@
 		 <div class="index-li">
 			<a href="/2025/0306/undefined.html">
 				<h2 class="index-title">
+					05 令牌桶限流算法
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/undefined.html">
+				<h2 class="index-title">
 					04 漏斗限流算法
 				</h2>
 				<div class="index-brief">
@@ -3152,6 +3181,7 @@
 
 
 
+
 单Master
 低
 最高
@@ -3174,7 +3204,6 @@
 高
 中
 强一致性场景（如支付交易）
-
 
 					...
 				</div>
@@ -3201,13 +3230,14 @@
 					01 kafka架构是怎样的
 				</h2>
 				<div class="index-brief">
-					kafka架构包含：
+					
+kafka架构包含：
 发送消息的生产者Producer
 消息存储接收的broker
 消息消费的一个Consumer
 实现消息的同步及选举zookeeper
 其中boker中的消息时分片存储的：即一个topic是以多个partition的形式的方式分布在多个broker上，且互为主从
-其中主从关系由z
+其中主从关系由
 					...
 				</div>
 			</a>
@@ -3235,8 +3265,9 @@
 				<div class="index-brief">
 					RocketMQ默认提供18个固定延迟级别，对应不同时间间隔（如1s、5s、10s、1h、2h等）。
 每个级别对应一个内部队列，消息根据延迟级别暂存至对应的队列中，到期后由Broker重新投递到目标Topic
-延迟消息的实现原理：生产者生产消息时，设置延迟级别；
-broker根据延迟级别，将消息暂存
+延迟消息的实现原理：
+生产者生产消息时，设置延迟级别；
+broker根据延迟级别，将消息暂
 					...
 				</div>
 			</a>
@@ -3264,8 +3295,9 @@ broker根据延迟级别，将消息暂存
 				<div class="index-brief">
 					脑裂问题的本质是网络分区或主节点假故障导致集群中出现多个主节点，从而引发数据冲突。
 RedLock通过以下机制规避此类风险：
-1.避免单点依赖，降低脑裂触发概率传统Redis主从架构中，哨兵可能因网络抖动误判主节点失效，触发主从切换，导致原主节点和新主节点并存（脑裂）。
-而RedLock不依赖单一主
+1.避免单点依赖，降低脑裂触发概率
+传统Redis主从架构中，哨兵可能因网络抖动误判主节点失效，触发主从切换，导致原主节点和新主节点并存（脑裂）。
+而RedLock不依赖单一
 					...
 				</div>
 			</a>
@@ -3291,8 +3323,11 @@ RedLock通过以下机制规避此类风险：
 					22 redission都提供了哪些类型的分布式锁
 				</h2>
 				<div class="index-brief">
-					1. 可重入锁（Reentrant Lock）功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。使用示例：
-12RLock loc
+					1. 可重入锁（Reentrant Lock）
+功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。
+实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。
+使用示例：
+12RLock 
 					...
 				</div>
 			</a>
@@ -3318,35 +3353,12 @@ RedLock通过以下机制规避此类风险：
 					21 除了redission你还知道哪些分布式锁的实现
 				</h2>
 				<div class="index-brief">
-					1. 基于数据库的锁(天然的分布式锁)原理：通过数据库表的唯一约束或乐观锁实现。唯一索引锁：插入一条代表锁的记录，利用唯一索引冲突阻止并发。乐观锁：通过版本号或时间戳字段实现 CAS（Compare and Swap）。缺点：性能低：高并发下数据库压力大。    无自动续期：需手动处理锁超时和死锁。
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0305/redis-jump-table.html">
-				<h2 class="index-title">
-					20 redis为何使用跳表而不是B+树
-				</h2>
-				<div class="index-brief">
-					首先二者的时间复杂度都是O(logN)，选择跳表还是B+树主要是考虑的内存和磁盘硬件特性。
-对于Redis使用跳表来讲，其在“写操作”时相较于B+树的“写操作”，无需考虑自旋平衡的问题，也就是跳表更容易实现写入操作；
-再看“读操作”，Redis是基于内存的，跳表比B+树多读那几下的性能开销微乎其微。
+					1. 基于数据库的锁(天然的分布式锁)
+原理：通过数据库表的唯一约束或乐观锁实现。
+唯一索引锁：插入一条代表锁的记录，利用唯一索引冲突阻止并发。
+乐观锁：通过版本号或时间戳字段实现 CAS（Compare and Swap）。
+缺点：性能低：高并发下数据库压力大。
+无自动续期：需手动处理锁超时和死锁
 					...
 				</div>
 			</a>

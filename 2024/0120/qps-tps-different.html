@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3130,18 +3141,35 @@
 <li>定义</li>
 </ol>
 <ul>
-<li><p>QPS（Queries Per Second）：<br>表示系统每秒处理的查询请求数。<br>通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。<br>例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。</p>
+<li>
+<p>QPS（Queries Per Second）：<br>
+表示系统每秒处理的查询请求数。<br>
+通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。<br>
+例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。</p>
 </li>
-<li><p>TPS（Transactions Per Second）：<br>表示系统每秒处理的事务数。<br>通常用于衡量系统的写操作或完整业务操作能力，例如数据库事务、支付交易等。<br>例如：一个支付系统每秒可以处理 500 笔交易，其 TPS 就是 500。</p>
+<li>
+<p>TPS（Transactions Per Second）：<br>
+表示系统每秒处理的事务数。<br>
+通常用于衡量系统的写操作或完整业务操作能力，例如数据库事务、支付交易等。<br>
+例如：一个支付系统每秒可以处理 500 笔交易，其 TPS 就是 500。</p>
 </li>
 </ul>
 <ol start="2">
-<li><p>区别<br>QPS 更侧重于请求的吞吐量，通常用于衡量系统的查询能力。<br>TPS 更侧重于事务的完整性，通常用于衡量系统的业务处理能力</p>
+<li>
+<p>区别<br>
+QPS 更侧重于请求的吞吐量，通常用于衡量系统的查询能力。<br>
+TPS 更侧重于事务的完整性，通常用于衡量系统的业务处理能力</p>
 </li>
-<li><p>联系<br>QPS 和 TPS 的关系：<br>如果一个事务包含多个查询请求，那么 TPS 可能会小于 QPS。<br>例如：一个支付事务可能包含查询余额、扣款、记录日志等多个操作，此时 TPS 是 1，而 QPS 可能是 3。</p>
+<li>
+<p>联系<br>
+QPS 和 TPS 的关系：<br>
+如果一个事务包含多个查询请求，那么 TPS 可能会小于 QPS。<br>
+例如：一个支付事务可能包含查询余额、扣款、记录日志等多个操作，此时 TPS 是 1，而 QPS 可能是 3。</p>
 </li>
 </ol>
-<p>性能优化的侧重点：<br>提高 QPS 通常需要优化查询性能（如索引、缓存等）。<br>提高 TPS 通常需要优化事务处理能力（如锁机制、分布式事务等）</p>
+<p>性能优化的侧重点：<br>
+提高 QPS 通常需要优化查询性能（如索引、缓存等）。<br>
+提高 TPS 通常需要优化事务处理能力（如锁机制、分布式事务等）</p>
 
 </div>
 

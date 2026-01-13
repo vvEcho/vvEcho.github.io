@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,33 +3137,38 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：</p>
+	<p>BIO、NIO、AIO 是Java中处理I/O操作的不同方式，它们的区别如下：</p>
 <ol>
-<li>BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发请求时，性能较差。</li>
+<li>BIO（Blocking I/O）：阻塞式I/O，即在执行I/O操作时，当前线程会被阻塞，直到I/O操作完成。这种方式适用于简单的I/O操作，但当有大量的并发请求时，性能较差。</li>
 </ol>
 <p>核心机制：</p>
-<p>每个连接对应一个独立线程，线程在I&#x2F;O操作期间被完全阻塞，直到数据就绪或操作完成 1 3。<br>典型实现如ServerSocket和Socket，通过accept()和read()方法阻塞等待客户端请求</p>
+<p>每个连接对应一个独立线程，线程在I/O操作期间被完全阻塞，直到数据就绪或操作完成 1 3。<br>
+典型实现如ServerSocket和Socket，通过accept()和read()方法阻塞等待客户端请求</p>
 <p>示例代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BioExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;input.txt&quot;</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">data</span> <span class="operator">=</span> fis.read();</span><br><span class="line">        <span class="keyword">while</span> (data != -<span class="number">1</span>) &#123;</span><br><span class="line">            System.out.print((<span class="type">char</span>) data);</span><br><span class="line">            data = fis.read();</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，我们使用<code>FileInputStream</code>进行文件读取，由于使用了阻塞式I&#x2F;O，所以在读取文件时，当前线程会被阻塞，直到文件读取完成。</p>
+<p>在这个例子中，我们使用<code>FileInputStream</code>进行文件读取，由于使用了阻塞式I/O，所以在读取文件时，当前线程会被阻塞，直到文件读取完成。</p>
 <ol start="2">
-<li>NIO（Non-blocking I&#x2F;O）：非阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，不会阻塞当前线程，而是通过回调函数或轮询的方式检查I&#x2F;O操作是否完成。这种方式适用于高并发的场景，性能较好。</li>
+<li>NIO（Non-blocking I/O）：非阻塞式I/O，即在执行I/O操作时，不会阻塞当前线程，而是通过回调函数或轮询的方式检查I/O操作是否完成。这种方式适用于高并发的场景，性能较好。</li>
 </ol>
 <p>核心机制：</p>
-<p>基于多路复用器（Selector），单个线程可监听多个通道（Channel）的就绪事件（如读&#x2F;写），通过轮询实现非阻塞 2 4。<br>使用Buffer和Channel替代传统流式I&#x2F;O，支持零拷贝技术提升性能</p>
+<p>基于多路复用器（Selector），单个线程可监听多个通道（Channel）的就绪事件（如读/写），通过轮询实现非阻塞 2 4。<br>
+使用Buffer和Channel替代传统流式I/O，支持零拷贝技术提升性能</p>
 <p>示例代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.nio.*;</span><br><span class="line"><span class="keyword">import</span> java.nio.channels.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">NioExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">Selector</span> <span class="variable">selector</span> <span class="operator">=</span> Selector.open();</span><br><span class="line">        <span class="type">ServerSocketChannel</span> <span class="variable">serverSocketChannel</span> <span class="operator">=</span> ServerSocketChannel.open();</span><br><span class="line">        serverSocketChannel.configureBlocking(<span class="literal">false</span>);</span><br><span class="line">        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            selector.select();</span><br><span class="line">            Set&lt;SelectionKey&gt; selectedKeys = selector.selectedKeys();</span><br><span class="line">            Iterator&lt;SelectionKey&gt; iterator = selectedKeys.iterator();</span><br><span class="line">            <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">                <span class="type">SelectionKey</span> <span class="variable">key</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">                <span class="keyword">if</span> (key.isAcceptable()) &#123;</span><br><span class="line">                    <span class="comment">// 处理接受连接的逻辑</span></span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key.isReadable()) &#123;</span><br><span class="line">                    <span class="comment">// 处理读取数据的逻辑</span></span><br><span class="line">                &#125;</span><br><span class="line">                iterator.remove();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，我们使用<code>Selector</code>和<code>ServerSocketChannel</code>进行非阻塞式文件读取，通过轮询的方式检查文件读取是否完成。</p>
 <ol start="3">
-<li>AIO（Asynchronous I&#x2F;O）：异步I&#x2F;O，由操作系统内核来完成I&#x2F;O操作，减少线程切换开销，提高性能；线程完全非阻塞，线程资源利用率极高，适合海量并发。</li>
+<li>AIO（Asynchronous I/O）：异步I/O，由操作系统内核来完成I/O操作，减少线程切换开销，提高性能；线程完全非阻塞，线程资源利用率极高，适合海量并发。</li>
 </ol>
 <p>核心机制:</p>
-<p>基于异步回调或事件驱动，由操作系统内核完成I&#x2F;O操作后通知应用程序，无需线程主动等待<br>如AsynchronousSocketChannel和CompletionHandler，操作发起后立即返回，内核完成读写后通过回调通知结果</p>
+<p>基于异步回调或事件驱动，由操作系统内核完成I/O操作后通知应用程序，无需线程主动等待<br>
+如AsynchronousSocketChannel和CompletionHandler，操作发起后立即返回，内核完成读写后通过回调通知结果</p>
 <p>示例代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.nio.*;</span><br><span class="line"><span class="keyword">import</span> java.nio.channels.*;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AioExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, InterruptedException &#123;</span><br><span class="line">        <span class="type">AsynchronousFileChannel</span> <span class="variable">fileChannel</span> <span class="operator">=</span> AsynchronousFileChannel.open(Paths.get(<span class="string">&quot;input.txt&quot;</span>), StandardOpenOption.READ);</span><br><span class="line">        <span class="type">ByteBuffer</span> <span class="variable">buffer</span> <span class="operator">=</span> ByteBuffer.allocate(<span class="number">1024</span>);</span><br><span class="line">        <span class="type">long</span> <span class="variable">position</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> fileChannel.size();</span><br><span class="line"></span><br><span class="line">        Future&lt;Integer&gt; operation = fileChannel.read(buffer, position);</span><br><span class="line">        <span class="keyword">while</span> (!operation.isDone()) &#123;</span><br><span class="line">            <span class="comment">// 可以执行其他任务，不会被阻塞</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">bytesRead</span> <span class="operator">=</span> operation.get(); <span class="comment">// 获取实际读取的字节数</span></span><br><span class="line">        buffer.flip();</span><br><span class="line">        <span class="keyword">while</span> (buffer.hasRemaining()) &#123;</span><br><span class="line">            System.out.print((<span class="type">char</span>) buffer.get());</span><br><span class="line">        &#125;</span><br><span class="line">        fileChannel.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，我们使用<code>AsynchronousFileChannel</code>进行异步文件读取，通过回调函数通知文件读取完成。</p>
 <blockquote>
-<p>总结：BIO-阻塞式io,通俗理解去银行取钱,银行只开了一个窗口得一个一个来取【线程阻塞，资源消耗大】<br>NIO-非阻塞式io,通俗理解去银行取钱,取完号后可以自由活动，但是得定期看看电子大屏看是否轮到自己，当窗口准备好时，用户需自行前往办理（数据拷贝仍需阻塞等待）【多路复用，主动轮询就绪事件】<br>AIO-异步非阻塞io,通俗理解你要取钱,但是你没有时间自己去取，你向银行提交申请后，银行派人把钱给你送来【内核完成所有操作并主动回调，用户全程无感】</p>
+<p>总结：BIO-阻塞式io,通俗理解去银行取钱,银行只开了一个窗口得一个一个来取【线程阻塞，资源消耗大】<br>
+NIO-非阻塞式io,通俗理解去银行取钱,取完号后可以自由活动，但是得定期看看电子大屏看是否轮到自己，当窗口准备好时，用户需自行前往办理（数据拷贝仍需阻塞等待）【多路复用，主动轮询就绪事件】<br>
+AIO-异步非阻塞io,通俗理解你要取钱,但是你没有时间自己去取，你向银行提交申请后，银行派人把钱给你送来【内核完成所有操作并主动回调，用户全程无感】</p>
 </blockquote>
 
 </div>

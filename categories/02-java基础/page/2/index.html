@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,9 +3099,12 @@
 					12 BIO,NIO,AIO的区别
 				</h2>
 				<div class="index-brief">
-					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
+					BIO、NIO、AIO 是Java中处理I/O操作的不同方式，它们的区别如下：
 
-BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
+BIO（Blocking I/O）：阻塞式I/O，即在执行I/O操作时，当前线程会被阻塞，直到I/O操作完成。这种方式适用于简单的I/O操作，但当有大量的并发请求时，性能较差。
+
+核心机制：
+每个连接对应一个独立线程，
 					...
 				</div>
 			</a>
@@ -3120,9 +3134,14 @@ BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时�
 定义
 
 
-QPS（Queries Per Second）：表示系统每秒处理的查询请求数。通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
 
-TPS（Transactions Per Second）：表示系统
+QPS（Queries Per Second）：
+表示系统每秒处理的查询请求数。
+通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。
+例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
+
+
+TPS（Transactions Per Second）
 					...
 				</div>
 			</a>
@@ -3208,13 +3227,21 @@ TPS（Transactions Per Second）：表示系统
 				</h2>
 				<div class="index-brief">
 					
-强引用强引用一般指我们new的对象存在的引用
 
-软引用软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
+强引用
+强引用一般指我们new的对象存在的引用
 
-弱引用弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
 
-虚引用虚引用，是一种形同虚设的引用，主要用来跟踪对象被
+软引用
+软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
+
+
+弱引用
+弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
+
+
+虚引用
+虚引用，是一种形同虚设的引用，主
 					...
 				</div>
 			</a>

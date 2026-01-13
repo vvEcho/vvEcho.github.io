@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3127,11 +3138,17 @@
 <!-- content -->
 <div id="article-content">
 	<ol>
-<li><p>extends &amp; super<br>extends是继承的意思用在子类继承父类，可以理解为一个关键字，而super是子类构造方法继承父类构造方法的一个方法；还有在泛型的应用中，他们针对泛型的边界问题代表的含义完全相反，extends T表示泛型的上边界是T,super T代表泛型的下边界是T;</p>
+<li>
+<p>extends &amp; super<br>
+extends是继承的意思用在子类继承父类，可以理解为一个关键字，而super是子类构造方法继承父类构造方法的一个方法；还有在泛型的应用中，他们针对泛型的边界问题代表的含义完全相反，extends T表示泛型的上边界是T,super T代表泛型的下边界是T;</p>
 </li>
-<li><p>类型擦除<br>Java中的泛型实现基于类型擦除，这意味着在编译后泛型的具体类型信息被擦除，只保留原始类型。这种机制限制了泛型的协变性，因为运行时系统无法区分具体类型</p>
+<li>
+<p>类型擦除<br>
+Java中的泛型实现基于类型擦除，这意味着在编译后泛型的具体类型信息被擦除，只保留原始类型。这种机制限制了泛型的协变性，因为运行时系统无法区分具体类型</p>
 </li>
-<li><p>边界问题<br>通过使用通配符，可以在不改变泛型类型结构的前提下，实现一定程度的协变和逆变。例如，List&lt;? extends Fruit&gt;可以接收任何Fruit子类的列表，而List&lt;? super Apple&gt;可以接收Apple及其任何父类的列表</p>
+<li>
+<p>边界问题<br>
+通过使用通配符，可以在不改变泛型类型结构的前提下，实现一定程度的协变和逆变。例如，List&lt;? extends Fruit&gt;可以接收任何Fruit子类的列表，而List&lt;? super Apple&gt;可以接收Apple及其任何父类的列表</p>
 </li>
 </ol>
 

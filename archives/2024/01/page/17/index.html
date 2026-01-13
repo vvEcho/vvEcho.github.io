@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,7 +3099,11 @@
 					11 简述一个类的创建过程？
 				</h2>
 				<div class="index-brief">
-					1.首先jvm虚拟机在方法区加载检查这个类是否被加载了？如果已经被加载了，直接就创建对象2.没被加载过，就开始用类加载器加载类信息，加载的过程中用到的是双亲委派机制3.然后，加载了类信息后，虚拟机开始为对象分配内存4.内存分配完后，虚拟机需要将分配好的内存的空间初始化为零，不包括对象头5.初始化类，
+					1.首先jvm虚拟机在方法区加载检查这个类是否被加载了？如果已经被加载了，直接就创建对象
+2.没被加载过，就开始用类加载器加载类信息，加载的过程中用到的是双亲委派机制
+3.然后，加载了类信息后，虚拟机开始为对象分配内存
+4.内存分配完后，虚拟机需要将分配好的内存的空间初始化为零，不包括对象头
+5.初
 					...
 				</div>
 			</a>
@@ -3116,7 +3131,8 @@
 				<div class="index-brief">
 					首先判断该类是否已经被加载，当一个类加载器收到了类加载的请求的时候，他不会直接去加载指定的类，而是把这个请求委托给自己的父加载器去加载。
 只有父加载器无法加载这个类的时候，才会由当前这个加载器来负责类的加载
-Java中提供如下四种类型的加载器，每一种加载器都有指定的加载对象，具体如下Bootstra
+Java中提供如下四种类型的加载器，每一种加载器都有指定的加载对象，具体如下
+Bootstr
 					...
 				</div>
 			</a>
@@ -3142,11 +3158,16 @@ Java中提供如下四种类型的加载器，每一种加载器都有指定的�
 					13 谈谈新生代，幸存区，老年代对应的垃圾回收是怎样的(待完善)
 				</h2>
 				<div class="index-brief">
-					jdk1.7前堆主要分为：新生区，养老区，永久区jdk1.8后堆主要分为：新生区，养老区，元空间
+					jdk1.7前堆主要分为：新生区，养老区，永久区
+jdk1.8后堆主要分为：新生区，养老区，元空间
 
-对象优先在 Eden 区分配​ 一般情况下，对象都优先在新生代的 Eden 区中分配，当 Eden 内存不足时将会发起一次 Minor GC。
 
-大对象直接进入老年代​所谓大对象就是需要大量连续空间的
+对象优先在 Eden 区分配
+​ 一般情况下，对象都优先在新生代的 Eden 区中分配，当 Eden 内存不足时将会发起一次 Minor GC。
+
+
+大对象直接进入老年代
+​所谓大对象就是需要大量
 					...
 				</div>
 			</a>
@@ -3172,7 +3193,8 @@ Java中提供如下四种类型的加载器，每一种加载器都有指定的�
 					09 生产环境服务嚣变慢,如何诊断处理?
 				</h2>
 				<div class="index-brief">
-					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
+					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。
+如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程
 					...
 				</div>
 			</a>
@@ -3200,7 +3222,12 @@ Java中提供如下四种类型的加载器，每一种加载器都有指定的�
 				<div class="index-brief">
 					Java8为例
 
-日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
+日志
+-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值
+-XX :+ PrintGC ，打印 GC 信息
+-XX :+ PrintGcDetails ,打印 GC 详细信息
+-XX :+ PrintGCTimestamps ,打印 GC 的时间戳
+-Xlo
 					...
 				</div>
 			</a>

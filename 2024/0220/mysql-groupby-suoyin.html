@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3128,10 +3139,16 @@
 <div id="article-content">
 	<p>groupby 后语句有索引，直接根据索引扫描来分组，且分完组后无须排序</p>
 <p>groupby 后语句无索引，会全表扫描，扫描出来的数据分组完后组成一个临时表，然后对这个临时表的数据进行排序</p>
-<p>针对group by查询的优化建议：<br><br>A.优先为 GROUP BY 字段创建索引 <br><br>    单字段分组：直接为分组字段建索引（如 ALTER TABLE t ADD INDEX idx(col)）<br><br>    多字段分组：使用联合索引，按最左前缀原则排列字段（如 (a,b) 支持 GROUP BY a,b）<br></p>
-<p>B.使用覆盖索引 <br><br>将SELECT和GROUP BY涉及的字段包含在索引中（如 CREATE INDEX idx ON t(a,b,c)），避免回表</p>
-<p>C.调整临时表配置 <br><br>若无法避免临时表，可增大tmp_table_size 和max_heap_table_size，减少磁盘临时表生成</p>
-<p>D. 避免冗余排序 <br><br>若无需排序结果，添加 ORDER BY NULL 跳过排序阶段（如GROUP BY a ORDER BY NULL）</p>
+<p>针对group by查询的优化建议：<br><br>
+A.优先为 GROUP BY 字段创建索引 <br><br>
+单字段分组：直接为分组字段建索引（如 ALTER TABLE t ADD INDEX idx(col)）<br><br>
+多字段分组：使用联合索引，按最左前缀原则排列字段（如 (a,b) 支持 GROUP BY a,b）<br></p>
+<p>B.使用覆盖索引 <br><br>
+将SELECT和GROUP BY涉及的字段包含在索引中（如 CREATE INDEX idx ON t(a,b,c)），避免回表</p>
+<p>C.调整临时表配置 <br><br>
+若无法避免临时表，可增大tmp_table_size 和max_heap_table_size，减少磁盘临时表生成</p>
+<p>D. 避免冗余排序 <br><br>
+若无需排序结果，添加 ORDER BY NULL 跳过排序阶段（如GROUP BY a ORDER BY NULL）</p>
 
 </div>
 

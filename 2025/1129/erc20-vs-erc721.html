@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,7 +3137,8 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="ERC20-同质化代币标准"><a href="#ERC20-同质化代币标准" class="headerlink" title="ERC20 (同质化代币标准)"></a>ERC20 (同质化代币标准)</h3><ol>
+	<h3 id="ERC20-同质化代币标准">ERC20 (同质化代币标准)</h3>
+<ol>
 <li>定义 ：ERC20是以太坊上用于创建可互换代币(Fungible Tokens)的标准协议，所有代币完全相同且可互换。</li>
 </ol>
 <ul>
@@ -3141,11 +3153,13 @@
 <li>治理代币 ：UNI、COMP等DeFi治理代币</li>
 <li>积分系统 ：游戏积分、会员积分</li>
 </ol>
-<h3 id="ERC721-非同质化代币标准"><a href="#ERC721-非同质化代币标准" class="headerlink" title="ERC721 (非同质化代币标准)"></a>ERC721 (非同质化代币标准)</h3><p>定义 ：ERC721是以太坊上用于创建不可互换代币(Non-Fungible Tokens)的标准协议，每个代币都是独一无二的。</p>
+<h3 id="ERC721-非同质化代币标准">ERC721 (非同质化代币标准)</h3>
+<p>定义 ：ERC721是以太坊上用于创建不可互换代币(Non-Fungible Tokens)的标准协议，每个代币都是独一无二的。</p>
 <ul>
 <li>非同质化：每个代币具有唯一性</li>
 <li>不可分割：最小单位为1</li>
-<li>元数据：可附加独特属性和信息<br>实例：数字藏品，游戏道具，虚拟地产，元宇宙等</li>
+<li>元数据：可附加独特属性和信息<br>
+实例：数字藏品，游戏道具，虚拟地产，元宇宙等</li>
 </ul>
 <p><strong>ERC721 典型应用</strong></p>
 <ol>
@@ -3154,9 +3168,12 @@
 <li>虚拟房地产 ：Decentraland的土地</li>
 <li>身份认证 ：ENS域名、会员身份NFT</li>
 </ol>
-<h3 id="ERC20的核心功能"><a href="#ERC20的核心功能" class="headerlink" title="ERC20的核心功能"></a>ERC20的核心功能</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代币基本信息</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">name</span>(<span class="params"></span>) public view returns (string)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">symbol</span>(<span class="params"></span>) public view returns (string)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">decimals</span>(<span class="params"></span>) public view returns (uint8)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转账相关</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">transferFrom</span>(<span class="params">address <span class="keyword">from</span>, address to, uint256 value</span>) returns (bool)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">allowance</span>(<span class="params">address owner, address spender</span>) returns (uint256)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件日志</span></span><br><span class="line">event <span class="title class_">Transfer</span>(address indexed <span class="keyword">from</span>, address indexed to, uint256 value)</span><br><span class="line">event <span class="title class_">Approval</span>(address indexed owner, address indexed spender, uint256 value)</span><br></pre></td></tr></table></figure>
-<h3 id="ERC721的核心功能"><a href="#ERC721的核心功能" class="headerlink" title="ERC721的核心功能"></a>ERC721的核心功能</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代币元数据</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">name</span>(<span class="params"></span>) public view returns (string)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">symbol</span>(<span class="params"></span>) public view returns (string)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">tokenURI</span>(<span class="params">uint256 tokenId</span>) public view returns (string)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有权管理</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">safeTransferFrom</span>(<span class="params">address <span class="keyword">from</span>, address to, uint256 tokenId, bytes data</span>)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getApproved</span>(<span class="params">uint256 tokenId</span>) public view returns (address)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setApprovalForAll</span>(<span class="params">address operator, bool approved</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件日志</span></span><br><span class="line">event <span class="title class_">Transfer</span>(address indexed <span class="keyword">from</span>, address indexed to, uint256 indexed tokenId)</span><br><span class="line">event <span class="title class_">Approval</span>(address indexed owner, address indexed approved, uint256 indexed tokenId)</span><br></pre></td></tr></table></figure>
-<h3 id="ERC20-和-ERC721-的主要区别"><a href="#ERC20-和-ERC721-的主要区别" class="headerlink" title="ERC20 和 ERC721 的主要区别"></a>ERC20 和 ERC721 的主要区别</h3><table>
+<h3 id="ERC20的核心功能">ERC20的核心功能</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代币基本信息</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">name</span>(<span class="params"></span>) public view returns (string)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">symbol</span>(<span class="params"></span>) public view returns (string)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">decimals</span>(<span class="params"></span>) public view returns (uint8)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转账相关</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">transferFrom</span>(<span class="params">address <span class="keyword">from</span>, address to, uint256 value</span>) returns (bool)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">allowance</span>(<span class="params">address owner, address spender</span>) returns (uint256)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件日志</span></span><br><span class="line">event <span class="title class_">Transfer</span>(address indexed <span class="keyword">from</span>, address indexed to, uint256 value)</span><br><span class="line">event <span class="title class_">Approval</span>(address indexed owner, address indexed spender, uint256 value)</span><br></pre></td></tr></table></figure>
+<h3 id="ERC721的核心功能">ERC721的核心功能</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代币元数据</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">name</span>(<span class="params"></span>) public view returns (string)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">symbol</span>(<span class="params"></span>) public view returns (string)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">tokenURI</span>(<span class="params">uint256 tokenId</span>) public view returns (string)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有权管理</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">safeTransferFrom</span>(<span class="params">address <span class="keyword">from</span>, address to, uint256 tokenId, bytes data</span>)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getApproved</span>(<span class="params">uint256 tokenId</span>) public view returns (address)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setApprovalForAll</span>(<span class="params">address operator, bool approved</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件日志</span></span><br><span class="line">event <span class="title class_">Transfer</span>(address indexed <span class="keyword">from</span>, address indexed to, uint256 indexed tokenId)</span><br><span class="line">event <span class="title class_">Approval</span>(address indexed owner, address indexed approved, uint256 indexed tokenId)</span><br></pre></td></tr></table></figure>
+<h3 id="ERC20-和-ERC721-的主要区别">ERC20 和 ERC721 的主要区别</h3>
+<table>
 <thead>
 <tr>
 <th>代币性质</th>
@@ -3164,7 +3181,8 @@
 <th>非同质化(不可互换)</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>单位</td>
 <td>可分割(支持小数)</td>
 <td>不可分割(整数单位)</td>
@@ -3184,8 +3202,10 @@
 <td>货币、积分系统</td>
 <td>收藏品、游戏资产</td>
 </tr>
-</tbody></table>
-<h3 id="总结及建议"><a href="#总结及建议" class="headerlink" title="总结及建议"></a>总结及建议</h3><p>A. 选择标准 ：</p>
+</tbody>
+</table>
+<h3 id="总结及建议">总结及建议</h3>
+<p>A. 选择标准 ：</p>
 <ul>
 <li>需要可互换资产时选择ERC20</li>
 <li>需要唯一数字资产时选择ERC721</li>

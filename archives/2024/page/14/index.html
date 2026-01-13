@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3090,7 +3101,9 @@
 				<div class="index-brief">
 					我们需要知道rocketMq哪些场景会导致消息丢失；
 
-生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了则执行回滚逻辑
+生产者在发送消息的时候，如果断网了就会导致消息发送失败
+这种极端情况下，我们可以采用rocketMq的事务机制来解决；
+首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了则执行回滚
 					...
 				</div>
 			</a>
@@ -3145,9 +3158,12 @@
 				</h2>
 				<div class="index-brief">
 					这个问题其实可以分为三点
-第一点生产者要保证消息的顺序生产 第二点broker要保证消息的顺序保存 第三点消费者要保证消息的顺序消费 
-一、生产者端：确保同一业务消息进入同一队列定义业务路由键（Message Group）
-选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，确保同
+第一点生产者要保证消息的顺序生产 
+第二点broker要保证消息的顺序保存 
+第三点消费者要保证消息的顺序消费 
+一、生产者端：确保同一业务消息进入同一队列
+定义业务路由键（Message Group）
+选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，
 					...
 				</div>
 			</a>
@@ -3173,12 +3189,13 @@
 					01 rocketMq架构是怎样的,说说心跳机制
 				</h2>
 				<div class="index-brief">
-					RocketMq的架构包含:
+					
+RocketMq的架构包含:
 发送消息的生产者Producer
 消息存储接收的broker
 消息消费的一个Consumer
 管理消息状态的NameServer无状态服务器
-然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳的时间戳
+然后其它三个角色都会主动向NameServer上报自己的状态，其中nameServer还会定时去检查broker发送心跳的时间
 					...
 				</div>
 			</a>

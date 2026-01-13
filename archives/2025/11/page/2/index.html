@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,8 +3099,11 @@
 					(二)solidity内置对象及函数
 				</h2>
 				<div class="index-brief">
-					1.solidity多继承solidity 通过is关键字实现合约多重继承，例如contract H is G,F,表示H合约继承自G和F合约，多重继承的顺序是按照从左到右的顺序。
-2.immutable关键字immutable 是一种特殊的状态变量修饰符，用于定义在合约部署后不可修改的变量 imm
+					1.solidity多继承
+solidity 通过is关键字实现合约多重继承，例如contract H is G,F,表示H合约继承自G和F合约，多重继承的顺序是按照从左到右的顺序。
+2.immutable关键字
+immutable 是一种特殊的状态变量修饰符，用于定义在合约部署后不可修改的变量 
+
 					...
 				</div>
 			</a>
@@ -3118,7 +3132,8 @@
 					
 最近在玩solidity，所以记录一下solidity的一些语法规则
 
-1、可见性修饰符控制函数&#x2F;变量的访问边界
+1、可见性修饰符
+控制函数/变量的访问边界
 
 
 
@@ -3128,12 +3143,14 @@
 
 
 
+
 public
 合约内外均可访问（自动生成状态变量的 getter 函数）
 公开接口方法（balanceOf()）
 
 
 external
+只能
 					...
 				</div>
 			</a>

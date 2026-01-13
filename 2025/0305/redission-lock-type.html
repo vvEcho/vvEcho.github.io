@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,26 +3137,40 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="1-可重入锁（Reentrant-Lock）"><a href="#1-可重入锁（Reentrant-Lock）" class="headerlink" title="1. 可重入锁（Reentrant Lock）"></a>1. 可重入锁（Reentrant Lock）</h4><p>功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。<br><br>实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。<br><br>使用示例：</p>
+	<h4 id="1-可重入锁（Reentrant-Lock）">1. 可重入锁（Reentrant Lock）</h4>
+<p>功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。<br><br>
+实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。<br><br>
+使用示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RLock</span> <span class="variable">lock</span> <span class="operator">=</span> redisson.getLock(<span class="string">&quot;anyLock&quot;</span>);</span><br><span class="line">lock.lock(); <span class="comment">// 或 lock.tryLock(3, 10, TimeUnit.SECONDS);</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-公平锁（Fair-Lock）"><a href="#2-公平锁（Fair-Lock）" class="headerlink" title="2. 公平锁（Fair Lock）"></a>2. 公平锁（Fair Lock）</h4><p>功能：在多个线程竞争时，按请求顺序分配锁，确保先到先得；同样支持可重入和自动续期。<br><br>实现：通过Redis的队列维护请求顺序，线程按队列顺序依次获取锁。<br><br>使用示例：</p>
+<h4 id="2-公平锁（Fair-Lock）">2. 公平锁（Fair Lock）</h4>
+<p>功能：在多个线程竞争时，按请求顺序分配锁，确保先到先得；同样支持可重入和自动续期。<br><br>
+实现：通过Redis的队列维护请求顺序，线程按队列顺序依次获取锁。<br><br>
+使用示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RLock</span> <span class="variable">fairLock</span> <span class="operator">=</span> redisson.getFairLock(<span class="string">&quot;anyLock&quot;</span>);</span><br><span class="line">fairLock.lock(); <span class="comment">// 公平加锁</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-联锁（MultiLock）"><a href="#3-联锁（MultiLock）" class="headerlink" title="3. 联锁（MultiLock）"></a>3. 联锁（MultiLock）</h4><p>功能：将多个独立的锁（可来自不同Redis实例）绑定为一个联锁，要求所有锁同时获取成功才算加锁成功。<br><br>适用场景：需跨多个资源或服务强一致加锁的场景。<br><br>使用示例：</p>
+<h4 id="3-联锁（MultiLock）">3. 联锁（MultiLock）</h4>
+<p>功能：将多个独立的锁（可来自不同Redis实例）绑定为一个联锁，要求所有锁同时获取成功才算加锁成功。<br><br>
+适用场景：需跨多个资源或服务强一致加锁的场景。<br><br>
+使用示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RLock</span> <span class="variable">lock1</span> <span class="operator">=</span> redisson1.getLock(<span class="string">&quot;lock1&quot;</span>);</span><br><span class="line"><span class="type">RLock</span> <span class="variable">lock2</span> <span class="operator">=</span> redisson2.getLock(<span class="string">&quot;lock2&quot;</span>);</span><br><span class="line"><span class="type">RedissonMultiLock</span> <span class="variable">multiLock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RedissonMultiLock</span>(lock1, lock2);</span><br><span class="line">multiLock.lock();</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-红锁（RedLock）"><a href="#4-红锁（RedLock）" class="headerlink" title="4. 红锁（RedLock）"></a>4. 红锁（RedLock）</h4><p>功能：基于RedLock算法，在多个Redis节点（通常为奇数）上加锁，超过半数成功即视为加锁成功，提升高可用性。<br><br>与联锁区别：联锁要求全部成功，红锁仅需多数成功，容错性更高。<br><br>使用示例：</p>
+<h4 id="4-红锁（RedLock）">4. 红锁（RedLock）</h4>
+<p>功能：基于RedLock算法，在多个Redis节点（通常为奇数）上加锁，超过半数成功即视为加锁成功，提升高可用性。<br><br>
+与联锁区别：联锁要求全部成功，红锁仅需多数成功，容错性更高。<br><br>
+使用示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RLock</span> <span class="variable">lock1</span> <span class="operator">=</span> redisson1.getLock(<span class="string">&quot;lock1&quot;</span>);</span><br><span class="line"><span class="type">RLock</span> <span class="variable">lock2</span> <span class="operator">=</span> redisson2.getLock(<span class="string">&quot;lock2&quot;</span>);</span><br><span class="line"><span class="type">RedissonRedLock</span> <span class="variable">redLock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RedissonRedLock</span>(lock1, lock2);</span><br><span class="line">redLock.lock();</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="5-读写锁（ReadWriteLock）"><a href="#5-读写锁（ReadWriteLock）" class="headerlink" title="5. 读写锁（ReadWriteLock）"></a>5. 读写锁（ReadWriteLock）</h4><p>功能：实现读-写分离，允许多个读锁共存，但写锁独占。适用于读多写少场景。<br><br>实现：通过Redis的Hash结构区分读锁和写锁，写锁存在时禁止其他锁获取。<br><br>使用示例：</p>
+<h4 id="5-读写锁（ReadWriteLock）">5. 读写锁（ReadWriteLock）</h4>
+<p>功能：实现读-写分离，允许多个读锁共存，但写锁独占。适用于读多写少场景。<br><br>
+实现：通过Redis的Hash结构区分读锁和写锁，写锁存在时禁止其他锁获取。<br><br>
+使用示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RReadWriteLock</span> <span class="variable">rwLock</span> <span class="operator">=</span> redisson.getReadWriteLock(<span class="string">&quot;anyRWLock&quot;</span>);</span><br><span class="line">rwLock.readLock().lock(); <span class="comment">// 读锁</span></span><br><span class="line">rwLock.writeLock().lock(); <span class="comment">// 写锁</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="6-信号量（Semaphore）"><a href="#6-信号量（Semaphore）" class="headerlink" title="6. 信号量（Semaphore）"></a>6. 信号量（Semaphore）</h4><p>功能：控制并发线程数，限制同时访问资源的线程数量。<br><br>实现：通过Redis的计数器实现，获取信号量时计数器减1，释放时加1。<br><br>使用示例：</p>
+<h4 id="6-信号量（Semaphore）">6. 信号量（Semaphore）</h4>
+<p>功能：控制并发线程数，限制同时访问资源的线程数量。<br><br>
+实现：通过Redis的计数器实现，获取信号量时计数器减1，释放时加1。<br><br>
+使用示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RSemaphore</span> <span class="variable">semaphore</span> <span class="operator">=</span> redisson.getSemaphore(<span class="string">&quot;semaphore&quot;</span>);</span><br><span class="line">semaphore.acquire(); <span class="comment">// 获取信号量</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="7-闭锁（CountDownLatch）"><a href="#7-闭锁（CountDownLatch）" class="headerlink" title="7. 闭锁（CountDownLatch）"></a>7. 闭锁（CountDownLatch）</h4><p>功能：等待多个线程完成操作后再继续执行，类似Java的CountDownLatch。<br><br>实现：通过Redis的计数器递减，计数为0时唤醒等待线程。<br><br>使用示例：</p>
+<h4 id="7-闭锁（CountDownLatch）">7. 闭锁（CountDownLatch）</h4>
+<p>功能：等待多个线程完成操作后再继续执行，类似Java的CountDownLatch。<br><br>
+实现：通过Redis的计数器递减，计数为0时唤醒等待线程。<br><br>
+使用示例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RCountDownLatch</span> <span class="variable">latch</span> <span class="operator">=</span> redisson.getCountDownLatch(<span class="string">&quot;latch&quot;</span>);</span><br><span class="line">latch.trySetCount(<span class="number">5</span>); <span class="comment">// 初始化计数</span></span><br><span class="line">latch.await(); <span class="comment">// 等待计数归零</span></span><br></pre></td></tr></table></figure>
 
 </div>

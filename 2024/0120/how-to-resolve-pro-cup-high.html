@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3130,7 +3141,8 @@
 <li>top + H 指令找出占用 CPU 最高的进程的 pid</li>
 <li>top - H - p 否该进程中找到，哪些线程占用的 CPU 最高的线程,记录下 tid</li>
 <li>jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出出现异常的话,加上一 F 参教</li>
-<li>将 tid 转换为十六进制,否 threads . txt 中搜索，查到对应的线程代码执行构,在代码中查找占 CPU 比较高的原因。其中 tid 转十六进制,可以借助 Linux 的 printf “% x ‘ tid 指令<br>我用上述方法查到过,jvm多线程疯狂 fullgc导致的CPU100%的问题和JDK1.6HashMap并发 put 导致线程CPU100%的问题</li>
+<li>将 tid 转换为十六进制,否 threads . txt 中搜索，查到对应的线程代码执行构,在代码中查找占 CPU 比较高的原因。其中 tid 转十六进制,可以借助 Linux 的 printf &quot;% x ’ tid 指令<br>
+我用上述方法查到过,jvm多线程疯狂 fullgc导致的CPU100%的问题和JDK1.6HashMap并发 put 导致线程CPU100%的问题</li>
 </ol>
 
 </div>
@@ -3140,16 +3152,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/0120/garbage-collection-algorithm.html">
+              <a href="/2024/0120/jvm-error-in-project.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  06 常见的垃圾回收算法
+                  07 你在实际项目中有排查过JVM方面的问题吗？
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/0120/jvm-error-in-project.html">
-                07 你在实际项目中有排查过JVM方面的问题吗？
+              <a href="/2024/0120/object-in-jvm-build-process.html">
+                04 对象在jvm中的创建过程
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

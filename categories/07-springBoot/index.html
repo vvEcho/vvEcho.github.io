@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,8 +3099,8 @@
 					07 谈谈springboot的SPI机制
 				</h2>
 				<div class="index-brief">
-					spring Boot的SPI机制通过META-INF/spring.factories文件和SpringFactoriesLoader实现了比 Java SPI 更强大的扩展能力，成为其自动配置与生态集成的核心技术。开发者可通过自定义 Starter 和扩展点，灵活构建高内聚、低耦合的模块化系统
-
+					spring Boot的SPI机制通过META-INF/spring.factories文件和SpringFactoriesLoader实现了比 Java SPI 更强大的扩展能力，成为其自动配置与生态集成的核心技术。
+开发者可通过自定义 Starter 和扩展点，灵活构建高内聚、低耦合的模块化系统
 					...
 				</div>
 			</a>
@@ -3115,8 +3126,10 @@
 					06 如何自定义一个starter
 				</h2>
 				<div class="index-brief">
-					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：1.创建一个工程引入自动配置注解2.定义配置属性类
-12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperties
+					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：
+1.创建一个工程引入自动配置注解
+2.定义配置属性类
+12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperti
 					...
 				</div>
 			</a>
@@ -3206,8 +3219,8 @@
 
 拦截器是SpringMVC提供的，过滤器是Servlet提供的。
 过滤器与servlet是绑定的，仅限于web应用。而拦截器可作用于其他的应用，例如swing应用
-对所有请求生效（包括静态资源、Servlet、JSP等），可修改请求&#x2F;响应内容（如编码、敏感词过滤）
-拦截器仅拦截S
+对所有请求生效（包括静态资源、Servlet、JSP等），可修改请求/响应内容（如编码、敏感词过滤）
+拦截器仅拦截Spring
 					...
 				</div>
 			</a>

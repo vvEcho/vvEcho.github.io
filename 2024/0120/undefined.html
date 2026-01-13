@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3126,13 +3137,20 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="如何构建dockerfile"><a href="#如何构建dockerfile" class="headerlink" title="如何构建dockerfile"></a>如何构建dockerfile</h4><ol>
+	<h4 id="如何构建dockerfile">如何构建dockerfile</h4>
+<ol>
 <li>将jar包上传到服务器</li>
-<li>执行下述命令构建dockerfile<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建文件夹</span></span><br><span class="line">mkdir /opt/springboot</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移动 JAR 包</span></span><br><span class="line">cd ~</span><br><span class="line">mv springboot-demo.jar /opt/springboot/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">构建 Dockerfile</span></span><br><span class="line">cat &gt; /opt/springboot/Dockerfile &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">FROM openjdk:17</span><br><span class="line">ADD springboot-demo.jar /springboot-demo.jar</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;springboot-demo.jar&quot;]</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></li>
-<li>配置好dockerfile后，构建容器镜像<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/springboot</span><br><span class="line">docker build -t springboot-demo .</span><br></pre></td></tr></table></figure></li>
-<li>构建完毕后启动容器镜像<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \ --name=demo \ -p 8080:8080 \ springboot-demo</span><br></pre></td></tr></table></figure></li>
+<li>执行下述命令构建dockerfile</li>
 </ol>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建文件夹</span></span><br><span class="line">mkdir /opt/springboot</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移动 JAR 包</span></span><br><span class="line">cd ~</span><br><span class="line">mv springboot-demo.jar /opt/springboot/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">构建 Dockerfile</span></span><br><span class="line">cat &gt; /opt/springboot/Dockerfile &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">FROM openjdk:17</span><br><span class="line">ADD springboot-demo.jar /springboot-demo.jar</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;springboot-demo.jar&quot;]</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>配置好dockerfile后，构建容器镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/springboot</span><br><span class="line">docker build -t springboot-demo .</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>构建完毕后启动容器镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \ --name=demo \ -p 8080:8080 \ springboot-demo</span><br></pre></td></tr></table></figure>
 </div>
 
 <!-- post-guide -->

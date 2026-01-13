@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,7 +3099,9 @@
 					03 java中的基本数据类型都是存储在栈中的吗？
 				</h2>
 				<div class="index-brief">
-					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题答：不是一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而结束
+					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题
+答：不是
+一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而
 					...
 				</div>
 			</a>
@@ -3118,9 +3131,14 @@
 定义
 
 
-QPS（Queries Per Second）：表示系统每秒处理的查询请求数。通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
 
-TPS（Transactions Per Second）：表示系统
+QPS（Queries Per Second）：
+表示系统每秒处理的查询请求数。
+通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。
+例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
+
+
+TPS（Transactions Per Second）
 					...
 				</div>
 			</a>
@@ -3200,19 +3218,20 @@ TPS（Transactions Per Second）：表示系统
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/strong-soft-weak-phantom-ref.html">
+			<a href="/2024/0120/hashMap-hashTable-different.html">
 				<h2 class="index-title">
-					08 强引用，软引用，弱引用，虚引用的区别
+					07 hashMap hashTable的区别
 				</h2>
 				<div class="index-brief">
 					
-强引用强引用一般指我们new的对象存在的引用
 
-软引用软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
+hashMap继承自AbstractMap,hashTable继承自Dictionary类；
 
-弱引用弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
 
-虚引用虚引用，是一种形同虚设的引用，主要用来跟踪对象被
+hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
+
+
+hashTable在put,get,contains等方法都加了syn
 					...
 				</div>
 			</a>
@@ -3223,7 +3242,7 @@ TPS（Transactions Per Second）：表示系统
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
 										
                                     </span>
                                 

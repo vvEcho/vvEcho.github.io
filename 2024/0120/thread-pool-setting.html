@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3130,9 +3141,9 @@
 <p>IO密集型：指的是大量的读写操作。例如mysql数据库的读写，数据的清洗，文件的读写，附件服务器的读写，网络通信等任务。这类任务不会特别消耗cpu,但是单个任务由于执行io操作会特别耗时。</p>
 <p>CPU密集型：指的是依赖于cpu的计算的操作。例如人工智能算法，加解密算法，压缩等需要消耗大量CPU资源的任务，这些大部分场景下都纯CPU计算。</p>
 <p>在确定任务类型后：</p>
-<p>CPU密集型：核心线程数&#x3D;CPU核数+1</p>
-<p>IO密集型：核心线程数&#x3D;CPU核心数*（1+IO耗时&#x2F;CPU耗时） 或者核心线程数&#x3D;CPU核心数&#x2F;(1-阻塞系数)</p>
-<p>其中CPU密集型阻塞系数为0，IO密集型阻塞系数接近于1，一般认为在0.8~0.9之间。例如:8核CPU,按照公式就是8(1-0.9)&#x3D;80</p>
+<p>CPU密集型：核心线程数=CPU核数+1</p>
+<p>IO密集型：核心线程数=CPU核心数*（1+IO耗时/CPU耗时） 或者核心线程数=CPU核心数/(1-阻塞系数)</p>
+<p>其中CPU密集型阻塞系数为0，IO密集型阻塞系数接近于1，一般认为在0.8~0.9之间。例如:8核CPU,按照公式就是8(1-0.9)=80</p>
 
 </div>
 

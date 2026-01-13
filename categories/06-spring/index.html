@@ -155,6 +155,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2934,10 +2945,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2954,6 +2961,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3088,9 +3099,10 @@
 					21 spring为何针对接口用jdk动态代理
 				</h2>
 				<div class="index-brief">
-					jdk为什么不能针对没有实现接口的类生成代理？JDK动态代理的机制要求代理类必须基于接口的方法签名生成代理方法。若目标类未实现接口，则无法通过接口定义这些方法签名，导致代理类无法生成对应方法
+					jdk为什么不能针对没有实现接口的类生成代理？
+JDK动态代理的机制要求代理类必须基于接口的方法签名生成代理方法。若目标类未实现接口，则无法通过接口定义这些方法签名，导致代理类无法生成对应方法
 JDK动态代理中代理类直接实现目标接口，并通过反射调用目标对象的方法；
-另外由于Java不支持多继承，若JD
+另外由于Java不支持多继承，若J
 					...
 				</div>
 			</a>
@@ -3116,7 +3128,9 @@ JDK动态代理中代理类直接实现目标接口，并通过反射调用目�
 					20 springmvc的底层工作流程
 				</h2>
 				<div class="index-brief">
-					1.用户发送请求至前端控制器DispatcherServlet。2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.3.Disp
+					1.用户发送请求至前端控制器DispatcherServlet。
+2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.
+3.Di
 					...
 				</div>
 			</a>
@@ -3143,7 +3157,9 @@ JDK动态代理中代理类直接实现目标接口，并通过反射调用目�
 				</h2>
 				<div class="index-brief">
 					spring是通过三级缓存与双重检测锁的协作来保证bean是单例的
-一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。三级缓存（singletonFa
+一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。
+二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。
+三级缓存（singleton
 					...
 				</div>
 			</a>
@@ -3199,7 +3215,10 @@ JDK动态代理中代理类直接实现目标接口，并通过反射调用目�
 					17 spring中bean是线程安全的吗？
 				</h2>
 				<div class="index-brief">
-					spring中bean不是线程安全的Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确赋值。
+					spring中bean不是线程安全的
+Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。
+在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。
+在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确
 					...
 				</div>
 			</a>

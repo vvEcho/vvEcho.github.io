@@ -157,6 +157,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0113/self-introduction-web3.html">
+                     
+										    02 自我介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2936,10 +2947,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-								</li>
-								
-							</ul>
-			
 							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
@@ -2956,6 +2963,10 @@
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
 							</ul>
 			
 								</li>
@@ -3129,98 +3140,109 @@
 	<blockquote>
 <p>最近在玩solidity，所以记录一下solidity的一些语法规则</p>
 </blockquote>
-<h3 id="1、可见性修饰符"><a href="#1、可见性修饰符" class="headerlink" title="1、可见性修饰符"></a>1、可见性修饰符</h3><p>控制函数&#x2F;变量的访问边界</p>
+<h3 id="1、可见性修饰符">1、可见性修饰符</h3>
+<p>控制函数/变量的访问边界</p>
 <table>
 <thead>
 <tr>
-<th align="center">修饰符</th>
-<th align="center">访问范围</th>
-<th align="center">典型场景</th>
+<th style="text-align:center">修饰符</th>
+<th style="text-align:center">访问范围</th>
+<th style="text-align:center">典型场景</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><strong>public</strong></td>
-<td align="center">合约内外均可访问（自动生成状态变量的 getter 函数）</td>
-<td align="center">公开接口方法（<code>balanceOf()</code>）</td>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>public</strong></td>
+<td style="text-align:center">合约内外均可访问（自动生成状态变量的 getter 函数）</td>
+<td style="text-align:center">公开接口方法（<code>balanceOf()</code>）</td>
 </tr>
 <tr>
-<td align="center"><strong>external</strong></td>
-<td align="center">只能通过外部交易调用（合约内部不可直接调用）</td>
-<td align="center">回调函数（<code>receive()</code>）</td>
+<td style="text-align:center"><strong>external</strong></td>
+<td style="text-align:center">只能通过外部交易调用（合约内部不可直接调用）</td>
+<td style="text-align:center">回调函数（<code>receive()</code>）</td>
 </tr>
 <tr>
-<td align="center"><strong>internal</strong></td>
-<td align="center">仅限当前合约及继承合约（类似其他语言的 <code>protected</code>）</td>
-<td align="center">内部权限检查（<code>_validate()</code>）</td>
+<td style="text-align:center"><strong>internal</strong></td>
+<td style="text-align:center">仅限当前合约及继承合约（类似其他语言的 <code>protected</code>）</td>
+<td style="text-align:center">内部权限检查（<code>_validate()</code>）</td>
 </tr>
 <tr>
-<td align="center"><strong>private</strong></td>
-<td align="center">仅限当前合约内部（继承合约不可见）</td>
-<td align="center">敏感数据操作（<code>_secretKey</code>）</td>
+<td style="text-align:center"><strong>private</strong></td>
+<td style="text-align:center">仅限当前合约内部（继承合约不可见）</td>
+<td style="text-align:center">敏感数据操作（<code>_secretKey</code>）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <hr>
-<h3 id="2、状态可变性修饰符"><a href="#2、状态可变性修饰符" class="headerlink" title="2、状态可变性修饰符"></a>2、状态可变性修饰符</h3><p>定义函数对链状态的读写权限</p>
+<h3 id="2、状态可变性修饰符">2、状态可变性修饰符</h3>
+<p>定义函数对链状态的读写权限</p>
 <table>
 <thead>
 <tr>
-<th align="center">修饰符</th>
-<th align="center">状态交互规则</th>
-<th align="center">Gas 消耗</th>
-<th align="center">适用场景</th>
+<th style="text-align:center">修饰符</th>
+<th style="text-align:center">状态交互规则</th>
+<th style="text-align:center">Gas 消耗</th>
+<th style="text-align:center">适用场景</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><strong>pure</strong></td>
-<td align="center">禁止读写状态变量和交易上下文</td>
-<td align="center">0 Gas</td>
-<td align="center">数学计算（<code>sqrt(x)</code>）</td>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>pure</strong></td>
+<td style="text-align:center">禁止读写状态变量和交易上下文</td>
+<td style="text-align:center">0 Gas</td>
+<td style="text-align:center">数学计算（<code>sqrt(x)</code>）</td>
 </tr>
 <tr>
-<td align="center"><strong>view</strong></td>
-<td align="center">只读状态变量（可访问 <code>block.timestamp</code>）</td>
-<td align="center">0 Gas</td>
-<td align="center">数据查询（<code>getUserInfo()</code>）</td>
+<td style="text-align:center"><strong>view</strong></td>
+<td style="text-align:center">只读状态变量（可访问 <code>block.timestamp</code>）</td>
+<td style="text-align:center">0 Gas</td>
+<td style="text-align:center">数据查询（<code>getUserInfo()</code>）</td>
 </tr>
 <tr>
-<td align="center"><strong>payable</strong></td>
-<td align="center">允许接收 ETH（<code>msg.value</code>）</td>
-<td align="center">按操作消耗 Gas</td>
-<td align="center">支付功能（<code>deposit()</code>）</td>
+<td style="text-align:center"><strong>payable</strong></td>
+<td style="text-align:center">允许接收 ETH（<code>msg.value</code>）</td>
+<td style="text-align:center">按操作消耗 Gas</td>
+<td style="text-align:center">支付功能（<code>deposit()</code>）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
-<p>注意：<br>状态变量不加修饰符，默认为internal;在solidity &gt; 0.5后，函数的声明必须加上修饰符</p>
+<p>注意：<br>
+状态变量不加修饰符，默认为internal;在solidity &gt; 0.5后，函数的声明必须加上修饰符</p>
 </blockquote>
-<h3 id="3、继承修饰符"><a href="#3、继承修饰符" class="headerlink" title="3、继承修饰符"></a>3、继承修饰符</h3><p>管理合约继承体系中的函数覆盖</p>
+<h3 id="3、继承修饰符">3、继承修饰符</h3>
+<p>管理合约继承体系中的函数覆盖</p>
 <table>
 <thead>
 <tr>
-<th align="center">修饰符</th>
-<th align="center">作用规则</th>
-<th align="center">使用场景</th>
+<th style="text-align:center">修饰符</th>
+<th style="text-align:center">作用规则</th>
+<th style="text-align:center">使用场景</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><strong>virtual</strong></td>
-<td align="center">标记函数可被子合约覆盖（基类函数必须声明）</td>
-<td align="center">可扩展的基类方法（<code>_beforeTransfer()</code>）</td>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>virtual</strong></td>
+<td style="text-align:center">标记函数可被子合约覆盖（基类函数必须声明）</td>
+<td style="text-align:center">可扩展的基类方法（<code>_beforeTransfer()</code>）</td>
 </tr>
 <tr>
-<td align="center"><strong>override</strong></td>
-<td align="center">声明函数覆盖父合约方法（需完全匹配父函数签名）</td>
-<td align="center">实现接口（<code>IERC20.transfer()</code>）</td>
+<td style="text-align:center"><strong>override</strong></td>
+<td style="text-align:center">声明函数覆盖父合约方法（需完全匹配父函数签名）</td>
+<td style="text-align:center">实现接口（<code>IERC20.transfer()</code>）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>继承示例</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基类合约</span></span><br><span class="line">contract <span class="title class_">Base</span> &#123;</span><br><span class="line">    <span class="comment">// 可覆盖的基类方法</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">calculate</span>(<span class="params">uint a</span>)</span><br><span class="line">        public</span><br><span class="line">        virtual</span><br><span class="line">        pure</span><br><span class="line">        returns (uint)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> a * <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子类合约</span></span><br><span class="line">contract <span class="title class_">Child</span> is <span class="title class_">Base</span> &#123;</span><br><span class="line">    <span class="comment">// 正确顺序：public → pure → override</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">calculate</span>(<span class="params">uint b</span>)</span><br><span class="line">        public</span><br><span class="line">        pure</span><br><span class="line">        override</span><br><span class="line">        returns (uint)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//调用父类方法</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">super</span>.<span class="title function_">calculate</span>(b) + <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-关键规则总结"><a href="#4-关键规则总结" class="headerlink" title="4.关键规则总结"></a>4.关键规则总结</h4><p>A.标准修饰符顺序：<code>可见性 → 状态可变性 → 继承</code></p>
+<h4 id="4-关键规则总结">4.关键规则总结</h4>
+<p>A.标准修饰符顺序：<code>可见性 → 状态可变性 → 继承</code></p>
 <p>B.状态访问限制函数禁止以下操作</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uint x = storageVar;       <span class="comment">// 禁止读取状态</span></span><br><span class="line">emit <span class="title class_">Transfer</span>(msg.<span class="property">sender</span>); <span class="comment">// 禁止触发事件</span></span><br></pre></td></tr></table></figure>
 <p>C.多重继承需明确指定父合约</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">contract Z is X, Y &#123;</span><br><span class="line">    <span class="comment">// 最终覆盖函数必须包含所有父合约的 override 声明</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) public pure virtual <span class="title function_">override</span>(X,Y)  <span class="title function_">returns</span>(<span class="params">string memory</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;z&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params"></span>) public pure virtual <span class="title function_">override</span>(X,Y) <span class="title function_">returns</span>(<span class="params">string memory</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;z&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-存储位置"><a href="#5-存储位置" class="headerlink" title="5.存储位置"></a>5.存储位置</h3><table>
+<h3 id="5-存储位置">5.存储位置</h3>
+<table>
 <thead>
 <tr>
 <th>概念</th>
@@ -3230,7 +3252,8 @@
 <th>是否消耗 Gas</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>storage</td>
 <td>开发者</td>
 <td>可读可写</td>
@@ -3272,8 +3295,10 @@
 <td>合约字节码存储</td>
 <td>无</td>
 </tr>
-</tbody></table>
-<h3 id="6-常用数据结构"><a href="#6-常用数据结构" class="headerlink" title="6.常用数据结构"></a>6.常用数据结构</h3><table>
+</tbody>
+</table>
+<h3 id="6-常用数据结构">6.常用数据结构</h3>
+<table>
 <thead>
 <tr>
 <th>数据结构</th>
@@ -3281,7 +3306,8 @@
 <th>典型使用场景</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><strong>静态数组</strong></td>
 <td>固定长度的数组，元素类型和数量在声明时确定</td>
 <td>存储固定数量的配置参数（如颜色代码、权限等级）</td>
@@ -3304,7 +3330,7 @@
 <tr>
 <td><strong>枚举（Enum）</strong></td>
 <td>定义一组命名的常量集合，提升代码可读性</td>
-<td>状态机标识（如订单状态：<code>Created</code>&#x2F;<code>Paid</code>&#x2F;<code>Shipped</code>）、用户角色分类</td>
+<td>状态机标识（如订单状态：<code>Created</code>/<code>Paid</code>/<code>Shipped</code>）、用户角色分类</td>
 </tr>
 <tr>
 <td><strong>字符串（String）</strong></td>
@@ -3321,15 +3347,26 @@
 <td>引用其他合约地址，支持跨合约调用</td>
 <td>代币合约交互（如<code>IERC20(token).transfer()</code>）、可升级代理合约逻辑</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
-<p>注意<br>当函数参数涉及引用类型（如 string、array、struct）时，必须显式声明其数据位置（memory 或 calldata）<br>Solidity 0.5.0+ 版本严格要求所有引用类型参数必须明确数据位置，而旧版本允许隐式处理。若未指定，编译器会强制报错</p>
+<p>注意<br>
+当函数参数涉及引用类型（如 string、array、struct）时，必须显式声明其数据位置（memory 或 calldata）<br>
+Solidity 0.5.0+ 版本严格要求所有引用类型参数必须明确数据位置，而旧版本允许隐式处理。若未指定，编译器会强制报错</p>
 </blockquote>
-<h3 id="7-组合使用场景示例"><a href="#7-组合使用场景示例" class="headerlink" title="7.组合使用场景示例"></a>7.组合使用场景示例</h3><ol>
-<li>结构体 + 映射 + 动态数组<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">contract <span class="title class_">UserManager</span> &#123;</span><br><span class="line">    struct <span class="title class_">User</span> &#123;</span><br><span class="line">        address wallet;</span><br><span class="line">        uint256 score;</span><br><span class="line">        bool isActive;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">mapping</span>(<span class="function"><span class="params">address</span> =&gt;</span> <span class="title class_">User</span>) private users;  <span class="comment">// 地址到用户的快速查找</span></span><br><span class="line">    address[] public userList;               <span class="comment">// 遍历所有用户地址</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">addUser</span>(<span class="params">address _wallet</span>) public &#123;</span><br><span class="line">        users[_wallet] = <span class="title class_">User</span>(_wallet, <span class="number">0</span>, <span class="literal">true</span>);</span><br><span class="line">        userList.<span class="title function_">push</span>(_wallet);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>枚举 + 结构体<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">contract <span class="title class_">OrderSystem</span> &#123;</span><br><span class="line">    enum <span class="title class_">OrderStatus</span> &#123;</span><br><span class="line">        <span class="title class_">Created</span>,</span><br><span class="line">        <span class="title class_">Paid</span>,</span><br><span class="line">        <span class="title class_">Shipped</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    struct <span class="title class_">Order</span> &#123;</span><br><span class="line">        uint256 id;</span><br><span class="line">        address buyer;</span><br><span class="line">        <span class="title class_">OrderStatus</span> status;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title class_">Order</span>[] public orders;  <span class="comment">// 动态数组存储订单</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">shipOrder</span>(<span class="params">uint256 _id</span>) public &#123;</span><br><span class="line">        orders[_id].<span class="property">status</span> = <span class="title class_">OrderStatus</span>.<span class="property">Shipped</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>映射 + 动态数组（白名单管理）<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">contract <span class="title class_">Whitelist</span> &#123;</span><br><span class="line">    <span class="title function_">mapping</span>(<span class="function"><span class="params">address</span> =&gt;</span> bool) public isWhitelisted;</span><br><span class="line">    address[] public whitelistedAddresses;  <span class="comment">// 遍历白名单地址</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">addToWhitelist</span>(<span class="params">address _addr</span>) public &#123;</span><br><span class="line">        <span class="built_in">require</span>(!isWhitelisted[_addr], <span class="string">&quot;Already whitelisted&quot;</span>);</span><br><span class="line">        isWhitelisted[_addr] = <span class="literal">true</span>;</span><br><span class="line">        whitelistedAddresses.<span class="title function_">push</span>(_addr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<h3 id="7-组合使用场景示例">7.组合使用场景示例</h3>
+<ol>
+<li>结构体 + 映射 + 动态数组</li>
 </ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">contract <span class="title class_">UserManager</span> &#123;</span><br><span class="line">    struct <span class="title class_">User</span> &#123;</span><br><span class="line">        address wallet;</span><br><span class="line">        uint256 score;</span><br><span class="line">        bool isActive;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">mapping</span>(<span class="function"><span class="params">address</span> =&gt;</span> <span class="title class_">User</span>) private users;  <span class="comment">// 地址到用户的快速查找</span></span><br><span class="line">    address[] public userList;               <span class="comment">// 遍历所有用户地址</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">addUser</span>(<span class="params">address _wallet</span>) public &#123;</span><br><span class="line">        users[_wallet] = <span class="title class_">User</span>(_wallet, <span class="number">0</span>, <span class="literal">true</span>);</span><br><span class="line">        userList.<span class="title function_">push</span>(_wallet);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>枚举 + 结构体</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">contract <span class="title class_">OrderSystem</span> &#123;</span><br><span class="line">    enum <span class="title class_">OrderStatus</span> &#123;</span><br><span class="line">        <span class="title class_">Created</span>,</span><br><span class="line">        <span class="title class_">Paid</span>,</span><br><span class="line">        <span class="title class_">Shipped</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    struct <span class="title class_">Order</span> &#123;</span><br><span class="line">        uint256 id;</span><br><span class="line">        address buyer;</span><br><span class="line">        <span class="title class_">OrderStatus</span> status;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title class_">Order</span>[] public orders;  <span class="comment">// 动态数组存储订单</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">shipOrder</span>(<span class="params">uint256 _id</span>) public &#123;</span><br><span class="line">        orders[_id].<span class="property">status</span> = <span class="title class_">OrderStatus</span>.<span class="property">Shipped</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>映射 + 动态数组（白名单管理）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">contract <span class="title class_">Whitelist</span> &#123;</span><br><span class="line">    <span class="title function_">mapping</span>(<span class="function"><span class="params">address</span> =&gt;</span> bool) public isWhitelisted;</span><br><span class="line">    address[] public whitelistedAddresses;  <span class="comment">// 遍历白名单地址</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">addToWhitelist</span>(<span class="params">address _addr</span>) public &#123;</span><br><span class="line">        <span class="built_in">require</span>(!isWhitelisted[_addr], <span class="string">&quot;Already whitelisted&quot;</span>);</span><br><span class="line">        isWhitelisted[_addr] = <span class="literal">true</span>;</span><br><span class="line">        whitelistedAddresses.<span class="title function_">push</span>(_addr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div>
 
