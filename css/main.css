@@ -356,19 +356,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   text-align: left;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 table th {
 	font-weight: bold;
 	padding: 5px 10px;
-	/* border: 1px solid black; */
+	border: 1px solid black;
 }
-/* table td { */
-	/* padding: 5px 10px; */
-	/* border: 1px solid black; */
-    /* border: 1px solid #e0e0e0; */
-/* } */
-
+table td {
+	padding: 5px 10px;
+	border: 1px solid black;
+    border: 1px solid #e0e0e0;
+}
 figure{
     overflow:auto
 }

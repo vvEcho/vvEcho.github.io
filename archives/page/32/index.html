@@ -9,7 +9,7 @@
 	
 	<title>
 	
-	java面试题
+	肝之如饴
 	</title>
 
 	<!-- keywords,description -->
@@ -86,8 +86,8 @@
 
 <body>
 	<header id="header">
-    <a id="title" href="/" class="logo">java面试题</a>
-    <!-- <a id="title" href="/" class="logo">java面试题</a> -->
+    <a id="title" href="/" class="logo">肝之如饴</a>
+    <!-- <a id="title" href="/" class="logo">肝之如饴</a> -->
 	<ul id="menu">
     <!-- <li class="menu-item">
         <a href='' class="menu-item-link">Home</a>
@@ -2396,6 +2396,160 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										17 wbe3
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/1129/solidity-base-programming-rules.html">
+                     
+										    (一)solidity基本语法规则
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1129/solidity-inner-object-and-function.html">
+                     
+										    (二)solidity内置对象及函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1129/solidity-proxy-call.html">
+                     
+										    (三)solidity代理调用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1129/erc20-vs-erc721.html">
+                     
+										    (四) ERC20 && ERC721 简介
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1129/solidity-wei-math.html">
+                     
+										    (五) solidity的位运算实践
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1130/mocha-chai.html">
+                     
+										    (六)Mocha+Chai测试框架
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1129/web3-terms.html">
+                     
+										    (七)web3相关术语
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1201/web3-interview1.html">
+                     
+										    (八)web3面试第一弹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1203/web3-interview2.html">
+                     
+										    (九)web3面试第二弹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1209/web3-interview3.html">
+                     
+										    (十)web3面试题第三弹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1226/web3-interview4.html">
+                     
+										    (十一)web3面试第4弹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/1226/web3-macth-making.html">
+                     
+										    (十二)web3面试--撮合交易
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0110/ai-interview-1.html">
+                     
+										    (十三)Ai模拟面试第1弹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										20 设计模式
 									</a>
 									
@@ -2918,17 +3072,70 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-fast-reason.html">
+			<a href="/2024/0120/mysql-false-reading.html">
 				<h2 class="index-title">
-					02 redis性能好的原因？
+					03 怎么解决幻读
 				</h2>
 				<div class="index-brief">
-					
-基于内存的读写
-单线程，避免了线程的切换及竞争产生的消耗
-基于非阻塞的IO多路复用
-C实现的，更利于和底层进行交互
+					只有序列化级别解决了幻读，其他的都没有解决了幻读；因为序列化是串行化执行的，第一个事务执行完后才能执行第二个事务
+幻读出现的根本原因是，如果所有的读都是快照读就不会有幻读的问题，如果有快照读也有当前读才会产生幻读的问题
 
+快照读：mysql中针对不加锁的读操作，称为快照读例如查询
+当前读：对于加锁的
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/mysql-transcation-geli-level.html">
+				<h2 class="index-title">
+					02 数据库事务的隔离级别？
+				</h2>
+				<div class="index-brief">
+					数据库的隔离级别分为读未提交，读已提交，可重复度，可重复读，串行化来分别解决脏读，不可重复读，幻读等问题
+脏读（Dirty Read）概念：一个事务读取了另一个未提交事务修改的数据（当前是读未提交隔离级别）背景：事务A修改数据但未提交，事务B却读到了这个未提交的数据。若事务A最终回滚，事务B的读取结
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-lua-principle.html">
+				<h2 class="index-title">
+					11 redis lua表达式为什么能保证原子性
+				</h2>
+				<div class="index-brief">
+					redis的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。
+但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
 
 					...
 				</div>
@@ -2950,14 +3157,46 @@ C实现的，更利于和底层进行交互
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-repeat.html">
+			<a href="/2024/0120/redis-cluster.html">
 				<h2 class="index-title">
-					02 kafka如何避免消息的重复消费？
+					12 redis你们用的是什么集群
 				</h2>
 				<div class="index-brief">
-					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；
-例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
+					redis我用的是简单的主从架构的这种集群模式
+Redis主要有三种模式，主从，哨兵，分布式集群
+1.主从复制模式架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离优点：数据冗余：从节点备份主节点数据，提高数据可靠性。读写分离：从节点分担读请求，减轻主节点压力。配置
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-used-too-much.html">
+				<h2 class="index-title">
+					08 redis如何做内存优化
+				</h2>
+				<div class="index-brief">
+					redis优化内存分为两个层面大的层面：
 
+合理设置数据过期时间使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
+
+合理设置内存淘汰策略结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
+
+内存碎片优化启用 jemalloc
 					...
 				</div>
 			</a>
@@ -2968,90 +3207,7 @@ C实现的，更利于和底层进行交互
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-order.html">
-				<h2 class="index-title">
-					03 kafka如何保证消息的顺序消费
-				</h2>
-				<div class="index-brief">
-					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；
-而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的
-因为是多个分区，消费的时候通
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-rebalance.html">
-				<h2 class="index-title">
-					05 kafka的rebalance机制
-				</h2>
-				<div class="index-brief">
-					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
-当kafka感知到存在让分
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-distributed-transaction.html">
-				<h2 class="index-title">
-					09 rocketMq实现分布式事务了解吗？
-				</h2>
-				<div class="index-brief">
-					RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性
-第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见
-12// 发送半消息（事务消息）TransactionSendResult result = p
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3063,7 +3219,7 @@ C实现的，更利于和底层进行交互
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/31/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/30/">30</a><a class="page-number" href="/archives/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/archives/page/33/">33</a><a class="page-number" href="/archives/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/46/">46</a><a class="extend next" rel="next" href="/archives/page/33/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/31/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/30/">30</a><a class="page-number" href="/archives/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/archives/page/33/">33</a><a class="page-number" href="/archives/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/48/">48</a><a class="extend next" rel="next" href="/archives/page/33/">&gt;</a>
 		
 	</div>
 </div>
