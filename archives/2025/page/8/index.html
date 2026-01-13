@@ -3100,10 +3100,8 @@
 				</h2>
 				<div class="index-brief">
 					kafka消息丢失的场景主要在生产端，broker端，消费端
-生产端消息丢失
-producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
-解决办法：可以改成同步发生，ack=all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息；
-br
+生产端消息丢失producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
+解决办法：可以改成同步发生，ack&#x3D;all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息
 					...
 				</div>
 			</a>
@@ -3129,9 +3127,7 @@ br
 					08 kafka副本同步机制
 				</h2>
 				<div class="index-brief">
-					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。
-broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。
-每个partition的leader在收到producer提交的数据后，都需要向producer发
+					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
 					...
 				</div>
 			</a>

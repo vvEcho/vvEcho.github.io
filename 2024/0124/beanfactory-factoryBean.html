@@ -3137,22 +3137,18 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="区别">区别</h4>
-<p>BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObject 属性中。</p>
+	<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObject 属性中。</p>
 <p>FactoryBean： 首先是个 bean，也存放在 BeanFactory 中。它具有工厂方法的功能，在程序运行中 产生指定(一种)类型的bean，并添加到了IOC容器中的 factoryBeanObjectCache 属性中。</p>
 <p>BeanFactory是Spring提供的存放Bean的工厂，FactoryBean是一个可生产Bean的工厂Bean</p>
 <p>FactoryBean和BeanFactory都是spring的一个类工厂，BeanFactory只能生产一种类型的类，FactoryBean可以生产两种类型的类，一种跟BeanFactory类似，生产的是当前对象，另一种是通过getObject()返回的对象</p>
-<h4 id="BeanFactory的使用场景：">BeanFactory的使用场景：</h4>
-<ul>
+<h4 id="BeanFactory的使用场景："><a href="#BeanFactory的使用场景：" class="headerlink" title="BeanFactory的使用场景："></a>BeanFactory的使用场景：</h4><ul>
 <li>通过 名字或类型从容器中获取 bean。</li>
 <li>判断容器中是否包含指定的 bean。</li>
 <li>判断 bean 是不是单例</li>
 </ul>
-<h4 id="FactoryBean的使用场景：">FactoryBean的使用场景：</h4>
-<p>Spring 中 FactoryBean 最大的应用场景是用在 AOP 中。我们都知道，AOP 实际上是 Spring 在运行是创建出来的代理对象，这个对象是在运行时才被创建的，而不是在启动时定义的，这与工厂方法模式是一致的。更生动地说，AOP 代理对象通过 java 反射机制在运行时创建代理对象，并根据业务需求将相应的方法编织到代理对象的目标方法中。Spring 中的 ProxyFactoryBean 就是干这事的。</p>
+<h4 id="FactoryBean的使用场景："><a href="#FactoryBean的使用场景：" class="headerlink" title="FactoryBean的使用场景："></a>FactoryBean的使用场景：</h4><p>Spring 中 FactoryBean 最大的应用场景是用在 AOP 中。我们都知道，AOP 实际上是 Spring 在运行是创建出来的代理对象，这个对象是在运行时才被创建的，而不是在启动时定义的，这与工厂方法模式是一致的。更生动地说，AOP 代理对象通过 java 反射机制在运行时创建代理对象，并根据业务需求将相应的方法编织到代理对象的目标方法中。Spring 中的 ProxyFactoryBean 就是干这事的。</p>
 <p>因此，FactoryBean 提供了更灵活的实例化 bean 的方法。通过 FactoryBean 我们可以创建更复杂的 bean</p>
-<h4 id="扩展：普通bean和factoryBean有啥区别？">扩展：普通bean和factoryBean有啥区别？</h4>
-<table>
+<h4 id="扩展：普通bean和factoryBean有啥区别？"><a href="#扩展：普通bean和factoryBean有啥区别？" class="headerlink" title="扩展：普通bean和factoryBean有啥区别？"></a>扩展：普通bean和factoryBean有啥区别？</h4><table>
 <thead>
 <tr>
 <th>-场景</th>
@@ -3160,8 +3156,7 @@
 <th>-	FactoryBean-</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>创建逻辑复杂度</td>
 <td>简单（无状态依赖）</td>
 <td>复杂（需多步骤初始化或外部资源,如数据库连接池的创建，需读取配置、初始化资源）</td>
@@ -3181,8 +3176,7 @@
 <td>需显式配置 @Scope(“prototype”)</td>
 <td>通过 isSingleton() 动态控制</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
 </div>
 

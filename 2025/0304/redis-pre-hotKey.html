@@ -3129,19 +3129,15 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="1-应用启动时预加载">1.应用启动时预加载</h4>
-<p>在服务启动阶段（如Spring Boot应用初始化完成时），通过代码自动加载热点数据到缓存。</p>
+	<h4 id="1-应用启动时预加载"><a href="#1-应用启动时预加载" class="headerlink" title="1.应用启动时预加载"></a>1.应用启动时预加载</h4><p>在服务启动阶段（如Spring Boot应用初始化完成时），通过代码自动加载热点数据到缓存。</p>
 <p>适合系统配置，数据量小且确定的情况。</p>
-<p>实现方式：<br><br>
-Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执行预热逻辑，例如加载数据库中的高频访问数据到Redis。<br><br>
-@PostConstruct注解：在Bean初始化完成后立即执行预热方法。<br><br>
-监听应用上下文事件：如ContextRefreshedEvent或ApplicationReadyEvent，触发数据加载。<br></p>
+<p>实现方式：<br><br>Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执行预热逻辑，例如加载数据库中的高频访问数据到Redis。<br><br>@PostConstruct注解：在Bean初始化完成后立即执行预热方法。<br><br>监听应用上下文事件：如ContextRefreshedEvent或ApplicationReadyEvent，触发数据加载。<br></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CachePreloader</span> <span class="keyword">implements</span> <span class="title class_">CommandLineRunner</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate&lt;String, Object&gt; redisTemplate;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> NewsService newsService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">(String... args)</span> &#123;</span><br><span class="line">        List&lt;News&gt; hotNews = newsService.getHotNews(); <span class="comment">// 查询热点数据</span></span><br><span class="line">        redisTemplate.opsForValue().set(<span class="string">&quot;hot_news&quot;</span>, hotNews, <span class="number">1</span>, TimeUnit.HOURS);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-定时任务预热">2.定时任务预热</h4>
-<p>适用于数据定期更新的场景（如每日榜单），通过定时任务（如Quartz、Spring Scheduler）周期性刷新缓存。</p>
+
+<h4 id="2-定时任务预热"><a href="#2-定时任务预热" class="headerlink" title="2.定时任务预热"></a>2.定时任务预热</h4><p>适用于数据定期更新的场景（如每日榜单），通过定时任务（如Quartz、Spring Scheduler）周期性刷新缓存。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Scheduled(cron = &quot;0 0 3 * * ?&quot;)</span> <span class="comment">// 每天凌晨3点执行</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">refreshCache</span><span class="params">()</span> &#123;</span><br><span class="line">    List&lt;Product&gt; topProducts = productService.getTopSales();</span><br><span class="line">    redisTemplate.opsForValue().set(<span class="string">&quot;top_products&quot;</span>, topProducts);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-手动触发预热">3.手动触发预热</h4>
-<p>通过管理界面或API手动触发缓存加载，适合运维人员干预或紧急场景</p>
+
+<h4 id="3-手动触发预热"><a href="#3-手动触发预热" class="headerlink" title="3.手动触发预热"></a>3.手动触发预热</h4><p>通过管理界面或API手动触发缓存加载，适合运维人员干预或紧急场景</p>
 <p>可参考：<a href="/2024/0120/redis-identify-hot-key.html">如何监控热key</a></p>
 
 </div>

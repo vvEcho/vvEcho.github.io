@@ -3099,9 +3099,8 @@
 					13 锁消除和锁膨胀
 				</h2>
 				<div class="index-brief">
-					锁消除
-在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
-1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchr
+					锁消除在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
+1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchro
 					...
 				</div>
 			</a>
@@ -3129,8 +3128,7 @@
 				<div class="index-brief">
 					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
 Java中提供的CAS操作，就是乐观锁的一种实现。
-悲观锁
-获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，
+悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
 					...
 				</div>
 			</a>
@@ -3158,10 +3156,8 @@ Java中提供的CAS操作，就是乐观锁的一种实现。
 				<div class="index-brief">
 					Java中提供的synchronized、ReentrantLock是互斥锁。
 Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
-互斥锁
-互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
-共享锁
-共享锁：同一时间点，当前共享锁可以被多个线程同时持有
+互斥锁互斥锁：同一时间点，只会有一个线程持有者当前互斥锁。
+共享锁共享锁：同一时间点，当前共享锁可以被多个线程同时持有
 
 					...
 				</div>
@@ -3218,11 +3214,9 @@ Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
 
 
 
-
 姓名
 角色
 年龄
-
 
 
 
@@ -3234,7 +3228,6 @@ Java中提供的ReentrantReadWriteLock，有互斥锁也有共享锁。
 李四
 老师
 20
-
 
 
 

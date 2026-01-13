@@ -3129,30 +3129,12 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="1-撮合引擎怎么设计的？">1.撮合引擎怎么设计的？</h3>
-<p>基于内存计算的撮合引擎，要满足以下的几点：<br>
-低延迟、撮合的确定性、可恢复、要与风控平台解耦</p>
-<p>整体链路是：API-风控-撮合引擎（内存）-成交落库-资产变更<br>
-撮合只做一件事：确定成交结果，不直接操作资产（在 cex中撮合引擎只计算保存撮合的结果，不直接操作资产，它只会产出成交事件，推送给资产系统，行情系统，推送系统）</p>
-<h4 id="1-1-那么问题来了，资产什么时候被操作">(1.1)那么问题来了，资产什么时候被操作</h4>
-<p>用户下单<br>
-↓<br>
-风控系统冻结资产（这一步已经发生）<br>
-↓<br>
-撮合引擎计算成交结果（不碰钱）<br>
-↓<br>
-成交事件 Trade<br>
-↓<br>
-资产系统消费 Trade<br>
-↓<br>
-真正修改账户余额</p>
-<h4 id="1-2-资产变化要做到可回放，可审计">(1.2)资产变化要做到可回放，可审计</h4>
-<p>可回放指：不依赖账户当前状态，只靠交易历史账单，即可把账户状态从 0 算出来，并且和现在结果一致</p>
-<h4 id="1-3-流水表越来越大，重放一次要几个小时，怎么办？">(1.3)流水表越来越大，重放一次要几个小时，怎么办？</h4>
-<p>做增量回放，而不是全量回放；定期回放给出一个确切标点，定期把这个回放结果冻结成一个可信状态<br>
-一般高频账户，每1000 条交易记录做一次或者每 5 分钟回放一次；低频用户一般为每日做一次</p>
-<h4 id="1-4-成交事件发给资产系统失败了，怎么办？-撮合已经成功了，钱还没变，系统怎么保证最终一致？">(1.4)成交事件发给资产系统失败了，怎么办？ 撮合已经成功了，钱还没变，系统怎么保证最终一致？</h4>
-<p>只要资产没入账，交易在系统层面就是「未完成态」，必须通过可靠事件 + 重试 + 幂等 + 对账补偿 保证最终一致</p>
+	<h3 id="1-撮合引擎怎么设计的？"><a href="#1-撮合引擎怎么设计的？" class="headerlink" title="1.撮合引擎怎么设计的？"></a>1.撮合引擎怎么设计的？</h3><p>基于内存计算的撮合引擎，要满足以下的几点：<br>低延迟、撮合的确定性、可恢复、要与风控平台解耦</p>
+<p>整体链路是：API-风控-撮合引擎（内存）-成交落库-资产变更<br>撮合只做一件事：确定成交结果，不直接操作资产（在 cex中撮合引擎只计算保存撮合的结果，不直接操作资产，它只会产出成交事件，推送给资产系统，行情系统，推送系统）</p>
+<h4 id="1-1-那么问题来了，资产什么时候被操作"><a href="#1-1-那么问题来了，资产什么时候被操作" class="headerlink" title="(1.1)那么问题来了，资产什么时候被操作"></a>(1.1)那么问题来了，资产什么时候被操作</h4><p>  用户下单<br>    ↓<br>风控系统冻结资产（这一步已经发生）<br>    ↓<br>撮合引擎计算成交结果（不碰钱）<br>    ↓<br>成交事件 Trade<br>    ↓<br>资产系统消费 Trade<br>    ↓<br>真正修改账户余额</p>
+<h4 id="1-2-资产变化要做到可回放，可审计"><a href="#1-2-资产变化要做到可回放，可审计" class="headerlink" title="(1.2)资产变化要做到可回放，可审计"></a>(1.2)资产变化要做到可回放，可审计</h4><p>可回放指：不依赖账户当前状态，只靠交易历史账单，即可把账户状态从 0 算出来，并且和现在结果一致</p>
+<h4 id="1-3-流水表越来越大，重放一次要几个小时，怎么办？"><a href="#1-3-流水表越来越大，重放一次要几个小时，怎么办？" class="headerlink" title="(1.3)流水表越来越大，重放一次要几个小时，怎么办？"></a>(1.3)流水表越来越大，重放一次要几个小时，怎么办？</h4><p>做增量回放，而不是全量回放；定期回放给出一个确切标点，定期把这个回放结果冻结成一个可信状态<br>一般高频账户，每1000 条交易记录做一次或者每 5 分钟回放一次；低频用户一般为每日做一次</p>
+<h4 id="1-4-成交事件发给资产系统失败了，怎么办？-撮合已经成功了，钱还没变，系统怎么保证最终一致？"><a href="#1-4-成交事件发给资产系统失败了，怎么办？-撮合已经成功了，钱还没变，系统怎么保证最终一致？" class="headerlink" title="(1.4)成交事件发给资产系统失败了，怎么办？ 撮合已经成功了，钱还没变，系统怎么保证最终一致？"></a>(1.4)成交事件发给资产系统失败了，怎么办？ 撮合已经成功了，钱还没变，系统怎么保证最终一致？</h4><p>只要资产没入账，交易在系统层面就是「未完成态」，必须通过可靠事件 + 重试 + 幂等 + 对账补偿 保证最终一致</p>
 <p>撮合成功时，做的不是“转钱”，而是生成一笔不可变的成交事件</p>
 <p>事件怎么保证不丢？</p>
 <ul>
@@ -3161,37 +3143,22 @@
 </ul>
 <p>异步投递消息：失败重试，MQ挂了等恢复，不影响前面撮合总流水</p>
 <p>兜底: 定时扫描交易表，查看已经撮合成功的单和资产流水变里，有没有对应的资产变化流水；有对应的流水，修改对应的资产变化状态，没有则重发；（重复时需要避免重复消费）</p>
-<h3 id="2-撮合引擎涉及到哪些表或数据结构">2.撮合引擎涉及到哪些表或数据结构</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">OrderBook</span> &#123;</span><br><span class="line">    TreeMap&lt;Price, OrderQueue&gt; bids; <span class="comment">// 买单，价格倒序</span></span><br><span class="line">    TreeMap&lt;Price, OrderQueue&gt; asks; <span class="comment">// 卖单，价格正序</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>TreeMap：保证价格有序<br>
-OrderQueue：同价位 FIFO（时间优先）</p>
+<h3 id="2-撮合引擎涉及到哪些表或数据结构"><a href="#2-撮合引擎涉及到哪些表或数据结构" class="headerlink" title="2.撮合引擎涉及到哪些表或数据结构"></a>2.撮合引擎涉及到哪些表或数据结构</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">OrderBook</span> &#123;</span><br><span class="line">    TreeMap&lt;Price, OrderQueue&gt; bids; <span class="comment">// 买单，价格倒序</span></span><br><span class="line">    TreeMap&lt;Price, OrderQueue&gt; asks; <span class="comment">// 卖单，价格正序</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>TreeMap：保证价格有序<br>OrderQueue：同价位 FIFO（时间优先）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 订单表</span></span><br><span class="line">orders (</span><br><span class="line">  order_id,</span><br><span class="line">  user_id,</span><br><span class="line">  symbol,</span><br><span class="line">  side,</span><br><span class="line">  price, <span class="comment">-- 订单委托价格（限价单）</span></span><br><span class="line">  amount,<span class="comment">-- 订单的【原始委托总量】</span></span><br><span class="line">  filled_amount,<span class="comment">--订单【累计已成交量】（不是“本次”）</span></span><br><span class="line">  status,</span><br><span class="line">  created_at</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>–快照表，挂单表，资产变更流水表，资产冻结表</p>
-<h3 id="3-撮合引擎的执行流程是怎样的？">3.撮合引擎的执行流程是怎样的？</h3>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> 新订单进来</span><br><span class="line">    ↓</span><br><span class="line"> 检查最优对手价</span><br><span class="line">    ↓</span><br><span class="line">while (可成交 &amp;&amp; qty &gt; 0)</span><br><span class="line">   - 从对手price queue 取 head</span><br><span class="line">   - 成交min(qty)</span><br><span class="line">   - 生成Trade</span><br><span class="line">   - 更新两边剩余量</span><br><span class="line">   - 如果对手单完了 → 出队</span><br><span class="line">   - 如果 price 队列空 → remove price</span><br><span class="line">    ↓</span><br><span class="line">如果自己还有剩余</span><br><span class="line">   - 挂入自己的 price → queue</span><br><span class="line">否则</span><br><span class="line">   - 订单结束，生命周期完结</span><br></pre></td></tr></table></figure>
-<h3 id="4-撮合引擎怎么确保是单线程的？以及为啥不设计成多线程？如果设计成多线程会引发哪些问题？">4.撮合引擎怎么确保是单线程的？以及为啥不设计成多线程？如果设计成多线程会引发哪些问题？</h3>
-<blockquote>
-<p>撮合引擎怎么确保单线程？<br>
-撮合系统采用的是 Single Writer 架构。<br>
-网关层按对应币对儿的symbol做确定性路由，同一交易对在任一时刻只会被一个撮合执行流处理。<br>
-其他节点只做热备和状态订阅，不参与写入。<br>
-主备切换是通过事件日志replay完成的，不存在双写窗口，因此可以保证顺序一致性和可回放性</p>
+<h3 id="3-撮合引擎的执行流程是怎样的？"><a href="#3-撮合引擎的执行流程是怎样的？" class="headerlink" title="3.撮合引擎的执行流程是怎样的？"></a>3.撮合引擎的执行流程是怎样的？</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> 新订单进来</span><br><span class="line">    ↓</span><br><span class="line"> 检查最优对手价</span><br><span class="line">    ↓</span><br><span class="line">while (可成交 &amp;&amp; qty &gt; 0)</span><br><span class="line">   - 从对手price queue 取 head</span><br><span class="line">   - 成交min(qty)</span><br><span class="line">   - 生成Trade</span><br><span class="line">   - 更新两边剩余量</span><br><span class="line">   - 如果对手单完了 → 出队</span><br><span class="line">   - 如果 price 队列空 → remove price</span><br><span class="line">    ↓</span><br><span class="line">如果自己还有剩余</span><br><span class="line">   - 挂入自己的 price → queue</span><br><span class="line">否则</span><br><span class="line">   - 订单结束，生命周期完结</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-撮合引擎怎么确保是单线程的？以及为啥不设计成多线程？如果设计成多线程会引发哪些问题？"><a href="#4-撮合引擎怎么确保是单线程的？以及为啥不设计成多线程？如果设计成多线程会引发哪些问题？" class="headerlink" title="4.撮合引擎怎么确保是单线程的？以及为啥不设计成多线程？如果设计成多线程会引发哪些问题？"></a>4.撮合引擎怎么确保是单线程的？以及为啥不设计成多线程？如果设计成多线程会引发哪些问题？</h3><blockquote>
+<p>撮合引擎怎么确保单线程？<br>撮合系统采用的是 Single Writer 架构。<br>网关层按对应币对儿的symbol做确定性路由，同一交易对在任一时刻只会被一个撮合执行流处理。<br>其他节点只做热备和状态订阅，不参与写入。<br>主备切换是通过事件日志replay完成的，不存在双写窗口，因此可以保证顺序一致性和可回放性</p>
 </blockquote>
 <blockquote>
-<p>为何不设计成单线程？<br>
-1.单核单线程CPU 跑满的情况下，基于内存的撮合，10 万级别TPS可以做到毫秒级延迟<br>
-2.单线程没有锁，内存连续 cache命中率高；指令路径短<br>
-3.金融系统的设计是基于确定性和可回放性，对于撮合来说最终的是顺序一致结果唯一，通过“一个交易对一个线程”的模型，交易所把并发问题前移到路由层，用内存换无锁，用确定性换稳定性。</p>
+<p>为何不设计成单线程？<br>1.单核单线程CPU 跑满的情况下，基于内存的撮合，10 万级别TPS可以做到毫秒级延迟<br>2.单线程没有锁，内存连续 cache命中率高；指令路径短<br>3.金融系统的设计是基于确定性和可回放性，对于撮合来说最终的是顺序一致结果唯一，通过“一个交易对一个线程”的模型，交易所把并发问题前移到路由层，用内存换无锁，用确定性换稳定性。</p>
 </blockquote>
 <blockquote>
-<p>设计成多线程会面临的问题？<br>
-多线程撮合最大的问题不是性能，而是破坏了撮合结果的确定性。<br>
-在多线程环境下，很难严格保证价格优先、时间优先，成交顺序依赖线程调度，导致结果不可重放。<br>
-即使通过锁保证互斥，也无法保证顺序公平性，反而引入延迟抖动、死锁和一致性风险。<br>
-因此主流交易所采用single-writer架构，用单线程换确定性，用内存换稳定</p>
+<p>设计成多线程会面临的问题？<br>多线程撮合最大的问题不是性能，而是破坏了撮合结果的确定性。<br>在多线程环境下，很难严格保证价格优先、时间优先，成交顺序依赖线程调度，导致结果不可重放。<br>即使通过锁保证互斥，也无法保证顺序公平性，反而引入延迟抖动、死锁和一致性风险。<br>因此主流交易所采用single-writer架构，用单线程换确定性，用内存换稳定</p>
 </blockquote>
-<h3 id="5-交易所有哪些模块？">5.交易所有哪些模块？</h3>
-<p>交易所 = 钱包 + 账户 + 交易 + 撮合 + 清算 + 行情 + 风控</p>
+<h3 id="5-交易所有哪些模块？"><a href="#5-交易所有哪些模块？" class="headerlink" title="5.交易所有哪些模块？"></a>5.交易所有哪些模块？</h3><p>交易所 &#x3D; 钱包 + 账户 + 交易 + 撮合 + 清算 + 行情 + 风控</p>
 
 </div>
 

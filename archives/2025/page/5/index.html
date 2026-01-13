@@ -3099,8 +3099,7 @@
 					24 redis常用数据结构命令及代码实现
 				</h2>
 				<div class="index-brief">
-					string常用命令及代码操作
-123456789101112131415SET key value # 设置单个字段SETEX key seconds value # 设置键值及过期时间（秒）SETNX key value  # 原子操作 1：键不存在且设置成功。0：键已存在，未执行操作SET k
+					string常用命令及代码操作123456789101112131415SET key value # 设置单个字段SETEX key seconds value # 设置键值及过期时间（秒）SETNX key value  # 原子操作 1：键不存在且设置成功。0：键已存在，未执行操作SET ke
 					...
 				</div>
 			</a>
@@ -3163,11 +3162,7 @@
 				</h2>
 				<div class="index-brief">
 					刷新流程
-
-客户端发起请求
-当检测到Access Token过期（通过定时检查或API返回错误码），客户端向授权服务器的Token端点发送POST请求，需包含以下参数：
-
-12345678grant_type=refresh_tokenrefresh_token=xxx（已存储的Refresh To
+客户端发起请求当检测到Access Token过期（通过定时检查或API返回错误码），客户端向授权服务器的Token端点发送POST请求，需包含以下参数：12345678grant_type=refresh_tokenrefresh_token=xxx（已存储的Refresh Token）
 					...
 				</div>
 			</a>
@@ -3194,11 +3189,9 @@
 				</h2>
 				<div class="index-brief">
 					
-
 可以通过版本号使用乐观并发控制，以确保新版本不会被旧版本覆盖，由应用层来处理具体的冲突；
 
-
-另外对于写操作，一致性级别支持 quorum/one/all，默认为 quorum，即只有当大多数分片可用时才允许写操作。但即使大多数可用，也可能存在因为网络等原因导致写入副本失败，这样该副本被认为故障
+另外对于写操作，一致性级别支持 quorum&#x2F;one&#x2F;all，默认为 quorum，即只有当大多数分片可用时才允许写操作。但即使大多数可用，也可能存在因为网络等原因导致写入副本失败，这样
 					...
 				</div>
 			</a>
@@ -3225,11 +3218,9 @@
 				</h2>
 				<div class="index-brief">
 					
-
 删除和更新也都是写操作，但是 Elasticsearch 中的文档是不可变的，因此不能被删除或者改动以展示其变更；(根本原因是底层lucene的segment段文件不可更新删除)
 
-
-磁盘上的每个段都有一个相应的 .del 文件。当删除请求发送后，文档并没有真 的被删除，而是在 .del 文件中
+磁盘上的每个段都有一个相应的 .del 文件。当删除请求发送后，文档并没有真 的被删除，而是在 .del 文件中被标
 					...
 				</div>
 			</a>

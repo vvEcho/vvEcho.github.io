@@ -3099,10 +3099,8 @@
 					06 如何自定义一个starter
 				</h2>
 				<div class="index-brief">
-					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：
-1.创建一个工程引入自动配置注解
-2.定义配置属性类
-12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperti
+					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：1.创建一个工程引入自动配置注解2.定义配置属性类
+12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperties
 					...
 				</div>
 			</a>
@@ -3128,10 +3126,9 @@
 					06.1 shiro权限组件
 				</h2>
 				<div class="index-brief">
-					
-**subject：**主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
+					subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
 securityManager：安全管理器，主体进行认证和授权都是通过securityManager进行。它包含下面的认证器和授权器。
-authenticator：认证器，主体进行认证最终通过au
+authenticator：认证器，主体进行认证最终通过authent
 					...
 				</div>
 			</a>
@@ -3217,9 +3214,7 @@ authenticator：认证器，主体进行认证最终通过au
 					20 springmvc的底层工作流程
 				</h2>
 				<div class="index-brief">
-					1.用户发送请求至前端控制器DispatcherServlet。
-2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.
-3.Di
+					1.用户发送请求至前端控制器DispatcherServlet。2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.3.Disp
 					...
 				</div>
 			</a>

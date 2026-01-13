@@ -3099,10 +3099,8 @@
 					03 xxl-job服务注册与发现的原理是啥？
 				</h2>
 				<div class="index-brief">
-					执行器的注册流程
-(1) 启动时主动注册 
-触发时机：执行器启动时，通过XxlJobExecutor 初始化 Netty 服务端，并调用startRegistry 方法向调度中心发送注册请求。
-注册内容：执行器名称appname,执行器地址（address，格式为 IP:PORT）,注册类型（固定为
+					执行器的注册流程(1) 启动时主动注册 触发时机：执行器启动时，通过XxlJobExecutor 初始化 Netty 服务端，并调用startRegistry 方法向调度中心发送注册请求。
+注册内容：执行器名称appname,执行器地址（address，格式为 IP:PORT）,注册类型（固定为 E
 					...
 				</div>
 			</a>
@@ -3161,9 +3159,7 @@
 				</h2>
 				<div class="index-brief">
 					spring是通过三级缓存与双重检测锁的协作来保证bean是单例的
-一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。
-二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。
-三级缓存（singleton
+一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。三级缓存（singletonFa
 					...
 				</div>
 			</a>
@@ -3219,10 +3215,7 @@
 					17 spring中bean是线程安全的吗？
 				</h2>
 				<div class="index-brief">
-					spring中bean不是线程安全的
-Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。
-在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。
-在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确
+					spring中bean不是线程安全的Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确赋值。
 					...
 				</div>
 			</a>

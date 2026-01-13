@@ -3108,7 +3108,6 @@
 
 
 
-
 noeviction（默认）
 内存满时拒绝所有写操作，返回错误
 数据不可丢失的敏感场景（如金融交易）
@@ -3120,7 +3119,7 @@ LRU（最近最少使用）
 
 
 LFU（最不频繁使用）
-根据键的访问频
+根据键的访问频率
 					...
 				</div>
 			</a>
@@ -3174,11 +3173,9 @@ LFU（最不频繁使用）
 					17 缓存预热怎么做
 				</h2>
 				<div class="index-brief">
-					1.应用启动时预加载
-在服务启动阶段（如Spring Boot应用初始化完成时），通过代码自动加载热点数据到缓存。
+					1.应用启动时预加载在服务启动阶段（如Spring Boot应用初始化完成时），通过代码自动加载热点数据到缓存。
 适合系统配置，数据量小且确定的情况。
-实现方式：
-Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执行预热逻辑，例如加
+实现方式：Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执行预热逻辑，例如加载数
 					...
 				</div>
 			</a>
@@ -3233,10 +3230,8 @@ Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执�
 					15 redis如何做分页查询
 				</h2>
 				<div class="index-brief">
-					1.使用redis的list（列表）数据结构
-将需要分页展示的数据的id或者主键作为list中的元素，然后根据用户的分页请求，
-使用LRANGE命令来获取指定范围的元素，再根据元素来获取具体的数据
-1234567891011@Servicepublic class RedisPaginationSe
+					1.使用redis的list（列表）数据结构将需要分页展示的数据的id或者主键作为list中的元素，然后根据用户的分页请求，使用LRANGE命令来获取指定范围的元素，再根据元素来获取具体的数据
+1234567891011@Servicepublic class RedisPaginationServ
 					...
 				</div>
 			</a>

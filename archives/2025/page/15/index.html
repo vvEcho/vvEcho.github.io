@@ -3129,7 +3129,6 @@
 					核心特性对比
 
 
-
 特性
 Eureka
 Zookeeper
@@ -3138,24 +3137,18 @@ Apollo
 
 
 
-
 CAP模型
 AP
 CP
-AP/CP
+AP&#x2F;CP
 CP（强一致性优先）
 
 
 健康检查
 客户端心跳检测
 会话心跳检测
-TCP/HTTP/MySQL/客户端心跳
+TCP&#x2F;HTTP&#x2F;MySQL&#x2F;客户端心跳
 客户端主动上报+服务端轮询
-
-
-服务发现
-支持
-支持（需手动扩
 					...
 				</div>
 			</a>
@@ -3181,9 +3174,8 @@ TCP/HTTP/MySQL/客户端心跳
 					02.3 Gateway和Zuul的区别
 				</h2>
 				<div class="index-brief">
-					Spring Cloud Gateway和Zuul有什么区别？
-Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
-以下是Spring Clo
+					Spring Cloud Gateway和Zuul有什么区别？Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构中提供动态路由、监控、弹性、安全等边缘服务。尽管它们的目标相同，但两者在设计理念、性能、功能特性等方面有所不同。
+以下是Spring Clou
 					...
 				</div>
 			</a>
@@ -3209,10 +3201,8 @@ Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构
 					06 如何自定义一个starter
 				</h2>
 				<div class="index-brief">
-					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：
-1.创建一个工程引入自动配置注解
-2.定义配置属性类
-12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperti
+					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：1.创建一个工程引入自动配置注解2.定义配置属性类
+12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperties
 					...
 				</div>
 			</a>
@@ -3238,10 +3228,9 @@ Spring Cloud Gateway和Netflix Zuul都是服务网关，用于在微服务架构
 					06.1 shiro权限组件
 				</h2>
 				<div class="index-brief">
-					
-**subject：**主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
+					subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
 securityManager：安全管理器，主体进行认证和授权都是通过securityManager进行。它包含下面的认证器和授权器。
-authenticator：认证器，主体进行认证最终通过au
+authenticator：认证器，主体进行认证最终通过authent
 					...
 				</div>
 			</a>

@@ -3137,8 +3137,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>copyOnWriteArrayList是线程安全的<br>
-它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；</p>
+	<p>copyOnWriteArrayList是线程安全的<br>它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；</p>
 <p>并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；</p>
 <p>最后，待元素写入新数组后再把新数组执行原有的数组；它只保证了数据的最终一致性没有保证数据的实时一致性，因为数据在写入的过程中，读是不可见的；</p>
 <p>实际的应用场景，一般用作读多写少对数据实时一致性要求不高的场景；比如留言板中，敏感词过滤等</p>
@@ -3150,16 +3149,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/0120/string-stringBuild-stringBuffer.html">
+              <a href="/2024/0120/exception-error-different.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  14 String,stringBuild,StringBuffer的区别
+                  07 exception和error有啥区别
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/0120/exception-error-different.html">
-                07 exception和error有啥区别
+              <a href="/2024/0120/head-tail-cycle.html">
+                06 为什么头插法容易形成死循环而尾插法不会
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

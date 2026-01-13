@@ -3099,20 +3099,13 @@
 					08 redis如何做内存优化
 				</h2>
 				<div class="index-brief">
-					redis优化内存分为两个层面
-大的层面：
+					redis优化内存分为两个层面大的层面：
 
+合理设置数据过期时间使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
 
-合理设置数据过期时间
-使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
+合理设置内存淘汰策略结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
 
-
-合理设置内存淘汰策略
-结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
-
-
-内存碎片优化
-启用 j
+内存碎片优化启用 jemalloc
 					...
 				</div>
 			</a>
@@ -3193,17 +3186,13 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-cache-question.html">
+			<a href="/2024/0120/redis-identify-hot-key.html">
 				<h2 class="index-title">
-					05 缓存击穿，缓存穿透，缓存雪崩
+					06 怎么监控热key
 				</h2>
 				<div class="index-brief">
-					缓存击穿
-redis中一个热点key过期，导致大量的访问打到数据库上
-监控哪些数据是热门数据，实时的调整热key的过期时长；
-缓存穿透
-大量请求根本不存在的key；例如恶意的流量攻击
-设置空值,设置白名单,使用布隆过滤器，对请求做校验(比如请求一个查询一个id为-1000的数据，这种直接可以判定为不
+					redis 6.2以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可。
+可以定时在节点中使用该命令来发现对应热点key,或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为这些key是热点key,可以将热点key对应的
 					...
 				</div>
 			</a>
@@ -3224,13 +3213,13 @@ redis中一个热点key过期，导致大量的访问打到数据库上
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-identify-hot-key.html">
+			<a href="/2024/0120/redis-bloom-filter.html">
 				<h2 class="index-title">
-					06 怎么监控热key
+					07 说说布隆过滤器的原理？
 				</h2>
 				<div class="index-brief">
-					redis 6.2以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可。
-可以定时在节点中使用该命令来发现对应热点key,或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为这些key是热点key,可以将热点key对应的
+					布隆过滤器（Bloom Filter）是一个 probabilistic data structure，用于判断一个元素是否在集合中。它通过使用多个哈希函数和位数组来提高查询效率。布隆过滤器在Redis中应用最广泛，用于解决缓存击穿、缓存穿透等问题。
+常用的布隆过滤器的实现是redission的bl
 					...
 				</div>
 			</a>

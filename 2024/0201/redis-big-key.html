@@ -3137,29 +3137,22 @@
 
 <!-- content -->
 <div id="article-content">
-	<h4 id="大key可能存在的场景">大key可能存在的场景</h4>
-<ol>
+	<h4 id="大key可能存在的场景"><a href="#大key可能存在的场景" class="headerlink" title="大key可能存在的场景"></a>大key可能存在的场景</h4><ol>
 <li>配送范围特别大的门店</li>
 <li>促销活动特别多的门店、商家等</li>
 <li>高频用户下的订单列表</li>
 </ol>
-<h4 id="大key会导致什么问题">大key会导致什么问题</h4>
-<ol>
+<h4 id="大key会导致什么问题"><a href="#大key会导致什么问题" class="headerlink" title="大key会导致什么问题"></a>大key会导致什么问题</h4><ol>
 <li>如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务</li>
 <li>如果是hash,list,set,zset等类型key 删除key会严重阻塞redis进程；其中删除的时间复杂度是O(n)，就是集合中元素的个数；单个耗时过大命令，将会导致阻塞其他命令，容易引起应用程序雪崩或Redis集群发生故障切换；并且大可能会导致集群数据倾斜</li>
 </ol>
-<h4 id="如何解决大key问题">如何解决大key问题</h4>
-<ol>
+<h4 id="如何解决大key问题"><a href="#如何解决大key问题" class="headerlink" title="如何解决大key问题"></a>如何解决大key问题</h4><ol>
 <li>拆分多个key,然后mget,并且key还可以分散到不同节点，这样就可以把流量分摊到不同节点</li>
 <li>也可以把大key拆到hash中，用hget去获取值</li>
 </ol>
-<h4 id="如何查找大key">如何查找大key</h4>
-<p>可以使用redis-cli -bigkeys</p>
-<h4 id="如何删除大key">如何删除大key</h4>
-<p>大key不能直接删除，需用scan命令迭代大key分批删除<br>
-redis4.0后引入了unlink命令，它能对删除操作进行懒出来操作，丢给后台线程来异步回收内存</p>
-<h4 id="大key的最佳实践">大key的最佳实践</h4>
-<p>string类型大小控制到10k以内，hash,list,set,zset元素个数不要超过5000</p>
+<h4 id="如何查找大key"><a href="#如何查找大key" class="headerlink" title="如何查找大key"></a>如何查找大key</h4><p>可以使用redis-cli -bigkeys</p>
+<h4 id="如何删除大key"><a href="#如何删除大key" class="headerlink" title="如何删除大key"></a>如何删除大key</h4><p>大key不能直接删除，需用scan命令迭代大key分批删除<br>redis4.0后引入了unlink命令，它能对删除操作进行懒出来操作，丢给后台线程来异步回收内存</p>
+<h4 id="大key的最佳实践"><a href="#大key的最佳实践" class="headerlink" title="大key的最佳实践"></a>大key的最佳实践</h4><p>string类型大小控制到10k以内，hash,list,set,zset元素个数不要超过5000</p>
 
 </div>
 

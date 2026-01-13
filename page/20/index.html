@@ -3099,9 +3099,8 @@
 					12 spring怎么解决循环依赖的？
 				</h2>
 				<div class="index-brief">
-					为什么会出现循环依赖
-其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
-这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被
+					为什么会出现循环依赖其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
+这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被实
 					...
 				</div>
 			</a>
@@ -3155,9 +3154,7 @@ springboot的自动装配是依赖于java的s
 					10 aop的实现默认是使用jdk动态代理还是cglib
 				</h2>
 				<div class="index-brief">
-					aop没有默认使用哪个代理，都是根据条件判断的。
-注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。
-注解是 @EnableAspectJAutoProxy(proxyTargetClass = tru
+					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
 					...
 				</div>
 			</a>
@@ -3243,8 +3240,7 @@ springboot的自动装配是依赖于java的s
 					08 说看过AOP相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；
-bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核
+					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
 					...
 				</div>
 			</a>
@@ -3270,8 +3266,7 @@ bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 
 					09 说看过IOC相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的
-我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最
+					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最后
 					...
 				</div>
 			</a>

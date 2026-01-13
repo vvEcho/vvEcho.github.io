@@ -3127,9 +3127,7 @@ springboot的自动装配是依赖于java的s
 					10 aop的实现默认是使用jdk动态代理还是cglib
 				</h2>
 				<div class="index-brief">
-					aop没有默认使用哪个代理，都是根据条件判断的。
-注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。
-注解是 @EnableAspectJAutoProxy(proxyTargetClass = tru
+					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
 					...
 				</div>
 			</a>
@@ -3215,8 +3213,7 @@ springboot的自动装配是依赖于java的s
 					08 说看过AOP相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；
-bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核
+					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
 					...
 				</div>
 			</a>

@@ -3130,13 +3130,13 @@
 <!-- content -->
 <div id="article-content">
 	<p>security是一个springcloud中一个负责安全认证的组件，核心是一个过滤器链</p>
-<p>1.提交登录请求：当用户通过表单登录时，Spring Security 内置的 UsernamePasswordAuthenticationFilter 过滤器会拦截登录请求（默认拦截 /login）。</p>
+<p>1.提交登录请求：当用户通过表单登录时，Spring Security 内置的 UsernamePasswordAuthenticationFilter 过滤器会拦截登录请求（默认拦截 &#x2F;login）。</p>
 <p>2.封装认证对象：(UsernamePasswordAuthenticationFilter) 用户名密码过滤器会将用户提交的用户名和密码封装成一个 (UsernamePasswordAuthenticationToken) token对象，该对象实现了 Authentication 接口。</p>
 <p>3.调用 AuthenticationManager：这个封装好的 Authentication 对象会被传递给 AuthenticationManager，通常是由 ProviderManager 实现，来执行认证。</p>
 <p>4.使用 AuthenticationProvider 验证：ProviderManager 内部维护了多个 AuthenticationProvider（通常是 DaoAuthenticationProvider）。每个 AuthenticationProvider 都会尝试根据特定的策略对用户进行认证。</p>
 <p>5.UserDetailsService 和 UserDetails：DaoAuthenticationProvider 会使用 UserDetailsService 加载用户信息，UserDetailsService 返回一个包含用户信息的 UserDetails 对象，这个对象包含用户名、密码、角色等信息。</p>
 <p>6.密码校验：DaoAuthenticationProvider 会调用 PasswordEncoder 对密码进行加密和匹配，如果认证成功，返回一个 Authentication 对象，包含用户的完整信息和权限。</p>
-<p>7.认证成功/失败处理：如果认证成功，用户会被重定向到上一个请求页面。如果失败，则返回登录页面，并显示错误信息</p>
+<p>7.认证成功&#x2F;失败处理：如果认证成功，用户会被重定向到上一个请求页面。如果失败，则返回登录页面，并显示错误信息</p>
 <blockquote>
 <p>总结：前端调用登录接口到后端，security内置的用户密码过滤器会拦截登录请求，将用户名和密码封装成一个未认证的token交给对应的providerManager，providerManager会调用对应的支持对应认证类型provider类去验证用户名及密码是否正确，如果正确，验证通过后，生成新的已认证Token（含用户详情及权限），清除密码后存入SecurityContex</p>
 </blockquote>

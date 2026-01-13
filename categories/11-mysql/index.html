@@ -3100,7 +3100,6 @@
 				</h2>
 				<div class="index-brief">
 					mysql数据倾斜原因
-
 分库分表策略不合理
 热点数据集中
 空值及特殊值过多
@@ -3108,9 +3107,7 @@ join关联查询时关联查询字段的值分布不均匀
 group by或聚合操作（例如：聚合字段的某些值占比过高（如性别字段中90%为男性））
 
 mysql数据倾斜解决方案
-
-优化分片策略
-方法：选择均匀分布的字段作为分片键（如哈
+优化分片策略方法：选择均匀分布的字段作为分片键（如哈希分区
 					...
 				</div>
 			</a>
@@ -3136,9 +3133,8 @@ mysql数据倾斜解决方案
 					19 分组查询语句有哪些
 				</h2>
 				<div class="index-brief">
-					窗口函数（Window Functions）
-适用场景：需在保留原始行数据的同时进行分组聚合（如计算每个分组内的排名、累计值等）
-12345SELECT    department_id,    salary,    SUM(salary) OVER (PARTITION BY department
+					窗口函数（Window Functions）适用场景：需在保留原始行数据的同时进行分组聚合（如计算每个分组内的排名、累计值等）
+12345SELECT    department_id,    salary,    SUM(salary) OVER (PARTITION BY department_
 					...
 				</div>
 			</a>
@@ -3190,11 +3186,8 @@ mysql数据倾斜解决方案
 					17 为什么不遵守最左匹配原则索引会失效
 				</h2>
 				<div class="index-brief">
-					B+树结构依赖于最左列的值作为比较起点
-MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下
-第一层：按 A 列排序；
-第二层：在 A 相同的情况下按 B 排序；
-第三层：在 A 和 B 相同的情况下按 C 排
+					B+树结构依赖于最左列的值作为比较起点MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下第一层：按 A 列排序；第二层：在 A 相同的情况下按 B 排序；第三层：在 A 和 B 相同的情况下按 C 排序
+A.
 					...
 				</div>
 			</a>

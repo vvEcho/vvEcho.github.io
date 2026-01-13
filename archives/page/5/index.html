@@ -3100,7 +3100,6 @@
 				</h2>
 				<div class="index-brief">
 					mysql数据倾斜原因
-
 分库分表策略不合理
 热点数据集中
 空值及特殊值过多
@@ -3108,9 +3107,7 @@ join关联查询时关联查询字段的值分布不均匀
 group by或聚合操作（例如：聚合字段的某些值占比过高（如性别字段中90%为男性））
 
 mysql数据倾斜解决方案
-
-优化分片策略
-方法：选择均匀分布的字段作为分片键（如哈
+优化分片策略方法：选择均匀分布的字段作为分片键（如哈希分区
 					...
 				</div>
 			</a>
@@ -3136,9 +3133,8 @@ mysql数据倾斜解决方案
 					19 分组查询语句有哪些
 				</h2>
 				<div class="index-brief">
-					窗口函数（Window Functions）
-适用场景：需在保留原始行数据的同时进行分组聚合（如计算每个分组内的排名、累计值等）
-12345SELECT    department_id,    salary,    SUM(salary) OVER (PARTITION BY department
+					窗口函数（Window Functions）适用场景：需在保留原始行数据的同时进行分组聚合（如计算每个分组内的排名、累计值等）
+12345SELECT    department_id,    salary,    SUM(salary) OVER (PARTITION BY department_
 					...
 				</div>
 			</a>
@@ -3164,8 +3160,7 @@ mysql数据倾斜解决方案
 					24 redis常用数据结构命令及代码实现
 				</h2>
 				<div class="index-brief">
-					string常用命令及代码操作
-123456789101112131415SET key value # 设置单个字段SETEX key seconds value # 设置键值及过期时间（秒）SETNX key value  # 原子操作 1：键不存在且设置成功。0：键已存在，未执行操作SET k
+					string常用命令及代码操作123456789101112131415SET key value # 设置单个字段SETEX key seconds value # 设置键值及过期时间（秒）SETNX key value  # 原子操作 1：键不存在且设置成功。0：键已存在，未执行操作SET ke
 					...
 				</div>
 			</a>
@@ -3228,11 +3223,7 @@ mysql数据倾斜解决方案
 				</h2>
 				<div class="index-brief">
 					刷新流程
-
-客户端发起请求
-当检测到Access Token过期（通过定时检查或API返回错误码），客户端向授权服务器的Token端点发送POST请求，需包含以下参数：
-
-12345678grant_type=refresh_tokenrefresh_token=xxx（已存储的Refresh To
+客户端发起请求当检测到Access Token过期（通过定时检查或API返回错误码），客户端向授权服务器的Token端点发送POST请求，需包含以下参数：12345678grant_type=refresh_tokenrefresh_token=xxx（已存储的Refresh Token）
 					...
 				</div>
 			</a>

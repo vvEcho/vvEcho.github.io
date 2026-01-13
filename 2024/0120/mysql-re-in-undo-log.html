@@ -3139,21 +3139,15 @@
 <div id="article-content">
 	<p>binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；</p>
 <ul>
-<li>
-<p>binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；</p>
+<li><p>binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；</p>
 </li>
-<li>
-<p>redolog-事务提交时，先将修改记录到 Redo Log，再异步刷盘到数据文件<br>
-重做日志的作用，在于提高mysql写的性能，因为你想如果每次写操作都实时操作数据库那么带来的IO开销一定是很大的，redolog你可以把它当做一个缓冲区，一般而言mysql的刷盘近乎是实时的，只有在大量写拥堵时，redolog被写满时才会触发强制刷盘然后将redolog中的数据更新到数据库；</p>
+<li><p>redolog-事务提交时，先将修改记录到 Redo Log，再异步刷盘到数据文件<br>重做日志的作用，在于提高mysql写的性能，因为你想如果每次写操作都实时操作数据库那么带来的IO开销一定是很大的，redolog你可以把它当做一个缓冲区，一般而言mysql的刷盘近乎是实时的，只有在大量写拥堵时，redolog被写满时才会触发强制刷盘然后将redolog中的数据更新到数据库；</p>
 </li>
-<li>
-<p>undolog-不重做日志也叫回滚日志，它和redolog一样都是存储引擎层面特有的，都是InnoDB特有的事务日志；顾名思意是为了保证事务安全的；undolog保证事务的原子性（Atomicity），回滚时通过逆向操作恢复数据到修改前的状态版本</p>
+<li><p>undolog-不重做日志也叫回滚日志，它和redolog一样都是存储引擎层面特有的，都是InnoDB特有的事务日志；顾名思意是为了保证事务安全的；undolog保证事务的原子性（Atomicity），回滚时通过逆向操作恢复数据到修改前的状态版本</p>
 </li>
 </ul>
 <blockquote>
-<p>总结:Redo Log 是“数据恢复的保险单”：确保即使系统崩溃，已提交事务的修改也能恢复。<br>
-Undo Log 是“事务回滚的时光机”：提供回滚能力和多版本数据，支撑高并发读操作。<br>
-两者协同：Redo Log 保证持久性，Undo Log 保证原子性与一致性，共同实现 ACID 事务</p>
+<p>总结:Redo Log 是“数据恢复的保险单”：确保即使系统崩溃，已提交事务的修改也能恢复。<br>Undo Log 是“事务回滚的时光机”：提供回滚能力和多版本数据，支撑高并发读操作。<br>两者协同：Redo Log 保证持久性，Undo Log 保证原子性与一致性，共同实现 ACID 事务</p>
 </blockquote>
 
 </div>

@@ -3100,7 +3100,7 @@
 				</h2>
 				<div class="index-brief">
 					hashmap的扩容方式在jdk1.7和jdk1.8中不同,以下来分别说明
-在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75=12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，也就是32
+在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75&#x3D;12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，
 					...
 				</div>
 			</a>
@@ -3127,14 +3127,11 @@
 				</h2>
 				<div class="index-brief">
 					
-
 hashMap继承自AbstractMap,hashTable继承自Dictionary类；
-
 
 hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
 
-
-hashTable在put,get,contains等方法都加了syn
+hashTable在put,get,contains等方法都加了synchr
 					...
 				</div>
 			</a>

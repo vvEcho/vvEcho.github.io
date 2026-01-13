@@ -3137,16 +3137,11 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>spring Boot的SPI机制通过<code>META-INF/spring.factories</code>文件和SpringFactoriesLoader实现了比 Java SPI 更强大的扩展能力，成为其自动配置与生态集成的核心技术。<br>
-开发者可通过自定义 Starter 和扩展点，灵活构建高内聚、低耦合的模块化系统</p>
-<p><strong>服务注册</strong><br>
-Spring Boot 的 SPI 机制通过 META-INF/spring.factories 文件实现服务注册，该文件以键值对形式定义接口与其实现类的映射关系</p>
+	<p>spring Boot的SPI机制通过<code>META-INF/spring.factories</code>文件和SpringFactoriesLoader实现了比 Java SPI 更强大的扩展能力，成为其自动配置与生态集成的核心技术。<br>开发者可通过自定义 Starter 和扩展点，灵活构建高内聚、低耦合的模块化系统</p>
+<p><strong>服务注册</strong><br>Spring Boot 的 SPI 机制通过 META-INF&#x2F;spring.factories 文件实现服务注册，该文件以键值对形式定义接口与其实现类的映射关系</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.MyAutoConfiguration</span></span><br></pre></td></tr></table></figure>
-<p><strong>服务发现</strong><br>
-Spring Boot 通过 SpringFactoriesLoader类实现服务发现，其核心步骤如下：<br>
-扫描文件：遍历所有 META-INF/spring.factories 文件。<br>
-解析配置：将键（接口或抽象类全限定名）与值（实现类全限定名列表）映射到内存。<br>
-动态加载：根据需求（如自动配置）通过反射实例化类，并注册到 Spring 容器中</p>
+
+<p><strong>服务发现</strong><br>Spring Boot 通过 SpringFactoriesLoader类实现服务发现，其核心步骤如下：<br>扫描文件：遍历所有 META-INF&#x2F;spring.factories 文件。<br>解析配置：将键（接口或抽象类全限定名）与值（实现类全限定名列表）映射到内存。<br>动态加载：根据需求（如自动配置）通过反射实例化类，并注册到 Spring 容器中</p>
 
 </div>
 

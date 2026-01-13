@@ -3129,30 +3129,15 @@
 
 <!-- content -->
 <div id="article-content">
-	<h3 id="1-什么交永续合约？什么交交割合约？">1.什么交永续合约？什么交交割合约？</h3>
-<p>永续合约是“不过期的合约”，靠资金费率锚定现货<br>
-交割合约是“有期限的合约”，到期必须自动结算</p>
-<h3 id="2-资金费率？">2.资金费率？</h3>
-<p>资金费率是根据永续合约价格与现货价格之间的差异，定期在持有多头或空头头寸的交易者之间进行的资金支付。<br>
-⬆️ 在看涨市场中，资金费率为正，多头交易者向空头交易者支付资金费。<br>
-⬇️ 在看跌市场中，资金费率为负，空头交易者向多头交易者支付资金费。<br>
-一般交易所不收取资金费率转移的手续费，这些费用直接在交易者之间进行结算</p>
-<p>资金费率 = 溢价指数 + 利率项</p>
-<h3 id="3-资金费率怎么得来的？">3.资金费率怎么得来的？</h3>
-<p>对于【永续合约】这种“没有交割日的衍生品”才有资金费率</p>
-<p>资金费率由两个组成部分构成：利率和溢价。<br>
-其中，溢价是确保永续合约价格与标的资产价格趋同的关键因素。<br>
-LBank 采用固定利率，假设持有现金等价物的回报高于持有 BTC 等价物。<br>
-默认利率为每天 0.03%（每个资金费率间隔为 0.01%），但可能会根据市场条件（如联邦基金利率的变化）进行调整。</p>
-<p>当永续合约价格与标记价格之间存在显著价差时，会使用溢价指数来强制实现价格趋同。<br>
-溢价指数针对每种交易工具单独计算，公式如下：</p>
-<p>✅ 溢价指数（P）计算公式：<br>
-溢价指数(P) =[Max(0, 影响买入价格 − 现货价格) − Max(0, 现货价格 − 影响卖出价格)] / 现货价格</p>
-<p>其中：<br>
-影响买入价格：购买名义影响量的价格<br>
-影响卖出价格：卖出名义影响量的价格</p>
-<h3 id="4-永续价，现货价，标记价，指数价？">4.永续价，现货价，标记价，指数价？</h3>
-<table>
+	<h3 id="1-什么交永续合约？什么交交割合约？"><a href="#1-什么交永续合约？什么交交割合约？" class="headerlink" title="1.什么交永续合约？什么交交割合约？"></a>1.什么交永续合约？什么交交割合约？</h3><p>永续合约是“不过期的合约”，靠资金费率锚定现货<br>交割合约是“有期限的合约”，到期必须自动结算</p>
+<h3 id="2-资金费率？"><a href="#2-资金费率？" class="headerlink" title="2.资金费率？"></a>2.资金费率？</h3><p>资金费率是根据永续合约价格与现货价格之间的差异，定期在持有多头或空头头寸的交易者之间进行的资金支付。<br>⬆️ 在看涨市场中，资金费率为正，多头交易者向空头交易者支付资金费。<br>⬇️ 在看跌市场中，资金费率为负，空头交易者向多头交易者支付资金费。<br>一般交易所不收取资金费率转移的手续费，这些费用直接在交易者之间进行结算</p>
+<p>资金费率 &#x3D; 溢价指数 + 利率项</p>
+<h3 id="3-资金费率怎么得来的？"><a href="#3-资金费率怎么得来的？" class="headerlink" title="3.资金费率怎么得来的？"></a>3.资金费率怎么得来的？</h3><p>对于【永续合约】这种“没有交割日的衍生品”才有资金费率</p>
+<p>资金费率由两个组成部分构成：利率和溢价。<br>其中，溢价是确保永续合约价格与标的资产价格趋同的关键因素。<br>LBank 采用固定利率，假设持有现金等价物的回报高于持有 BTC 等价物。<br>默认利率为每天 0.03%（每个资金费率间隔为 0.01%），但可能会根据市场条件（如联邦基金利率的变化）进行调整。</p>
+<p>当永续合约价格与标记价格之间存在显著价差时，会使用溢价指数来强制实现价格趋同。<br>溢价指数针对每种交易工具单独计算，公式如下：</p>
+<p>✅ 溢价指数（P）计算公式：<br>溢价指数(P) &#x3D;[Max(0, 影响买入价格 − 现货价格) − Max(0, 现货价格 − 影响卖出价格)] &#x2F; 现货价格</p>
+<p>其中：<br>影响买入价格：购买名义影响量的价格<br>影响卖出价格：卖出名义影响量的价格</p>
+<h3 id="4-永续价，现货价，标记价，指数价？"><a href="#4-永续价，现货价，标记价，指数价？" class="headerlink" title="4.永续价，现货价，标记价，指数价？"></a>4.永续价，现货价，标记价，指数价？</h3><table>
 <thead>
 <tr>
 <th>名称</th>
@@ -3161,8 +3146,7 @@ LBank 采用固定利率，假设持有现金等价物的回报高于持有 BTC 
 <th>会不会被操控</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>✅ 现货价</td>
 <td>现货市场真实成交价</td>
 <td>真实买卖价格</td>
@@ -3186,64 +3170,32 @@ LBank 采用固定利率，假设持有现金等价物的回报高于持有 BTC 
 <td>决定你爆不爆仓，保护多数正常交易者</td>
 <td>❌ 按规则算</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>一句话总结：赚钱看永续价，爆仓看标记价，公平看指数价，真实买卖看现货价</p>
-<h3 id="5-强制平仓">5. 强制平仓</h3>
-<p>指当账户的保证金不足以维持当前仓位时，系统自动接管仓位并平掉，以防止继续亏损到负值。<br>
-本质：仓位亏损太大 → 保证金不够用了 → 系统强制关闭仓位。<br>
-强平价格一般由 标记价格（Mark Price） 触发，而不是最新成交价。</p>
-<h3 id="6-什么情况下会触发强制平仓">6. 什么情况下会触发强制平仓</h3>
-<p>强制平仓的根本原因只有一个：维持保证金率（MMR）≥ 强平触发阈值（风险过高）。</p>
+<h3 id="5-强制平仓"><a href="#5-强制平仓" class="headerlink" title="5. 强制平仓"></a>5. 强制平仓</h3><p>指当账户的保证金不足以维持当前仓位时，系统自动接管仓位并平掉，以防止继续亏损到负值。<br>本质：仓位亏损太大 → 保证金不够用了 → 系统强制关闭仓位。<br>强平价格一般由 标记价格（Mark Price） 触发，而不是最新成交价。</p>
+<h3 id="6-什么情况下会触发强制平仓"><a href="#6-什么情况下会触发强制平仓" class="headerlink" title="6. 什么情况下会触发强制平仓"></a>6. 什么情况下会触发强制平仓</h3><p>强制平仓的根本原因只有一个：维持保证金率（MMR）≥ 强平触发阈值（风险过高）。</p>
 <p>常见触发场景包括：</p>
 <ol>
-<li>行情反向导致浮亏过大<br>
-仓位亏损吃掉保证金<br>
-MMR 持续上升到危险区<br>
-达到阈值 → 触发强平</li>
-<li>仓位过大、杠杆过高，保证金不足<br>
-杠杆越高，MMR 上升越快<br>
-小波动也能导致触发强平</li>
-<li>标记价格触发爆仓价<br>
-强平以“标记价格”为准<br>
-防止恶意成交导致爆仓</li>
-<li>市场极端波动或流动性差<br>
-无法及时平仓<br>
-系统风控强制接管</li>
+<li>行情反向导致浮亏过大<br>仓位亏损吃掉保证金<br>MMR 持续上升到危险区<br>达到阈值 → 触发强平</li>
+<li>仓位过大、杠杆过高，保证金不足<br>杠杆越高，MMR 上升越快<br>小波动也能导致触发强平</li>
+<li>标记价格触发爆仓价<br>强平以“标记价格”为准<br>防止恶意成交导致爆仓</li>
+<li>市场极端波动或流动性差<br>无法及时平仓<br>系统风控强制接管</li>
 </ol>
-<h3 id="7-强制平仓下的系统操作">7. 强制平仓下的系统操作</h3>
-<p>触发强平后，系统会进行以下操作（不同平台细节略有不同）：</p>
+<h3 id="7-强制平仓下的系统操作"><a href="#7-强制平仓下的系统操作" class="headerlink" title="7. 强制平仓下的系统操作"></a>7. 强制平仓下的系统操作</h3><p>触发强平后，系统会进行以下操作（不同平台细节略有不同）：</p>
 <ol>
-<li>
-<p>分步平仓（Partial Liquidation）<br>
-系统首先尝试：<br>
-只平掉部分仓位<br>
-观察 MMR 是否降低到安全区<br>
-若有效 → 停止强平<br>
-若无效 → 继续下一步<br>
-（此步骤能减少滑点与用户损失）</p>
+<li><p>分步平仓（Partial Liquidation）<br> 系统首先尝试：<br>只平掉部分仓位<br>观察 MMR 是否降低到安全区<br>若有效 → 停止强平<br>若无效 → 继续下一步<br>（此步骤能减少滑点与用户损失）</p>
 </li>
-<li>
-<p>进入强平引擎（Liquidation Engine）<br>
-若分步平仓无法恢复安全：<br>
-系统接管剩余仓位<br>
-以最优速度将仓位平掉<br>
-用户无法再手动操作仓位</p>
+<li><p>进入强平引擎（Liquidation Engine）<br>若分步平仓无法恢复安全：<br>系统接管剩余仓位<br>以最优速度将仓位平掉<br>用户无法再手动操作仓位</p>
 </li>
-<li>
-<p>极端行情下触发自动减仓 ADL（Auto-Deleveraging）</p>
+<li><p>极端行情下触发自动减仓 ADL（Auto-Deleveraging）</p>
 </li>
 </ol>
 <p>当：流动性极差 or 市场剧烈波动 or 强平引擎无法顺利平仓</p>
-<p>系统会：<br>
-对高杠杆、高收益用户进行自动减仓<br>
-降低整体平台风险</p>
+<p>系统会：<br>对高杠杆、高收益用户进行自动减仓<br>降低整体平台风险</p>
 <ol start="4">
-<li>强平完成后通知用户<br>
-平台会向用户展示：强平价格，强平数量，剩余保证金（可能为 0），强平原因（MMR 达到阈值等）</li>
+<li>强平完成后通知用户<br>平台会向用户展示：强平价格，强平数量，剩余保证金（可能为 0），强平原因（MMR 达到阈值等）</li>
 </ol>
-<h3 id="8-现货WS推送渠道">8.现货WS推送渠道</h3>
-<table>
+<h3 id="8-现货WS推送渠道"><a href="#8-现货WS推送渠道" class="headerlink" title="8.现货WS推送渠道"></a>8.现货WS推送渠道</h3><table>
 <thead>
 <tr>
 <th>Channel</th>
@@ -3251,8 +3203,7 @@ MMR 持续上升到危险区<br>
 <th>粒度</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>grid-orders-spot</code></td>
 <td>现货网格的主订单</td>
 <td>较粗</td>
@@ -3267,57 +3218,32 @@ MMR 持续上升到危险区<br>
 <td>每一条小网格委托（子订单）</td>
 <td><strong>最细</strong></td>
 </tr>
-</tbody>
-</table>
-<h3 id="9-合集出价，合集转移，合集转账（批量提币的gas优化）">9.合集出价，合集转移，合集转账（批量提币的gas优化）</h3>
-<blockquote>
+</tbody></table>
+<h3 id="9-合集出价，合集转移，合集转账（批量提币的gas优化）"><a href="#9-合集出价，合集转移，合集转账（批量提币的gas优化）" class="headerlink" title="9.合集出价，合集转移，合集转账（批量提币的gas优化）"></a>9.合集出价，合集转移，合集转账（批量提币的gas优化）</h3><blockquote>
 <p>合集出价：</p>
 </blockquote>
-<p>订单不指定 tokenId，设置一个条件过滤：如某个 NFT 系列的合约地址<br>
-卖家任意持有该系列的 NFT，都可以“成交”此订单</p>
+<p>订单不指定 tokenId，设置一个条件过滤：如某个 NFT 系列的合约地址<br>卖家任意持有该系列的 NFT，都可以“成交”此订单</p>
 <blockquote>
 <p>合集转移：</p>
 </blockquote>
-<p>指批量把某个合集中的多个 NFT 一次性转给别人<br>
-传统 ERC-721（不支持批量），每个 TokenId = 1 次链上调用，每次ERC721 transfer = 消耗 40k ~ 60k gas</p>
-<p>① 用 ERC-721A（Azuki）<br>
-特点：支持连续 Mint → 节省 gas<br>
-但不支持批量 transfer。只优化 mint。</p>
-<p>② 采用 ERC-1155<br>
-ERC-1155 支持：</p>
+<p>指批量把某个合集中的多个 NFT 一次性转给别人<br>传统 ERC-721（不支持批量），每个 TokenId &#x3D; 1 次链上调用，每次ERC721 transfer &#x3D; 消耗 40k ~ 60k gas</p>
+<p>① 用 ERC-721A（Azuki）<br>特点：支持连续 Mint → 节省 gas<br>但不支持批量 transfer。只优化 mint。</p>
+<p>② 采用 ERC-1155<br>ERC-1155 支持：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">safeBatchTransferFrom(...)</span><br></pre></td></tr></table></figure>
 <p>一次交易转移多个 tokenId，gas 大幅降低。</p>
 <p>③ 自定义批量转移合约（最常用）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function batchTransfer(</span><br><span class="line">    address nft,</span><br><span class="line">    address from,</span><br><span class="line">    address to,</span><br><span class="line">    uint256[] calldata ids</span><br><span class="line">) external &#123;</span><br><span class="line">    for(uint i=0; i&lt;ids.length; i++)&#123;</span><br><span class="line">        IERC721(nft).safeTransferFrom(from, to, ids[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>优点：<br>
-多笔 transfer 合并为一笔交易<br>
-gas 显著降低（约 30~50%）<br>
-钱包、CEX、NFT 市场都常用这种方案<br>
-缺点：<br>
-still loops → gas &gt; 80k per NFT<br>
-无法突破 ERC721 的限制</p>
-<p>④ DelegateCall 聚合器（合约钱包风格）<br>
-由用户授权一个合约来批量调用 transfer：<br>
-user allows aggregator to move tokens<br>
-aggregator multicalls all transfers in one transaction<br>
-类似 Gem.xyz / Blur Sweep 的操作。<br>
-节省 gas 20–50%</p>
-<h3 id="10-Erc711-approve-token授权哪些场景下会用到这个token授权？">10.Erc711 approve-token授权哪些场景下会用到这个token授权？</h3>
-<ul>
+<p>优点：<br>多笔 transfer 合并为一笔交易<br>gas 显著降低（约 30~50%）<br>钱包、CEX、NFT 市场都常用这种方案<br>缺点：<br>still loops → gas &gt; 80k per NFT<br>无法突破 ERC721 的限制</p>
+<p>④ DelegateCall 聚合器（合约钱包风格）<br>由用户授权一个合约来批量调用 transfer：<br>user allows aggregator to move tokens<br>aggregator multicalls all transfers in one transaction<br>类似 Gem.xyz &#x2F; Blur Sweep 的操作。<br>节省 gas 20–50%</p>
+<h3 id="10-Erc711-approve-token授权哪些场景下会用到这个token授权？"><a href="#10-Erc711-approve-token授权哪些场景下会用到这个token授权？" class="headerlink" title="10.Erc711 approve-token授权哪些场景下会用到这个token授权？"></a>10.Erc711 approve-token授权哪些场景下会用到这个token授权？</h3><ul>
 <li>NFT市场挂单出售</li>
 <li>NFT拍卖（拍卖合约需要在拍卖结束时把 NFT 交给赢家）</li>
-<li>链游（GameFi）NFT 装备 / 道具使用</li>
-</ul>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">链游的 NFT 通常用于：</span><br><span class="line">上链装备</span><br><span class="line">召唤合成</span><br><span class="line">NFT 锁仓</span><br><span class="line">NFT 质押</span><br><span class="line"></span><br><span class="line">大部分操作需要游戏合约“移动 NFT”,否则游戏合约无法从你钱包把 NFT 转入游戏逻辑</span><br></pre></td></tr></table></figure>
-<ul>
-<li>NFT 质押（Staking）/ 抵押借贷（NFTfi / BendDAO</li>
-<li>批量转移 / 批量提取（Aggregator / 汤姆猫 Sweep 机器人）</li>
-<li>空投 Claim（某些 NFT 空投需要授权）</li>
-</ul>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">你持有某 NFT</span><br><span class="line">项目方空投新 NFT 或合成 NFT</span><br><span class="line">可能会：</span><br><span class="line">销毁旧 NFT</span><br><span class="line">转走你的 NFT</span><br><span class="line">替换成新的</span><br><span class="line"></span><br><span class="line">这些“转移行为”都需要授权。</span><br><span class="line">（但正规的空投应该只 require signature，不应该 require approve —— 否则容易钓鱼。）</span><br></pre></td></tr></table></figure>
-<ul>
-<li>CEX/钱包托管（托管的钱包代操作 NFT）</li>
-<li>批量销毁（Burn）/ NFT 进化（Upgrade / Merge）</li>
+<li>链游（GameFi）NFT 装备 &#x2F; 道具使用<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">链游的 NFT 通常用于：</span><br><span class="line">上链装备</span><br><span class="line">召唤合成</span><br><span class="line">NFT 锁仓</span><br><span class="line">NFT 质押</span><br><span class="line"></span><br><span class="line">大部分操作需要游戏合约“移动 NFT”,否则游戏合约无法从你钱包把 NFT 转入游戏逻辑</span><br></pre></td></tr></table></figure></li>
+<li>NFT 质押（Staking）&#x2F; 抵押借贷（NFTfi &#x2F; BendDAO</li>
+<li>批量转移 &#x2F; 批量提取（Aggregator &#x2F; 汤姆猫 Sweep 机器人）</li>
+<li>空投 Claim（某些 NFT 空投需要授权）<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">你持有某 NFT</span><br><span class="line">项目方空投新 NFT 或合成 NFT</span><br><span class="line">可能会：</span><br><span class="line">销毁旧 NFT</span><br><span class="line">转走你的 NFT</span><br><span class="line">替换成新的</span><br><span class="line"></span><br><span class="line">这些“转移行为”都需要授权。</span><br><span class="line">（但正规的空投应该只 require signature，不应该 require approve —— 否则容易钓鱼。）</span><br></pre></td></tr></table></figure></li>
+<li>CEX&#x2F;钱包托管（托管的钱包代操作 NFT）</li>
+<li>批量销毁（Burn）&#x2F; NFT 进化（Upgrade &#x2F; Merge）</li>
 </ul>
 
 </div>

@@ -3144,14 +3144,11 @@
 <p>2.属性赋值：通过@Autowired，@Value注解，xml配置，set方法注入属性</p>
 <p>3.初始化：处理aware回调（设置bean名称，上下文信息）；bean的前置增强（如@PostConstruct）；bean的自定义初始化（）；beand的后置增强（如aop代理创建）</p>
 <p>4.使用：注入到容器后，通过getBean()获取bean对象，被应用程序调用</p>
-<p>5.销毁：销毁前回调：@PreDestroy 方法（类似退休前的交接工作）<br>
-自定义销毁：DisposableBean.destroy() 或 destroy-method（类似生命终结）</p>
+<p>5.销毁：销毁前回调：@PreDestroy 方法（类似退休前的交接工作）<br>自定义销毁：DisposableBean.destroy() 或 destroy-method（类似生命终结）</p>
 <blockquote>
-<p>tip:Aware 接口 先于 BeanPostProcessor<br>
-初始化顺序：@PostConstruct → afterPropertiesSet() → init-method</p>
+<p>tip:Aware 接口 先于 BeanPostProcessor<br>初始化顺序：@PostConstruct → afterPropertiesSet() → init-method</p>
 </blockquote>
-<p>流程图如下：<br>
-<img src="../../images/spring/24/1/spring-bean.jpg" alt=""></p>
+<p>流程图如下：<br><img src="/../../images/spring/24/1/spring-bean.jpg"></p>
 <p>代码示例见：<code>LocalDemo/src/main/java/com/local/demo/test/beanlife</code></p>
 
 </div>

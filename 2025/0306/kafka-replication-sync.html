@@ -3129,11 +3129,8 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。<br>
-broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。<br>
-每个partition的leader在收到producer提交的数据后，都需要向producer发送ack,如果producer收到ack，就会进行下一轮的发送</p>
-<p>但是这样会带来一个问题，就是leder并不会等到所有的follower同步完成，所以如果follower同步失败，那么leader会继续向producer发送ack，这样producer会一直收到ack，但是数据会丢失。<br>
-为了避免这个问题，我们可以将ack的相关配置改成all，这样就会等所有的follower同步完成后再发生ack；</p>
+	<p>为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。<br>broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。<br>每个partition的leader在收到producer提交的数据后，都需要向producer发送ack,如果producer收到ack，就会进行下一轮的发送</p>
+<p>但是这样会带来一个问题，就是leder并不会等到所有的follower同步完成，所以如果follower同步失败，那么leader会继续向producer发送ack，这样producer会一直收到ack，但是数据会丢失。<br>为了避免这个问题，我们可以将ack的相关配置改成all，这样就会等所有的follower同步完成后再发生ack；</p>
 <p>但是这样又会带来另一个问题，就是broker并不是都在一台机子上，不同机子之间的同步是通过网络传输来进行的，那么就会有数据同步的性能问题；也会有网络分区带来的同步失败问题；这样producer就会一直等待，为了解决一直等待的问题，kafka引入了ack的timeout，如果ack的timeout时间到了，那么leader就会认为follower同步失败，同样的在broker中，每个leader都会保存一份同步副本列表（ISR和leader同步的副班，OSR和leader不同步的副本）；这种没有长时间没有返回ack的副本就会被写入OSR副本列表中，等同步后又会被加入ISR副本列表中</p>
 
 </div>

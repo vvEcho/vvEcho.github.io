@@ -3128,10 +3128,8 @@
 					01 openFeign使用过程中如何差异化配置超时时间
 				</h2>
 				<div class="index-brief">
-					全局默认：通过 Feign + Ribbon + Hystrix 的全局配置实现 2秒超时。
-特定接口：通过 @HystrixCommand 注解或 commandKey 配置覆盖为 30秒。
-验证关键点：确保 Hystrix 超时覆盖 Ribbon 和 Feign，避免因优先级导致配置失效
-服务消
+					全局默认：通过 Feign + Ribbon + Hystrix 的全局配置实现 2秒超时。特定接口：通过 @HystrixCommand 注解或 commandKey 配置覆盖为 30秒。验证关键点：确保 Hystrix 超时覆盖 Ribbon 和 Feign，避免因优先级导致配置失效
+服务消费方
 					...
 				</div>
 			</a>
@@ -3213,7 +3211,7 @@ HashMap的迭代顺序是随机的，LinkedHashMap的迭代顺序是插入顺序
 				</h2>
 				<div class="index-brief">
 					hashmap的扩容方式在jdk1.7和jdk1.8中不同,以下来分别说明
-在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75=12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，也就是32
+在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75&#x3D;12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，
 					...
 				</div>
 			</a>

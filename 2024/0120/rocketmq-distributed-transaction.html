@@ -3140,15 +3140,10 @@
 	<p>RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性</p>
 <p>第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 发送半消息（事务消息）</span></span><br><span class="line"><span class="type">TransactionSendResult</span> <span class="variable">result</span> <span class="operator">=</span> producer.sendMessageInTransaction(topic, message, arg);</span><br></pre></td></tr></table></figure>
-<p>第二阶段，本地事务执行与确认<br>
-Broker收到半消息后，通知生产者执行本地事务（如订单创建）。生产者根据本地事务结果返回COMMIT或ROLLBACK状态</p>
-<p>第三阶段：Broker收到生产者返回ack确认状态后，将半消息标记为COMMIT或ROLLBACK<br><br>
-COMMIT：Broker将半消息提交到实际Topic，此时半消息变成全消息，消费者可见<br><br>
-消费者收到消息后，处理后续业务逻辑，处理失败则触发失败重试，若重试16次还失败，则放入死信队列人工介入</p>
-<p>ROLLBACK：Broker删除半消息<br><br>
-UNKNOWN：触发事务状态回查机制<br></p>
-<h4 id="事务状态回查机制">事务状态回查机制</h4>
-<p>若Broker未收到二次确认（如网络超时、服务宕机），会定期向生产者发起回查请求，通过checkLocalTransaction方法确认本地事务最终状态</p>
+<p>第二阶段，本地事务执行与确认<br>Broker收到半消息后，通知生产者执行本地事务（如订单创建）。生产者根据本地事务结果返回COMMIT或ROLLBACK状态</p>
+<p>第三阶段：Broker收到生产者返回ack确认状态后，将半消息标记为COMMIT或ROLLBACK<br><br>COMMIT：Broker将半消息提交到实际Topic，此时半消息变成全消息，消费者可见<br><br>消费者收到消息后，处理后续业务逻辑，处理失败则触发失败重试，若重试16次还失败，则放入死信队列人工介入</p>
+<p>ROLLBACK：Broker删除半消息<br><br>UNKNOWN：触发事务状态回查机制<br></p>
+<h4 id="事务状态回查机制"><a href="#事务状态回查机制" class="headerlink" title="事务状态回查机制"></a>事务状态回查机制</h4><p>若Broker未收到二次确认（如网络超时、服务宕机），会定期向生产者发起回查请求，通过checkLocalTransaction方法确认本地事务最终状态</p>
 <blockquote>
 <p>rocketMq只保证了生产端本地事务和消息投递的原子性，消费端消费失败需要依赖消息重试+业务补偿来确保最终的一致性；若需强一致性需要借助seata这样的中间件来实现</p>
 </blockquote>

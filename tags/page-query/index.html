@@ -3099,10 +3099,8 @@
 					15 redis如何做分页查询
 				</h2>
 				<div class="index-brief">
-					1.使用redis的list（列表）数据结构
-将需要分页展示的数据的id或者主键作为list中的元素，然后根据用户的分页请求，
-使用LRANGE命令来获取指定范围的元素，再根据元素来获取具体的数据
-1234567891011@Servicepublic class RedisPaginationSe
+					1.使用redis的list（列表）数据结构将需要分页展示的数据的id或者主键作为list中的元素，然后根据用户的分页请求，使用LRANGE命令来获取指定范围的元素，再根据元素来获取具体的数据
+1234567891011@Servicepublic class RedisPaginationServ
 					...
 				</div>
 			</a>

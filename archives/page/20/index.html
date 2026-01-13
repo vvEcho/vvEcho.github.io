@@ -3132,9 +3132,7 @@
 				</h2>
 				<div class="index-brief">
 					spring是通过三级缓存与双重检测锁的协作来保证bean是单例的
-一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。
-二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。
-三级缓存（singleton
+一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。三级缓存（singletonFa
 					...
 				</div>
 			</a>
@@ -3190,10 +3188,7 @@
 					17 spring中bean是线程安全的吗？
 				</h2>
 				<div class="index-brief">
-					spring中bean不是线程安全的
-Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。
-在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。
-在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确
+					spring中bean不是线程安全的Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确赋值。
 					...
 				</div>
 			</a>
@@ -3219,11 +3214,8 @@ Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是�
 					14.presto为何能加速查询？
 				</h2>
 				<div class="index-brief">
-					1.执行引擎的革新
-Hive 的局限性：
-Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入HDFS磁盘,导致高 I/O 开销和高延迟(适合批量处理,但无法满足交互式查询)
-Presto 的优势：
-Presto 采用 
+					1.执行引擎的革新Hive 的局限性：Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入HDFS磁盘,导致高 I&#x2F;O 开销和高延迟(适合批量处理,但无法满足交互式查询)
+Presto 的优势：Presto 采
 					...
 				</div>
 			</a>

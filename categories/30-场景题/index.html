@@ -3099,10 +3099,8 @@
 					01 openFeign使用过程中如何差异化配置超时时间
 				</h2>
 				<div class="index-brief">
-					全局默认：通过 Feign + Ribbon + Hystrix 的全局配置实现 2秒超时。
-特定接口：通过 @HystrixCommand 注解或 commandKey 配置覆盖为 30秒。
-验证关键点：确保 Hystrix 超时覆盖 Ribbon 和 Feign，避免因优先级导致配置失效
-服务消
+					全局默认：通过 Feign + Ribbon + Hystrix 的全局配置实现 2秒超时。特定接口：通过 @HystrixCommand 注解或 commandKey 配置覆盖为 30秒。验证关键点：确保 Hystrix 超时覆盖 Ribbon 和 Feign，避免因优先级导致配置失效
+服务消费方
 					...
 				</div>
 			</a>
