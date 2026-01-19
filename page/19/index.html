@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,6 +3171,201 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/kafka-rebalance.html">
+				<h2 class="index-title">
+					05 kafka的rebalance机制
+				</h2>
+				<div class="index-brief">
+					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
+当kafka感知到存在让分
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-distributed-transaction.html">
+				<h2 class="index-title">
+					09 rocketMq实现分布式事务了解吗？
+				</h2>
+				<div class="index-brief">
+					RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性
+第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见
+12// 发送半消息（事务消息）TransactionSendResult result = p
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/kafka-msg-not-lost.html">
+				<h2 class="index-title">
+					01 kafkar如何保证消息不丢失？
+				</h2>
+				<div class="index-brief">
+					回答这个问题可以分三个方面，首先第一点要保证producer消息能达到broker,其次broker收到对应的消息要确保持久化磁盘，最后需要确保consumer能成功消费这条消息；
+
+针对producer:我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消息
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-pull-push.html">
+				<h2 class="index-title">
+					06 rocketMq是pull模式还是push模式
+				</h2>
+				<div class="index-brief">
+					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式
+在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类
+Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-heaped.html">
+				<h2 class="index-title">
+					07 rocketMq消息堆积怎么解决
+				</h2>
+				<div class="index-brief">
+					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
+检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
+还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
+				<h2 class="index-title">
+					08 说说rocketmq死信队列
+				</h2>
+				<div class="index-brief">
+					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
+rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-not-lost.html">
+				<h2 class="index-title">
+					03 rocketMq怎么避免消息不丢失？
+				</h2>
+				<div class="index-brief">
+					我们需要知道rocketMq哪些场景会导致消息丢失；
+
+生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了则执行回滚逻辑
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/rocketmq-msg-not-repeat.html">
 				<h2 class="index-title">
 					04 rocketMq怎么避免消息不重复消费
@@ -3102,6 +3374,35 @@
 					我们知道mq发送消息消费失败后，默认会重试16次，那么因为这种重试机制导致消息很有可能被重复消费；
 对于重复消费的情况，rocketMq是允许的，主要由业务放自己去避免，我们的业务系统需要自己做幂等性的操作
 若消费过则不再重复消费；可采用的方式有很多，主要由业务系统自己去实现，主要方式可以做消息去重
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-msg-order.html">
+				<h2 class="index-title">
+					05 rocketMq如何保证消息顺序消费？
+				</h2>
+				<div class="index-brief">
+					这个问题其实可以分为三点
+第一点生产者要保证消息的顺序生产 第二点broker要保证消息的顺序保存 第三点消费者要保证消息的顺序消费 
+一、生产者端：确保同一业务消息进入同一队列定义业务路由键（Message Group）
+选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，确保同
 					...
 				</div>
 			</a>
@@ -3152,241 +3453,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-find-msg.html">
-				<h2 class="index-title">
-					02 rocketMq怎么查找到对应的消息的？
-				</h2>
-				<div class="index-brief">
-					我们知道，RocketMQ核心的数据文件有3个：CommitLog、ConsumeQueue和Index。
-其中Index文件就是一个索引文件，查找消息时，首先根据消息key的hashcode计算出Hash槽的位置，然后读取Hash槽的值计算Index条目的位置
-从Index条目位置读取到消息在Co
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13rocketmq/">13rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/dubbo-rpc-net.html">
-				<h2 class="index-title">
-					07 dubbo微服务间怎么通信？
-				</h2>
-				<div class="index-brief">
-					dubbo的特定dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
-使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
-dubbo的服务注册与发现的流程容器启动后，提供方向注
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/nacos-konw.html">
-				<h2 class="index-title">
-					03.3 nacos注册中心
-				</h2>
-				<div class="index-brief">
-					1.nacos简介Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
-Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
-
-服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/springcloud-hystrix.html">
-				<h2 class="index-title">
-					05.1 hystrix服务熔断和降级
-				</h2>
-				<div class="index-brief">
-					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
-Hystrix的主要原理是用了断路器模式和线程池隔离技术；
-通过断路器的故障监控，向服务调用方返回一个符合预
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/springcloud-used-component.html">
-				<h2 class="index-title">
-					01 springCloud中组件常用的有哪些？
-				</h2>
-				<div class="index-brief">
-					Zuul、Gateway-网关
-eureka-注册中心
-config-配置中心
-Ribbon-负载均衡
-Feign-服务调用
-Hystrix或Resilience4j-熔断器
-security-安全权限组件
-shiro-权限组件
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/springcloud-eureka.html">
-				<h2 class="index-title">
-					03.1 Eureka注册中心
-				</h2>
-				<div class="index-brief">
-					1.服务端如何保存客户端注册信息?客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.客户端通过Jersey框架，将自己的注册信息
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/springboot-annotation.html">
-				<h2 class="index-title">
-					02 springBoot常用注解？
-				</h2>
-				<div class="index-brief">
-					@SpringBootApplication spring启动类上的注解（实际是由三个注解组成：@SpringBootConfiguration @EnableAutoConfiguration @ComponentScan）
-@EnableAutoConfiguration 自动配置类@Sprin
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-springboot/">02 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/interceptor-filter-different.html">
-				<h2 class="index-title">
-					03 拦截器和过滤器的区别
-				</h2>
-				<div class="index-brief">
-					区别：
-
-拦截器是SpringMVC提供的，过滤器是Servlet提供的。
-过滤器与servlet是绑定的，仅限于web应用。而拦截器可作用于其他的应用，例如swing应用
-对所有请求生效（包括静态资源、Servlet、JSP等），可修改请求&#x2F;响应内容（如编码、敏感词过滤）
-拦截器仅拦截S
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/18/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/20/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/18/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/20/">&gt;</a>
 		
 	</div>
 </div>

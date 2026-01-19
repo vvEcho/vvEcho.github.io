@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,23 +3171,23 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
+			<a href="/2024/0124/beanfactory-factoryBean.html">
 				<h2 class="index-title">
-					01 项目亮点
+					16 BeanFactory和FactoryBean有什么区别
 				</h2>
 				<div class="index-brief">
-					
+					区别BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObj
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-01-20</span>
+				    <span>2024-01-24</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/31-项目相关/">31 项目相关</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -3120,53 +3197,26 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
+			<a href="/2024/0124/hash-clash-solve.html">
 				<h2 class="index-title">
-					02 项目难点
-				</h2>
-				<div class="index-brief">
-					1.项目中遇到的技术难点？mq消费满导致拥堵多线程环境下大数据量导致内存泄漏连接池的配置导致查询缓慢
-2.说一个你做项目为止最难忘的一件事？最难忘的事，我想应该是上线出问题吧；我记得在平安产品线智慧薪酬项目时，当时每个季度末27号就要跑财务核算，当时是三个定时任务，并且这三个定时任务都是有先后顺序的
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/31-项目相关/">31 项目相关</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/about-linux.html">
-				<h2 class="index-title">
-					01 linux面试题
+					13 hash冲突怎么解决
 				</h2>
 				<div class="index-brief">
 					
-linux常用查看日志命令？cd到对应的日志目录文件查看实时日志：tail -f xxx.log根据关键字查询：cat -n xxx.log|grep ‘occurs error’
+链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
 
-123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat err
+开放寻址法（Ope
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-01-20</span>
+				    <span>2024-01-24</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/22-linux/">22 linux</a>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
 										
                                     </span>
                                 
@@ -3176,25 +3226,24 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
+			<a href="/2024/0124/translation-principle.html">
 				<h2 class="index-title">
-					01 docker面试题
+					05 spring事务的底层原理
 				</h2>
 				<div class="index-brief">
-					如何构建dockerfile
-将jar包上传到服务器
-执行下述命令构建dockerfile1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 构建 
+					事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。
+当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。sprin
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-01-20</span>
+				    <span>2024-01-24</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/35-docker/">35 docker</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -3204,23 +3253,52 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/math-method.html">
+			<a href="/2024/0124/arraylist-kuo-rong.html">
 				<h2 class="index-title">
-					01 算法面试题
+					08 arrayList扩容时扩容多少
 				</h2>
 				<div class="index-brief">
-					
+					相关源码如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//默认容量大小private static final int DEFAULT_CAPACITY
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-01-20</span>
+				    <span>2024-01-24</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-算法/">32 算法</a>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/io-different.html">
+				<h2 class="index-title">
+					12 BIO,NIO,AIO的区别
+				</h2>
+				<div class="index-brief">
+					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
+
+BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
 										
                                     </span>
                                 
@@ -3232,7 +3310,7 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/28/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/27/">27</a><a class="page-number" href="/archives/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/archives/page/30/">30</a><a class="page-number" href="/archives/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/48/">48</a><a class="extend next" rel="next" href="/archives/page/30/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/28/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/27/">27</a><a class="page-number" href="/archives/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/archives/page/30/">30</a><a class="page-number" href="/archives/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/30/">&gt;</a>
 		
 	</div>
 </div>

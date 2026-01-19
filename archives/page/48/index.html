@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,12 +3171,46 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/hashMap-concurrentHashMap.html">
+			<a href="/2024/0120/string-stringBuild-stringBuffer.html">
 				<h2 class="index-title">
-					03 ConcurrentHashMap和HashMap的扩容机制
+					14 String,stringBuild,StringBuffer的区别
 				</h2>
 				<div class="index-brief">
-					java1.7相比较java1.8，concurrentHashMap和hashMap都有一定的改动，其中concurrentHashMap在1.8版本后就不在基于Segement分段锁的实现了，并且锁的粒度改为了链表的head节点，锁的粒度更细效率更高；而hashMap在1.8版本后由于存储结构加
+					string是一个常量，他存在于常量池中；
+StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
+其中StringBuffer 相比较于StringBuffer他在append方法中加了同步锁synchronized，所以是线程安全的
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/hashMap-hashTable-different.html">
+				<h2 class="index-title">
+					07 hashMap hashTable的区别
+				</h2>
+				<div class="index-brief">
+					
+hashMap继承自AbstractMap,hashTable继承自Dictionary类；
+
+hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
+
+hashTable在put,get,contains等方法都加了synchr
 					...
 				</div>
 			</a>
@@ -3120,13 +3231,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/generic-extends-super.html">
+			<a href="/2024/0120/exception-error-different.html">
 				<h2 class="index-title">
-					04 泛型中extends和super的区别是什么
+					07 exception和error有啥区别
 				</h2>
 				<div class="index-brief">
-					
-extends &amp; superextends是继承的意思用在子类继承父类，可以理解为一个关键字，而super是子类构造方法继承父类构造方法的一个方法；还有在泛型的应用中，他们针对泛型的边界问题代表的含义完全相反，extends T表示泛型的上边界是T,super T代表泛型的下边界是T;
+					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
 
 					...
 				</div>
@@ -3148,19 +3258,41 @@ extends &amp; superextends是继承的意思用在子类继承父类，可以理
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/hashcode.html">
+			<a href="/2024/0120/copy-on-write-arrayList.html">
 				<h2 class="index-title">
-					05 hashCode的使用场景
+					06 CopyOnWriteArrayList是线程安全的吗
 				</h2>
 				<div class="index-brief">
-					
-hashcode()方法是获取一个对象值的hash值，通常我们用来比较两个值是否相等来使用的；
-
-int i&#x3D;1 和Integer &#x3D; 1他们hash值相等吗？int i&#x3D;1和Integer &#x3D;1 调用hashcode方法，hash值相等;
-
-
-
-面试官这里
+					copyOnWriteArrayList是线程安全的它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；
+并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；
+最后，待元素写入新数组后再
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/head-tail-cycle.html">
+				<h2 class="index-title">
+					06 为什么头插法容易形成死循环而尾插法不会
+				</h2>
+				<div class="index-brief">
+					其实这个问题是jdk1.7版本下的hashMap多线程情况下发生的，hashMap扩容时采用头插法链表的顺序可能发生变化，导致线程1中链表指针原本由A指向B，在线程2中链表指针由B指向A,由于彼此都不可见；那么循环指向就产生了；
+jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新来的元素位
 					...
 				</div>
 			</a>
@@ -3172,64 +3304,6 @@ int i&#x3D;1 和Integer &#x3D; 1他们hash值相等吗？int i&#x3D;1和Integer 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/jdk-and-jre.html">
-				<h2 class="index-title">
-					01 jdk和jre有什么不同
-				</h2>
-				<div class="index-brief">
-					
-jdkJDK 是 Java Development Kit，它提供java运行的环境jre并且包含java基本的工具类。使用它能够编译和运行java程序；
-
-jreJRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有内容的集合，包括 Java 虚拟机（JVM），Java 类库
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/self-introduction.html">
-				<h2 class="index-title">
-					1.自我介绍
-				</h2>
-				<div class="index-brief">
-					面试官，你好！我叫xxx，从16年底入行到现在从事软件开发有8年了，目前主要是从事后端java开发，对于常用的主流框架及中间件都能做到熟练运用。
-
-17年在华为海思供应链业务线，和外围系统对接过程中曾多次收到华为方感谢信；
-18年加入了一个初创型公司做智慧城市项目的后台开发，同时负责部分前端开发工作
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/01-自我介绍/">01 自我介绍</a>
 										
                                     </span>
                                 
@@ -3241,7 +3315,7 @@ jreJRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/47/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/46/">46</a><a class="page-number" href="/archives/page/47/">47</a><span class="page-number current">48</span>
+			<a class="extend prev" rel="prev" href="/archives/page/47/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/46/">46</a><a class="page-number" href="/archives/page/47/">47</a><span class="page-number current">48</span><a class="page-number" href="/archives/page/49/">49</a><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/49/">&gt;</a>
 		
 	</div>
 </div>

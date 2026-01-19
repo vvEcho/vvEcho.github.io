@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,14 +3171,16 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-pull-push.html">
+			<a href="/2024/0120/redis-rdb-aof.html">
 				<h2 class="index-title">
-					06 rocketMq是pull模式还是push模式
+					04 rdb和aof
 				</h2>
 				<div class="index-brief">
-					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式
-在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类
-Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
+					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；
+rdb是一种二进制快照文件的方式,快照某个时刻redis中的数据到硬盘中的
+aof是以日志的的方式存储redis的写命令;
+rdb的好处是适合数据全量备份，容灾好，恢复数据速度快, 缺点是数据可能丢失；
+aof的好处是实时性好，
 					...
 				</div>
 			</a>
@@ -3112,7 +3191,7 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3122,14 +3201,16 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-heaped.html">
+			<a href="/2024/0120/redis-base-data-structure.html">
 				<h2 class="index-title">
-					07 rocketMq消息堆积怎么解决
+					01 redis数据结构
 				</h2>
 				<div class="index-brief">
-					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
-检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
-还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
+					redis是一种基于键值对的来存储数据的nosql数据库
+其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
+常用的有String，list,set,zset,hash
+
+String类型是redis最基本类型之一，其存储数据
 					...
 				</div>
 			</a>
@@ -3140,7 +3221,7 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3150,13 +3231,17 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-dead-letter-queue.html">
+			<a href="/2024/0120/redis-fast-reason.html">
 				<h2 class="index-title">
-					08 说说rocketmq死信队列
+					02 redis性能好的原因？
 				</h2>
 				<div class="index-brief">
-					rocketMq中如果消费者没有成功消费broker过来的消息，一般会重试16次，如果16次都失败则会把这些消息发送到消费者特殊的队列里，这种队列就叫死信队列。
-rocketMq默认会保存三天死信队列的消息等待被处理，我们可以登录RocketMq的控制台对死信队列进行重发；
+					
+基于内存的读写
+单线程，避免了线程的切换及竞争产生的消耗
+基于非阻塞的IO多路复用
+C实现的，更利于和底层进行交互
+
 
 					...
 				</div>
@@ -3168,7 +3253,7 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3178,14 +3263,14 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-not-lost.html">
+			<a href="/2024/0120/kafka-msg-not-repeat.html">
 				<h2 class="index-title">
-					03 rocketMq怎么避免消息不丢失？
+					02 kafka如何避免消息的重复消费？
 				</h2>
 				<div class="index-brief">
-					我们需要知道rocketMq哪些场景会导致消息丢失；
+					其实所有的重复消费问题都是consumer出现了问题，需要我们业务方自己去做去重或者幂等处理；
+例如我们本地可以增加一张表，记录收到的消息；每次去消费前就去看下表中是否有这个消息，有则代表已消费过则不再重复消费
 
-生产者在发送消息的时候，如果断网了就会导致消息发送失败这种极端情况下，我们可以采用rocketMq的事务机制来解决；首先生产者在发送数据前会发送一个half消息给rocketMq，看是否能和rocketMq建立连接，如果发送失败了则执行回滚逻辑
 					...
 				</div>
 			</a>
@@ -3196,7 +3281,7 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
 										
                                     </span>
                                 
@@ -3206,15 +3291,14 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-order.html">
+			<a href="/2024/0120/kafka-msg-order.html">
 				<h2 class="index-title">
-					05 rocketMq如何保证消息顺序消费？
+					03 kafka如何保证消息的顺序消费
 				</h2>
 				<div class="index-brief">
-					这个问题其实可以分为三点
-第一点生产者要保证消息的顺序生产 第二点broker要保证消息的顺序保存 第三点消费者要保证消息的顺序消费 
-一、生产者端：确保同一业务消息进入同一队列定义业务路由键（Message Group）
-选择具有业务唯一性的标识（如订单ID、用户ID），作为消息路由的依据，确保同
+					首先，我们知道kafka的整个架构中，用到了partaion的分区机制，即一个topic会有多个分区，从而来实现消息的物理存储；
+而生产者在发送消息的时候会跟据消息的key来进行取模来决定把当前的消息存储到那个分区中，而且消息是按照先后顺序存储到对应的partion中的
+因为是多个分区，消费的时候通
 					...
 				</div>
 			</a>
@@ -3225,7 +3309,7 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
 										
                                     </span>
                                 
@@ -3237,7 +3321,7 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/35/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/archives/page/37/">37</a><a class="page-number" href="/archives/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/48/">48</a><a class="extend next" rel="next" href="/archives/page/37/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/35/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/archives/page/37/">37</a><a class="page-number" href="/archives/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/37/">&gt;</a>
 		
 	</div>
 </div>

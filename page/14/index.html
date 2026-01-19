@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,6 +3171,234 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0220/mysql-groupby-suoyin.html">
+				<h2 class="index-title">
+					11 groupby语句后有索引查询和无索引查询有啥区别
+				</h2>
+				<div class="index-brief">
+					groupby 后语句有索引，直接根据索引扫描来分组，且分完组后无须排序
+groupby 后语句无索引，会全表扫描，扫描出来的数据分组完后组成一个临时表，然后对这个临时表的数据进行排序
+针对group by查询的优化建议：A.优先为 GROUP BY 字段创建索引     单字段分组：直接为分组字段
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0220/kafka-transcation.html">
+				<h2 class="index-title">
+					04 kafka怎么做分布式事务？
+				</h2>
+				<div class="index-brief">
+					kafka的优势其实在于副本机制以及在消息的吞吐量上，它本身的机制并不能用来做分布式事务；
+如果非得要用它来做事务管理的话，我们需要自己业务层面自己来确保消息的幂等性
+如果非要用kafka实现一个分布式事务，则需要借助一个本地事务状态表来实现，过程如下：
+
+业务操作和消息记录在一个事务中，先标记为待
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0219/redis-listen-key-expire.html">
+				<h2 class="index-title">
+					14 如何监听key过期时间并触发后置逻辑
+				</h2>
+				<div class="index-brief">
+					1. 修改redisp配置，开启过期事件监听1notify-keyspace-events Ex  # 仅监听键过期事件（Ex=Expired events）
+2. springboot配置监听器12345678910111213141516171819202122232425262728@Conf
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0219/mysql-groupby-suoyin.html">
+				<h2 class="index-title">
+					12 聚簇索引和非聚簇索引的区别
+				</h2>
+				<div class="index-brief">
+					
+聚簇索引:是一种特殊的索引类型，它将数据行的物理存储位置与索引的逻辑顺序相匹配。这意味着，当聚簇索引的叶节点被访问时，它同时也包含了该行的数据。聚簇索引的这种设计可以减少数据访问的磁盘I&#x2F;O操作，因为数据行与索引紧密地关联在一起，通常位于同一数据页中。聚簇索引的一个关键特点是，每个表只能
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0204/vue-life-cycle.html">
+				<h2 class="index-title">
+					01 vue的生命周期
+				</h2>
+				<div class="index-brief">
+					Vue的生命周期是指Vue实例对象从创建之初到销毁的过程，这个过程包括多个阶段，每个阶段都有对应的钩子函数，用于控制组件的数据管理和DOM渲染。Vue的生命周期可以分为以下几个阶段：
+
+beforeCreate（创建前）：在这个阶段，Vue实例已经创建，但数据观察和事件机制都未形成，因此不能获得DO
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-04</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/36-vue/">36 vue</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/redis-big-key.html">
+				<h2 class="index-title">
+					12 redis大key问题
+				</h2>
+				<div class="index-brief">
+					大key可能存在的场景
+配送范围特别大的门店
+促销活动特别多的门店、商家等
+高频用户下的订单列表
+
+大key会导致什么问题
+如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
+如果是hash,list,set,zset等类型key 删除key会严重阻
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/springcloud-bus.html">
+				<h2 class="index-title">
+					07 springcloud消息总线
+				</h2>
+				<div class="index-brief">
+					Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
+Spring Cloud Bus配合Spring Cloud Config使用可以实现分布式自动刷新配置功能
+ConfigClient实例都监听MQ中
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/sentinel-liu-kong.html">
+				<h2 class="index-title">
+					05.3 hystricl和sentinel的对比
+				</h2>
+				<div class="index-brief">
+					Sentinel和Hystrix有哪些不同？Sentinel 和 Hystrix 都是用于管理分布式系统中的服务可靠性和延迟容忍性的工具，它们提供了像熔断器、限流器和服务降级这样的功能。虽然两者的目标类似，但它们在实现和功能上存在一些差异。以下是 Sentinel 和 Hystrix 的主要区别：
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0201/springcloud-zookeeper.html">
 				<h2 class="index-title">
 					03.2 zookeeper注册中心
@@ -3151,255 +3456,10 @@ DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器 ，
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0124/beanfactory-factoryBean.html">
-				<h2 class="index-title">
-					16 BeanFactory和FactoryBean有什么区别
-				</h2>
-				<div class="index-brief">
-					区别BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObj
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0124/hash-clash-solve.html">
-				<h2 class="index-title">
-					13 hash冲突怎么解决
-				</h2>
-				<div class="index-brief">
-					
-链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
-
-开放寻址法（Ope
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0124/translation-principle.html">
-				<h2 class="index-title">
-					05 spring事务的底层原理
-				</h2>
-				<div class="index-brief">
-					事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。
-当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。sprin
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0124/arraylist-kuo-rong.html">
-				<h2 class="index-title">
-					08 arrayList扩容时扩容多少
-				</h2>
-				<div class="index-brief">
-					相关源码如下：
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//默认容量大小private static final int DEFAULT_CAPACITY
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0124/io-different.html">
-				<h2 class="index-title">
-					12 BIO,NIO,AIO的区别
-				</h2>
-				<div class="index-brief">
-					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
-
-BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/self-audition-jindong.html">
-				<h2 class="index-title">
-					03 京东(23.2)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/self-audition-huarun.html">
-				<h2 class="index-title">
-					02 华润面试(22.6)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/self-audition-pingan.html">
-				<h2 class="index-title">
-					01 平安面试(22.3)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/13/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/15/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/13/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/15/">&gt;</a>
 		
 	</div>
 </div>

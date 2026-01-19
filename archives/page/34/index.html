@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,15 +3171,13 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-cache-question.html">
+			<a href="/2024/0120/mysql-transcation-geli-level.html">
 				<h2 class="index-title">
-					05 缓存击穿，缓存穿透，缓存雪崩
+					02 数据库事务的隔离级别？
 				</h2>
 				<div class="index-brief">
-					缓存击穿redis中一个热点key过期，导致大量的访问打到数据库上
-监控哪些数据是热门数据，实时的调整热key的过期时长；
-缓存穿透大量请求根本不存在的key；例如恶意的流量攻击
-设置空值,设置白名单,使用布隆过滤器，对请求做校验(比如请求一个查询一个id为-1000的数据，这种直接可以判定为不合法
+					数据库的隔离级别分为读未提交，读已提交，可重复度，可重复读，串行化来分别解决脏读，不可重复读，幻读等问题
+脏读（Dirty Read）概念：一个事务读取了另一个未提交事务修改的数据（当前是读未提交隔离级别）背景：事务A修改数据但未提交，事务B却读到了这个未提交的数据。若事务A最终回滚，事务B的读取结
 					...
 				</div>
 			</a>
@@ -3113,7 +3188,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
 										
                                     </span>
                                 
@@ -3123,15 +3198,13 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-io.html">
+			<a href="/2024/0120/redis-lua-principle.html">
 				<h2 class="index-title">
-					03 说说IO多路复用
+					11 redis lua表达式为什么能保证原子性
 				</h2>
 				<div class="index-brief">
-					回答这个问题我们可以拆分来看：
-IO实际就是指数据或文件的读写流
-多路实际指的是redis的底层的多路复用程序监听了每个读写请求的socket套接字
-复用就是指监听哪些socket上有消息达到，从而避免用户线程等待；
+					redis的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。
+但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
 
 					...
 				</div>
@@ -3153,16 +3226,14 @@ IO实际就是指数据或文件的读写流
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-rdb-aof.html">
+			<a href="/2024/0120/redis-cluster.html">
 				<h2 class="index-title">
-					04 rdb和aof
+					12 redis你们用的是什么集群
 				</h2>
 				<div class="index-brief">
-					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；
-rdb是一种二进制快照文件的方式,快照某个时刻redis中的数据到硬盘中的
-aof是以日志的的方式存储redis的写命令;
-rdb的好处是适合数据全量备份，容灾好，恢复数据速度快, 缺点是数据可能丢失；
-aof的好处是实时性好，
+					redis我用的是简单的主从架构的这种集群模式
+Redis主要有三种模式，主从，哨兵，分布式集群
+1.主从复制模式架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离优点：数据冗余：从节点备份主节点数据，提高数据可靠性。读写分离：从节点分担读请求，减轻主节点压力。配置
 					...
 				</div>
 			</a>
@@ -3183,16 +3254,18 @@ aof的好处是实时性好，
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-base-data-structure.html">
+			<a href="/2024/0120/redis-used-too-much.html">
 				<h2 class="index-title">
-					01 redis数据结构
+					08 redis如何做内存优化
 				</h2>
 				<div class="index-brief">
-					redis是一种基于键值对的来存储数据的nosql数据库
-其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
-常用的有String，list,set,zset,hash
+					redis优化内存分为两个层面大的层面：
 
-String类型是redis最基本类型之一，其存储数据
+合理设置数据过期时间使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
+
+合理设置内存淘汰策略结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
+
+内存碎片优化启用 jemalloc
 					...
 				</div>
 			</a>
@@ -3213,18 +3286,16 @@ String类型是redis最基本类型之一，其存储数据
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-fast-reason.html">
+			<a href="/2024/0120/redis-distributed-lock.html">
 				<h2 class="index-title">
-					02 redis性能好的原因？
+					09 redis分布式锁有用过吗？
 				</h2>
 				<div class="index-brief">
-					
-基于内存的读写
-单线程，避免了线程的切换及竞争产生的消耗
-基于非阻塞的IO多路复用
-C实现的，更利于和底层进行交互
-
-
+					redis分布式锁我们用的是Redisson，它的实现原理是：
+我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在
+如果不存在则新增key并设置过期时间默认30s
+然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果10秒后加的锁还存在就续期；
+直到不
 					...
 				</div>
 			</a>
@@ -3247,7 +3318,7 @@ C实现的，更利于和底层进行交互
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/33/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/32/">32</a><a class="page-number" href="/archives/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/archives/page/35/">35</a><a class="page-number" href="/archives/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/48/">48</a><a class="extend next" rel="next" href="/archives/page/35/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/33/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/32/">32</a><a class="page-number" href="/archives/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/archives/page/35/">35</a><a class="page-number" href="/archives/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/35/">&gt;</a>
 		
 	</div>
 </div>

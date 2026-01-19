@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,14 +3171,14 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0307/mysql-master-salve-data-format.html">
+			<a href="/2025/0307/es-search-process.html">
 				<h2 class="index-title">
-					16 mysql主从的数据物理格式是怎样的？
+					05 es搜索的过程
 				</h2>
 				<div class="index-brief">
-					MySQL 主从复制的数据物理格式主要由两部分构成：
-主库的二进制日志（Binlog）和从库的中继日志（Relay Log），其底层存储与 MySQL 的存储引擎（如 InnoDB）密切相关
-主库的二进制日志物理格式Binlog 是主库记录所有数据修改操作的二进制文件，其内容按事件（Event）存储
+					es作为一个分布式的存储和检索系统，每个文档根据 _id 字段做路由分发被转发到对应的shard上。
+搜索执行阶段过程分俩个部分，我们称之为 Query Then Fetch
+query-查询阶段当一个search请求发出的时候，这个query会被广播到索引里面的每一个shard（主shard或副本
 					...
 				</div>
 			</a>
@@ -3112,7 +3189,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
 										
                                     </span>
                                 
@@ -3122,24 +3199,24 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0306/threadLocal-used-case-and-problem.html">
+			<a href="/2025/0307/es-document-process.html">
 				<h2 class="index-title">
-					12 threadLocal的应用场景及问题
+					04 es索引文档的过程
 				</h2>
 				<div class="index-brief">
-					场景1，用于保存用户信息例如在拦截器或者过滤器解析toke后，将用户信息保存到ThreadLocal中，这样在Controller中就可以直接获取到用户信息，而不用再从request中获取了。
-场景2，SimpleDateFormat线程不安全因为SimpleDateFormat不是线程安全的，所以
+					
+索引文档过程1.客户端向Node 1 发送新建、索引或者删除请求。2.节点使用文档的 _id 确定文档属于分片 0 。请求会被转发到 Node 3，因为分片 0 的主分片目前被分配在 Node 3 上。3.Node 3 在主分片上面执行请求。如果成功了，它将请求并行转发到 Node 1 和 Nod
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-06</span>
+				    <span>2025-03-07</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
 										
                                     </span>
                                 
@@ -3149,25 +3226,26 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+			<a href="/2025/0307/es-cluster-election.html">
 				<h2 class="index-title">
-					09 kafka消息丢失的场景及解决方案
+					03 es中集群怎么实现选举
 				</h2>
 				<div class="index-brief">
-					kafka消息丢失的场景主要在生产端，broker端，消费端
-生产端消息丢失producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
-解决办法：可以改成同步发生，ack&#x3D;all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息
+					
+对所有可以成为 Master 的节点（node.master: true）根据 nodeId 排序，每次选举每个节点都把自己所知道节点排一次序，然后选出第一个（第0位）节点，暂且认为它是 Master 节点。
+
+如果对某个节点的投票数达到一定的值（可以成为master节点数n&#x2F;2+1）并
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-06</span>
+				    <span>2025-03-07</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
 										
                                     </span>
                                 
@@ -3177,23 +3255,24 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0306/kafka-replication-sync.html">
+			<a href="/2025/0307/es-deep-query-page.html">
 				<h2 class="index-title">
-					08 kafka副本同步机制
+					02 es深分页问题
 				</h2>
 				<div class="index-brief">
-					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
+					es查询时会根据from和to两个参数来查询数据，from 参数的值很大时（如 from&#x3D;10000 以上），ElasticSearch 需要跳过大量数据来获取指定页的内容，这种情况称为深度分页
+es数据是存储在多个分片（Shard）上的，每个分片本质上是一个独立的 Lucene 索引。分
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-06</span>
+				    <span>2025-03-07</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
 										
                                     </span>
                                 
@@ -3203,24 +3282,24 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0306/kafka-async-flush.html">
+			<a href="/2025/0307/es-desc-suoyin.html">
 				<h2 class="index-title">
-					07 kafka异步刷盘机制
+					01 es倒排索引
 				</h2>
 				<div class="index-brief">
-					所谓kafka异步刷盘机制是指kafka的生产者将消息发送到broker时，首先消息会被追加到日志文件segment中，此时数据是暂存到操作系统的页缓存中，并不是直接落盘；（页缓存是内存中的临时存储区域，由操作系统管理，提供低延迟的读写能力）
-kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
+					倒排索引也就是单词到文档的映射，当然不只是存个文档id这么简单。还包括：词频（TF，Term Frequency）、偏移量（offset）、位置（Posting）
+
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-06</span>
+				    <span>2025-03-07</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
 										
                                     </span>
                                 
@@ -3232,7 +3311,7 @@ kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/7/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/48/">48</a><a class="extend next" rel="next" href="/archives/page/9/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/7/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/9/">&gt;</a>
 		
 	</div>
 </div>

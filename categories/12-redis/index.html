@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,6 +3171,93 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2026/0117/jedis-redission-redisTemplate.html">
+				<h2 class="index-title">
+					28 Jedis redission redisTemplate有啥使用场景上的区别？
+				</h2>
+				<div class="index-brief">
+					Jedis 是底层阻塞式客户端；RedisTemplate 是 Spring 对 Redis 的抽象封装，适合场景：缓存，简单计数，Session不复杂的redis使用场景，例如：String &#x2F; Hash，TTL，简单 LuaRedisson 提供基于Redis的分布式协调能力,底层提供
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-17</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0117/redis-transaction-support.html">
+				<h2 class="index-title">
+					27 redis支持事务吗？
+				</h2>
+				<div class="index-brief">
+					Redis 通过 MULTI &#x2F; EXEC &#x2F; WATCH 提供事务机制，能保证命令按顺序原子执行，但不支持回滚和隔离级别, 它的隔离主要是靠单线程串行执行来保证的
+redis事务的特点：
+
+命令按顺序执行
+不支持回滚
+不支持隔离级别
+复杂的逻辑需要用lua脚本
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-17</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0117/redis-lua-script-tips.html">
+				<h2 class="index-title">
+					26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+				</h2>
+				<div class="index-brief">
+					一般java后端这么写扣减库存的lua脚步：
+12345678910111213141516171819202122String script =    &quot;local stock = redis.call(&#x27;GET&#x27;, KEYS[1]) &quot; +    &quo
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-17</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0310/redis-usually-data-structure-shell.html">
 				<h2 class="index-title">
 					24 redis常用数据结构命令及代码实现
@@ -3148,91 +3312,10 @@ RedLock通过以下机制规避此类风险：
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0305/redission-lock-type.html">
-				<h2 class="index-title">
-					22 redission都提供了哪些类型的分布式锁
-				</h2>
-				<div class="index-brief">
-					1. 可重入锁（Reentrant Lock）功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。使用示例：
-12RLock loc
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0305/except-redission-lock-implementation.html">
-				<h2 class="index-title">
-					21 除了redission你还知道哪些分布式锁的实现
-				</h2>
-				<div class="index-brief">
-					1. 基于数据库的锁(天然的分布式锁)原理：通过数据库表的唯一约束或乐观锁实现。唯一索引锁：插入一条代表锁的记录，利用唯一索引冲突阻止并发。乐观锁：通过版本号或时间戳字段实现 CAS（Compare and Swap）。缺点：性能低：高并发下数据库压力大。    无自动续期：需手动处理锁超时和死锁。
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0305/redis-jump-table.html">
-				<h2 class="index-title">
-					20 redis为何使用跳表而不是B+树
-				</h2>
-				<div class="index-brief">
-					首先二者的时间复杂度都是O(logN)，选择跳表还是B+树主要是考虑的内存和磁盘硬件特性。
-对于Redis使用跳表来讲，其在“写操作”时相较于B+树的“写操作”，无需考虑自旋平衡的问题，也就是跳表更容易实现写入操作；
-再看“读操作”，Redis是基于内存的，跳表比B+树多读那几下的性能开销微乎其微。
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<span class="page-number current">1</span><a class="page-number" href="/categories/12-redis/page/2/">2</a><a class="page-number" href="/categories/12-redis/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/categories/12-redis/page/5/">5</a><a class="extend next" rel="next" href="/categories/12-redis/page/2/">&gt;</a>
+			<span class="page-number current">1</span><a class="page-number" href="/categories/12-redis/page/2/">2</a><a class="page-number" href="/categories/12-redis/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/categories/12-redis/page/6/">6</a><a class="extend next" rel="next" href="/categories/12-redis/page/2/">&gt;</a>
 		
 	</div>
 </div>

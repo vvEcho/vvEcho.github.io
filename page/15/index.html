@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,6 +3171,251 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0124/beanfactory-factoryBean.html">
+				<h2 class="index-title">
+					16 BeanFactory和FactoryBean有什么区别
+				</h2>
+				<div class="index-brief">
+					区别BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObj
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/hash-clash-solve.html">
+				<h2 class="index-title">
+					13 hash冲突怎么解决
+				</h2>
+				<div class="index-brief">
+					
+链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
+
+开放寻址法（Ope
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/translation-principle.html">
+				<h2 class="index-title">
+					05 spring事务的底层原理
+				</h2>
+				<div class="index-brief">
+					事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。
+当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。sprin
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/arraylist-kuo-rong.html">
+				<h2 class="index-title">
+					08 arrayList扩容时扩容多少
+				</h2>
+				<div class="index-brief">
+					相关源码如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//默认容量大小private static final int DEFAULT_CAPACITY
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/io-different.html">
+				<h2 class="index-title">
+					12 BIO,NIO,AIO的区别
+				</h2>
+				<div class="index-brief">
+					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
+
+BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/self-audition-jindong.html">
+				<h2 class="index-title">
+					03 京东(23.2)
+				</h2>
+				<div class="index-brief">
+					Here's something encrypted, password is required to continue reading.
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/个人/">个人</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/self-audition-huarun.html">
+				<h2 class="index-title">
+					02 华润面试(22.6)
+				</h2>
+				<div class="index-brief">
+					Here's something encrypted, password is required to continue reading.
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/个人/">个人</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/self-audition-pingan.html">
+				<h2 class="index-title">
+					01 平安面试(22.3)
+				</h2>
+				<div class="index-brief">
+					Here's something encrypted, password is required to continue reading.
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/个人/">个人</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/undefined.html">
 				<h2 class="index-title">
 					01 项目亮点
@@ -3146,230 +3468,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0120/about-linux.html">
-				<h2 class="index-title">
-					01 linux面试题
-				</h2>
-				<div class="index-brief">
-					
-linux常用查看日志命令？cd到对应的日志目录文件查看实时日志：tail -f xxx.log根据关键字查询：cat -n xxx.log|grep ‘occurs error’
-
-123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat err
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/22-linux/">22 linux</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
-				<h2 class="index-title">
-					01 docker面试题
-				</h2>
-				<div class="index-brief">
-					如何构建dockerfile
-将jar包上传到服务器
-执行下述命令构建dockerfile1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 构建 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/35-docker/">35 docker</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/math-method.html">
-				<h2 class="index-title">
-					01 算法面试题
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-算法/">32 算法</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/net-xiyi.html">
-				<h2 class="index-title">
-					01 三次握手及四次挥手
-				</h2>
-				<div class="index-brief">
-					1.http通信为甚么要三次握手，四次挥手；当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认报
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/22-网络协议/">22 网络协议</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/sheji-mode.html">
-				<h2 class="index-title">
-					01.设计模式面试题
-				</h2>
-				<div class="index-brief">
-					1.mybaits 用了哪些设计模式？2.spring 用了哪些设计模式？3.单例模式有哪几种？懒汉，饿汉式，线程安全的懒汉式，匿名内部类
-4.说下你对责任链模式的理解及应用场景？5.说说代理模式
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/31-设计模式/">31 设计模式</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/seata-principle.html">
-				<h2 class="index-title">
-					11 seata的原理
-				</h2>
-				<div class="index-brief">
-					在 Seata 中主要有以下三种角色，其中TM和RM是作为 Seata 的客户端与业务系统集成在一起，TC 作为 Seata 的服务端独立部署：
-事务协调器（TC）：维护全局事务的运行状态，负责协调并驱动全局提交或回滚事务管理器（TM）：事务发起方，控制全局事务的范围，负责开启一个全局事务，并最终发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/16-seata/">16 seata</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/xxl-job-quartz.html">
-				<h2 class="index-title">
-					02 xxl-jo和Quartz有啥区别
-				</h2>
-				<div class="index-brief">
-					xxl-job 是在 Quartz 基础上进行的封装和扩展，拥有更简单的任务调度方式、更灵活的任务管理和更强大的任务监控功能。
-xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分布式任务协调和高可用调度中心的能力
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/mysql-dividing-dbs-tables-query.html">
-				<h2 class="index-title">
-					09 分库分表后怎么做范围查找
-				</h2>
-				<div class="index-brief">
-					分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es
-如果非得要做范围查询则需要考虑分库分表前如何做数据分片以及分片完后的数据聚合 
-
-例如查询经常按时间范围查询，例如每个月的订单数据，那么可以选择数据按月分片存储，这样查询的时候就可以直接根据月份查询
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/14/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/16/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/14/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/16/">&gt;</a>
 		
 	</div>
 </div>

@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,13 +3171,14 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/pessimistic-optimistic-lock.html">
+			<a href="/2024/0120/bean-life-understand.html">
 				<h2 class="index-title">
-					09 悲观锁和乐观锁
+					13 bean的生命周期
 				</h2>
 				<div class="index-brief">
-					悲观锁，按字面意思就是很悲观，每次获得去修改数据时总算悲观的认为数据已经被修改了，因此每次在获取到数据时都先给数据加锁，在操作数据的整个过程中一直上锁，等操作结束才会释放锁
-乐观锁，按字面意思就是很乐观，每次获得数据后总算乐观的认为数据没有被修改，只有在执行更新操作时才会判断数据是否被修改，如果数据
+					面试中若问道spring的启动流程，其实和问bean的生命周期是差不多的意思
+这里我说下我个人的理解，bean的生命周期指的是：
+被spring管理的一个bean从创建到销毁的过程，一般分为:实例化→属性注入→初始化→使用→销毁五大阶段，初始化阶段再细分为 Aware、前置处理、自定义初始化、后置处
 					...
 				</div>
 			</a>
@@ -3111,7 +3189,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -3121,13 +3199,15 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/wait-sleep-yield-join.html">
+			<a href="/2024/0120/ioc-understand.html">
 				<h2 class="index-title">
-					04 04 wait,sleep,yield,join,notify的区别
+					01 谈谈你对IOC的理解
 				</h2>
 				<div class="index-brief">
-					1.wait来自object类的方法，调用wait方法会释放锁，进入线程等待池，等待被唤醒。
-2.sleepThread类的方法，必须带一个时间参数。会让当前线程休眠进入阻塞状态并释放CPU（阿里面试题 Sleep释放CPU，wait 也会释放cpu，因为cpu资源太宝贵了，只有在线程running
+					IOC是Spring两大思想的中一点，为控制反转；
+所谓的控制反转就是控制了对象的创建过程，反转了对象的注入形式；
+一般而言，我们创建对象为new 或者用调用对象的构造方法;
+用了spring框架后，在spring启动时对象被封装为一个个Bean保存在spring容器中，我们需要使用的时候，直接注入
 					...
 				</div>
 			</a>
@@ -3138,7 +3218,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -3148,18 +3228,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/how-to-start-one-thread.html">
+			<a href="/2024/0120/aop-understand.html">
 				<h2 class="index-title">
-					05 怎么开启一个线程？
+					02 谈谈你对Aop的理解
 				</h2>
 				<div class="index-brief">
-					
-直接new一个Thread
-继承Thread，重写run方法
-实现Runnable，重写run方法
-实现Callable，重写call方法
-ThreadPoolExecutor手动配置线程池
-
+					AOP是Spring两大思想的中一点，为切面编程；在spring中可以通过定义切面注解的形式来对方法或类作一定的增强
 
 					...
 				</div>
@@ -3171,7 +3245,7 @@ ThreadPoolExecutor手动配置线程池
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -3181,15 +3255,18 @@ ThreadPoolExecutor手动配置线程池
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/synchronized-valatial-understand.html">
+			<a href="/2024/0120/spring-transcation-jizhi.html">
 				<h2 class="index-title">
-					01 synchronized和volatial关键字理解
+					03 Spring事务传播机制
 				</h2>
 				<div class="index-brief">
-					synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：
+					Spring默认有7种事务机制，如下：
 
-①获得互斥锁
-②从主内存拷贝变量的最新副本到工作内存
+REQUIRED-默认的事务隔离级别，会自动加入当前的事务，如果不存在则新建事务
+
+SUPPORT级别，跟REQUIRED类似，也是会自动加入当前的事务，但两者区别在于，若当前无事务，则按照无事务的方式执行
+
+MANDATORY级别，要求SQL操作强制在事务
 					...
 				</div>
 			</a>
@@ -3200,7 +3277,7 @@ ThreadPoolExecutor手动配置线程池
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -3210,13 +3287,15 @@ ThreadPoolExecutor手动配置线程池
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/lock-upgradation.html">
+			<a href="/2024/0120/deadlock-occurs-reason.html">
 				<h2 class="index-title">
-					02 锁升级的过程
+					08 死锁出现的原因以及怎么解决？
 				</h2>
 				<div class="index-brief">
-					无锁​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
-偏向锁​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的比对一下啊
+					出现死锁的原因是因为两个线程出现持有对方想要的资源，导致这两个线程一直处在等待对方释放锁的状态；
+破坏竞态条件既可以解除死锁，例如：当一个线程持有锁时，自己没有释放锁时不能再去尝试获取另一个锁；
+代码示例：
+1234567891011121314151617181920212223242526272
 					...
 				</div>
 			</a>
@@ -3239,7 +3318,7 @@ ThreadPoolExecutor手动配置线程池
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/41/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/40/">40</a><a class="page-number" href="/archives/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/archives/page/43/">43</a><a class="page-number" href="/archives/page/44/">44</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/48/">48</a><a class="extend next" rel="next" href="/archives/page/43/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/41/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/40/">40</a><a class="page-number" href="/archives/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/archives/page/43/">43</a><a class="page-number" href="/archives/page/44/">44</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/43/">&gt;</a>
 		
 	</div>
 </div>

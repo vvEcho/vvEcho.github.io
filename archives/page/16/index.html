@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,41 +3171,12 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0302/springboot-custom-starter.html">
+			<a href="/2025/0302/springcloud-zuul.html">
 				<h2 class="index-title">
-					06 如何自定义一个starter
+					02.2 Zuul网关
 				</h2>
 				<div class="index-brief">
-					自定义 Starter 的核心是封装功能配置与自动装配逻辑，分为四个步骤：1.创建一个工程引入自动配置注解2.定义配置属性类
-12345@ConfigurationProperties(prefix = &quot;my.starter&quot;)public class MyProperties
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/springcloud-shiro.html">
-				<h2 class="index-title">
-					06.1 shiro权限组件
-				</h2>
-				<div class="index-brief">
-					subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
-securityManager：安全管理器，主体进行认证和授权都是通过securityManager进行。它包含下面的认证器和授权器。
-authenticator：认证器，主体进行认证最终通过authent
+					Gate
 					...
 				</div>
 			</a>
@@ -3149,16 +3197,105 @@ authenticator：认证器，主体进行认证最终通过authent
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0302/springboot-characteristic.html">
+			<a href="/2025/0302/springcloud-gateway.html">
 				<h2 class="index-title">
-					05 springboot有哪些特点
+					02.1 Gateway网关
 				</h2>
 				<div class="index-brief">
-					springBoot的优点是什么？‌
+					1.Gateway网关的作用请求路由：根据请求的内容，如URL路径或头信息，将请求路由到正确的微服务。
+请求聚合：将多个微服务的响应集合成一个统一的客户端响应。
+身份认证与授权：在转发请求给后端服务之前进行用户身份验证和授权。
+负载均衡：在多个实例之间分配请求负载，增加系统的可用性和可靠性。
+限流和
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/openFigne-vs-rpc.html">
+				<h2 class="index-title">
+					04.3 openfigne和rpc的对比
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/rpc-know.html">
+				<h2 class="index-title">
+					04.2 rpc原理
+				</h2>
+				<div class="index-brief">
+					定义RPC也就远程过程调用，是相对于本地过程调用而言的；例如我现在有个单体服务，A类中注入了B类，这时候可以直接在A类中调用B类中的方法，但是当服务改造成分布式服务后，A类和B类可能不在同一个服务下了；这时候该怎么发起调用呢？
+你可能会想到restful接口的方式，那么这需要事先知道B那边的提供的接
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-02</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0302/apploo-know.html">
+				<h2 class="index-title">
+					03.4 apploo注册中心
+				</h2>
+				<div class="index-brief">
+					下面是Apollo的七个模块，其中四个模块是和功能相关的核心模块，另外三个模块是辅助服务发现的模块:四个核心模块及其主要功能
 
-快速开发‌：SpringBoot简化了配置，减少了开发、测试时间和努力。
-独立运行‌：内嵌了servlet容器，如Tomcat、Jetty等，无需部署WAR文件。
-自动配置‌：根据类路径下的类、jar包自动配置bean，如添加spring-boot-start
+ConfigService
+
+
+提供配置获取接口
+提供配置推送接口
+服务于Apollo客户端2.AdminService
+提供配置管理接口
+提供配置修改发布接口
+服务于管理
 					...
 				</div>
 			</a>
@@ -3169,63 +3306,7 @@ authenticator：认证器，主体进行认证最终通过authent
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/sprngboot-properties-order.html">
-				<h2 class="index-title">
-					04 springBoot中配置优先级是怎样的?
-				</h2>
-				<div class="index-brief">
-					优先级从高到低，高优先级的配置覆盖低优先级的配置，所有配置会形成互补配置。
-1.命令行参数。所有的配置都可以在命令行上进行指定
-2.Java系统属性(System.getProperties());
-3.操作系统环境变量;
-4.jar包,外部的application-{profile}.proper
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/spring-mvc-flow.html">
-				<h2 class="index-title">
-					20 springmvc的底层工作流程
-				</h2>
-				<div class="index-brief">
-					1.用户发送请求至前端控制器DispatcherServlet。2.前端控制器收到请求调用HandlerMapping处理器映射器，处理器映射器找到具体的处理器(可以根据 xm| 配置、注解进行查找)，生成处理器及处理器拦截器(如果有则生成)一并返回给DispatcherServlet.3.Disp
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 
@@ -3237,7 +3318,7 @@ authenticator：认证器，主体进行认证最终通过authent
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/15/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/48/">48</a><a class="extend next" rel="next" href="/archives/page/17/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/15/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/17/">&gt;</a>
 		
 	</div>
 </div>

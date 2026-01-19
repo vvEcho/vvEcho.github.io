@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,12 +3171,13 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/apo-impl-code.html">
+			<a href="/2024/0120/springboot-annotation.html">
 				<h2 class="index-title">
-					08 说看过AOP相关源码,说下具体实现
+					02 springBoot常用注解？
 				</h2>
 				<div class="index-brief">
-					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
+					@SpringBootApplication spring启动类上的注解（实际是由三个注解组成：@SpringBootConfiguration @EnableAutoConfiguration @ComponentScan）
+@EnableAutoConfiguration 自动配置类@Sprin
 					...
 				</div>
 			</a>
@@ -3110,7 +3188,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/02-springboot/">02 springboot</a>
 										
                                     </span>
                                 
@@ -3120,44 +3198,72 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/ioc-impl-code.html">
+			<a href="/2024/0120/interceptor-filter-different.html">
 				<h2 class="index-title">
-					09 说看过IOC相关源码,说下具体实现
+					03 拦截器和过滤器的区别
 				</h2>
 				<div class="index-brief">
-					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最后
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/spring-transcation-fail.html">
-				<h2 class="index-title">
-					06 spring事务失效的场景
-				</h2>
-				<div class="index-brief">
-					
-1.不是代理类的调用，例如类A 中有方法B 和方法C 此时B种调用了tiis.c方法，这种事务是不会生效的
-2.方法不是pulic的
-3.没有被Spring事务管理
-4.异常被捕获没有抛出来，这种事务不会回滚也相当于失效了
+					区别：
 
-
+拦截器是SpringMVC提供的，过滤器是Servlet提供的。
+过滤器与servlet是绑定的，仅限于web应用。而拦截器可作用于其他的应用，例如swing应用
+对所有请求生效（包括静态资源、Servlet、JSP等），可修改请求&#x2F;响应内容（如编码、敏感词过滤）
+拦截器仅拦截S
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/auto-assemble-principle.html">
+				<h2 class="index-title">
+					01 自动装配原理？
+				</h2>
+				<div class="index-brief">
+					springboot的自动装配其实是他约定大于配置这一核心思想的具体体现
+例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；
+springboot的自动装配是依赖于java的s
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/solve-spring-cycle-depency.html">
+				<h2 class="index-title">
+					12 spring怎么解决循环依赖的？
+				</h2>
+				<div class="index-brief">
+					为什么会出现循环依赖其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
+这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被实
 					...
 				</div>
 			</a>
@@ -3178,43 +3284,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/bean-life-understand.html">
+			<a href="/2024/0120/aop-jdk-cglib.html">
 				<h2 class="index-title">
-					13 bean的生命周期
+					10 aop的实现默认是使用jdk动态代理还是cglib
 				</h2>
 				<div class="index-brief">
-					面试中若问道spring的启动流程，其实和问bean的生命周期是差不多的意思
-这里我说下我个人的理解，bean的生命周期指的是：
-被spring管理的一个bean从创建到销毁的过程，一般分为:实例化→属性注入→初始化→使用→销毁五大阶段，初始化阶段再细分为 Aware、前置处理、自定义初始化、后置处
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/ioc-understand.html">
-				<h2 class="index-title">
-					01 谈谈你对IOC的理解
-				</h2>
-				<div class="index-brief">
-					IOC是Spring两大思想的中一点，为控制反转；
-所谓的控制反转就是控制了对象的创建过程，反转了对象的注入形式；
-一般而言，我们创建对象为new 或者用调用对象的构造方法;
-用了spring框架后，在spring启动时对象被封装为一个个Bean保存在spring容器中，我们需要使用的时候，直接注入
+					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
 					...
 				</div>
 			</a>
@@ -3237,7 +3312,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/39/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/38/">38</a><a class="page-number" href="/archives/page/39/">39</a><span class="page-number current">40</span><a class="page-number" href="/archives/page/41/">41</a><a class="page-number" href="/archives/page/42/">42</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/48/">48</a><a class="extend next" rel="next" href="/archives/page/41/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/39/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/38/">38</a><a class="page-number" href="/archives/page/39/">39</a><span class="page-number current">40</span><a class="page-number" href="/archives/page/41/">41</a><a class="page-number" href="/archives/page/42/">42</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/41/">&gt;</a>
 		
 	</div>
 </div>

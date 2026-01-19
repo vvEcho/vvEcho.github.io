@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,6 +3171,89 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/redis-cache-question.html">
+				<h2 class="index-title">
+					05 缓存击穿，缓存穿透，缓存雪崩
+				</h2>
+				<div class="index-brief">
+					缓存击穿redis中一个热点key过期，导致大量的访问打到数据库上
+监控哪些数据是热门数据，实时的调整热key的过期时长；
+缓存穿透大量请求根本不存在的key；例如恶意的流量攻击
+设置空值,设置白名单,使用布隆过滤器，对请求做校验(比如请求一个查询一个id为-1000的数据，这种直接可以判定为不合法
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-identify-hot-key.html">
+				<h2 class="index-title">
+					06 怎么监控热key
+				</h2>
+				<div class="index-brief">
+					redis 6.2以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可。
+可以定时在节点中使用该命令来发现对应热点key,或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为这些key是热点key,可以将热点key对应的
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-bloom-filter.html">
+				<h2 class="index-title">
+					07 说说布隆过滤器的原理？
+				</h2>
+				<div class="index-brief">
+					布隆过滤器（Bloom Filter）是一个 probabilistic data structure，用于判断一个元素是否在集合中。它通过使用多个哈希函数和位数组来提高查询效率。布隆过滤器在Redis中应用最广泛，用于解决缓存击穿、缓存穿透等问题。
+常用的布隆过滤器的实现是redission的bl
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/redis-io.html">
 				<h2 class="index-title">
 					03 说说IO多路复用
@@ -3153,72 +3313,10 @@ aof的好处是实时性好，
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-base-data-structure.html">
-				<h2 class="index-title">
-					01 redis数据结构
-				</h2>
-				<div class="index-brief">
-					redis是一种基于键值对的来存储数据的nosql数据库
-其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
-常用的有String，list,set,zset,hash
-
-String类型是redis最基本类型之一，其存储数据
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-fast-reason.html">
-				<h2 class="index-title">
-					02 redis性能好的原因？
-				</h2>
-				<div class="index-brief">
-					
-基于内存的读写
-单线程，避免了线程的切换及竞争产生的消耗
-基于非阻塞的IO多路复用
-C实现的，更利于和底层进行交互
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/categories/12-redis/page/4/">&lt;</a><a class="page-number" href="/categories/12-redis/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/12-redis/page/3/">3</a><a class="page-number" href="/categories/12-redis/page/4/">4</a><span class="page-number current">5</span>
+			<a class="extend prev" rel="prev" href="/categories/12-redis/page/4/">&lt;</a><a class="page-number" href="/categories/12-redis/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/12-redis/page/3/">3</a><a class="page-number" href="/categories/12-redis/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/categories/12-redis/page/6/">6</a><a class="extend next" rel="next" href="/categories/12-redis/page/6/">&gt;</a>
 		
 	</div>
 </div>

@@ -1466,9 +1466,42 @@
 									
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/dubbo-rpc-net.html">
+									<a href="/2026/0119/dubbo-feature.html">
                      
-										    07 dubbo微服务间怎么通信？
+										    01 dubbo的特点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net.html">
+                     
+										    02 dubbo的服务注册与发现的流程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-blocking.html">
+                     
+										    03 dubbo服务之间的调用是阻塞的吗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0119/dubbo-rpc-net-use.html">
+                     
+										    04 dubbo服务间的调用，怎么实现的
                      
 									</a>
 								</li>
@@ -1975,6 +2008,50 @@
 									<a href="/2025/0310/redis-usually-data-structure-shell.html">
                      
 										    24 redis常用数据结构命令及代码实现
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-thread-model.html">
+                     
+										    25 redis的线程模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-lua-script-tips.html">
+                     
+										    26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/redis-transaction-support.html">
+                     
+										    27 redis支持事务吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0117/jedis-redission-redisTemplate.html">
+                     
+										    28 Jedis redission redisTemplate有啥使用场景上的区别？
                      
 									</a>
 								</li>
@@ -3094,17 +3171,101 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0219/ddd-interface-abstract-diff.html">
+			<a href="/2025/0227/spring-bean-founction-area.html">
 				<h2 class="index-title">
-					05 请分析RR可能导致锁范围扩大的原因和解决思路
+					18 spring中支持的bean的作用域有哪几种？
 				</h2>
 				<div class="index-brief">
-					假设查询涉及SELECT … FOR UPDATE锁，请分析在RR（可重复读）隔离级别下可能导致的锁范围扩大问题。如何通过索引设计避免锁全表？请结合SELECT * FROM commission WHERE merchant_id&#x3D;? AND month&#x3D;’2025-02’ F
+					
+1、singleton： bean在每个Spring ioc 容器只有一个实例
+2、prorotype：一个bean的定义可以有多个实例
+3、request：每次http请求都会创建一个，该bean作用域仅在基于web的Spring ApplicationContext情形下有效
+4、sessio
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-02-19</span>
+				    <span>2025-02-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0227/spring-bean-if-safe.html">
+				<h2 class="index-title">
+					17 spring中bean是线程安全的吗？
+				</h2>
+				<div class="index-brief">
+					spring中bean不是线程安全的Spring 中的 Bean 默认是线程安全的，但是并不是所有 Bean 都是线程安全的。在 Spring 中，Bean 的生命周期包括实例化、初始化、使用和销毁等阶段。在初始化阶段，Spring 会对 Bean 进行注入，从而确保 Bean 中的属性被正确赋值。
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0220/hive-and-presto.html">
+				<h2 class="index-title">
+					14.presto为何能加速查询？
+				</h2>
+				<div class="index-brief">
+					1.执行引擎的革新Hive 的局限性：Hive 默认使用 MapReduce 作为执行引擎,需将查询分解为多个 Map 和 Reduce 任务,每个阶段均需将中间结果写入HDFS磁盘,导致高 I&#x2F;O 开销和高延迟(适合批量处理,但无法满足交互式查询)
+Presto 的优势：Presto 采
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0220/es-deep-page-query.html">
+				<h2 class="index-title">
+					12 es怎么解决深分页的问题及索引优化有哪些方法
+				</h2>
+				<div class="index-brief">
+					Elasticsearch深分页问题解决方案
+方案1：Search After（游标分页）1234567891011121314151617181920// 首次查询（按时间倒序）GET /order_index/_search&#123;  &quot;size&quot;: 20,  &quot
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-20</span>
                     
                             
                                 
@@ -3130,132 +3291,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0219/ddd-ju-he-gen.html">
+			<a href="/2025/0219/atom-and-end-complete.html">
 				<h2 class="index-title">
-					04 DDD领域驱动中聚合根的概念
+					10 订单系统如何保证原子性和最终一致性
 				</h2>
 				<div class="index-brief">
-					在领域驱动设计中，聚合根（Aggregate Root）的设计原则是什么？在佣金系统的订单管理域重构时，如何通过聚合根设计避免分布式事务？请结合您拆分价保域和订单域的实例说明
-聚合根（Aggregate Root）设计原则‌您的回答正确但需补充完整，核心原则包括：‌✅ 强一致性边界：聚合根内的所有实
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0219/promotion-failed.html">
-				<h2 class="index-title">
-					03 Promotion Failed的原因及解决思路
-				</h2>
-				<div class="index-brief">
-					在平安科技的分红子系统中，您提到使用Java 8的Supplier优化PageHelper查询。假设系统出现Full GC频繁（约1次&#x2F;小时），且GC日志显示Promotion Failed，请分析可能的原因及解决思路。如何通过G1垃圾回收器参数优化此场景？Promotion Failed
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0219/lock-question-and-principle.html">
-				<h2 class="index-title">
-					02 分布式锁隐患及锁续期原理
-				</h2>
-				<div class="index-brief">
-					在高并发场景下，Redis分布式锁可能存在哪些隐患？您项目中如何实现锁的自动续期？如果采用Redisson框架，其看门狗机制的实现原理是什么？Redis分布式锁的隐患热key问题导致单节点压力（可通过分片或分区锁缓解）。锁超时与业务执行冲突：若业务执行时间超过锁超时时间（TTL），导致锁自动释放后其
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0219/10w-QPS-desigen.html">
-				<h2 class="index-title">
-					07 如何设计一个支持10万QPS的库存扣减系统
-				</h2>
-				<div class="index-brief">
-					假设您要设计一个库存扣减系统，要求支持秒杀场景下的高并发扣减（10万QPS），且保证不超卖。请对比Redis Lua脚本、分布式锁+数据库扣减、以及Redis+MQ异步扣减三种方案的优劣。您会如何选择？请结合您简历中的高并发经验说明
-
-
-方案
-优势
-劣势
-适用场景
-
-
-
-Redis Lua脚本
-原子
+					在微服务架构下，订单服务与库存服务如何实现跨服务的库存扣减最终一致性？若采用可靠消息+本地事务表方案，请结合您佣金系统的JCQ消息拆分经验，详细描述以下问题1.如何保证消息生产端（订单服务）的本地事务与消息发送的原子性？2.消息消费端（库存服务）如何实现幂等性控制？请给出与您简历中Redis分布式锁
 					...
 				</div>
 			</a>
@@ -3288,7 +3329,7 @@ Redis Lua脚本
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/21/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/48/">48</a><a class="extend next" rel="next" href="/archives/page/23/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/21/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/archives/page/23/">23</a><a class="page-number" href="/archives/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/23/">&gt;</a>
 		
 	</div>
 </div>
