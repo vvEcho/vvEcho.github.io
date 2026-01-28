@@ -3259,19 +3259,12 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/spring-she-ji-mo-shi.html">
+			<a href="/2024/0120/ioc-impl-code.html">
 				<h2 class="index-title">
-					07 spring框架中的设计模式有哪些(待完善)
+					09 说看过IOC相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					工厂模式-BeanFactory
-模板模式-JdbcTemplate
-策略模式-InstantionStrategy
-代理模式-BeanProxy
-装饰器模式-BeanWapper
-责任链模式-BeanPostProcessor
-观察者模式-事件监听机制
-
+					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最后
 					...
 				</div>
 			</a>
@@ -3352,13 +3345,15 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/aop-understand.html">
+			<a href="/2024/0120/ioc-understand.html">
 				<h2 class="index-title">
-					02 谈谈你对Aop的理解
+					01 谈谈你对IOC的理解
 				</h2>
 				<div class="index-brief">
-					AOP是Spring两大思想的中一点，为切面编程；在spring中可以通过定义切面注解的形式来对方法或类作一定的增强
-
+					IOC是Spring两大思想的中一点，为控制反转；
+所谓的控制反转就是控制了对象的创建过程，反转了对象的注入形式；
+一般而言，我们创建对象为new 或者用调用对象的构造方法;
+用了spring框架后，在spring启动时对象被封装为一个个Bean保存在spring容器中，我们需要使用的时候，直接注入
 					...
 				</div>
 			</a>
@@ -3379,15 +3374,13 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/ioc-understand.html">
+			<a href="/2024/0120/aop-understand.html">
 				<h2 class="index-title">
-					01 谈谈你对IOC的理解
+					02 谈谈你对Aop的理解
 				</h2>
 				<div class="index-brief">
-					IOC是Spring两大思想的中一点，为控制反转；
-所谓的控制反转就是控制了对象的创建过程，反转了对象的注入形式；
-一般而言，我们创建对象为new 或者用调用对象的构造方法;
-用了spring框架后，在spring启动时对象被封装为一个个Bean保存在spring容器中，我们需要使用的时候，直接注入
+					AOP是Spring两大思想的中一点，为切面编程；在spring中可以通过定义切面注解的形式来对方法或类作一定的增强
+
 					...
 				</div>
 			</a>

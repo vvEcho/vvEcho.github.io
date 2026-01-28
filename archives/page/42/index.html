@@ -3259,14 +3259,13 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/auto-assemble-principle.html">
+			<a href="/2024/0120/solve-spring-cycle-depency.html">
 				<h2 class="index-title">
-					01 自动装配原理？
+					12 spring怎么解决循环依赖的？
 				</h2>
 				<div class="index-brief">
-					springboot的自动装配其实是他约定大于配置这一核心思想的具体体现
-例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；
-springboot的自动装配是依赖于java的s
+					为什么会出现循环依赖其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
+这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被实
 					...
 				</div>
 			</a>
@@ -3277,7 +3276,7 @@ springboot的自动装配是依赖于java的s
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/07-springboot/">07 springboot</a>
+                                        <a href="/categories/06-spring/">06 spring</a>
 										
                                     </span>
                                 
@@ -3340,12 +3339,19 @@ springboot的自动装配是依赖于java的s
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/apo-impl-code.html">
+			<a href="/2024/0120/spring-she-ji-mo-shi.html">
 				<h2 class="index-title">
-					08 说看过AOP相关源码,说下具体实现
+					07 spring框架中的设计模式有哪些(待完善)
 				</h2>
 				<div class="index-brief">
-					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
+					工厂模式-BeanFactory
+模板模式-JdbcTemplate
+策略模式-InstantionStrategy
+代理模式-BeanProxy
+装饰器模式-BeanWapper
+责任链模式-BeanPostProcessor
+观察者模式-事件监听机制
+
 					...
 				</div>
 			</a>
@@ -3366,12 +3372,12 @@ springboot的自动装配是依赖于java的s
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/ioc-impl-code.html">
+			<a href="/2024/0120/apo-impl-code.html">
 				<h2 class="index-title">
-					09 说看过IOC相关源码,说下具体实现
+					08 说看过AOP相关源码,说下具体实现
 				</h2>
 				<div class="index-brief">
-					IOC又叫依赖注入，Spring的依赖主要由ApplicationContext这个高级容器来实现的我说下大体流程吧，Spring容器启动时，beanDefinitionReader读取配置文件，然后交由BeanFactory也就是Bean工厂组装成，转换为完整的的Beandefinition，最后
+					Spring的aop的具体实现，在于在对象创建后为其创建代理对象，先有了原有的对象才能创建其代理；bean 被创建后，接下来会调用所有的BeanPostProcessor 作用在 bean 上，其中有一个名叫 AnnotationAwareAspectJAutoProxyCreator（aop的核心
 					...
 				</div>
 			</a>

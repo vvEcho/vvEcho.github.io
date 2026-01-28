@@ -3259,43 +3259,14 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/hashMap-hashTable-different.html">
+			<a href="/2024/0120/string-stringBuild-stringBuffer.html">
 				<h2 class="index-title">
-					07 hashMap hashTable的区别
+					14 String,stringBuild,StringBuffer的区别
 				</h2>
 				<div class="index-brief">
-					
-hashMap继承自AbstractMap,hashTable继承自Dictionary类；
-
-hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
-
-hashTable在put,get,contains等方法都加了synchr
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/exception-error-different.html">
-				<h2 class="index-title">
-					07 exception和error有啥区别
-				</h2>
-				<div class="index-brief">
-					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
+					string是一个常量，他存在于常量池中；
+StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
+其中StringBuffer 相比较于StringBuffer他在append方法中加了同步锁synchronized，所以是线程安全的
 
 					...
 				</div>
@@ -3345,13 +3316,13 @@ hashTable在put,get,contains等方法都加了synchr
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/head-tail-cycle.html">
+			<a href="/2024/0120/exception-error-different.html">
 				<h2 class="index-title">
-					06 为什么头插法容易形成死循环而尾插法不会
+					07 exception和error有啥区别
 				</h2>
 				<div class="index-brief">
-					其实这个问题是jdk1.7版本下的hashMap多线程情况下发生的，hashMap扩容时采用头插法链表的顺序可能发生变化，导致线程1中链表指针原本由A指向B，在线程2中链表指针由B指向A,由于彼此都不可见；那么循环指向就产生了；
-jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新来的元素位
+					在java中，Error 和 Exception 都是Throwable的子类；error代表程序正常运行过程出现的错误，这种错误是不可预料的，例如内存溢出，死锁等exception代表程序运行过程中可以预料或者说可以用来捕获的异常，例如空指针，数组下标越界，类型转换异常等
+
 					...
 				</div>
 			</a>
@@ -3389,6 +3360,33 @@ jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新�
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/head-tail-cycle.html">
+				<h2 class="index-title">
+					06 为什么头插法容易形成死循环而尾插法不会
+				</h2>
+				<div class="index-brief">
+					其实这个问题是jdk1.7版本下的hashMap多线程情况下发生的，hashMap扩容时采用头插法链表的顺序可能发生变化，导致线程1中链表指针原本由A指向B，在线程2中链表指针由B指向A,由于彼此都不可见；那么循环指向就产生了；
+jdk1.8则是先插入然后再进行扩容且采用的是尾插法，这样新来的元素位
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
 										
                                     </span>
                                 

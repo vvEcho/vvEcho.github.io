@@ -3259,6 +3259,37 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/hashMap-hashTable-different.html">
+				<h2 class="index-title">
+					07 hashMap hashTable的区别
+				</h2>
+				<div class="index-brief">
+					
+hashMap继承自AbstractMap,hashTable继承自Dictionary类；
+
+hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
+
+hashTable在put,get,contains等方法都加了synchr
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/strong-soft-weak-phantom-ref.html">
 				<h2 class="index-title">
 					08 强引用，软引用，弱引用，虚引用的区别
@@ -3321,17 +3352,14 @@ StringBuild 和StrigBuffer是字符串变量，他们存在于堆中；
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/hashMap-hashTable-different.html">
+			<a href="/2024/0120/copy-on-write-arrayList.html">
 				<h2 class="index-title">
-					07 hashMap hashTable的区别
+					06 CopyOnWriteArrayList是线程安全的吗
 				</h2>
 				<div class="index-brief">
-					
-hashMap继承自AbstractMap,hashTable继承自Dictionary类；
-
-hashMap允许key,value值为null,hashTable不允许key或value为null，否则会报空指针异常
-
-hashTable在put,get,contains等方法都加了synchr
+					copyOnWriteArrayList是线程安全的它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；
+并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；
+最后，待元素写入新数组后再
 					...
 				</div>
 			</a>
@@ -3370,34 +3398,6 @@ hashTable在put,get,contains等方法都加了synchr
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/copy-on-write-arrayList.html">
-				<h2 class="index-title">
-					06 CopyOnWriteArrayList是线程安全的吗
-				</h2>
-				<div class="index-brief">
-					copyOnWriteArrayList是线程安全的它采用了写时复制技术，简单表述就是往集合中添加元素时不会立刻往原数组中添加元素，而是将原数组拷贝一份，往新拷贝的数组中添加，做到读写分离；
-并且它只针对写加锁，因为读不会改变原有的数组的数据，所以读不加锁，保证读的性能；
-最后，待元素写入新数组后再
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
 										
                                     </span>
                                 
