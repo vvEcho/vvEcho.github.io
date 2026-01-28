@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,14 +3259,12 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-b-jia-tree.html">
+			<a href="/2024/0120/net-xiyi.html">
 				<h2 class="index-title">
-					06 B+树索引
+					01 三次握手及四次挥手
 				</h2>
 				<div class="index-brief">
-					B+树索引是一个多叉平衡树，它的叶子节点是数据节点，非叶子节点是索引节点。
-其中非叶子节点存储了所有的排序号的索引信息，叶子节点存储了所有的数据信息；非叶子节点是一个双向循环链表，这种设计时候范围和顺序访问
-B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持事务，请你尝试说明B
+					1.http通信为甚么要三次握手，四次挥手；当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认报
 					...
 				</div>
 			</a>
@@ -3189,7 +3275,7 @@ B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
+                                        <a href="/categories/22-网络协议/">22 网络协议</a>
 										
                                     </span>
                                 
@@ -3199,13 +3285,13 @@ B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-optimize-query.html">
+			<a href="/2024/0120/sheji-mode.html">
 				<h2 class="index-title">
-					07 mysql怎么优化数据库查询
+					01.设计模式面试题
 				</h2>
 				<div class="index-brief">
-					1.首先看表的数据量级以及sql数据涉及的业务含义A.数据量超2000万，大概率优化空间不大B.数据量级小的情况下，需看查询sql是否合理
-2.看表是否建立合适的索引A.针对高频查询的字段建立索引 B.当查询涉及多列组合条件时（如 WHERE a&#x3D;1 AND b&#x3D;2），使用联合索
+					1.mybaits 用了哪些设计模式？2.spring 用了哪些设计模式？3.单例模式有哪几种？懒汉，饿汉式，线程安全的懒汉式，匿名内部类
+4.说下你对责任链模式的理解及应用场景？5.说说代理模式
 					...
 				</div>
 			</a>
@@ -3216,7 +3302,7 @@ B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
+                                        <a href="/categories/31-设计模式/">31 设计模式</a>
 										
                                     </span>
                                 
@@ -3226,14 +3312,13 @@ B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-mvcc-ji-zhi.html">
+			<a href="/2024/0120/seata-principle.html">
 				<h2 class="index-title">
-					04 mvcc机制？
+					11 seata的原理
 				</h2>
 				<div class="index-brief">
-					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的
-变化提交之前，对于其他的读事务来说都是不可见的；
-当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC并
+					在 Seata 中主要有以下三种角色，其中TM和RM是作为 Seata 的客户端与业务系统集成在一起，TC 作为 Seata 的服务端独立部署：
+事务协调器（TC）：维护全局事务的运行状态，负责协调并驱动全局提交或回滚事务管理器（TM）：事务发起方，控制全局事务的范围，负责开启一个全局事务，并最终发
 					...
 				</div>
 			</a>
@@ -3244,7 +3329,7 @@ B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
+                                        <a href="/categories/16-seata/">16 seata</a>
 										
                                     </span>
                                 
@@ -3254,16 +3339,14 @@ B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-re-in-undo-log.html">
+			<a href="/2024/0120/xxl-job-quartz.html">
 				<h2 class="index-title">
-					05 redolog和binlog,undolog
+					02 xxl-jo和Quartz有啥区别
 				</h2>
 				<div class="index-brief">
-					binlog是mysql架构server层都有的，而redolog和undolog是存储引擎InnoDB特有的；
+					xxl-job 是在 Quartz 基础上进行的封装和扩展，拥有更简单的任务调度方式、更灵活的任务管理和更强大的任务监控功能。
+xxl-job 提供了分布式任务调度和分片任务等支持，同时具备分布式任务协调和高可用调度中心的能力
 
-binlog被称为归档日志；binlog-归档日志的作用主要在于误删数据后的恢复操作，mysql集群主从复制时用的就是binlog；
-
-redolog-事务提交时，先将修改记录到 Re
 					...
 				</div>
 			</a>
@@ -3274,7 +3357,7 @@ redolog-事务提交时，先将修改记录到 Re
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/11-mysql/">11 mysql</a>
+                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
 										
                                     </span>
                                 
@@ -3284,16 +3367,15 @@ redolog-事务提交时，先将修改记录到 Re
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-false-reading.html">
+			<a href="/2024/0120/mysql-dividing-dbs-tables-query.html">
 				<h2 class="index-title">
-					03 怎么解决幻读
+					09 分库分表后怎么做范围查找
 				</h2>
 				<div class="index-brief">
-					只有序列化级别解决了幻读，其他的都没有解决了幻读；因为序列化是串行化执行的，第一个事务执行完后才能执行第二个事务
-幻读出现的根本原因是，如果所有的读都是快照读就不会有幻读的问题，如果有快照读也有当前读才会产生幻读的问题
+					分库分表后我们一般都不会再在原有的数据库表中座范围查找，业界通常做法是将数据都同步至es;查询走es
+如果非得要做范围查询则需要考虑分库分表前如何做数据分片以及分片完后的数据聚合 
 
-快照读：mysql中针对不加锁的读操作，称为快照读例如查询
-当前读：对于加锁的
+例如查询经常按时间范围查询，例如每个月的订单数据，那么可以选择数据按月分片存储，这样查询的时候就可以直接根据月份查询
 					...
 				</div>
 			</a>
@@ -3316,7 +3398,7 @@ redolog-事务提交时，先将修改记录到 Re
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/32/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="page-number" href="/archives/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/34/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/32/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/31/">31</a><a class="page-number" href="/archives/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/34/">&gt;</a>
 		
 	</div>
 </div>

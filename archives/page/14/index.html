@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,12 +3259,60 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0304/hash-conflict.html">
+			<a href="/2025/0305/redis-jump-table.html">
 				<h2 class="index-title">
-					11 hashmap中hash冲突了会怎么处理
+					20 redis为何使用跳表而不是B+树
 				</h2>
 				<div class="index-brief">
-					hashmap通过put方法往里面添加数据的时候，hashmap会根据key的hash值做一个取模的运算通过取模的值将元素放到数组的某个位置上去，这个时候有可能会有两个不同元素的hash值相同，这个时候就会发生hash冲突了，hashmap会通过链表来解决hash冲突，也就是如果hash值相同，就会
+					首先二者的时间复杂度都是O(logN)，选择跳表还是B+树主要是考虑的内存和磁盘硬件特性。
+对于Redis使用跳表来讲，其在“写操作”时相较于B+树的“写操作”，无需考虑自旋平衡的问题，也就是跳表更容易实现写入操作；
+再看“读操作”，Redis是基于内存的，跳表比B+树多读那几下的性能开销微乎其微。
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-05</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0304/redis-cache-eviction-strategy.html">
+				<h2 class="index-title">
+					19 redis的缓存淘汰策略
+				</h2>
+				<div class="index-brief">
+					
+
+
+策略名称
+淘汰逻辑
+适用场景
+
+
+
+noeviction（默认）
+内存满时拒绝所有写操作，返回错误
+数据不可丢失的敏感场景（如金融交易）
+
+
+LRU（最近最少使用）
+根据键的最后访问时间，淘汰最久未访问的数据
+有明显冷热数据区分的场景（如新闻热点）
+
+
+LFU（最不频繁使用）
+根据键的访问频率
 					...
 				</div>
 			</a>
@@ -3187,7 +3323,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3197,13 +3333,14 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0304/hashmap-how-to-expand.html">
+			<a href="/2025/0304/redis-same-db.html">
 				<h2 class="index-title">
-					10 hashmap如何扩容的？
+					18 如何保证redis中缓存和数据库的一致性
 				</h2>
 				<div class="index-brief">
-					hashmap的扩容方式在jdk1.7和jdk1.8中不同,以下来分别说明
-在jdk1.7中，hashmap是由数组+链表组成的数据结构，默认容量是16，负载因子是0.75也就是四分之三，当数组元素个数超过16*0.75&#x3D;12时且新加入的元素发生hash碰撞时，就会扩容，扩容为原来的两倍，
+					可以采用延迟双删+mq的最终一致性来保障redis中缓存和数据库的一致性
+可参考：如何保证缓存和数据库的一致性
+
 					...
 				</div>
 			</a>
@@ -3214,7 +3351,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3224,14 +3361,14 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0304/fu-zhai-yin-zi.html">
+			<a href="/2025/0304/redis-pre-hotKey.html">
 				<h2 class="index-title">
-					09 hashmap的负载因子为何是0.75
+					17 缓存预热怎么做
 				</h2>
 				<div class="index-brief">
-					hashMap将负载因子设置为0.75是一个性能兼顾的考虑
-假设负载因子设置为0.5则；hash表在填充到一半的时候就会触发扩容，减少了hash冲突，查询效率也提高了；但是空间利用率下降了，且频繁的扩容会导致内存开销大且重新hash的成本很高；
-如果设置为1，则hash表完全满了才会扩容，虽然空间利
+					1.应用启动时预加载在服务启动阶段（如Spring Boot应用初始化完成时），通过代码自动加载热点数据到缓存。
+适合系统配置，数据量小且确定的情况。
+实现方式：Spring Boot的CommandLineRunner或ApplicationRunner接口：在run方法中执行预热逻辑，例如加载数
 					...
 				</div>
 			</a>
@@ -3242,7 +3379,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3252,52 +3389,26 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0302/spring-jdk-springboot-cglib.html">
+			<a href="/2025/0304/query-redis-db.html">
 				<h2 class="index-title">
-					21 spring为何针对接口用jdk动态代理
+					16 redis如何查询指定库的数据
 				</h2>
 				<div class="index-brief">
-					jdk为什么不能针对没有实现接口的类生成代理？JDK动态代理的机制要求代理类必须基于接口的方法签名生成代理方法。若目标类未实现接口，则无法通过接口定义这些方法签名，导致代理类无法生成对应方法
-JDK动态代理中代理类直接实现目标接口，并通过反射调用目标对象的方法；
-另外由于Java不支持多继承，若JD
+					Redis 默认提供 16 个数据库（0-15），使用 SELECT 命令切换：
+12# 切换到数据库 1SELECT 1
+代码示例：
+1234567891011121314151617注意：集群模式（如 Redis Cluster）仅支持db0，不支持多数据库import redis.client
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-02</span>
+				    <span>2025-03-04</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0302/lock-impl-ways.html">
-				<h2 class="index-title">
-					17 分布式锁的实现方式有哪些
-				</h2>
-				<div class="index-brief">
-					在单体架构中，多个线程都是属于同一个进程的，所以在线程并发执行时，遇到资源竞争时，可以利用Reentrantlock、synchronized等技术来作为锁，来控制共享资源的使用。
-而在分布式架构中，多个线程是可能处于不同进程中的，而这些线程并发执行遇到资源竞争时，利用Reentrantlock、s
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-02</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3309,7 +3420,7 @@ JDK动态代理中代理类直接实现目标接口，并通过反射调用目�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/13/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="page-number" href="/archives/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/page/15/">15</a><a class="page-number" href="/archives/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/15/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/13/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="page-number" href="/archives/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/page/15/">15</a><a class="page-number" href="/archives/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/15/">&gt;</a>
 		
 	</div>
 </div>

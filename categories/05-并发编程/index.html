@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,9 +3259,9 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0312/threadPool-principle.html">
+			<a href="/2026/0127/disruptor-no-need-lock.html">
 				<h2 class="index-title">
-					18 线程池的原理
+					23 disruptor为啥几乎不需要锁？
 				</h2>
 				<div class="index-brief">
 					
@@ -3181,7 +3269,7 @@
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-12</span>
+				    <span>2026-01-27</span>
                     
                             
                                 
@@ -3197,18 +3285,17 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0302/lock-impl-ways.html">
+			<a href="/2026/0127/hot-lock-eliminate.html">
 				<h2 class="index-title">
-					17 分布式锁的实现方式有哪些
+					22 热点锁如何通过架构彻底消除
 				</h2>
 				<div class="index-brief">
-					在单体架构中，多个线程都是属于同一个进程的，所以在线程并发执行时，遇到资源竞争时，可以利用Reentrantlock、synchronized等技术来作为锁，来控制共享资源的使用。
-而在分布式架构中，多个线程是可能处于不同进程中的，而这些线程并发执行遇到资源竞争时，利用Reentrantlock、s
+					
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-02</span>
+				    <span>2026-01-27</span>
                     
                             
                                 
@@ -3224,17 +3311,17 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/aqs-principle.html">
+			<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
 				<h2 class="index-title">
-					16 AQS的实现原理
+					21 reentrantlock的自旋策略跟jvm一样吗？
 				</h2>
 				<div class="index-brief">
-					AQS就是AbstractQueuedSynchronizer抽象类，AQS其实就是JUC包下的一个基类，JUC下的很多内容都是基于AQS实现了部分功能，比如ReentrantLock，ThreadPoolExecutor，阻塞队列，CountDownLatch，Semaphore，CyclicBa
+					
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-01</span>
+				    <span>2026-01-27</span>
                     
                             
                                 
@@ -3250,18 +3337,22 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/lock-move-and-strong.html">
+			<a href="/2026/0127/reentrantlock-synchronized-diff.html">
 				<h2 class="index-title">
-					13 锁消除和锁膨胀
+					19 ReentrantLock和synchronized在现代jvm差别有多大？
 				</h2>
 				<div class="index-brief">
-					锁消除在synchronized修饰的代码中，如果不存在操作临界资源的情况，会触发锁消除，你即便写了synchronized，他也不会触发。
-1234public synchronized void method()&#123;    // 没有操作临界资源    // 此时这个方法的synchro
+					特点对比synchronized（内置锁）是java内置关键字，用在synchronized修饰的代码块或者方法中，会自动获取对象锁，并释放对象锁。它的特点如下：
+
+简单易用，自动释放锁
+不可中断等待（等待锁时无法被中断）
+只能是非公平锁（JDK15开始可配置）
+只有一个等待条件（Object.wa
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-01</span>
+				    <span>2026-01-27</span>
                     
                             
                                 
@@ -3277,19 +3368,17 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0301/happy-unhappy-lock.html">
+			<a href="/2026/0127/zgc-g1-lock-compete.html">
 				<h2 class="index-title">
-					13 乐观锁和悲观锁
+					19 ZGC与G1对锁竞争有没有影响？
 				</h2>
 				<div class="index-brief">
-					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是悲观锁。
-Java中提供的CAS操作，就是乐观锁的一种实现。
-悲观锁获取不到锁资源时，会将当前线程挂起（进入BLOCKED、WAITING），线程挂起会涉及到用户态和内核态的切换，而
+					G1 的影响是“硬”的、宏观的：它通过明显的STW停顿，直接制造全局性的、周期性的锁竞争瓶颈。ZGC 的影响是“软”的、微观的：它通过移除STW停顿解决了G1的核心问题，使系统更平滑，但其持续的读屏障开销增加了底层CPU压力，可能在微观层面轻微影响锁竞争的表现。选择的关键：如果你的应用追求极致的延迟
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-01</span>
+				    <span>2026-01-27</span>
                     
                             
                                 
@@ -3307,7 +3396,7 @@ Java中提供的CAS操作，就是乐观锁的一种实现。
 
 	<div id="index-paginator">
 		
-			<span class="page-number current">1</span><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/2/">2</a><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/3/">3</a><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/4/">4</a><a class="extend next" rel="next" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/2/">&gt;</a>
+			<span class="page-number current">1</span><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/2/">2</a><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/5/">5</a><a class="extend next" rel="next" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/2/">&gt;</a>
 		
 	</div>
 </div>

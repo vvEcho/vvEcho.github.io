@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,26 +3259,52 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/about-linux.html">
+			<a href="/2024/0124/arraylist-kuo-rong.html">
 				<h2 class="index-title">
-					01 linux面试题
+					08 arrayList扩容时扩容多少
 				</h2>
 				<div class="index-brief">
-					
-linux常用查看日志命令？cd到对应的日志目录文件查看实时日志：tail -f xxx.log根据关键字查询：cat -n xxx.log|grep ‘occurs error’
+					相关源码如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//默认容量大小private static final int DEFAULT_CAPACITY
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-24</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/03-数据结构/">03 数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0124/io-different.html">
+				<h2 class="index-title">
+					12 BIO,NIO,AIO的区别
+				</h2>
+				<div class="index-brief">
+					BIO、NIO、AIO 是Java中处理I&#x2F;O操作的不同方式，它们的区别如下：
 
-123456cat error.log | grep -B 5 ‘nick’ #显示nick及前5行cat err
+BIO（Blocking I&#x2F;O）：阻塞式I&#x2F;O，即在执行I&#x2F;O操作时，当前线程会被阻塞，直到I&#x2F;O操作完成。这种方式适用于简单的I&#x2F;O操作，但当有大量的并发
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-01-20</span>
+				    <span>2024-01-24</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/22-linux/">22 linux</a>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
 										
                                     </span>
                                 
@@ -3200,14 +3314,12 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/undefined.html">
+			<a href="/2024/0120/self-audition-jindong.html">
 				<h2 class="index-title">
-					01 docker面试题
+					03 京东(23.2)
 				</h2>
 				<div class="index-brief">
-					如何构建dockerfile
-将jar包上传到服务器
-执行下述命令构建dockerfile1234567891011121314# 创建文件夹mkdir /opt/springboot# 移动 JAR 包cd ~mv springboot-demo.jar /opt/springboot/# 构建 
+					Here's something encrypted, password is required to continue reading.
 					...
 				</div>
 			</a>
@@ -3218,7 +3330,17 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/35-docker/">35 docker</a>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/个人/">个人</a>
 										
                                     </span>
                                 
@@ -3228,12 +3350,12 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/math-method.html">
+			<a href="/2024/0120/self-audition-huarun.html">
 				<h2 class="index-title">
-					01 算法面试题
+					02 华润面试(22.6)
 				</h2>
 				<div class="index-brief">
-					
+					Here's something encrypted, password is required to continue reading.
 					...
 				</div>
 			</a>
@@ -3244,7 +3366,17 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-算法/">32 算法</a>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/个人/">个人</a>
 										
                                     </span>
                                 
@@ -3254,12 +3386,12 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/net-xiyi.html">
+			<a href="/2024/0120/self-audition-pingan.html">
 				<h2 class="index-title">
-					01 三次握手及四次挥手
+					01 平安面试(22.3)
 				</h2>
 				<div class="index-brief">
-					1.http通信为甚么要三次握手，四次挥手；当客户端发出第一个连接请求报文段时并没有丢失，而是在某个网络节点出现了长时间的滞留，以至于延误了连接请求在某个时间之后才到达服务器。这应该是一个早已失效的报文段。但是服务器在收到此失效的连接请求报文段后，以为是客户端的一个新请求，于是就向客户端发出了确认报
+					Here's something encrypted, password is required to continue reading.
 					...
 				</div>
 			</a>
@@ -3270,34 +3402,17 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/22-网络协议/">22 网络协议</a>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
 										
                                     </span>
                                 
                             
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/sheji-mode.html">
-				<h2 class="index-title">
-					01.设计模式面试题
-				</h2>
-				<div class="index-brief">
-					1.mybaits 用了哪些设计模式？2.spring 用了哪些设计模式？3.单例模式有哪几种？懒汉，饿汉式，线程安全的懒汉式，匿名内部类
-4.说下你对责任链模式的理解及应用场景？5.说说代理模式
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/31-设计模式/">31 设计模式</a>
+                                        <a href="/categories/32-面经/个人/">个人</a>
 										
                                     </span>
                                 
@@ -3309,7 +3424,7 @@ linux常用查看日志命令？cd到对应的日志目录文件查看实时日�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/30/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="page-number" href="/archives/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/archives/page/32/">32</a><a class="page-number" href="/archives/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/32/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/30/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/29/">29</a><a class="page-number" href="/archives/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/archives/page/32/">32</a><a class="page-number" href="/archives/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/32/">&gt;</a>
 		
 	</div>
 </div>

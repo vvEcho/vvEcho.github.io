@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,13 +3259,92 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/1129/solidity-inner-object-and-function.html">
+			<a href="/2025/1203/web3-interview2.html">
 				<h2 class="index-title">
-					(二)solidity内置对象及函数
+					(九)web3面试第二弹
 				</h2>
 				<div class="index-brief">
-					1.solidity多继承solidity 通过is关键字实现合约多重继承，例如contract H is G,F,表示H合约继承自G和F合约，多重继承的顺序是按照从左到右的顺序。
-2.immutable关键字immutable 是一种特殊的状态变量修饰符，用于定义在合约部署后不可修改的变量 imm
+					1.erc20、erc721、erc1155还有其他哪些类型的合约 它们有啥区别?应用场景是啥？ERC20–同质化代币，稳定币；项目方发行的token,gameFi游戏货币，治理代币，奖励代币挖矿空投等 ERC721（含 721A，批量铸造节省90%gas费）–数藏，链上凭证，游戏装备（非同质化）E
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-12-03</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/17-web3/">17 web3</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/1201/web3-interview1.html">
+				<h2 class="index-title">
+					(八)web3面试第一弹
+				</h2>
+				<div class="index-brief">
+					1. 私有（private）、内部（internal）、公共（public）、外部（external）函数之间的区别？private：只能在 当前合约 内部被调用（包括 this 也不能）。继承合约无法访问。编译器级别限制。internal：只能在 当前合约及其派生合约（继承）中访问，相当于 pro
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-12-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/17-web3/">17 web3</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/1130/mocha-chai.html">
+				<h2 class="index-title">
+					(六)Mocha+Chai测试框架
+				</h2>
+				<div class="index-brief">
+					概念作为 Web3 开发者，掌握 Mocha 和 Chai 是进行智能合约测试的基础；Mocha 是一个功能丰富的 JavaScript 测试框架，用于异步测试。Chai 提供了多种断言风格，最常用的是 expect 和 should。
+测试的基本结构123456789101112131415161
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/17-web3/">17 web3</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/1129/web3-terms.html">
+				<h2 class="index-title">
+					(七)web3相关术语
+				</h2>
+				<div class="index-brief">
+					入金，出金投资者将资金从个人银行账户或其他渠道转入交易账户（如证券账户、外汇账户、数字货币钱包等）将资金从交易账户转回个人银行账户或提现到其他外部渠道 简单理解：入金&#x3D;存钱进账户，出金&#x3D;取钱到口袋
+AMMAMM（Automated Market Maker，自动做市商） 是一种去
 					...
 				</div>
 			</a>
@@ -3198,30 +3365,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/1129/solidity-base-programming-rules.html">
+			<a href="/2025/1129/solidity-wei-math.html">
 				<h2 class="index-title">
-					(一)solidity基本语法规则
+					(五) solidity的位运算实践
 				</h2>
 				<div class="index-brief">
-					
-最近在玩solidity，所以记录一下solidity的一些语法规则
-
-1、可见性修饰符控制函数&#x2F;变量的访问边界
-
-
-
-修饰符
-访问范围
-典型场景
-
-
-
-public
-合约内外均可访问（自动生成状态变量的 getter 函数）
-公开接口方法（balanceOf()）
-
-
-external
+					✅代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970contract Bitwise
 					...
 				</div>
 			</a>
@@ -3233,114 +3382,6 @@ external
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/17-web3/">17 web3</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0316/dingyili-mianshi.html">
-				<h2 class="index-title">
-					09 鼎屹立(25.3)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-16</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0316/tuowei-mianshi.html">
-				<h2 class="index-title">
-					08 拓维信息(25.3)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-16</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/个人/">个人</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0316/minyi-mianshi.html">
-				<h2 class="index-title">
-					07 明懿科技(25.3)
-				</h2>
-				<div class="index-brief">
-					Here's something encrypted, password is required to continue reading.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-16</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/个人/">个人</a>
 										
                                     </span>
                                 
@@ -3352,7 +3393,7 @@ external
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/4/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/6/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/4/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/6/">&gt;</a>
 		
 	</div>
 </div>

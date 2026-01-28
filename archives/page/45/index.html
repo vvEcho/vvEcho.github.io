@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,16 +3259,46 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/new-survive-old-gc.html">
+			<a href="/2024/0120/wait-sleep-yield-join.html">
 				<h2 class="index-title">
-					13 谈谈新生代，幸存区，老年代对应的垃圾回收是怎样的(待完善)
+					04 04 wait,sleep,yield,join,notify的区别
 				</h2>
 				<div class="index-brief">
-					jdk1.7前堆主要分为：新生区，养老区，永久区jdk1.8后堆主要分为：新生区，养老区，元空间
+					1.wait来自object类的方法，调用wait方法会释放锁，进入线程等待池，等待被唤醒。
+2.sleepThread类的方法，必须带一个时间参数。会让当前线程休眠进入阻塞状态并释放CPU（阿里面试题 Sleep释放CPU，wait 也会释放cpu，因为cpu资源太宝贵了，只有在线程running
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/how-to-start-one-thread.html">
+				<h2 class="index-title">
+					05 怎么开启一个线程？
+				</h2>
+				<div class="index-brief">
+					
+直接new一个Thread
+继承Thread，重写run方法
+实现Runnable，重写run方法
+实现Callable，重写call方法
+ThreadPoolExecutor手动配置线程池
 
-对象优先在 Eden 区分配​ 一般情况下，对象都优先在新生代的 Eden 区中分配，当 Eden 内存不足时将会发起一次 Minor GC。
 
-大对象直接进入老年代​所谓大对象就是需要大量连续空间的
 					...
 				</div>
 			</a>
@@ -3191,7 +3309,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -3201,40 +3319,15 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/how-handle-pro-server-slow.html">
+			<a href="/2024/0120/synchronized-valatial-understand.html">
 				<h2 class="index-title">
-					09 生产环境服务嚣变慢,如何诊断处理?
+					01 synchronized和volatial关键字理解
 				</h2>
 				<div class="index-brief">
-					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/jvm-config-params.html">
-				<h2 class="index-title">
-					10 工作中常用的JVM配置参教有哪些?
-				</h2>
-				<div class="index-brief">
-					Java8为例
+					synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：
 
-日志-XX :+ PrintFlagsFinal ,打印 JVM 所有参教的值-XX :+ PrintGC ，打印 GC 信息-XX :+ PrintGcDetails ,打印 GC 详细信息-XX :+ PrintGCTimestamps ,打印 GC 的时间戳-Xloggc :
+①获得互斥锁
+②从主内存拷贝变量的最新副本到工作内存
 					...
 				</div>
 			</a>
@@ -3245,7 +3338,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -3255,12 +3348,13 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/garbage-collection-algorithm.html">
+			<a href="/2024/0120/lock-upgradation.html">
 				<h2 class="index-title">
-					06 常见的垃圾回收算法
+					02 锁升级的过程
 				</h2>
 				<div class="index-brief">
-					引用计数法：记录了一个变量的引用次数，引用一次就加1，引用失效就减1，效率低可达性分析算法：判断一个变量是否根据当前引用地址是否可达，效率高标记清除算法：标记需清除的对象，统一回收；但是容易产生内存碎片，导致无法分配大对象；大量对象需要标记时效率低标记复制算法：将内存分成了两块，一块用来标记需要复制
+					无锁​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
+偏向锁​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的比对一下啊
 					...
 				</div>
 			</a>
@@ -3271,7 +3365,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -3281,12 +3375,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/jvm-error-in-project.html">
+			<a href="/2024/0120/cas-principle.html">
 				<h2 class="index-title">
-					07 你在实际项目中有排查过JVM方面的问题吗？
+					03 CAS原理
 				</h2>
 				<div class="index-brief">
-					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
+					CAS为比较并交换，它的实现是用一个旧的预期的值和内存值进行比较，如果两个值相等，就用新的值替换内存值，并返回 true。否则，返回 false;CAS 利用 CPU 指令保证了操作的原子性，以达到锁的效果，至于自旋呢，看字面意思也很明白，自己旋转，翻译成人话就是循环，一般是用一个无限循环实现。这样
 					...
 				</div>
 			</a>
@@ -3297,7 +3391,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
 										
                                     </span>
                                 
@@ -3309,7 +3403,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/44/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/43/">43</a><a class="page-number" href="/archives/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/archives/page/46/">46</a><a class="page-number" href="/archives/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/46/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/44/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/43/">43</a><a class="page-number" href="/archives/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/archives/page/46/">46</a><a class="page-number" href="/archives/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/46/">&gt;</a>
 		
 	</div>
 </div>

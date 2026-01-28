@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,24 +3259,18 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0201/redis-big-key.html">
+			<a href="/2024/0220/redis-page-query.html">
 				<h2 class="index-title">
-					12 redis大key问题
+					15 redis如何做分页查询
 				</h2>
 				<div class="index-brief">
-					大key可能存在的场景
-配送范围特别大的门店
-促销活动特别多的门店、商家等
-高频用户下的订单列表
-
-大key会导致什么问题
-如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
-如果是hash,list,set,zset等类型key 删除key会严重阻
+					1.使用redis的list（列表）数据结构将需要分页展示的数据的id或者主键作为list中的元素，然后根据用户的分页请求，使用LRANGE命令来获取指定范围的元素，再根据元素来获取具体的数据
+1234567891011@Servicepublic class RedisPaginationServ
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-01</span>
+				    <span>2024-02-20</span>
                     
                             
                                 
@@ -3204,25 +3286,24 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0201/springcloud-bus.html">
+			<a href="/2024/0220/rocketmq-consume-mode.html">
 				<h2 class="index-title">
-					07 springcloud消息总线
+					10 rocketMq有哪些消费模式
 				</h2>
 				<div class="index-brief">
-					Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
-Spring Cloud Bus配合Spring Cloud Config使用可以实现分布式自动刷新配置功能
-ConfigClient实例都监听MQ中
+					rocketMq有两种消费模式，集群消费(默认)和广播消费
+集群模式：一个ConsumerGroup中的Consumer实例根据队列分配策略算法为Consumer分配队列，平均分摊（默认）消费消息。例如Topic是Test的消息发送到该主题的不同队列中，发送了有100条消息，其中一个Consumer
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-01</span>
+				    <span>2024-02-20</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
 										
                                     </span>
                                 
@@ -3232,24 +3313,55 @@ ConfigClient实例都监听MQ中
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0201/sentinel-liu-kong.html">
+			<a href="/2024/0220/mysql-groupby-suoyin.html">
 				<h2 class="index-title">
-					05.3 hystricl和sentinel的对比
+					11 groupby语句后有索引查询和无索引查询有啥区别
 				</h2>
 				<div class="index-brief">
-					Sentinel和Hystrix有哪些不同？Sentinel 和 Hystrix 都是用于管理分布式系统中的服务可靠性和延迟容忍性的工具，它们提供了像熔断器、限流器和服务降级这样的功能。虽然两者的目标类似，但它们在实现和功能上存在一些差异。以下是 Sentinel 和 Hystrix 的主要区别：
+					groupby 后语句有索引，直接根据索引扫描来分组，且分完组后无须排序
+groupby 后语句无索引，会全表扫描，扫描出来的数据分组完后组成一个临时表，然后对这个临时表的数据进行排序
+针对group by查询的优化建议：A.优先为 GROUP BY 字段创建索引     单字段分组：直接为分组字段
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0220/kafka-transcation.html">
+				<h2 class="index-title">
+					04 kafka怎么做分布式事务？
+				</h2>
+				<div class="index-brief">
+					kafka的优势其实在于副本机制以及在消息的吞吐量上，它本身的机制并不能用来做分布式事务；
+如果非得要用它来做事务管理的话，我们需要自己业务层面自己来确保消息的幂等性
+如果非要用kafka实现一个分布式事务，则需要借助一个本地事务状态表来实现，过程如下：
 
+业务操作和消息记录在一个事务中，先标记为待
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-01</span>
+				    <span>2024-02-20</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
 										
                                     </span>
                                 
@@ -3259,55 +3371,24 @@ ConfigClient实例都监听MQ中
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0201/springcloud-zookeeper.html">
+			<a href="/2024/0219/redis-listen-key-expire.html">
 				<h2 class="index-title">
-					03.2 zookeeper注册中心
+					14 如何监听key过期时间并触发后置逻辑
 				</h2>
 				<div class="index-brief">
-					1.Zookeeper的服务注册与发现Zookeeper的服务注册与发现,主要应用的是Zookeeper的Znode数据模型和Watcher机制
-服务注册：服务提供者会向Zookeeper服务端注册服务信息，即创建一个服务节点，并在节点上存储服务的相关数据（如服务提供者的ip地址、端口等):
-服务发
+					1. 修改redisp配置，开启过期事件监听1notify-keyspace-events Ex  # 仅监听键过期事件（Ex=Expired events）
+2. springboot配置监听器12345678910111213141516171819202122232425262728@Conf
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-01</span>
+				    <span>2024-02-19</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0124/springmvc-understand.html">
-				<h2 class="index-title">
-					14 说说你对mspringMvc流程的理解
-				</h2>
-				<div class="index-brief">
-					
-
-用户发送请求至前端控制器 DispatcherServlet ；
-DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器 ，请求获取 Handler ；
-处理器映射器 根据请求 url 找到具体的处理器 Handler ，生成处理器对象及处理器拦截器（如
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3319,7 +3400,7 @@ DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器 ，
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/27/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/archives/page/29/">29</a><a class="page-number" href="/archives/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/29/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/27/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/26/">26</a><a class="page-number" href="/archives/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/archives/page/29/">29</a><a class="page-number" href="/archives/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/29/">&gt;</a>
 		
 	</div>
 </div>

@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,68 +3259,125 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/synchronized-valatial-understand.html">
+			<a href="/2024/0120/thread-pool-setting.html">
 				<h2 class="index-title">
-					01 synchronized和volatial关键字理解
+					06 线程池怎么用，7大参数理解？如何配置？
 				</h2>
 				<div class="index-brief">
-					synchronized 关键字可以用来修饰的方法，类，代码块会被加锁，他能保证线程的互斥性；所谓互斥性就是线程1加了锁后，线程2就会被阻塞直到线程1释放锁；synchronized 能够及时的刷新内存，保证了内存的可见性。 具体工作过程如下：
+					12345678910ThreadPoolExecutor(    int corePoolSize, // 核心池线程数大小 (常用)    int maximumPoolSize,  // 最大的线程数大小 (常用)    long keepAliveTime, // 超时等待时间 (常用)  
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/semaphore-sample.html">
+				<h2 class="index-title">
+					07 信号量Semaphore(待完善)
+				</h2>
+				<div class="index-brief">
+					信号量，用于控制资源能够被并发访问的线程数量，以保证多个线程能够合理的使用特定资源在信号量Semaphore中提供了三个方法，init(),down(),up()方法；down 和up方法对应的操作也叫做p v操作，所以Semaphore模型又被称为pv原语；在java sdk包中down up方法
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/pessimistic-optimistic-lock.html">
+				<h2 class="index-title">
+					09 悲观锁和乐观锁
+				</h2>
+				<div class="index-brief">
+					悲观锁，按字面意思就是很悲观，每次获得去修改数据时总算悲观的认为数据已经被修改了，因此每次在获取到数据时都先给数据加锁，在操作数据的整个过程中一直上锁，等操作结束才会释放锁
+乐观锁，按字面意思就是很乐观，每次获得数据后总算乐观的认为数据没有被修改，只有在执行更新操作时才会判断数据是否被修改，如果数据
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/wait-sleep-yield-join.html">
+				<h2 class="index-title">
+					04 04 wait,sleep,yield,join,notify的区别
+				</h2>
+				<div class="index-brief">
+					1.wait来自object类的方法，调用wait方法会释放锁，进入线程等待池，等待被唤醒。
+2.sleepThread类的方法，必须带一个时间参数。会让当前线程休眠进入阻塞状态并释放CPU（阿里面试题 Sleep释放CPU，wait 也会释放cpu，因为cpu资源太宝贵了，只有在线程running
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/how-to-start-one-thread.html">
+				<h2 class="index-title">
+					05 怎么开启一个线程？
+				</h2>
+				<div class="index-brief">
+					
+直接new一个Thread
+继承Thread，重写run方法
+实现Runnable，重写run方法
+实现Callable，重写call方法
+ThreadPoolExecutor手动配置线程池
 
-①获得互斥锁
-②从主内存拷贝变量的最新副本到工作内存
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/lock-upgradation.html">
-				<h2 class="index-title">
-					02 锁升级的过程
-				</h2>
-				<div class="index-brief">
-					无锁​当一个对象被创建之后，还没有线程进入，这个时候对象处于无锁状态
-偏向锁​当锁处于无锁状态时，有一个线程A访问同步块并获取锁时，会在对象头和栈帧中的锁记录记录线程ID，这个时候对象头上的无锁就变更为偏向锁；以后该线程在进入和退出同步块时不需要进行CAS操作来进行加锁和解锁，只需要简单的比对一下啊
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/cas-principle.html">
-				<h2 class="index-title">
-					03 CAS原理
-				</h2>
-				<div class="index-brief">
-					CAS为比较并交换，它的实现是用一个旧的预期的值和内存值进行比较，如果两个值相等，就用新的值替换内存值，并返回 true。否则，返回 false;CAS 利用 CPU 指令保证了操作的原子性，以达到锁的效果，至于自旋呢，看字面意思也很明白，自己旋转，翻译成人话就是循环，一般是用一个无限循环实现。这样
+
 					...
 				</div>
 			</a>
@@ -3255,7 +3400,7 @@
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/3/">&lt;</a><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">1</a><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/2/">2</a><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/3/">3</a><span class="page-number current">4</span>
+			<a class="extend prev" rel="prev" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/3/">&lt;</a><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">1</a><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/2/">2</a><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/5/">5</a><a class="extend next" rel="next" href="/categories/05-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/page/5/">&gt;</a>
 		
 	</div>
 </div>

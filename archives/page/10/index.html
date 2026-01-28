@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,25 +3259,24 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+			<a href="/2025/0307/es-deep-query-page.html">
 				<h2 class="index-title">
-					09 kafka消息丢失的场景及解决方案
+					02 es深分页问题
 				</h2>
 				<div class="index-brief">
-					kafka消息丢失的场景主要在生产端，broker端，消费端
-生产端消息丢失producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
-解决办法：可以改成同步发生，ack&#x3D;all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息
+					es查询时会根据from和to两个参数来查询数据，from 参数的值很大时（如 from&#x3D;10000 以上），ElasticSearch 需要跳过大量数据来获取指定页的内容，这种情况称为深度分页
+es数据是存储在多个分片（Shard）上的，每个分片本质上是一个独立的 Lucene 索引。分
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-06</span>
+				    <span>2025-03-07</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
 										
                                     </span>
                                 
@@ -3199,23 +3286,24 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0306/kafka-replication-sync.html">
+			<a href="/2025/0307/es-desc-suoyin.html">
 				<h2 class="index-title">
-					08 kafka副本同步机制
+					01 es倒排索引
 				</h2>
 				<div class="index-brief">
-					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
+					倒排索引也就是单词到文档的映射，当然不只是存个文档id这么简单。还包括：词频（TF，Term Frequency）、偏移量（offset）、位置（Posting）
+
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-06</span>
+				    <span>2025-03-07</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
+                                        <a href="/categories/16-elasticsearch/">16 elasticsearch</a>
 										
                                     </span>
                                 
@@ -3225,36 +3313,9 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0306/kafka-async-flush.html">
+			<a href="/2025/0307/how-to-parse-binlog-logs.html">
 				<h2 class="index-title">
-					07 kafka异步刷盘机制
-				</h2>
-				<div class="index-brief">
-					所谓kafka异步刷盘机制是指kafka的生产者将消息发送到broker时，首先消息会被追加到日志文件segment中，此时数据是暂存到操作系统的页缓存中，并不是直接落盘；（页缓存是内存中的临时存储区域，由操作系统管理，提供低延迟的读写能力）
-kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-06</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0306/undefined.html">
-				<h2 class="index-title">
-					05 令牌桶限流算法
+					18 怎么解析binlog日志
 				</h2>
 				<div class="index-brief">
 					
@@ -3262,26 +3323,70 @@ kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-06</span>
+				    <span>2025-03-07</span>
                     
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
                             
                     
                 </div>
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0306/undefined.html">
+			<a href="/2025/0307/index-disable-left-match.html">
 				<h2 class="index-title">
-					04 漏斗限流算法
+					17 为什么不遵守最左匹配原则索引会失效
 				</h2>
 				<div class="index-brief">
-					
+					B+树结构依赖于最左列的值作为比较起点MySQL的InnoDB引擎使用B+树存储索引数据。联合索引的键值按从左到右的顺序逐层排序。例如，联合索引(A, B, C) 的B+树结构如下第一层：按 A 列排序；第二层：在 A 相同的情况下按 B 排序；第三层：在 A 和 B 相同的情况下按 C 排序
+A.
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-06</span>
+				    <span>2025-03-07</span>
                     
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0307/mysql-acid.html">
+				<h2 class="index-title">
+					01 ACID是什么意思？
+				</h2>
+				<div class="index-brief">
+					ACID，是指数据库管理系统（DBMS）在写入或更新资料的过程中，为保证事务（transaction）是正确可靠的，所必须具备的四个特性：原子性（atomicity，或称不可分割性）、一致性（consistency）、隔离性（isolation，又称独立性）、持久性（durability）
+Atom
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-07</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
                             
                     
                 </div>
@@ -3290,7 +3395,7 @@ kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/9/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/11/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/9/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/11/">&gt;</a>
 		
 	</div>
 </div>

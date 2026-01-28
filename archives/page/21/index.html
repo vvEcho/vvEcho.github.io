@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,17 +3259,135 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0228/net-jwt-authorization.html">
+			<a href="/2025/0301/cyclicBarrier-principle.html">
 				<h2 class="index-title">
-					02 说一下jwt的认证流程
+					15 CyclicBarrier实现原理
 				</h2>
 				<div class="index-brief">
 					
-jwt的认证流程说明：前端发起请求登陆，用户携带用户名和密码等
-后端验证身份（用户名，密码，验证码等），根据算法，将用户标识符打包生成 Token，
-后端返回JWT信息给浏览器，JWT不包含敏感信息
-前端发起回调请求获取用户资料，把刚刚拿到的Token放到请求头中一起发送给服务器
-后端根据请求数据
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/null.html">
+				<h2 class="index-title">
+					14 countDownlanch实现原理
+				</h2>
+				<div class="index-brief">
+					问题标题
+
+
+
+姓名
+角色
+年龄
+
+
+
+张三
+学生
+18
+
+
+李四
+老师
+20
+
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/can-notcan-enter-lock.html">
+				<h2 class="index-title">
+					11 什么叫可重入锁和不可重入锁
+				</h2>
+				<div class="index-brief">
+					Java中提供的synchronized，ReentrantLock，ReentrantReadWriteLock都是可重入锁
+不可重入锁只判断这个锁有没有被锁上，只要被锁上，申请锁的线程都会被要求等待。
+可重入锁不仅判断锁有没有被锁上，还会判断锁是哪个线程锁上的，当判断为当前锁上的时候，那么他依旧
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0301/fair-nonfair-lock.html">
+				<h2 class="index-title">
+					10 公平锁和非公平锁
+				</h2>
+				<div class="index-brief">
+					Java中提供的synchronized只能是非公平锁。
+Java中提供的ReentrantLock，ReentrantReadWriteLock可以实现公平锁和非公平锁
+公平锁公平锁，先到先得；多个线程按顺序排队获取锁，每个线程获取机会均等，但永远只有队列首位线程能获取到锁。
+优点：每个线程等待一
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0228/seata-4-mode.html">
+				<h2 class="index-title">
+					12 seata事务有哪几种模式？
+				</h2>
+				<div class="index-brief">
+					Seata 包含以下 4种分布式事务的处理模式
+1.XA 模式它的性能相比其他事务模式要差一点，但能保证最严格的数据一致性。XA 模式需要设置为串行化隔离级别，相当于对数据添加了读写锁。另外连接资源需要在整个事务期间保持，这样可能会导致资源锁定问题，从而影响并发事务吞吐。
+a.优点:实现简单、无业务
 					...
 				</div>
 			</a>
@@ -3192,119 +3398,7 @@ jwt的认证流程说明：前端发起请求登陆，用户携带用户名和�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/22-网络协议/">22 网络协议</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0227/xxl-job-fenpian.html">
-				<h2 class="index-title">
-					04 xxl-job如何实现任务的分片
-				</h2>
-				<div class="index-brief">
-					xxl-job 实现了分片任务的功能，可以将一个任务分片执行，每个执行器运行其中的一片任务。实现分片任务的原理是：任务注册时，可以设置分片参数，指定任务分片的总数和当前执行器的分片序号。在任务执行器获取任务时，通过判断当前执行器的分片序号来决定是否执行该任务。执行器只会执行当前分片序号符合的任务片段
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0227/xxl-register-center.html">
-				<h2 class="index-title">
-					03 xxl-job服务注册与发现的原理是啥？
-				</h2>
-				<div class="index-brief">
-					执行器的注册流程(1) 启动时主动注册 触发时机：执行器启动时，通过XxlJobExecutor 初始化 Netty 服务端，并调用startRegistry 方法向调度中心发送注册请求。
-注册内容：执行器名称appname,执行器地址（address，格式为 IP:PORT）,注册类型（固定为 E
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0227/xxl-job-principle.html">
-				<h2 class="index-title">
-					01 xxl-job的原理
-				</h2>
-				<div class="index-brief">
-					xxl-job的原理是通过一个任务调度中心和多个任务执行器实现任务的分布式调度和执行。
-其工作流程如下：
-
-调度中心通过任务注册接口将任务信息注册到注册中心。
-执行器从注册中心获取任务信息，并在指定的时间点执行任务。
-执行器执行任务后，将执行结果上报给任务调度中心。
-调度中心根据执行结果进行任务状态
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/15-xxl-job/">15 xxl-job</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0227/spring-bean-singleton.html">
-				<h2 class="index-title">
-					19 spring是如何保证bean是单例的？
-				</h2>
-				<div class="index-brief">
-					spring是通过三级缓存与双重检测锁的协作来保证bean是单例的
-一级缓存（singletonObjects）：存储完全初始化后的单例 Bean 实例。二级缓存（earlySingletonObjects）：存储提前暴露的 Bean 引用（未完成属性填充和初始化）。三级缓存（singletonFa
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-02-27</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/16-seata/">16 seata</a>
 										
                                     </span>
                                 
@@ -3316,7 +3410,7 @@ jwt的认证流程说明：前端发起请求登陆，用户携带用户名和�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/20/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="page-number" href="/archives/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/archives/page/22/">22</a><a class="page-number" href="/archives/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/22/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/20/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="page-number" href="/archives/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/archives/page/22/">22</a><a class="page-number" href="/archives/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/22/">&gt;</a>
 		
 	</div>
 </div>

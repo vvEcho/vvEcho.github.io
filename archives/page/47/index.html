@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,12 +3259,12 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/base-data-type-all-in-stack.html">
+			<a href="/2024/0120/garbage-collection-algorithm.html">
 				<h2 class="index-title">
-					03 java中的基本数据类型都是存储在栈中的吗？
+					06 常见的垃圾回收算法
 				</h2>
 				<div class="index-brief">
-					面试基本上问到这里都是三连，说说八大基本数据类型？说说堆和栈？接下来就是这个有坑的问题答：不是一：在方法中声明的变量，即该变量是局部变量，每当程序调用方法时，系统都会为该方法建立一个方法栈，其所在方法中声明的变量就放在方法栈中，当方法结束系统会释放方法栈，其对应在该方法中声明的变量随着栈的销毁而结束
+					引用计数法：记录了一个变量的引用次数，引用一次就加1，引用失效就减1，效率低可达性分析算法：判断一个变量是否根据当前引用地址是否可达，效率高标记清除算法：标记需清除的对象，统一回收；但是容易产生内存碎片，导致无法分配大对象；大量对象需要标记时效率低标记复制算法：将内存分成了两块，一块用来标记需要复制
 					...
 				</div>
 			</a>
@@ -3197,18 +3285,12 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/qps-tps-different.html">
+			<a href="/2024/0120/jvm-error-in-project.html">
 				<h2 class="index-title">
-					11 Qps和Tps的区别
+					07 你在实际项目中有排查过JVM方面的问题吗？
 				</h2>
 				<div class="index-brief">
-					
-定义
-
-
-QPS（Queries Per Second）：表示系统每秒处理的查询请求数。通常用于衡量系统的读操作能力，例如数据库查询、API 请求等。例如：一个搜索引擎每秒可以处理 1000 次查询，其 QPS 就是 1000。
-
-TPS（Transactions Per Second）：表示系统
+					排查过oom的问题，主要是压测环境，可以dump内存日志结合代码日志判断，当时主要是一个同事直接用List来装客户地址信息，而模拟的客户压测并发情况下是正常的100来倍，大致这个对象巨大无比，触发了oom;还有就是数据的问题，比如一个值用的是Integer却给了它一个long类型长度的值，导致直接就
 					...
 				</div>
 			</a>
@@ -3219,7 +3301,7 @@ TPS（Transactions Per Second）：表示系统
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
 										
                                     </span>
                                 
@@ -3229,14 +3311,16 @@ TPS（Transactions Per Second）：表示系统
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/memory-leak-out.html">
+			<a href="/2024/0120/how-to-resolve-pro-cup-high.html">
 				<h2 class="index-title">
-					09 内存泄漏和内存溢出
+					08 生产环境CPU占用过高，如何解决？
 				</h2>
 				<div class="index-brief">
 					
-内存泄漏指的是创建对象后，经过多次gc 内存中的某些对象一直还存在强引用，无法被释放那么这些无法被释放的对象一直占有着这块内存对于整个系统来说就是缺失的，形象理解为内存在这些地方漏了个洞；
-内存溢出指的是，原本可以存n个字节的内存现在要存n+1个字节的数据，那么不够存或者内存已经满了存不下新的对象
+top + H 指令找出占用 CPU 最高的进程的 pid
+top - H - p 否该进程中找到，哪些线程占用的 CPU 最高的线程,记录下 tid
+jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出出现异常的话,加上一 F 参教
+将 tid 转换为十六
 					...
 				</div>
 			</a>
@@ -3247,7 +3331,7 @@ TPS（Transactions Per Second）：表示系统
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
 										
                                     </span>
                                 
@@ -3257,17 +3341,12 @@ TPS（Transactions Per Second）：表示系统
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/overwrite-overload-different.html">
+			<a href="/2024/0120/object-in-jvm-build-process.html">
 				<h2 class="index-title">
-					10 重写和重载的区别
+					04 对象在jvm中的创建过程
 				</h2>
 				<div class="index-brief">
-					
-重载是定义相同的方法名、只是参数不同，重写是子类重写父类的方法
-重载是在一个类中，重写是子类与父类之间的
-重载是编译时的多态性，重写是运行时的多态性
-重载的参数个数、参数类型、参数的顺序可以不同，重写父类子方法参数必须相同
-重载对修饰范围没有要求，重写要求重写方法的修饰范围大于被重写方法的修饰范围
+					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区在创建类的对象时，首先会先去堆内存中分配空间然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化所有的非静态成员默认初始化完成后，调用相应的构造方法到栈中在栈
 					...
 				</div>
 			</a>
@@ -3278,7 +3357,7 @@ TPS（Transactions Per Second）：表示系统
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
 										
                                     </span>
                                 
@@ -3288,19 +3367,13 @@ TPS（Transactions Per Second）：表示系统
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/strong-soft-weak-phantom-ref.html">
+			<a href="/2024/0120/jvm-constant-pool.html">
 				<h2 class="index-title">
-					08 强引用，软引用，弱引用，虚引用的区别
+					05 谈谈jvm常量池
 				</h2>
 				<div class="index-brief">
-					
-强引用强引用一般指我们new的对象存在的引用
+					jdk1.8开始字符串常量池：存放在堆中运行时常量池：存放在方法区，属于元空间
 
-软引用软引用，指SoftReference 创建的对象指向的引用，一般在jvm内存不足时被释放；
-
-弱引用弱引用，指WeakReference 创建的对象指向的引用，一般gc时都会被优先回收；
-
-虚引用虚引用，是一种形同虚设的引用，主要用来跟踪对象被
 					...
 				</div>
 			</a>
@@ -3311,7 +3384,7 @@ TPS（Transactions Per Second）：表示系统
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
 										
                                     </span>
                                 
@@ -3323,7 +3396,7 @@ TPS（Transactions Per Second）：表示系统
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/46/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="page-number" href="/archives/page/46/">46</a><span class="page-number current">47</span><a class="page-number" href="/archives/page/48/">48</a><a class="page-number" href="/archives/page/49/">49</a><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/48/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/46/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/45/">45</a><a class="page-number" href="/archives/page/46/">46</a><span class="page-number current">47</span><a class="page-number" href="/archives/page/48/">48</a><a class="page-number" href="/archives/page/49/">49</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/48/">&gt;</a>
 		
 	</div>
 </div>

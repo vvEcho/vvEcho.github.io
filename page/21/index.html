@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,13 +3259,131 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/pointcut-order-sure.html">
+			<a href="/2024/0120/springcloud-used-component.html">
 				<h2 class="index-title">
-					11 切面解析的顺序怎么确定？
+					01 springCloud中组件常用的有哪些？
 				</h2>
 				<div class="index-brief">
-					使用 @order(number) 注解，number 越小，优先级越高
+					Zuul、Gateway-网关
+eureka-注册中心
+config-配置中心
+Ribbon-负载均衡
+Feign-服务调用
+Hystrix或Resilience4j-熔断器
+security-安全权限组件
+shiro-权限组件
 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/springcloud-eureka.html">
+				<h2 class="index-title">
+					03.1 Eureka注册中心
+				</h2>
+				<div class="index-brief">
+					1.服务端如何保存客户端注册信息?客户端注册，Eureka客户端在启动时，首先会创建一个心跳的定时任务，定时向服务端发送心跳信息，服务端会对客户端心跳做出响应，如果响应状态码为404时，表示服务端没有该客户端的服务信息，那么客户端则会向服务端发送注册请求.客户端通过Jersey框架，将自己的注册信息
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/springboot-annotation.html">
+				<h2 class="index-title">
+					02 springBoot常用注解？
+				</h2>
+				<div class="index-brief">
+					@SpringBootApplication spring启动类上的注解（实际是由三个注解组成：@SpringBootConfiguration @EnableAutoConfiguration @ComponentScan）
+@EnableAutoConfiguration 自动配置类@Sprin
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/02-springboot/">02 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/interceptor-filter-different.html">
+				<h2 class="index-title">
+					03 拦截器和过滤器的区别
+				</h2>
+				<div class="index-brief">
+					区别：
+
+拦截器是SpringMVC提供的，过滤器是Servlet提供的。
+过滤器与servlet是绑定的，仅限于web应用。而拦截器可作用于其他的应用，例如swing应用
+对所有请求生效（包括静态资源、Servlet、JSP等），可修改请求&#x2F;响应内容（如编码、敏感词过滤）
+拦截器仅拦截S
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/solve-spring-cycle-depency.html">
+				<h2 class="index-title">
+					12 spring怎么解决循环依赖的？
+				</h2>
+				<div class="index-brief">
+					为什么会出现循环依赖其实这和Spring注入bean的流程相关的，bean的初始化是分为属性注入-》aware接口回调后再初始化的，所以这就导致如果两个类，比如A类和B类,A类中注入了B类，B类中又注入了A类的属性；
+这个时候A这个Bean先被加载，属性注入的时候会去判断B是否被实例化，若是没有被实
 					...
 				</div>
 			</a>
@@ -3198,18 +3404,66 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/spring-she-ji-mo-shi.html">
+			<a href="/2024/0120/auto-assemble-principle.html">
 				<h2 class="index-title">
-					07 spring框架中的设计模式有哪些(待完善)
+					01 自动装配原理？
 				</h2>
 				<div class="index-brief">
-					工厂模式-BeanFactory
-模板模式-JdbcTemplate
-策略模式-InstantionStrategy
-代理模式-BeanProxy
-装饰器模式-BeanWapper
-责任链模式-BeanPostProcessor
-观察者模式-事件监听机制
+					springboot的自动装配其实是他约定大于配置这一核心思想的具体体现
+例如我们引入了spring-boot-starter-web这一依赖后，那么与之构建项目相关的mvc,aop,事务，数据库等相关的类在spring启动时就会自动注入到容器里；
+springboot的自动装配是依赖于java的s
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/07-springboot/">07 springboot</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/aop-jdk-cglib.html">
+				<h2 class="index-title">
+					10 aop的实现默认是使用jdk动态代理还是cglib
+				</h2>
+				<div class="index-brief">
+					aop没有默认使用哪个代理，都是根据条件判断的。注解是 @EnableAspectJAutoProxy时，如果目标类有父接口，采用 jdk 动态代理；如果目标类没有父接口，采用 cglib 代理。注解是 @EnableAspectJAutoProxy(proxyTargetClass &#x3D; 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/06-spring/">06 spring</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/pointcut-order-sure.html">
+				<h2 class="index-title">
+					11 切面解析的顺序怎么确定？
+				</h2>
+				<div class="index-brief">
+					使用 @order(number) 注解，number 越小，优先级越高
 
 					...
 				</div>
@@ -3282,187 +3536,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0120/spring-transcation-fail.html">
-				<h2 class="index-title">
-					06 spring事务失效的场景
-				</h2>
-				<div class="index-brief">
-					
-1.不是代理类的调用，例如类A 中有方法B 和方法C 此时B种调用了tiis.c方法，这种事务是不会生效的
-2.方法不是pulic的
-3.没有被Spring事务管理
-4.异常被捕获没有抛出来，这种事务不会回滚也相当于失效了
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/bean-life-understand.html">
-				<h2 class="index-title">
-					13 bean的生命周期
-				</h2>
-				<div class="index-brief">
-					面试中若问道spring的启动流程，其实和问bean的生命周期是差不多的意思
-这里我说下我个人的理解，bean的生命周期指的是：
-被spring管理的一个bean从创建到销毁的过程，一般分为:实例化→属性注入→初始化→使用→销毁五大阶段，初始化阶段再细分为 Aware、前置处理、自定义初始化、后置处
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/ioc-understand.html">
-				<h2 class="index-title">
-					01 谈谈你对IOC的理解
-				</h2>
-				<div class="index-brief">
-					IOC是Spring两大思想的中一点，为控制反转；
-所谓的控制反转就是控制了对象的创建过程，反转了对象的注入形式；
-一般而言，我们创建对象为new 或者用调用对象的构造方法;
-用了spring框架后，在spring启动时对象被封装为一个个Bean保存在spring容器中，我们需要使用的时候，直接注入
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/aop-understand.html">
-				<h2 class="index-title">
-					02 谈谈你对Aop的理解
-				</h2>
-				<div class="index-brief">
-					AOP是Spring两大思想的中一点，为切面编程；在spring中可以通过定义切面注解的形式来对方法或类作一定的增强
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/spring-transcation-jizhi.html">
-				<h2 class="index-title">
-					03 Spring事务传播机制
-				</h2>
-				<div class="index-brief">
-					Spring默认有7种事务机制，如下：
-
-REQUIRED-默认的事务隔离级别，会自动加入当前的事务，如果不存在则新建事务
-
-SUPPORT级别，跟REQUIRED类似，也是会自动加入当前的事务，但两者区别在于，若当前无事务，则按照无事务的方式执行
-
-MANDATORY级别，要求SQL操作强制在事务
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/deadlock-occurs-reason.html">
-				<h2 class="index-title">
-					08 死锁出现的原因以及怎么解决？
-				</h2>
-				<div class="index-brief">
-					出现死锁的原因是因为两个线程出现持有对方想要的资源，导致这两个线程一直处在等待对方释放锁的状态；
-破坏竞态条件既可以解除死锁，例如：当一个线程持有锁时，自己没有释放锁时不能再去尝试获取另一个锁；
-代码示例：
-1234567891011121314151617181920212223242526272
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/05-并发编程/">05 并发编程</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/20/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/22/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/20/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/22/">&gt;</a>
 		
 	</div>
 </div>

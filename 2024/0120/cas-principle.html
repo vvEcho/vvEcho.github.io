@@ -663,6 +663,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -877,6 +888,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3160,6 +3226,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3217,6 +3305,10 @@
 	<p>CAS为比较并交换，它的实现是用一个旧的预期的值和内存值进行比较，如果两个值相等，就用新的值替换内存值，并返回 true。否则，返回 false;<br>CAS 利用 CPU 指令保证了操作的原子性，以达到锁的效果，至于自旋呢，看字面意思也很明白，自己旋转，翻译成人话就是循环，一般是用一个无限循环实现。这样一来，一个无限循环中，执行一个 CAS 操作，当操作成功，返回 true 时，循环结束；当返回 false 时，接着执行循环，继续尝试 CAS 操作，直到返回true</p>
 <blockquote>
 <p>总结<br>CAS 是一种原子操作，用于实现无锁更新，基于底层unsafe直接操作内存，不需要锁。<br>自旋锁基于 CAS 实现，是一种轻量级的锁机制。<br>自旋锁的轻量级体现在无上下文切换、低开销和适用于短时间等待。<br>自旋锁适用于锁竞争时间短、高并发和低延迟的场景。<br>尽管自旋锁是轻量级的，但它也有局限性，如ABA问题和自旋开销</p>
+</blockquote>
+<h3 id="锁自旋次数怎么控制？"><a href="#锁自旋次数怎么控制？" class="headerlink" title="锁自旋次数怎么控制？"></a>锁自旋次数怎么控制？</h3><p>jdk1.6老版本可以通过参数设置-XX:PreBlockSpin&#x3D;10，默认为10次<br>1.8后基本都是自适应控制了，jvm底层会有个反馈算法，会统计没把锁的自旋成功次数，然后自适应调节每把锁的自旋次数；<br>如果最近自旋成功率高，那么自旋次数就会增加，如果最近自旋成功率低，那么对应的自旋次数就会增加；如果最近来竞争的线程数多，竞争加剧那么对应的自旋次数就会增加，否则则减小；最终根据一段时间和自旋成功数还有竞争度，算出这个锁的一个自适应自旋次数；</p>
+<blockquote>
+<p>VM 会给每把锁“学习”最优自旋次数<br>👉 看成功率、竞争度、持锁时长、CPU情况<br>👉 成功率高就多转<br>👉 成功率低就少转甚至直接升级</p>
 </blockquote>
 
 </div>

@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3169,6 +3257,222 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2026/0119/dubbo-feature.html">
+				<h2 class="index-title">
+					01 dubbo的特点
+				</h2>
+				<div class="index-brief">
+					dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
+使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/09-dubbo/">09 dubbo</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0117/jedis-redission-redisTemplate.html">
+				<h2 class="index-title">
+					28 Jedis redission redisTemplate有啥使用场景上的区别？
+				</h2>
+				<div class="index-brief">
+					Jedis 是底层阻塞式客户端；RedisTemplate 是 Spring 对 Redis 的抽象封装，适合场景：缓存，简单计数，Session不复杂的redis使用场景，例如：String &#x2F; Hash，TTL，简单 LuaRedisson 提供基于Redis的分布式协调能力,底层提供
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-17</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0117/redis-transaction-support.html">
+				<h2 class="index-title">
+					27 redis支持事务吗？
+				</h2>
+				<div class="index-brief">
+					Redis 通过 MULTI &#x2F; EXEC &#x2F; WATCH 提供事务机制，能保证命令按顺序原子执行，但不支持回滚和隔离级别, 它的隔离主要是靠单线程串行执行来保证的
+redis事务的特点：
+
+命令按顺序执行
+不支持回滚
+不支持隔离级别
+复杂的逻辑需要用lua脚本
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-17</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0117/redis-lua-script-tips.html">
+				<h2 class="index-title">
+					26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
+				</h2>
+				<div class="index-brief">
+					一般java后端这么写扣减库存的lua脚步：
+12345678910111213141516171819202122String script =    &quot;local stock = redis.call(&#x27;GET&#x27;, KEYS[1]) &quot; +    &quo
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-17</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0117/redis-thread-model.html">
+				<h2 class="index-title">
+					25 redis的线程模型
+				</h2>
+				<div class="index-brief">
+					
+Redis 的核心是「单线程处理命令，多线程处理 I&#x2F;O」的模型。主线程单线程执行命令，保证原子性和无锁；Redis 6.0 以后引入 I&#x2F;O 多线程，用于处理网络读写；另外还有后台线程处理 AOF 刷盘和大对象释放。Redis 高并发来自事件驱动和内存操作，而不是多线程执行命
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-17</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-reids/">12 reids</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0113/self-introduction-web3.html">
+				<h2 class="index-title">
+					02 自我介绍
+				</h2>
+				<div class="index-brief">
+					简单面试官，你好！我叫阿杰，从16年开始我一直从事java开发工作，近2年转到web3相关行业，目前负责撮合相关撮合和钱包相关的业务。首先是我的核心优势，我觉得我在工作能力和团队合作方面的能力是比较突出的，因为我之前在平安薪酬的项目组时，入项时正好接手的是离职核心团队成员的工作，后面因表现出色领导同
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-13</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/01-自我介绍/">01 自我介绍</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0113/web3-ai-interview-1.html">
+				<h2 class="index-title">
+					(一)Ai模拟面试第1弹
+				</h2>
+				<div class="index-brief">
+					1.一个 限价单 &#x2F; 市价单 从请求进来，到最终成交，在你们系统业务里具体是怎么走的下单请求先经过网关鉴权和风控，通过后由订单服务做价格、余额校验，并在事务里冻结资产、生成订单。
+订单创建成功后，会把撮合指令丢到 Kafka，Kafka 在我们这里主要是解耦和调度，不是一致性保证。
+撮合引
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-13</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/ai-模拟面试/">ai 模拟面试</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/ai-模拟面试/web3/">web3</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2025/1226/web3-interview4.html">
@@ -3250,204 +3554,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/1203/web3-interview2.html">
-				<h2 class="index-title">
-					(九)web3面试第二弹
-				</h2>
-				<div class="index-brief">
-					1.erc20、erc721、erc1155还有其他哪些类型的合约 它们有啥区别?应用场景是啥？ERC20–同质化代币，稳定币；项目方发行的token,gameFi游戏货币，治理代币，奖励代币挖矿空投等 ERC721（含 721A，批量铸造节省90%gas费）–数藏，链上凭证，游戏装备（非同质化）E
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-12-03</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/17-web3/">17 web3</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/1201/web3-interview1.html">
-				<h2 class="index-title">
-					(八)web3面试第一弹
-				</h2>
-				<div class="index-brief">
-					1. 私有（private）、内部（internal）、公共（public）、外部（external）函数之间的区别？private：只能在 当前合约 内部被调用（包括 this 也不能）。继承合约无法访问。编译器级别限制。internal：只能在 当前合约及其派生合约（继承）中访问，相当于 pro
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-12-01</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/17-web3/">17 web3</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/1130/mocha-chai.html">
-				<h2 class="index-title">
-					(六)Mocha+Chai测试框架
-				</h2>
-				<div class="index-brief">
-					概念作为 Web3 开发者，掌握 Mocha 和 Chai 是进行智能合约测试的基础；Mocha 是一个功能丰富的 JavaScript 测试框架，用于异步测试。Chai 提供了多种断言风格，最常用的是 expect 和 should。
-测试的基本结构123456789101112131415161
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/17-web3/">17 web3</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/1129/web3-terms.html">
-				<h2 class="index-title">
-					(七)web3相关术语
-				</h2>
-				<div class="index-brief">
-					入金，出金投资者将资金从个人银行账户或其他渠道转入交易账户（如证券账户、外汇账户、数字货币钱包等）将资金从交易账户转回个人银行账户或提现到其他外部渠道 简单理解：入金&#x3D;存钱进账户，出金&#x3D;取钱到口袋
-AMMAMM（Automated Market Maker，自动做市商） 是一种去
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-29</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/17-web3/">17 web3</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/1129/solidity-wei-math.html">
-				<h2 class="index-title">
-					(五) solidity的位运算实践
-				</h2>
-				<div class="index-brief">
-					✅代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970contract Bitwise
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-29</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/17-web3/">17 web3</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/1129/erc20-vs-erc721.html">
-				<h2 class="index-title">
-					(四) ERC20 && ERC721 简介
-				</h2>
-				<div class="index-brief">
-					ERC20 (同质化代币标准)
-定义 ：ERC20是以太坊上用于创建可互换代币(Fungible Tokens)的标准协议，所有代币完全相同且可互换。
-
-
-同质化：每个代币完全等同
-可分割：支持小数单位
-标准化接口：确保钱包和交易所兼容
-
-ERC20 典型应用
-
-稳定币 ：USDT、USDC、DAI
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-29</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/17-web3/">17 web3</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/1129/solidity-proxy-call.html">
-				<h2 class="index-title">
-					(三)solidity代理调用
-				</h2>
-				<div class="index-brief">
-					代理调用代码示例1234567891011121314151617181920212223242526272829// Note:deploy this contract firstcontract B &#123;    // Note: storage layout must be the sa
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-29</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/17-web3/">17 web3</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/">&lt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/3/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/">&lt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/3/">&gt;</a>
 		
 	</div>
 </div>

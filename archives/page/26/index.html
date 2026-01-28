@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,25 +3259,34 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0226/beanfactory-applicationcontext.html">
+			<a href="/2025/0219/export-full-GC.html">
 				<h2 class="index-title">
-					15 BeanFactory和applicationContext有什么区别
+					08 导出频繁FullGC如何定位泄漏点，你是如何优化的
 				</h2>
 				<div class="index-brief">
-					首先他们都是spring容器，applicationContext继承了BeanFactory;
-其次BeanFactory是容器的根节点接口；BeanFactory是bean管理最底层工厂类，负责实例的创建，获取，懒加载等；
-BeanFactory属于基础的IOC容器，applicationCon
+					假设导出百万级数据到Excel时出现频繁Full GC，如何定位内存泄漏点？如果发现是POI的SXSSFWorkbook未正确释放资源，除了调用dispose()，还有哪些优化手段？请结合JVM参数调优和代码规范说明可通过JVisualVM 分析工具，分析堆栈内存
+1234567# 启动参数添加GC
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-26</span>
+				    <span>2025-02-19</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
 										
                                     </span>
                                 
@@ -3199,25 +3296,33 @@ BeanFactory属于基础的IOC容器，applicationCon
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0226/transcation-geli-level.html">
+			<a href="/2025/0219/ddd-interface-abstract-diff.html">
 				<h2 class="index-title">
-					04 事务隔离级别
+					01 结合DDD说明抽象类和接口的区别
 				</h2>
 				<div class="index-brief">
-					事务隔离级别就是为了解决脏读、幻读、不可重复读着这几个问题而产生的，但是事务隔离级别不同，产生的问题也不同，因此很多时候必须在并发性一个权衡，所以设立了几种事务隔离级别，以便让不同的项目可以根据自己项目的并发情况选择合适的事务隔离级别。事务隔离级别有四种，不过种：
-
-DEFAULT：默认隔离级别，意
+					Java接口和抽象类的核心区别是什么？在DDD架构设计中，接口通常承担什么角色？请结合您订单管理系统中Shiro权限模块的设计举例说明接口：定义行为契约，支持多实现，无状态，Java8+支持默认方法，适合跨层次的能力抽象（如权限校验接口）。抽象类：提供部分实现，单继承，可包含成员变量，适合同类事物的
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-26</span>
+				    <span>2025-02-19</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-spring/">04 spring</a>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/ai模拟面试/">ai模拟面试</a>
 										
                                     </span>
                                 
@@ -3227,27 +3332,60 @@ DEFAULT：默认隔离级别，意
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0226/kafka-high-throughput.html">
+			<a href="/2025/0219/self-audition-pingan.html">
 				<h2 class="index-title">
-					06 kafka吞吐量高的原因
+					04 微众银行(24.3)
+				</h2>
+				<div class="index-brief">
+					Here's something encrypted, password is required to continue reading.
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-02-19</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/个人/">个人</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0716/value-and-ref.html">
+				<h2 class="index-title">
+					03 值传递和引用传递的不同
 				</h2>
 				<div class="index-brief">
 					
-kafka将topic划分为多个分区，每个分区独立读写；生产者负载均衡，避免了单个分区的压力；
-同一个消费组内的多个实例分别处理不同分区，提高了消费的吞吐
-kafka的消息时追加写，避免了随机磁盘寻址，顺序写的速度接近内存的操作
-kafka采用异步刷盘机制，消息和索引的写入先写入操作系统的页缓存，
+基本数据类型（值传递）特点：传递的是变量的值的副本。函数内部对参数的修改不会影响原始变量。示例：123456789101112public class Main &#123;    public static void modifyValue(int x) &#123;        x = 10
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-26</span>
+				    <span>2024-07-16</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
 										
                                     </span>
                                 
@@ -3257,51 +3395,25 @@ kafka采用异步刷盘机制，消息和索引的写入先写入操作系统的
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0220/redis-page-query.html">
+			<a href="/2024/0716/int-to-integer.html">
 				<h2 class="index-title">
-					15 redis如何做分页查询
+					02 封装类型的意义
 				</h2>
 				<div class="index-brief">
-					1.使用redis的list（列表）数据结构将需要分页展示的数据的id或者主键作为list中的元素，然后根据用户的分页请求，使用LRANGE命令来获取指定范围的元素，再根据元素来获取具体的数据
-1234567891011@Servicepublic class RedisPaginationServ
+					java有8大基本数据类型，为什么每个都要再弄个包装类，这样的意义在哪里？
+首先java是一门面向对象的语言，对象是java程序操作的基本单元，所以对象都会是封装类型的；
+基础数据类型，只能满足常见的计数场景，不能满足对这些基本对象的一些复杂操作，java提供对应的包装类里面封装了一些方法和属性，且
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-02-20</span>
+				    <span>2024-07-16</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0220/rocketmq-consume-mode.html">
-				<h2 class="index-title">
-					10 rocketMq有哪些消费模式
-				</h2>
-				<div class="index-brief">
-					rocketMq有两种消费模式，集群消费(默认)和广播消费
-集群模式：一个ConsumerGroup中的Consumer实例根据队列分配策略算法为Consumer分配队列，平均分摊（默认）消费消息。例如Topic是Test的消息发送到该主题的不同队列中，发送了有100条消息，其中一个Consumer
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-02-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/02-java基础/">02 java基础</a>
 										
                                     </span>
                                 
@@ -3313,7 +3425,7 @@ kafka采用异步刷盘机制，消息和索引的写入先写入操作系统的
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/25/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/24/">24</a><a class="page-number" href="/archives/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/archives/page/27/">27</a><a class="page-number" href="/archives/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/27/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/25/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/24/">24</a><a class="page-number" href="/archives/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/archives/page/27/">27</a><a class="page-number" href="/archives/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/27/">&gt;</a>
 		
 	</div>
 </div>

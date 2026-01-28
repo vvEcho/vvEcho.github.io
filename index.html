@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3169,6 +3257,205 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<div id="index">
+	
+		 <div class="index-li">
+			<a href="/2026/0127/disruptor-no-need-lock.html">
+				<h2 class="index-title">
+					23 disruptor为啥几乎不需要锁？
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0127/hot-lock-eliminate.html">
+				<h2 class="index-title">
+					22 热点锁如何通过架构彻底消除
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+				<h2 class="index-title">
+					21 reentrantlock的自旋策略跟jvm一样吗？
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+				<h2 class="index-title">
+					19 ReentrantLock和synchronized在现代jvm差别有多大？
+				</h2>
+				<div class="index-brief">
+					特点对比synchronized（内置锁）是java内置关键字，用在synchronized修饰的代码块或者方法中，会自动获取对象锁，并释放对象锁。它的特点如下：
+
+简单易用，自动释放锁
+不可中断等待（等待锁时无法被中断）
+只能是非公平锁（JDK15开始可配置）
+只有一个等待条件（Object.wa
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0127/jvm-lock-upgradation.html">
+				<h2 class="index-title">
+					14 jvm怎么决定从轻量级锁进化为重量级锁
+				</h2>
+				<div class="index-brief">
+					老版本例如jdk1.6可以参数-XX:PreBlockSpin&#x3D;10来指定自旋次数，后面jdk升级后会动态自适应自旋；会根据CPU核数，锁竞争情况，历史成功率来动态调整自旋次数。
+对应的决策过程如下：
+123456789101112131415尝试CAS  ↓成功 → 继续轻量锁  or失
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0127/zgc-g1-lock-compete.html">
+				<h2 class="index-title">
+					19 ZGC与G1对锁竞争有没有影响？
+				</h2>
+				<div class="index-brief">
+					G1 的影响是“硬”的、宏观的：它通过明显的STW停顿，直接制造全局性的、周期性的锁竞争瓶颈。ZGC 的影响是“软”的、微观的：它通过移除STW停顿解决了G1的核心问题，使系统更平滑，但其持续的读屏障开销增加了底层CPU压力，可能在微观层面轻微影响锁竞争的表现。选择的关键：如果你的应用追求极致的延迟
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/05-并发编程/">05 并发编程</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2026/0127/100-interview-questions.html">
+				<h2 class="index-title">
+					01 100道面试题
+				</h2>
+				<div class="index-brief">
+					1.java后端基础（20道）1.1 jvm内存结构JVM 分为堆、栈、方法区、程序计数器；对象主要在堆中分配，GC 负责内存回收。JVM 我重点关注的是堆和GC行为。堆分新生代和老年代，新生代对象创建频繁，如果GC不合理会直接影响系统延迟。在交易所撮合和行情服务这种长时间运行、高并发、低延迟的系统
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2026-01-27</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/">32 面经</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/32-面经/集合/">集合</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
 	
 		 <div class="index-li">
 			<a href="/2026/0119/dubbo-rpc-net-use.html">
@@ -3251,226 +3538,10 @@ Dubbo 是基于 NIO 的非阻塞实现并行调用，客户端不需要启动多
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2026/0119/dubbo-feature.html">
-				<h2 class="index-title">
-					01 dubbo的特点
-				</h2>
-				<div class="index-brief">
-					dubbo内部使用了 Netty、Zookeeper，保证了高性能高可用性。
-使用 Dubbo 可以将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，可用于提高业务复用灵活扩展，使前端应用能更快速的响应多变的市场需求。
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2026-01-19</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/09-dubbo/">09 dubbo</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2026/0117/jedis-redission-redisTemplate.html">
-				<h2 class="index-title">
-					28 Jedis redission redisTemplate有啥使用场景上的区别？
-				</h2>
-				<div class="index-brief">
-					Jedis 是底层阻塞式客户端；RedisTemplate 是 Spring 对 Redis 的抽象封装，适合场景：缓存，简单计数，Session不复杂的redis使用场景，例如：String &#x2F; Hash，TTL，简单 LuaRedisson 提供基于Redis的分布式协调能力,底层提供
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2026-01-17</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2026/0117/redis-transaction-support.html">
-				<h2 class="index-title">
-					27 redis支持事务吗？
-				</h2>
-				<div class="index-brief">
-					Redis 通过 MULTI &#x2F; EXEC &#x2F; WATCH 提供事务机制，能保证命令按顺序原子执行，但不支持回滚和隔离级别, 它的隔离主要是靠单线程串行执行来保证的
-redis事务的特点：
-
-命令按顺序执行
-不支持回滚
-不支持隔离级别
-复杂的逻辑需要用lua脚本
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2026-01-17</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2026/0117/redis-lua-script-tips.html">
-				<h2 class="index-title">
-					26 redis-lua表达式怎么写？代码里写lua脚本有啥优缺点？
-				</h2>
-				<div class="index-brief">
-					一般java后端这么写扣减库存的lua脚步：
-12345678910111213141516171819202122String script =    &quot;local stock = redis.call(&#x27;GET&#x27;, KEYS[1]) &quot; +    &quo
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2026-01-17</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2026/0117/redis-thread-model.html">
-				<h2 class="index-title">
-					25 redis的线程模型
-				</h2>
-				<div class="index-brief">
-					
-Redis 的核心是「单线程处理命令，多线程处理 I&#x2F;O」的模型。主线程单线程执行命令，保证原子性和无锁；Redis 6.0 以后引入 I&#x2F;O 多线程，用于处理网络读写；另外还有后台线程处理 AOF 刷盘和大对象释放。Redis 高并发来自事件驱动和内存操作，而不是多线程执行命
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2026-01-17</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-reids/">12 reids</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2026/0113/self-introduction-web3.html">
-				<h2 class="index-title">
-					02 自我介绍
-				</h2>
-				<div class="index-brief">
-					简单面试官，你好！我叫阿杰，从16年开始我一直从事java开发工作，近2年转到web3相关行业，目前负责撮合相关撮合和钱包相关的业务。首先是我的核心优势，我觉得我在工作能力和团队合作方面的能力是比较突出的，因为我之前在平安薪酬的项目组时，入项时正好接手的是离职核心团队成员的工作，后面因表现出色领导同
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2026-01-13</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/01-自我介绍/">01 自我介绍</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2026/0113/web3-ai-interview-1.html">
-				<h2 class="index-title">
-					(一)Ai模拟面试第1弹
-				</h2>
-				<div class="index-brief">
-					1.一个 限价单 &#x2F; 市价单 从请求进来，到最终成交，在你们系统业务里具体是怎么走的下单请求先经过网关鉴权和风控，通过后由订单服务做价格、余额校验，并在事务里冻结资产、生成订单。
-订单创建成功后，会把撮合指令丢到 Kafka，Kafka 在我们这里主要是解耦和调度，不是一致性保证。
-撮合引
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2026-01-13</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/">32 面经</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai-模拟面试/">ai 模拟面试</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/32-面经/ai-模拟面试/web3/">web3</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
+			<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
 		
 	</div>
 </div>

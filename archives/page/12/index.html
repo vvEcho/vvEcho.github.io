@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,153 +3259,128 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2025/0305/redis-redlock-brain-split.html">
+			<a href="/2025/0306/undefined.html">
 				<h2 class="index-title">
-					23 RedLock算法如何解决Redis集群脑裂问题
+					05 令牌桶限流算法
 				</h2>
 				<div class="index-brief">
-					脑裂问题的本质是网络分区或主节点假故障导致集群中出现多个主节点，从而引发数据冲突。
-RedLock通过以下机制规避此类风险：
-1.避免单点依赖，降低脑裂触发概率传统Redis主从架构中，哨兵可能因网络抖动误判主节点失效，触发主从切换，导致原主节点和新主节点并存（脑裂）。
-而RedLock不依赖单一主
+					
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-05</span>
+				    <span>2025-03-06</span>
                     
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
                             
                     
                 </div>
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0305/redission-lock-type.html">
+			<a href="/2025/0306/undefined.html">
 				<h2 class="index-title">
-					22 redission都提供了哪些类型的分布式锁
+					04 漏斗限流算法
 				</h2>
 				<div class="index-brief">
-					1. 可重入锁（Reentrant Lock）功能：支持同一线程多次获取同一把锁（重入），避免死锁；支持锁自动过期和手动解锁。实现：通过Redis的Hash结构记录锁持有者的线程标识和重入次数。若锁存在且线程标识匹配，重入次数递增；解锁时递减，直至次数为0才释放锁。使用示例：
-12RLock loc
+					
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-05</span>
+				    <span>2025-03-06</span>
                     
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
                             
                     
                 </div>
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0305/except-redission-lock-implementation.html">
+			<a href="/2025/0306/undefined.html">
 				<h2 class="index-title">
-					21 除了redission你还知道哪些分布式锁的实现
+					03 滑动窗口限流算法
 				</h2>
 				<div class="index-brief">
-					1. 基于数据库的锁(天然的分布式锁)原理：通过数据库表的唯一约束或乐观锁实现。唯一索引锁：插入一条代表锁的记录，利用唯一索引冲突阻止并发。乐观锁：通过版本号或时间戳字段实现 CAS（Compare and Swap）。缺点：性能低：高并发下数据库压力大。    无自动续期：需手动处理锁超时和死锁。
+					
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-05</span>
+				    <span>2025-03-06</span>
                     
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
                             
                     
                 </div>
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0305/redis-jump-table.html">
+			<a href="/2025/0306/undefined.html">
 				<h2 class="index-title">
-					20 redis为何使用跳表而不是B+树
+					02 计数器限流算法
 				</h2>
 				<div class="index-brief">
-					首先二者的时间复杂度都是O(logN)，选择跳表还是B+树主要是考虑的内存和磁盘硬件特性。
-对于Redis使用跳表来讲，其在“写操作”时相较于B+树的“写操作”，无需考虑自旋平衡的问题，也就是跳表更容易实现写入操作；
-再看“读操作”，Redis是基于内存的，跳表比B+树多读那几下的性能开销微乎其微。
+					
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-05</span>
+				    <span>2025-03-06</span>
                     
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
                             
                     
                 </div>
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2025/0304/redis-cache-eviction-strategy.html">
+			<a href="/2025/0305/rocketmq-cluster-mode.html">
 				<h2 class="index-title">
-					19 redis的缓存淘汰策略
+					12 rocketMq有哪些集群模式
 				</h2>
 				<div class="index-brief">
 					
 
 
-策略名称
-淘汰逻辑
+模式
+数据安全
+性能
 适用场景
 
 
 
-noeviction（默认）
-内存满时拒绝所有写操作，返回错误
-数据不可丢失的敏感场景（如金融交易）
+单Master
+低
+最高
+本地测试、学习环境
 
 
-LRU（最近最少使用）
-根据键的最后访问时间，淘汰最久未访问的数据
-有明显冷热数据区分的场景（如新闻热点）
+多Master
+中  （依赖磁盘）
+高
+高性能、允许短暂数据不可用
 
 
-LFU（最不频繁使用）
-根据键的访问频率
+多Master多Slave异步
+中
+较高
+平衡性能与可用性
+
+
+多Master多Slave同步
+高
+中
+强一致性场景（如支付交易）
+
+
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2025-03-04</span>
+				    <span>2025-03-05</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
 										
                                     </span>
                                 
@@ -3329,7 +3392,7 @@ LFU（最不频繁使用）
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/11/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/13/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/11/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/13/">&gt;</a>
 		
 	</div>
 </div>

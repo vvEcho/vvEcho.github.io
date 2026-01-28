@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,13 +3259,16 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/mysql-transcation-geli-level.html">
+			<a href="/2024/0120/mysql-dividing-dbs-tables.html">
 				<h2 class="index-title">
-					02 数据库事务的隔离级别？
+					08 分库分表怎么做的
 				</h2>
 				<div class="index-brief">
-					数据库的隔离级别分为读未提交，读已提交，可重复度，可重复读，串行化来分别解决脏读，不可重复读，幻读等问题
-脏读（Dirty Read）概念：一个事务读取了另一个未提交事务修改的数据（当前是读未提交隔离级别）背景：事务A修改数据但未提交，事务B却读到了这个未提交的数据。若事务A最终回滚，事务B的读取结
+					分库这个简单就是，分不同的sheam;一般是按业务来拆分
+分表一般有两种分法，一般有水平分表和垂直分表两种：
+水平分表一般按业务主键来划分，例如0到10万数据一张表，10到20万一张表…
+而垂直分表一般按字段来拆分，根据业务字段的变动程度来分，比如不常变动的放一张表，变动多的放一张表；
+或者根据业务
 					...
 				</div>
 			</a>
@@ -3198,14 +3289,13 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-lua-principle.html">
+			<a href="/2024/0120/mysql-count-query-sample.html">
 				<h2 class="index-title">
-					11 redis lua表达式为什么能保证原子性
+					10 统计sql例子
 				</h2>
 				<div class="index-brief">
-					redis的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。
-但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
-
+					有一个bug数量统计表，bug_t;其中有字段bug_id,user_name,bug_time;请写出bug解决时间大于20小时，按人员bug数降序排列的sql;
+1234select user_name ,bug_count from (select count(bug_id) as bug_c
 					...
 				</div>
 			</a>
@@ -3216,7 +3306,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
 										
                                     </span>
                                 
@@ -3226,14 +3316,14 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-cluster.html">
+			<a href="/2024/0120/mysql-b-jia-tree.html">
 				<h2 class="index-title">
-					12 redis你们用的是什么集群
+					06 B+树索引
 				</h2>
 				<div class="index-brief">
-					redis我用的是简单的主从架构的这种集群模式
-Redis主要有三种模式，主从，哨兵，分布式集群
-1.主从复制模式架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离优点：数据冗余：从节点备份主节点数据，提高数据可靠性。读写分离：从节点分担读请求，减轻主节点压力。配置
+					B+树索引是一个多叉平衡树，它的叶子节点是数据节点，非叶子节点是索引节点。
+其中非叶子节点存储了所有的排序号的索引信息，叶子节点存储了所有的数据信息；非叶子节点是一个双向循环链表，这种设计时候范围和顺序访问
+B+树索引是InnoDB这种存储引擎所使用的索引结构，而InnoDB支持事务，请你尝试说明B
 					...
 				</div>
 			</a>
@@ -3244,7 +3334,7 @@ Redis主要有三种模式，主从，哨兵，分布式集群
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
 										
                                     </span>
                                 
@@ -3254,18 +3344,13 @@ Redis主要有三种模式，主从，哨兵，分布式集群
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-used-too-much.html">
+			<a href="/2024/0120/mysql-optimize-query.html">
 				<h2 class="index-title">
-					08 redis如何做内存优化
+					07 mysql怎么优化数据库查询
 				</h2>
 				<div class="index-brief">
-					redis优化内存分为两个层面大的层面：
-
-合理设置数据过期时间使用 SCAN + OBJECT IDLETIME 批量定位长期未访问的 Key 并删除
-
-合理设置内存淘汰策略结合 volatile-lru 或 allkeys-lfu 淘汰策略，及时清理无效数据
-
-内存碎片优化启用 jemalloc
+					1.首先看表的数据量级以及sql数据涉及的业务含义A.数据量超2000万，大概率优化空间不大B.数据量级小的情况下，需看查询sql是否合理
+2.看表是否建立合适的索引A.针对高频查询的字段建立索引 B.当查询涉及多列组合条件时（如 WHERE a&#x3D;1 AND b&#x3D;2），使用联合索
 					...
 				</div>
 			</a>
@@ -3276,7 +3361,7 @@ Redis主要有三种模式，主从，哨兵，分布式集群
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
 										
                                     </span>
                                 
@@ -3286,16 +3371,14 @@ Redis主要有三种模式，主从，哨兵，分布式集群
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock.html">
+			<a href="/2024/0120/mysql-mvcc-ji-zhi.html">
 				<h2 class="index-title">
-					09 redis分布式锁有用过吗？
+					04 mvcc机制？
 				</h2>
 				<div class="index-brief">
-					redis分布式锁我们用的是Redisson，它的实现原理是：
-我们要对某个key加锁，redisson在集群环境下会分配一个节点，先判断这个key是否会存在
-如果不存在则新增key并设置过期时间默认30s
-然后内置的看门狗机制会每隔10秒查看这个锁是否存在，如果10秒后加的锁还存在就续期；
-直到不
+					MVCC协议主要的两点是：读不加锁，读写不冲突；每个连接到数据库的读事务，开始时读到的都是数据库的一个快照，在写操作造成的
+变化提交之前，对于其他的读事务来说都是不可见的；
+当我们每次开启一个事务去读数据时，MVCC协议提供了开启事务时间点（时点（point in time））一致性视图，MVCC并
 					...
 				</div>
 			</a>
@@ -3306,7 +3389,7 @@ Redis主要有三种模式，主从，哨兵，分布式集群
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
 										
                                     </span>
                                 
@@ -3318,7 +3401,7 @@ Redis主要有三种模式，主从，哨兵，分布式集群
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/33/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/32/">32</a><a class="page-number" href="/archives/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/archives/page/35/">35</a><a class="page-number" href="/archives/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/35/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/33/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/32/">32</a><a class="page-number" href="/archives/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/archives/page/35/">35</a><a class="page-number" href="/archives/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/35/">&gt;</a>
 		
 	</div>
 </div>

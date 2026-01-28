@@ -661,6 +661,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/jvm-lock-upgradation.html">
+                     
+										    14 jvm怎么决定从轻量级锁进化为重量级锁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -875,6 +886,61 @@
 									<a href="/2025/0312/threadPool-principle.html">
                      
 										    18 线程池的原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-synchronized-diff.html">
+                     
+										    19 ReentrantLock和synchronized在现代jvm差别有多大？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/zgc-g1-lock-compete.html">
+                     
+										    19 ZGC与G1对锁竞争有没有影响？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/reentrantlock-spin-strategy-jvm-same.html">
+                     
+										    21 reentrantlock的自旋策略跟jvm一样吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/hot-lock-eliminate.html">
+                     
+										    22 热点锁如何通过架构彻底消除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/disruptor-no-need-lock.html">
+                     
+										    23 disruptor为啥几乎不需要锁？
                      
 									</a>
 								</li>
@@ -3158,6 +3224,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/0127/100-interview-questions.html">
+                     
+										    01 100道面试题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -3171,13 +3259,13 @@
 		<div id="index">
 	
 		 <div class="index-li">
-			<a href="/2024/0120/kafka-rebalance.html">
+			<a href="/2024/0120/redis-bloom-filter.html">
 				<h2 class="index-title">
-					05 kafka的rebalance机制
+					07 说说布隆过滤器的原理？
 				</h2>
 				<div class="index-brief">
-					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
-当kafka感知到存在让分
+					布隆过滤器（Bloom Filter）是一个 probabilistic data structure，用于判断一个元素是否在集合中。它通过使用多个哈希函数和位数组来提高查询效率。布隆过滤器在Redis中应用最广泛，用于解决缓存击穿、缓存穿透等问题。
+常用的布隆过滤器的实现是redission的bl
 					...
 				</div>
 			</a>
@@ -3188,7 +3276,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3198,42 +3286,16 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-distributed-transaction.html">
+			<a href="/2024/0120/redis-io.html">
 				<h2 class="index-title">
-					09 rocketMq实现分布式事务了解吗？
+					03 说说IO多路复用
 				</h2>
 				<div class="index-brief">
-					RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性
-第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见
-12// 发送半消息（事务消息）TransactionSendResult result = p
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/kafka-msg-not-lost.html">
-				<h2 class="index-title">
-					01 kafkar如何保证消息不丢失？
-				</h2>
-				<div class="index-brief">
-					回答这个问题可以分三个方面，首先第一点要保证producer消息能达到broker,其次broker收到对应的消息要确保持久化磁盘，最后需要确保consumer能成功消费这条消息；
+					回答这个问题我们可以拆分来看：
+IO实际就是指数据或文件的读写流
+多路实际指的是redis的底层的多路复用程序监听了每个读写请求的socket套接字
+复用就是指监听哪些socket上有消息达到，从而避免用户线程等待；
 
-针对producer:我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消息
 					...
 				</div>
 			</a>
@@ -3244,7 +3306,7 @@
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/14-kafka/">14 kafka</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3254,14 +3316,16 @@
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-pull-push.html">
+			<a href="/2024/0120/redis-rdb-aof.html">
 				<h2 class="index-title">
-					06 rocketMq是pull模式还是push模式
+					04 rdb和aof
 				</h2>
 				<div class="index-brief">
-					RocketMQ提供了两种消费模式，Push和Pull，大多数场景使用的是Push模式
-在源码中这两种模式分别对应的是DefaultMQPushConsumer类和DefaultMQPullConsumer类
-Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不断地轮询Broker获
+					rdb和aof是redis持久化的两种方式，默认是rdb的持久化方式；
+rdb是一种二进制快照文件的方式,快照某个时刻redis中的数据到硬盘中的
+aof是以日志的的方式存储redis的写命令;
+rdb的好处是适合数据全量备份，容灾好，恢复数据速度快, 缺点是数据可能丢失；
+aof的好处是实时性好，
 					...
 				</div>
 			</a>
@@ -3272,7 +3336,7 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3282,14 +3346,16 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
 		</div>
 	
 		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-msg-heaped.html">
+			<a href="/2024/0120/redis-base-data-structure.html">
 				<h2 class="index-title">
-					07 rocketMq消息堆积怎么解决
+					01 redis数据结构
 				</h2>
 				<div class="index-brief">
-					首先要知道这个问题的产生的原因，一般来说就是因为消费的速度跟不上生产才导致了消息的积压，那么可以适当的增加消费者的数量，让其尽快把消息消费完；
-检查读写队列一致性，避免因读队列数小于写队列数导致消息未被消费
-还有一种做法稍微复杂点，我们可以对MessageQuean进行迁移，可以创建一个临时的top
+					redis是一种基于键值对的来存储数据的nosql数据库
+其中对应的value支持string,list,set,zset,bitmaps,hyperloglog,GEO地理信息数据
+常用的有String，list,set,zset,hash
+
+String类型是redis最基本类型之一，其存储数据
 					...
 				</div>
 			</a>
@@ -3300,7 +3366,39 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-fast-reason.html">
+				<h2 class="index-title">
+					02 redis性能好的原因？
+				</h2>
+				<div class="index-brief">
+					
+基于内存的读写
+单线程，避免了线程的切换及竞争产生的消耗
+基于非阻塞的IO多路复用
+C实现的，更利于和底层进行交互
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
 										
                                     </span>
                                 
@@ -3312,7 +3410,7 @@ Push模式实际上在内部还是使用的Pull方式实现的，通过Pull不�
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/36/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/35/">35</a><a class="page-number" href="/archives/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/archives/page/38/">38</a><a class="page-number" href="/archives/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/50/">50</a><a class="extend next" rel="next" href="/archives/page/38/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/36/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/35/">35</a><a class="page-number" href="/archives/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/archives/page/38/">38</a><a class="page-number" href="/archives/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/38/">&gt;</a>
 		
 	</div>
 </div>
