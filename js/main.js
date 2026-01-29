@@ -104,7 +104,7 @@ function showArticleIndex() {
           '<span class="anchor" id="_label' + i + '"></span>');
       content += '<li class="level_' + level
           + '"><i class="fa fa-circle" aria-hidden="true"></i><a href="#_label'
-          + i + '"> ' + $(labelList[i]).text() + '</a></li>';
+          + i + '" title="'+ $(labelList[i]).text() +'"> ' + $(labelList[i]).text() + '</a></li>';
     }
   }
   content += "</ul>"
