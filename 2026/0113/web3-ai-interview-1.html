@@ -674,6 +674,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/gc-kinds-and-algorithms.html" title="15 GC有哪些？分别用的是啥算法？">
+                     
+										    15 GC有哪些？分别用的是啥算法？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -720,9 +731,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 04 wait,sleep,yield,join,notify的区别">
+									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 wait,sleep,yield,join,notify的区别">
                      
-										    04 04 wait,sleep,yield,join,notify的区别
+										    04 wait,sleep,yield,join,notify的区别
                      
 									</a>
 								</li>
@@ -2126,6 +2137,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/redis-cluster-ways.html" title="29 redis的集群模式有哪些？">
+                     
+										    29 redis的集群模式有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0212/redis-stream-used.html" title="30 redis的stream流用过了吗？">
+                     
+										    30 redis的stream流用过了吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -2392,9 +2425,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0312/undefined.html" title="10 怎么解决kafka性能瓶颈">
+									<a href="/2025/0312/kafka-performance-optimization.html" title="10 kafka性能优化">
                      
-										    10 怎么解决kafka性能瓶颈
+										    10 kafka性能优化
                      
 									</a>
 								</li>
@@ -3324,8 +3357,8 @@
 <h3 id="2-单交易对单线程撮合。BTC-USDT-这种核心交易对QPS暴涨，单线程已经成为瓶颈，你们怎么办"><a href="#2-单交易对单线程撮合。BTC-USDT-这种核心交易对QPS暴涨，单线程已经成为瓶颈，你们怎么办" class="headerlink" title="2.单交易对单线程撮合。BTC&#x2F;USDT 这种核心交易对QPS暴涨，单线程已经成为瓶颈，你们怎么办?"></a>2.单交易对单线程撮合。BTC&#x2F;USDT 这种核心交易对QPS暴涨，单线程已经成为瓶颈，你们怎么办?</h3><p>在极端高QPS场景下，我们考虑的是逻辑拆分而不是并行撮合</p>
 <p>撮合主线程仍然串行维护订单簿，但会把订单校验、风控、持久化、行情计算等非撮合逻辑拆到并行线程<br>如果一定要在撮合层扩展，只会在严格不交叉的价格区间内做局部并行，并且由主线程统一提交撮合结果，保证价格和时间优先不被破坏。</p>
 <p>实际生产中，更常用的是：<br>限流 + 撮合队列堆积 + 行情降级，而不是无限横向扩展撮合逻辑</p>
-<h3 id="3-为什么用红黑树-为什么不用跳表-堆-TreeMap-自研数组结构"><a href="#3-为什么用红黑树-为什么不用跳表-堆-TreeMap-自研数组结构" class="headerlink" title="3.为什么用红黑树,为什么不用跳表&#x2F;堆&#x2F;TreeMap&#x2F;自研数组结构"></a>3.为什么用红黑树,为什么不用跳表&#x2F;堆&#x2F;TreeMap&#x2F;自研数组结构</h3><p>首先，撮合为了保证订单的有序性，所以用的是单线程；对于单线程，treeMap足够了，另外它的查找、删除、插入时间复杂度都是OlogN 概率是确定的<br>为什么不使用跳表？因为java并没有现成的跳表数据结构，使用并发的工具ConcurrentSkipListMap 虽然线程安全，但内部大把volatile节点，遍历时每次 next都是读屏障，延迟比 TreeMap 高 20%+；<br>自己写无锁跳表？维护成本高且新增很多代码，堆只能拿“顶”，无法 O(log n) 删除任意节点；撤单、部分成交时要把订单从堆里摘掉，需要额外哈希索引 + 标记删除，逻辑复杂，延迟反而飘；自研数据结构还是之前说的那个问题，维护成本高且需要时间压测性能瓶颈</p>
-<h3 id="4-如果撮合引擎进程崩了-重启了，怎么办？"><a href="#4-如果撮合引擎进程崩了-重启了，怎么办？" class="headerlink" title="4.如果撮合引擎进程崩了&#x2F;重启了，怎么办？"></a>4.如果撮合引擎进程崩了&#x2F;重启了，怎么办？</h3><p>我们每个交易对会有 主撮合节点 + 热备从节点。</p>
+<h3 id="3-为什么用红黑树-为什么不用跳表-堆-TreeMap-自研数组结构"><a href="#3-为什么用红黑树-为什么不用跳表-堆-TreeMap-自研数组结构" class="headerlink" title="3.为什么用红黑树,为什么不用跳表&#x2F;堆&#x2F;TreeMap&#x2F;自研数组结构"></a>3.为什么用红黑树,为什么不用跳表&#x2F;堆&#x2F;TreeMap&#x2F;自研数组结构</h3><p>首先，撮合为了保证订单的有序性，所以用的是单线程；对于单线程，treeMap足够了，另外它的查找、删除、插入时间复杂度都是OlogN 概率是确定的<br>为什么不使用跳表？因为java并没有现成的跳表数据结构，使用并发的工具ConcurrentSkipListMap 虽然线程安全，但内部大把volatile节点，遍历时每次next都是读屏障，延迟比 TreeMap 高 20%+；<br>自己写无锁跳表？维护成本高且新增很多代码，堆只能拿“顶”，无法 O(log n) 删除任意节点；撤单、部分成交时要把订单从堆里摘掉，需要额外哈希索引 + 标记删除，逻辑复杂，延迟反而飘；自研数据结构还是之前说的那个问题，维护成本高且需要时间压测性能瓶颈</p>
+<h3 id="4-如果撮合引擎进程崩了-重启了，怎么办？"><a href="#4-如果撮合引擎进程崩了-重启了，怎么办？" class="headerlink" title="4.如果撮合引擎进程崩了&#x2F;重启了，怎么办？"></a>4.如果撮合引擎进程崩了&#x2F;重启了，怎么办？</h3><p>我们每个交易对会有主撮合节点 + 热备从节点。</p>
 <p>主节点在撮合前会把订单指令顺序写入顺序 redo log（基于 Kafka &#x2F; 本地 WAL），<br>从节点实时拉取并重放这些指令，构建和主节点一致的内存订单簿。</p>
 <p>主节点宕机后：<br>该交易对会被临时冻结新下单,从节点确认 replay 到最新 offset 后提升为主节点<br>解冻下单，继续撮合,因为所有撮合输入都来自单一顺序日志，所以不会出现乱序或双撮合问题。<br>实际切换时间在 百毫秒到秒级，对用户表现为短暂不可下单</p>
 <h3 id="5-链上充值监听，如何做到不漏记，不重记，防止重放攻击"><a href="#5-链上充值监听，如何做到不漏记，不重记，防止重放攻击" class="headerlink" title="5.链上充值监听，如何做到不漏记，不重记，防止重放攻击"></a>5.链上充值监听，如何做到不漏记，不重记，防止重放攻击</h3><ul>

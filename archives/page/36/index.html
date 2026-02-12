@@ -672,6 +672,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/gc-kinds-and-algorithms.html" title="15 GC有哪些？分别用的是啥算法？">
+                     
+										    15 GC有哪些？分别用的是啥算法？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -718,9 +729,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 04 wait,sleep,yield,join,notify的区别">
+									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 wait,sleep,yield,join,notify的区别">
                      
-										    04 04 wait,sleep,yield,join,notify的区别
+										    04 wait,sleep,yield,join,notify的区别
                      
 									</a>
 								</li>
@@ -2124,6 +2135,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/redis-cluster-ways.html" title="29 redis的集群模式有哪些？">
+                     
+										    29 redis的集群模式有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0212/redis-stream-used.html" title="30 redis的stream流用过了吗？">
+                     
+										    30 redis的stream流用过了吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -2390,9 +2423,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0312/undefined.html" title="10 怎么解决kafka性能瓶颈">
+									<a href="/2025/0312/kafka-performance-optimization.html" title="10 kafka性能优化">
                      
-										    10 怎么解决kafka性能瓶颈
+										    10 kafka性能优化
                      
 									</a>
 								</li>
@@ -3259,6 +3292,89 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/mysql-transcation-geli-level.html">
+				<h2 class="index-title">
+					02 数据库事务的隔离级别？
+				</h2>
+				<div class="index-brief">
+					数据库的隔离级别分为读未提交，读已提交，可重复度，可重复读，串行化来分别解决脏读，不可重复读，幻读等问题
+脏读（Dirty Read）概念：一个事务读取了另一个未提交事务修改的数据（当前是读未提交隔离级别）背景：事务A修改数据但未提交，事务B却读到了这个未提交的数据。若事务A最终回滚，事务B的读取结
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/11-mysql/">11 mysql</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-lua-principle.html">
+				<h2 class="index-title">
+					11 redis lua表达式为什么能保证原子性
+				</h2>
+				<div class="index-brief">
+					redis的官方文档中有描述lua脚本在执行的时候具有排他性，不允许其他命令或者脚本执行，类似于事务。
+但是存在的另一个问题是，它在执行的过程中如果一个命令报错不会回滚已执行的命令，所以要保证lua脚本的正确性；
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/redis-cluster.html">
+				<h2 class="index-title">
+					12 redis你们用的是什么集群
+				</h2>
+				<div class="index-brief">
+					redis我用的是简单的主从架构的这种集群模式
+Redis主要有三种模式，主从，哨兵，分布式集群
+1.主从复制模式架构：一主多从结构，主节点负责写操作，从节点通过异步复制同步主节点数据，支持读写分离优点：数据冗余：从节点备份主节点数据，提高数据可靠性。读写分离：从节点分担读请求，减轻主节点压力。配置
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/redis-used-too-much.html">
 				<h2 class="index-title">
 					08 redis如何做内存优化
@@ -3320,96 +3436,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-distributed-lock-space.html">
-				<h2 class="index-title">
-					10 分布式锁的应用场景
-				</h2>
-				<div class="index-brief">
-					我们知道，对于单机的多线程情况下的线程安全问题我们可以用使用JDK自带的锁来保证线程安全
-但是集群环境下的线程安全怎么保证呢？
-客户A调用一个接口修改数据，客户B同时调用这一个接口修改数据，这时候请求负载到不同的机器上
-怎么保证同一时间这笔数据只能一个人操作呢？那就需要用到分布式锁
-我说个我们项目中
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-cache-question.html">
-				<h2 class="index-title">
-					05 缓存击穿，缓存穿透，缓存雪崩
-				</h2>
-				<div class="index-brief">
-					缓存击穿redis中一个热点key过期，导致大量的访问打到数据库上
-监控哪些数据是热门数据，实时的调整热key的过期时长；
-缓存穿透大量请求根本不存在的key；例如恶意的流量攻击
-设置空值,设置白名单,使用布隆过滤器，对请求做校验(比如请求一个查询一个id为-1000的数据，这种直接可以判定为不合法
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/redis-identify-hot-key.html">
-				<h2 class="index-title">
-					06 怎么监控热key
-				</h2>
-				<div class="index-brief">
-					redis 6.2以上的版本支持了每个节点上的基于LFU的热点key发现机制，使用redis-cli –hotkeys即可。
-可以定时在节点中使用该命令来发现对应热点key,或者业务模块可以自己增加key值访问的统计，对于访问数量超过设定值的key就认为这些key是热点key,可以将热点key对应的
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/12-redis/">12 redis</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/35/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/archives/page/37/">37</a><a class="page-number" href="/archives/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/37/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/35/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/34/">34</a><a class="page-number" href="/archives/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/archives/page/37/">37</a><a class="page-number" href="/archives/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/52/">52</a><a class="extend next" rel="next" href="/archives/page/37/">&gt;</a>
 		
 	</div>
 </div>

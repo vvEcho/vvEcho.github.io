@@ -672,6 +672,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/gc-kinds-and-algorithms.html" title="15 GC有哪些？分别用的是啥算法？">
+                     
+										    15 GC有哪些？分别用的是啥算法？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -718,9 +729,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 04 wait,sleep,yield,join,notify的区别">
+									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 wait,sleep,yield,join,notify的区别">
                      
-										    04 04 wait,sleep,yield,join,notify的区别
+										    04 wait,sleep,yield,join,notify的区别
                      
 									</a>
 								</li>
@@ -2124,6 +2135,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/redis-cluster-ways.html" title="29 redis的集群模式有哪些？">
+                     
+										    29 redis的集群模式有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0212/redis-stream-used.html" title="30 redis的stream流用过了吗？">
+                     
+										    30 redis的stream流用过了吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -2390,9 +2423,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0312/undefined.html" title="10 怎么解决kafka性能瓶颈">
+									<a href="/2025/0312/kafka-performance-optimization.html" title="10 kafka性能优化">
                      
-										    10 怎么解决kafka性能瓶颈
+										    10 kafka性能优化
                      
 									</a>
 								</li>
@@ -3259,6 +3292,94 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0201/redis-big-key.html">
+				<h2 class="index-title">
+					12 redis大key问题
+				</h2>
+				<div class="index-brief">
+					大key可能存在的场景
+配送范围特别大的门店
+促销活动特别多的门店、商家等
+高频用户下的订单列表
+
+大key会导致什么问题
+如果是string类型的大key，由于redis是单线程运行的，大key会导致性能下降，甚至阻塞服务
+如果是hash,list,set,zset等类型key 删除key会严重阻
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/12-redis/">12 redis</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/springcloud-bus.html">
+				<h2 class="index-title">
+					07 springcloud消息总线
+				</h2>
+				<div class="index-brief">
+					Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
+Spring Cloud Bus配合Spring Cloud Config使用可以实现分布式自动刷新配置功能
+ConfigClient实例都监听MQ中
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0201/sentinel-liu-kong.html">
+				<h2 class="index-title">
+					05.3 hystricl和sentinel的对比
+				</h2>
+				<div class="index-brief">
+					Sentinel和Hystrix有哪些不同？Sentinel 和 Hystrix 都是用于管理分布式系统中的服务可靠性和延迟容忍性的工具，它们提供了像熔断器、限流器和服务降级这样的功能。虽然两者的目标类似，但它们在实现和功能上存在一些差异。以下是 Sentinel 和 Hystrix 的主要区别：
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-02-01</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/08-springcloud/">08 springcloud</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0201/springcloud-zookeeper.html">
 				<h2 class="index-title">
 					03.2 zookeeper注册中心
@@ -3316,92 +3437,10 @@ DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器 ，
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2024/0124/beanfactory-factoryBean.html">
-				<h2 class="index-title">
-					16 BeanFactory和FactoryBean有什么区别
-				</h2>
-				<div class="index-brief">
-					区别BeanFactory：beanFactory是所有Spring Bean的容器根接口，是IOC容器，并且提供方法支持外部程序对这些 bean 的访问，在程序启动时 根据传入的参数产生各种类型的bean，并添加到 IOC容器（实现 BeanFactory 接口的类) 的 singletonObj
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0124/hash-clash-solve.html">
-				<h2 class="index-title">
-					13 hash冲突怎么解决
-				</h2>
-				<div class="index-brief">
-					
-链地址法（Separate Chaining）：当哈希冲突发生时，将具有相同哈希值的元素存储在一个链表中。哈希表中的每个槽位都是一个链表的头指针。当需要查找、插入或删除一个元素时，只需在对应哈希值的链表中进行操作。这种方法的优点是实现简单，但可能会导致链表过长，影响查找性能。
-
-开放寻址法（Ope
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/02-java基础/">02 java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0124/translation-principle.html">
-				<h2 class="index-title">
-					05 spring事务的底层原理
-				</h2>
-				<div class="index-brief">
-					事务的操作本来应该由数据库进行控制，但是为了方便用户进行业务逻辑的控制，spring对事务功能进行了扩展实现。一般我们很少使用编程式事务，更多的是使用@Transactional注解实现。
-当使用了@Transactional注解后事务的自动功能就会关闭，由spring帮助实现事务的控制。sprin
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/06-spring/">06 spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/29/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/28/">28</a><a class="page-number" href="/archives/page/29/">29</a><span class="page-number current">30</span><a class="page-number" href="/archives/page/31/">31</a><a class="page-number" href="/archives/page/32/">32</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/31/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/29/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/28/">28</a><a class="page-number" href="/archives/page/29/">29</a><span class="page-number current">30</span><a class="page-number" href="/archives/page/31/">31</a><a class="page-number" href="/archives/page/32/">32</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/52/">52</a><a class="extend next" rel="next" href="/archives/page/31/">&gt;</a>
 		
 	</div>
 </div>

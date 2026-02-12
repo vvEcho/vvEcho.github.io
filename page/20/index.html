@@ -672,6 +672,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/gc-kinds-and-algorithms.html" title="15 GC有哪些？分别用的是啥算法？">
+                     
+										    15 GC有哪些？分别用的是啥算法？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -718,9 +729,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 04 wait,sleep,yield,join,notify的区别">
+									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 wait,sleep,yield,join,notify的区别">
                      
-										    04 04 wait,sleep,yield,join,notify的区别
+										    04 wait,sleep,yield,join,notify的区别
                      
 									</a>
 								</li>
@@ -2124,6 +2135,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/redis-cluster-ways.html" title="29 redis的集群模式有哪些？">
+                     
+										    29 redis的集群模式有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0212/redis-stream-used.html" title="30 redis的stream流用过了吗？">
+                     
+										    30 redis的stream流用过了吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -2390,9 +2423,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0312/undefined.html" title="10 怎么解决kafka性能瓶颈">
+									<a href="/2025/0312/kafka-performance-optimization.html" title="10 kafka性能优化">
                      
-										    10 怎么解决kafka性能瓶颈
+										    10 kafka性能优化
                      
 									</a>
 								</li>
@@ -3259,6 +3292,89 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/kafka-rebalance.html">
+				<h2 class="index-title">
+					05 kafka的rebalance机制
+				</h2>
+				<div class="index-brief">
+					Reblance是一种协议，规定了一个Consumer Group下所有Consumer如何达成一致，来分配订阅Topic的每个分区，尽量让每个消费者分配到相对均匀的分区，使Consumer的资源都能得到充分利用，防止有些Consumer比较忙而有的Consumer比较闲
+当kafka感知到存在让分
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/rocketmq-distributed-transaction.html">
+				<h2 class="index-title">
+					09 rocketMq实现分布式事务了解吗？
+				</h2>
+				<div class="index-brief">
+					RocketMQ事务消息通过两阶段提交与消息回查机制，在保证高性能的同时实现了分布式事务的最终一致性
+第一阶段：生产者发送事务消息时，消息会标记为半消息；暂存到brocker中，此时此消息对消费者不可见
+12// 发送半消息（事务消息）TransactionSendResult result = p
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2024/0120/kafka-msg-not-lost.html">
+				<h2 class="index-title">
+					01 kafkar如何保证消息不丢失？
+				</h2>
+				<div class="index-brief">
+					回答这个问题可以分三个方面，首先第一点要保证producer消息能达到broker,其次broker收到对应的消息要确保持久化磁盘，最后需要确保consumer能成功消费这条消息；
+
+针对producer:我们知道producer发送消息可以异步也可以同步，我们需要将其改成同步发送，这样就能知道消息
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/rocketmq-pull-push.html">
 				<h2 class="index-title">
 					06 rocketMq是pull模式还是push模式
@@ -3450,91 +3566,6 @@ rocketMq默认会保存三天死信队列的消息等待被处理，我们可以
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
                                         <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/rocketmq-find-msg.html">
-				<h2 class="index-title">
-					02 rocketMq怎么查找到对应的消息的？
-				</h2>
-				<div class="index-brief">
-					我们知道，RocketMQ核心的数据文件有3个：CommitLog、ConsumeQueue和Index。
-其中Index文件就是一个索引文件，查找消息时，首先根据消息key的hashcode计算出Hash槽的位置，然后读取Hash槽的值计算Index条目的位置
-从Index条目位置读取到消息在Co
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13rocketmq/">13rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/nacos-konw.html">
-				<h2 class="index-title">
-					03.3 nacos注册中心
-				</h2>
-				<div class="index-brief">
-					1.nacos简介Nacos致力于提供动态服务发现、服务健康监测、动态配置服务以及服务管理的平台；
-Nacos是一个为云原生应用设计的动态服务发现和配置服务平台，它提供了一系列关键功能来支持服务化架构，主要包括：
-
-服务发现和注册：Nacos 允许服务实例在启动时向注册中心注册自己，并在关闭时取消注
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/springcloud-hystrix.html">
-				<h2 class="index-title">
-					05.1 hystrix服务熔断和降级
-				</h2>
-				<div class="index-brief">
-					我们使用Hystrix来实现服务的熔断和限流，在对应的接口上添加对应的 @HystrixCommand注解，注解内置了超时时间及断路器开关，以及降级后对应的回调处理方法，可以自定义返回信息；
-Hystrix的主要原理是用了断路器模式和线程池隔离技术；
-通过断路器的故障监控，向服务调用方返回一个符合预
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/08-springcloud/">08 springcloud</a>
 										
                                     </span>
                                 

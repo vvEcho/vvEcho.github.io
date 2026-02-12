@@ -672,6 +672,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/gc-kinds-and-algorithms.html" title="15 GC有哪些？分别用的是啥算法？">
+                     
+										    15 GC有哪些？分别用的是啥算法？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -718,9 +729,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 04 wait,sleep,yield,join,notify的区别">
+									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 wait,sleep,yield,join,notify的区别">
                      
-										    04 04 wait,sleep,yield,join,notify的区别
+										    04 wait,sleep,yield,join,notify的区别
                      
 									</a>
 								</li>
@@ -2124,6 +2135,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/redis-cluster-ways.html" title="29 redis的集群模式有哪些？">
+                     
+										    29 redis的集群模式有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0212/redis-stream-used.html" title="30 redis的stream流用过了吗？">
+                     
+										    30 redis的stream流用过了吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -2390,9 +2423,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0312/undefined.html" title="10 怎么解决kafka性能瓶颈">
+									<a href="/2025/0312/kafka-performance-optimization.html" title="10 kafka性能优化">
                      
-										    10 怎么解决kafka性能瓶颈
+										    10 kafka性能优化
                      
 									</a>
 								</li>
@@ -3259,6 +3292,87 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2025/0306/kafka-msg-lost-and-solutions.html">
+				<h2 class="index-title">
+					09 kafka消息丢失的场景及解决方案
+				</h2>
+				<div class="index-brief">
+					kafka消息丢失的场景主要在生产端，broker端，消费端
+生产端消息丢失producer默认采用异步的方式发送消息，如果未收到ACK时，producer宕机则消息丢失；
+解决办法：可以改成同步发生，ack&#x3D;all，保证消息不丢失；根据失败重试机制配置失败重试次数，自动重试发送失败的消息
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/kafka-replication-sync.html">
+				<h2 class="index-title">
+					08 kafka副本同步机制
+				</h2>
+				<div class="index-brief">
+					为了保证producer发生数据能可靠的提交到broker，kafka引入了副本同步机制。broker中的每个partition都有多个副本，副本之间通过leader-follower机制进行同步。每个partition的leader在收到producer提交的数据后，都需要向producer发送a
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
+			<a href="/2025/0306/kafka-async-flush.html">
+				<h2 class="index-title">
+					07 kafka异步刷盘机制
+				</h2>
+				<div class="index-brief">
+					所谓kafka异步刷盘机制是指kafka的生产者将消息发送到broker时，首先消息会被追加到日志文件segment中，此时数据是暂存到操作系统的页缓存中，并不是直接落盘；（页缓存是内存中的临时存储区域，由操作系统管理，提供低延迟的读写能力）
+kakfa通过阈值或定时扫描触发刷盘操作，将页缓存中的数
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-03-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/14-kafka/">14 kafka</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2025/0306/undefined.html">
 				<h2 class="index-title">
 					05 令牌桶限流算法
@@ -3294,105 +3408,10 @@
                 </div>
 		</div>
 	
-		 <div class="index-li">
-			<a href="/2025/0306/undefined.html">
-				<h2 class="index-title">
-					03 滑动窗口限流算法
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-06</span>
-                    
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0306/undefined.html">
-				<h2 class="index-title">
-					02 计数器限流算法
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-06</span>
-                    
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2025/0305/rocketmq-cluster-mode.html">
-				<h2 class="index-title">
-					12 rocketMq有哪些集群模式
-				</h2>
-				<div class="index-brief">
-					
-
-
-模式
-数据安全
-性能
-适用场景
-
-
-
-单Master
-低
-最高
-本地测试、学习环境
-
-
-多Master
-中  （依赖磁盘）
-高
-高性能、允许短暂数据不可用
-
-
-多Master多Slave异步
-中
-较高
-平衡性能与可用性
-
-
-多Master多Slave同步
-高
-中
-强一致性场景（如支付交易）
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-03-05</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/13-rocketmq/">13 rocketmq</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
 
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/11/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/51/">51</a><a class="extend next" rel="next" href="/archives/page/13/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/11/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/52/">52</a><a class="extend next" rel="next" href="/archives/page/13/">&gt;</a>
 		
 	</div>
 </div>

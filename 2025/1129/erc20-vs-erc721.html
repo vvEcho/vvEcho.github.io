@@ -674,6 +674,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/gc-kinds-and-algorithms.html" title="15 GC有哪些？分别用的是啥算法？">
+                     
+										    15 GC有哪些？分别用的是啥算法？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -720,9 +731,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 04 wait,sleep,yield,join,notify的区别">
+									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 wait,sleep,yield,join,notify的区别">
                      
-										    04 04 wait,sleep,yield,join,notify的区别
+										    04 wait,sleep,yield,join,notify的区别
                      
 									</a>
 								</li>
@@ -2126,6 +2137,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/redis-cluster-ways.html" title="29 redis的集群模式有哪些？">
+                     
+										    29 redis的集群模式有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0212/redis-stream-used.html" title="30 redis的stream流用过了吗？">
+                     
+										    30 redis的stream流用过了吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -2392,9 +2425,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0312/undefined.html" title="10 怎么解决kafka性能瓶颈">
+									<a href="/2025/0312/kafka-performance-optimization.html" title="10 kafka性能优化">
                      
-										    10 怎么解决kafka性能瓶颈
+										    10 kafka性能优化
                      
 									</a>
 								</li>
@@ -3379,6 +3412,103 @@
 <li>ERC721在数字艺术和游戏领域持续创新</li>
 <li>跨链互操作性成为新发展方向</li>
 </ul>
+<blockquote>
+<p>总结：<br>ERC-20 → 标准代币，核心是 转账、授权、余额查询<br>ERC-721 → NFT，不可替代资产，核心是 tokenId 管理 + 授权 + 拥有者查询<br>ERC-712 → 链下签名协议，核心是 生成哈希、签名验证、防重放机制</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th>核心方法</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>ERC-20</strong></td>
+<td><code>totalSupply()</code></td>
+<td>获取代币总量</td>
+</tr>
+<tr>
+<td></td>
+<td><code>balanceOf(address owner)</code></td>
+<td>查询账户余额</td>
+</tr>
+<tr>
+<td></td>
+<td><code>transfer(address to, uint256 value)</code></td>
+<td>向指定地址转账</td>
+</tr>
+<tr>
+<td></td>
+<td><code>approve(address spender, uint256 value)</code></td>
+<td>授权别人可转额度</td>
+</tr>
+<tr>
+<td></td>
+<td><code>transferFrom(address from, address to, uint256 value)</code></td>
+<td>被授权地址转账</td>
+</tr>
+<tr>
+<td></td>
+<td><code>allowance(address owner, address spender)</code></td>
+<td>查询剩余授权额度</td>
+</tr>
+<tr>
+<td><strong>ERC-721</strong></td>
+<td><code>balanceOf(address owner)</code></td>
+<td>查询账户拥有的 NFT 数量</td>
+</tr>
+<tr>
+<td></td>
+<td><code>ownerOf(uint256 tokenId)</code></td>
+<td>查询某个 NFT 的拥有者</td>
+</tr>
+<tr>
+<td></td>
+<td><code>transferFrom(address from, address to, uint256 tokenId)</code></td>
+<td>转移某个 NFT</td>
+</tr>
+<tr>
+<td></td>
+<td><code>approve(address to, uint256 tokenId)</code></td>
+<td>授权别人操作某个 NFT</td>
+</tr>
+<tr>
+<td></td>
+<td><code>getApproved(uint256 tokenId)</code></td>
+<td>查询 NFT 授权地址</td>
+</tr>
+<tr>
+<td></td>
+<td><code>setApprovalForAll(address operator, bool approved)</code></td>
+<td>授权操作所有 NFT</td>
+</tr>
+<tr>
+<td></td>
+<td><code>isApprovedForAll(address owner, address operator)</code></td>
+<td>查询是否授权了所有 NFT</td>
+</tr>
+<tr>
+<td><strong>ERC-712 (EIP-712)</strong></td>
+<td><code>hashTypedDataV4(structuredData)</code></td>
+<td>生成签名数据哈希</td>
+</tr>
+<tr>
+<td></td>
+<td><code>recover(signature, hash)</code></td>
+<td>验证签名者地址</td>
+</tr>
+<tr>
+<td></td>
+<td><code>domain separator</code></td>
+<td>定义签名域，防跨域重放攻击</td>
+</tr>
+<tr>
+<td></td>
+<td><code>type hash</code></td>
+<td>定义结构化数据类型，保证签名唯一性</td>
+</tr>
+</tbody></table>
 
 </div>
 

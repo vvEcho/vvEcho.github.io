@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		10 怎么解决kafka性能瓶颈 |
+		29 redis的集群模式有哪些？ |
 	
 	面试之路
 	</title>
@@ -674,6 +674,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/gc-kinds-and-algorithms.html" title="15 GC有哪些？分别用的是啥算法？">
+                     
+										    15 GC有哪些？分别用的是啥算法？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -720,9 +731,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 04 wait,sleep,yield,join,notify的区别">
+									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 wait,sleep,yield,join,notify的区别">
                      
-										    04 04 wait,sleep,yield,join,notify的区别
+										    04 wait,sleep,yield,join,notify的区别
                      
 									</a>
 								</li>
@@ -2126,6 +2137,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file active">
+									<a href="/2026/0210/redis-cluster-ways.html" title="29 redis的集群模式有哪些？">
+                     
+										    29 redis的集群模式有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0212/redis-stream-used.html" title="30 redis的stream流用过了吗？">
+                     
+										    30 redis的stream流用过了吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -2391,10 +2424,10 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
-									<a href="/2025/0312/undefined.html" title="10 怎么解决kafka性能瓶颈">
+								<li class="file">
+									<a href="/2025/0312/kafka-performance-optimization.html" title="10 kafka性能优化">
                      
-										    10 怎么解决kafka性能瓶颈
+										    10 kafka性能优化
                      
 									</a>
 								</li>
@@ -3259,7 +3292,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	10 怎么解决kafka性能瓶颈
+	29 redis的集群模式有哪些？
 </h1>
 
 <!-- meta -->
@@ -3267,11 +3300,20 @@
 	
 
 	<span>vvEcho</span>
-	<span>2025-03-12 13:24:13</span>
+	<span>2026-02-10 20:08:39</span>
 
   <div id="article-categories">
     
 		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/12-redis/">12 redis</a>
+                  </i>
+                
+              </span>
+          
       
     
 
@@ -3285,7 +3327,20 @@
 
 <!-- content -->
 <div id="article-content">
-	
+	<p>Redis常见的集群模式有单机，主从复制、Sentinel（哨兵）、Redis Cluster，分别解决 数据复制、自动高可用、分片扩展 三类问题</p>
+<h3 id="单机"><a href="#单机" class="headerlink" title="单机"></a>单机</h3><p>单机模式下，Redis 的数据存储在单个节点上，当数据量过大时，单机模式下Redis的性能会下降。一般用在开发及测试环境中，uat及prod环境一般都采用高可用哨兵模式</p>
+<h3 id="主从复制（Master–Slave）"><a href="#主从复制（Master–Slave）" class="headerlink" title="主从复制（Master–Slave）"></a>主从复制（Master–Slave）</h3><p>主节点负责写，从节点负责读读，主节点数据写入后，会自动将数据同步给从节点，主从复制的延迟问题可以通过设置参数slave-read-only&#x3D;no解决，但是性能会下降<br>使用的业务场景，如：高并发、读多写少，对可用性要求一般</p>
+<h3 id="Sentinel（哨兵）"><a href="#Sentinel（哨兵）" class="headerlink" title="Sentinel（哨兵）"></a>Sentinel（哨兵）</h3><p><strong>Sentinel 作用</strong><br>监控 Master &#x2F; Slave<br>Master 挂了 → 自动主从切换<br>通知客户端新的 Master 地址</p>
+<p><strong>核心能力</strong><br>自动 Failover<br>高可用（HA）<br>客户端透明（通过 Sentinel 获取 master）</p>
+<p><strong>优点</strong><br>解决主从无自动切换问题<br>成熟稳定<br>运维成本低</p>
+<p><strong>缺点</strong><br>❌ 不支持水平扩容（仍是单 Master 写）<br>❌ 数据量受单机内存限制<br>❌ 客户端需支持 Sentinel</p>
+<p><strong>适用（非常常见）</strong><br>中小规模缓存<br>QPS 不是极端高<br>强调稳定性</p>
+<h3 id="Redis-Cluster"><a href="#Redis-Cluster" class="headerlink" title="Redis Cluster"></a>Redis Cluster</h3><p>Cluster 是具备Master 和 Slave模式，Redis 集群中的每个实例节点都负责一些槽位，节点之间保持TCP通信，当Master发生了宕机， Redis Cluster自动会将对应的Slave节点选为Master，来继续提供服务</p>
+<p><strong>核心机制</strong><br>数据分片（Hash Slot）<br>自动重定向（MOVED &#x2F; ASK）<br>节点互相 Gossip<br>节点级 Failover</p>
+<p><strong>优点</strong><br>✅ 水平扩容（容量 + QPS）<br>✅ 高可用<br>✅ 官方方案</p>
+<p><strong>缺点（⚠️ 高频面试点）</strong><br>❌ 多 key 操作受限<br>MGET、事务、Lua 必须在同一 slot<br>❌ 不支持复杂事务<br>❌ 运维 &amp; 客户端复杂度高<br>❌ slot 迁移期间性能抖动</p>
+<p><strong>适用</strong><br>大数据量（百GB+）<br>高并发<br>缓存核心链路<br>多业务共享 Redis</p>
+
 </div>
 
 <!-- post-guide -->
@@ -3293,16 +3348,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2025/0312/threadPool-principle.html">
+              <a href="/2026/0212/redis-stream-used.html">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  18 线程池的原理
+                  30 redis的stream流用过了吗？
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2025/0312/mysql-data-skew.html">
-                20 mysql如何解决数据倾斜
+              <a href="/2026/0210/gc-kinds-and-algorithms.html">
+                15 GC有哪些？分别用的是啥算法？
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

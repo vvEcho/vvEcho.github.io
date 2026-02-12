@@ -672,6 +672,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/gc-kinds-and-algorithms.html" title="15 GC有哪些？分别用的是啥算法？">
+                     
+										    15 GC有哪些？分别用的是啥算法？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -718,9 +729,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 04 wait,sleep,yield,join,notify的区别">
+									<a href="/2024/0120/wait-sleep-yield-join.html" title="04 wait,sleep,yield,join,notify的区别">
                      
-										    04 04 wait,sleep,yield,join,notify的区别
+										    04 wait,sleep,yield,join,notify的区别
                      
 									</a>
 								</li>
@@ -2124,6 +2135,28 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/0210/redis-cluster-ways.html" title="29 redis的集群模式有哪些？">
+                     
+										    29 redis的集群模式有哪些？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/0212/redis-stream-used.html" title="30 redis的stream流用过了吗？">
+                     
+										    30 redis的stream流用过了吗？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 
 							</ul>
@@ -2390,9 +2423,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/0312/undefined.html" title="10 怎么解决kafka性能瓶颈">
+									<a href="/2025/0312/kafka-performance-optimization.html" title="10 kafka性能优化">
                      
-										    10 怎么解决kafka性能瓶颈
+										    10 kafka性能优化
                      
 									</a>
 								</li>
@@ -3259,6 +3292,32 @@
 		<div id="index">
 	
 		 <div class="index-li">
+			<a href="/2024/0120/how-handle-pro-server-slow.html">
+				<h2 class="index-title">
+					09 生产环境服务嚣变慢,如何诊断处理?
+				</h2>
+				<div class="index-brief">
+					使用 top 指令,服务器中 CPU 和内存的使用情况，-H 可以按 CPU 使用率降序，-M 内存使用率降序。排除其他进程占用过高的硬件资源,对 JQva 服务造成影响。如果发现 CPU 使用过高，可以使用 top 指令查出 JVM 中占用 CPU 过高的线程,通过 jstack 找到对应的线程代
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2024-01-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/04-jvm/">04 jvm</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>
+	
+		 <div class="index-li">
 			<a href="/2024/0120/jvm-config-params.html">
 				<h2 class="index-title">
 					10 工作中常用的JVM配置参教有哪些?
@@ -3349,32 +3408,6 @@ top + H 指令找出占用 CPU 最高的进程的 pid
 top - H - p 否该进程中找到，哪些线程占用的 CPU 最高的线程,记录下 tid
 jstack- l &gt; threads . txt ，导出进程的线程栈信息到文牵，导出出现异常的话,加上一 F 参教
 将 tid 转换为十六
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-01-20</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/04-jvm/">04 jvm</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>
-	
-		 <div class="index-li">
-			<a href="/2024/0120/object-in-jvm-build-process.html">
-				<h2 class="index-title">
-					04 对象在jvm中的创建过程
-				</h2>
-				<div class="index-brief">
-					jvm会先去方法区找有没有创建的对象存在，有直接就可以创建对象，没有就把该类加载到方法区在创建类的对象时，首先会先去堆内存中分配空间然后加载对象中的非静态成员变量到该空间中，所有的非静态成员变量加载完成后，对所有的非静态成员进行默认初始化所有的非静态成员默认初始化完成后，调用相应的构造方法到栈中在栈
 					...
 				</div>
 			</a>
