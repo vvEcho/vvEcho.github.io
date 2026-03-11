@@ -1,0 +1,49 @@
+.tts-player{
+  margin-bottom:20px;
+  padding:10px;
+  border:1px solid #eee;
+  border-radius:8px;
+}
+
+.tts-player button{
+  margin-right:8px;
+  padding:6px 12px;
+  cursor:pointer;
+}
+
+.tts-highlight{
+  background:#fff59d;
+  font-weight:bold;
+}
+
+.tts-speed-btn{
+  margin-left:10px;
+  padding:6px 12px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  background:#f7f7f7;
+  cursor:pointer;
+}
+
+.tts-speed-btn:hover{
+  background:#eee;
+}
+
+.tts-btn{
+  padding:6px 12px;
+  margin-right:8px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  background:#f7f7f7;
+  cursor:pointer;
+}
+
+.tts-btn:hover{
+  background:#eee;
+}
+
+.tts-btn.active{
+  background:#4caf50;
+  color:white;
+  border-color:#4caf50;
+}
