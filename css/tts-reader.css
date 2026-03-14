@@ -1,8 +1,9 @@
 .tts-player{
   margin-bottom:20px;
+  max-width: 240px;
   padding:10px;
   border:1px solid #eee;
-  border-radius:8px;
+  border-radius:22px;
 }
 
 .tts-player button{

@@ -14,7 +14,15 @@ function splitText (text) {
 }
 
 function getArticle () {
-    return document.getElementById("article-content")
+    const article =  document.getElementById("article-content")
+    // 克隆 DOM
+    const clone = article.cloneNode(true)
+    // 删除播放器
+    const player = clone.querySelector(".tts-player")
+    if (player) {
+        player.remove()
+    }
+    return clone
 }
 
 function ttsPlay (btn) {
@@ -39,7 +47,6 @@ function speakNext () {
 
     highlightSentence(sentence)
     const msg = new SpeechSynthesisUtterance(sentence)
-
     msg.lang = "zh-CN"
     msg.rate = rate
 
@@ -51,14 +58,15 @@ function speakNext () {
 }
 
 function ttsChangeSpeed () {
-    rateIndex++
-    if (rateIndex >= rateList.length) {
-        rateIndex = 0
-    }
+    rateIndex = (rateIndex + 1) % rateList.length
     rate = rateList[rateIndex]
     const btn = document.querySelector(".tts-speed-btn")
     if (btn) {
-        btn.innerText = "Speed: " + rate + "x"
+        btn.innerText = rate + "x"
+    }
+    if (playing) {
+        speechSynthesis.cancel()   // 停止当前语音
+        speakNext()                // 从当前句重新读
     }
 }
 
@@ -101,9 +109,16 @@ function highlightSentence (sentence) {
     }
 }
 
-function setActive(btn){
-  document.querySelectorAll(".tts-btn").forEach(b=>{
-    b.classList.remove("active")
-  })
-  btn.classList.add("active")
+function setActive (btn) {
+    document.querySelectorAll(".tts-btn").forEach(b => {
+        b.classList.remove("active")
+    })
+    btn.classList.add("active")
 }
+
+function stopTTS(){
+  speechSynthesis.cancel()
+}
+
+window.addEventListener("beforeunload", stopTTS)
+document.addEventListener("pjax:send", stopTTS)
